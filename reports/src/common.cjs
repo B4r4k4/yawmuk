@@ -103,9 +103,6 @@ a{ color:inherit; text-decoration:none; }
 .callout.red{ background:#fbecea; border-right-color:var(--red); }
 .callout.pivot{ background:#eaf1fb; border-right-color:#3b6ea8; }
 .callout.pivot h4{ color:#1f4e86; }
-.bible{ font-family:'Amiri',serif; font-size:14pt; line-height:2; background:#f1f5fb; border:1px solid #d3e0f0; border-right:4px solid #3b6ea8; border-radius:2mm; padding:3mm 4.5mm 2mm; margin:2mm 0 1mm; break-inside:avoid; }
-.bible .ref{ display:block; font-family:'Tajawal'; font-size:8.6pt; color:var(--muted); line-height:1.6; }
-.bible .ref .en{ display:block; direction:ltr; text-align:left; font-style:italic; }
 .callout h4{ margin-top:0; }
 .callout p:last-child{ margin-bottom:0; }
 .kpis{ display:grid; grid-template-columns:repeat(4,1fr); gap:3mm; margin:3mm 0 5mm; }
@@ -199,9 +196,10 @@ function pivotBox(extra = '') {
   <p>بُنيت النسخة الأولى من المراحل الثلاث على فكرة «آدم المسلم» الذي يطبّق فقه المعاملات في يومه. وفي 2026-10-05، <b>بقرار صاحب المشروع</b>، صار <b>آدم ريد مسيحياً</b> يتعرّف على الإسلام من خلال جيرانه وزملائه وأصدقائه المسلمين، ومرشده الأول جاره عمر. وما تغيّر:</p>
   <ul>
     <li>أُعيدت كتابة القصة والسيناريو.</li>
-    <li>أُضيف إلى كل حكم حقلان: <code>newcomer_explainer</code> («ببساطة») و<code>common_ground</code> (القيم المشتركة مع المسيحية، بآيات من KJV وفاندايك متحقق منها حرفياً).</li>
+    <li>أُضيف إلى كل حكم حقلان: <code>newcomer_explainer</code> («ببساطة») و<code>common_ground</code> (القيم المشتركة مع المسيحية والفروق، بوصف عام قصير).</li>
     <li>عُدّلت المشاهد الست وواجهة المحرك.</li>
     <li>أُجري تدقيق خاص بالتحول (<code>docs/audit/pivot_audit.md</code>) وإعادة اختبار كاملة.</li>
+    <li>حُذفت الاقتباسات من الكتاب المقدس بطلب صاحب المشروع في 2026-10-06، فصار حقل «القيم المشتركة» وصفاً عاماً بلا اقتباسات ولا إحالات.</li>
   </ul>
   <p>وما ثبت ولم يتغير: المعرّفات الـ18، والأماكن، ونقاط التفاعل، ونظام النقاط، ونص الأحكام وأدلتها. المرجع: قسم «تحديث 2026-10-05» في <code>docs/TEAM_BRIEF.md</code>.${extra}</p></div>`;
 }

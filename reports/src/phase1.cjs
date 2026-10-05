@@ -26,7 +26,6 @@ module.exports = function build(pages = {}) {
     walk(dir); return { n, f };
   })();
 
-  const nB = rulings.reduce((a, r) => a + ((r.common_ground && r.common_ground.bible) || []).length, 0);
   const nNE = rulings.filter((r) => r.newcomer_explainer && r.newcomer_explainer.ar).length;
   const nCG = rulings.filter((r) => r.common_ground && r.common_ground.summary).length;
   const mort = rulings.find((r) => r.id === 'home.mortgage');
@@ -46,7 +45,7 @@ module.exports = function build(pages = {}) {
     <li>شرح «ببساطة» لغير المسلم.</li>
     <li>الأدلة من القرآن والسنة.</li>
     <li>أقوال المذاهب الأربعة والمجامع المعاصرة.</li>
-    <li>«قيم مشتركة مع المسيحية» بآيات من الكتاب المقدس متحقق منها حرفياً.</li>
+    <li>«قيم مشتركة مع المسيحية»: وصف عام قصير لنقاط التلاقي وللفروق، بلا اقتباسات ولا إحالات.</li>
   </ul>
   <p>في المرحلة الأولى بُني الأساس الذي تقوم عليه بقية المراحل: ملفات الأحكام، والسيناريو، والمحرك. ثم دقّق وكيل مستقل الأحكام آلياً وعلمياً. وبعد تغيير الاتجاه أُضيف إلى كل حكم حقلان جديدان، وأُعيدت كتابة القصة، وأُجري تدقيق ثانٍ خاص بالتحول.</p>
   ${C.pivotBox()}
@@ -55,10 +54,10 @@ module.exports = function build(pages = {}) {
     <div class="kpi"><div class="v">${nSit}</div><div class="l">موقفاً في السيناريو، لكل موقف 3 خيارات وسؤال فهم</div></div>
     <div class="kpi"><div class="v">${nQ} <small>/ ${uniqAyat} آية</small></div><div class="l">استشهاداً قرآنياً، و${uniqAyat} آية فريدة طابقت المصدر حرفياً</div></div>
     <div class="kpi"><div class="v">${nH}</div><div class="l">استشهاداً حديثياً، طابقت كلها المصدر (61 آلياً و3 يدوياً)</div></div>
-    <div class="kpi"><div class="v">281</div><div class="l">فحصاً آلياً بعد التحول: 278 نجاح، و3 تحذيرات مقبولة، و0 فشل (كانت 187/187 قبله)</div></div>
+    <div class="kpi"><div class="v">${nNE}/18</div><div class="l">حكماً فيها «ببساطة» (<code>newcomer_explainer</code>) و«قيم مشتركة» (<code>common_ground</code>)</div></div>
     <div class="kpi"><div class="v">${nVer} <small>/ ${rulings.length}</small></div><div class="l">حكماً اجتاز التدقيق (<code>ai_verified</code>)، و${nDraft} بقيت مسودة لعالم</div></div>
     <div class="kpi"><div class="v">${sources.length}</div><div class="l">مدخلاً في سجل المصادر الموحد <code>content/sources.json</code></div></div>
-    <div class="kpi"><div class="v">${nB}/${nB}</div><div class="l">آية كتابية في «القيم المشتركة»، مطابقة حرفياً: KJV ${nB}/${nB} وفاندايك ${nB}/${nB}</div></div>
+    <div class="kpi"><div class="v">214</div><div class="l">فحصاً في <code>verify.mjs</code> (2026-10-06): 0 أخطاء، القرآن 27/27 والحديث 64/64</div></div>
   </div>
   <div class="callout red"><h4>تنبيه أساسي للقارئ</h4>
   <p>كل الأحكام في هذا المشروع <b>مسودة أعدّها ذكاء اصطناعي</b>. نُقلت نصوص الآيات والأحاديث آلياً من مصادرها وطوبقت حرفياً، ثم راجعها وكيل تدقيق آلي. لكن وسم <code>ai_verified</code> معناه «اجتاز الفحوص الآلية ولم يجد المدقق فيه خطأً جوهرياً»، وليس «معتمد شرعاً». <b>لا يُعتمد أي حكم قبل مراجعة عالم شرعي بشري</b>، وقائمة ما يحتاج المراجعة في القسم الأخير. وحقل «القيم المشتركة» يحتاج كذلك مراجعاً مطّلعاً على المسيحية.</p></div>
@@ -87,7 +86,7 @@ module.exports = function build(pages = {}) {
     <li><b>حقلان جديدان في كل حكم:</b>
       <ul>
         <li><code>newcomer_explainer</code>: شرح مبسط في 3–5 جمل، يذكر الحكم والحكمة منه دون مبالغة ولا جدل.</li>
-        <li><code>common_ground</code>: يضم ملخصاً لنقاط التلاقي، وآيات من الكتاب المقدس <b>حرفياً</b> (KJV وفاندايك، وكلتاهما ملك عام)، والفروق بأمانة واحترام.</li>
+        <li><code>common_ground</code>: ملخص عام قصير لنقاط التلاقي (<code>summary</code>)، والفروق بأمانة واحترام (<code>differences</code>)، بلا اقتباسات ولا إحالات.</li>
       </ul></li>
     <li><b>النهاية:</b> ما تعلّمه آدم، وموضوع تالٍ مقترح، وإحالة إلى مسجد أو مركز تعريف بالإسلام. <b>بلا ضغط، ولا قياس للمعتقد، ولا تخزين لأي معلومة عن معتقد اللاعب.</b></li>
     <li><b>النبرة:</b> احترام كامل للمسيحية، دون انتقاص ولا مقارنة تفضيلية ولا مناظرة.</li>
@@ -117,8 +116,8 @@ module.exports = function build(pages = {}) {
     <tr><td><b>باحث شرعي (1)</b></td><td>أحكام البيت والعمل: التمويل العقاري، والطعام، وبطاقات الائتمان، والعمل في مطعم، و401(k)، والأمانة في العمل.</td><td>${code('content/rulings/home.json')}، ${code('work.json')}، ${code('docs/research/home_work.md')}</td></tr>
     <tr><td><b>باحث شرعي (2)</b></td><td>أحكام الكلية والشارع: الغش، والقرض الطلابي، والاختلاط والمصافحة، واللقطة، واليانصيب، والبيع والشراء.</td><td>${code('school.json')}، ${code('street.json')}، ${code('docs/research/school_street.md')}</td></tr>
     <tr><td><b>باحث شرعي (3)</b></td><td>أحكام المناسبات: التهنئة بالأعياد، ومائدة الخمر، والسحب الخيري، والعرس، والتعزية، والهدايا وأعياد الميلاد.</td><td>${code('public_events.json')}، ${code('private_events.json')}، ${code('docs/research/events.md')}</td></tr>
-    <tr><td><b>باحث «القيم المشتركة»</b> (بعد التحول)</td><td>يكتب <code>newcomer_explainer</code> و<code>common_ground</code> للأحكام الثمانية عشر. يجلب آيات الكتاب المقدس آلياً من 3 مصادر لنص KJV ومن مصدرين لنص فاندايك، ولا يغيّر أي حقل آخر في الأحكام.</td><td>${code('docs/research/common_ground.md')}، ${code('tools/audit/common_ground_data.json')}، ${code('apply_common_ground.cjs')}</td></tr>
-    <tr><td><b>السيناريست</b></td><td>يكتب القصة والشخصيات والحوار والخيارات وأسئلة الفهم، ويحدد نقاط التفاعل لكل مكان. وأعاد كتابة كل ذلك بعد التحول (Story Bible النسخة 2).</td><td>${code('docs/story_bible.md')}، ${code('docs/hotspots.md')}، ${code('content/script/*.json')}</td></tr>
+    <tr><td><b>باحث «القيم المشتركة»</b> (بعد التحول)</td><td>يكتب <code>newcomer_explainer</code> و<code>common_ground</code> للأحكام الثمانية عشر، من ملف الحكم نفسه دون دليل جديد، ولا يغيّر أي حقل آخر.</td><td>${code('docs/research/common_ground.md')}، ${code('tools/audit/common_ground_data.json')}، ${code('apply_common_ground.cjs')}</td></tr>
+    <tr><td><b>السيناريست</b></td><td>يكتب القصة والشخصيات والحوار والخيارات وأسئلة الفهم، ويحدد نقاط التفاعل لكل مكان. وأعاد كتابة كل ذلك بعد التحول (كتاب القصة، النسخة 2).</td><td>${code('docs/story_bible.md')}، ${code('docs/hotspots.md')}، ${code('content/script/*.json')}</td></tr>
     <tr><td><b>مهندس المحرك</b></td><td>يبني محرك اللعبة: العرض ثلاثي الأبعاد، والحركة والكاميرا، وتدفق المواقف، وبطاقة الحكم، واللغتين، وحفظ التقدم.</td><td>${code('src/engine/**')}، ${code('index.html')}، ${code('package.json')}، ${code('vite.config.js')}</td></tr>
     <tr><td><b>المدقق الشرعي المستقل</b></td><td>يعيد جلب كل آية وحديث ويطابقه، ويفحص الروابط، ويراجع الأحكام علمياً، ويبني سجل المصادر، ويرصد التعارض بين السيناريو والأحكام.</td><td>${code('docs/audit/*')}، ${code('tools/audit/*')}، ${code('content/sources.json')}</td></tr>
     <tr><td><b>6 مصممي مشاهد</b> (المرحلة 2)</td><td>وكيل لكل مكان يبني المشهد ثلاثي الأبعاد وفق <code>hotspots.md</code> وعقد المشهد.</td><td>${code('src/scenes/<location>.js')}، ${code('docs/phase-2/scene_*.md')}</td></tr>
@@ -151,22 +150,11 @@ module.exports = function build(pages = {}) {
   </ul>
   <h3>المجامع والهيئات المعاصرة</h3>
   <p>فُتحت قرارات <b>مجمع الفقه الإسلامي الدولي</b> من موقعه الرسمي، وفتاوى <b>مجمع فقهاء الشريعة بأمريكا (AMJA)</b> من موقعه. واستُعملت أيضاً قرارات <b>المجلس الأوروبي للإفتاء والبحوث</b>، و<b>دار الإفتاء المصرية</b>، و<b>دائرة الإفتاء الأردنية</b>، وغيرها. وفي ملفات الأحكام ${nC} إحالة معاصرة.</p>
-  <h3>نصوص الكتاب المقدس (بعد التحول)</h3>
-  <p>طُبقت قاعدة «لا اختلاق» نفسها على الكتاب المقدس: <b>لم يُكتب أي نص كتابي من الذاكرة.</b></p>
+  <h3>الحقلان الجديدان (بعد التحول)</h3>
   <ul>
-    <li><b>نص KJV:</b> جُلب آلياً من ثلاثة مصادر مستقلة وقورنت: ${code('bible-api.com')}، و${code('api.getbible.net')}، و${code('bolls.life')}. والمصدر المعتمد في الروابط هو bible-api.
-      <ul>
-        <li>تطابقت المصادر الثلاثة حرفياً في 24 آية.</li>
-        <li>في 9 آيات كانت الفروق شكلية فقط، مثل LORD/Lord أو مسافة.</li>
-        <li>تثنية 22: 3 حُسمت بالأغلبية على نص طبعة 1769 («all lost thing»).</li>
-      </ul></li>
-    <li><b>نص فاندايك:</b> جُلب من ${code('api.getbible.net/v2/arabicsv')}، وهو المعتمد بتشكيله، ومن ${code('bolls.life')} (SVD).
-      <ul>
-        <li>طوبق الرسم المجرد في الآيات كلها.</li>
-        <li>لم تُستعمل ترجمات أخرى، مثل نسخة biblegateway العربية أو كتاب الحياة.</li>
-      </ul></li>
-    <li><b>المحتوى الإسلامي في الحقلين الجديدين</b> مأخوذ من ملف الحكم نفسه، بلا دليل جديد. والاقتباسات الحديثية مطابقة لـ<code>text_ar</code> في الحكم، والآيات القرآنية يُشار إليها برقمها فقط.</li>
-    <li><b>حقائق عن الممارسة المسيحية</b>، مثل موقف الكنائس من الفائدة أو اليانصيب: أُكّد بعضها ببحث ويب، مثل التعليم المسيحي الكاثوليكي §2413 وموقف الكنيسة الميثودية. وبعضها معلومات عامة <b>تحتاج مراجعاً مطّلعاً على المسيحية</b>.</li>
+    <li><b>المحتوى الإسلامي فيهما</b> مأخوذ من ملف الحكم نفسه، بلا دليل جديد. والاقتباسات الحديثية مطابقة لـ<code>text_ar</code> في الحكم، والآيات القرآنية يُشار إليها برقمها فقط.</li>
+    <li><b>«القيم المشتركة»</b> وصف عام قصير للقيمة المشتركة مع المسيحية وللفرق، مثل «دان التقليد المسيحي طويلاً الإقراض بفائدة للفقير». <b>بلا اقتباسات ولا إحالات</b> (انظر مربع «تغيير الاتجاه»). ويحرس ذلك الكاشف <code>tools/audit/scripture_guard.cjs</code> واختبارات السلامة.</li>
+    <li><b>حقائق عن الممارسة المسيحية</b> مذكورة في <code>differences</code>، مثل موقف الكنيسة الميثودية من القمار. ومصادرها مسجلة في سجل المصادر بنوع <code>other</code>، وبعضها معلومات عامة <b>تحتاج مراجعاً مطّلعاً على المسيحية</b>.</li>
   </ul>
   <h3>عرض الخلاف</h3>
   <p>عُرضت الأقوال دون ترجيح متحيز في المسائل الحساسة: التهنئة بالأعياد، والمصافحة، والمعازف، والقرض للحاجة، وبطاقة الائتمان، وتعزية غير المسلم عند الحنابلة. ويُحسم الحكم بأحد ثمانية وسوم: <code>haram</code>، <code>halal</code>، <code>makruh</code>، <code>mubah</code>، <code>mustahab</code>، <code>wajib</code>، <code>disputed</code>، <code>depends</code>.</p>
@@ -179,10 +167,10 @@ module.exports = function build(pages = {}) {
 
   // 5. Rulings table
   b += `<section>${T.h2('s5', '٥. جدول الأحكام الثمانية عشر', true)}
-  <p>تتوزع الأحكام على الوسوم هكذا: ${Object.entries(byVerdict).map(([k, v]) => `${verdictPill(k)} ${v}`).join('، ')}. والأعمدة الأخيرة عدد الآيات والأحاديث والإحالات المعاصرة، ثم آيات الكتاب المقدس في «القيم المشتركة». وكل الأحكام الثمانية عشر فيها <code>newcomer_explainer</code> (${nNE}/18) و<code>common_ground</code> (${nCG}/18).</p>
-  <table class="compact"><thead><tr><th class="c">#</th><th>الموقف</th><th>الحكم</th><th class="c">الثقة</th><th>حالة المراجعة</th><th class="c">آيات</th><th class="c">أحاديث</th><th class="c">معاصر</th><th class="c">كتابي</th></tr></thead><tbody>
-  ${rulings.map((r, i) => `<tr><td class="num">${i + 1}</td><td><b>${esc(r.title.ar)}</b><br>${code(r.id)}</td><td>${verdictPill(r.verdict)}</td><td class="c">${CONF[r.confidence]}</td><td>${statusPill(r.review_status)}</td><td class="num">${r.quran.length}</td><td class="num">${r.hadith.length}</td><td class="num">${r.contemporary.length}</td><td class="num">${((r.common_ground && r.common_ground.bible) || []).length}</td></tr>`).join('')}
-  <tr><td></td><td colspan="4"><b>المجموع</b></td><td class="num">${nQ}</td><td class="num">${nH}</td><td class="num">${nC}</td><td class="num">${nB}</td></tr>
+  <p>تتوزع الأحكام على الوسوم هكذا: ${Object.entries(byVerdict).map(([k, v]) => `${verdictPill(k)} ${v}`).join('، ')}. والأعمدة الثلاثة الأخيرة عدد الآيات والأحاديث والإحالات المعاصرة. وكل الأحكام الثمانية عشر فيها <code>newcomer_explainer</code> (${nNE}/18) و<code>common_ground</code> (${nCG}/18).</p>
+  <table class="compact"><thead><tr><th class="c">#</th><th>الموقف</th><th>الحكم</th><th class="c">الثقة</th><th>حالة المراجعة</th><th class="c">آيات</th><th class="c">أحاديث</th><th class="c">معاصر</th></tr></thead><tbody>
+  ${rulings.map((r, i) => `<tr><td class="num">${i + 1}</td><td><b>${esc(r.title.ar)}</b><br>${code(r.id)}</td><td>${verdictPill(r.verdict)}</td><td class="c">${CONF[r.confidence]}</td><td>${statusPill(r.review_status)}</td><td class="num">${r.quran.length}</td><td class="num">${r.hadith.length}</td><td class="num">${r.contemporary.length}</td></tr>`).join('')}
+  <tr><td></td><td colspan="4"><b>المجموع</b></td><td class="num">${nQ}</td><td class="num">${nH}</td><td class="num">${nC}</td></tr>
   </tbody></table>
   <p class="footnote">المصدر: ملفات <code>content/rulings/*.json</code> كما هي وقت إعداد التقرير. «مسودة — معلّق لعالم» تعني أن المدقق المستقل أبقى الحكم <code>ai_draft</code> لأن فيه مسألة تحتاج عالماً بشرياً، وتفصيلها في القسم الأخير. وصِيغ حقل <code>question</code> في الأحكام كلها بصيغة محايدة («هل يجوز للمسلم…»)، ولم يعد أي حكم يخاطب آدم على أنه المكلّف.</p>
   </section>`;
@@ -210,7 +198,6 @@ module.exports = function build(pages = {}) {
   </tbody></table>
   <h3>قيم مشتركة مع المسيحية (common_ground) — جديد</h3>
   <p>${esc(m.common_ground.summary.ar)}</p>
-  ${m.common_ground.bible.map((v) => `<div class="bible">${esc(v.text_ar)}<span class="ref">${esc(v.ref_ar)} — ترجمة فاندايك — <span class="ltr">${esc(v.source_url_ar || '')}</span><span class="en">${esc(v.ref_en)} (KJV): ${esc(v.text_en)} — ${esc(v.source_url)}</span></span></div>`).join('')}
   <h4>أين نختلف — باحترام</h4><p>${esc(m.common_ground.differences.ar)}</p>
   <div class="grid2">
     <div><h3>الإرشاد العملي</h3><ul>${m.practical_guidance.ar.map((x) => `<li>${esc(x)}</li>`).join('')}</ul></div>
@@ -233,7 +220,7 @@ module.exports = function build(pages = {}) {
     <tr><td>أحكام بقيت <code>ai_draft</code></td><td><b>4</b>: ${['home.food_ingredients', 'work.alcohol_pork_job', 'private_events.wedding', 'private_events.gifts_birthday'].map(code).join('، ')}</td></tr>
     <tr><td>أحكام عُدّل محتواها</td><td><b>7</b>، وتفصيلها في الجدول التالي</td></tr>
     <tr><td>تعارضات بين السيناريو والأحكام</td><td><b>6</b>، وتفصيلها في القسم العاشر</td></tr>
-    <tr><td>سجل المصادر ${code('content/sources.json')}</td><td>وقتها 209 مدخلات: قرآن 27 (موثق 27)، وحديث 58 (موثق 58)، ومذهبي 72 (موثق 0)، ومعاصر 52 (موثق 7). وصار اليوم 244 مدخلاً بعد إضافة نصوص الكتاب المقدس (القسم الثامن)</td></tr>
+    <tr><td>سجل المصادر ${code('content/sources.json')}</td><td>وقتها 209 مدخلات: قرآن 27 (موثق 27)، وحديث 58 (موثق 58)، ومذهبي 72 (موثق 0)، ومعاصر 52 (موثق 7). واليوم 212 مدخلاً (القسم الثامن)</td></tr>
   </tbody></table>
   <h3>قواعد المطابقة</h3>
   <ul>
@@ -273,30 +260,23 @@ module.exports = function build(pages = {}) {
 
   // 8. Pivot audit
   b += `<section>${T.h2('s7b', '٨. تدقيق تغيير الاتجاه', true)}
-  <p>بعد التحول دقّق الوكيل المستقل ثلاثة أشياء: الحقلين الجديدين في الأحكام الـ18، وملفات السيناريو المعاد كتابتها، وكتاب القصة. التقرير الكامل في <code>docs/audit/pivot_audit.md</code>، ومخرج الفحص في <code>docs/audit/verify_output_2026-10-05_pivot.txt</code>. ونبّه المدقق إلى أنه تدقيق آلي لا يغني عن مراجعة عالم مسلم، ولا عن مراجع مطّلع على المسيحية.</p>
+  <p>بعد التحول دقّق الوكيل المستقل ثلاثة أشياء: الحقلين الجديدين في الأحكام الـ18، وملفات السيناريو المعاد كتابتها، وكتاب القصة. التقرير الكامل في <code>docs/audit/pivot_audit.md</code>، ومخرج الفحص في <code>docs/audit/verify_output_2026-10-06.txt</code>. ونبّه المدقق إلى أنه تدقيق آلي لا يغني عن مراجعة عالم مسلم، ولا عن مراجع مطّلع على المسيحية.</p>
   <table><thead><tr><th>البند</th><th>النتيجة</th></tr></thead><tbody>
-    <tr><td>استشهادات الكتاب المقدس في <code>common_ground.bible</code></td><td><b>${nB} استشهاداً مطابقة حرفياً: KJV ${nB}/${nB}، وفاندايك ${nB}/${nB}</b></td></tr>
-    <tr><td>فحوص <code>verify.mjs</code> كلها (القرآن، والحديث، والكتاب المقدس، والاقتباسات)</td><td>281 فحصاً: 278 نجاح، و3 تحذيرات، و<b>0 فشل</b></td></tr>
+    <tr><td>فحص <code>verify.mjs</code> (2026-10-06)</td><td><b>214 فحصاً، 0 أخطاء</b> (213 نجاح وتحذير واحد مقبول): القرآن 27/27، والحديث 64/64، وفحص <code>no-scripture</code> ناجح في الأحكام كلها</td></tr>
+    <tr><td>أحكام أُعيدت فيها كتابة <code>common_ground</code></td><td><b>18</b>: ملخص وفروق بصيغة عامة، بلا أي إحالة (قرار صاحب المشروع، 2026-10-06)</td></tr>
     <tr><td>أحكام صُحّح فيها الحقلان الجديدان</td><td><b>6</b>: ${['home.credit_card', 'public_events.alcohol_table', 'street.lost_wallet', 'private_events.wedding', 'home.food_ingredients', 'street.lottery'].map(code).join('، ')}</td></tr>
-    <tr><td>آيات كتابية في غير موضعها أو ضعيفة الصلة</td><td>1 في غير موضعها: حبقوق 2: 15، <b>واستُبدلت</b>. و4 ضعيفة الصلة لكنها مقبولة: أمثال 13: 11، ومزمور 107: 1، ورومية 12: 18، وأعمال 15: 29.</td></tr>
     <tr><td>ملاحظات على السيناريو</td><td>7، منها 4 تمس دقة المعلومة. طُبّقت كلها (القسم العاشر)</td></tr>
     <tr><td>حقل <code>question</code> الذي يخاطب «آدم المسلم»</td><td>وُجد في 9 أحكام، و<b>أُعيدت صياغته بصيغة محايدة</b>. وتحققتُ عند إعداد التقرير من أن الحقول القديمة لم يبقَ فيها ذكر لآدم.</td></tr>
-    <tr><td>سجل المصادر <code>content/sources.json</code></td><td>244 مدخلاً، منها 35 من نوع <code>other</code>: 32 آية كتابية فريدة موثقة، و3 حقائق عن الممارسة المسيحية غير موثقة</td></tr>
-    <tr><td><code>npm test</code> بعد تنفيذ قرارات المشرف</td><td>178/178. وبلغ 197/197 في إعادة الاختبار النهائية (تقرير المرحلة الثالثة)</td></tr>
+    <tr><td>سجل المصادر <code>content/sources.json</code></td><td>212 مدخلاً، منها 3 حقائق عن الممارسة المسيحية بنوع <code>other</code></td></tr>
+    <tr><td><code>npm test</code></td><td>223/223 بعد قرار 2026-10-06 (تقرير المرحلة الثالثة)</td></tr>
   </tbody></table>
-  <h3>كيف فُحصت النصوص الكتابية آلياً</h3>
-  <p>أضاف المدقق إلى <code>verify.mjs</code> دالتين:</p>
+  <h3>الفحص الآلي</h3>
   <ul>
-    <li><code>checkBible()</code>:
-      <ul>
-        <li>يطابق نص KJV مع bible-api.com، ثم مع getbible عند الاختلاف، والتطبيع للمسافات والفواصل العليا وLORD فقط.</li>
-        <li>يطابق نص فاندايك <b>حرفياً بالتشكيل</b> مع getbible (arabicsv)، والفرق في الحركات وحده فشل.</li>
-        <li>يتحقق من أن المرجع العربي يحمل رقمَي الإصحاح والآية نفسيهما، ومن روابط المصدرين.</li>
-      </ul></li>
-    <li><code>checkQuotes()</code>: كل اقتباس بين «» في الحقلين الجديدين يجب أن يوجد حرفياً في نصوص الحكم نفسه. والتحذيرات الثلاثة الباقية أسماء ومصطلحات، لا اقتباسات.</li>
+    <li><b>القرآن والحديث:</b> بالقواعد نفسها في القسم السابع.</li>
+    <li><b>فحص <code>no-scripture</code>:</b> أي إحالة نصية إلى غير القرآن والحديث، في أي حقل من الحكم = فشل. والقرآن والحديث مستثنيان. وفي اختبار الحساسية حُقنت ثلاثة أخطاء، فالتقطها السكربت كلها وخرج بالكود 1.</li>
+    <li><b>فحص الاقتباسات:</b> كل اقتباس بين «» في الحقلين الجديدين يجب أن يوجد في نصوص الحكم نفسه، وإلا ظهر تحذير. والتحذير الوحيد الباقي مصطلح لا اقتباس: «الرهان المجاني».</li>
   </ul>
-  <p><b>اختبار الحساسية:</b> حُقنت ثلاثة أخطاء: كلمة مبدلة في KJV، وكسرة بدل فتحة في فاندايك، ورقم آية خاطئ. فالتقطها السكربت كلها وخرج بالكود 1.</p>
-  <h3>الإصلاحات في الحقلين الجديدين</h3>
+  <h3>إصلاحات الشرح المبسط</h3>
   <table class="compact"><thead><tr><th style="width:24%">الحكم</th><th>الخطأ</th><th>الإصلاح</th></tr></thead><tbody>
     <tr><td>${code('home.credit_card')}</td><td>الجملة الأولى تقدّم المسألة الخلافية جوازاً مطلقاً، والمجمع (القرار 108) يمنع البطاقة المشروطة بفائدة.</td><td>«التقسيط بلا فائدة جائز، وبطاقة الخصم لا إشكال فيها، لكن…»، ثم يأتي الخلاف كما هو.</td></tr>
     <tr><td>${code('public_events.alcohol_table')}</td><td>نُسب التحسين إلى رواية أبي داود 3774، وأبو داود نفسه قال عنها «منكر».</td><td>صار الشرح يذكر: الترمذي 2801 حسّنه هو والألباني مع كلام في إسناده، وله شاهد مختلف فيه.</td></tr>
@@ -307,12 +287,7 @@ module.exports = function build(pages = {}) {
   </tbody></table>
   <h3>قرارات المشرف المنفذة</h3>
   <ol>
-    <li><b>${code('work.alcohol_pork_job')}:</b>
-      <ul>
-        <li>استُبدلت رومية 14: 21 بحبقوق 2: 15، وهي متحقق منها في النصين.</li>
-        <li>أُعيدت صياغة الملخص ليعبّر عن قيمة مشتركة: مراعاة أثر العمل في الغير.</li>
-        <li>بقيت حبقوق 2: 15 في جدول البيانات موسومة «غير مستعملة».</li>
-      </ul></li>
+    <li><b>الحقلان الجديدان في الأحكام الـ18:</b> أُعيدت كتابة <code>common_ground</code> بصيغة عامة بلا اقتباسات ولا إحالات (قرار صاحب المشروع، 2026-10-06).</li>
     <li><b>حقل <code>question</code> في 9 أحكام</b> صار محايداً: «ماذا يعلّم الإسلام عن… / هل يجوز للمسلم أن…».</li>
     <li><b>عبارة واحدة في <code>practical_guidance</code></b> في student_loan: «مهم لآدم لأنه موظف» صارت «مهم خاصة للطالب الذي يعمل».</li>
   </ol>
@@ -434,15 +409,14 @@ module.exports = function build(pages = {}) {
   <p>1. يقترب آدم من نقطة التفاعل.<br>2. يظهر الحوار، ثم الخيارات، ويُخلط ترتيبها في كل مرة.<br>3. تظهر العاقبة والنقاط.<br>4. تظهر <b>بطاقة الحكم</b>، ومصدرها ملفات الأحكام وحدها.<br>5. يأتي سؤال الفهم (+5).<br>6. يُعلَّم الموقف منتهياً، ويمكن «تجربة خيار آخر».<br><br>والمخرج يبقى مقفلاً حتى تنتهي مواقف المحطة الثلاثة، ثم ينقل إلى المحطة التالية. وبعد المحطة الأخيرة تظهر شاشة الملخص.</p>
   <div class="figs2">
     <figure><img src="img/qa/dar-ruling-top.jpg"><figcaption>رأس بطاقة الحكم بعد التحول: الوسم، وحالة المراجعة، والثقة، ثم «ببساطة» مباشرة. من لقطات إعادة الاختبار (docs/phase-3/screenshots).</figcaption></figure>
-    <figure><img src="img/qa/dar-cg.jpg"><figcaption>لوحة «قيم مشتركة مع المسيحية» بالعربية: الملخص، وآيتان بترجمة فاندايك مع رابط مصدرهما، و«أين نختلف — باحترام».</figcaption></figure>
+    <figure><img src="img/qa/dar-cg.jpg"><figcaption>لوحة «قيم مشتركة مع المسيحية» بالعربية: الملخص، ثم «أين نختلف — باحترام». من لقطات إعادة الاختبار.</figcaption></figure>
   </div>
   <h3>ما أضافه المحرك بعد تغيير الاتجاه</h3>
   <ul>
     <li><b>بطاقة الحكم:</b>
       <ul>
         <li>«ببساطة» يعرض <code>newcomer_explainer</code> تحت الوسم مباشرة.</li>
-        <li>لوحة «قيم مشتركة مع المسيحية» بلون أزرق هادئ. فيها الملخص، والآية بلغة الواجهة (فاندايك بالعربية مع رابط <code>source_url_ar</code>، وKJV بالإنجليزية مع رابط <code>source_url</code>)، والفروق، وملاحظة الترجمة.</li>
-        <li>عند العرض تُحذف علامات التنصيص غير المتزاوجة فقط، والبيانات لا تُمس.</li>
+        <li>لوحة «قيم مشتركة مع المسيحية» بلون أزرق هادئ، فيها الملخص و«أين نختلف — باحترام» فقط.</li>
         <li>كل قسم يُخفى إن غاب حقله.</li>
       </ul></li>
     <li><b>شاشة النهاية:</b>
@@ -502,7 +476,6 @@ module.exports = function build(pages = {}) {
     <li><b>جملة الاستغفار</b> في <code>neighbor_funeral</code> («خاص بمن مات مسلماً»): دقيقة ومهذبة، ويُستحسن أن يقرأها مراجع مسيحي.</li>
     <li><b>حِكَم صيغت بلغة «يذكر العلماء»</b> دون مرجع محدد: في الربا (mortgage)، والغش (cheating)، وإعانة الضرر (alcohol_pork_job). وللعالم المراجع أن يقرّها أو يضيف مرجعاً.</li>
     <li><b>عبارة «المسلمون يحبون عيسى ويجلّونه نبياً»</b> (holiday_greetings): صحيحة ومحل اتفاق، ويُقترح ذكر مريم 30 والمائدة 75 بالرقم.</li>
-    <li><b>الآيات ضعيفة الصلة الأربع</b>: أُبقيت مع تصريح في الملخص، ومنها أمثال 13: 11 («لا نص يسمّي اليانصيب»).</li>
   </ul>
   <h3>قائمة المراجع البشري مرتبة بالأولوية (من تدقيق المرحلة الأولى)</h3>
   <table class="compact"><thead><tr><th class="c">#</th><th style="width:26%">الحكم</th><th>ما يحتاج قراراً من عالم</th></tr></thead><tbody>
