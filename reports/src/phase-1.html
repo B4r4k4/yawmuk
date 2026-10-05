@@ -126,6 +126,9 @@ figcaption{ font-size:8.6pt; color:var(--muted); margin-top:1.2mm; text-align:ce
 .sit ul{ list-style:none; padding:0; margin:0; }
 .sit li{ font-size:9.2pt; margin:.8mm 0; display:flex; gap:2mm; align-items:baseline; }
 .sit li .pill{ flex:none; }
+.figs-m{ display:grid; grid-template-columns:repeat(3,1fr); gap:3mm; }
+.figs-m figure{ margin:0; } .figs-m img{ max-height:118mm; object-fit:cover; object-position:top; }
+.ok{ color:var(--green); font-weight:800; } .wait{ color:#a06a00; font-weight:800; }
 .footnote{ font-size:8.4pt; color:var(--muted); }
 .end{ margin-top:8mm; text-align:center; color:var(--muted); font-size:9pt; }
 </style></head><body><section class="cover"><svg class="pattern" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="p" width="28" height="28" patternUnits="userSpaceOnUse">
@@ -353,7 +356,7 @@ figcaption{ font-size:8.6pt; color:var(--muted); margin-top:1.2mm; text-align:ce
   <div class="callout"><h4>بند مفتوح</h4><p>ما زال حكم <code>work.alcohol_pork_job</code> مسودة. والبطاقة لا تعالج صراحة حكم <b>تقديم الخنزير</b> لغير المسلم وأجرته. وهذا أول بند في قائمة المراجع البشري.</p></div>
   </section><section><h2 id="s10" class="newpage">١٠. محرك اللعبة<span class="mk">QQs10QQ</span></h2>
   <p class="muted small">مصادر هذا القسم: تقرير وكيل المحرك <code>docs/phase-1/engine.md</code>، ودليل وكلاء المشاهد <code>src/engine/README.md</code>، والشيفرة نفسها، وتشغيل فعلي للعبة في Chrome بلا واجهة أجراه وكيل التوثيق.</p>
-  <p>المحرك مبني على <b>Three.js r170</b> وأداة البناء <b>Vite 6</b>، ويتكون من 18 ملف JavaScript (نحو 2,348 سطر دون بيانات الاختبار). كل الهندسة إجرائية، ولا يستعمل أي ملفات خارجية. وهو مسؤول عن كل ما بين ملفات المحتوى والمشاهد: يحمّل الأحكام والسيناريو، ويبني المشهد ويتحقق منه، ويدير حركة آدم والكاميرا، ويعرض المواقف وبطاقات الحكم، ويحفظ التقدم.</p>
+  <p>المحرك مبني على <b>Three.js r170</b> وأداة البناء <b>Vite 6</b>، ويتكون من 18 ملف JavaScript (نحو 2,351 سطر دون بيانات الاختبار). كل الهندسة إجرائية، ولا يستعمل أي ملفات خارجية. وهو مسؤول عن كل ما بين ملفات المحتوى والمشاهد: يحمّل الأحكام والسيناريو، ويبني المشهد ويتحقق منه، ويدير حركة آدم والكاميرا، ويعرض المواقف وبطاقات الحكم، ويحفظ التقدم.</p>
   <div class="kpis">
     <div class="kpi"><div class="v">6/6</div><div class="l">مشاهد حقيقية تُلعب من البداية إلى النهاية بحسب تقرير المحرك</div></div>
     <div class="kpi"><div class="v">0</div><div class="l">أخطاء في وحدة التحكم عند تحميل المشاهد الست في Chrome بلا واجهة</div></div>

@@ -164,6 +164,9 @@ figcaption{ font-size:8.6pt; color:var(--muted); margin-top:1.2mm; text-align:ce
 .sit ul{ list-style:none; padding:0; margin:0; }
 .sit li{ font-size:9.2pt; margin:.8mm 0; display:flex; gap:2mm; align-items:baseline; }
 .sit li .pill{ flex:none; }
+.figs-m{ display:grid; grid-template-columns:repeat(3,1fr); gap:3mm; }
+.figs-m figure{ margin:0; } .figs-m img{ max-height:118mm; object-fit:cover; object-position:top; }
+.ok{ color:var(--green); font-weight:800; } .wait{ color:#a06a00; font-weight:800; }
 .footnote{ font-size:8.4pt; color:var(--muted); }
 .end{ margin-top:8mm; text-align:center; color:var(--muted); font-size:9pt; }
 `;
@@ -178,7 +181,7 @@ function cover({ phase, title, subtitle, desc }) {
   <div class="kicker">تقرير المرحلة — ${title}</div>
   <div class="title">يومك</div>
   <div class="en">Yawmuk — a 3D web game on the fiqh of everyday dealings</div>
-  <div class="phase"><div class="num">${phase}</div><div class="lbl">المرحلة ${phase === 1 ? 'الأولى' : 'الثانية'}: ${title}<small>${subtitle}</small></div></div>
+  <div class="phase"><div class="num">${phase}</div><div class="lbl">المرحلة ${['', 'الأولى', 'الثانية', 'الثالثة'][phase]}: ${title}<small>${subtitle}</small></div></div>
   <div class="desc">${desc}</div>
   <div class="warn">الأحكام الشرعية في هذا المشروع مسودة أعدّها ذكاء اصطناعي ودُقّقت آلياً، ولا تُعتمد قبل مراجعة عالم شرعي بشري.</div>
   <div class="foot"><div><b>فريق Lemonada</b>إعداد: وكيل التوثيق</div><div style="text-align:left"><b>2026-10-05</b>الإصدار 1.0</div></div>

@@ -4,6 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const puppeteer = require('puppeteer-core');
 const pdfjs = require('pdfjs-dist/legacy/build/pdf.js');
+const { PDFDocument } = require('pdf-lib');
 
 const CHROME = process.env.CHROME || 'C:/Program Files/Google/Chrome/Application/chrome.exe';
 const OUT = path.resolve(__dirname, '..');
@@ -32,18 +33,25 @@ async function pdf(browser, html, htmlFile, pdfFile, footer) {
     footerTemplate: `<div style="width:100%;font-family:Tahoma,Arial;font-size:8px;color:#7a8586;padding:0 15mm;display:flex;justify-content:space-between;direction:rtl">
       <span>يومك · ${footer} · فريق Lemonada</span><span style="direction:ltr"><span class="pageNumber"></span> / <span class="totalPages"></span></span></div>`
   });
+  // Cover without footer: print page 1 alone with no header/footer and swap it in (removes the faint page number).
+  const coverBuf = await page.pdf({ format: 'A4', printBackground: true, preferCSSPageSize: true, displayHeaderFooter: false, pageRanges: '1' });
   await page.close();
+  const full = await PDFDocument.load(fs.readFileSync(pdfFile));
+  const cov = await PDFDocument.load(coverBuf);
+  const [cp] = await full.copyPages(cov, [0]);
+  full.removePage(0); full.insertPage(0, cp);
+  fs.writeFileSync(pdfFile, await full.save());
   return { fonts, brokenImages: imgs };
 }
 
 (async () => {
-  const which = process.argv[2] ? [process.argv[2]] : ['1', '2'];
+  const which = process.argv[2] ? [process.argv[2]] : ['1', '2', '3'];
   const browser = await puppeteer.launch({ executablePath: CHROME, headless: 'new', args: ['--allow-file-access-from-files'] });
   for (const n of which) {
     const build = require(`./phase${n}.cjs`);
     const htmlFile = path.join(__dirname, `phase-${n}.html`);
     const pdfFile = path.join(OUT, `phase-${n}.pdf`);
-    const footer = n === '1' ? 'تقرير المرحلة 1 — الأساس' : 'تقرير المرحلة 2 — المشاهد';
+    const footer = { '1': 'تقرير المرحلة 1 — الأساس', '2': 'تقرير المرحلة 2 — المشاهد', '3': 'تقرير المرحلة 3 — التكامل والجودة' }[n];
     let first = build({});
     await pdf(browser, first.html, htmlFile, pdfFile, footer);
     let { map } = await markerPages(pdfFile);
