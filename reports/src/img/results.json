@@ -1,4 +1,9 @@
 {
+ "_meta": {
+  "date": "2026-10-05 21:06 UTC",
+  "build": "52 وحدة، built in 3.31s، على الإيداع 72c1acf",
+  "base": "http://127.0.0.1:5199/"
+ },
  "home": {
   "ok": true,
   "location": "home",
@@ -8,13 +13,23 @@
    "fridge",
    "mail_table"
   ],
-  "colliders": 32,
+  "npcs": [
+   "omar",
+   "carol",
+   "ben",
+   "bg_sarah"
+  ],
+  "colliders": 34,
   "stats": {
-   "meshes": 89,
-   "tris": 15834
+   "meshes": 107,
+   "tris": 16204
   },
+  "trisExpanded": 16204,
+  "meshesTraversed": 107,
+  "pointLights": 3,
   "issues": 0,
   "shot2": "laptop",
+  "shot3": "mail_table",
   "errors": []
  },
  "work": {
@@ -26,13 +41,25 @@
    "adam_desk",
    "hr_desk"
   ],
-  "colliders": 42,
+  "npcs": [
+   "samir",
+   "bg_jake",
+   "bg_mike",
+   "linda",
+   "bg_coworker1",
+   "bg_coworker2"
+  ],
+  "colliders": 43,
   "stats": {
-   "meshes": 113,
-   "tris": 4786
+   "meshes": 132,
+   "tris": 5772
   },
+  "trisExpanded": 15082,
+  "meshesTraversed": 132,
+  "pointLights": 0,
   "issues": 0,
   "shot2": "coffee_machine",
+  "shot3": "hr_desk",
   "errors": []
  },
  "school": {
@@ -44,13 +71,26 @@
    "aid_office",
    "study_room"
   ],
-  "colliders": 64,
+  "npcs": [
+   "kareem",
+   "omar",
+   "noor",
+   "bg_tyler",
+   "bg_rosa",
+   "bg_student_curly",
+   "bg_worker"
+  ],
+  "colliders": 63,
   "stats": {
-   "meshes": 202,
-   "tris": 7920
+   "meshes": 212,
+   "tris": 8284
   },
+  "trisExpanded": 18078,
+  "meshesTraversed": 212,
+  "pointLights": 3,
   "issues": 0,
   "shot2": "exam_desk",
+  "shot3": "study_room",
   "errors": []
  },
  "street": {
@@ -62,13 +102,23 @@
    "gas_station_counter",
    "ebike"
   ],
-  "colliders": 46,
+  "npcs": [
+   "omar",
+   "tariq",
+   "yusuf",
+   "bg_officer_daniels"
+  ],
+  "colliders": 45,
   "stats": {
-   "meshes": 124,
-   "tris": 10278
+   "meshes": 112,
+   "tris": 9628
   },
+  "trisExpanded": 11484,
+  "meshesTraversed": 112,
+  "pointLights": 3,
   "issues": 0,
   "shot2": "bus_bench",
+  "shot3": "ebike",
   "errors": []
  },
  "public_events": {
@@ -80,13 +130,32 @@
    "dinner_table",
    "raffle_booth"
   ],
-  "colliders": 70,
+  "npcs": [
+   "samir",
+   "rania",
+   "bg_dave",
+   "bg_jake",
+   "bg_linda",
+   "bg_emily",
+   "bg_sarah",
+   "bg_priya",
+   "bg_tom",
+   "bg_amina",
+   "bg_marcus",
+   "bg_grace",
+   "bg_kenji"
+  ],
+  "colliders": 72,
   "stats": {
-   "meshes": 253,
-   "tris": 12118
+   "meshes": 120,
+   "tris": 15184
   },
+  "trisExpanded": 44842,
+  "meshesTraversed": 120,
+  "pointLights": 3,
   "issues": 0,
   "shot2": "gift_table",
+  "shot3": "raffle_booth",
   "errors": []
  },
  "private_events": {
@@ -98,13 +167,31 @@
    "garcia_yard",
    "wedding_hall"
   ],
-  "colliders": 70,
+  "npcs": [
+   "omar",
+   "bg_hodan",
+   "bg_margaret",
+   "maria",
+   "yusuf",
+   "bg_mariam",
+   "bg_imam_hamza",
+   "bg_jake",
+   "bg_emily",
+   "bg_carol",
+   "bg_idris",
+   "bg_leo"
+  ],
+  "colliders": 72,
   "stats": {
-   "meshes": 201,
-   "tris": 10666
+   "meshes": 236,
+   "tris": 12200
   },
+  "trisExpanded": 37440,
+  "meshesTraversed": 236,
+  "pointLights": 2,
   "issues": 0,
   "shot2": "harris_porch",
+  "shot3": "wedding_hall",
   "errors": []
  }
 }

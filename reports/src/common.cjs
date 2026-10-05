@@ -101,6 +101,11 @@ a{ color:inherit; text-decoration:none; }
 .callout{ border:1px solid var(--line); border-right:5px solid var(--gold); background:var(--gold-l); padding:3.5mm 4.5mm; border-radius:2mm; margin:3mm 0 4mm; break-inside:avoid; }
 .callout.teal{ background:var(--teal-l); border-right-color:var(--teal); }
 .callout.red{ background:#fbecea; border-right-color:var(--red); }
+.callout.pivot{ background:#eaf1fb; border-right-color:#3b6ea8; }
+.callout.pivot h4{ color:#1f4e86; }
+.bible{ font-family:'Amiri',serif; font-size:14pt; line-height:2; background:#f1f5fb; border:1px solid #d3e0f0; border-right:4px solid #3b6ea8; border-radius:2mm; padding:3mm 4.5mm 2mm; margin:2mm 0 1mm; break-inside:avoid; }
+.bible .ref{ display:block; font-family:'Tajawal'; font-size:8.6pt; color:var(--muted); line-height:1.6; }
+.bible .ref .en{ display:block; direction:ltr; text-align:left; font-style:italic; }
 .callout h4{ margin-top:0; }
 .callout p:last-child{ margin-bottom:0; }
 .kpis{ display:grid; grid-template-columns:repeat(4,1fr); gap:3mm; margin:3mm 0 5mm; }
@@ -180,16 +185,29 @@ function cover({ phase, title, subtitle, desc }) {
   <div class="org"><span>تحدي الذكاء الاصطناعي في خدمة المحتوى الإسلامي</span><span class="lm">Lemonada</span></div>
   <div class="kicker">تقرير المرحلة — ${title}</div>
   <div class="title">يومك</div>
-  <div class="en">Yawmuk — a 3D web game on the fiqh of everyday dealings</div>
+  <div class="en">Yawmuk — getting to know Islam through everyday life in the USA</div>
   <div class="phase"><div class="num">${phase}</div><div class="lbl">المرحلة ${['', 'الأولى', 'الثانية', 'الثالثة'][phase]}: ${title}<small>${subtitle}</small></div></div>
   <div class="desc">${desc}</div>
   <div class="warn">الأحكام الشرعية في هذا المشروع مسودة أعدّها ذكاء اصطناعي ودُقّقت آلياً، ولا تُعتمد قبل مراجعة عالم شرعي بشري.</div>
-  <div class="foot"><div><b>فريق Lemonada</b>إعداد: وكيل التوثيق</div><div style="text-align:left"><b>2026-10-05</b>الإصدار 1.0</div></div>
+  <div class="foot"><div><b>فريق Lemonada</b>إعداد: وكيل التوثيق</div><div style="text-align:left"><b>2026-10-05</b>الإصدار 2.0 (بعد تغيير الاتجاه)</div></div>
   </div></section>`;
+}
+
+// "Change of direction" box shown in every report.
+function pivotBox(extra = '') {
+  return `<div class="callout pivot"><h4>تغيير الاتجاه · Change of direction (2026-10-05)</h4>
+  <p>بُنيت النسخة الأولى من المراحل الثلاث على فكرة «آدم المسلم» الذي يطبّق فقه المعاملات في يومه. وفي 2026-10-05، <b>بقرار صاحب المشروع</b>، صار <b>آدم ريد مسيحياً</b> يتعرّف على الإسلام من خلال جيرانه وزملائه وأصدقائه المسلمين، ومرشده الأول جاره عمر. وما تغيّر:</p>
+  <ul>
+    <li>أُعيدت كتابة القصة والسيناريو.</li>
+    <li>أُضيف إلى كل حكم حقلان: <code>newcomer_explainer</code> («ببساطة») و<code>common_ground</code> (القيم المشتركة مع المسيحية، بآيات من KJV وفاندايك متحقق منها حرفياً).</li>
+    <li>عُدّلت المشاهد الست وواجهة المحرك.</li>
+    <li>أُجري تدقيق خاص بالتحول (<code>docs/audit/pivot_audit.md</code>) وإعادة اختبار كاملة.</li>
+  </ul>
+  <p>وما ثبت ولم يتغير: المعرّفات الـ18، والأماكن، ونقاط التفاعل، ونظام النقاط، ونص الأحكام وأدلتها. المرجع: قسم «تحديث 2026-10-05» في <code>docs/TEAM_BRIEF.md</code>.${extra}</p></div>`;
 }
 
 function page(title, body) {
   return `<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><title>${title}</title><style>${CSS}</style></head><body>${body}</body></html>`;
 }
 
-module.exports = { ROOT, LOCS, readJSON, esc, code, VERDICT, CONF, STATUS, QUALITY, LOC_AR, verdictPill, qualityPill, statusPill, makeToc, cover, page };
+module.exports = { pivotBox, ROOT, LOCS, readJSON, esc, code, VERDICT, CONF, STATUS, QUALITY, LOC_AR, verdictPill, qualityPill, statusPill, makeToc, cover, page };

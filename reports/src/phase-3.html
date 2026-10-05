@@ -63,6 +63,11 @@ a{ color:inherit; text-decoration:none; }
 .callout{ border:1px solid var(--line); border-right:5px solid var(--gold); background:var(--gold-l); padding:3.5mm 4.5mm; border-radius:2mm; margin:3mm 0 4mm; break-inside:avoid; }
 .callout.teal{ background:var(--teal-l); border-right-color:var(--teal); }
 .callout.red{ background:#fbecea; border-right-color:var(--red); }
+.callout.pivot{ background:#eaf1fb; border-right-color:#3b6ea8; }
+.callout.pivot h4{ color:#1f4e86; }
+.bible{ font-family:'Amiri',serif; font-size:14pt; line-height:2; background:#f1f5fb; border:1px solid #d3e0f0; border-right:4px solid #3b6ea8; border-radius:2mm; padding:3mm 4.5mm 2mm; margin:2mm 0 1mm; break-inside:avoid; }
+.bible .ref{ display:block; font-family:'Tajawal'; font-size:8.6pt; color:var(--muted); line-height:1.6; }
+.bible .ref .en{ display:block; direction:ltr; text-align:left; font-style:italic; }
 .callout h4{ margin-top:0; }
 .callout p:last-child{ margin-bottom:0; }
 .kpis{ display:grid; grid-template-columns:repeat(4,1fr); gap:3mm; margin:3mm 0 5mm; }
@@ -136,231 +141,311 @@ figcaption{ font-size:8.6pt; color:var(--muted); margin-top:1.2mm; text-align:ce
   <div class="org"><span>تحدي الذكاء الاصطناعي في خدمة المحتوى الإسلامي</span><span class="lm">Lemonada</span></div>
   <div class="kicker">تقرير المرحلة — التكامل والجودة</div>
   <div class="title">يومك</div>
-  <div class="en">Yawmuk — a 3D web game on the fiqh of everyday dealings</div>
+  <div class="en">Yawmuk — getting to know Islam through everyday life in the USA</div>
   <div class="phase"><div class="num">3</div><div class="lbl">المرحلة الثالثة: التكامل والجودة<small>الاختبارات · الإصلاحات · المستودع · الجاهزية للنشر</small></div></div>
-  <div class="desc">يوثّق هذا التقرير المرحلة الثالثة والأخيرة. تشمل دمج المحتوى والمحرك والمشاهد في لعبة واحدة تُلعب من البداية إلى النهاية، ومصفوفة الاختبارات، واختبارات السلامة مقابل متطلبات وثيقة التحدي، والأخطاء التي أُصلحت، والأداء، والمستودع، والجاهزية للنشر، والقضايا المفتوحة. ويختم بخلاصة المراحل الثلاث وقائمة التسليم.</div>
+  <div class="desc">يوثّق هذا التقرير المرحلة الثالثة كما هي الآن بعد تغيير الاتجاه. يشمل دمج المحتوى والمحرك والمشاهد في لعبة واحدة، وإعادة الاختبار الكاملة بعد التحول، واختبارات السلامة والخصوصية مقابل وثيقة التحدي، والأخطاء التي أُصلحت، والأداء، والمستودع، والجاهزية للنشر، والقضايا المفتوحة. ويختم بخلاصة المراحل الثلاث وقائمة التسليم.</div>
   <div class="warn">الأحكام الشرعية في هذا المشروع مسودة أعدّها ذكاء اصطناعي ودُقّقت آلياً، ولا تُعتمد قبل مراجعة عالم شرعي بشري.</div>
-  <div class="foot"><div><b>فريق Lemonada</b>إعداد: وكيل التوثيق</div><div style="text-align:left"><b>2026-10-05</b>الإصدار 1.0</div></div>
-  </div></section><nav class="toc"><h2 class="toc-title">المحتويات</h2><ol><li class="l2"><a href="#s1"><span class="t">١. ملخص تنفيذي</span><span class="dots"></span><span class="pg">3</span></a></li><li class="l2"><a href="#s2"><span class="t">٢. هدف المرحلة والتكامل</span><span class="dots"></span><span class="pg">4</span></a></li><li class="l2"><a href="#s3"><span class="t">٣. مصفوفة الاختبارات</span><span class="dots"></span><span class="pg">6</span></a></li><li class="l2"><a href="#s4"><span class="t">٤. اختبارات السلامة مقابل متطلبات وثيقة التحدي</span><span class="dots"></span><span class="pg">9</span></a></li><li class="l2"><a href="#s5"><span class="t">٥. الأخطاء التي أُصلحت</span><span class="dots"></span><span class="pg">11</span></a></li><li class="l2"><a href="#s6"><span class="t">٦. الأداء</span><span class="dots"></span><span class="pg">13</span></a></li><li class="l2"><a href="#s7"><span class="t">٧. المستودع وطريقة التشغيل</span><span class="dots"></span><span class="pg">14</span></a></li><li class="l2"><a href="#s8"><span class="t">٨. الجاهزية للنشر</span><span class="dots"></span><span class="pg">15</span></a></li><li class="l2"><a href="#s9"><span class="t">٩. القضايا المفتوحة</span><span class="dots"></span><span class="pg">16</span></a></li><li class="l2"><a href="#s10"><span class="t">١٠. خارطة الطريق</span><span class="dots"></span><span class="pg">16</span></a></li><li class="l2"><a href="#s11"><span class="t">١١. خلاصة المراحل الثلاث وقائمة التسليم</span><span class="dots"></span><span class="pg">18</span></a></li></ol></nav><section><h2 id="s1">١. ملخص تنفيذي<span class="mk">QQs1QQ</span></h2>
-  <p class="lead">بعد المرحلة الثالثة صارت «يومك» <b>لعبة ويب متكاملة</b> تُلعب من البداية إلى النهاية، بالعربية والإنجليزية، على الحاسوب والهاتف. تضم 6 محطات و18 موقفاً و18 بطاقة حكم. وتحميها مجموعة اختبارات آلية تراقب صحة المحتوى وسلامته، ومسار لعب كامل في متصفح بلا واجهة.</p>
+  <div class="foot"><div><b>فريق Lemonada</b>إعداد: وكيل التوثيق</div><div style="text-align:left"><b>2026-10-05</b>الإصدار 2.0 (بعد تغيير الاتجاه)</div></div>
+  </div></section><nav class="toc"><h2 class="toc-title">المحتويات</h2><ol><li class="l2"><a href="#s1"><span class="t">١. ملخص تنفيذي</span><span class="dots"></span><span class="pg">3</span></a></li><li class="l2"><a href="#s2"><span class="t">٢. هدف المرحلة والتكامل</span><span class="dots"></span><span class="pg">5</span></a></li><li class="l2"><a href="#s3"><span class="t">٣. إعادة الاختبار بعد التحول</span><span class="dots"></span><span class="pg">7</span></a></li><li class="l2"><a href="#s4"><span class="t">٤. اختبارات السلامة مقابل متطلبات وثيقة التحدي</span><span class="dots"></span><span class="pg">9</span></a></li><li class="l2"><a href="#s5"><span class="t">٥. الأخطاء التي أُصلحت</span><span class="dots"></span><span class="pg">11</span></a></li><li class="l2"><a href="#s6"><span class="t">٦. الأداء</span><span class="dots"></span><span class="pg">13</span></a></li><li class="l2"><a href="#s7"><span class="t">٧. المستودع وطريقة التشغيل</span><span class="dots"></span><span class="pg">15</span></a></li><li class="l2"><a href="#s8"><span class="t">٨. الجاهزية للنشر</span><span class="dots"></span><span class="pg">16</span></a></li><li class="l2"><a href="#s9"><span class="t">٩. القضايا المفتوحة</span><span class="dots"></span><span class="pg">17</span></a></li><li class="l2"><a href="#s10"><span class="t">١٠. خارطة الطريق</span><span class="dots"></span><span class="pg">17</span></a></li><li class="l2"><a href="#s11"><span class="t">١١. خلاصة المراحل الثلاث وقائمة التسليم</span><span class="dots"></span><span class="pg">19</span></a></li></ol></nav><section><h2 id="s1">١. ملخص تنفيذي<span class="mk">QQs1QQ</span></h2>
+  <p class="lead">بعد المرحلة الثالثة صارت «يومك» <b>لعبة ويب متكاملة</b> للتعرّف على الإسلام من خلال الحياة اليومية. تُلعب من البداية إلى النهاية بالعربية والإنجليزية على الحاسوب والهاتف، وفيها 6 محطات و18 موقفاً و18 بطاقة حكم، ولكل بطاقة قسما «ببساطة» و«قيم مشتركة مع المسيحية». وبعد تغيير الاتجاه أُعيد الاختبار كله على النسخة الجديدة.</p>
+  <div class="callout pivot"><h4>تغيير الاتجاه · Change of direction (2026-10-05)</h4>
+  <p>بُنيت النسخة الأولى من المراحل الثلاث على فكرة «آدم المسلم» الذي يطبّق فقه المعاملات في يومه. وفي 2026-10-05، <b>بقرار صاحب المشروع</b>، صار <b>آدم ريد مسيحياً</b> يتعرّف على الإسلام من خلال جيرانه وزملائه وأصدقائه المسلمين، ومرشده الأول جاره عمر. وما تغيّر:</p>
+  <ul>
+    <li>أُعيدت كتابة القصة والسيناريو.</li>
+    <li>أُضيف إلى كل حكم حقلان: <code>newcomer_explainer</code> («ببساطة») و<code>common_ground</code> (القيم المشتركة مع المسيحية، بآيات من KJV وفاندايك متحقق منها حرفياً).</li>
+    <li>عُدّلت المشاهد الست وواجهة المحرك.</li>
+    <li>أُجري تدقيق خاص بالتحول (<code>docs/audit/pivot_audit.md</code>) وإعادة اختبار كاملة.</li>
+  </ul>
+  <p>وما ثبت ولم يتغير: المعرّفات الـ18، والأماكن، ونقاط التفاعل، ونظام النقاط، ونص الأحكام وأدلتها. المرجع: قسم «تحديث 2026-10-05» في <code>docs/TEAM_BRIEF.md</code>.</p></div>
   <div class="kpis">
-    <div class="kpi"><div class="v">177<small>/177</small></div><div class="l">اختباراً ناجحاً في <code>npm test</code>، و0 متجاوز. أعدتُ تشغيلها بنفسي: 177 ناجحة و0 فاشلة</div></div>
+    <div class="kpi"><div class="v">197<small>/197</small></div><div class="l">اختباراً ناجحاً في <code>npm test</code> بعد التحول، و0 متجاوز. أعدتُ تشغيلها بعد آخر إيداع: 197 ناجحة و0 فاشلة</div></div>
     <div class="kpi"><div class="v">4<small>/4</small></div><div class="l">إعدادات e2e ناجحة: حاسوب وهاتف، عربي وإنجليزي، كل منها يمر بالمواقف الـ18</div></div>
-    <div class="kpi"><div class="v">90</div><div class="l">عرضاً لبطاقة الحكم طوبق مع ملف JSON</div></div>
-    <div class="kpi"><div class="v">0</div><div class="l">أخطاء في وحدة التحكم والصفحة، وطلبات فاشلة، في الإعدادات الأربعة</div></div>
-    <div class="kpi"><div class="v">11</div><div class="l">خطأً أُصلح في الواجهة والمشاهد</div></div>
-    <div class="kpi"><div class="v">≤ 57.8k</div><div class="l">مثلث في أثقل مشهد، والحد 60 ألفاً</div></div>
-    <div class="kpi"><div class="v">≈ 365 kB</div><div class="l">حجم التحميل الأول مضغوطاً (gzip)، دون خطوط Google</div></div>
+    <div class="kpi"><div class="v">90</div><div class="l">عرضاً لبطاقة الحكم طوبق مع JSON، ومعه القسمان الجديدان</div></div>
+    <div class="kpi"><div class="v">0</div><div class="l">بيانات عن المعتقد: لا مفاتيح ولا قيم في التخزين، ولا طلبات لطرف ثالث سوى الخطوط</div></div>
+    <div class="kpi"><div class="v">34/34</div><div class="l">آية كتابية مطابقة حرفياً في KJV وفي فاندايك، و281 فحصاً آلياً بلا فشل</div></div>
+    <div class="kpi"><div class="v">3/3</div><div class="l">تشغيلات متتالية لإعدادي الهاتف دون أي إخفاق، منها 36 من 36 ضغطة على تبويبات المذاهب</div></div>
+    <div class="kpi"><div class="v">≤ 44.8k</div><div class="l">مثلث في أثقل مشهد بعد التخفيف، والحد 60 ألفاً، وكل المشاهد ضمن الميزانية</div></div>
     <div class="kpi"><div class="v">0</div><div class="l">أحكام راجعها عالم بشري حتى الآن: البند المفتوح الأهم</div></div>
   </div>
-  <div class="callout red"><h4>تنبيه أساسي</h4><p>نجاح الاختبارات يثبت أن النصوص الشرعية منقولة حرفياً ومنسوبة إلى مصادرها، وأن الواجهة تعرضها دون تحريف. لكنه <b>لا يثبت صحة الأحكام</b>. الأحكام الثمانية عشر ما زالت <b>مسودة ذكاء اصطناعي مدققة آلياً</b>، وأربعة منها <code>ai_draft</code>، ولم يراجعها عالم بشري بعد. واللعبة تعرض ذلك للاعب صراحة: «بانتظار مراجعة عالم».</p></div>
-  <p class="footnote">المصادر: <code dir="ltr">docs/phase-3/qa_report.md</code> <code dir="ltr">docs/phase-3/e2e_results.json</code> <code dir="ltr">README.md</code> <code dir="ltr">docs/SOURCES.md</code> <code dir="ltr">tests/</code> <code dir="ltr">package.json</code>، وسجل git، وتشغيل وكيل التوثيق لـ<code>npm test</code> في 2026-10-05.</p>
+  <div class="callout red"><h4>تنبيه أساسي</h4><p>نجاح الاختبارات يثبت أمرين: أن النصوص الشرعية والكتابية منقولة حرفياً ومنسوبة إلى مصادرها، وأن الواجهة تعرضها دون تحريف. لكنه <b>لا يثبت صحة الأحكام</b>، ولا دقة ما يُقال عن المسيحية. فالأحكام الثمانية عشر <b>مسودة ذكاء اصطناعي مدققة آلياً</b>، وأربعة منها <code>ai_draft</code>، ولم يراجعها عالم بشري بعد. واللعبة تعرض ذلك للاعب صراحة: «بانتظار مراجعة عالم».</p></div>
+  <p class="footnote">المصادر: <code dir="ltr">docs/phase-3/qa_report.md</code> <code dir="ltr">docs/phase-3/e2e_results.json</code> <code dir="ltr">README.md</code> <code dir="ltr">docs/SOURCES.md</code> <code dir="ltr">tests/</code> <code dir="ltr">package.json</code>، وسجل git، وتشغيل وكيل التوثيق لـ<code>npm test</code> والبناء واللقطات بعد الإيداع <code>72c1acf</code>.</p>
   </section><section><h2 id="s2" class="newpage">٢. هدف المرحلة والتكامل<span class="mk">QQs2QQ</span></h2>
-  <p>الهدف أن يتحول ما بُني في المرحلتين السابقتين إلى <b>نسخة مستقرة قابلة للتسليم</b>. والمقصود بالمرحلتين المحتوى والمحرك في الأولى، والمشاهد في الثانية. ويتحقق ذلك بخمسة أمور:</p>
-  <ol>
-    <li>أن تعمل الأجزاء معاً بلا أخطاء.</li>
-    <li>أن تحرس الاختبارات مبادئ وثيقة التحدي آلياً.</li>
-    <li>أن تُصلح الأخطاء المكتشفة.</li>
-    <li>أن يُجهَّز المستودع والتوثيق.</li>
-    <li>أن تصبح اللعبة جاهزة للنشر على أي استضافة ثابتة.</li>
-  </ol>
+  <p>الهدف أن يتحول ما بُني في المرحلتين السابقتين إلى <b>نسخة مستقرة قابلة للتسليم</b>. وحين تغيّرت الفكرة في آخر المرحلة، صار الهدف أيضاً التأكد من أن النسخة الجديدة سليمة بالدرجة نفسها.</p>
   <h3>ما الذي دُمج</h3>
-  <table class="compact"><thead><tr><th style="width:28%">الجزء</th><th>حالته بعد التكامل</th></tr></thead><tbody>
-    <tr><td>المحتوى (<code dir="ltr">content/rulings</code>، <code dir="ltr">content/script</code>)</td><td>18 حكماً و18 موقفاً، تُحمّل وقت البناء. ولم يُغيَّر أي ملف سيناريو أو حكم في هذه المرحلة.</td></tr>
-    <tr><td>المحرك (<code dir="ltr">src/engine</code>)</td><td>يمر التدفق كاملاً: البداية، ثم المقدمة والتنبيهات، ثم المحطات الست، ثم الملخص. ويُحفظ التقدم، ويمكن الاستئناف بعد إعادة التحميل.</td></tr>
-    <tr><td>المشاهد الست (<code dir="ltr">src/scenes</code>)</td><td>كلها حقيقية، ولا مشهد بديلاً. ولا نقطة تفاعل توضع آلياً، و0 تحذيرات من المشاهد أو المحتوى.</td></tr>
-    <tr><td>الاختبارات (<code dir="ltr">tests/</code>)</td><td><code dir="ltr">content.test.mjs</code>، <code dir="ltr">safety.test.mjs</code>، <code dir="ltr">audit.test.mjs</code>، ومعها أدوات مساعدة (<code dir="ltr">helpers/</code>)، ومسار لعب كامل (<code dir="ltr">e2e/playthrough.mjs</code>).</td></tr>
-    <tr><td>الأدوات</td><td><code dir="ltr">tools/serve.mjs</code>: خادم ثابت بلا اعتماديات لتشغيل <code>dist/</code>. و<code dir="ltr">tools/audit/sources_md.mjs</code>: يولّد <code dir="ltr">docs/SOURCES.md</code>.</td></tr>
-    <tr><td>التوثيق والمستودع</td><td><code dir="ltr">README.md</code> ثنائي اللغة، و<code dir="ltr">.gitignore</code>، وأوامر جديدة في <code dir="ltr">package.json</code>. ومستودع git فيه الإيداع الأول.</td></tr>
+  <table class="compact"><thead><tr><th style="width:28%">الجزء</th><th>حالته بعد التكامل والتحول</th></tr></thead><tbody>
+    <tr><td>المحتوى (<code dir="ltr">content/rulings</code>، <code dir="ltr">content/script</code>)</td><td>18 حكماً، في كل منها <code>newcomer_explainer</code> و<code>common_ground</code>، و18 موقفاً بالسيناريو الجديد. ولم يغيّر وكيل الجودة أي ملف محتوى.</td></tr>
+    <tr><td>المحرك (<code dir="ltr">src/engine</code>)</td><td>يعرض قسمي «ببساطة» و«قيم مشتركة»، وشاشة النهاية الجديدة، و<code>stations</code> و<code>playerLook</code>. وفيه ملخص «تقدّمك حتى الآن» قبل اكتمال الأسبوع (الإيداع <code>3017f28</code>).</td></tr>
+    <tr><td>المشاهد الست (<code dir="ltr">src/scenes</code>)</td><td>حُدّثت كلها للفكرة الجديدة، وكلها حقيقية بلا بديل، ولا نقطة تفاعل توضع آلياً. وخُففت المناسبات العامة (الإيداع <code>72c1acf</code>).</td></tr>
+    <tr><td>الاختبارات (<code dir="ltr">tests/</code>)</td><td><code dir="ltr">content.test.mjs</code>، <code dir="ltr">safety.test.mjs</code>، <code dir="ltr">audit.test.mjs</code>، ومعها أدوات مساعدة، ومسار لعب كامل (<code dir="ltr">e2e/playthrough.mjs</code>). وأُضيف 18 اختباراً لعقد التحول، واختبار لروابط README.</td></tr>
+    <tr><td>الأدوات</td><td><code dir="ltr">tools/serve.mjs</code>: خادم ثابت. و<code dir="ltr">tools/audit/verify.mjs</code>: صار يفحص الكتاب المقدس والاقتباسات. و<code dir="ltr">sources_md.mjs</code>: يولّد سجل المصادر.</td></tr>
+    <tr><td>التوثيق والمستودع</td><td><code dir="ltr">README.md</code> أُعيدت كتابته للفكرة الجديدة. ومستودع git فيه 5 إيداعات.</td></tr>
   </tbody></table>
-  <h3>اللعبة بعد التكامل</h3>
+  <h3>اللعبة الآن</h3>
   <div class="figs2">
-    <figure><img src="img/p3/dar-home.jpg"><figcaption>مشهد البيت بالعربية على الحاسوب (1366×768)</figcaption></figure>
-    <figure><img src="img/p3/den-work.jpg"><figcaption>مشهد العمل بالإنجليزية. الكاميرا داخل المكتب بعد إصلاح الحجب</figcaption></figure>
-    <figure><img src="img/p3/dar-street.jpg"><figcaption>الشارع ليلاً بالعربية: النقاط 135، والمواقف 9/18</figcaption></figure>
-    <figure><img src="img/p3/den-private.jpg"><figcaption>المناسبات الخاصة بالإنجليزية: شارع الجيران والقاعة</figcaption></figure>
+    <figure><img src="img/home.png"><figcaption>بيت أسرة ريد: عمر إلى الطاولة، وكارول عند الثلاجة، وبن، والإنجيل والصليب على الرف. لقطة وكيل التوثيق بعد آخر إيداع</figcaption></figure>
+    <figure><img src="img/street.png"><figcaption>الشارع ليلاً: آدم بجاكيته الكحلي (<code>playerLook</code>)، ولوحة الجائزة خارج متجر طارق</figcaption></figure>
+    <figure><img src="img/public_events.png"><figcaption>حفل الشركة بعد التخفيف (120 شبكة): سمير عند طاولة الهدايا، ورانيا عند الكشك</figcaption></figure>
+    <figure><img src="img/qa/dar-intro.jpg"><figcaption>شاشة «قبل أن تبدأ» وتنبيهاتها، من لقطات إعادة الاختبار</figcaption></figure>
   </div>
-  <p class="footnote">كل لقطات هذا التقرير من <code dir="ltr">docs/phase-3/screenshots/</code>، وقد التقطها مسار e2e آلياً. وفيه 254 لقطة.</p>
-  </section><section><h2 id="s3" class="newpage">٣. مصفوفة الاختبارات<span class="mk">QQs3QQ</span></h2>
+  </section><section><h2 id="s3" class="newpage">٣. إعادة الاختبار بعد التحول<span class="mk">QQs3QQ</span></h2>
   <h3>النتائج</h3>
   <table><thead><tr><th>المجموعة</th><th>الأمر</th><th>النتيجة</th></tr></thead><tbody>
-    <tr><td>اختبارات الوحدة وعقد المحتوى والسلامة، ومعها تغليف أداة التدقيق</td><td><code dir="ltr">npm test</code></td><td><b>177 / 177 ناجحة</b>، و0 متجاوز. وشغّلت أداة التدقيق <code>verify.mjs</code> من ذاكرتها: 187 فحصاً، كلها ناجحة.</td></tr>
-    <tr><td>مسار لعب كامل في Chrome بلا واجهة، يُخدم من <code>dist/</code> دون Vite</td><td><code dir="ltr">npm run test:e2e</code></td><td><b>4 / 4 إعدادات ناجحة</b>، و0 إخفاقات. و90 عرضاً لبطاقة الحكم طوبق مع JSON.</td></tr>
-    <tr><td>بناء الإنتاج</td><td><code dir="ltr">npm run build</code></td><td>نجح. وجُرّب <code>dist/</code> أيضاً من مسار فرعي (<code>/dist/</code>) بلا أخطاء.</td></tr>
+    <tr><td>الوحدة وعقد المحتوى والسلامة وتغليف التدقيق</td><td><code dir="ltr">npm test</code></td><td><b>197 / 197 ناجحة</b>، و0 متجاوز. والجديد 19 اختباراً: 18 لعقد التحول، و1 لروابط README. وشغّل <code>verify.mjs</code> من ذاكرته 281 فحصاً بلا فشل.</td></tr>
+    <tr><td>مسار لعب كامل في Chrome بلا واجهة، يُخدم من نسخة خاصة من <code>dist/</code></td><td><code dir="ltr">npm run test:e2e</code></td><td><b>4 / 4 إعدادات ناجحة</b>، و0 إخفاقات، و90 عرضاً لبطاقة الحكم بأقسامها الجديدة.</td></tr>
+    <tr><td>الثبات</td><td>إعادة تشغيل الهاتف</td><td>أُعيد إعدادا الهاتف مرتين إضافيتين، فصارت 3 تشغيلات: 0 إخفاقات، و36 من 36 ضغطة على تبويبات المذاهب.</td></tr>
+    <tr><td>بناء الإنتاج</td><td><code dir="ltr">npm run build</code></td><td>نجح. وأعاده وكيل التوثيق بعد آخر إيداع إلى مجلد مؤقت، فنجح كذلك.</td></tr>
   </tbody></table>
   <table class="compact"><thead><tr><th>الإعداد (e2e)</th><th class="c">النتيجة</th><th class="c">إخفاقات</th><th class="c">تحذيرات</th><th class="c">بطاقات حكم فُحصت</th><th class="c">المدة (ث)</th></tr></thead><tbody>
-  <tr><td><code dir="ltr">desktop-ar</code></td><td class="c"><span class="ok">ناجح</span></td><td class="num">0</td><td class="num">0</td><td class="num">36</td><td class="num">85</td></tr><tr><td><code dir="ltr">desktop-en</code></td><td class="c"><span class="ok">ناجح</span></td><td class="num">0</td><td class="num">0</td><td class="num">18</td><td class="num">72</td></tr><tr><td><code dir="ltr">mobile-ar</code></td><td class="c"><span class="ok">ناجح</span></td><td class="num">0</td><td class="num">0</td><td class="num">18</td><td class="num">82</td></tr><tr><td><code dir="ltr">mobile-en</code></td><td class="c"><span class="ok">ناجح</span></td><td class="num">0</td><td class="num">0</td><td class="num">18</td><td class="num">86</td></tr>
+  <tr><td><code dir="ltr">desktop-ar</code></td><td class="c"><span class="ok">ناجح</span></td><td class="num">0</td><td class="num">0</td><td class="num">36</td><td class="num">155</td></tr><tr><td><code dir="ltr">desktop-en</code></td><td class="c"><span class="ok">ناجح</span></td><td class="num">0</td><td class="num">0</td><td class="num">18</td><td class="num">124</td></tr><tr><td><code dir="ltr">mobile-ar</code></td><td class="c"><span class="ok">ناجح</span></td><td class="num">0</td><td class="num">0</td><td class="num">18</td><td class="num">147</td></tr><tr><td><code dir="ltr">mobile-en</code></td><td class="c"><span class="ok">ناجح</span></td><td class="num">0</td><td class="num">0</td><td class="num">18</td><td class="num">143</td></tr>
   </tbody></table>
-  <p class="footnote">من <code dir="ltr">docs/phase-3/e2e_results.json</code> (2026-10-05T18:38:01.410Z، الرسم d3d11، أقصى نقاط 270، والمواقف 18). الحاسوب 1366×768. والهاتف 390×844 بكثافة بكسل 2، مع اللمس ووكيل مستخدم Android. وسجّل desktop-ar 36 بطاقة لأنه يعيد لعب كل موقف. وكل تشغيل كامل يستغرق نحو خمس دقائق ونصف على معالج Intel UHD 620.</p>
-  <h3>ما يتحقق منه مسار اللعب في كل إعداد</h3>
-  <table class="compact"><thead><tr><th>الفحص</th><th class="c">حاسوب عربي</th><th class="c">حاسوب إنجليزي</th><th class="c">هاتف عربي</th><th class="c">هاتف إنجليزي</th></tr></thead><tbody>
-  <tr><td>شاشة البداية، وأزرار اللغة، وسمتا <code>dir</code> و<code>lang</code></td><td class="c"><span class="ok">✔</span></td><td class="c"><span class="ok">✔</span></td><td class="c"><span class="ok">✔</span></td><td class="c"><span class="ok">✔</span></td></tr><tr><td>المقدمة فيها 4 تنبيهات على الأقل</td><td class="c"><span class="ok">✔</span></td><td class="c"><span class="ok">✔</span></td><td class="c"><span class="ok">✔</span></td><td class="c"><span class="ok">✔</span></td></tr><tr><td>المشاهد الست حقيقية، ولا نقطة تفاعل موضوعة آلياً، و0 تحذيرات</td><td class="c"><span class="ok">✔</span></td><td class="c"><span class="ok">✔</span></td><td class="c"><span class="ok">✔</span></td><td class="c"><span class="ok">✔</span></td></tr><tr><td>كل نقطة تفاعل (18) وكل مخرج (6) يُبلغ مشياً من البداية</td><td class="c"><span class="ok">✔</span></td><td class="c"><span class="ok">✔</span></td><td class="c"><span class="ok">✔</span></td><td class="c"><span class="ok">✔</span></td></tr><tr><td>التفاعل بمفتاح E أو بزر اللمس</td><td class="c"><span class="ok">✔</span></td><td class="c"><span class="ok">✔</span></td><td class="c"><span class="ok">✔</span></td><td class="c"><span class="ok">✔</span></td></tr><tr><td>المخرج مقفل حتى تنتهي المحطة</td><td class="c"><span class="ok">✔</span></td><td class="c"><span class="ok">✔</span></td><td class="c"><span class="ok">✔</span></td><td class="c"><span class="ok">✔</span></td></tr><tr><td>الخيارات المعروضة هي خيارات السيناريو بعد الخلط، مع شارة النقاط</td><td class="c"><span class="ok">✔</span></td><td class="c"><span class="ok">✔</span></td><td class="c"><span class="ok">✔</span></td><td class="c"><span class="ok">✔</span></td></tr><tr><td>بطاقة الحكم كاملة ومطابقة لـ JSON (انظر أدناه)</td><td class="c"><span class="ok">✔</span></td><td class="c"><span class="ok">✔</span></td><td class="c"><span class="ok">✔</span></td><td class="c"><span class="ok">✔</span></td></tr><tr><td>التبديل بين تبويبات المذاهب على الشاشة الضيقة</td><td class="c">—</td><td class="c">—</td><td class="c"><span class="ok">✔</span></td><td class="c"><span class="ok">✔</span></td></tr><tr><td>سؤال الفهم: تمييز الإجابة الصحيحة، ومسار الإجابة الخاطئة</td><td class="c"><span class="ok">✔</span></td><td class="c"><span class="ok">✔</span></td><td class="c"><span class="ok">✔</span></td><td class="c"><span class="ok">✔</span></td></tr><tr><td>«جرّب خياراً آخر» في المواقف الـ18 كلها</td><td class="c"><span class="ok">✔</span></td><td class="c">—</td><td class="c">—</td><td class="c">—</td></tr><tr><td>إعادة زيارة نقطة منتهية ثم «مراجعة بطاقة الحكم»</td><td class="c"><span class="ok">✔</span></td><td class="c"><span class="ok">✔</span></td><td class="c"><span class="ok">✔</span></td><td class="c"><span class="ok">✔</span></td></tr><tr><td>حفظ التقدم، ثم إعادة التحميل، ثم «متابعة» تستأنف من محطة العمل مع اللغة</td><td class="c"><span class="ok">✔</span></td><td class="c"><span class="ok">✔</span></td><td class="c"><span class="ok">✔</span></td><td class="c"><span class="ok">✔</span></td></tr><tr><td>تبديل اللغة من القائمة، وانقلاب الاتجاه في الاتجاهين</td><td class="c"><span class="ok">✔</span></td><td class="c">—</td><td class="c">—</td><td class="c">—</td></tr><tr><td>الملخص: 270 نقطة، و18/18، و18 خياراً أفضل، و18 إجابة فهم صحيحة</td><td class="c"><span class="ok">✔</span></td><td class="c"><span class="ok">✔</span></td><td class="c"><span class="ok">✔</span></td><td class="c"><span class="ok">✔</span></td></tr><tr><td>لا تمرير أفقي في البداية والمقدمة والحوار والبطاقة والملخص</td><td class="c"><span class="ok">✔</span></td><td class="c"><span class="ok">✔</span></td><td class="c"><span class="ok">✔</span></td><td class="c"><span class="ok">✔</span></td></tr><tr><td>0 أخطاء في وحدة التحكم والصفحة، و0 طلبات فاشلة</td><td class="c"><span class="ok">✔</span></td><td class="c"><span class="ok">✔</span></td><td class="c"><span class="ok">✔</span></td><td class="c"><span class="ok">✔</span></td></tr><tr><td>3 أضواء نقطية على الأكثر لكل مشهد، ولا ضوء يلقي ظلاً</td><td class="c"><span class="ok">✔</span></td><td class="c"><span class="ok">✔</span></td><td class="c"><span class="ok">✔</span></td><td class="c"><span class="ok">✔</span></td></tr><tr><td>مسح الكاميرا: 8 زوايا عند كل نقطة تفاعل</td><td class="c">—*</td><td class="c"><span class="ok">✔</span></td><td class="c"><span class="ok">✔</span></td><td class="c"><span class="ok">✔</span></td></tr>
+  <p class="footnote">من <code dir="ltr">docs/phase-3/e2e_results.json</code> (2026-10-05T20:39:44.758Z، الرسم d3d11، أقصى نقاط 270). الحاسوب 1366×768. والهاتف 390×844 بكثافة بكسل 2، مع اللمس ووكيل مستخدم Android. وسجّل desktop-ar 36 بطاقة لأنه يعيد لعب كل موقف. وشُغّل هذا قبل الإيداعين <code>3017f28</code> و<code>72c1acf</code>. وبعد الثاني أعاد وكيله تشغيل desktop-en، فنجحت المواقف الـ18، وظل <code>npm test</code> عند 197/197.</p>
+  <h3>ما أضافه التحول إلى فحوص مسار اللعب</h3>
+  <table class="compact"><thead><tr><th style="width:24%">الفحص</th><th>كيف يُتحقق منه</th></tr></thead><tbody>
+    <tr><td><b>«ببساطة»</b></td><td>يظهر حين يوجد <code>newcomer_explainer</code>، ونصه يساوي البيانات، ومكانه <b>تحت رأس البطاقة مباشرة</b>. ولا يظهر دون بيانات.</td></tr>
+    <tr><td><b>«قيم مشتركة»</b></td><td>الملخص والفروق حرفياً، وعدد الآيات مطابق، واللوحة بعد قسم المذاهب.</td></tr>
+    <tr><td><b>نص الكتاب المقدس كما في البيانات</b></td><td>الآية بلغة الواجهة: KJV بالإنجليزية وفاندايك بالعربية، بـ<code>lang</code> و<code>dir</code> الصحيحين. ونصها يساوي البيانات، إلا علامات التنصيص غير المتزاوجة التي يحذفها العارض قصداً. والمرجع واسم الترجمة ظاهران.</td></tr>
+    <tr><td><b>رابط عربي للنص العربي</b></td><td>النص العربي يرتبط بـ<code>source_url_ar</code> (getbible، arabicsv)، والإنجليزي بـ<code>source_url</code> (bible-api، KJV).</td></tr>
+    <tr><td><b>محطات سمير</b> (العمل والحفل)</td><td>عند الدخول يقف عند أول نقطة لم تنتهِ، وينتقل بعد كل موقف ومعه صندوق تصادمه. و<b>mobile-en يلعب العمل بترتيب معكوس</b>، فينتقل سمير إلى المكتب أولاً ثم يعود.</td></tr>
+    <tr><td><b>مظهر آدم</b></td><td>في كل مشهد يطابق <code>PLAYER.look</code>: قميص <code>#2f4a6d</code>، بلا لحية ولا طاقية. والجاكيت الكحلي في الشارع <b>وحده</b>.</td></tr>
+    <tr><td><b>شاشة النهاية</b></td><td>
+      <ul>
+        <li>«ما تعلّمه آدم» ونقاطه تظهر حرفياً.</li>
+        <li>الموضوعات الـ18، مع أول جملة من شرح كل منها.</li>
+        <li>الموضوع التالي يتبع منطق المحاور.</li>
+        <li>رابط المسجد الوحيد هو بالضبط <code>https://www.google.com/maps/search/&lt;نص ثابت&gt;</code>، بلا أي بيانات.</li>
+        <li><b>لا حقول إدخال.</b></li>
+      </ul></td></tr>
+    <tr><td><b>الملخص في منتصف اللعب</b> (desktop-en)</td><td>يُفتح من القائمة بعد محطة العمل، فيقترح الموقف غير المستكشف المتوقع (<code>school.student_loan</code>)، و«اذهب الآن» يحمّل الكلية.</td></tr>
   </tbody></table>
-  <p class="footnote">«—» تعني أن الفحص لا يُجرى في هذا الإعداد. و* مسح الكاميرا في desktop-ar اختياري بالخيار <code>--camera</code>.</p>
-  <h3>فحص بطاقة الحكم (90 عرضاً)</h3>
-  <p>في كل عرض للبطاقة يتحقق الاختبار من هذه العناصر:</p>
-  <ul>
-    <li>المعرّف والعنوان.</li>
-    <li>شارة الحكم.</li>
-    <li>أن حالة المراجعة ليست «رُوجع».</li>
-    <li>السؤال والخلاصة.</li>
-    <li>عدد كتل القرآن والحديث مطابق للملف.</li>
-    <li>رابط مصدر لكل استشهاد.</li>
-    <li>الترجمات في الإنجليزية فقط.</li>
-    <li>أربعة تبويبات للمذاهب، وكل لوحة فيها نص.</li>
-    <li>عدد القرارات المعاصرة والإرشادات والبدائل مطابق للملف.</li>
-    <li>وجود الإحالة إلى عالم، والتنبيهين.</li>
-    <li>أن الروابط كلها http(s) فقط.</li>
-    <li>ألا يكون في البطاقة تمرير أفقي.</li>
-  </ul>
+  <h3>فحوص الخصوصية: لا بيانات عن المعتقد</h3>
+  <div class="callout teal"><ul>
+    <li><code>localStorage</code> فيه مفتاح واحد فقط: <code>yawmuk.progress.v1</code>. وحقوله من قائمة مسموحة: <code>v, lang, location, situations{tried,best,done,check,last}, visited, finished, introSeen</code>.</li>
+    <li><b>لا مفاتيح ولا قيم تتعلق بالدين أو المعتقد.</b></li>
+    <li><code>sessionStorage</code> والكوكيز وIndexedDB فارغة.</li>
+    <li>لا طلبات لأي طرف ثالث سوى خطوط Google.</li>
+    <li>شاشة النهاية بلا حقول إدخال، ورابط المسجد ثابت لا يحمل أي معلومة عن اللاعب.</li>
+  </ul></div>
   <h3>اختبارات الوحدة (<code>npm test</code>)</h3>
   <ul>
     <li><b>عقد المحتوى</b> (<code>content.test.mjs</code>):
       <ul>
-        <li>المعرّفات الـ18 متطابقة بين TEAM_BRIEF والمحرك والأحكام.</li>
-        <li>كل حكم فيه الحقول كلها باللغتين، والمذاهب الأربعة.</li>
-        <li>سلسلة المحطات تنتهي بـ<code>null</code>، وكل موقف يُلعب مرة واحدة.</li>
-        <li>كل <code>ruling_id</code> موجود، وكل نقطة تفاعل معرّفة في <code>hotspots.md</code> وفي المشهد.</li>
-        <li>لكل موقف خيار «أفضل» واحد بالضبط، وهو الأعلى نقاطاً.</li>
-        <li>لكل سؤال فهم إجابة صحيحة واحدة.</li>
+        <li>المعرّفات الـ18 متطابقة، والحقول كلها باللغتين، والمذاهب الأربعة موجودة.</li>
+        <li>لكل موقف خيار «أفضل» واحد، ولكل سؤال فهم إجابة صحيحة واحدة.</li>
+        <li><b>بعد التحول:</b> كل حكم فيه <code>newcomer_explainer</code> و<code>common_ground.summary</code> باللغتين.</li>
+        <li><b>بعد التحول:</b> كل آية كتابية لها مرجعان بالإصحاح والآية نفسيهما، ونصا KJV وفاندايك، ورابطا https، ومدخل <code>verified: true</code> في سجل المصادر.</li>
       </ul></li>
     <li><b>السلامة</b> (<code>safety.test.mjs</code>): تفصيلها في القسم التالي.</li>
-    <li><b>تغليف التدقيق</b> (<code>audit.test.mjs</code>): يشغّل <code>verify.mjs</code>.
-      <ul>
-        <li>عدم التطابق في استشهاد يُفشل الاختبار.</li>
-        <li>غياب الشبكة مع غياب الذاكرة يتخطاه برسالة واضحة.</li>
-      </ul></li>
+    <li><b>تغليف التدقيق</b> (<code>audit.test.mjs</code>): يشغّل <code>verify.mjs</code>، ويفشل عند أي عدم تطابق، بما فيه الكتاب المقدس.</li>
+    <li><b>روابط README:</b> كل رابط محلي في README يجب أن يكون موجوداً.</li>
   </ul>
   </section><section><h2 id="s4" class="newpage">٤. اختبارات السلامة مقابل متطلبات وثيقة التحدي<span class="mk">QQs4QQ</span></h2>
-  <p>تحدد صفحة «المصادر والموثوقية» في وثيقة التحدي متطلبات المحتوى: سجلاً لكل نص، والامتناع، والخلاف، والإحالة. وتطلب «اختبار السلامة» بأربع حالات: اختلاق حديث، وسؤال بلا مرجع، وتعارض مصادر، وتجاوز تعليمات. وتضع هدفاً هو اجتياز الحالات الحرجة (الامتناع والإحالة والإسناد) بنسبة 100%. والجدول يربط كل متطلب بما يحققه في اللعبة وبالاختبار الذي يحرسه.</p>
-  <table class="compact"><thead><tr><th style="width:17%">المتطلب في الوثيقة</th><th style="width:38%">كيف تحققه «يومك»</th><th>الاختبار الآلي</th><th class="c" style="width:9%">الحالة</th></tr></thead><tbody>
-    <tr><td><b>الإسناد</b>: سجل لكل نص (النص، والمرجع، والموضع، والدرجة، وحالة المراجعة)</td><td>لكل آية رقمها ورابطها، ولكل حديث كتابه ورقمه وراويه ودرجته ورابطه. وسجل مصادر موحد فيه 209 مداخل: <code dir="ltr">content/sources.json</code> ثم <code dir="ltr">docs/SOURCES.md</code>.</td><td>اختبار الإسناد يفحص:<ul><li>السورة بين 1 و114.</li><li>اسم السورة.</li><li>الترجمة.</li><li>رابط quran.com لنفس السورة.</li><li>أن الآية موثقة في السجل.</li><li>أن للحديث كتاباً ورقماً وراوياً ودرجة ورابط https.</li><li>أن أحاديث الصحيحين موسومة «صحيح».</li></ul>وتزامن <code>SOURCES.md</code> مع السجل.</td><td class="c"><span class="ok">✔</span></td></tr>
-    <tr><td><b>لا اختلاق</b> (اختلاق حديث)</td><td>النصوص تُجلب آلياً، ويطابقها المدقق حرفاً وحركة: 27/27 آية و64/64 استشهاداً حديثياً. والمحرك يعرضها دون تغيير.</td><td><ul><li>أحاديث الكتب الستة يجب أن تكون موثقة آلياً.</li><li>غيرها يجب أن يطابق <code>manual_verifications.json</code>.</li><li><code>verify.mjs</code>: 187 فحصاً.</li><li>اختبار العارض: كل آية وحديث يظهران <b>حرفياً</b> في البطاقات الـ18 باللغتين.</li></ul></td><td class="c"><span class="ok">✔</span></td></tr>
-    <tr><td><b>الامتناع</b> عند غياب المصدر (سؤال بلا مرجع)</td><td>النص غير المتحقق منه يُترك فارغاً، ويُذكر السبب للمراجع. والحكم الغائب تظهر مكانه بطاقة «المحتوى قيد الإعداد».</td><td><ul><li>النص الفارغ يجب أن يُشرح في <code>notes_for_reviewer</code>.</li><li>بطاقة الحكم الغائب لا فيها قرآن ولا حديث ولا مذاهب.</li><li>الاستشهاد بلا نص يُعرض «غير متوفر» ولا يُعرض اقتباساً أبداً.</li></ul></td><td class="c"><span class="ok">✔</span></td></tr>
-    <tr><td><b>عرض الخلاف</b> ببيان المراجع (تعارض مصادر)</td><td>المذاهب الأربعة جنباً إلى جنب، كل قول مع مرجعه، ومعها المجامع المعاصرة. والوسمان «مختلف فيه» و«يختلف بحسب الحال» لما فيه خلاف.</td><td><ul><li>4 لوحات للمذاهب في كل بطاقة، ولا لوحة فارغة.</li><li>لا خانة مذهب فارغة بلا ملاحظة تسمّيها.</li><li>عدد القرارات المعاصرة مطابق.</li></ul>ولا يوجد اختبار آلي يقيّم «الترجيح» بين المصادر، فهذا عمل العالم البشري.</td><td class="c"><span class="ok">✔</span></td></tr>
-    <tr><td><b>الإحالة</b> إلى مختص</td><td>حقل «متى تسأل عالماً» في كل حكم. وشاشة الملخص تختم بالتذكير بسؤال عالم موثوق أو إمام المسجد.</td><td><ul><li><code>refer_to_scholar_when</code> فيه نص له معنى باللغتين.</li><li>البطاقة تعنونه «متى تسأل عالماً».</li></ul></td><td class="c"><span class="ok">✔</span></td></tr>
-    <tr><td><b>صدق حالة المراجعة</b></td><td>الوسمان <code>ai_draft</code> و<code>ai_verified</code> كلاهما يُعرض «بانتظار مراجعة عالم».</td><td><ul><li>لا قيم أخرى لحالة المراجعة.</li><li>لا يُعرض «رُوجع» إلا لحالة بشرية صريحة.</li><li>كل مسودة أو حكم دون الثقة العالية فيه ملاحظات للمراجع.</li><li>التنبيهات موجودة في الواجهة وفي README باللغتين.</li></ul></td><td class="c"><span class="ok">✔</span></td></tr>
-    <tr><td><b>فصل القصة عن الحكم</b> (منع توليد نصوص منسوبة إلى القرآن والسنة)</td><td>السيناريست لا يكتب نصاً شرعياً، ويحيل بـ<code>ruling_id</code> فقط.</td><td>11 كاشفاً تمر على كل نص في <code>content/script/*.json</code>، منها:<ul><li>﴿ ﴾.</li><li>«قال رسول الله».</li><li>«قال تعالى».</li><li>صيغة الصلاة على النبي.</li><li>الإسناد.</li><li>"Allah says".</li><li>رقم حديث، ومرجع سورة:آية.</li></ul>ومعها اختبار ذاتي يثبت أن الكواشف تعمل.</td><td class="c"><span class="ok">✔</span></td></tr>
-    <tr><td><b>تجاوز التعليمات</b></td><td>في النسخة الحالية لا يوجد نموذج لغوي يستقبل نصاً حراً من المستخدم، فالمحتوى JSON ثابت. وتُدرج النصوص عبر <code>textContent</code>، وتُعرض روابط http(s) فقط.</td><td>اختبار العارض: روابط <code>javascript:</code> و<code>data:</code> لا تُعرض أبداً. أما اختبار حقن التعليمات بمعناه الكامل فيخص طبقة «سؤال وجواب» المخطط لها، وستصير اختبارات السلامة الحالية مجموعة تقييمها.</td><td class="c"><span class="ok">✔</span> / <span class="wait">⏳</span></td></tr>
+  <p>تحدد صفحة «المصادر والموثوقية» في وثيقة التحدي متطلبات المحتوى: سجلاً لكل نص، والامتناع، والخلاف، والإحالة. وتطلب «اختبار السلامة» بأربع حالات: اختلاق حديث، وسؤال بلا مرجع، وتعارض مصادر، وتجاوز تعليمات. وتنص الوثيقة كذلك على ألا يُطلب من المستخدم التصريح بمعتقده، وعلى ألا يُصنَّف معتقده، وعلى حماية خصوصيته. والجدول يربط كل متطلب بما يحققه وبالاختبار الذي يحرسه.</p>
+  <table class="compact"><thead><tr><th style="width:17%">المتطلب في الوثيقة</th><th style="width:36%">كيف تحققه «يومك»</th><th>الاختبار الآلي</th><th class="c" style="width:9%">الحالة</th></tr></thead><tbody>
+    <tr><td><b>الإسناد</b>: سجل لكل نص</td><td>لكل آية رقمها ورابطها، ولكل حديث كتابه ورقمه وراويه ودرجته، ولكل آية كتابية مرجعاها ورابطا مصدريها. وسجل المصادر الموحد فيه 244 مدخلاً (<code dir="ltr">docs/SOURCES.md</code>).</td><td><ul><li>اختبار الإسناد للقرآن والحديث.</li><li>عقد التحول للكتاب المقدس.</li><li>تزامن <code>SOURCES.md</code> مع السجل.</li></ul></td><td class="c"><span class="ok">✔</span></td></tr>
+    <tr><td><b>لا اختلاق</b> (اختلاق حديث)</td><td>النصوص تُجلب آلياً، ويطابقها المدقق حرفاً وحركة: 27/27 آية، و64/64 استشهاداً حديثياً، و34/34 آية كتابية في KJV وفاندايك.</td><td><ul><li>أحاديث الكتب الستة موثقة آلياً، وغيرها يجب أن يطابق السجل اليدوي.</li><li><code>verify.mjs</code>: 281 فحصاً.</li><li><code>checkQuotes</code>: كل اقتباس في الحقلين الجديدين يجب أن يوجد في نصوص الحكم.</li><li>العارض يعرض كل آية وحديث <b>حرفياً</b>.</li><li>e2e يطابق نص الكتاب المقدس المعروض مع البيانات.</li></ul></td><td class="c"><span class="ok">✔</span></td></tr>
+    <tr><td><b>الامتناع</b> (سؤال بلا مرجع)</td><td>النص غير المتحقق منه يُترك فارغاً ويُذكر سببه. والحكم الغائب يظهر مكانه «المحتوى قيد الإعداد». والحقل الجديد الغائب يُخفى قسمه ولا يُملأ بشيء من عند النموذج.</td><td><ul><li>النص الفارغ يجب أن يُشرح للمراجع.</li><li>بطاقة الحكم الغائب بلا أدلة.</li><li>«غير متوفر» بدل الاقتباس.</li><li>«ببساطة» لا يظهر دون بيانات.</li></ul></td><td class="c"><span class="ok">✔</span></td></tr>
+    <tr><td><b>عرض الخلاف</b> (تعارض مصادر)</td><td>المذاهب الأربعة جنباً إلى جنب مع المراجع، ثم المجامع. وفي «القيم المشتركة» تُذكر الفروق مع المسيحية بأمانة واحترام، دون مفاضلة.</td><td><ul><li>4 لوحات مذاهب غير فارغة.</li><li>لوحة «أين نختلف» حرفياً.</li></ul>والترجيح بين المصادر عمل العالم البشري، لا الاختبار.</td><td class="c"><span class="ok">✔</span></td></tr>
+    <tr><td><b>الإحالة</b> إلى مختص</td><td>«متى تسأل عالماً» في كل حكم. وشاشة النهاية تحيل إلى «يوم المسجد المفتوح» ومركز تعريف بالإسلام، وتذكّر المسلم بسؤال عالم موثوق.</td><td><ul><li>الإحالة موجودة باللغتين.</li><li>رابط المسجد ثابت ومطابق.</li></ul></td><td class="c"><span class="ok">✔</span></td></tr>
+    <tr><td><b>حماية الخصوصية وعدم تصنيف المعتقد</b></td><td>لا تسأل اللعبة عن دين اللاعب، ولا تكافئه على «الاقتراب» من الإسلام، ولا تخزّن عنه إلا اللغة والتقدم والنقاط.</td><td>فحوص e2e: التخزين من قائمة مسموحة، ولا مفاتيح دينية، ولا كوكيز ولا IndexedDB، ولا طلبات لطرف ثالث، ولا حقول إدخال.</td><td class="c"><span class="ok">✔</span></td></tr>
+    <tr><td><b>صدق حالة المراجعة</b></td><td>الوسمان <code>ai_draft</code> و<code>ai_verified</code> يُعرضان كلاهما «بانتظار مراجعة عالم».</td><td>لا قيم أخرى، ولا «رُوجع» إلا لحالة بشرية صريحة، وكل مسودة فيها ملاحظات للمراجع.</td><td class="c"><span class="ok">✔</span></td></tr>
+    <tr><td><b>فصل القصة عن الحكم</b></td><td>السيناريو لا يحوي نصاً شرعياً، ويحيل بـ<code>ruling_id</code>.</td><td>11 كاشفاً على كل نص سيناريو، مع اختبار ذاتي يثبت أنها تعمل.</td><td class="c"><span class="ok">✔</span></td></tr>
+    <tr><td><b>تجاوز التعليمات</b></td><td>لا يوجد في النسخة الحالية نموذج لغوي يستقبل نصاً حراً، فالمحتوى JSON ثابت يُدرج عبر <code>textContent</code>.</td><td>روابط <code>javascript:</code> و<code>data:</code> لا تُعرض أبداً. أما اختبار حقن التعليمات بمعناه الكامل فيخص طبقة «اسأل عن هذا الموقف» المخطط لها.</td><td class="c"><span class="ok">✔</span> / <span class="wait">⏳</span></td></tr>
   </tbody></table>
   <div class="figs2">
-    <figure><img src="img/p3/dar-ruling-top.jpg"><figcaption>رأس بطاقة الحكم بالعربية: الوسم، وحالة المراجعة «بانتظار مراجعة عالم»، والثقة، والآية بالرسم العثماني</figcaption></figure>
-    <figure><img src="img/p3/den-madhahib.jpg"><figcaption>المذاهب الأربعة في البطاقة الإنجليزية. المراجع العربية معزولة الاتجاه بعد إصلاح BiDi</figcaption></figure>
+    <figure><img src="img/qa/dar-ruling-top.jpg"><figcaption>رأس البطاقة بالعربية: الوسم، وحالة المراجعة «بانتظار مراجعة عالم»، والثقة، ثم «ببساطة»</figcaption></figure>
+    <figure><img src="img/qa/den-cg.jpg"><figcaption>«Common ground with Christianity» بالإنجليزية: آيات KJV حرفياً، مع المرجع واسم الترجمة</figcaption></figure>
   </div>
   </section><section><h2 id="s5" class="newpage">٥. الأخطاء التي أُصلحت<span class="mk">QQs5QQ</span></h2>
-  <p>وجد وكيل التكامل والجودة 11 خطأً وأصلحها، وكل التعديلات في الشيفرة معلّمة بـ<code>Phase 3 QA</code>. ولم يُعدَّل أي ملف سيناريو أو حكم.</p>
-  <table class="compact"><thead><tr><th class="c">#</th><th style="width:30%">الخطأ</th><th>الإصلاح والأثر</th></tr></thead><tbody>
-    <tr><td class="num">1</td><td><b>كاميرا العمل خلف الجدار الغربي</b>: عند البداية وقرب آلة القهوة كان جدار رمادي يملأ الكادر. رصده وكيل التوثيق في المرحلة الثانية.</td><td>جدران المشهد مكررة (InstancedMesh)، فلم يكن المحرك يعدّها حواجز للكاميرا. فأُضيفت صناديق بديلة غير مرئية للجدران المعتمة الأربعة، تُمرَّر عبر <code>cameraOccluders</code> (<code dir="ltr">src/scenes/work.js</code>). وصار الحجب عند مكتب الموارد البشرية <b>1/8 زوايا</b> بعد أن كان 4/8، وصارت البداية تُظهر المكتب.</td></tr>
-    <tr><td class="num">2</td><td><b>آدم مختفٍ تماماً عند كاونتر محطة الوقود</b> في الشارع: كانت 7 من 8 زوايا للكاميرا محجوبة.</td><td>صناديق بديلة لجدران المتجر وسقفه. فصار الحجب <b>0/8</b>، والكاميرا تبقى داخل المتجر (<code dir="ltr">src/scenes/street.js</code>).</td></tr>
-    <tr><td class="num">3</td><td><b>حدود الأضواء</b>: البيت 4، والشارع 5، والمناسبات العامة 5، والكلية 7، والحد 3.</td><td>القرار: <b>الخفض إلى 3 على الأكثر</b>، والإبقاء على حد الدليل، لأنه لا يوجد هاتف متوسط حقيقي يثبت أن الأضواء الزائدة رخيصة. والصور قبل الخفض وبعده متطابقة تقريباً، والممر في الكلية أغمق قليلاً. ويوجد الآن فحص e2e لهذه الميزانية.</td></tr>
-    <tr><td class="num">4</td><td><b>BiDi في البطاقة الإنجليزية</b>: المراجع العربية (كتب المذاهب، والرواة، والدرجات، وأسماء المجامع) داخل فقرات من اليسار إلى اليمين، فاختلّ ترتيب العلامات و«» والأرقام والروابط.</td><td>تُغلَّف القيم بـ<code>&lt;bdi dir="auto"&gt;</code> (<code dir="ltr">src/engine/ui/rulingCard.js</code>).</td></tr>
-    <tr><td class="num">5</td><td><b>شاشة الملخص</b>: عنوانها ونقاطها مقصوصان وغير قابلين للتمرير، في كل أحجام الشاشات.</td><td>صار <code>align-items:flex-start</code>، ومعه <code>margin:auto</code>. وأُضيف فحص يمنع عودة الخطأ: عنوان الملخص يجب أن يظهر داخل الشاشة.</td></tr>
-    <tr><td class="num">6–8</td><td><b>تخطيط الهاتف</b>: الإشعارات فوق الصف الثاني من الشريط العلوي، وتبويبات المذاهب ملتفة 3 + 1، وشارة الحكم تضغط عناوين الملخص، ومربعات الإحصاء تفيض.</td><td>أُزيحت الإشعارات تحت الشريط. وصارت التبويبات شبكة من 4 أعمدة. ونُقلت الشارة تحت العنوان، وصارت الإحصاءات شبكة 2×2 (<code dir="ltr">src/styles/main.css</code>).</td></tr>
-    <tr><td class="num">9</td><td>الإشعارات والشريط العلوي تُرسم فوق الشاشات الكاملة (الملخص والبداية).</td><td>تُخفى حين تكون شاشة كاملة معروضة.</td></tr>
-    <tr><td class="num">10</td><td>الإشعارات مفروضة من اليسار إلى اليمين، فتنقلب الرسائل العربية.</td><td>صار <code>unicode-bidi:plaintext; text-align:start</code>.</td></tr>
-    <tr><td class="num">11</td><td>في الحفل كانت خلفية المساء تظهر شريطاً تحت حافة الأرضية.</td><td>صار لون السماء <code>sky: '#24171a'</code>.</td></tr>
+  <h3>أ. الجولة الأولى (قبل التحول)</h3>
+  <table class="compact"><thead><tr><th class="c">#</th><th style="width:32%">الخطأ</th><th>الإصلاح والأثر</th></tr></thead><tbody>
+    <tr><td class="num">1</td><td><b>كاميرا العمل خلف الجدار الغربي</b>، رصدها وكيل التوثيق.</td><td>صناديق حجب غير مرئية عبر <code>cameraOccluders</code>. فصار الحجب عند الموارد البشرية 1/8 بعد 4/8، والبداية تُظهر المكتب.</td></tr>
+    <tr><td class="num">2</td><td><b>آدم مختفٍ عند كاونتر المحطة</b>: 7 من 8 زوايا محجوبة.</td><td>صناديق حجب للمتجر وسقفه، فصار الحجب <b>0/8</b>، وبقي كذلك بعد التحول.</td></tr>
+    <tr><td class="num">3</td><td><b>حدود الأضواء</b> فوق الميزانية: 4، و5، و5، و7.</td><td>خُفّضت إلى 3 على الأكثر، ويوجد الآن فحص e2e لذلك.</td></tr>
+    <tr><td class="num">4</td><td><b>BiDi في البطاقة الإنجليزية</b>.</td><td>القيم تُغلَّف بـ<code>&lt;bdi dir="auto"&gt;</code>.</td></tr>
+    <tr><td class="num">5</td><td><b>عنوان الملخص ونقاطه مقصوصة</b>.</td><td><code>align-items:flex-start</code> مع <code>margin:auto</code>، وفحص يمنع عودة الخطأ.</td></tr>
+    <tr><td class="num">6–11</td><td>تخطيط الهاتف، والإشعارات فوق الشاشات، واتجاه الإشعارات العربية، وشريط الخلفية في الحفل.</td><td>أُصلحت كلها في <code>main.css</code> وفي المشهد.</td></tr>
   </tbody></table>
-  <h3>تخطيط الهاتف بعد الإصلاح</h3>
-  <div class="figs-m">
-    <figure><img src="img/p3/mar-home.jpg"><figcaption>البيت على الهاتف بالعربية، مع عصا التحكم</figcaption></figure>
-    <figure><img src="img/p3/mar-madhahib.jpg"><figcaption>تبويبات المذاهب الأربعة في صف واحد</figcaption></figure>
-    <figure><img src="img/p3/men-summary.jpg"><figcaption>الملخص على الهاتف: الإحصاءات في شبكة 2×2</figcaption></figure>
-  </div>
-  <p class="footnote">وتحقق الوكيل أيضاً من أمور وجدها سليمة:</p>
-  <ul class="footnote">
-    <li>shader وميض الأضواء في الحفل يعمل في الإعدادات الأربعة.</li>
-    <li>أعمدة المذاهب الأربعة معكوسة صحيحاً في العربية.</li>
-    <li>سهم «التالي ‹» معكوس.</li>
-    <li>رقائق الشريط العلوي المختلطة بين العربية والإنجليزية مرتبة صحيحاً.</li>
+  <h3>ب. إعادة الاختبار بعد التحول</h3>
+  <table class="compact"><thead><tr><th style="width:32%">البلاغ</th><th>السبب والإصلاح</th></tr></thead><tbody>
+    <tr><td>mobile-en لم يجد الخيار «c» في <code>gifts_birthday</code></td><td>السبب: الاختبار يبحث عن خيار ثابت بتسميته، والخيارات تُخلط، والمحتوى تغيّر أثناء التشغيل. الإصلاح: كل زر يُربط بخيار السيناريو بتسميته، ويفشل الاختبار إن اختلفت المجموعة. ثم يُختار المطلوب بحسب <i>الجودة</i> لا الحرف.</td></tr>
+    <tr><td>desktop-ar حصل على مشهد بديل بعد 404</td><td>السبب: أُعيد بناء <code>dist/</code> أثناء الاختبار. الإصلاح: الاختبار يخدم نسخة مؤقتة خاصة به.</td></tr>
+    <tr><td>هل ضغطات تبويبات المذاهب على الهاتف غير مستقرة؟</td><td>الخطر كان حقيقياً: قد يقع التبويب تحت شريط «التالي». الإصلاح: الضغطة تُمركز العنصر وتتحقق بـ<code>elementFromPoint</code> أن شيئاً لا يغطيه. وكانت مستقرة في 3 من 3 تشغيلات.</td></tr>
+    <tr><td>صندوق تصادم سمير يتحرك بين المحطات</td><td>صار حساب إمكانية الوصول يُعاد قبل كل مشية.</td></tr>
+    <tr><td>مرجع الكتاب المقدس في التعليق</td><td>عُزل بـ<code>&lt;bdi&gt;</code>، مثل «رومية 14: 21 · Van Dyck».</td></tr>
+    <tr><td>وضعية الجلوس في دليل المحرك</td><td>صُححت إلى <code>+π/2</code>.</td></tr>
+  </tbody></table>
+  <h3>ج. بنود إعادة الاختبار التي أُغلقت بعدها</h3>
+  <table class="compact"><thead><tr><th style="width:32%">البند المفتوح في تقرير QA</th><th>كيف أُغلق</th></tr></thead><tbody>
+    <tr><td>المناسبات العامة فوق الميزانية: 309 شبكات و289 استدعاء رسم.</td><td>الإيداع <code>72c1acf</code>: دُمجت الشخصيات الخلفية والديكور، فصارت <b>120 شبكة و136 استدعاء رسم و44.8 ألف مثلث</b>. وقاس وكيل التوثيق بعده 120 شبكة و44,842 مثلثاً مع النسخ.</td></tr>
+    <tr><td>الملخص المفتوح من القائمة في منتصف اللعب يحمل عنوان نهاية الأسبوع، ويضبط <code>finished=true</code>.</td><td>الإيداع <code>3017f28</code>: وضع «تقدّمك حتى الآن» بعنوانه ورسالته، ولا يضبط علامة الانتهاء.</td></tr>
+    <tr><td>حقل <code>question</code> في 9 أحكام يخاطب آدم على أنه المسلم.</td><td>أُعيدت صياغته بصيغة محايدة بقرار المشرف (<code>pivot_audit.md</code> §7). وتحققتُ من الملفات الحالية: لا ذكر لآدم في الحقول القديمة.</td></tr>
+  </tbody></table>
+  <h3>المراجعة البصرية بعد التحول</h3>
+  <p>راجع وكيل الجودة اللقطات بنفسه، فلم يجد تراجعاً في التخطيط:</p>
+  <ul>
+    <li>لوحة «القيم المشتركة» معكوسة صحيحاً، وحدّها على اليمين بالعربية.</li>
+    <li>نص فاندايك مشكول ومقروء، وآيات KJV بخط مائل.</li>
+    <li>شاشة النهاية على الهاتف سليمة.</li>
   </ul>
+  <div class="figs-m">
+    <figure><img src="img/qa/mar-cg.jpg"><figcaption>«القيم المشتركة» على الهاتف بالعربية</figcaption></figure>
+    <figure><img src="img/qa/mar-home.jpg"><figcaption>البيت على الهاتف بالعربية</figcaption></figure>
+    <figure><img src="img/qa/men-summary-bottom.jpg"><figcaption>نهاية الهاتف: الموضوع التالي، والمسجد، و«عن هذه الأحكام»</figcaption></figure>
+  </div>
   </section><section><h2 id="s6" class="newpage">٦. الأداء<span class="mk">QQs6QQ</span></h2>
-  <p>قيس الأداء داخل اللعبة على جذر كل مشهد، في إعداد <code>desktop-en</code>. والمثلثات هنا محسوبة مع النسخ المكررة.</p>
-  <table class="compact"><thead><tr><th>المشهد</th><th class="c">شبكات</th><th class="c">منها مكررة</th><th class="c">مثلثات</th><th class="c">استدعاءات رسم لكل إطار<br>حاسوب / هاتف</th><th class="c">أضواء نقطية</th><th class="c">صناديق تصادم</th><th class="c">حواجز كاميرا</th></tr></thead><tbody>
-  <tr><td><b>البيت</b> <code dir="ltr">home</code></td><td class="num">89</td><td class="num">0</td><td class="num">15.8k</td><td class="c">114 / 81</td><td class="num">3</td><td class="num">32</td><td class="num">10</td></tr><tr><td><b>العمل</b> <code dir="ltr">work</code></td><td class="num">113</td><td class="num">11</td><td class="num">13.5k</td><td class="c">112 / 51</td><td class="num">0</td><td class="num">42</td><td class="num">14</td></tr><tr><td><b>الكلية</b> <code dir="ltr">school</code></td><td class="num">202</td><td class="num">25</td><td class="num">17.7k</td><td class="c">226 / 170</td><td class="num">3</td><td class="num">64</td><td class="num">32</td></tr><tr><td><b>الشارع</b> <code dir="ltr">street</code></td><td class="num">124</td><td class="num">7</td><td class="num">12.1k</td><td class="c">153 / 109</td><td class="num">3</td><td class="num">46</td><td class="num">39</td></tr><tr><td><b>المناسبات العامة</b> <code dir="ltr">public_events</code></td><td class="num">253</td><td class="num">35</td><td class="num">48.9k</td><td class="c">236 / 114</td><td class="num">3</td><td class="num">70</td><td class="num">48</td></tr><tr><td><b>المناسبات الخاصة</b> <code dir="ltr">private_events</code></td><td class="num">201</td><td class="num">16</td><td class="num">57.8k</td><td class="c">209 / 205</td><td class="num">2</td><td class="num">70</td><td class="num">18</td></tr>
+  <p>الأرقام من جدول «الأداء بعد التحول» في تقرير QA (desktop-en / mobile-ar)، والمثلثات فيه محسوبة مع النسخ المكررة. وصف المناسبات العامة محدّث بالإيداع <code>72c1acf</code>.</p>
+  <table class="compact"><thead><tr><th>المشهد</th><th class="c">شبكات</th><th class="c">منها مكررة</th><th class="c">مثلثات</th><th class="c">استدعاءات رسم لكل إطار<br>حاسوب / هاتف</th><th class="c">أضواء نقطية</th><th class="c">قياسنا بعد آخر إيداع<br>شبكات · مثلثات</th></tr></thead><tbody>
+  <tr><td><b>البيت</b> <code dir="ltr">home</code></td><td class="num">107</td><td class="num">0</td><td class="num">16.2k</td><td class="c">131 / 101</td><td class="num">3</td><td class="c">107 · 16.2k</td></tr><tr><td><b>العمل</b> <code dir="ltr">work</code></td><td class="num">132</td><td class="num">11</td><td class="num">15.1k</td><td class="c">121 / 33</td><td class="num">0</td><td class="c">132 · 15.1k</td></tr><tr><td><b>الكلية</b> <code dir="ltr">school</code></td><td class="num">212</td><td class="num">25</td><td class="num">18.1k</td><td class="c">235 / 171</td><td class="num">3</td><td class="c">212 · 18.1k</td></tr><tr><td><b>الشارع</b> <code dir="ltr">street</code></td><td class="num">112</td><td class="num">7</td><td class="num">11.5k</td><td class="c">142 / 112</td><td class="num">3</td><td class="c">112 · 11.5k</td></tr><tr><td><b>المناسبات العامة</b> <code dir="ltr">public_events</code></td><td class="num">120 (كانت 309)</td><td class="num">36</td><td class="num">44.8k (كانت 52.1k)</td><td class="c">136 (كانت 289) / 112</td><td class="num">3</td><td class="c">120 · 44.8k</td></tr><tr><td><b>المناسبات الخاصة</b> <code dir="ltr">private_events</code></td><td class="num">236</td><td class="num">18</td><td class="num">37.4k</td><td class="c">207 / 202</td><td class="num">2</td><td class="c">236 · 37.4k</td></tr>
   </tbody></table>
   <ul>
-    <li>كل المشاهد ضمن ميزانية الدليل: 60 ألف مثلث و250 شبكة على الأكثر.</li>
-    <li>المناسبات الخاصة (57.8k) والعامة (48.9k) قريبتان من حد المثلثات، والعامة (253 شبكة) عند حد الشبكات.</li>
-    <li>زمن الإطار 16.7 ms في المشاهد كلها، وهو سقف 60 إطاراً في الثانية الذي يفرضه vsync. وقيس على معالج رسوميات لابتوب (Intel UHD 620)، <b>لا على هاتف</b>.</li>
+    <li><b>كل المشاهد الآن ضمن الميزانية:</b> 60 ألف مثلث و250 شبكة على الأكثر، و3 أضواء نقطية على الأكثر.</li>
+    <li>المناسبات الخاصة انخفضت من 57.8 ألف مثلث إلى 37.4 ألفاً. والمناسبات العامة انخفضت من 309 شبكات إلى 120.</li>
+    <li>زمن الإطار نحو 16.7 ms في المشاهد كلها، وهو سقف vsync. وقيس على معالج رسوميات لابتوب (Intel UHD 620)، <b>لا على هاتف</b>.</li>
   </ul>
-  <p class="footnote">ملاحظة منهجية: الدالة <code>yawmuk.stats()</code> لا تضرب الشبكات المكررة في عدد نسخها. لذلك كانت أرقام المثلثات التي نقلها تقرير المرحلة الثانية من قياس وكيل التوثيق أقل من الحقيقة في العمل والكلية والمناسبات العامة. والجدول أعلاه يصحح ذلك.</p>
-  <h3>حجم الحزمة (<code>npm run build</code>، <code>dist/</code> = 1.4 MB)</h3>
+  <p class="footnote">قياس وكيل التوثيق: 2026-10-05 21:06 UTC، على نسخة إنتاج في مجلد مؤقت تخدمها <code>tools/serve.mjs</code>، برسم SwiftShader. والعدّ بالمرور على شجرة المشهد كاملة، مع ضرب المكرر في نسخه.</p>
+  <h3>حجم الحزمة</h3>
   <table class="compact"><thead><tr><th>الجزء</th><th class="c">الحجم</th><th class="c">gzip</th></tr></thead><tbody>
-    <tr><td><code dir="ltr">three</code></td><td class="c">687.5 kB</td><td class="c">177.2 kB</td></tr>
-    <tr><td><code dir="ltr">index</code> (المحرك والواجهة، ومعها كل ملفات المحتوى JSON مضمّنة)</td><td class="c">571.9 kB</td><td class="c">181.0 kB</td></tr>
-    <tr><td>CSS</td><td class="c">14.3 kB</td><td class="c">4.3 kB</td></tr>
-    <tr><td>المشاهد (تحميل كسول، ملف لكل محطة)</td><td class="c">22–32 kB لكل منها</td><td class="c">8.7–12.2 kB</td></tr>
+    <tr><td><code dir="ltr">three</code></td><td class="c">687.5 kB</td><td class="c">177.2 kB (Vite)</td></tr>
+    <tr><td><code dir="ltr">index</code> (المحرك والواجهة، ومعها كل ملفات المحتوى مضمّنة)</td><td class="c">672.6 kB في تقرير QA · 673.8 kB في بنائنا الأخير</td><td class="c">≈ 211 kB (قياسنا بـ gzip -6)</td></tr>
+    <tr><td>المشاهد (تحميل كسول، ملف لكل محطة)</td><td class="c">23–35 kB لكل منها</td><td class="c">—</td></tr>
+    <tr><td><code>dist/</code> كاملاً</td><td class="c" colspan="2">1.5 MB</td></tr>
   </tbody></table>
-  <p>حجم التحميل الأول نحو <b>365 kB مضغوطاً</b>، إضافة إلى خطوط Google. وإن تعذّر تحميل الخطوط تعمل اللعبة بخطوط النظام العربية.</p>
+  <p>زادت حزمة <code>index</code> من 572 kB إلى نحو 673 kB، لأن الحقلين الجديدين ضُمّنا في ملفات المحتوى. ويمكن تقسيمها لاحقاً بحسب المكان.</p>
+  <h3>مسح الكاميرا (8 زوايا عند كل نقطة)</h3>
+  <p>بعد التحول كل النقاط 0/8، إلا هذه:</p>
+  <ul>
+    <li>البيت: 1/8 عند اللابتوب، و1/8 عند الثلاجة.</li>
+    <li>العمل: 2/8 عند آلة القهوة، و1/8 عند الموارد البشرية.</li>
+    <li>المناسبات الخاصة: 1/8 عند فناء غارسيا.</li>
+  </ul>
+  <p>وكاونتر المحطة ما زال 0/8.</p>
   </section><section><h2 id="s7" class="newpage">٧. المستودع وطريقة التشغيل<span class="mk">QQs7QQ</span></h2>
-  <p>المستودع git محلي فيه إيداع واحد: <code>be85b1f</code> بعنوان «Initial commit: Yawmuk («يومك») 3D fiqh-of-daily-dealings game, phases 1-3». وفيه 392 ملفاً، و<b>لا يوجد مستودع بعيد بعد</b>. ويتطلب Node 22 أو أحدث (<code>engines</code> في <code>package.json</code>).</p>
+  <p>المستودع git محلي فيه <b>5 إيداعات</b>، آخرها <code>72c1acf</code> (تخفيف المناسبات العامة). وقبله <code>3017f28</code> (ملخص «تقدّمك حتى الآن»)، و<code>0a9d3ab</code> (تغيير الاتجاه وإعادة الاختبار). ولا يوجد مستودع بعيد بعد. ويتطلب Node 22 أو أحدث.</p>
   <table class="compact"><thead><tr><th style="width:30%">الأمر</th><th>الوظيفة</th></tr></thead><tbody>
-  <tr><td><code dir="ltr">npm install</code></td><td>تثبيت الاعتماديات: <code>three</code>، ولبيئة التطوير <code>vite</code> و<code>puppeteer-core</code>.</td></tr><tr><td><code dir="ltr">npm run dev</code></td><td>خادم التطوير على <code>http://localhost:5173</code>. والمعاملات <code>?scene=home&amp;nointro=1&amp;lang=en&amp;debug=1</code> تقفز مباشرة إلى محطة.</td></tr><tr><td><code dir="ltr">npm run build</code></td><td>يبني <code>dist/</code> ثابتاً، بقاعدة <code>./</code>، فيعمل من أي استضافة أو مسار فرعي.</td></tr><tr><td><code dir="ltr">npm run serve:dist</code></td><td>يخدم <code>dist/</code> بخادم صغير بلا اعتماديات على <code>http://127.0.0.1:4173</code>.</td></tr><tr><td><code dir="ltr">npm test</code></td><td>اختبارات الوحدة وعقد المحتوى والسلامة (node:test، بلا متصفح).</td></tr><tr><td><code dir="ltr">npm run test:e2e</code></td><td>مسار لعب كامل في Chrome بلا واجهة: 18 موقفاً، بالعربية والإنجليزية، على الحاسوب والهاتف.</td></tr><tr><td><code dir="ltr">npm run audit</code></td><td>يعيد التحقق من كل نص قرآني وحديثي مع مصدره، ويفحص الروابط. يحتاج الشبكة.</td></tr><tr><td><code dir="ltr">npm run sources</code></td><td>يعيد توليد <code>docs/SOURCES.md</code> من <code>content/sources.json</code>.</td></tr>
+  <tr><td><code dir="ltr">npm install</code></td><td>تثبيت الاعتماديات: <code>three</code>، ولبيئة التطوير <code>vite</code> و<code>puppeteer-core</code>.</td></tr><tr><td><code dir="ltr">npm run dev</code></td><td>خادم التطوير. والمعاملات <code>?scene=home&amp;nointro=1&amp;lang=en&amp;debug=1</code> تقفز مباشرة إلى محطة.</td></tr><tr><td><code dir="ltr">npm run build</code></td><td>يبني <code>dist/</code> ثابتاً، بقاعدة <code>./</code>.</td></tr><tr><td><code dir="ltr">npm run serve:dist</code></td><td>يخدم <code>dist/</code> بخادم صغير بلا اعتماديات على <code>http://127.0.0.1:4173</code>.</td></tr><tr><td><code dir="ltr">npm test</code></td><td>اختبارات الوحدة وعقد المحتوى والسلامة (node:test، بلا متصفح): 197 اختباراً.</td></tr><tr><td><code dir="ltr">npm run test:e2e</code></td><td>مسار لعب كامل في Chrome بلا واجهة: 18 موقفاً، بالعربية والإنجليزية، على الحاسوب والهاتف.</td></tr><tr><td><code dir="ltr">npm run audit</code></td><td>يعيد التحقق من نصوص القرآن والحديث والكتاب المقدس مع مصادرها، ويفحص الروابط. يحتاج الشبكة.</td></tr><tr><td><code dir="ltr">npm run sources</code></td><td>يعيد توليد <code>docs/SOURCES.md</code>.</td></tr>
   </tbody></table>
-  <p class="footnote">الأوامر منقولة من <code>package.json</code> وREADME. والأمر <code>node --test "tests/*.test.mjs"</code> هو أمر الاختبار الفعلي.</p>
+  <p class="footnote">أمر الاختبار الفعلي في <code>package.json</code>: <code>node --test "tests/*.test.mjs"</code>.</p>
   <h3>محتوى المستودع</h3>
   <ul>
-    <li><code dir="ltr">README.md</code>: ثنائي اللغة. فيه وصف اللعبة، وتنبيه حالة المراجعة باللغتين، والمحطات والمواقف، والتشغيل والاختبار، والنشر، والبنية، ومنهجية المحتوى، وفريق الوكلاء، وخارطة الطريق، والترخيص.</li>
-    <li><code dir="ltr">docs/SOURCES.md</code>: سجل المصادر مولّد آلياً. فيه 209 مداخل، 92 منها موثقة، وتفصيلها:<ul><li>القرآن: 27 من 27.</li><li>الحديث: 58 من 58.</li><li>مراجع المذاهب: 0 من 72.</li><li>المعاصر: 7 من 52.</li></ul>و117 مدخلاً تحتاج إنساناً. والسجل ينبّه إلى أن «موثّق» لا تعني أن عالماً راجع الحكم.</li>
-    <li><code dir="ltr">docs/</code>: وثيقة الفريق، وكتاب القصة، ودليل نقاط التفاعل، وملاحظات البحث، والتدقيق، وتقارير المراحل.</li>
-    <li><code dir="ltr">reports/phase-1..3.pdf</code>: تقارير المراحل الثلاث، ومصادرها في <code dir="ltr">reports/src/</code>.</li>
-    <li><b>بنود للفريق:</b><ul><li>الترخيص لم يُختر بعد، وتوجد خانة TODO في README، والمقترح MIT للشيفرة وCC BY-NC-SA 4.0 للمحتوى.</li><li>ملف وثيقة التحدي في <code>.gitignore</code> لأنه وثيقة المنظمين.</li><li>اللقطات تضيف نحو 16 MB.</li></ul></li>
+    <li><code dir="ltr">README.md</code>: ثنائي اللغة، أُعيدت كتابته للفكرة الجديدة. فيه وصف اللعبة، وتنبيه حالة المراجعة، ولقطات جديدة، والتشغيل والاختبار، والنشر، والبنية، ومنهجية المحتوى (ومنها الكتاب المقدس)، وفريق الوكلاء (ومعهم باحث «القيم المشتركة»)، وخارطة الطريق، والترخيص.</li>
+    <li><code dir="ltr">docs/SOURCES.md</code>: سجل المصادر. فيه 244 مدخلاً، تفصيلها:
+      <ul>
+        <li>القرآن: 27 من 27.</li>
+        <li>الحديث: 58 من 58.</li>
+        <li>الكتاب المقدس والحقائق المسيحية: 32 من 35.</li>
+        <li>مراجع المذاهب: 0 من 72.</li>
+        <li>المعاصر: 7 من 52.</li>
+      </ul>
+      و«موثّق» لا تعني أن عالماً راجع الحكم.</li>
+    <li><code dir="ltr">docs/phase-3/screenshots/</code>: 279 لقطة من آخر تشغيل e2e، أي نحو 18 MB.</li>
+    <li><code dir="ltr">reports/phase-1..3.pdf</code>: هذه التقارير، ومصادرها في <code dir="ltr">reports/src/</code>.</li>
+    <li><b>بنود للفريق:</b> الترخيص (TODO في README)، وملف وثيقة التحدي في <code>.gitignore</code>.</li>
   </ul>
   </section><section><h2 id="s8">٨. الجاهزية للنشر<span class="mk">QQs8QQ</span></h2>
-  <div class="callout"><h4>الحالة: جاهزة تقنياً، و<b>لم تُنشر بعد</b>، بانتظار قرار الفريق</h4><p>لم يُنشر أي شيء حتى الآن، ولا يوجد رابط مباشر. واللعبة تطبيق ثابت بصفحة واحدة بلا خادم ولا موجّه، ويُبنى بـ<code>npm run build</code>. وقد جُرّب <code>dist/</code> من الجذر ومن مسار فرعي بلا أخطاء.</p></div>
-  <p>في README تعليمات لثلاثة أنواع من الاستضافة:</p>
+  <div class="callout"><h4>الحالة: جاهزة تقنياً، و<b>لم تُنشر بعد</b>، بانتظار قرار الفريق</h4><p>لم يُنشر أي شيء، ولا يوجد رابط مباشر. واللعبة تطبيق ثابت بصفحة واحدة، يُبنى بـ<code>npm run build</code>، ويعمل من الجذر ومن مسار فرعي.</p></div>
   <ul>
-    <li><b>GitHub Pages.</b> بعد رفع المستودع، يُضاف workflow ينفّذ <code>npm ci && npm run build</code> ثم ينشر <code>dist/</code>. ولأن القاعدة <code>./</code> تعمل تحت <code>https://&lt;user&gt;.github.io/&lt;repo&gt;/</code>.</li>
-    <li><b>Netlify.</b> أمر البناء <code>npm run build</code>، ومجلد النشر <code>dist</code>. أو يُسحب المجلد ويُفلت في Netlify Drop.</li>
-    <li><b>أي استضافة ثابتة</b>، مثل Cloudflare Pages وVercel وS3. الطلب الخارجي الوحيد هو خطوط Google.</li>
+    <li><b>GitHub Pages:</b> workflow ينفّذ <code>npm ci && npm run build</code> ثم ينشر <code>dist/</code>.</li>
+    <li><b>Netlify:</b> أمر البناء <code>npm run build</code>، ومجلد النشر <code>dist</code>.</li>
+    <li><b>أي استضافة ثابتة:</b> الطلب الخارجي الوحيد هو خطوط Google، واللعبة تعمل بخطوط النظام دونها.</li>
   </ul>
   <p><b>القرارات المطلوبة من الفريق قبل النشر:</b></p>
   <ol>
     <li>المنصة.</li>
     <li>جعل المستودع عاماً.</li>
     <li>الترخيص.</li>
-    <li>هل تُنشر اللعبة قبل مراجعة العالم مع التنبيه الحالي، أم بعدها؟</li>
+    <li>هل تُنشر اللعبة قبل مراجعة العالم المسلم والمراجع المطّلع على المسيحية، مع التنبيه الحالي، أم بعدهما؟</li>
   </ol>
   </section><section><h2 id="s9" class="newpage">٩. القضايا المفتوحة<span class="mk">QQs9QQ</span></h2>
   <table class="compact"><thead><tr><th style="width:24%">القضية</th><th>التفصيل</th></tr></thead><tbody>
-    <tr><td><b>لا مراجعة من عالم بعد</b></td><td>لم يراجع عالم بشري أياً من الأحكام الثمانية عشر. وأربعة منها ما زالت <code>ai_draft</code>: <code dir="ltr">home.food_ingredients</code>، <code dir="ltr">work.alcohol_pork_job</code>، <code dir="ltr">private_events.wedding</code>، <code dir="ltr">private_events.gifts_birthday</code>. والقائمة المرتبة بالأولوية في <code>docs/audit/phase1_audit.md</code> §4 وفي تقرير المرحلة الأولى.</td></tr>
-    <tr><td><b>مراجع غير مطابقة على المطبوع</b></td><td>72 مرجعاً مذهبياً و45 مرجعاً معاصراً لم تُطابق على طبعات محددة (<code>docs/SOURCES.md</code>).</td></tr>
-    <tr><td><b>حجب جزئي للكاميرا</b></td><td>ما زال مسح الزوايا الثماني يجد حجباً جزئياً في بعض النقاط:<ul><li>المناسبات الخاصة: 2/8 عند الشرفة، و3/8 عند الفناء، و2/8 عند القاعة، بسبب البيوت والشجيرات والأشجار في المشهد الخارجي.</li><li>العمل: 2/8 عند آلة القهوة، و1/8 عند الموارد البشرية.</li><li>البيت: 1/8 عند الثلاجة.</li><li>الكلية: 1/8، وهو إنذار كاذب سببه جوهرة العلامة نفسها.</li></ul>واللاعب يستطيع تدوير الكاميرا، والمنظر الافتراضي عند الاقتراب واضح.</td></tr>
-    <tr><td><b>لم تُختبر على</b></td><td><ul><li>هواتف حقيقية.</li><li>iOS Safari.</li><li>Firefox.</li><li>قارئات الشاشة: روجع ترتيب التركيز وأدوار ARIA في الشيفرة فقط.</li><li>قياس FPS على هاتف.</li></ul></td></tr>
-    <tr><td><b>محتوى</b> (رُفع ولم يُغيَّر)</td><td><ul><li>في <code>street.lost_wallet</code> حقل <code>number</code> لأحد الأحاديث يحوي ملاحظة نصية: «1722 (الرواية الخامسة في الباب)».</li><li>مراجع المذاهب وبعض أسماء المجامع بالعربية فقط، فتظهر بالعربية في البطاقة الإنجليزية.</li></ul></td></tr>
-    <tr><td><b>المحرك والأدوات</b></td><td><ul><li><code>countStats</code> لا يحسب النسخ المكررة.</li><li>قد يتداخل إشعار مدته 3.5 ثانية مع نافذة حوار.</li><li>e2e يحتاج معالج رسوميات ليكون سريعاً، ويعمل بالرسم البرمجي لكنه أبطأ نحو 10 أضعاف.</li><li>اختبار التدقيق يحتاج الشبكة مرة واحدة في نسخة جديدة من المستودع.</li></ul></td></tr>
-    <tr><td><b>قياس النفع</b></td><td>تقترح وثيقة التحدي اختباراً أولياً مع 8 مشاركين على الأقل من الفئة المستهدفة، بأهداف: إكمال 70%، ووضوح الخطوة التالية 75%، والحالات الحرجة 100%. ولم يُجرَ هذا الاختبار بعد. والحالات الحرجة مغطاة آلياً فقط.</td></tr>
+    <tr><td><b>لا مراجعة من عالم بعد</b></td><td>لم يراجع عالم بشري أياً من الأحكام الثمانية عشر، وأربعة منها ما زالت <code>ai_draft</code>: <code dir="ltr">home.food_ingredients</code>، <code dir="ltr">work.alcohol_pork_job</code>، <code dir="ltr">private_events.wedding</code>، <code dir="ltr">private_events.gifts_birthday</code>. والقائمة المرتبة بالأولوية في <code>phase1_audit.md</code> §4 و<code>pivot_audit.md</code> §5.</td></tr>
+    <tr><td><b>مراجعة ما يُقال عن المسيحية</b></td><td>
+      <ul>
+        <li>أوصاف الممارسة المسيحية في <code>differences</code>، ومنها 3 حقائق غير موثقة في السجل.</li>
+        <li>جملة الاستغفار في <code>neighbor_funeral</code>.</li>
+        <li>الآيات الكتابية الأربع ضعيفة الصلة.</li>
+      </ul>
+      كلها تحتاج <b>مراجعاً مطّلعاً على المسيحية</b>.</td></tr>
+    <tr><td><b>مراجع غير مطابقة على المطبوع</b></td><td><b>72 مرجعاً مذهبياً و45 مرجعاً معاصراً</b> لم تُطابق على طبعات محددة (<code>docs/SOURCES.md</code>).</td></tr>
+    <tr><td><b>حجب جزئي للكاميرا</b></td><td>في بعض الزوايا، ولا سيما في المشاهد الخارجية وقرب المطبخ:
+      <ul>
+        <li>البيت: 1/8 عند اللابتوب، و1/8 عند الثلاجة.</li>
+        <li>العمل: 2/8 عند القهوة، و1/8 عند الموارد البشرية.</li>
+        <li>المناسبات الخاصة: 1/8 عند فناء غارسيا.</li>
+      </ul>
+      واللاعب يستطيع تدوير الكاميرا.</td></tr>
+    <tr><td><b>لم تُختبر على</b></td><td>
+      <ul>
+        <li>هواتف حقيقية.</li>
+        <li>iOS Safari.</li>
+        <li>Firefox.</li>
+        <li>قارئات الشاشة.</li>
+        <li>قياس FPS على هاتف: كل أرقام الأداء من معالج لابتوب.</li>
+      </ul></td></tr>
+    <tr><td><b>محتوى</b></td><td>
+      <ul>
+        <li>في <code>street.lost_wallet</code> حقل <code>number</code> لأحد الأحاديث يحوي ملاحظة نصية.</li>
+        <li>مراجع المذاهب بالعربية فقط في البطاقة الإنجليزية.</li>
+        <li>النص الإنجليزي داخل خامات الشارع.</li>
+      </ul></td></tr>
+    <tr><td><b>أدوات ومستودع</b></td><td>
+      <ul>
+        <li>e2e يحتاج معالج رسوميات ليكون سريعاً.</li>
+        <li>اختبار التدقيق يحتاج الشبكة مرة واحدة في نسخة جديدة.</li>
+        <li>حجم اللقطات في المستودع نحو 18 MB.</li>
+        <li>الترخيص لم يُختر.</li>
+      </ul></td></tr>
+    <tr><td><b>قياس النفع</b></td><td>تقترح وثيقة التحدي اختباراً أولياً مع 8 مشاركين على الأقل، ولم يُجرَ بعد.</td></tr>
   </tbody></table>
   </section><section><h2 id="s10">١٠. خارطة الطريق<span class="mk">QQs10QQ</span></h2>
   <ol>
-    <li><b>مراجعة العالم الشرعي، وهي الأولوية الأولى.</b> يراجع عالم مؤهل الأحكام الـ18، بدءاً بالمسودات الأربع وقائمة التدقيق، ويطابق المراجع المذهبية على المطبوع. والحكم المعتمد يأخذ <code>review_status: "scholar_reviewed"</code> مع اسم المراجع والتاريخ.</li>
-    <li><b>النشر والتسليم.</b> مستودع عام، ورابط مباشر، وفيديو عرض. ومعها اختبار على هواتف حقيقية وعلى iOS Safari وFirefox.</li>
-    <li><b>اختبار المستخدمين</b> بحسب خطة القياس في وثيقة التحدي (8 مشاركين، بموافقتهم وبيانات مجهولة الهوية).</li>
-    <li><b>توسعة رمضان.</b> يوم «رمضان في أمريكا»: السحور قبل العمل، ودعوات الإفطار، وزكاة الفطر، والاعتكاف والعمل، والصيام والامتحانات. وتُبنى بالخط نفسه: البحث، ثم التدقيق، ثم السيناريو، ثم المشهد، ثم الاختبارات.</li>
-    <li><b>طبقة «اسأل عن هذا الموقف».</b> تجيب <b>فقط</b> من ملفات الأحكام الموثقة، باسترجاع مقيد وإخراج JSON منظم يُتحقق من كل استشهاد فيه مقابل سجل المصادر، وتمتنع وتحيل إلى عالم حين لا يغطي المصدر السؤال. وتصبح اختبارات السلامة الحالية (الامتناع، والإسناد، ولا اختلاق) مجموعة تقييمها، ويضاف إليها اختبار حقن التعليمات.</li>
-    <li>إتاحة أوسع: مسار لقارئات الشاشة، وترجمة مكتوبة للحوار، ولغات إضافية (الأردية والفرنسية والصومالية)، وسرد صوتي، ووضع للمعلم في المدارس الإسلامية واتحادات الطلاب.</li>
+    <li><b>المراجعة البشرية، وهي الأولوية الأولى.</b> يراجع عالم مسلم مؤهل الأحكام الـ18، بدءاً بالمسودات الأربع، ويطابق المراجع المذهبية على المطبوع. ويراجع مراجع مطّلع على المسيحية حقل «القيم المشتركة». والحكم المعتمد يأخذ <code>review_status: "scholar_reviewed"</code> مع اسم المراجع والتاريخ.</li>
+    <li><b>النشر والتسليم:</b> مستودع عام، ورابط مباشر، وفيديو عرض، واختبار على هواتف حقيقية وعلى iOS Safari وFirefox.</li>
+    <li><b>اختبار المستخدمين</b> بحسب خطة القياس في وثيقة التحدي: 8 مشاركين، بموافقتهم وببيانات مجهولة الهوية، ودون أي سؤال عن المعتقد.</li>
+    <li><b>توسعة رمضان:</b> أسبوع «رمضان في أمريكا» بعيني آدم: زميل صائم في غداء الفريق، ودعوة إفطار، وزكاة الفطر، والعيد عند الجيران. وهي متسقة مع «الموضوعات التالية» في شاشة النهاية.</li>
+    <li><b>طبقة «اسأل عن هذا الموقف»:</b> تجيب <b>فقط</b> من ملفات الأحكام الموثقة، بإخراج JSON يُتحقق من كل استشهاد فيه. وتمتنع وتحيل حين لا يغطي المصدر السؤال. وتصبح اختبارات السلامة الحالية مجموعة تقييمها، ويضاف إليها اختبار حقن التعليمات.</li>
+    <li><b>إتاحة ولغات:</b> قارئات الشاشة، ولغات أخرى (الأردية والفرنسية والصومالية)، وسرد صوتي.</li>
   </ol>
   </section><section><h2 id="s11" class="newpage">١١. خلاصة المراحل الثلاث وقائمة التسليم<span class="mk">QQs11QQ</span></h2>
-  <table class="compact"><thead><tr><th style="width:18%">المرحلة</th><th>أبرز ما أُنجز</th></tr></thead><tbody>
-    <tr><td><b>1 — الأساس</b></td><td><ul><li>18 حكماً موثقاً بالقرآن والحديث والمذاهب الأربعة والمجامع المعاصرة.</li><li>تدقيق مستقل: 27/27 آية، و64/64 حديثاً، و187/187 فحصاً، و7 تصحيحات في الأحكام.</li><li>قصة «آدم» في 6 محطات و18 موقفاً.</li><li>اكتُشفت 6 تعارضات بين السيناريو والأحكام، وطُبّقت 7 تعديلات.</li><li>محرك ثلاثي الأبعاد ثنائي اللغة.</li></ul></td></tr>
-    <tr><td><b>2 — المشاهد</b></td><td><ul><li>6 مشاهد إجرائية بلا ملفات خارجية، كلها تُبنى وتُحمّل بلا أخطاء.</li><li>18 نقطة تفاعل يوفرها المشهد نفسه.</li><li>اختبارات وصول بالمشي.</li><li>اكتُشف خطأ المحرك عند المخرج وأُصلح، ومعه مشكلة كاميرا العمل.</li></ul></td></tr>
-    <tr><td><b>3 — التكامل والجودة</b></td><td><ul><li>177/177 اختباراً.</li><li>e2e: 4 إعدادات × 18 موقفاً، و90 عرضاً لبطاقة الحكم، و0 أخطاء.</li><li>اختبارات سلامة مربوطة بمتطلبات الوثيقة.</li><li>11 إصلاحاً.</li><li>كل المشاهد ضمن الميزانية.</li><li>README، وسجل مصادر، ومستودع، وجاهزية للنشر.</li></ul></td></tr>
+  <table class="compact"><thead><tr><th style="width:18%">المرحلة</th><th>أبرز ما أُنجز (بعد تغيير الاتجاه)</th></tr></thead><tbody>
+    <tr><td><b>1 — الأساس</b></td><td>
+      <ul>
+        <li>18 حكماً موثقاً بالقرآن والحديث والمذاهب الأربعة والمجامع المعاصرة.</li>
+        <li>في كل حكم «ببساطة» و«قيم مشتركة مع المسيحية»، بـ34 آية كتابية مطابقة حرفياً في KJV وفاندايك.</li>
+        <li>تدقيقان مستقلان: 27/27 آية، و64/64 حديثاً، و281 فحصاً بلا فشل.</li>
+        <li>قصة آدم المسيحي وأصدقائه المسلمين في 6 محطات و18 موقفاً.</li>
+        <li>محرك ثلاثي الأبعاد ثنائي اللغة.</li>
+      </ul></td></tr>
+    <tr><td><b>2 — المشاهد</b></td><td>
+      <ul>
+        <li>6 مشاهد إجرائية بلا ملفات خارجية، حُدّثت للفكرة الجديدة.</li>
+        <li>18 نقطة تفاعل يوفرها المشهد نفسه.</li>
+        <li>كل المشاهد ضمن ميزانية الهاتف، بعد تخفيف المناسبات العامة والخاصة.</li>
+        <li>أُصلحت الكاميرا في العمل والشارع.</li>
+      </ul></td></tr>
+    <tr><td><b>3 — التكامل والجودة</b></td><td>
+      <ul>
+        <li>197/197 اختباراً.</li>
+        <li>e2e: 4 إعدادات × 18 موقفاً، و90 عرضاً لبطاقة الحكم، و0 أخطاء.</li>
+        <li>فحوص خصوصية تثبت ألا بيانات عن المعتقد.</li>
+        <li>اختبارات سلامة مربوطة بمتطلبات الوثيقة.</li>
+        <li>README، وسجل مصادر، ومستودع، وجاهزية للنشر.</li>
+      </ul></td></tr>
   </tbody></table>
   <h3>قائمة التسليم مقابل وثيقة التحدي</h3>
   <table><thead><tr><th>بند التسليم في الوثيقة</th><th>الحالة</th><th class="c">✔ / ⏳</th></tr></thead><tbody>
     <tr><td>منتج ويب متكامل (رحلة يوم في المتصفح على الحاسوب والهاتف)</td><td>يعمل من البداية إلى النهاية في 4 إعدادات</td><td class="c"><span class="ok">✔</span></td></tr>
     <tr><td>مكتبة من 12 إلى 20 موقفاً مراجعاً</td><td><b>18 موقفاً</b>، داخل النطاق. مراجعتها آلية، ومراجعة العالم البشري معلّقة.</td><td class="c"><span class="ok">✔</span></td></tr>
-    <tr><td>سجل المصادر</td><td><code dir="ltr">docs/SOURCES.md</code>: 209 مداخل، 92 منها موثقة</td><td class="c"><span class="ok">✔</span></td></tr>
-    <tr><td>مجموعة اختبارات</td><td><code>npm test</code>: 177/177. و<code>npm run test:e2e</code>: 4/4</td><td class="c"><span class="ok">✔</span></td></tr>
-    <tr><td>التوثيق</td><td>README، وتقارير المراحل الثلاث، ووثائق البحث والتدقيق</td><td class="c"><span class="ok">✔</span></td></tr>
-    <tr><td>مستودع GitHub عام</td><td>مستودع محلي فيه إيداع واحد، ولا مستودع بعيد بعد</td><td class="c"><span class="wait">⏳</span></td></tr>
+    <tr><td>سجل المصادر</td><td><code dir="ltr">docs/SOURCES.md</code>: 244 مدخلاً</td><td class="c"><span class="ok">✔</span></td></tr>
+    <tr><td>مجموعة اختبارات</td><td><code>npm test</code>: 197/197. و<code>npm run test:e2e</code>: 4/4</td><td class="c"><span class="ok">✔</span></td></tr>
+    <tr><td>التوثيق</td><td>README، وتقارير المراحل الثلاث، ووثائق البحث والتدقيقين</td><td class="c"><span class="ok">✔</span></td></tr>
+    <tr><td>مستودع GitHub عام</td><td>مستودع محلي فيه 5 إيداعات، ولا مستودع بعيد بعد</td><td class="c"><span class="wait">⏳</span></td></tr>
     <tr><td>رابط مباشر</td><td>جاهز للنشر، ولم يُنشر، بانتظار قرار الفريق</td><td class="c"><span class="wait">⏳</span></td></tr>
     <tr><td>فيديو</td><td>مخطط، ولم يُنتج بعد</td><td class="c"><span class="wait">⏳</span></td></tr>
   </tbody></table>
   <div class="figs2">
-    <figure><img src="img/p3/dar-summary.jpg"><figcaption>شاشة الملخص بالعربية بعد لعب كامل: 270/270، والمواقف 18/18</figcaption></figure>
-    <figure><img src="img/p3/dar-intro.jpg"><figcaption>شاشة «قبل أن تبدأ» وتنبيهاتها الأربعة: القصة تخييلية، والأحكام أُعدّت بمساعدة الذكاء الاصطناعي وتحتاج مراجعة بشرية، وهي معلومة عامة، والخلاف يُعرض بإنصاف</figcaption></figure>
+    <figure><img src="img/qa/dar-summary.jpg"><figcaption>شاشة النهاية بالعربية بعد لعب كامل (من لقطات إعادة الاختبار)</figcaption></figure>
+    <figure><img src="img/qa/dar-summary-bottom.jpg"><figcaption>الموضوع المقترح، و«تريد أن تعرف أكثر؟» (بحث عن مسجد قريب)، و«عن هذه الأحكام»</figcaption></figure>
   </div>
-  <div class="callout red"><h4>الكلمة الأخيرة</h4><p>«يومك» جاهزة تقنياً ومحمية بالاختبارات. لكن قيمتها الشرعية تتوقف على خطوة لم تحدث بعد: <b>مراجعة عالم شرعي بشري للأحكام الثمانية عشر</b>. فكل حكم فيها مسودة ذكاء اصطناعي دُققت آلياً، واللعبة تقول ذلك للاعب في كل بطاقة.</p></div>
+  <div class="callout red"><h4>الكلمة الأخيرة</h4><p>«يومك» جاهزة تقنياً ومحمية بالاختبارات، ولا تجمع شيئاً عن معتقد لاعبها. لكن قيمتها تتوقف على خطوة لم تحدث بعد: <b>مراجعة عالم مسلم للأحكام الثمانية عشر، ومراجع مطّلع على المسيحية لنقاط التلاقي</b>. فكل حكم فيها مسودة ذكاء اصطناعي دُققت آلياً، واللعبة تقول ذلك للاعب في كل بطاقة.</p></div>
   <p class="end">— نهاية تقرير المرحلة الثالثة —</p>
   </section></body></html>

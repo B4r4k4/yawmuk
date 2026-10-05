@@ -63,6 +63,11 @@ a{ color:inherit; text-decoration:none; }
 .callout{ border:1px solid var(--line); border-right:5px solid var(--gold); background:var(--gold-l); padding:3.5mm 4.5mm; border-radius:2mm; margin:3mm 0 4mm; break-inside:avoid; }
 .callout.teal{ background:var(--teal-l); border-right-color:var(--teal); }
 .callout.red{ background:#fbecea; border-right-color:var(--red); }
+.callout.pivot{ background:#eaf1fb; border-right-color:#3b6ea8; }
+.callout.pivot h4{ color:#1f4e86; }
+.bible{ font-family:'Amiri',serif; font-size:14pt; line-height:2; background:#f1f5fb; border:1px solid #d3e0f0; border-right:4px solid #3b6ea8; border-radius:2mm; padding:3mm 4.5mm 2mm; margin:2mm 0 1mm; break-inside:avoid; }
+.bible .ref{ display:block; font-family:'Tajawal'; font-size:8.6pt; color:var(--muted); line-height:1.6; }
+.bible .ref .en{ display:block; direction:ltr; text-align:left; font-style:italic; }
 .callout h4{ margin-top:0; }
 .callout p:last-child{ margin-bottom:0; }
 .kpis{ display:grid; grid-template-columns:repeat(4,1fr); gap:3mm; margin:3mm 0 5mm; }
@@ -136,26 +141,41 @@ figcaption{ font-size:8.6pt; color:var(--muted); margin-top:1.2mm; text-align:ce
   <div class="org"><span>تحدي الذكاء الاصطناعي في خدمة المحتوى الإسلامي</span><span class="lm">Lemonada</span></div>
   <div class="kicker">تقرير المرحلة — الأساس</div>
   <div class="title">يومك</div>
-  <div class="en">Yawmuk — a 3D web game on the fiqh of everyday dealings</div>
+  <div class="en">Yawmuk — getting to know Islam through everyday life in the USA</div>
   <div class="phase"><div class="num">1</div><div class="lbl">المرحلة الأولى: الأساس<small>البحث الشرعي · السيناريو · محرك اللعبة</small></div></div>
-  <div class="desc">يوثّق هذا التقرير ما أُنجز في المرحلة الأولى من بناء «يومك»: فريق الوكلاء ومنهجية البحث الشرعي، والأحكام الثمانية عشر وأدلتها، ونتائج التدقيق المستقل، والقصة والشخصيات، والتعارضات التي اكتُشفت وأُصلحت، ومحرك اللعبة، والنقاط المفتوحة للمراجع البشري.</div>
+  <div class="desc">يوثّق هذا التقرير المرحلة الأولى من «يومك» كما هي الآن بعد تغيير الاتجاه. يشمل الفكرة الجديدة (آدم المسيحي يتعرّف على الإسلام)، وفريق الوكلاء، ومنهجية البحث الشرعي والكتابي، والأحكام الثمانية عشر وحقولها الجديدة، ونتائج التدقيقين، والقصة والشخصيات، ومحرك اللعبة، والنقاط المفتوحة للمراجع البشري.</div>
   <div class="warn">الأحكام الشرعية في هذا المشروع مسودة أعدّها ذكاء اصطناعي ودُقّقت آلياً، ولا تُعتمد قبل مراجعة عالم شرعي بشري.</div>
-  <div class="foot"><div><b>فريق Lemonada</b>إعداد: وكيل التوثيق</div><div style="text-align:left"><b>2026-10-05</b>الإصدار 1.0</div></div>
-  </div></section><nav class="toc"><h2 class="toc-title">المحتويات</h2><ol><li class="l2"><a href="#s1"><span class="t">١. ملخص تنفيذي</span><span class="dots"></span><span class="pg">3</span></a></li><li class="l2"><a href="#s2"><span class="t">٢. هدف المرحلة ومكانها في المشروع</span><span class="dots"></span><span class="pg">3</span></a></li><li class="l2"><a href="#s3"><span class="t">٣. فريق الوكلاء وأدوارهم</span><span class="dots"></span><span class="pg">4</span></a></li><li class="l2"><a href="#s4"><span class="t">٤. منهجية البحث والتوثيق</span><span class="dots"></span><span class="pg">6</span></a></li><li class="l2"><a href="#s5"><span class="t">٥. جدول الأحكام الثمانية عشر</span><span class="dots"></span><span class="pg">8</span></a></li><li class="l2"><a href="#s6"><span class="t">٦. مثال كامل لبطاقة حكم: شراء البيت</span><span class="dots"></span><span class="pg">10</span></a></li><li class="l2"><a href="#s7"><span class="t">٧. نتائج التدقيق الشرعي المستقل</span><span class="dots"></span><span class="pg">14</span></a></li><li class="l2"><a href="#s8"><span class="t">٨. الشخصيات والقصة وخط اليوم</span><span class="dots"></span><span class="pg">16</span></a></li><li class="l2"><a href="#s9"><span class="t">٩. التعارضات بين السيناريو والأحكام وإصلاحها</span><span class="dots"></span><span class="pg">18</span></a></li><li class="l2"><a href="#s10"><span class="t">١٠. محرك اللعبة</span><span class="dots"></span><span class="pg">19</span></a></li><li class="l2"><a href="#s11"><span class="t">١١. المخاطر والنقاط المفتوحة للمراجع البشري</span><span class="dots"></span><span class="pg">22</span></a></li></ol></nav><section><h2 id="s1">١. ملخص تنفيذي<span class="mk">QQs1QQ</span></h2>
-  <p class="lead">«يومك» لعبة ويب ثلاثية الأبعاد تعمل في المتصفح على الحاسوب والهاتف. تتابع يوماً من حياة «آدم»، مهندس برمجيات مسلم عمره 28 سنة يعيش في كولومبس بولاية أوهايو. يمرّ اللاعب بست محطات، وفي كل محطة ثلاثة مواقف من فقه المعاملات يختار فيها تصرفاً. بعد الاختيار تظهر <b>بطاقة حكم</b> موثقة بالقرآن والحديث وأقوال المذاهب الأربعة والمجامع الفقهية المعاصرة.</p>
-  <p>في المرحلة الأولى بُني الأساس الذي تقوم عليه بقية المراحل: ملفات الأحكام، والسيناريو، والمحرك. ثم دقّق وكيل مستقل الأحكام آلياً وعلمياً، وأُصلحت التعارضات التي وجدها بين السيناريو والأحكام.</p>
+  <div class="foot"><div><b>فريق Lemonada</b>إعداد: وكيل التوثيق</div><div style="text-align:left"><b>2026-10-05</b>الإصدار 2.0 (بعد تغيير الاتجاه)</div></div>
+  </div></section><nav class="toc"><h2 class="toc-title">المحتويات</h2><ol><li class="l2"><a href="#s1"><span class="t">١. ملخص تنفيذي</span><span class="dots"></span><span class="pg">3</span></a></li><li class="l2"><a href="#s2"><span class="t">٢. هدف المرحلة ومكانها في المشروع</span><span class="dots"></span><span class="pg">4</span></a></li><li class="l2"><a href="#s3"><span class="t">٣. فريق الوكلاء وأدوارهم</span><span class="dots"></span><span class="pg">5</span></a></li><li class="l2"><a href="#s4"><span class="t">٤. منهجية البحث والتوثيق</span><span class="dots"></span><span class="pg">7</span></a></li><li class="l2"><a href="#s5"><span class="t">٥. جدول الأحكام الثمانية عشر</span><span class="dots"></span><span class="pg">9</span></a></li><li class="l2"><a href="#s6"><span class="t">٦. مثال كامل لبطاقة حكم: شراء البيت</span><span class="dots"></span><span class="pg">11</span></a></li><li class="l2"><a href="#s7"><span class="t">٧. التدقيق الشرعي المستقل (المرحلة الأولى)</span><span class="dots"></span><span class="pg">16</span></a></li><li class="l2"><a href="#s7b"><span class="t">٨. تدقيق تغيير الاتجاه</span><span class="dots"></span><span class="pg">18</span></a></li><li class="l2"><a href="#s8"><span class="t">٩. الفكرة والشخصيات والقصة</span><span class="dots"></span><span class="pg">20</span></a></li><li class="l2"><a href="#s9"><span class="t">١٠. التعارضات بين السيناريو والأحكام وإصلاحها</span><span class="dots"></span><span class="pg">23</span></a></li><li class="l2"><a href="#s10"><span class="t">١١. محرك اللعبة</span><span class="dots"></span><span class="pg">25</span></a></li><li class="l2"><a href="#s11"><span class="t">١٢. المخاطر والنقاط المفتوحة للمراجع البشري</span><span class="dots"></span><span class="pg">28</span></a></li></ol></nav><section><h2 id="s1">١. ملخص تنفيذي<span class="mk">QQs1QQ</span></h2>
+  <p class="lead">«يومك» لعبة ويب ثلاثية الأبعاد تعمل في المتصفح على الحاسوب والهاتف، للتعرّف على الإسلام من خلال الحياة اليومية في أمريكا. بطلها «آدم ريد»، مهندس برمجيات <b>مسيحي</b> عمره 28 سنة في كولومبس بولاية أوهايو. يعيش أسبوعاً عادياً مع جيران وزملاء وأصدقاء <b>مسلمين</b>، ومرشده الأول جاره عمر. في كل محطة من المحطات الست يرى صديقاً مسلماً يتصرف بطريقة تثير فضوله، فيختار اللاعب كيف يسأل آدم وكيف يتصرف. بعد كل موقف تظهر <b>بطاقة حكم</b> فيها:</p>
+  <ul>
+    <li>شرح «ببساطة» لغير المسلم.</li>
+    <li>الأدلة من القرآن والسنة.</li>
+    <li>أقوال المذاهب الأربعة والمجامع المعاصرة.</li>
+    <li>«قيم مشتركة مع المسيحية» بآيات من الكتاب المقدس متحقق منها حرفياً.</li>
+  </ul>
+  <p>في المرحلة الأولى بُني الأساس الذي تقوم عليه بقية المراحل: ملفات الأحكام، والسيناريو، والمحرك. ثم دقّق وكيل مستقل الأحكام آلياً وعلمياً. وبعد تغيير الاتجاه أُضيف إلى كل حكم حقلان جديدان، وأُعيدت كتابة القصة، وأُجري تدقيق ثانٍ خاص بالتحول.</p>
+  <div class="callout pivot"><h4>تغيير الاتجاه · Change of direction (2026-10-05)</h4>
+  <p>بُنيت النسخة الأولى من المراحل الثلاث على فكرة «آدم المسلم» الذي يطبّق فقه المعاملات في يومه. وفي 2026-10-05، <b>بقرار صاحب المشروع</b>، صار <b>آدم ريد مسيحياً</b> يتعرّف على الإسلام من خلال جيرانه وزملائه وأصدقائه المسلمين، ومرشده الأول جاره عمر. وما تغيّر:</p>
+  <ul>
+    <li>أُعيدت كتابة القصة والسيناريو.</li>
+    <li>أُضيف إلى كل حكم حقلان: <code>newcomer_explainer</code> («ببساطة») و<code>common_ground</code> (القيم المشتركة مع المسيحية، بآيات من KJV وفاندايك متحقق منها حرفياً).</li>
+    <li>عُدّلت المشاهد الست وواجهة المحرك.</li>
+    <li>أُجري تدقيق خاص بالتحول (<code>docs/audit/pivot_audit.md</code>) وإعادة اختبار كاملة.</li>
+  </ul>
+  <p>وما ثبت ولم يتغير: المعرّفات الـ18، والأماكن، ونقاط التفاعل، ونظام النقاط، ونص الأحكام وأدلتها. المرجع: قسم «تحديث 2026-10-05» في <code>docs/TEAM_BRIEF.md</code>.</p></div>
   <div class="kpis">
     <div class="kpi"><div class="v">18</div><div class="l">حكماً شرعياً في 6 ملفات (<code>content/rulings</code>)</div></div>
     <div class="kpi"><div class="v">18</div><div class="l">موقفاً في السيناريو، لكل موقف 3 خيارات وسؤال فهم</div></div>
     <div class="kpi"><div class="v">52 <small>/ 27 آية</small></div><div class="l">استشهاداً قرآنياً، و27 آية فريدة طابقت المصدر حرفياً</div></div>
     <div class="kpi"><div class="v">64</div><div class="l">استشهاداً حديثياً، طابقت كلها المصدر (61 آلياً و3 يدوياً)</div></div>
-    <div class="kpi"><div class="v">187</div><div class="l">فحصاً آلياً: 187 نجاح، 0 تحذير، 0 فشل</div></div>
+    <div class="kpi"><div class="v">281</div><div class="l">فحصاً آلياً بعد التحول: 278 نجاح، و3 تحذيرات مقبولة، و0 فشل (كانت 187/187 قبله)</div></div>
     <div class="kpi"><div class="v">14 <small>/ 18</small></div><div class="l">حكماً اجتاز التدقيق (<code>ai_verified</code>)، و4 بقيت مسودة لعالم</div></div>
-    <div class="kpi"><div class="v">209</div><div class="l">مدخلاً في سجل المصادر الموحد <code>content/sources.json</code></div></div>
-    <div class="kpi"><div class="v">6 → 7</div><div class="l">تعارضات بين السيناريو والأحكام اكتُشفت، و7 تعديلات طُبّقت</div></div>
+    <div class="kpi"><div class="v">244</div><div class="l">مدخلاً في سجل المصادر الموحد <code>content/sources.json</code></div></div>
+    <div class="kpi"><div class="v">34/34</div><div class="l">آية كتابية في «القيم المشتركة»، مطابقة حرفياً: KJV 34/34 وفاندايك 34/34</div></div>
   </div>
   <div class="callout red"><h4>تنبيه أساسي للقارئ</h4>
-  <p>كل الأحكام في هذا المشروع <b>مسودة أعدّها ذكاء اصطناعي</b>. نُقلت نصوص الآيات والأحاديث آلياً من مصادرها وطوبقت حرفياً، ثم راجعها وكيل تدقيق آلي. لكن وسم <code>ai_verified</code> معناه «اجتاز الفحوص الآلية ولم يجد المدقق فيه خطأً جوهرياً»، وليس «معتمد شرعاً». <b>لا يُعتمد أي حكم قبل مراجعة عالم شرعي بشري</b>، وقائمة ما يحتاج المراجعة في القسم العاشر.</p></div>
+  <p>كل الأحكام في هذا المشروع <b>مسودة أعدّها ذكاء اصطناعي</b>. نُقلت نصوص الآيات والأحاديث آلياً من مصادرها وطوبقت حرفياً، ثم راجعها وكيل تدقيق آلي. لكن وسم <code>ai_verified</code> معناه «اجتاز الفحوص الآلية ولم يجد المدقق فيه خطأً جوهرياً»، وليس «معتمد شرعاً». <b>لا يُعتمد أي حكم قبل مراجعة عالم شرعي بشري</b>، وقائمة ما يحتاج المراجعة في القسم الأخير. وحقل «القيم المشتركة» يحتاج كذلك مراجعاً مطّلعاً على المسيحية.</p></div>
   </section><section><h2 id="s2">٢. هدف المرحلة ومكانها في المشروع<span class="mk">QQs2QQ</span></h2>
   <p>ينطلق المشروع من وثيقة التحدي، وفكرتها أن تقديم المعرفة داخل مواقف تفاعلية قريبة من حياة المستخدم يحسّن فهمه للتطبيق اليومي. واشترطت الوثيقة شرطين أساسيين: أن يُفصل المثال التخييلي عن المعلومة الدينية ومصدرها، وألا يُسمح للنموذج بتوليد نصوص منسوبة إلى القرآن أو السنة. ومن هذه الوثيقة استخرج المشرف في <code>docs/TEAM_BRIEF.md</code> خمسة مبادئ ملزمة لكل الوكلاء:</p>
   <ol>
@@ -165,6 +185,25 @@ figcaption{ font-size:8.6pt; color:var(--muted); margin-top:1.2mm; text-align:ce
     <li><b>الإحالة.</b> كل حكم يتوقف على تفاصيل شخصية يذكر متى يجب سؤال مختص.</li>
     <li><b>واجهة ثنائية اللغة.</b> عربية من اليمين إلى اليسار، وإنجليزية.</li>
   </ol>
+  <h3>ما أضافه تحديث 2026-10-05</h3>
+  <p>أضاف تحديث 2026-10-05 إلى <code>TEAM_BRIEF.md</code> قواعد تتقدّم على ما يخالفها:</p>
+  <ul>
+    <li><b>دور آدم: متعلّم مسيحي.</b> صار معنى الجودة في الخيارات:
+      <ul>
+        <li><code>best</code>: سؤال محترم وفضولي يقود إلى فهم صحيح لموقف الإسلام.</li>
+        <li><code>acceptable</code>: تصرف مقبول لكنه ناقص.</li>
+        <li><code>wrong</code>: صورة نمطية، أو افتراض خاطئ، أو ضغط يحرج الصديق المسلم.</li>
+      </ul>
+      ولا يُحكم على آدم بأحكام دينية لا تلزمه.</li>
+    <li><b>حقلان جديدان في كل حكم:</b>
+      <ul>
+        <li><code>newcomer_explainer</code>: شرح مبسط في 3–5 جمل، يذكر الحكم والحكمة منه دون مبالغة ولا جدل.</li>
+        <li><code>common_ground</code>: يضم ملخصاً لنقاط التلاقي، وآيات من الكتاب المقدس <b>حرفياً</b> (KJV وفاندايك، وكلتاهما ملك عام)، والفروق بأمانة واحترام.</li>
+      </ul></li>
+    <li><b>النهاية:</b> ما تعلّمه آدم، وموضوع تالٍ مقترح، وإحالة إلى مسجد أو مركز تعريف بالإسلام. <b>بلا ضغط، ولا قياس للمعتقد، ولا تخزين لأي معلومة عن معتقد اللاعب.</b></li>
+    <li><b>النبرة:</b> احترام كامل للمسيحية، دون انتقاص ولا مقارنة تفضيلية ولا مناظرة.</li>
+    <li><b>ما لم يتغير:</b> المعرّفات الـ18، والأماكن، ونقاط التفاعل، والنقاط 10/5/0 مع +5 لسؤال الفهم.</li>
+  </ul>
   <h3>مراحل المشروع</h3>
   <table><thead><tr><th>المرحلة</th><th>المحتوى</th><th>المخرجات</th></tr></thead><tbody>
     <tr><td><b>1 — الأساس</b> (هذا التقرير)</td><td>بحث شرعي، وسيناريو، ومحرك اللعبة</td><td><code dir="ltr">content/rulings/*.json</code>، <code dir="ltr">content/script/*.json</code>، <code dir="ltr">src/engine/*</code>، <code dir="ltr">reports/phase-1.pdf</code></td></tr>
@@ -186,7 +225,8 @@ figcaption{ font-size:8.6pt; color:var(--muted); margin-top:1.2mm; text-align:ce
     <tr><td><b>باحث شرعي (1)</b></td><td>أحكام البيت والعمل: التمويل العقاري، والطعام، وبطاقات الائتمان، والعمل في مطعم، و401(k)، والأمانة في العمل.</td><td><code dir="ltr">content/rulings/home.json</code>، <code dir="ltr">work.json</code>، <code dir="ltr">docs/research/home_work.md</code></td></tr>
     <tr><td><b>باحث شرعي (2)</b></td><td>أحكام الكلية والشارع: الغش، والقرض الطلابي، والاختلاط والمصافحة، واللقطة، واليانصيب، والبيع والشراء.</td><td><code dir="ltr">school.json</code>، <code dir="ltr">street.json</code>، <code dir="ltr">docs/research/school_street.md</code></td></tr>
     <tr><td><b>باحث شرعي (3)</b></td><td>أحكام المناسبات: التهنئة بالأعياد، ومائدة الخمر، والسحب الخيري، والعرس، والتعزية، والهدايا وأعياد الميلاد.</td><td><code dir="ltr">public_events.json</code>، <code dir="ltr">private_events.json</code>، <code dir="ltr">docs/research/events.md</code></td></tr>
-    <tr><td><b>السيناريست</b></td><td>يكتب القصة والشخصيات والحوار والخيارات وأسئلة الفهم، ويحدد نقاط التفاعل لكل مكان.</td><td><code dir="ltr">docs/story_bible.md</code>، <code dir="ltr">docs/hotspots.md</code>، <code dir="ltr">content/script/*.json</code></td></tr>
+    <tr><td><b>باحث «القيم المشتركة»</b> (بعد التحول)</td><td>يكتب <code>newcomer_explainer</code> و<code>common_ground</code> للأحكام الثمانية عشر. يجلب آيات الكتاب المقدس آلياً من 3 مصادر لنص KJV ومن مصدرين لنص فاندايك، ولا يغيّر أي حقل آخر في الأحكام.</td><td><code dir="ltr">docs/research/common_ground.md</code>، <code dir="ltr">tools/audit/common_ground_data.json</code>، <code dir="ltr">apply_common_ground.cjs</code></td></tr>
+    <tr><td><b>السيناريست</b></td><td>يكتب القصة والشخصيات والحوار والخيارات وأسئلة الفهم، ويحدد نقاط التفاعل لكل مكان. وأعاد كتابة كل ذلك بعد التحول (Story Bible النسخة 2).</td><td><code dir="ltr">docs/story_bible.md</code>، <code dir="ltr">docs/hotspots.md</code>، <code dir="ltr">content/script/*.json</code></td></tr>
     <tr><td><b>مهندس المحرك</b></td><td>يبني محرك اللعبة: العرض ثلاثي الأبعاد، والحركة والكاميرا، وتدفق المواقف، وبطاقة الحكم، واللغتين، وحفظ التقدم.</td><td><code dir="ltr">src/engine/**</code>، <code dir="ltr">index.html</code>، <code dir="ltr">package.json</code>، <code dir="ltr">vite.config.js</code></td></tr>
     <tr><td><b>المدقق الشرعي المستقل</b></td><td>يعيد جلب كل آية وحديث ويطابقه، ويفحص الروابط، ويراجع الأحكام علمياً، ويبني سجل المصادر، ويرصد التعارض بين السيناريو والأحكام.</td><td><code dir="ltr">docs/audit/*</code>، <code dir="ltr">tools/audit/*</code>، <code dir="ltr">content/sources.json</code></td></tr>
     <tr><td><b>6 مصممي مشاهد</b> (المرحلة 2)</td><td>وكيل لكل مكان يبني المشهد ثلاثي الأبعاد وفق <code>hotspots.md</code> وعقد المشهد.</td><td><code dir="ltr">src/scenes/&lt;location&gt;.js</code>، <code dir="ltr">docs/phase-2/scene_*.md</code></td></tr>
@@ -216,6 +256,23 @@ figcaption{ font-size:8.6pt; color:var(--muted); margin-top:1.2mm; text-align:ce
   </ul>
   <h3>المجامع والهيئات المعاصرة</h3>
   <p>فُتحت قرارات <b>مجمع الفقه الإسلامي الدولي</b> من موقعه الرسمي، وفتاوى <b>مجمع فقهاء الشريعة بأمريكا (AMJA)</b> من موقعه. واستُعملت أيضاً قرارات <b>المجلس الأوروبي للإفتاء والبحوث</b>، و<b>دار الإفتاء المصرية</b>، و<b>دائرة الإفتاء الأردنية</b>، وغيرها. وفي ملفات الأحكام 53 إحالة معاصرة.</p>
+  <h3>نصوص الكتاب المقدس (بعد التحول)</h3>
+  <p>طُبقت قاعدة «لا اختلاق» نفسها على الكتاب المقدس: <b>لم يُكتب أي نص كتابي من الذاكرة.</b></p>
+  <ul>
+    <li><b>نص KJV:</b> جُلب آلياً من ثلاثة مصادر مستقلة وقورنت: <code dir="ltr">bible-api.com</code>، و<code dir="ltr">api.getbible.net</code>، و<code dir="ltr">bolls.life</code>. والمصدر المعتمد في الروابط هو bible-api.
+      <ul>
+        <li>تطابقت المصادر الثلاثة حرفياً في 24 آية.</li>
+        <li>في 9 آيات كانت الفروق شكلية فقط، مثل LORD/Lord أو مسافة.</li>
+        <li>تثنية 22: 3 حُسمت بالأغلبية على نص طبعة 1769 («all lost thing»).</li>
+      </ul></li>
+    <li><b>نص فاندايك:</b> جُلب من <code dir="ltr">api.getbible.net/v2/arabicsv</code>، وهو المعتمد بتشكيله، ومن <code dir="ltr">bolls.life</code> (SVD).
+      <ul>
+        <li>طوبق الرسم المجرد في الآيات كلها.</li>
+        <li>لم تُستعمل ترجمات أخرى، مثل نسخة biblegateway العربية أو كتاب الحياة.</li>
+      </ul></li>
+    <li><b>المحتوى الإسلامي في الحقلين الجديدين</b> مأخوذ من ملف الحكم نفسه، بلا دليل جديد. والاقتباسات الحديثية مطابقة لـ<code>text_ar</code> في الحكم، والآيات القرآنية يُشار إليها برقمها فقط.</li>
+    <li><b>حقائق عن الممارسة المسيحية</b>، مثل موقف الكنائس من الفائدة أو اليانصيب: أُكّد بعضها ببحث ويب، مثل التعليم المسيحي الكاثوليكي §2413 وموقف الكنيسة الميثودية. وبعضها معلومات عامة <b>تحتاج مراجعاً مطّلعاً على المسيحية</b>.</li>
+  </ul>
   <h3>عرض الخلاف</h3>
   <p>عُرضت الأقوال دون ترجيح متحيز في المسائل الحساسة: التهنئة بالأعياد، والمصافحة، والمعازف، والقرض للحاجة، وبطاقة الائتمان، وتعزية غير المسلم عند الحنابلة. ويُحسم الحكم بأحد ثمانية وسوم: <code>haram</code>، <code>halal</code>، <code>makruh</code>، <code>mubah</code>، <code>mustahab</code>، <code>wajib</code>، <code>disputed</code>، <code>depends</code>.</p>
   <h3>الضمانات</h3>
@@ -224,17 +281,18 @@ figcaption{ font-size:8.6pt; color:var(--muted); margin-top:1.2mm; text-align:ce
     <div class="callout teal"><h4>ضد التعميم</h4><p>لكل حكم درجة ثقة، وحقل «متى تسأل عالماً»، وملاحظات للمراجع تذكر كل نقل غير مباشر وكل ما لم يُتحقق منه.</p></div>
   </div>
   </section><section><h2 id="s5" class="newpage">٥. جدول الأحكام الثمانية عشر<span class="mk">QQs5QQ</span></h2>
-  <p>تتوزع الأحكام على الوسوم هكذا: <span class="pill" style="background:#b03a2e">حرام</span> 8، <span class="pill" style="background:#2874a6">يختلف بحسب الحال</span> 6، <span class="pill" style="background:#9a7d0a">مختلف فيه</span> 2، <span class="pill" style="background:#1f618d">واجب</span> 1، <span class="pill" style="background:#2e8b57">مباح</span> 1. والأعمدة الثلاثة الأخيرة عدد الآيات والأحاديث والإحالات المعاصرة في كل حكم.</p>
-  <table class="compact"><thead><tr><th class="c">#</th><th>الموقف</th><th>الحكم</th><th class="c">الثقة</th><th>حالة المراجعة</th><th class="c">آيات</th><th class="c">أحاديث</th><th class="c">معاصر</th></tr></thead><tbody>
-  <tr><td class="num">1</td><td><b>شراء البيت: القرض العقاري الربوي أم التمويل الإسلامي؟</b><br><code dir="ltr">home.mortgage</code></td><td><span class="pill" style="background:#b03a2e">حرام</span></td><td class="c">عالية</td><td><span class="tag ok">مدقق آلياً</span></td><td class="num">3</td><td class="num">1</td><td class="num">6</td></tr><tr><td class="num">2</td><td><b>طعام البيت: لحم السوبرماركت والجيلاتين وخلاصة الفانيليا</b><br><code dir="ltr">home.food_ingredients</code></td><td><span class="pill" style="background:#2874a6">يختلف بحسب الحال</span></td><td class="c">متوسطة</td><td><span class="tag warn">مسودة — معلّق لعالم</span></td><td class="num">3</td><td class="num">3</td><td class="num">4</td></tr><tr><td class="num">3</td><td><b>بطاقة الائتمان و«اشترِ الآن وادفع لاحقاً»</b><br><code dir="ltr">home.credit_card</code></td><td><span class="pill" style="background:#9a7d0a">مختلف فيه</span></td><td class="c">متوسطة</td><td><span class="tag ok">مدقق آلياً</span></td><td class="num">3</td><td class="num">2</td><td class="num">3</td></tr><tr><td class="num">4</td><td><b>وظيفة جانبية: تقديم الخمر والخنزير أو برمجة تطبيق لمصنع جعة</b><br><code dir="ltr">work.alcohol_pork_job</code></td><td><span class="pill" style="background:#2874a6">يختلف بحسب الحال</span></td><td class="c">متوسطة</td><td><span class="tag warn">مسودة — معلّق لعالم</span></td><td class="num">3</td><td class="num">4</td><td class="num">3</td></tr><tr><td class="num">5</td><td><b>خطة التقاعد 401(k) ومطابقة صاحب العمل</b><br><code dir="ltr">work.retirement_401k</code></td><td><span class="pill" style="background:#2874a6">يختلف بحسب الحال</span></td><td class="c">متوسطة</td><td><span class="tag ok">مدقق آلياً</span></td><td class="num">3</td><td class="num">2</td><td class="num">3</td></tr><tr><td class="num">6</td><td><b>الأمانة في العمل: هدايا الموردين وتسجيل الساعات وموارد الشركة</b><br><code dir="ltr">work.honesty_gifts</code></td><td><span class="pill" style="background:#b03a2e">حرام</span></td><td class="c">عالية</td><td><span class="tag ok">مدقق آلياً</span></td><td class="num">7</td><td class="num">5</td><td class="num">1</td></tr><tr><td class="num">7</td><td><b>الغش في الامتحان والواجبات</b><br><code dir="ltr">school.cheating</code></td><td><span class="pill" style="background:#b03a2e">حرام</span></td><td class="c">عالية</td><td><span class="tag ok">مدقق آلياً</span></td><td class="num">3</td><td class="num">3</td><td class="num">2</td></tr><tr><td class="num">8</td><td><b>القرض الطلابي بفائدة وبدائله</b><br><code dir="ltr">school.student_loan</code></td><td><span class="pill" style="background:#b03a2e">حرام</span></td><td class="c">متوسطة</td><td><span class="tag ok">مدقق آلياً</span></td><td class="num">4</td><td class="num">1</td><td class="num">4</td></tr><tr><td class="num">9</td><td><b>مجموعة الدراسة المختلطة ومصافحة الأستاذة</b><br><code dir="ltr">school.mixed_social</code></td><td><span class="pill" style="background:#2874a6">يختلف بحسب الحال</span></td><td class="c">متوسطة</td><td><span class="tag ok">مدقق آلياً</span></td><td class="num">1</td><td class="num">5</td><td class="num">3</td></tr><tr><td class="num">10</td><td><b>محفظة ضائعة في الشارع (اللُّقَطة)</b><br><code dir="ltr">street.lost_wallet</code></td><td><span class="pill" style="background:#1f618d">واجب</span></td><td class="c">عالية</td><td><span class="tag ok">مدقق آلياً</span></td><td class="num">2</td><td class="num">3</td><td class="num">0</td></tr><tr><td class="num">11</td><td><b>اليانصيب وبطاقات الكشط والمراهنات الرياضية</b><br><code dir="ltr">street.lottery</code></td><td><span class="pill" style="background:#b03a2e">حرام</span></td><td class="c">عالية</td><td><span class="tag ok">مدقق آلياً</span></td><td class="num">4</td><td class="num">1</td><td class="num">2</td></tr><tr><td class="num">12</td><td><b>البيع والشراء: إخفاء العيب والغبن والإكرامية والتقييم الكاذب</b><br><code dir="ltr">street.buying_selling</code></td><td><span class="pill" style="background:#b03a2e">حرام</span></td><td class="c">عالية</td><td><span class="tag ok">مدقق آلياً</span></td><td class="num">5</td><td class="num">5</td><td class="num">2</td></tr><tr><td class="num">13</td><td><b>الكريسماس وعيد الشكر: التهنئة والحفل والهدايا</b><br><code dir="ltr">public_events.holiday_greetings</code></td><td><span class="pill" style="background:#9a7d0a">مختلف فيه</span></td><td class="c">متوسطة</td><td><span class="tag ok">مدقق آلياً</span></td><td class="num">3</td><td class="num">4</td><td class="num">6</td></tr><tr><td class="num">14</td><td><b>حفلة الشركة: مائدة يُدار عليها الخمر</b><br><code dir="ltr">public_events.alcohol_table</code></td><td><span class="pill" style="background:#b03a2e">حرام</span></td><td class="c">متوسطة</td><td><span class="tag ok">مدقق آلياً</span></td><td class="num">2</td><td class="num">2</td><td class="num">3</td></tr><tr><td class="num">15</td><td><b>السحب الخيري (Raffle)</b><br><code dir="ltr">public_events.raffle</code></td><td><span class="pill" style="background:#b03a2e">حرام</span></td><td class="c">عالية</td><td><span class="tag ok">مدقق آلياً</span></td><td class="num">2</td><td class="num">3</td><td class="num">2</td></tr><tr><td class="num">16</td><td><b>زواج صديق مسلم: المهر والوليمة والإشهار والموسيقى</b><br><code dir="ltr">private_events.wedding</code></td><td><span class="pill" style="background:#2874a6">يختلف بحسب الحال</span></td><td class="c">متوسطة</td><td><span class="tag warn">مسودة — معلّق لعالم</span></td><td class="num">1</td><td class="num">8</td><td class="num">3</td></tr><tr><td class="num">17</td><td><b>وفاة الجار غير المسلم: التعزية والجنازة والدعاء</b><br><code dir="ltr">private_events.neighbor_funeral</code></td><td><span class="pill" style="background:#2e8b57">مباح</span></td><td class="c">متوسطة</td><td><span class="tag ok">مدقق آلياً</span></td><td class="num">2</td><td class="num">5</td><td class="num">3</td></tr><tr><td class="num">18</td><td><b>الهدايا وأعياد الميلاد</b><br><code dir="ltr">private_events.gifts_birthday</code></td><td><span class="pill" style="background:#2874a6">يختلف بحسب الحال</span></td><td class="c">متوسطة</td><td><span class="tag warn">مسودة — معلّق لعالم</span></td><td class="num">1</td><td class="num">7</td><td class="num">3</td></tr>
-  <tr><td></td><td colspan="4"><b>المجموع</b></td><td class="num">52</td><td class="num">64</td><td class="num">53</td></tr>
+  <p>تتوزع الأحكام على الوسوم هكذا: <span class="pill" style="background:#b03a2e">حرام</span> 8، <span class="pill" style="background:#2874a6">يختلف بحسب الحال</span> 6، <span class="pill" style="background:#9a7d0a">مختلف فيه</span> 2، <span class="pill" style="background:#1f618d">واجب</span> 1، <span class="pill" style="background:#2e8b57">مباح</span> 1. والأعمدة الأخيرة عدد الآيات والأحاديث والإحالات المعاصرة، ثم آيات الكتاب المقدس في «القيم المشتركة». وكل الأحكام الثمانية عشر فيها <code>newcomer_explainer</code> (18/18) و<code>common_ground</code> (18/18).</p>
+  <table class="compact"><thead><tr><th class="c">#</th><th>الموقف</th><th>الحكم</th><th class="c">الثقة</th><th>حالة المراجعة</th><th class="c">آيات</th><th class="c">أحاديث</th><th class="c">معاصر</th><th class="c">كتابي</th></tr></thead><tbody>
+  <tr><td class="num">1</td><td><b>شراء البيت: القرض العقاري الربوي أم التمويل الإسلامي؟</b><br><code dir="ltr">home.mortgage</code></td><td><span class="pill" style="background:#b03a2e">حرام</span></td><td class="c">عالية</td><td><span class="tag ok">مدقق آلياً</span></td><td class="num">3</td><td class="num">1</td><td class="num">6</td><td class="num">2</td></tr><tr><td class="num">2</td><td><b>طعام البيت: لحم السوبرماركت والجيلاتين وخلاصة الفانيليا</b><br><code dir="ltr">home.food_ingredients</code></td><td><span class="pill" style="background:#2874a6">يختلف بحسب الحال</span></td><td class="c">متوسطة</td><td><span class="tag warn">مسودة — معلّق لعالم</span></td><td class="num">3</td><td class="num">3</td><td class="num">4</td><td class="num">2</td></tr><tr><td class="num">3</td><td><b>بطاقة الائتمان و«اشترِ الآن وادفع لاحقاً»</b><br><code dir="ltr">home.credit_card</code></td><td><span class="pill" style="background:#9a7d0a">مختلف فيه</span></td><td class="c">متوسطة</td><td><span class="tag ok">مدقق آلياً</span></td><td class="num">3</td><td class="num">2</td><td class="num">3</td><td class="num">2</td></tr><tr><td class="num">4</td><td><b>وظيفة جانبية: تقديم الخمر والخنزير أو برمجة تطبيق لمصنع جعة</b><br><code dir="ltr">work.alcohol_pork_job</code></td><td><span class="pill" style="background:#2874a6">يختلف بحسب الحال</span></td><td class="c">متوسطة</td><td><span class="tag warn">مسودة — معلّق لعالم</span></td><td class="num">3</td><td class="num">4</td><td class="num">3</td><td class="num">1</td></tr><tr><td class="num">5</td><td><b>خطة التقاعد 401(k) ومطابقة صاحب العمل</b><br><code dir="ltr">work.retirement_401k</code></td><td><span class="pill" style="background:#2874a6">يختلف بحسب الحال</span></td><td class="c">متوسطة</td><td><span class="tag ok">مدقق آلياً</span></td><td class="num">3</td><td class="num">2</td><td class="num">3</td><td class="num">1</td></tr><tr><td class="num">6</td><td><b>الأمانة في العمل: هدايا الموردين وتسجيل الساعات وموارد الشركة</b><br><code dir="ltr">work.honesty_gifts</code></td><td><span class="pill" style="background:#b03a2e">حرام</span></td><td class="c">عالية</td><td><span class="tag ok">مدقق آلياً</span></td><td class="num">7</td><td class="num">5</td><td class="num">1</td><td class="num">2</td></tr><tr><td class="num">7</td><td><b>الغش في الامتحان والواجبات</b><br><code dir="ltr">school.cheating</code></td><td><span class="pill" style="background:#b03a2e">حرام</span></td><td class="c">عالية</td><td><span class="tag ok">مدقق آلياً</span></td><td class="num">3</td><td class="num">3</td><td class="num">2</td><td class="num">2</td></tr><tr><td class="num">8</td><td><b>القرض الطلابي بفائدة وبدائله</b><br><code dir="ltr">school.student_loan</code></td><td><span class="pill" style="background:#b03a2e">حرام</span></td><td class="c">متوسطة</td><td><span class="tag ok">مدقق آلياً</span></td><td class="num">4</td><td class="num">1</td><td class="num">4</td><td class="num">2</td></tr><tr><td class="num">9</td><td><b>مجموعة الدراسة المختلطة ومصافحة الأستاذة</b><br><code dir="ltr">school.mixed_social</code></td><td><span class="pill" style="background:#2874a6">يختلف بحسب الحال</span></td><td class="c">متوسطة</td><td><span class="tag ok">مدقق آلياً</span></td><td class="num">1</td><td class="num">5</td><td class="num">3</td><td class="num">2</td></tr><tr><td class="num">10</td><td><b>محفظة ضائعة في الشارع (اللُّقَطة)</b><br><code dir="ltr">street.lost_wallet</code></td><td><span class="pill" style="background:#1f618d">واجب</span></td><td class="c">عالية</td><td><span class="tag ok">مدقق آلياً</span></td><td class="num">2</td><td class="num">3</td><td class="num">0</td><td class="num">2</td></tr><tr><td class="num">11</td><td><b>اليانصيب وبطاقات الكشط والمراهنات الرياضية</b><br><code dir="ltr">street.lottery</code></td><td><span class="pill" style="background:#b03a2e">حرام</span></td><td class="c">عالية</td><td><span class="tag ok">مدقق آلياً</span></td><td class="num">4</td><td class="num">1</td><td class="num">2</td><td class="num">2</td></tr><tr><td class="num">12</td><td><b>البيع والشراء: إخفاء العيب والغبن والإكرامية والتقييم الكاذب</b><br><code dir="ltr">street.buying_selling</code></td><td><span class="pill" style="background:#b03a2e">حرام</span></td><td class="c">عالية</td><td><span class="tag ok">مدقق آلياً</span></td><td class="num">5</td><td class="num">5</td><td class="num">2</td><td class="num">3</td></tr><tr><td class="num">13</td><td><b>الكريسماس وعيد الشكر: التهنئة والحفل والهدايا</b><br><code dir="ltr">public_events.holiday_greetings</code></td><td><span class="pill" style="background:#9a7d0a">مختلف فيه</span></td><td class="c">متوسطة</td><td><span class="tag ok">مدقق آلياً</span></td><td class="num">3</td><td class="num">4</td><td class="num">6</td><td class="num">2</td></tr><tr><td class="num">14</td><td><b>حفلة الشركة: مائدة يُدار عليها الخمر</b><br><code dir="ltr">public_events.alcohol_table</code></td><td><span class="pill" style="background:#b03a2e">حرام</span></td><td class="c">متوسطة</td><td><span class="tag ok">مدقق آلياً</span></td><td class="num">2</td><td class="num">2</td><td class="num">3</td><td class="num">3</td></tr><tr><td class="num">15</td><td><b>السحب الخيري (Raffle)</b><br><code dir="ltr">public_events.raffle</code></td><td><span class="pill" style="background:#b03a2e">حرام</span></td><td class="c">عالية</td><td><span class="tag ok">مدقق آلياً</span></td><td class="num">2</td><td class="num">3</td><td class="num">2</td><td class="num">1</td></tr><tr><td class="num">16</td><td><b>زواج صديق مسلم: المهر والوليمة والإشهار والموسيقى</b><br><code dir="ltr">private_events.wedding</code></td><td><span class="pill" style="background:#2874a6">يختلف بحسب الحال</span></td><td class="c">متوسطة</td><td><span class="tag warn">مسودة — معلّق لعالم</span></td><td class="num">1</td><td class="num">8</td><td class="num">3</td><td class="num">2</td></tr><tr><td class="num">17</td><td><b>وفاة الجار غير المسلم: التعزية والجنازة والدعاء</b><br><code dir="ltr">private_events.neighbor_funeral</code></td><td><span class="pill" style="background:#2e8b57">مباح</span></td><td class="c">متوسطة</td><td><span class="tag ok">مدقق آلياً</span></td><td class="num">2</td><td class="num">5</td><td class="num">3</td><td class="num">2</td></tr><tr><td class="num">18</td><td><b>الهدايا وأعياد الميلاد</b><br><code dir="ltr">private_events.gifts_birthday</code></td><td><span class="pill" style="background:#2874a6">يختلف بحسب الحال</span></td><td class="c">متوسطة</td><td><span class="tag warn">مسودة — معلّق لعالم</span></td><td class="num">1</td><td class="num">7</td><td class="num">3</td><td class="num">1</td></tr>
+  <tr><td></td><td colspan="4"><b>المجموع</b></td><td class="num">52</td><td class="num">64</td><td class="num">53</td><td class="num">34</td></tr>
   </tbody></table>
-  <p class="footnote">المصدر: ملفات <code>content/rulings/*.json</code> كما هي وقت إعداد التقرير. «مسودة — معلّق لعالم» تعني أن المدقق المستقل أبقى الحكم <code>ai_draft</code> لأن فيه مسألة تحتاج عالماً بشرياً، وتفصيلها في القسم العاشر.</p>
+  <p class="footnote">المصدر: ملفات <code>content/rulings/*.json</code> كما هي وقت إعداد التقرير. «مسودة — معلّق لعالم» تعني أن المدقق المستقل أبقى الحكم <code>ai_draft</code> لأن فيه مسألة تحتاج عالماً بشرياً، وتفصيلها في القسم الأخير. وصِيغ حقل <code>question</code> في الأحكام كلها بصيغة محايدة («هل يجوز للمسلم…»)، ولم يعد أي حكم يخاطب آدم على أنه المكلّف.</p>
   </section><section><h2 id="s6" class="newpage">٦. مثال كامل لبطاقة حكم: شراء البيت<span class="mk">QQs6QQ</span></h2>
-  <p>هذه بطاقة <code>home.mortgage</code> كما هي في <code>content/rulings/home.json</code>. والآيات والحديث والأقوال منقولة من الملف حرفياً دون تحرير. وهي البطاقة التي يراها اللاعب بعد أن يختار تصرفه أمام لابتوب سارة في مشهد البيت.</p>
+  <p>هذه بطاقة <code>home.mortgage</code> كما هي في <code>content/rulings/home.json</code>. والآيات والحديث والأقوال منقولة من الملف حرفياً دون تحرير. وهي البطاقة التي يراها اللاعب بعد موقف اللابتوب في مشهد البيت، حين يحكي عمر عن تمويله الإسلامي. وأُضيف إليها بعد التحول قسمان: «ببساطة» تحت رأس البطاقة مباشرة، و«قيم مشتركة مع المسيحية» بعد المذاهب والمجامع.</p>
   <div class="rcard"><div class="hd"><div class="id">home.mortgage</div><h3>شراء البيت: القرض العقاري الربوي أم التمويل الإسلامي؟</h3>
   <span class="pill" style="background:#b03a2e">حرام</span> &nbsp;<span class="tag ok">الثقة: عالية</span> &nbsp;<span class="tag ok">مدقق آلياً</span></div>
   <div class="bd">
+  <div class="callout teal"><h4>ببساطة (newcomer_explainer) — جديد</h4><p>يحرّم الإسلام الربا، أي اشتراط زيادة على القرض أخذاً أو دفعاً، ولذلك لا يجوز القرض العقاري بفائدة عند المذاهب الأربعة وأكثر المجامع الفقهية المعاصرة. ويذكر العلماء أن الحكمة هي العدل: فالمقرض بفائدة يضمن ربحه ويحمّل المقترض المحتاج كل المخاطرة، أما التجارة فيتقاسم فيها الطرفان الربح والخسارة، ولهذا فرّق القرآن بين البيع والربا (البقرة 275). لذلك يلجأ كثير من المسلمين في أمريكا إلى عقود التمويل الإسلامي القائمة على البيع أو المشاركة أو الإجارة. وقد أجاز المجلس الأوروبي للإفتاء القرض الربوي لمسكن الحاجة عند فقد البديل وبشروط مشددة، لكنه قول لا يأخذ به جمهور العلماء.</p></div>
   <h4>المسألة</h4><p>هل يجوز لمسلم في أمريكا أن يشتري بيتاً بقرض عقاري تقليدي بفائدة، أم يلزمه التمويل الإسلامي (المرابحة، المشاركة المتناقصة، الإجارة المنتهية بالتمليك)؟</p>
   <h4>الخلاصة</h4><p>القرض بفائدة ربا محرم بالنص والإجماع، وهذا قول المذاهب الأربعة ومجمع الفقه الإسلامي الدولي ومجمع فقهاء الشريعة بأمريكا. أجاز المجلس الأوروبي للإفتاء (1999) القرض الربوي لمسكن الحاجة بشروط مشددة عند فقد البديل، وهو قول مرجوح عند الجمهور. البديل المتاح في أمريكا هو شركات التمويل الإسلامي، مع التحقق من عقودها.</p>
   <h4>من القرآن الكريم</h4>
@@ -248,6 +306,10 @@ figcaption{ font-size:8.6pt; color:var(--muted); margin-top:1.2mm; text-align:ce
   <table class="compact ctab"><thead><tr><th>الجهة والقرار</th><th>الموقف</th></tr></thead><tbody>
   <tr><td><b>مجمع الفقه الإسلامي الدولي</b><br><span class="muted">القرار 10 (10/2)، الدورة الثانية، جدة، ديسمبر 1985</span></td><td>كل زيادة أو فائدة على الدين عند حلول أجله مقابل تأجيله، وكل زيادة مشروطة في القرض عند التعاقد، كلاهما ربا محرم شرعاً.</td></tr><tr><td><b>مجمع الفقه الإسلامي الدولي</b><br><span class="muted">القرار 50 (1/6)، الدورة السادسة، جدة، مارس 1990 (التمويل العقاري لبناء المساكن وشرائها)</span></td><td>المسكن حاجة أساسية تُلبّى بالطرق والأموال المشروعة. والتمويل العقاري بفائدة ربا محرم أياً كان سعر الفائدة. ومن البدائل المشروعة: البيع بالتقسيط والاستصناع.</td></tr><tr><td><b>مجمع الفقه الإسلامي الدولي</b><br><span class="muted">القراران 40-41 (2/5، 3/5) الدورة الخامسة، الكويت 1988 (المرابحة للآمر بالشراء)؛ والقرار 136 (2/15) الدورة الخامسة عشرة، مسقط 2004 (المشاركة المتناقصة)</span></td><td>تجوز المرابحة للآمر بالشراء إذا تملك المصرف السلعة وقبضها وتحمّل تبعة هلاكها قبل التسليم. وتجوز المشاركة المتناقصة بضوابط، منها أن يتحمل كل شريك الخسارة بقدر حصته، وألا يكون الوعد بشراء الحصة ملزماً إلا لطرف واحد.</td></tr><tr><td><b>مجمع فقهاء الشريعة بأمريكا (AMJA)</b><br><span class="muted">قرار لجنة الفتوى الدائمة بشأن شركات التمويل الإسلامي للمساكن في أمريكا، هيوستن، 15-17 سبتمبر 2014</span></td><td>الاقتراض بفائدة محرم قليله وكثيره. وصنّف القرار الشركات ثلاث فئات: ما عقوده موافقة للشريعة في الجملة فيجوز (Ameen Housing بعد تعديل عقودها في يناير 2015، وMubarak Mortgage وNeeyah)، وما فيه مخالفات دون الفائدة الصريحة فيجوز عند الحاجة أو الحاجة الشديدة (Guidance Residential للحاجة؛ Devon Bank وUIF للحاجة الشديدة)، وما هو قرض ربوي في حقيقته فلا يجوز (LARIBA وIjara Loan). والحكم خاص بالعقود القائمة وقت صدوره.</td></tr><tr><td><b>المجلس الأوروبي للإفتاء والبحوث</b><br><span class="muted">الدورة العادية الرابعة، دبلن، 18-22 رجب 1420هـ / 27-31 أكتوبر 1999</span></td><td>أكّد المجلس تحريم الربا، ثم أجاز استثناءً للمسلم في أوروبا شراء مسكن بقرض ربوي بشروط: أن يكون البيت لسكناه وأسرته، وألا يملك بيتاً آخر، وألا يكون عنده من المال ما يكفي لشرائه بغير قرض، وعند فقد البديل الإسلامي. وبنى ذلك على أصلين: تنزيل الحاجة منزلة الضرورة، وقول أبي حنيفة ومحمد في المعاملة في غير دار الإسلام. وخالفه في ذلك جمهور المجامع والعلماء.</td></tr><tr><td><b>مؤتمر فقهي في ديترويت 1999 (بحسب د. منذر قحف) — لم يُتحقق من صدوره رسمياً عن Fiqh Council of North America</b><br><span class="muted">المؤتمر الفقهي الدولي الثاني، ديترويت 1999 (نقل غير مباشر)</span></td><td>نقل د. منذر قحف أن هذا المؤتمر أجاز للأسر المسلمة في أمريكا الشمالية القرض العقاري التقليدي عند الحاجة للمسكن وفقد العقد الشرعي، لأن السكن اللائق حاجة أساسية.</td></tr>
   </tbody></table>
+  <h3>قيم مشتركة مع المسيحية (common_ground) — جديد</h3>
+  <p>الكتاب المقدس أيضاً ينهى عن الإقراض بالربا للأخ وللفقير، وقد ظلت الكنيسة قروناً تدين الربا؛ ففي التقليدين معاً إقراضُ المحتاج بابُ رحمة لا باب تكسّب.</p>
+  <div class="bible">إِنْ أَقْرَضْتَ فِضَّةً لِشَعْبِي ٱلْفَقِيرِ ٱلَّذِي عِنْدَكَ فَلَا تَكُنْ لَهُ كَٱلْمُرَابِي. لَا تَضَعُوا عَلَيْهِ رِبًا.<span class="ref">خروج 22: 25 — ترجمة فاندايك — <span class="ltr">https://api.getbible.net/v2/arabicsv/2/22.json</span><span class="en">Exodus 22:25 (KJV): If thou lend money to any of my people that is poor by thee, thou shalt not be to him as an usurer, neither shalt thou lay upon him usury. — https://bible-api.com/Exodus+22:25?translation=kjv</span></span></div><div class="bible">«لَا تُقْرِضْ أَخَاكَ بِرِبًا، رِبَا فِضَّةٍ، أَوْ رِبَا طَعَامٍ، أَوْ رِبَا شَيْءٍ مَّا مِمَّا يُقْرَضُ بِرِبًا،<span class="ref">تثنية 23: 19 — ترجمة فاندايك — <span class="ltr">https://api.getbible.net/v2/arabicsv/5/23.json</span><span class="en">Deuteronomy 23:19 (KJV): Thou shalt not lend upon usury to thy brother; usury of money, usury of victuals, usury of any thing that is lent upon usury: — https://bible-api.com/Deuteronomy+23:19?translation=kjv</span></span></div>
+  <h4>أين نختلف — باحترام</h4><p>النهي في التوراة موجّه إلى الإقراض داخل جماعة بني إسرائيل، والآية التالية (تثنية 23: 20) تجيز الربا من الأجنبي. ومع الزمن قبلت أغلب الكنائس الفائدة المعتدلة في الإقراض التجاري وصارت تقصر لفظ «الربا» على الفائدة الفاحشة أو الاستغلالية، فأغلب المسيحيين اليوم يرون القرض العقاري العادي مشروعاً، بينما يعدّ جمهور علماء المسلمين كل زيادة مشروطة على القرض ربا.</p>
   <div class="grid2">
     <div><h3>الإرشاد العملي</h3><ul><li>ابدأ بالادخار والاستئجار حتى يتيسر بديل شرعي، فالاستئجار ليس حراماً ولا عيباً.</li><li>قارن عروض شركات التمويل الإسلامي العاملة في أمريكا، مثل Guidance Residential وUniversity Islamic Financial (UIF) وDevon Bank وAmeen Housing (أمثلة وليست تزكية)، واطلب نسخة العقد وفتوى هيئتها الشرعية.</li><li>اسأل عن: من يتحمل الصيانة والتأمين والضرائب؟ وكيف تُحسب غرامة التأخير؟ وهل تذهب للخيرية أم للشركة؟ وهل تملك الشركة حصتها فعلاً؟</li><li>قرار AMJA صدر سنة 2014 والعقود تتغير، فتحقق من الوضع الحالي قبل التوقيع.</li><li>إن كنت قد اشتريت بقرض ربوي فعليك بالتوبة، واستشر عالماً في إعادة التمويل (refinance) بعقد شرعي إن أمكن.</li></ul></div>
     <div><h3>البدائل الحلال</h3><ul><li>المشاركة المتناقصة (شراكة في البيت مع شراء حصة الممول تدريجياً)</li><li>المرابحة (يشتري الممول البيت ثم يبيعه لك بربح معلوم مقسطاً)</li><li>الإجارة المنتهية بالتمليك</li><li>الادخار والشراء نقداً أو الاستئجار مؤقتاً</li><li>القرض الحسن من الأهل أو صناديق المجتمع</li></ul>
@@ -255,7 +317,7 @@ figcaption{ font-size:8.6pt; color:var(--muted); margin-top:1.2mm; text-align:ce
   </div>
   <h3>ملاحظات للمراجع البشري (من الملف)</h3>
   <p class="small">ثقة عالية في أصل الحكم (تحريم القرض بفائدة) وفي نصوص الأدلة. تحتاج مراجعة: (1) الإحالات المذهبية للحنفية والشافعية والحنابلة منقولة بأرقام أجزاء وصفحات من مواقع فتوى (askimam، islamqa) ولم تُطابق على طبعة محددة. (2) المرجع المالكي من موسوعة عامة مصرية وليس من كتاب مالكي معتمد. (3) نسبة فتوى ديترويت 1999 إلى Fiqh Council of North America لم يُتحقق منها رسمياً، فوُضعت بوصف «مؤتمر فقهي». (4) تصنيف AMJA للشركات من 2014 وقد يكون تغيّر. (5) لم نجد نصاً عربياً رسمياً لقرار المجمع 50 (1/6) فصيغ الموقف العربي بالمعنى من النص الإنجليزي الرسمي. (6) الإجارة المنتهية بالتمليك: لم يُتحقق من رقم قرار المجمع فيها فلم يُذكر. نصوص الآيات من Tanzil (رسم عثماني) عبر api.alquran.cloud مع ترجمة Sahih International. نص الحديث منقول آلياً من hadith-api (مصدر sunnah.com) وتُحقق من الرقم 1598 بالبحث، لأن sunnah.com يمنع الجلب المباشر (403).</p><p class="small">[تدقيق المرحلة 1 — 2026-10-05] تحققتُ مباشرة من قرار AMJA (هيوستن 15-17 سبتمبر 2014): التصنيف مطابق (Guidance: يجوز للحاجة؛ Devon Bank بعقديه وUIF: للحاجة الشديدة؛ LARIBA وIjara Loan: لا يجوز؛ Ameen Housing: جائز بعد تعديل يناير 2015)، وأُضيفت شركتان صنّفهما القرار جائزتين (Mubarak Mortgage، Neeyah). أرقام قرارات المجمع 10 (10/2)، 50 (1/6)، 40-41 (2/5، 3/5)، 136 (2/15) صحيحة. ملاحظات الباحث بشأن المراجع المذهبية الثانوية (islamqa/askimam) ما تزال قائمة لكنها لا تمس الحكم المجمع عليه. نجحت الفحوص الآلية.</p>
-  </section><section><h2 id="s7" class="newpage">٧. نتائج التدقيق الشرعي المستقل<span class="mk">QQs7QQ</span></h2>
+  </section><section><h2 id="s7" class="newpage">٧. التدقيق الشرعي المستقل (المرحلة الأولى)<span class="mk">QQs7QQ</span></h2>
   <p>بعد أن أنهى الباحثون عملهم، أعاد وكيل تدقيق مستقل فحص الأحكام الثمانية عشر آلياً وعلمياً. وراجع ملفات السيناريو أيضاً مراجعة سريعة. التقرير الكامل في <code>docs/audit/phase1_audit.md</code>، ومخرج الفحص في <code>docs/audit/verify_output_2026-10-05.txt</code>.</p>
   <table><thead><tr><th>البند</th><th>النتيجة</th></tr></thead><tbody>
     <tr><td>الاستشهادات القرآنية</td><td><b>52 استشهاداً و27 آية فريدة: 27/27 مطابقة حرفياً</b></td></tr>
@@ -265,8 +327,8 @@ figcaption{ font-size:8.6pt; color:var(--muted); margin-top:1.2mm; text-align:ce
     <tr><td>أحكام وُسمت <code>ai_verified</code></td><td><b>14</b></td></tr>
     <tr><td>أحكام بقيت <code>ai_draft</code></td><td><b>4</b>: <code dir="ltr">home.food_ingredients</code>، <code dir="ltr">work.alcohol_pork_job</code>، <code dir="ltr">private_events.wedding</code>، <code dir="ltr">private_events.gifts_birthday</code></td></tr>
     <tr><td>أحكام عُدّل محتواها</td><td><b>7</b>، وتفصيلها في الجدول التالي</td></tr>
-    <tr><td>تعارضات بين السيناريو والأحكام</td><td><b>6</b>، وتفصيلها في القسم التاسع</td></tr>
-    <tr><td>سجل المصادر <code dir="ltr">content/sources.json</code></td><td>209 مدخلات: قرآن 27 (موثق 27)، حديث 58 (موثق 58)، مذهبي 72 (موثق 0)، معاصر 52 (موثق 7)</td></tr>
+    <tr><td>تعارضات بين السيناريو والأحكام</td><td><b>6</b>، وتفصيلها في القسم العاشر</td></tr>
+    <tr><td>سجل المصادر <code dir="ltr">content/sources.json</code></td><td>وقتها 209 مدخلات: قرآن 27 (موثق 27)، وحديث 58 (موثق 58)، ومذهبي 72 (موثق 0)، ومعاصر 52 (موثق 7). وصار اليوم 244 مدخلاً بعد إضافة نصوص الكتاب المقدس (القسم الثامن)</td></tr>
   </tbody></table>
   <h3>قواعد المطابقة</h3>
   <ul>
@@ -302,61 +364,129 @@ figcaption{ font-size:8.6pt; color:var(--muted); margin-top:1.2mm; text-align:ce
     <li>عرضوا الخلاف بإنصاف في المسائل الخلافية.</li>
   </ul>
   <p>ولم يجد ترجيحاً متحيزاً ولا تساهلاً غير مسند، إلا في ملاحظتين: الأولى على إرشاد 401(k) («صندوق مؤشر عام مؤقتاً مع التطهير»)، والثانية على ملخص بطاقة الائتمان، وقد صُحّح.</p></div>
-  </section><section><h2 id="s8" class="newpage">٨. الشخصيات والقصة وخط اليوم<span class="mk">QQs8QQ</span></h2>
-  <p>كتب السيناريست <code>docs/story_bible.md</code> مرجعاً لكل من يكتب حواراً أو يبني مشهداً. القصة <b>تخييلية بالكامل</b>. تجري أحداثها في أسبوع من منتصف ديسمبر، وهو موسم الأعياد الأمريكية ونهاية الفصل الدراسي، لكنها تُروى على أنها «يومك».</p>
-  <h3>البطل: آدم يوسف</h3>
-  <p>آدم أمريكي المولد عمره 28 سنة، وُلد في ديربورن لأب لبناني وأم مصرية. يعمل مهندس برمجيات مبتدئاً في شركة لوجستيات تخييلية اسمها Buckeye Freight Tech، ويكمل دراسة مسائية في كلية مجتمع. هو لطيف ويكره الإحراج، ويميل إلى قول «نعم» بسرعة ثم يندم. وصراع القصة الهادئ أنه يريد أن يكون مسلماً ملتزماً ومحبوباً في عمله معاً. وهدفه في القصة شراء أول بيت للأسرة قبل الصيف، دون أن يتنازل عمّا يؤمن به.</p>
+  </section><section><h2 id="s7b" class="newpage">٨. تدقيق تغيير الاتجاه<span class="mk">QQs7bQQ</span></h2>
+  <p>بعد التحول دقّق الوكيل المستقل ثلاثة أشياء: الحقلين الجديدين في الأحكام الـ18، وملفات السيناريو المعاد كتابتها، وكتاب القصة. التقرير الكامل في <code>docs/audit/pivot_audit.md</code>، ومخرج الفحص في <code>docs/audit/verify_output_2026-10-05_pivot.txt</code>. ونبّه المدقق إلى أنه تدقيق آلي لا يغني عن مراجعة عالم مسلم، ولا عن مراجع مطّلع على المسيحية.</p>
+  <table><thead><tr><th>البند</th><th>النتيجة</th></tr></thead><tbody>
+    <tr><td>استشهادات الكتاب المقدس في <code>common_ground.bible</code></td><td><b>34 استشهاداً مطابقة حرفياً: KJV 34/34، وفاندايك 34/34</b></td></tr>
+    <tr><td>فحوص <code>verify.mjs</code> كلها (القرآن، والحديث، والكتاب المقدس، والاقتباسات)</td><td>281 فحصاً: 278 نجاح، و3 تحذيرات، و<b>0 فشل</b></td></tr>
+    <tr><td>أحكام صُحّح فيها الحقلان الجديدان</td><td><b>6</b>: <code dir="ltr">home.credit_card</code>، <code dir="ltr">public_events.alcohol_table</code>، <code dir="ltr">street.lost_wallet</code>، <code dir="ltr">private_events.wedding</code>، <code dir="ltr">home.food_ingredients</code>، <code dir="ltr">street.lottery</code></td></tr>
+    <tr><td>آيات كتابية في غير موضعها أو ضعيفة الصلة</td><td>1 في غير موضعها: حبقوق 2: 15، <b>واستُبدلت</b>. و4 ضعيفة الصلة لكنها مقبولة: أمثال 13: 11، ومزمور 107: 1، ورومية 12: 18، وأعمال 15: 29.</td></tr>
+    <tr><td>ملاحظات على السيناريو</td><td>7، منها 4 تمس دقة المعلومة. طُبّقت كلها (القسم العاشر)</td></tr>
+    <tr><td>حقل <code>question</code> الذي يخاطب «آدم المسلم»</td><td>وُجد في 9 أحكام، و<b>أُعيدت صياغته بصيغة محايدة</b>. وتحققتُ عند إعداد التقرير من أن الحقول القديمة لم يبقَ فيها ذكر لآدم.</td></tr>
+    <tr><td>سجل المصادر <code>content/sources.json</code></td><td>244 مدخلاً، منها 35 من نوع <code>other</code>: 32 آية كتابية فريدة موثقة، و3 حقائق عن الممارسة المسيحية غير موثقة</td></tr>
+    <tr><td><code>npm test</code> بعد تنفيذ قرارات المشرف</td><td>178/178. وبلغ 197/197 في إعادة الاختبار النهائية (تقرير المرحلة الثالثة)</td></tr>
+  </tbody></table>
+  <h3>كيف فُحصت النصوص الكتابية آلياً</h3>
+  <p>أضاف المدقق إلى <code>verify.mjs</code> دالتين:</p>
+  <ul>
+    <li><code>checkBible()</code>:
+      <ul>
+        <li>يطابق نص KJV مع bible-api.com، ثم مع getbible عند الاختلاف، والتطبيع للمسافات والفواصل العليا وLORD فقط.</li>
+        <li>يطابق نص فاندايك <b>حرفياً بالتشكيل</b> مع getbible (arabicsv)، والفرق في الحركات وحده فشل.</li>
+        <li>يتحقق من أن المرجع العربي يحمل رقمَي الإصحاح والآية نفسيهما، ومن روابط المصدرين.</li>
+      </ul></li>
+    <li><code>checkQuotes()</code>: كل اقتباس بين «» في الحقلين الجديدين يجب أن يوجد حرفياً في نصوص الحكم نفسه. والتحذيرات الثلاثة الباقية أسماء ومصطلحات، لا اقتباسات.</li>
+  </ul>
+  <p><b>اختبار الحساسية:</b> حُقنت ثلاثة أخطاء: كلمة مبدلة في KJV، وكسرة بدل فتحة في فاندايك، ورقم آية خاطئ. فالتقطها السكربت كلها وخرج بالكود 1.</p>
+  <h3>الإصلاحات في الحقلين الجديدين</h3>
+  <table class="compact"><thead><tr><th style="width:24%">الحكم</th><th>الخطأ</th><th>الإصلاح</th></tr></thead><tbody>
+    <tr><td><code dir="ltr">home.credit_card</code></td><td>الجملة الأولى تقدّم المسألة الخلافية جوازاً مطلقاً، والمجمع (القرار 108) يمنع البطاقة المشروطة بفائدة.</td><td>«التقسيط بلا فائدة جائز، وبطاقة الخصم لا إشكال فيها، لكن…»، ثم يأتي الخلاف كما هو.</td></tr>
+    <tr><td><code dir="ltr">public_events.alcohol_table</code></td><td>نُسب التحسين إلى رواية أبي داود 3774، وأبو داود نفسه قال عنها «منكر».</td><td>صار الشرح يذكر: الترمذي 2801 حسّنه هو والألباني مع كلام في إسناده، وله شاهد مختلف فيه.</td></tr>
+    <tr><td><code dir="ltr">street.lost_wallet</code></td><td>أسقط الشرح أن الحكم بعد التعريف «على تفصيل بين المذاهب».</td><td>أُضيف القيد.</td></tr>
+    <tr><td><code dir="ltr">private_events.wedding</code></td><td>صياغة عربية مرتبكة («يُستحب… بل هي واجبة»).</td><td>«واجبة عند الجمهور ما لم يكن فيها منكر لا يُقدر على تغييره».</td></tr>
+    <tr><td><code dir="ltr">home.food_ingredients</code></td><td>العربية تخاطب اللاعب، والإنجليزية تتحدث عن أصدقاء آدم.</td><td>توحيد الصياغة: «أصدقاء آدم المسلمين».</td></tr>
+    <tr><td><code dir="ltr">street.lottery</code></td><td>«المسابقات المجانية ليست قماراً» دون استثناء الرهان المجاني في التطبيقات.</td><td>أُضيفت جملة تميّز الرهان المجاني، مبنية على البند الموثق في الحكم.</td></tr>
+  </tbody></table>
+  <h3>قرارات المشرف المنفذة</h3>
+  <ol>
+    <li><b><code dir="ltr">work.alcohol_pork_job</code>:</b>
+      <ul>
+        <li>استُبدلت رومية 14: 21 بحبقوق 2: 15، وهي متحقق منها في النصين.</li>
+        <li>أُعيدت صياغة الملخص ليعبّر عن قيمة مشتركة: مراعاة أثر العمل في الغير.</li>
+        <li>بقيت حبقوق 2: 15 في جدول البيانات موسومة «غير مستعملة».</li>
+      </ul></li>
+    <li><b>حقل <code>question</code> في 9 أحكام</b> صار محايداً: «ماذا يعلّم الإسلام عن… / هل يجوز للمسلم أن…».</li>
+    <li><b>عبارة واحدة في <code>practical_guidance</code></b> في student_loan: «مهم لآدم لأنه موظف» صارت «مهم خاصة للطالب الذي يعمل».</li>
+  </ol>
+  <div class="callout teal"><h4>النبرة والخصوصية (من التدقيق)</h4>
+  <ul>
+    <li>النبرة في الحقول الـ18 «محترمة وغير جدلية»: لا مفاضلة، ولا «تصحيح» لعقيدة مسيحية، والفروق مذكورة بأمانة.</li>
+    <li>لا يوجد في أي ملف سيناريو نص آية أو حديث.</li>
+    <li><code>progress.js</code> يخزّن اللغة والمواقف والنقاط فقط.</li>
+    <li>التنبيهات تنص على أن اللعبة لا تسأل عن المعتقد ولا تخزّنه.</li>
+  </ul></div>
+  </section><section><h2 id="s8" class="newpage">٩. الفكرة والشخصيات والقصة<span class="mk">QQs8QQ</span></h2>
+  <p>أعاد السيناريست كتابة <code>docs/story_bible.md</code> (النسخة 2). والقصة <b>تخييلية بالكامل</b>. تجري في أسبوع من منتصف ديسمبر، وتُروى على أنها «يومك». و<b>اللعبة لا تحاول إقناع آدم بشيء</b>، بل تفتح نافذة دافئة على كيف يعيش المسلمون إيمانهم في أمريكا.</p>
+  <h3>البطل: آدم ريد (Adam Reed)</h3>
+  <ul>
+    <li>عمره 28 سنة، وُلد في دايتون بولاية أوهايو لأسرة <b>مسيحية ميثودية</b>. يذهب إلى الكنيسة في الأعياد وبعض الآحاد مع أمه، وإيمانه هادئ وشخصي.</li>
+    <li>مهندس برمجيات مبتدئ في Buckeye Freight Tech (شركة تخييلية)، ويدرس مساءً في كلية مجتمع.</li>
+    <li><b>سبب فضوله:</b> الشتاء الماضي علقت سيارته في الثلج، فخرج جاره الجديد عمر بمجرفة وساعده ساعة كاملة، ثم استأذن ليصلي على قطعة كرتون بجانب الرصيف «لأن وقت الصلاة سيفوت». ثم انضم سمير إلى فريقه في العمل، فصار يلاحظ اختيارات صديقيه ويتساءل: لماذا؟</li>
+    <li><b>طباعه:</b> لطيف ويسأل كثيراً، ويخاف أن يجرح أحداً، ويقع أحياناً في صور نمطية سمعها في الأخبار.</li>
+  </ul>
   <h3>الشخصيات</h3>
   <table class="compact"><thead><tr><th>الشخصية</th><th>من هي</th><th>المحطة والموقف</th></tr></thead><tbody>
-    <tr><td><b>سارة</b></td><td>زوجة آدم (26)، ممرضة أطفال، عملية ومرحة</td><td>البيت: القرض العقاري</td></tr>
-    <tr><td><b>الحاجة خديجة</b></td><td>أم آدم (58)، أرملة، تقرأ الملصقات بنظارتها</td><td>البيت: مكونات الطعام</td></tr>
-    <tr><td><b>بلال</b></td><td>أخو آدم (19)، طالب جامعي متحمس للتقنية</td><td>البيت: بطاقة الائتمان</td></tr>
-    <tr><td><b>جيك تومسون</b></td><td>زميل مبرمج (31)، ودود ومحب لكرة القدم الأمريكية</td><td>العمل: الوظيفة الجانبية. الحفل: مائدة الخمر</td></tr>
-    <tr><td><b>ليندا تشن</b></td><td>مسؤولة الموارد البشرية (45) ومنظمة الحفل</td><td>العمل: 401(k). الحفل: السحب الخيري</td></tr>
-    <tr><td><b>مايك روسو</b></td><td>مندوب شركة مورّدة (40)، يحب الهدايا</td><td>العمل: هدايا الموردين</td></tr>
-    <tr><td><b>ديف كوالسكي</b></td><td>مدير الفريق (52)، يحب موسم الأعياد</td><td>الحفل: التهنئة وتبادل الهدايا</td></tr>
-    <tr><td><b>تايلر بروكس</b></td><td>زميل في المادة (22)، يعمل بدوامين ومضغوط</td><td>الكلية: الغش</td></tr>
-    <tr><td><b>روزا رودريغيز</b></td><td>مستشارة المساعدات المالية (50)</td><td>الكلية: القرض الطلابي</td></tr>
-    <tr><td><b>د. كارين ميتشل</b></td><td>أستاذة المادة (47)، صارمة في المحاضرة ودافئة خارجها</td><td>الكلية: المصافحة</td></tr>
-    <tr><td><b>الضابط راي دانيالز</b></td><td>شرطي دورية في الحي (38)</td><td>الشارع: المحفظة الضائعة</td></tr>
-    <tr><td><b>عمر حسن</b></td><td>صديق آدم المقرّب (29)، أمريكي من أصل صومالي</td><td>الشارع: اليانصيب والمراهنات</td></tr>
-    <tr><td><b>دينيس ووكر</b></td><td>مشترية من Marketplace (35)</td><td>الشارع: البيع وإخفاء العيب</td></tr>
-    <tr><td><b>مارغريت هاريس</b></td><td>الجارة المسنة (76)، توفي زوجها والتر</td><td>الجيران: التعزية</td></tr>
-    <tr><td><b>ماريا غارسيا</b></td><td>الجارة المقابلة (34)، أم ليو</td><td>الجيران: الهدايا وعيد الميلاد</td></tr>
-    <tr><td><b>يوسف رحمن</b></td><td>صديق من المسجد (30)، العريس</td><td>العرس</td></tr>
-    <tr><td><b>الإمام حمزة عبد الله</b></td><td>إمام المركز الإسلامي (50)، «المختص» الذي يُحال إليه في القصة</td><td>يُذكر في الحوار، ويظهر في العرس عاقداً للنكاح</td></tr>
+    <tr><td colspan="3" class="muted"><b>أسرة آدم (مسيحية)</b></td></tr>
+    <tr><td><b>سارة ريد</b></td><td>زوجته (27)، ممرضة أطفال، صديقة رانيا</td><td>خلفية في البيت والحفل</td></tr>
+    <tr><td><b>كارول ريد</b></td><td>أمه (60)، أرملة، تغني في جوقة الكنيسة، وتلبس قلادة صليب صغيرة</td><td>البيت: مكونات الطعام لعشاء عائلة عمر</td></tr>
+    <tr><td><b>بن ريد</b></td><td>أخوه (19)، طالب جامعي، زميل سكنه زيد مسلم</td><td>البيت: بطاقة الائتمان و«اشترِ الآن وادفع لاحقاً»</td></tr>
+    <tr><td colspan="3" class="muted"><b>الشخصيات المسلمة</b></td></tr>
+    <tr><td><b>عمر حسن</b></td><td><b>المرشد الرئيسي.</b> جار آدم (29)، أمريكي من أصل صومالي، يدرس التمريض ويعمل سائق توصيل. يشرح ببساطة ويعترف حين لا يعرف: «سأسأل الإمام حمزة»</td><td>البيت: التمويل. الكلية: القرض الطلابي. الشارع: اللقطة. الجيران: التعزية</td></tr>
+    <tr><td><b>سمير حداد</b></td><td>زميل في الفريق (35)، أمريكي من أصل سوري، يحب القهوة العربية</td><td>العمل: الوظيفة الجانبية والهدايا. الحفل: التهنئة ومائدة الخمر</td></tr>
+    <tr><td><b>رانيا حداد</b></td><td>زوجة سمير (32)، ممرضة مع سارة، ترتدي حجاباً</td><td>الحفل: السحب الخيري</td></tr>
+    <tr><td><b>كريم علي</b></td><td>زميل في المادة (31)، أمريكي أسود مسلم، محارب قديم</td><td>الكلية: الغش</td></tr>
+    <tr><td><b>نور صديقي</b></td><td>زميلة في مجموعة الدراسة (23)، أمريكية من أصل باكستاني، ترتدي حجاباً</td><td>الكلية: الخلوة والمصافحة</td></tr>
+    <tr><td><b>طارق محمود</b></td><td>صاحب محطة الوقود (50)، أمريكي من أصل مصري، لا يبيع اليانصيب ولا الخمر</td><td>الشارع: اليانصيب والمراهنات</td></tr>
+    <tr><td><b>يوسف رحمن</b></td><td>صديق عمر (30)، محاسب، يتزوج مريم يوم السبت</td><td>الشارع: بيع الدراجة. الجيران: العرس</td></tr>
+    <tr><td><b>هودان، ومريم، والإمام حمزة</b></td><td>زوجة عمر، والعروس، وإمام المركز الإسلامي. الإمام هو المرجع الذي يُحال إليه في القصة</td><td>خلفيون</td></tr>
+    <tr><td colspan="3" class="muted"><b>شخصيات غير مسلمة أخرى (كلهم طيبون ومحترمون)</b></td></tr>
+    <tr><td><b>ليندا تشن</b></td><td>الموارد البشرية</td><td>العمل: 401(k)</td></tr>
+    <tr><td><b>ماريا غارسيا</b></td><td>الجارة المقابلة (34)، كاثوليكية، أم ليو</td><td>الجيران: الهدايا وعيد الميلاد</td></tr>
+    <tr><td><b>جيك، وديف، ومايك، وتايلر، وروزا، ومارغريت، والضابط دانيالز…</b></td><td>زملاء وجيران</td><td>خلفيون</td></tr>
   </tbody></table>
-  <h3>خط اليوم: ست محطات و18 موقفاً</h3>
+  <h3>خط الأسبوع: ست محطات و18 موقفاً</h3>
   <table class="compact"><thead><tr><th>#</th><th>المحطة</th><th>اليوم والوقت</th><th>الإضاءة</th><th>ما يحدث</th></tr></thead><tbody>
-  <tr><td class="num">1</td><td><b>البيت</b><br><code dir="ltr">home</code></td><td>الاثنين 15 ديسمبر، 07:00</td><td>نهار</td><td>الفطور. سارة وجدت البيت المثالي (قرض أم تمويل إسلامي؟)، وأم آدم تفتش الثلاجة (المكونات)، وبلال يريد هاتفاً بالتقسيط (بطاقة ائتمان أو «اشترِ الآن وادفع لاحقاً»).</td></tr><tr><td class="num">2</td><td><b>العمل</b><br><code dir="ltr">work</code></td><td>الاثنين، 10:00</td><td>نهار</td><td>جيك يعرض عملاً جانبياً في مطعم ابن عمه وفي تطبيق لمصنع بيرة، وليندا تسأل عن خيارات 401(k)، ومايك المورّد يهدي ساعة ذكية.</td></tr><tr><td class="num">3</td><td><b>الكلية</b><br><code dir="ltr">school</code></td><td>الاثنين، 18:30</td><td>مساء</td><td>تايلر يطلب إجابات الاختبار، والسيدة رودريغيز تعرض قرضاً طلابياً، ود. ميتشل تمد يدها للتهنئة بعد مجموعة الدراسة.</td></tr><tr><td class="num">4</td><td><b>الشارع</b><br><code dir="ltr">street</code></td><td>الاثنين، 21:00</td><td>ليل</td><td>محفظة منسية على مقعد محطة الحافلات، وعمر يقترح تذكرة يانصيب في محطة الوقود، ودينيس تأتي لشراء الدراجة الكهربائية.</td></tr><tr><td class="num">5</td><td><b>المناسبات العامة</b><br><code dir="ltr">public_events</code></td><td>الجمعة 19 ديسمبر، 19:00</td><td>مساء</td><td>حفل نهاية العام للشركة في قاعة فندق: تبادل الهدايا والتهنئة، ومائدة يُدار عليها النبيذ، وسحب خيري.</td></tr><tr><td class="num">6</td><td><b>المناسبات الخاصة</b><br><code dir="ltr">private_events</code></td><td>السبت 20 ديسمبر، 10:00 ← المساء</td><td>نهار</td><td>صباحاً تعزية مارغريت، وظهراً عيد ميلاد ليو، ومساءً عرس يوسف ومريم.</td></tr>
+  <tr><td class="num">1</td><td><b>البيت</b><br><code dir="ltr">home</code></td><td>الاثنين 15 ديسمبر، 07:00</td><td>نهار</td><td>عمر يمر لإعادة المجرفة فيرى آدم وسارة يتصفحان قرضاً عقارياً، فيحكي عن تمويله الإسلامي. وكارول تخطط لعشاء الأربعاء مع عائلة عمر وتتفحص المكونات. وبن يحكي أن زميل سكنه المسلم رفض عرض «0% لمدة سنة».</td></tr><tr><td class="num">2</td><td><b>العمل</b><br><code dir="ltr">work</code></td><td>الاثنين، 10:00</td><td>نهار</td><td>سمير يعتذر عن عمل جانبي في بار وعن تطبيق لمصنع بيرة. وليندا تعرض على آدم خيارات 401(k)، ومنها الصندوق الذي طلبه سمير. وسمير يعيد ساعة مايك الهدية.</td></tr><tr><td class="num">3</td><td><b>الكلية</b><br><code dir="ltr">school</code></td><td>الاثنين، 18:30</td><td>مساء</td><td>كريم يرفض إعطاء تايلر إجابات الاختبار. وعمر في مكتب المساعدات يبحث عن بديل للقرض بفائدة. ونور تقترح نقل المذاكرة إلى طاولة مفتوحة، وتضع يدها على صدرها بدل المصافحة.</td></tr><tr><td class="num">4</td><td><b>الشارع</b><br><code dir="ltr">street</code></td><td>الاثنين، 21:00</td><td>ليل</td><td>عمر يجد محفظة في محطة الحافلات. وطارق لا يبيع اليانصيب في متجره. ويوسف يبيع آدم دراجته ويخبره بعيب البطارية قبل أن يسأل.</td></tr><tr><td class="num">5</td><td><b>المناسبات العامة</b><br><code dir="ltr">public_events</code></td><td>الجمعة 19 ديسمبر، 19:00</td><td>مساء</td><td>حفل الشركة: آدم سحب اسم سمير في «سانتا السري». وسمير يجلس عند طاولة العصير. ورانيا تتبرع مباشرة بدل شراء تذاكر السحب.</td></tr><tr><td class="num">6</td><td><b>المناسبات الخاصة</b><br><code dir="ltr">private_events</code></td><td>السبت 20 ديسمبر، 10:00 ← المساء</td><td>نهار</td><td>صباحاً يرافق آدم عمر لتعزية مارغريت. وظهراً تسأل ماريا آدم كيف تستضيف عائلة عمر في عيد ميلاد ليو. ومساءً عرس يوسف ومريم.</td></tr>
   </tbody></table>
+  <p><b>الخاتمة:</b> يعود آدم إلى البيت ويقول لسارة إنه فهم أصدقاءه أكثر، وإن عمر دعاه إلى «يوم المسجد المفتوح»، ثم يقول: «ربما أذهب، فقط لأرى». <b>لا قرار، ولا ضغط.</b></p>
   <h3>القوس الدرامي وقواعد النبرة</h3>
-  <p>يبدأ آدم بإرضاء الجميع. ثم يتعلم أن «لا» المهذبة إذا جاء معها بديل تحفظ الاحترام بل تزيده. وفي النهاية يقف في العرس بين أهله وأصدقائه المسلمين وغير المسلمين، والرسالة أن الالتزام والانتماء إلى المجتمع الأمريكي لا يتعارضان.</p>
-  <p>وللنبرة سبع قواعد ملزمة لكل من يكتب نصاً، أهمها:</p>
+  <p><b>القوس الدرامي:</b> يبدأ آدم ومعرفته بالإسلام من العناوين والأفلام. ثم يتعلم أن يسأل بدل أن يفترض، ويكتشف أن قيماً كثيرة عند أصدقائه قريبة من قيم أمه وكنيسته، مثل الأمانة ورعاية الجار والحذر من الديون. ويرى كذلك أن هناك فروقاً حقيقية تستحق الاحترام لا الجدل. وفي النهاية يقف في العرس مع مسلمين ومسيحيين، والرسالة: <b>الفهم لا يتطلب أن نتشابه.</b></p>
+  <p><b>قواعد النبرة الملزمة:</b></p>
   <ul>
-    <li>دافئة لا وعظية.</li>
-    <li>كل الشخصيات غير المسلمة طيبة ونواياها حسنة، و«الإغراء» يأتي من الظروف لا من «أشرار».</li>
-    <li>الخيار الأفضل دائماً مهذب ويحفظ العلاقة، والرفض الجاف غالباً «خاطئ».</li>
-    <li>لا نصوص دينية في الحوار إطلاقاً.</li>
-    <li>الخيار الخلافي يُوسم «مقبول» بتعليق محايد.</li>
+    <li>احترام كامل للمسيحية والمسيحيين.</li>
+    <li>الإسلام يُعرض بوضوح ودفء وثقة، بلا وعظ.</li>
+    <li>لا نصوص دينية في الحوار.</li>
+    <li>في الخلاف تقول الشخصية المسلمة: «المسلمون يختلفون في هذا، وأنا آخذ بكذا».</li>
+    <li><b>قرار آدم الشخصي لا يُقيَّم.</b> ما يُقيَّم هو طريقة فهمه لصديقه واحترامه له.</li>
   </ul>
-  <h3>نظام النقاط</h3>
-  <p>الخيار الأفضل يعطي 10 نقاط، والمقبول 5، والخاطئ 0. والإجابة الصحيحة عن سؤال الفهم تضيف 5. فالحد الأقصى 18 × 15 = <b>270 نقطة</b>. وتعرض شاشة النهاية نقاط اليوم وعدد المواقف التي اختار فيها اللاعب الأفضل، دون حكم على اللاعب نفسه.</p>
-  </section><section><h2 id="s9" class="newpage">٩. التعارضات بين السيناريو والأحكام وإصلاحها<span class="mk">QQs9QQ</span></h2>
-  <p>لم يعدّل المدقق ملفات السيناريو، لكنه قابل كل خيار ووسمه (أفضل، مقبول، خاطئ) ببطاقة الحكم المرتبطة به. ووجد أن السيناريو يحترم الأحكام في الجملة: لا يكتب نصوصاً شرعية، ويحيل إلى البطاقة، ولا تعارض في أسئلة الفهم الثمانية عشر. لكنه رصد <b>6 تعارضات</b> وملاحظة صياغية واحدة. ثم طُبّقت <b>7 تعديلات</b> على ملفات السيناريو (<code>docs/phase-1/script_fixes.md</code>)، وأُعيد تشغيل أداة التحقق: 18 موقفاً و0 أخطاء، وكل ملفات JSON صالحة. وقد تحققتُ عند إعداد هذا التقرير من أن ملفات السيناريو الحالية تطابق الإصلاحات.</p>
-  <table class="compact"><thead><tr><th style="width:17%">الموقف</th><th style="width:41%">التعارض الذي رصده المدقق</th><th>الإصلاح المطبّق</th></tr></thead><tbody>
-    <tr><td><code dir="ltr">home.credit_card</code></td><td>الحكم «مختلف فيه»، والإرشاد العملي يقدّم بطاقة الخصم لأنها «بلا شبهة». ومع ذلك جعل السيناريو «بطاقة ائتمان مع سداد كامل» (c) هي الأفضل، فوق «بطاقة خصم وادخار» (b).</td><td>صار b <b>الأفضل / 10</b>، وصار c <b>مقبولاً / 5</b> بعاقبة محايدة تذكر الخلاف المعاصر.</td></tr>
-    <tr><td><code dir="ltr">work.alcohol_pork_job</code></td><td>الخيار a «مقبول» (برمجة تطبيق مصنع جعة)، لكن عاقبته تصف بناء صفحة «Order a keg» وزر «Add to cart»، وهذه إعانة قريبة على البيع.</td><td>صار a <b>خاطئاً / 0</b>. وتبقى في العاقبة كلمة الإمام حمزة: كثير من العلماء يمنعه، والأحوط تركه عند وجود البديل. وصار الخيار c يذكر <b>أطباق ضلوع الخنزير</b> صراحة مع البيرة.</td></tr>
-    <tr><td><code dir="ltr">street.lottery</code></td><td>الخيار c «خاطئ» («الرهان المجاني»)، والعاقبة تقول إن البطاقة تشرح السبب، لكن البطاقة لم تكن تعالج الرهان المجاني في تطبيقات المراهنة.</td><td>أضاف المدقق إلى البطاقة بنداً عن «الرهان المجاني». وأُعيدت كتابة العاقبة: التسجيل في منصة مراهنة ببطاقة بنكية وهوية ليس سحباً مجانياً.</td></tr>
-    <tr><td><code dir="ltr">street.lost_wallet</code></td><td>الخيار c «مقبول»: ترك المحفظة عند كاشير محطة الوقود. والمحطة ليست مكان الالتقاط، والشرطي حاضر، والتسليم لغير مؤتمن مع إمكان الأوثق قد يُعدّ تفريطاً.</td><td>صار c: حفظ المحفظة في البيت وإيصالها غداً بنفسه إلى العنوان (<b>مقبول / 5</b>)، مع عاقبة تبيّن أن تسليمها للضابط كان أسرع وأوثق.</td></tr>
-    <tr><td><code dir="ltr">private_events.wedding</code></td><td>الخيار b «مقبول»: البقاء حتى النهاية رغم الرقص المختلط والشرب، والتبرير بأن «الموسيقى خلافية». والإشكال ليس في الموسيقى وحدها.</td><td>صار الـDJ في المشهد <i>يجهّز</i> ساحة الرقص لما بعد العشاء. وصار a (<b>الأفضل</b>): التهنئة والعشاء والصور ثم الاستئذان بلطف قبل الرقص والشرب. وصار b <b>خاطئاً / 0</b>.</td></tr>
-    <tr><td><code dir="ltr">private_events.gifts_birthday</code></td><td>الخيار الأفضل فيه عبارة «احتفظي بالنبيذ لنفسك، أعرف أنه مشروبك المفضل»، وقد تُفهم استحساناً لشربها.</td><td>صارت العبارة: «أنا لا أشرب، فاسمحي لي أن أعيد إليك النبيذ». وحُذف من حوار ماريا أن النبيذ مشروبها المفضل.</td></tr>
-    <tr><td><code dir="ltr">public_events.alcohol_table</code></td><td>ملاحظة صياغية: كلمة «cider» في أمريكا قد تعني عصير التفاح المسكر.</td><td>صارت في الإنجليزية «sparkling apple juice» و«juice table». والعربية تقول أصلاً «عصير التفاح الفوار».</td></tr>
+  <h3>نظام النقاط (لم يتغير)</h3>
+  <p>الخيار الأفضل يعطي 10 نقاط، والمقبول 5، والخاطئ 0. والإجابة الصحيحة عن سؤال الفهم تضيف 5. فالحد الأقصى 18 × 15 = <b>270 نقطة</b>. وسؤال الفهم صار يقيس فهم موقف الإسلام: ماذا يفعل المسلمون، ولماذا.</p>
+  </section><section><h2 id="s9" class="newpage">١٠. التعارضات بين السيناريو والأحكام وإصلاحها<span class="mk">QQs9QQ</span></h2>
+  <h3>أ. في السيناريو الأول (قبل التحول)</h3>
+  <p>رصد تدقيق المرحلة الأولى (<code>phase1_audit.md</code> §5) <b>6 تعارضات</b> وملاحظة صياغية واحدة، فطُبّقت <b>7 تعديلات</b>. ثم أُعيدت كتابة السيناريو كله بعد التحول، و<b>حُملت الإصلاحات إلى النسخة الجديدة</b> (<code>docs/phase-1/script_fixes.md</code>):</p>
+  <table class="compact"><thead><tr><th style="width:22%">الموقف</th><th>التعارض الأصلي</th><th>كيف يظهر الإصلاح في النسخة الحالية</th></tr></thead><tbody>
+    <tr><td><code dir="ltr">work.alcohol_pork_job</code></td><td>برمجة تطبيق مصنع جعة وُسمت «مقبولة» رغم أنها إعانة قريبة على البيع.</td><td>التطبيق يبقى ممنوعاً. ولحم الخنزير مذكور صراحة، فالعرض نادل يقدّم البيرة وضلوع الخنزير، وسمير يعتذر عنه.</td></tr>
+    <tr><td><code dir="ltr">home.credit_card</code></td><td>«البطاقة مع السداد الكامل» وُضعت فوق «بطاقة الخصم».</td><td>أُعيد تأطير الموقف حول بن وزميل سكنه زيد. وبطاقة الخصم والادخار هي المسار الآمن، والبطاقة مع السداد الكامل تُذكر محايدةً على أنها مختلف فيها.</td></tr>
+    <tr><td><code dir="ltr">private_events.wedding</code></td><td>«البقاء حتى النهاية» مع الرقص المختلط والشرب وُسم «مقبولاً».</td><td>عمر ينصرف قبل الرقص، واحترام آدم لذلك هو <b>الأفضل</b>.</td></tr>
+    <tr><td><code dir="ltr">street.lottery</code></td><td>«الرهان المجاني» لم تكن البطاقة تشرحه.</td><td>طارق يشرحه، وفي البطاقة بند موثق عنه.</td></tr>
+    <tr><td><code dir="ltr">street.lost_wallet</code></td><td>ترك المحفظة عند كاشير المحطة وُسم «مقبولاً».</td><td>المحفظة تُسلَّم إلى الضابط.</td></tr>
+    <tr><td><code dir="ltr">private_events.gifts_birthday</code></td><td>عبارة «أعرف أنه مشروبك المفضل».</td><td>حُذفت.</td></tr>
+    <tr><td><code dir="ltr">public_events.alcohol_table</code></td><td>كلمة «cider» قد تعني مشروباً مسكراً.</td><td>صارت «sparkling apple juice».</td></tr>
   </tbody></table>
-  <div class="callout"><h4>بند مفتوح</h4><p>ما زال حكم <code>work.alcohol_pork_job</code> مسودة. والبطاقة لا تعالج صراحة حكم <b>تقديم الخنزير</b> لغير المسلم وأجرته. وهذا أول بند في قائمة المراجع البشري.</p></div>
-  </section><section><h2 id="s10" class="newpage">١٠. محرك اللعبة<span class="mk">QQs10QQ</span></h2>
+  <h3>ب. ملاحظات تدقيق التحول على السيناريو الجديد (كلها طُبّقت)</h3>
+  <table class="compact"><thead><tr><th style="width:22%">الموقف</th><th>الملاحظة</th><th>الإصلاح</th></tr></thead><tbody>
+    <tr><td><code dir="ltr">home.food_ingredients</code></td><td>سؤال الفهم عدّ «مشتقات الخنزير» متفقاً عليها، والجيلاتين محل خلاف (الاستحالة).</td><td>صارت الإجابة: «الخنزير والمشروبات المسكرة».</td></tr>
+    <tr><td><code dir="ltr">private_events.neighbor_funeral</code></td><td>سؤال الفهم قدّم التعزية اللفظية على أنها «متفق عليها»، والمعتمد عند متأخري الحنابلة المنع.</td><td>صارت الإجابة: «اللطف والمساعدة متفق عليهما، والتعزية والحضور محل خلاف». وعمر يذكر الخلاف.</td></tr>
+    <tr><td><code dir="ltr">private_events.gifts_birthday</code></td><td>جملة «المسلمون لا يحتفلون بأعياد الميلاد» نصف صحيحة لا خاطئة.</td><td>العاقبة والخيار الأفضل يذكران أن المسلمين يختلفون في حفلات أعياد الميلاد.</td></tr>
+    <tr><td><code dir="ltr">public_events.alcohol_table</code></td><td>كلمة «discourages» تخفف حكماً وسمه «حرام».</td><td>صارت «prohibits».</td></tr>
+    <tr><td><code dir="ltr">work.honesty_gifts</code></td><td>الرد ليس الخيار الوحيد لهدية المنصب.</td><td>«هدية العمل لجهة العمل: تُردّ أو تُسلَّم ما لم تسمح السياسة».</td></tr>
+    <tr><td><code dir="ltr">private_events.wedding</code></td><td>لا خيار «مقبول»، والخيارات أفضل وخاطئان.</td><td>استُبدل خيار «uptight» بخيار مقبول: البقاء دون السؤال.</td></tr>
+    <tr><td><code dir="ltr">private_events.wedding</code></td><td>المهر بحفظ سورة محل خلاف عند الحنفية.</td><td>للعلم فقط، فهي جزئية قصصية لا تقدّم حكماً.</td></tr>
+  </tbody></table>
+  <p class="footnote">تحققتُ عند إعداد التقرير من خيارات المواقف في <code>content/script/*.json</code>. فلكل موقف خيار أفضل، وكل الخيارات الخاطئة صور نمطية أو ضغط على الصديق المسلم، مثل «المسلمون لا يُسمح لهم بالتعامل مع البنوك أصلاً» و«الله لن يحاسبك على زر في تطبيق».</p>
+  </section><section><h2 id="s10" class="newpage">١١. محرك اللعبة<span class="mk">QQs10QQ</span></h2>
   <p class="muted small">مصادر هذا القسم: تقرير وكيل المحرك <code>docs/phase-1/engine.md</code>، ودليل وكلاء المشاهد <code>src/engine/README.md</code>، والشيفرة نفسها، وتشغيل فعلي للعبة في Chrome بلا واجهة أجراه وكيل التوثيق.</p>
-  <p>المحرك مبني على <b>Three.js r170</b> وأداة البناء <b>Vite 6</b>، ويتكون من 18 ملف JavaScript (نحو 2,351 سطر دون بيانات الاختبار). كل الهندسة إجرائية، ولا يستعمل أي ملفات خارجية. وهو مسؤول عن كل ما بين ملفات المحتوى والمشاهد: يحمّل الأحكام والسيناريو، ويبني المشهد ويتحقق منه، ويدير حركة آدم والكاميرا، ويعرض المواقف وبطاقات الحكم، ويحفظ التقدم.</p>
+  <p>المحرك مبني على <b>Three.js r170</b> وأداة البناء <b>Vite 6</b>، ويتكون من 18 ملف JavaScript (نحو 2,600 سطر دون بيانات الاختبار). كل الهندسة إجرائية، ولا يستعمل أي ملفات خارجية. وهو مسؤول عن كل ما بين ملفات المحتوى والمشاهد: يحمّل الأحكام والسيناريو، ويبني المشهد ويتحقق منه، ويدير حركة آدم والكاميرا، ويعرض المواقف وبطاقات الحكم، ويحفظ التقدم.</p>
   <div class="kpis">
     <div class="kpi"><div class="v">6/6</div><div class="l">مشاهد حقيقية تُلعب من البداية إلى النهاية بحسب تقرير المحرك</div></div>
     <div class="kpi"><div class="v">0</div><div class="l">أخطاء في وحدة التحكم عند تحميل المشاهد الست في Chrome بلا واجهة</div></div>
@@ -377,9 +507,34 @@ figcaption{ font-size:8.6pt; color:var(--muted); margin-top:1.2mm; text-align:ce
   <h3>تدفق الموقف داخل اللعبة</h3>
   <p>1. يقترب آدم من نقطة التفاعل.<br>2. يظهر الحوار، ثم الخيارات، ويُخلط ترتيبها في كل مرة.<br>3. تظهر العاقبة والنقاط.<br>4. تظهر <b>بطاقة الحكم</b>، ومصدرها ملفات الأحكام وحدها.<br>5. يأتي سؤال الفهم (+5).<br>6. يُعلَّم الموقف منتهياً، ويمكن «تجربة خيار آخر».<br><br>والمخرج يبقى مقفلاً حتى تنتهي مواقف المحطة الثلاثة، ثم ينقل إلى المحطة التالية. وبعد المحطة الأخيرة تظهر شاشة الملخص.</p>
   <div class="figs2">
-    <figure><img src="img/ui_consequence.png"><figcaption>العاقبة والنقاط بعد اختيار «التمويل الإسلامي» في موقف القرض العقاري. لقطة حقيقية من Chrome بلا واجهة.</figcaption></figure>
-    <figure><img src="img/ui_card.png"><figcaption>بطاقة الحكم كما يعرضها المحرك: الوسم «حرام»، وحالة المراجعة، ودرجة الثقة، والآية بالرسم العثماني.</figcaption></figure>
+    <figure><img src="img/qa/dar-ruling-top.jpg"><figcaption>رأس بطاقة الحكم بعد التحول: الوسم، وحالة المراجعة، والثقة، ثم «ببساطة» مباشرة. من لقطات إعادة الاختبار (docs/phase-3/screenshots).</figcaption></figure>
+    <figure><img src="img/qa/dar-cg.jpg"><figcaption>لوحة «قيم مشتركة مع المسيحية» بالعربية: الملخص، وآيتان بترجمة فاندايك مع رابط مصدرهما، و«أين نختلف — باحترام».</figcaption></figure>
   </div>
+  <h3>ما أضافه المحرك بعد تغيير الاتجاه</h3>
+  <ul>
+    <li><b>بطاقة الحكم:</b>
+      <ul>
+        <li>«ببساطة» يعرض <code>newcomer_explainer</code> تحت الوسم مباشرة.</li>
+        <li>لوحة «قيم مشتركة مع المسيحية» بلون أزرق هادئ. فيها الملخص، والآية بلغة الواجهة (فاندايك بالعربية مع رابط <code>source_url_ar</code>، وKJV بالإنجليزية مع رابط <code>source_url</code>)، والفروق، وملاحظة الترجمة.</li>
+        <li>عند العرض تُحذف علامات التنصيص غير المتزاوجة فقط، والبيانات لا تُمس.</li>
+        <li>كل قسم يُخفى إن غاب حقله.</li>
+      </ul></li>
+    <li><b>شاشة النهاية:</b>
+      <ul>
+        <li>«ما تعلّمه آدم» فيها نقاط ملخصة، ومعها الموضوعات المنجزة مع أول جملة من شرح كل منها.</li>
+        <li>«موضوع مقترح للتعرّف عليه بعد ذلك» يُختار بحسب أكثر المحاور استكشافاً.</li>
+        <li>إحالة إلى «يوم المسجد المفتوح»، وزر يبحث عن «mosque open house near me». والرابط فيه هذا النص الثابت فقط.</li>
+        <li><b>لا تسأل اللعبة عن معتقد اللاعب، ولا تخزّن عنه شيئاً.</b></li>
+      </ul></li>
+    <li><b>ملخص «تقدّمك حتى الآن»:</b> قبل اكتمال الأسبوع تعرض الشاشة نفسها، المفتوحة من القائمة، عنوان «تقدّمك حتى الآن» ورسالة «أسبوع آدم لم ينتهِ بعد». وهو الإيداع <code>3017f28</code>.</li>
+    <li><b>الشخصيات والمظهر:</b>
+      <ul>
+        <li><code>PLAYER</code> في <code>config.js</code> يحمل مظهر آدم ريد: حليق، بلا طاقية.</li>
+        <li>للمشهد أن يعيد <code>playerLook</code>، مثل جاكيت الشارع.</li>
+        <li><code>stations</code> تنقل شخصية واحدة بين نقطتي تفاعل، مثل سمير في العمل والحفل.</li>
+        <li>خيار <code>jacket</code> في <code>makeNPC</code>.</li>
+      </ul></li>
+  </ul>
   <h3>مزايا تخدم الجودة والأمان</h3>
   <ul>
     <li><b>تحمّل الأخطاء.</b> إن فشل تحميل مشهد أو رمى خطأً، تُحمّل غرفة بديلة فلا تنهار اللعبة. وإن فشلت دالة التحديث في مشهد، تُعطَّل وحدها.</li>
@@ -401,7 +556,7 @@ figcaption{ font-size:8.6pt; color:var(--muted); margin-top:1.2mm; text-align:ce
     <li><b>أدوات تصحيح لوكلاء المشاهد.</b> معاملات الرابط <code>?scene=</code> و<code>nointro=1</code> و<code>debug=1</code> و<code>lang=</code> و<code>freeexit=1</code>، والدوال <code>yawmuk.teleport()</code> و<code>yawmuk.stats()</code> و<code>yawmuk.contentIssues</code>.</li>
     <li><b>ميزانية أداء موثقة للهاتف.</b> لا يزيد المشهد على 60 ألف مثلث و250 استدعاء رسم، وأضواؤه الإضافية 3 على الأكثر بلا ظلال، وخاماته canvas لا تتجاوز 512 بكسل.</li>
   </ul>
-  <h3>التحقق (من تقرير المحرك)</h3>
+  <h3>التحقق (من تقرير المحرك، قبل التحول)</h3>
   <ul>
     <li><code>npm run build</code> ينجح.</li>
     <li>المشاهد الست الحقيقية تُحمّل دون أخطاء أو تحذيرات في وحدة التحكم، ولا تُوضع أي نقطة تفاعل آلياً.</li>
@@ -409,12 +564,20 @@ figcaption{ font-size:8.6pt; color:var(--muted); margin-top:1.2mm; text-align:ce
     <li>استُعمل Chrome محلي بلا واجهة عبر CDP، لأن متصفح الإضافة لا يصل إلى localhost في هذا الجهاز.</li>
     <li>أُصلح خطأ تظليل المتغير <code>t</code> في حلقة الإطارات، وكان قد ظهر عند الاقتراب من أي مخرج. وصارت اللافتات تحترم العمق افتراضياً.</li>
   </ul>
-  <p class="footnote">ملاحظة من تقرير المحرك: حجم حزمة <code>index</code> نحو 570 kB لأن الأحكام مضمّنة كنص JSON. وهذا مقبول، ويمكن تقسيمه لاحقاً بحسب المكان. وتفاصيل اكتشاف أخطاء المحرك وإصلاحها في تقرير المرحلة الثانية.</p>
-  </section><section><h2 id="s11" class="newpage">١١. المخاطر والنقاط المفتوحة للمراجع البشري<span class="mk">QQs11QQ</span></h2>
-  <div class="callout red"><h4>الخطر الأول: الاعتماد على حكم لم يراجعه عالم</h4><p>الأحكام الثمانية عشر كلها مسودة ذكاء اصطناعي، ووسمها في الملفات <code>ai_verified</code> أو <code>ai_draft</code>، ولم يحمل أي منها وسم مراجعة بشرية بعد. والفحوص الآلية تضمن أن النص المنقول مطابق لمصدره، لكنها لا تضمن صحة تنزيل الدليل على المسألة. فيجب أن يراجعها عالم شرعي قبل أي نشر عام.</p></div>
-  <h3>قائمة المراجع البشري مرتبة بالأولوية (من تقرير التدقيق)</h3>
+  <p class="footnote">بعد التحول تحقق مسار e2e من الأقسام الجديدة كلها، وتفصيله في تقرير المرحلة الثالثة. وحجم حزمة <code>index</code> صار 672.6 kB لأن الأحكام مضمّنة كنص JSON وزادت بالحقلين الجديدين. وهذا مقبول، ويمكن تقسيمه لاحقاً بحسب المكان. وتفاصيل اكتشاف أخطاء المحرك وإصلاحها في تقرير المرحلة الثانية.</p>
+  </section><section><h2 id="s11" class="newpage">١٢. المخاطر والنقاط المفتوحة للمراجع البشري<span class="mk">QQs11QQ</span></h2>
+  <div class="callout red"><h4>الخطر الأول: الاعتماد على حكم لم يراجعه عالم</h4><p>الأحكام الثمانية عشر كلها مسودة ذكاء اصطناعي، ووسمها في الملفات <code>ai_verified</code> أو <code>ai_draft</code>، ولم يحمل أي منها وسم مراجعة بشرية بعد. والفحوص الآلية تضمن أن النص المنقول مطابق لمصدره، لكنها لا تضمن صحة تنزيل الدليل على المسألة. فيجب أن يراجعها عالم شرعي قبل أي نشر عام. وكذلك حقل «القيم المشتركة»: يحتاج مراجعاً مطّلعاً على المسيحية.</p></div>
+  <h3>بنود جديدة من تدقيق التحول</h3>
+  <ul>
+    <li><b>حقائق عن الممارسة المسيحية</b> في <code>differences</code>: قبول الكنائس للفائدة المعتدلة، وموقف السبتيين والكنيسة الإثيوبية من الخنزير، وإعلانات الزواج (banns). وثلاث منها في سجل المصادر غير موثقة. تحتاج مراجعاً مطّلعاً على المسيحية.</li>
+    <li><b>جملة الاستغفار</b> في <code>neighbor_funeral</code> («خاص بمن مات مسلماً»): دقيقة ومهذبة، ويُستحسن أن يقرأها مراجع مسيحي.</li>
+    <li><b>حِكَم صيغت بلغة «يذكر العلماء»</b> دون مرجع محدد: في الربا (mortgage)، والغش (cheating)، وإعانة الضرر (alcohol_pork_job). وللعالم المراجع أن يقرّها أو يضيف مرجعاً.</li>
+    <li><b>عبارة «المسلمون يحبون عيسى ويجلّونه نبياً»</b> (holiday_greetings): صحيحة ومحل اتفاق، ويُقترح ذكر مريم 30 والمائدة 75 بالرقم.</li>
+    <li><b>الآيات ضعيفة الصلة الأربع</b>: أُبقيت مع تصريح في الملخص، ومنها أمثال 13: 11 («لا نص يسمّي اليانصيب»).</li>
+  </ul>
+  <h3>قائمة المراجع البشري مرتبة بالأولوية (من تدقيق المرحلة الأولى)</h3>
   <table class="compact"><thead><tr><th class="c">#</th><th style="width:26%">الحكم</th><th>ما يحتاج قراراً من عالم</th></tr></thead><tbody>
-    <tr><td class="num">1</td><td><code dir="ltr">work.alcohol_pork_job</code></td><td>حكم تقديم الخنزير لغير المسلم وأجرته، ودرجة الإعانة في «برمجة متجر خمور».</td></tr>
+    <tr><td class="num">1</td><td><code dir="ltr">work.alcohol_pork_job</code></td><td>حكم تقديم الخنزير لغير المسلم وأجرته، ودرجة الإعانة في «برمجة متجر خمور». وما زال الحكم <code>ai_draft</code>.</td></tr>
     <tr><td class="num">2</td><td><code dir="ltr">home.credit_card</code></td><td>توثيق الخلاف في غرامات التأخير بعد تصحيح الملخص، وترتيب «بطاقة الخصم» و«البطاقة مع السداد الكامل». وقد عُدّل السيناريو بحسب اقتراح المدقق.</td></tr>
     <tr><td class="num">3</td><td><code dir="ltr">private_events.wedding</code></td><td>توثيق نقلين عن الحنفية: «إجابة الدعوة سنة عند كثير من الحنفية»، و«الدف مكروه تحريماً للرجال». وفتوى دار الإفتاء 11981 لم تُفتح.</td></tr>
     <tr><td class="num">4</td><td><code dir="ltr">home.food_ingredients</code></td><td>حكم خلاصة الفانيليا (35% كحول) تحديداً، وتوثيق أقوال المذاهب في الاستحالة من كتبها.</td></tr>
@@ -438,5 +601,5 @@ figcaption{ font-size:8.6pt; color:var(--muted); margin-top:1.2mm; text-align:ce
     <li>إعادة بناء <code>content/sources.json</code> بعد أي تعديل على الأحكام.</li>
     <li>إضافة مجلد الذاكرة المؤقتة <code>tools/audit/.cache/</code> (نحو 50MB) إلى <code>.gitignore</code>.</li>
   </ul>
-  <p class="end">— نهاية تقرير المرحلة الأولى —<br>مصادر هذا التقرير: <code dir="ltr">docs/TEAM_BRIEF.md</code> <code dir="ltr">docs/story_bible.md</code> <code dir="ltr">docs/hotspots.md</code> <code dir="ltr">docs/research/*.md</code> <code dir="ltr">docs/audit/phase1_audit.md</code> <code dir="ltr">docs/phase-1/script_fixes.md</code> <code dir="ltr">content/**</code> <code dir="ltr">src/engine/**</code></p>
+  <p class="end">— نهاية تقرير المرحلة الأولى —<br>مصادر هذا التقرير: <code dir="ltr">docs/TEAM_BRIEF.md</code> <code dir="ltr">docs/story_bible.md</code> <code dir="ltr">docs/hotspots.md</code> <code dir="ltr">docs/research/*.md</code> <code dir="ltr">docs/audit/phase1_audit.md</code> <code dir="ltr">docs/audit/pivot_audit.md</code> <code dir="ltr">docs/research/common_ground.md</code> <code dir="ltr">docs/phase-1/script_fixes.md</code> <code dir="ltr">docs/phase-1/engine.md</code> <code dir="ltr">content/**</code> <code dir="ltr">src/engine/**</code></p>
   </section></body></html>
