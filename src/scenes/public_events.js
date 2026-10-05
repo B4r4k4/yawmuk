@@ -105,7 +105,7 @@ export default {
       instancedShiny: mat('#ffffff', { roughness: 0.3, metalness: 0.35 })
     };
     const glassMat = new THREE.MeshStandardMaterial({ color: '#dfeff5', transparent: true, opacity: 0.32, roughness: 0.05, metalness: 0.1, depthWrite: false });
-    const amberMat = new THREE.MeshStandardMaterial({ color: '#d9a441', transparent: true, opacity: 0.85, roughness: 0.15 });
+    const amberMat = new THREE.MeshStandardMaterial({ color: '#f0d77e', transparent: true, opacity: 0.88, roughness: 0.15 }); // sparkling apple juice
     const flameMat = new THREE.MeshStandardMaterial({ color: '#ffd27a', emissive: '#ffb347', emissiveIntensity: 1.8 });
     const glowMat = new THREE.MeshStandardMaterial({ color: '#fff3c4', emissive: '#ffd890', emissiveIntensity: 1.4 });
     const exitMat = new THREE.MeshStandardMaterial({ color: '#2ecc71', emissive: '#27e07a', emissiveIntensity: 1.5 });
@@ -256,7 +256,7 @@ export default {
     // ------------------------------------------------------------------ round dinner tables (6) with chairs, plates, glasses, candles
     // slot k sits at angle off + k*45°; 'chair' (default), 'stand' (plate, no chair — a guest stands there), 'empty'
     const TABLES = [
-      { c: [0, -1], off: 41.6 * DEG, slots: { 0: 'stand', 1: 'empty', 4: 'stand' }, jake: true },
+      { c: [0, -1], off: 41.6 * DEG, slots: { 0: 'stand', 1: 'empty', 3: 'stand', 4: 'stand' }, jake: true },
       { c: [-5, -1.2], off: 22.5 * DEG, slots: { 5: 'stand', 6: 'stand' } },
       { c: [5, -1.2], off: 22.5 * DEG, slots: { 6: 'stand' } },
       { c: [-5.6, -4.9], off: 0, slots: {} },
@@ -362,6 +362,11 @@ export default {
     instanced(new THREE.CylinderGeometry(0.14, 0.14, 0.32, 16, 1, true), glassMat, jars.map(([x, z]) => ({ p: [x, 0.92, z] })), { cast: false, receive: false });
     instanced(new THREE.CylinderGeometry(0.125, 0.125, 1, 14).translate(0, 0.5, 0), M.instanced,
       jars.map(([x, z, h, c]) => ({ p: [x, 0.77, z], s: [1, h, 1], c })), { cast: false });
+    // [Phase 3] small transparent donation box between the jars (bills inside, gold slotted lid)
+    const donGlass = new THREE.Mesh(own(new THREE.BoxGeometry(0.22, 0.2, 0.2)), glassMat);
+    donGlass.position.set(RB[0] - 0.08, 0.87, RB[1]); add(donGlass, { cast: false, receive: false });
+    boxAt(0.18, 0.07, 0.16, mat('#7fae6a', { roughness: 0.9 }), RB[0] - 0.08, 0.775, RB[1], { cast: false });
+    boxAt(0.23, 0.015, 0.21, M.gold, RB[0] - 0.08, 0.97, RB[1], { cast: false });
     // big TV prize on a stand
     const TV = [7.45, 5.0];
     cylAt(0.35, 0.35, 0.04, M.black, TV[0], 0, TV[1], { seg: 16 });
@@ -407,7 +412,9 @@ export default {
     cylAt(0.13, 0.13, 0.42, M.chrome, CT[0], 0.78, 1.75, { seg: 14 });
     cylAt(0.05, 0.13, 0.08, M.chrome, CT[0], 1.2, 1.75, { seg: 14 });
     const ciderGeo = merge([cy(0.04, 0.042, 0.22, 0, 0.11, 0, 10), cy(0.015, 0.036, 0.07, 0, 0.255, 0, 8), cy(0.016, 0.016, 0.06, 0, 0.32, 0, 6)]);
-    instanced(ciderGeo, amberMat, [2.25, 2.4, 2.55].map((z, i) => ({ p: [CT[0] - 0.05 * (i % 2), 0.78, z] })), { cast: false });
+    const ciderPts = [2.2, 2.35, 2.5, 2.65].map((z, i) => [CT[0] - 0.06 * (i % 2), z]);
+    instanced(ciderGeo, amberMat, ciderPts.map(([x, z]) => ({ p: [x, 0.78, z] })), { cast: false });
+    instanced(new THREE.CylinderGeometry(0.02, 0.02, 0.035, 8), mat('#2e8b3f', { roughness: 0.5 }), ciderPts.map(([x, z]) => ({ p: [x, 0.78 + 0.367, z] })), { cast: false });
     const cups = [];
     for (let i = 0; i < 8; i++) cups.push({ p: [CT[0] - 0.18 + (i % 2) * 0.1, 0.82, 1.95 + Math.floor(i / 2) * 0.09] });
     instanced(new THREE.CylinderGeometry(0.035, 0.028, 0.08, 8), M.plate, cups, { cast: false });
@@ -452,14 +459,29 @@ export default {
     const sp = (t, k) => { const [x, z] = slotPos(t, k, 1.25); return [x, z]; };
     const emilyPos = sp(jakeTable, 4);
     const aminaPos = sp(TABLES[1], 6), marcusPos = sp(TABLES[1], 5), gracePos = sp(TABLES[2], 6), kenjiPos = sp(TABLES[4], 5);
+    // [Phase 3 premise change] samir (Muslim coworker) leads gift_table + dinner_table via `stations`
+    // (engine moves him to the next unfinished station; `position` = first station as a fallback).
+    // rania (purple hijab) runs the raffle booth; dave/jake/linda/emily are background colleagues.
+    const samirGift = [-5, 3.9], samirDinner = [0.9, -0.2];
+    const samirGiftYaw = yawTo(samirGift, [-1, 6.4]), samirDinnerYaw = yawTo(samirDinner, [0, 6.6]);
+    const raniaPos = [4.65, 4.0], sarahPos = [8.7, 0.7], davePos = [-4, 5.5];
+    const jakePos = sp(jakeTable, 3);
     const npcs = [
-      P('dave', [-5, 3.9], yawTo([-5, 3.9], [-1, 6.4]), daveLook, daveObj ? { object: daveObj } : {}),
-      P('jake', [0.9, -0.2], yawTo([0.9, -0.2], [0, 6.6]), { skin: '#f1c27d', shirt: '#f4f4f4', suit: '#1c1c1c', tie: '#f4f4f4', hair: '#c9a45c', beard: '#c9a45c', pants: '#1c1c1c', height: 1.82, build: 1.1 }),
-      P('linda', [6.55, 5.0], yawTo([6.55, 5.0], [0, 7]), { skin: '#e0b98f', shirt: '#2b5f9e', dress: '#2b5f9e', hair: '#141414', pants: '#2b5f9e', height: 1.67 }),
+      P('samir', samirGift, samirGiftYaw, { skin: '#c99a6e', shirt: '#f4f4f4', suit: '#2b2b2b', tie: '#f4f4f4', pants: '#2b2b2b', hair: '#1e1611', beard: '#1e1611', glasses: true, height: 1.78 }, {
+        stations: {
+          gift_table: { position: [samirGift[0], 0, samirGift[1]], yaw: samirGiftYaw },
+          dinner_table: { position: [samirDinner[0], 0, samirDinner[1]], yaw: samirDinnerYaw }
+        }
+      }),
+      P('rania', raniaPos, yawTo(raniaPos, [0, 6.6]), { skin: '#d1a17a', shirt: '#7d7d85', dress: '#7d7d85', hijab: '#6a4c93', hijabColor: '#6a4c93', height: 1.65 }),
+      P('bg_dave', davePos, yawTo(davePos, [-6.3, 5]), daveLook, daveObj ? { object: daveObj } : {}),
+      P('bg_jake', jakePos, yawTo(jakePos, jakeTable.c), { skin: '#f1c27d', shirt: '#f4f4f4', suit: '#1c1c1c', tie: '#f4f4f4', hair: '#c9a45c', beard: '#c9a45c', pants: '#1c1c1c', height: 1.82, build: 1.1 }),
+      P('bg_linda', [6.55, 5.0], yawTo([6.55, 5.0], [0, 7]), { skin: '#e0b98f', shirt: '#2b5f9e', dress: '#2b5f9e', hair: '#141414', pants: '#2b5f9e', height: 1.67 }),
       P('bg_emily', emilyPos, yawTo(emilyPos, jakeTable.c), { skin: '#f3d3b5', shirt: '#8e3b46', dress: '#8e3b46', hair: '#b5442a', height: 1.65 }),
+      P('bg_sarah', sarahPos, yawTo(sarahPos, [9.1, 1.85]), { skin: '#f1cfae', shirt: '#1f3b5c', dress: '#1f3b5c', hair: '#7b3f20', height: 1.66 }),
       P('bg_priya', [9.25, 3.3], yawTo([9.25, 3.3], [8.6, 1.9]), { skin: '#a0673d', shirt: '#e07a5f', dress: '#e07a5f', hair: '#1e1611', height: 1.62, build: 1.15 }),
       P('bg_tom', [9.1, 1.85], yawTo([9.1, 1.85], [9.25, 3.3]), { skin: '#f1c27d', shirt: '#4a4a4a', suit: '#4a4a4a', tie: '#7a2236', hair: '#b8b8b8', height: 1.78 }),
-      P('bg_amina', aminaPos, yawTo(aminaPos, TABLES[1].c), { skin: '#c99a6e', shirt: '#5b3f7a', hijab: '#7b4fa3', dress: '#3b2f55', height: 1.64 }),
+      P('bg_amina', aminaPos, yawTo(aminaPos, TABLES[1].c), { skin: '#c99a6e', shirt: '#5b3f7a', hijab: '#2f3e66', dress: '#3b2f55', height: 1.64 }),
       P('bg_marcus', marcusPos, yawTo(marcusPos, aminaPos), { skin: '#5a3a22', shirt: '#f2f2f2', suit: '#2a2a35', tie: '#8e2b2b', hair: '#141414', height: 1.83 }),
       P('bg_grace', gracePos, yawTo(gracePos, TABLES[2].c), { skin: '#f0d5b8', shirt: '#2e7d6b', dress: '#2e7d6b', hair: '#d4a76a', height: 1.66 }),
       P('bg_kenji', kenjiPos, yawTo(kenjiPos, TABLES[4].c), { skin: '#e8c39e', shirt: '#d9d4c7', suit: '#3a4a5a', tie: '#c9a227', hair: '#111111', glasses: true, height: 1.74 })

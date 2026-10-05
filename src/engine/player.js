@@ -1,6 +1,7 @@
 // Third-person player "Adam": movement, AABB collision, follow/orbit camera.
 import * as THREE from 'three';
 import { makeNPC, animateFigure } from './kit.js';
+import { PLAYER } from './config.js';
 
 const RADIUS = 0.3;
 const WALK = 3.2, RUN = 5.6;
@@ -12,9 +13,24 @@ function lerpAngle(a, b, k) {
 }
 
 export function createPlayer(world, input) {
-  const figure = makeNPC({ skin: '#c99366', shirt: '#2f7a78', pants: '#2b3442', hair: '#1e1611', beard: '#1e1611', shoes: '#f0f0f0' });
+  let figure = makeNPC(PLAYER.look); // edit PLAYER in config.js to change Adam's look
   figure.name = 'Adam';
   world.scene.add(figure);
+  let lookKey = JSON.stringify(PLAYER.look);
+
+  /** Rebuild Adam with a look (PLAYER.look merged with a scene's optional playerLook). No-op if unchanged. */
+  function setLook(look) {
+    const full = { ...PLAYER.look, ...(look || {}) };
+    const key = JSON.stringify(full);
+    if (key === lookKey) return;
+    lookKey = key;
+    const next = makeNPC(full); // NPC geometries/materials are shared+cached, nothing to dispose
+    next.name = 'Adam';
+    next.position.copy(figure.position); next.rotation.y = figure.rotation.y;
+    world.scene.remove(figure);
+    world.scene.add(next);
+    figure = next;
+  }
 
   const pos = new THREE.Vector3();
   let yaw = 0, camYaw = 0, camPitch = 0.42, camDist = 5.2, speedNow = 0, dirX = 0, dirZ = -1;
@@ -120,5 +136,5 @@ export function createPlayer(world, input) {
 
   function faceTowards(p) { yaw = Math.atan2(-(p[0] - pos.x), -(p[2] - pos.z)); figure.rotation.y = yaw; }
 
-  return { figure, pos, update, teleport, setColliders, setCameraOccluders, faceTowards, get yaw() { return yaw; } };
+  return { get figure() { return figure; }, setLook, pos, update, teleport, setColliders, setCameraOccluders, faceTowards, get yaw() { return yaw; } };
 }

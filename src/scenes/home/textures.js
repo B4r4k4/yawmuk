@@ -106,33 +106,27 @@ export function livingRug(THREE) {
   return toTex(THREE, c);
 }
 
-/** Prayer rug: green field, mihrab arch at the TOP of the texture (v = 1), gold & burgundy borders. */
-export function prayerRug(THREE) {
-  const [c, g] = canvas(256, 448);
-  g.fillStyle = '#f2e6c8';
-  for (let x = 4; x < 252; x += 6) { g.fillRect(x, 0, 3, 14); g.fillRect(x, 434, 3, 14); } // fringe
-  g.fillStyle = '#7a2f3a'; g.fillRect(6, 14, 244, 420);
-  g.fillStyle = '#d6b46a'; g.fillRect(18, 26, 220, 396);
-  g.fillStyle = '#2f5d4a'; g.fillRect(26, 34, 204, 380);
-  // mihrab arch
-  g.fillStyle = '#3f7a60';
-  g.beginPath();
-  g.moveTo(54, 390); g.lineTo(54, 150);
-  g.quadraticCurveTo(54, 70, 128, 52);
-  g.quadraticCurveTo(202, 70, 202, 150);
-  g.lineTo(202, 390); g.closePath(); g.fill();
-  g.strokeStyle = '#d6b46a'; g.lineWidth = 4; g.stroke();
-  // hanging lamp motif
-  g.strokeStyle = '#d6b46a'; g.lineWidth = 2;
-  g.beginPath(); g.moveTo(128, 60); g.lineTo(128, 120); g.stroke();
-  g.fillStyle = '#d6b46a';
-  g.beginPath(); g.moveTo(112, 120); g.lineTo(144, 120); g.lineTo(136, 146); g.lineTo(120, 146); g.closePath(); g.fill();
-  // geometric field
-  g.fillStyle = 'rgba(214,180,106,0.55)';
-  for (let y = 190; y < 380; y += 34) for (let x = 80; x < 190; x += 32) {
-    g.beginPath(); g.moveTo(x, y - 9); g.lineTo(x + 9, y); g.lineTo(x, y + 9); g.lineTo(x - 9, y); g.closePath(); g.fill();
-  }
-  return toTex(THREE, c);
+/** Family snapshot: a group of simple figures in front of a snowy yard (shapes only, no faces/text). */
+export function familyPhoto(THREE) {
+  const [c, g] = canvas(256, 192);
+  const sky = g.createLinearGradient(0, 0, 0, 120);
+  sky.addColorStop(0, '#9cc9ea'); sky.addColorStop(1, '#e3f1fa');
+  g.fillStyle = sky; g.fillRect(0, 0, 256, 192);
+  g.fillStyle = '#2f5a43';
+  for (const [x, h] of [[24, 70], [214, 84], [236, 60]]) { g.beginPath(); g.moveTo(x - 22, 128); g.lineTo(x, 128 - h); g.lineTo(x + 22, 128); g.closePath(); g.fill(); }
+  g.fillStyle = '#f4f7fa'; g.fillRect(0, 124, 256, 68);
+  const person = (x, h, shirt, hair, skin) => {
+    const top = 176 - h;
+    g.fillStyle = shirt; g.beginPath(); g.roundRect ? g.roundRect(x - h * 0.17, top + h * 0.26, h * 0.34, h * 0.74, 8) : g.rect(x - h * 0.17, top + h * 0.26, h * 0.34, h * 0.74); g.fill();
+    g.fillStyle = skin; g.beginPath(); g.arc(x, top + h * 0.13, h * 0.12, 0, 7); g.fill();
+    g.fillStyle = hair; g.beginPath(); g.arc(x, top + h * 0.1, h * 0.125, Math.PI, 0); g.fill();
+  };
+  person(70, 96, '#6b7a3a', '#c9c9c9', '#f0c8a8');   // Carol
+  person(112, 110, '#2f4a6d', '#5a3b24', '#e8c4a0');  // Adam
+  person(152, 98, '#9c3d54', '#8a4b2a', '#f1cfae');   // Sarah
+  person(192, 104, '#8a8f98', '#8b6b3d', '#f3d3b5');  // Ben
+  g.fillStyle = 'rgba(255,240,210,0.12)'; g.fillRect(0, 0, 256, 192);   // warm print tint
+  return toTex(THREE, c, { aniso: 4 });
 }
 
 /** Framed geometric art: eight-pointed star tessellation (no text). */

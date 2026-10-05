@@ -1,171 +1,324 @@
 {
   "location": "school",
-  "title": {"ar": "الكلية — المساء", "en": "Community College — Evening"},
+  "title": {
+    "ar": "الكلية — المساء",
+    "en": "Community College — Evening"
+  },
   "time_of_day": "18:30",
   "intro": {
-    "ar": "أضواء الممرات بيضاء، ورائحة القهوة من آلة البيع لا تشبه القهوة. طلاب من كل الأعمار: أمهات، عمال، شباب بعد دوامهم. امتحان «تحليل البيانات» النهائي بعد أسبوع، والجميع متوتر قليلاً.",
-    "en": "Fluorescent hallway lights, and the vending-machine 'coffee' doesn't taste like coffee. Students of every age: moms, tradespeople, young folks after their shifts. The Data Analytics final is next week, and everyone's a little on edge."
+    "ar": "أضواء الممرات بيضاء، وقهوة آلة البيع لا تشبه القهوة. طلاب من كل الأعمار: أمهات، عمال، محاربون قدامى، شباب بعد دوامهم. امتحان «تحليل البيانات» النهائي بعد أسبوع، وفي الممر يلمح آدم عمر بزي التمريض الأزرق يلوّح له.",
+    "en": "Fluorescent hallway lights, and the vending-machine coffee doesn't taste like coffee. Students of every age: moms, tradespeople, veterans, young folks after their shifts. The Data Analytics final is next week, and down the hall Adam spots Omar in blue nursing scrubs, waving."
   },
   "situations": [
     {
       "ruling_id": "school.cheating",
       "hotspot": "exam_desk",
-      "npc": {"id": "tyler", "name": {"ar": "تايلر", "en": "Tyler"}, "role": {"ar": "زميل في المادة", "en": "Classmate"}},
+      "npc": {
+        "id": "kareem",
+        "name": {
+          "ar": "كريم",
+          "en": "Kareem"
+        },
+        "role": {
+          "ar": "زميل مسلم في المادة",
+          "en": "Muslim classmate"
+        }
+      },
       "setup": {
-        "ar": "في القاعة قبل المحاضرة، يفتح الطلاب اختبار الأسبوع القصير على الإنترنت (مفتوح 24 ساعة، فردي). تايلر يجلس بجانب آدم، عيناه حمراوان من التعب.",
-        "en": "In the classroom before lecture, students are opening this week's online quiz (open 24 hours, individual work only). Tyler slides into the seat next to Adam, eyes red from exhaustion."
+        "ar": "في القاعة قبل المحاضرة. اختبار الأسبوع القصير على الإنترنت فردي. في مجموعة الدردشة كتب تايلر: «أرجوكم، لقطة شاشة لأي واحد منكم؟ عملت مناوبتين». كريم، الجالس بجانب آدم، كتب: «آسف يا أخي، لا أستطيع. لكن تعال نذاكر معاً بعد المحاضرة».",
+        "en": "In the classroom before lecture. This week's online quiz is individual work. In the group chat Tyler wrote: 'Please, can anyone send a screenshot? I pulled double shifts.' Kareem, sitting next to Adam, replied: 'Sorry bro, can't do that. But let's study together after class.'"
       },
       "dialogue": [
-        {"speaker": "tyler", "ar": "يا رجل، اشتغلت مناوبتين هذا الأسبوع ولم أفتح الكتاب. هل حللت الاختبار؟ أرسل لي لقطة شاشة فقط، أرجوك.", "en": "Man, I pulled double shifts this week and didn't crack the book once. Did you finish the quiz? Just send me a screenshot, please."},
-        {"speaker": "adam", "ar": "حللته البارحة... لكن الدكتورة قالت إنه فردي.", "en": "I did it last night... but Dr. Mitchell said it's individual."},
-        {"speaker": "tyler", "ar": "إنه 5% من الدرجة فقط! ولا أحد سيعرف. وأيضاً — المقال النهائي — يقولون الذكاء الاصطناعي يكتبه في دقيقتين.", "en": "It's only five percent of the grade! Nobody'll know. And the final essay — people say AI can write it in two minutes."},
-        {"speaker": "tyler", "ar": "أنت صديقي، صحيح؟", "en": "You're my guy, right?"}
+        {
+          "speaker": "adam",
+          "ar": "إنه 5% فقط من الدرجة يا كريم. ألست قاسياً قليلاً؟",
+          "en": "It's only five percent of the grade, Kareem. Aren't you being a little harsh?"
+        },
+        {
+          "speaker": "kareem",
+          "ar": "ليس قسوة. الغش خداع، صغيراً كان أو كبيراً، وفي ديني الخداع خيانة للأمانة. وإن ساعدته على الغش فأنا شريك فيه.",
+          "en": "It's not harsh. Cheating is deception, big or small, and in my faith that's a betrayal of trust. If I help him cheat, I'm in on it."
+        },
+        {
+          "speaker": "kareem",
+          "ar": "وبالمناسبة، المقال النهائي — لن أكتبه بالذكاء الاصطناعي وأقدّمه على أنه كلامي. الأستاذة منعت ذلك.",
+          "en": "And by the way, the final essay — I'm not having AI write it and turning it in as mine. The professor banned that."
+        },
+        {
+          "speaker": "narrator",
+          "ar": "هاتف آدم يهتز: رسالة خاصة من تايلر «أنت صديقي، صحيح؟».",
+          "en": "Adam's phone buzzes: a DM from Tyler, 'You're my guy, right?'"
+        }
       ],
       "choices": [
         {
           "id": "a",
-          "label": {"ar": "أرسل له اللقطة؛ ظروفه صعبة والاختبار صغير، ومساعدة الصديق واجبة.", "en": "Send him the screenshot — he's having a rough time, it's a small quiz, and you help your friends."},
+          "label": {
+            "ar": "أرسل اللقطة لتايلر، وأقول لكريم: «استرخِ، الله لا يصحح الاختبارات القصيرة».",
+            "en": "Send Tyler the screenshot, and tell Kareem, 'Relax, God doesn't grade pop quizzes.'"
+          },
           "quality": "wrong",
           "consequence": {
-            "ar": "أُرسلت اللقطة. بعد أسبوع لاحظت الدكتورة تطابق الإجابات الخاطئة نفسها عند طالبين، واستدعت الاثنين. خسر آدم ثقة أستاذة كان يحترمها، ولم يتعلم تايلر شيئاً قبل النهائي.",
-            "en": "The screenshot went out. A week later Dr. Mitchell noticed the same wrong answers from two students and called both of them in. Adam lost the trust of a professor he respected, and Tyler still hadn't learned anything before the final."
-          }, "points": 0
+            "ar": "تجهّم كريم قليلاً: «لم أطلب منك أن تؤمن بما أؤمن به، فقط لا تسخر منه». بعد أسبوع لاحظت الأستاذة تطابق الإجابات واستدعت آدم وتايلر. السخرية من قناعة صديقك لم تجعل الغش أصغر.",
+            "en": "Kareem's face tightened: 'I didn't ask you to believe what I believe — just don't mock it.' A week later the professor noticed matching answers and called in Adam and Tyler. Mocking a friend's conviction didn't make the cheating any smaller."
+          },
+          "points": 0
         },
         {
           "id": "b",
-          "label": {"ar": "لا أستطيع إرسال الإجابات يا تايلر، لكن تعال نذاكر معاً نصف ساعة بعد المحاضرة، وسأريك الفكرة حتى تحله بنفسك.", "en": "I can't send you my answers, Tyler, but let's study for half an hour after class — I'll walk you through it so you can do it yourself."},
-          "quality": "best",
+          "label": {
+            "ar": "لا أرسل شيئاً، وأتجاهل رسالة تايلر دون رد.",
+            "en": "Don't send anything, and leave Tyler on read."
+          },
+          "quality": "acceptable",
           "consequence": {
-            "ar": "تنهد تايلر ثم وافق. في المكتبة فهم الفكرة خلال عشرين دقيقة وحل الاختبار بنفسه. بعد النهائي أرسل لآدم: «حصلت على B! شكراً لأنك لم تعطني الإجابة».",
-            "en": "Tyler sighed, then agreed. In the library he got the concept in twenty minutes and did the quiz himself. After the final he texted Adam: 'Got a B! Thanks for not just giving me the answers.'"
-          }, "points": 10
+            "ar": "لم يغش آدم ولم يساعد على الغش، لكن تايلر شعر بأنه وحيد، وفات آدم أن يفهم لماذا يتمسك كريم بالأمر لهذه الدرجة.",
+            "en": "Adam didn't cheat or help anyone cheat, but Tyler felt brushed off — and Adam missed the chance to understand why Kareem cares so much."
+          },
+          "points": 5
         },
         {
           "id": "c",
-          "label": {"ar": "أتجاهل الرسالة وأبتعد بهدوء دون أن أقول شيئاً حتى لا أُحرج.", "en": "Just ignore it and quietly move seats so things don't get awkward."},
-          "quality": "acceptable",
+          "label": {
+            "ar": "«معك حق». أرد على تايلر: «لن أرسل الإجابات، لكن انضم إلينا أنا وكريم بعد المحاضرة». ثم أسأل كريم كيف يرى الإسلام الأمانة في الدراسة.",
+            "en": "'You're right.' I reply to Tyler: 'Not sending answers, but join me and Kareem after class.' Then ask Kareem how Islam sees honesty in school."
+          },
+          "quality": "best",
           "consequence": {
-            "ar": "لم يغشّ آدم ولم يساعد على الغش، لكن تايلر شعر بأنه وحيد. لاحقاً تمنى آدم لو أنه قال «لا» بوضوح وعرض المساعدة الحقيقية بدل الصمت.",
-            "en": "Adam didn't cheat or help anyone cheat, but Tyler felt brushed off. Later Adam wished he'd said a clear 'no' and offered real help instead of silence."
-          }, "points": 5
+            "ar": "ذاكر الثلاثة عشرين دقيقة في المكتبة، وحل تايلر الاختبار بنفسه. قال كريم لآدم: «عندنا العلم أمانة، والشهادة شهادة بأنك تعرف — فلا تزوّرها». بعد النهائي كتب تايلر: «حصلت على B! شكراً لأنكما لم تعطياني الإجابة».",
+            "en": "The three studied for twenty minutes in the library, and Tyler did the quiz himself. Kareem told Adam, 'For us, knowledge is a trust, and a grade says you know something — so don't fake it.' After the final, Tyler texted: 'Got a B! Thanks for not just giving me the answers.'"
+          },
+          "points": 10
         }
       ],
       "check_question": {
-        "q": {"ar": "إن استعمل طالب الذكاء الاصطناعي لكتابة مقاله، فما الذي يجعل ذلك غشاً في الغالب؟", "en": "If a student uses AI to write an essay, what usually makes it cheating?"},
+        "q": {
+          "ar": "لماذا يرفض المسلم الملتزم الغش حتى في اختبار صغير؟",
+          "en": "Why does a practicing Muslim refuse to cheat even on a small quiz?"
+        },
         "options": [
-          {"ar": "تقديمه على أنه عمله الشخصي خلافاً لسياسة المادة ودون إفصاح", "en": "Submitting it as his own work against course policy and without disclosure", "correct": true},
-          {"ar": "استعمال الحاسوب في الكتابة", "en": "Using a computer to write", "correct": false},
-          {"ar": "لا يكون غشاً أبداً إن كان الوقت ضيقاً", "en": "It's never cheating if you're short on time", "correct": false}
+          {
+            "ar": "لأن الإسلام يحرّم الغش والخداع مهما صغر، ويحرّم الإعانة عليه",
+            "en": "Because Islam prohibits cheating and deception however small, and helping others do it",
+            "correct": true
+          },
+          {
+            "ar": "لأنه يخاف من الأستاذة فقط",
+            "en": "Only because he's afraid of the professor",
+            "correct": false
+          },
+          {
+            "ar": "لأن الدراسة في الكليات الأمريكية ممنوعة أصلاً",
+            "en": "Because studying at American colleges is forbidden anyway",
+            "correct": false
+          }
         ]
       }
     },
     {
       "ruling_id": "school.student_loan",
       "hotspot": "aid_office",
-      "npc": {"id": "rosa", "name": {"ar": "السيدة روزا رودريغيز", "en": "Ms. Rosa Rodriguez"}, "role": {"ar": "مستشارة المساعدات المالية", "en": "Financial aid advisor"}},
+      "npc": {
+        "id": "omar",
+        "name": {
+          "ar": "عمر",
+          "en": "Omar"
+        },
+        "role": {
+          "ar": "جار آدم، طالب تمريض",
+          "en": "Adam's neighbor, nursing student"
+        }
+      },
       "setup": {
-        "ar": "في استراحة المحاضرة يمر آدم بمكتب المساعدات المالية. رسوم الفصل القادم 4,200 دولار، وهو يدّخر للبيت. السيدة رودريغيز تبتسم من وراء مكتب مليء بالمطويات.",
-        "en": "During the class break Adam stops by Financial Aid. Next semester's tuition is $4,200, and he's saving for the house. Ms. Rodriguez smiles from behind a desk covered in brochures."
+        "ar": "في الاستراحة يجد آدم عمر عند مكتب المساعدات المالية يملأ استمارات كثيرة. السيدة رودريغيز عرضت عليه قرضاً فيدرالياً مدعوماً «بتوقيع واحد»، لكنه طلب أوراق المنح وخطة الأقساط بدلاً منه.",
+        "en": "During the break Adam finds Omar at the Financial Aid counter, filling out a stack of forms. Ms. Rodriguez offered him a subsidized federal loan — 'one signature' — but he asked for the grant forms and the payment plan instead."
       },
       "dialogue": [
-        {"speaker": "rosa", "ar": "آدم، ملفك جاهز. أنت مؤهل لقرض فيدرالي مدعوم بفائدة منخفضة. توقيع إلكتروني واحد وننتهي!", "en": "Adam, your file's all set. You qualify for a subsidized federal loan at a low rate. One e-signature and you're done!"},
-        {"speaker": "adam", "ar": "قرض بفائدة... هل هناك خيارات أخرى؟", "en": "A loan with interest... are there any other options?"},
-        {"speaker": "rosa", "ar": "بالطبع! هناك منح، ومنحة الولاية للعاملين، وخطة دفع على أقساط بلا فائدة من الكلية، وأحياناً يدفع أصحاب العمل جزءاً من الرسوم. لكنها تحتاج أوراقاً ووقتاً.", "en": "Of course! There are grants, a state grant for working adults, an interest-free tuition payment plan from the college, and sometimes employers chip in. But those take paperwork and time."},
-        {"speaker": "adam", "ar": "وصديقي أخبرني أن المسجد عنده صندوق «قرض حسن» صغير للطلاب.", "en": "And a friend told me our mosque has a small interest-free loan fund for students."}
+        {
+          "speaker": "omar",
+          "ar": "رسوم الفصل القادم 4,200 دولار. القرض أسهل، لكن فيه فائدة، وأنت تعرف رأيي في الفائدة.",
+          "en": "Next semester's $4,200. The loan's easier, but it has interest — you know where I stand on interest."
+        },
+        {
+          "speaker": "adam",
+          "ar": "وكيف ستدفع؟",
+          "en": "So how are you going to pay?"
+        },
+        {
+          "speaker": "omar",
+          "ar": "منحة الولاية للعاملين، وخطة أقساط بلا فائدة من الكلية، والمسجد عنده صندوق «قرض حسن» — نقترض ونرد المبلغ نفسه بلا زيادة. وإن انسدت كل الأبواب، سأجلس مع الإمام حمزة؛ العلماء عندنا يتكلمون عن حالات الحاجة الشديدة، وهذا يحتاج من يعرف تفاصيل وضعي.",
+          "en": "The state grant for working adults, the college's interest-free payment plan, and our mosque has a qard hasan fund — you borrow and pay back the exact same amount, nothing extra. If every door closes, I'll sit down with Imam Hamza; our scholars talk about cases of real need, and that takes someone who knows my situation."
+        }
       ],
       "choices": [
         {
           "id": "a",
-          "label": {"ar": "أقدّم على المنح وخطة الأقساط بلا فائدة، وأسأل ديف عن دعم الشركة للدراسة، وأتواصل مع صندوق المسجد قبل أي قرض.", "en": "Apply for grants and the interest-free payment plan, ask Dave about tuition assistance at work, and reach out to the mosque fund before any loan."},
+          "label": {
+            "ar": "«القرض الحسن؟ لم أسمع به. كيف يعمل الصندوق — ومن يموّله؟» وأساعده في أوراق المنحة.",
+            "en": "'Qard hasan? Never heard of it. How does the fund work — who pays into it?' And help him with the grant forms."
+          },
           "quality": "best",
           "consequence": {
-            "ar": "ساعدته السيدة رودريغيز في ثلاث استمارات. بعد أسبوعين: منحة الولاية غطت 1,500، والشركة 2,000، والباقي على أقساط بلا فائدة. قالت: «ليتك تعلّم هذا لبقية الطلاب!».",
-            "en": "Ms. Rodriguez helped him with three forms. Two weeks later: the state grant covered $1,500, his employer $2,000, and the rest went on the interest-free plan. 'I wish you'd teach this to the other students!'"
-          }, "points": 10
+            "ar": "شرح عمر: أعضاء الجالية يتبرعون للصندوق، والطالب يقترض ويسدد المبلغ نفسه، فيعود المال لطالب آخر. قالت السيدة رودريغيز: «فكرة رائعة!»، وأخبرت آدم أنه هو أيضاً مؤهل لمنحة الولاية. خرج الاثنان بخطتين أفضل.",
+            "en": "Omar explained: community members donate to the fund, a student borrows and pays back the same amount, and the money cycles to the next student. Ms. Rodriguez said, 'What a great idea!' — and told Adam he qualified for the state grant too. They both left with better plans."
+          },
+          "points": 10
         },
         {
           "id": "b",
-          "label": {"ar": "أوقّع القرض الآن؛ الفائدة منخفضة والكل يأخذه، ولا وقت عندي للبحث عن بدائل.", "en": "Sign the loan now — the rate's low, everyone takes one, and I don't have time to hunt for alternatives."},
-          "quality": "wrong",
+          "label": {
+            "ar": "«بالتوفيق يا صاحبي»، وأعود إلى المحاضرة.",
+            "en": "'Good luck, man,' and head back to class."
+          },
+          "quality": "acceptable",
           "consequence": {
-            "ar": "وقّع آدم في دقيقة. لاحقاً علم أنه كان مؤهلاً لمنحة الولاية ولدعم الشركة، فلم يكن بحاجة للقرض أصلاً. العجلة حرمته من بدائل كانت أمامه.",
-            "en": "Adam signed in a minute. Later he found out he'd qualified for the state grant and his employer's tuition benefit — he never needed the loan at all. Rushing cost him options that were right in front of him."
-          }, "points": 0
+            "ar": "تمنّى آدم الخير لصديقه بصدق، لكنه لم يعرف ما «القرض الحسن»، ولا أن هناك بدائل كان يمكن أن تفيده هو أيضاً.",
+            "en": "Adam genuinely wished his friend well, but he never learned what qard hasan was — or that there were options that could've helped him too."
+          },
+          "points": 5
         },
         {
           "id": "c",
-          "label": {"ar": "أؤجل التسجيل فصلاً واحداً، وأعمل وأدّخر حتى أدفع نقداً.", "en": "Sit out one semester, work, and save up to pay in cash."},
-          "quality": "acceptable",
+          "label": {
+            "ar": "«يا رجل، هذا جنون. فائدة منخفضة جداً — لا تدع الدين يعطّل تعليمك».",
+            "en": "'Dude, that's crazy. The rate's super low — don't let religion get in the way of your education.'"
+          },
+          "quality": "wrong",
           "consequence": {
-            "ar": "تأخر تخرج آدم أربعة أشهر، لكنه لم يستدن. تمنت السيدة رودريغيز لو أنه جرب المنح أولاً: «كان يمكن أن تحصل على الأمرين معاً».",
-            "en": "Adam's graduation slipped four months, but he stayed debt-free. Ms. Rodriguez wished he'd tried the grants first: 'You could've had both.'"
-          }, "points": 5
+            "ar": "هز عمر كتفيه: «ديني ليس عائقاً، هو الطريق الذي أمشي فيه». بعد أسبوعين حصل على المنحة وغطّى الباقي بالأقساط — وتعليمه لم يتعطل يوماً. افتراض أن الالتزام يعني التأخر كان خاطئاً.",
+            "en": "Omar shrugged: 'My faith's not in my way — it's the road I'm on.' Two weeks later he got the grant and covered the rest with the payment plan — his education never missed a beat. Assuming faith means falling behind was off."
+          },
+          "points": 0
         }
       ],
       "check_question": {
-        "q": {"ar": "حين يكون الأمر محل خلاف بين العلماء ويتعلق بظروف شخصية (كالحاجة الماسة)، ما الأنسب؟", "en": "When an issue is debated among scholars and depends on personal circumstances (like real need), what's best?"},
+        "q": {
+          "ar": "ما «القرض الحسن» الذي يلجأ إليه بعض المسلمين؟",
+          "en": "What is the 'qard hasan' some Muslims turn to?"
+        },
         "options": [
-          {"ar": "اختيار أسهل قول دون النظر في الظروف", "en": "Pick the easiest opinion without looking at circumstances", "correct": false},
-          {"ar": "استنفاد البدائل المتاحة ثم سؤال عالم موثوق يعرف تفاصيل الحالة", "en": "Exhaust the available alternatives, then ask a trusted scholar who knows the details", "correct": true},
-          {"ar": "سؤال أصدقاء الدراسة فقط", "en": "Just ask your classmates", "correct": false}
+          {
+            "ar": "قرض بفائدة منخفضة من بنك إسلامي",
+            "en": "A low-interest loan from an Islamic bank",
+            "correct": false
+          },
+          {
+            "ar": "قرض يُرَدّ بالمبلغ نفسه دون أي زيادة",
+            "en": "A loan repaid with exactly the same amount, no increase",
+            "correct": true
+          },
+          {
+            "ar": "منحة لا تُرَدّ أبداً",
+            "en": "A grant that's never repaid",
+            "correct": false
+          }
         ]
       }
     },
     {
       "ruling_id": "school.mixed_social",
       "hotspot": "study_room",
-      "npc": {"id": "dr_mitchell", "name": {"ar": "د. كارين ميتشل", "en": "Dr. Karen Mitchell"}, "role": {"ar": "أستاذة المادة", "en": "Course professor"}},
+      "npc": {
+        "id": "noor",
+        "name": {
+          "ar": "نور",
+          "en": "Noor"
+        },
+        "role": {
+          "ar": "زميلة مسلمة في مجموعة الدراسة",
+          "en": "Muslim study-group partner"
+        }
+      },
       "setup": {
-        "ar": "بعد المحاضرة، يخرج آدم من غرفة دراسة زجاجية في المكتبة حيث كانت مجموعته (هو وهانا وكارلوس) تراجع المشروع والباب مفتوح. د. ميتشل تمر وتتوقف مبتسمة وتمد يدها للمصافحة.",
-        "en": "After class, Adam steps out of a glass-walled library study room where his group (him, Hannah, and Carlos) had been reviewing their project with the door open. Dr. Mitchell walks by, stops with a smile, and holds out her hand."
+        "ar": "بعد المحاضرة، مجموعة الدراسة (آدم، نور، هانا، كارلوس) حجزت غرفة صغيرة في المكتبة. وصلت رسالة: هانا وكارلوس لن يحضرا. نور تقف عند باب الغرفة ولا تدخل، وتنظر إلى الطاولات المفتوحة في القاعة الكبيرة.",
+        "en": "After class, the study group (Adam, Noor, Hannah, Carlos) booked a small library room. A text comes in: Hannah and Carlos can't make it. Noor stops at the doorway without going in, glancing at the open tables in the main hall."
       },
       "dialogue": [
-        {"speaker": "dr_mitchell", "ar": "آدم! عرض مجموعتكم اليوم كان ممتازاً. أحسنت!", "en": "Adam! Your group's presentation today was excellent. Great job!"},
-        {"speaker": "narrator", "ar": "يدها ممدودة. هانا وكارلوس ينظران. لحظة قصيرة تبدو طويلة جداً.", "en": "Her hand is out. Hannah and Carlos are watching. A short moment that feels very long."},
-        {"speaker": "adam", "ar": "(في نفسه) قرأت أن العلماء اختلفوا في المصافحة... وهي لا تقصد إلا الخير.", "en": "(to himself) I've read that scholars differ on handshakes... and she only means well."}
+        {
+          "speaker": "noor",
+          "ar": "هل تمانع أن نذاكر على تلك الطاولة المفتوحة بدلاً من الغرفة؟ أنا لا أجلس منفردة مع رجل خلف باب مغلق — شيء من ديني، لا شخصي أبداً.",
+          "en": "Mind if we study at that open table instead of the room? I don't sit alone with a guy behind a closed door — it's a faith thing, nothing personal at all."
+        },
+        {
+          "speaker": "narrator",
+          "ar": "بعد ساعة أنهيا المشروع. آدم، متحمساً، يمد يده للمصافحة: «فريق رائع!». نور تبتسم وتضع يدها على صدرها.",
+          "en": "An hour later the project's done. Adam, excited, holds out his hand: 'Great teamwork!' Noor smiles and puts her hand on her heart."
+        },
+        {
+          "speaker": "noor",
+          "ar": "فريق رائع فعلاً! أنا لا أصافح الرجال — بعض المسلمين يصافحون وبعضهم لا، وأنا من الفريق الثاني.",
+          "en": "Great teamwork for real! I don't shake hands with men — some Muslims do and some don't, and I'm in the second group."
+        }
       ],
       "choices": [
         {
           "id": "a",
-          "label": {"ar": "أضع يدي على صدري وأبتسم: «شكراً جزيلاً يا دكتورة! أنا لا أصافح النساء لأسباب دينية، لكنني ممتن جداً لكلامك».", "en": "Hand on heart, smile: 'Thank you so much, Dr. Mitchell! I don't shake hands with women for religious reasons, but I really appreciate that.'"},
-          "quality": "best",
+          "label": {
+            "ar": "«بجد؟ نحن في أمريكا. هل تظنينني خطيراً؟»",
+            "en": "'Seriously? We're in America. Do you think I'm some kind of creep?'"
+          },
+          "quality": "wrong",
           "consequence": {
-            "ar": "أومأت د. ميتشل بلطف: «لا مشكلة إطلاقاً، شكراً لأنك أخبرتني». وفي الأسبوع التالي حيّت آدم بابتسامة ويد على صدرها، وضحك الاثنان.",
-            "en": "Dr. Mitchell nodded warmly: 'No problem at all — thanks for letting me know.' The next week she greeted Adam with a smile and a hand on her own heart, and they both laughed."
-          }, "points": 10
+            "ar": "احمرّ وجه نور: «لا، لا علاقة لك بالأمر». صار الجو ثقيلاً، وفي الأسبوع التالي طلبت أن تعمل مع مجموعة أخرى. تحويل قناعة شخصية إلى إهانة لم يكن عادلاً لها.",
+            "en": "Noor flushed: 'No — it has nothing to do with you.' Things got heavy, and the next week she asked to switch groups. Turning a personal conviction into a personal insult wasn't fair to her."
+          },
+          "points": 0
         },
         {
           "id": "b",
-          "label": {"ar": "أصافحها بسرعة حتى لا أحرجها أمام الطلاب.", "en": "Shake her hand quickly so she isn't embarrassed in front of the students."},
-          "quality": "acceptable",
+          "label": {
+            "ar": "أضع يدي على صدري مبتسماً: «مفهوم تماماً!» ثم أسأل: «هل هذا من باب الاحترام؟ أحب أن أفهم».",
+            "en": "Put my hand on my heart and smile: 'Totally get it!' Then ask, 'Is it a respect thing? I'd love to understand.'"
+          },
+          "quality": "best",
           "consequence": {
-            "ar": "مرّت اللحظة بسلاسة. لكن آدم ظل يفكر في الطريق: هذه مسألة فيها خلاف بين العلماء، وكان يريد أن يعرف رأياً يطمئن إليه بدل أن يقرر تحت ضغط اللحظة. بطاقة الحكم تعرض الأقوال.",
-            "en": "The moment passed smoothly. But on the way out Adam kept thinking: this is a question scholars differ on, and he'd rather know a view he's settled on than decide under pressure. The ruling card lays out the views."
-          }, "points": 5
+            "ar": "ضحكت نور: «بالضبط، احترام وحدود واضحة بين الجنسين — والمسلمون يختلفون في التفاصيل». وأضافت: «شكراً لأنك لم تأخذها بشكل شخصي». في الأسبوع التالي حيّاها آدم بيده على صدره، وصارت تحيتهما المعتادة.",
+            "en": "Noor laughed: 'Exactly — respect, and clear boundaries between men and women. Muslims differ on the details.' She added, 'Thanks for not taking it personally.' Next week Adam greeted her with a hand on his heart, and it became their usual hello."
+          },
+          "points": 10
         },
         {
           "id": "c",
-          "label": {"ar": "أتجاهل يدها وأنظر إلى هاتفي وأمضي دون تفسير.", "en": "Ignore her hand, look down at my phone, and walk off without explaining."},
-          "quality": "wrong",
+          "label": {
+            "ar": "أسحب يدي بسرعة محرجاً، وأجمع أغراضي دون كلمة.",
+            "en": "Pull my hand back, embarrassed, and pack up without a word."
+          },
+          "quality": "acceptable",
           "consequence": {
-            "ar": "بقيت يد الدكتورة معلقة في الهواء، وتبادل كارلوس وهانا نظرة محرجة. ظنت أنها أساءت إليه بشيء. الالتزام لا يعني الجفاء — كلمة لطيفة كانت كفيلة بكل شيء.",
-            "en": "Dr. Mitchell's hand hung in the air, and Carlos and Hannah exchanged an awkward look. She wondered if she'd offended him. Commitment doesn't mean coldness — one kind sentence would've fixed everything."
-          }, "points": 0
+            "ar": "لم يُسئ آدم إلى نور، لكن الإحراج بقي معلقاً بينهما أياماً. كلمة لطيفة أو سؤال بسيط كان سيحوّل اللحظة إلى فهم.",
+            "en": "Adam didn't offend Noor, but the awkwardness hung around for days. One kind word or simple question would've turned the moment into understanding."
+          },
+          "points": 5
         }
       ],
       "check_question": {
-        "q": {"ar": "في مجموعة الدراسة المختلطة، ما الذي يتفق عليه العلماء بوجه عام؟", "en": "In a mixed study group, what do scholars broadly agree on?"},
+        "q": {
+          "ar": "ما الذي يتفق عليه المسلمون بوجه عام في التعامل بين الرجل والمرأة غير المحارم في الدراسة؟",
+          "en": "What do Muslims broadly agree on about men and women who aren't close relatives studying together?"
+        },
         "options": [
-          {"ar": "يجب ترك الدراسة في الكلية", "en": "You must quit college", "correct": false},
-          {"ar": "الدراسة في مكان مفتوح ومع مجموعة، وتجنب الانفراد برجل أو امرأة أجنبية خلف باب مغلق", "en": "Study in open spaces and in groups, and avoid being alone with a non-mahram behind a closed door", "correct": true},
-          {"ar": "لا حاجة لأي ضوابط ما دام الهدف دراسياً", "en": "No guidelines matter as long as it's for studying", "correct": false}
+          {
+            "ar": "يُمنع على المرأة المسلمة الدراسة مع الرجال",
+            "en": "Muslim women may not study alongside men",
+            "correct": false
+          },
+          {
+            "ar": "تجنب الانفراد خلف باب مغلق، أما العمل في مكان مفتوح أو مجموعة فلا بأس به؛ والمصافحة فيها خلاف",
+            "en": "Avoid being alone together behind a closed door; working in open spaces or groups is fine. Handshakes are debated",
+            "correct": true
+          },
+          {
+            "ar": "كل المسلمين يرفضون المصافحة دائماً",
+            "en": "All Muslims always refuse handshakes",
+            "correct": false
+          }
         ]
       }
     }
   ],
   "outro": {
-    "ar": "التاسعة إلا ربعاً. موقف السيارات شبه فارغ، وسيارة آدم تأبى أن تشتغل في البرد. لا بأس — محطة الحافلات قريبة، والبيت ليس بعيداً. وفي هاتفه رسالة: «مرحباً، أنا دينيس، بخصوص الدراجة... هل نلتقي الليلة؟».",
-    "en": "Quarter to nine. The parking lot's almost empty, and Adam's car refuses to start in the cold. No worries — the bus stop's close and home isn't far. A text lights up his phone: 'Hi, this is Denise, about the bike... can we meet tonight?'"
+    "ar": "التاسعة إلا ربعاً. سيارة آدم تأبى أن تشتغل في البرد، فيركب الحافلة. يرسل له عمر: «خرجت قبلك، سأنتظرك عند محطة الحافلات قرب البيت. وبالمناسبة، يوسف سيحضر الدراجة التي تريد شراءها إلى محطة الوقود».",
+    "en": "Quarter to nine. Adam's car refuses to start in the cold, so he takes the bus. Omar texts: 'I left before you — I'll wait at the bus stop near home. Oh, and Yusuf's bringing that e-bike you wanted to the gas station.'"
   },
   "next_location": "street"
 }

@@ -30,3 +30,11 @@
 ## Notes for the supervisor
 - No `src/engine/README.md` existed while I worked. I used only `ctx.THREE` and `ctx.group`, plus optional `ctx.makeNPC` / `ctx.makeLabel` behind guards.
 - Jake was moved about 0.85 m closer to the machine (from `[-6.7,-0.2]`) so he stands "at" it. Spawn was moved about 0.4 m inward so the camera is less cramped against the elevator wall.
+
+## Update 2026-10-05 (new premise: Adam is a Christian learning about Islam)
+- `samir` is now the NPC for both `coffee_machine` and `adam_desk`, using the engine's `stations` field: coffee `[-7.45,0,-0.25]`, desk `[-0.2,0,2.45]`. His look: white shirt, grey jacket, short black beard, glasses, 1.78 m.
+- `jake` is now `bg_jake` at `[-5,0,1.5]`, walking toward the north/meeting side. `mike` is now `bg_mike` at `[-7.6,0,3.4]`, heading for the elevator. `linda` is unchanged.
+- Added a brass dallah (`#b87333`: belly, flared neck, lid, beak spout, handle) on the kitchen counter, with three small finjan cups on a tray. The steam now rises from the dallah.
+- Added a second black smartwatch box with silver ribbon on the front edge of Adam's desk, next to Samir.
+- Hotspot ids and positions are unchanged. No point lights. The QA changes (`cameraOccluders`) are kept.
+- `npm run build` passes. `npm test`: 177/178 pass; the one failure is the ruling-card abstention test in `safety.test.mjs`, which is not scene code. The headless e2e run (desktop-en) passed, and its hotspot screenshots show Samir at the coffee machine and then at Adam's desk.

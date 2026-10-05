@@ -1,6 +1,8 @@
 // «يومك» — HOME (Monday 07:00, winter morning in Columbus, Ohio).
 // Open-plan ground floor of a modest rented American house: kitchen (back-left), dining (centre),
-// living room + prayer corner (right), entry with front door, mail table and stairs (front).
+// living room + reading nook (right), entry with front door, mail table and stairs (front).
+// Premise (TEAM_BRIEF 2026-10-05): the Reed family is Christian (Bible on the shelf, small wooden cross,
+// family photos); their Muslim neighbour and friend Omar has dropped by for coffee.
 // Procedural geometry only. Static props are merged into a handful of vertex-coloured meshes
 // (see ./home/batch.js) so the whole room stays at ~30 meshes.
 //
@@ -8,7 +10,7 @@
 // so the third-person / attract camera can always look into the room. Wall colliders are kept
 // 1.1 m tall so the engine's camera-collision never yanks the camera in front of Adam's face.
 import { createBatcher } from './home/batch.js';
-import { woodFloor, subwayTile, livingRug, prayerRug, starArt, laptopScreen } from './home/textures.js';
+import { woodFloor, subwayTile, livingRug, familyPhoto, starArt, laptopScreen } from './home/textures.js';
 
 const W = 12, D = 9, H = 2.7;          // room: x -6..6, z -4.5..4.5
 const X0 = -W / 2, X1 = W / 2, Z0 = -D / 2, Z1 = D / 2;
@@ -52,14 +54,14 @@ export default {
     };
     const tex = {
       floor: own(woodFloor(THREE)), tile: own(subwayTile(THREE)), rug: own(livingRug(THREE)),
-      prayer: own(prayerRug(THREE)), art: own(starArt(THREE)), screen: own(laptopScreen(THREE))
+      photo: own(familyPhoto(THREE)), art: own(starArt(THREE)), screen: own(laptopScreen(THREE))
     };
     tex.floor.repeat.set(W / 1.6, D / 1.6);
     const tmat = {
       floor: own(new THREE.MeshStandardMaterial({ map: tex.floor, roughness: 0.55 })),
       tile: own(new THREE.MeshStandardMaterial({ map: tex.tile, roughness: 0.3 })),
       rug: own(new THREE.MeshStandardMaterial({ map: tex.rug, roughness: 1 })),
-      prayer: own(new THREE.MeshStandardMaterial({ map: tex.prayer, roughness: 1 })),
+      photo: own(new THREE.MeshStandardMaterial({ map: tex.photo, roughness: 0.5 })),
       art: own(new THREE.MeshStandardMaterial({ map: tex.art, roughness: 0.8 })),
       screen: own(new THREE.MeshBasicMaterial({ map: tex.screen, toneMapped: false }))
     };
@@ -67,7 +69,7 @@ export default {
     // ------------------------------------------------------------------ batches
     const B = {
       walls: makeBatch('walls'), matte: makeBatch('matte'), satin: makeBatch('satin'), metal: makeBatch('metal'),
-      glow: makeBatch('glow'), glass: makeBatch('glass'), tile: makeBatch('tile'), art: makeBatch('art'),
+      glow: makeBatch('glow'), glass: makeBatch('glass'), tile: makeBatch('tile'), art: makeBatch('art'), photo: makeBatch('photo'),
       outside: makeBatch('outside')
     };
     const colliders = [];
@@ -246,16 +248,20 @@ export default {
     solid(FX0, FZ0, FX1, FZ1);
     solid(FX0, FZ1, -5.5, -3.0);
 
-    // items on the counter next to the fridge: candy bag, vanilla bottle, wrapped chicken tray
-    B.satin.fbox('#e84a8a', 0.16, 0.22, 0.06, -5.0, 0.9, -4.2, 0.3);
-    B.satin.fbox('#f7d23e', 0.16, 0.06, 0.062, -5.0, 1.02, -4.2, 0.3);
-    for (const [gx, gz, col] of [[-4.88, -4.0, '#e63946'], [-4.84, -3.95, '#2ec4b6'], [-4.9, -3.94, '#ffbe0b'], [-4.82, -4.03, '#8ac926']]) B.satin.sph(col, 0.018, gx, 0.92, gz, 1, 1.2, 1, 6, 4);
-    B.satin.fcyl('#5a2f17', 0.028, 0.03, 0.12, -4.72, 0.9, -4.3, 8);
-    B.satin.fcyl(C.black, 0.017, 0.017, 0.035, -4.72, 1.02, -4.3, 8);
-    B.satin.fbox('#f4f4f0', 0.3, 0.03, 0.2, -4.68, 0.9, -4.02);
-    B.satin.sph('#e9b8a6', 0.07, -4.73, 0.95, -4.02, 1, 0.5, 1.1);
-    B.satin.sph('#e9b8a6', 0.07, -4.62, 0.95, -4.02, 1, 0.5, 1.1);
-    B.glass.box('#ffffff', 0.31, 0.06, 0.21, -4.68, 0.95, -4.02);
+    // items on the counter next to the fridge (Carol's Wednesday menu): red Jell-O box, red-wine bottle,
+    // small vanilla bottle, and supermarket beef wrapped in plastic
+    B.satin.fbox('#d42a35', 0.12, 0.08, 0.04, -5.02, 0.9, -4.3, 0.25);                     // Jell-O box (standing)
+    B.satin.fbox('#f4f1e8', 0.07, 0.02, 0.041, -5.02, 0.93, -4.3, 0.25);                   // label band
+    B.satin.fcyl('#3a0d14', 0.038, 0.038, 0.22, -4.86, 0.9, -4.36, 10);                     // wine bottle body
+    B.satin.cyl('#3a0d14', 0.014, 0.038, 0.06, -4.86, 1.15, -4.36, 10);                     // shoulder
+    B.satin.fcyl('#3a0d14', 0.014, 0.014, 0.08, -4.86, 1.18, -4.36, 8);                     // neck
+    B.satin.fcyl('#7a1424', 0.016, 0.016, 0.03, -4.86, 1.25, -4.36, 8);                     // capsule
+    B.satin.fcyl('#e9dfc8', 0.039, 0.039, 0.07, -4.86, 0.97, -4.36, 10);                    // label
+    B.satin.fcyl('#5a2f17', 0.024, 0.026, 0.11, -4.73, 0.9, -4.25, 8);                      // vanilla
+    B.satin.fcyl(C.black, 0.015, 0.015, 0.03, -4.73, 1.01, -4.25, 8);
+    B.satin.fbox('#f4f4f0', 0.26, 0.02, 0.18, -4.86, 0.9, -4.04, 0.1);                     // foam tray
+    B.satin.fbox('#e58a95', 0.22, 0.045, 0.14, -4.86, 0.92, -4.04, 0.1);                   // beef, pink
+    B.glass.box('#ffffff', 0.27, 0.075, 0.19, -4.86, 0.9375, -4.04, 0.1);                  // cling wrap
 
     // ================================================================== DINING (table 1.6 x 0.9 at (0,-1.5))
     const TX = 0, TZ = -1.5, TY = 0.76;
@@ -274,11 +280,11 @@ export default {
     };
     chair(B.matte, -0.42, -0.75, 0);          // south side, facing -z
     chair(B.matte, 0.42, -0.75, 0);
-    chair(B.matte, -0.42, -2.25, PI);         // north side, facing +z
-    chair(B.matte, 0.32, -2.72, PI - 0.4);    // Sara's chair, pulled out
+    chair(B.matte, -1.12, -1.5, -PI / 2);     // west end, facing +x (Sarah's seat)
+    chair(B.matte, 0.32, -2.72, PI - 0.4);    // pulled-out chair (Omar sat here for coffee)
     solid(TX - 0.82, TZ - 0.47, TX + 0.82, TZ + 0.47);
     solid(-0.66, -0.98, -0.18, -0.52); solid(0.18, -0.98, 0.66, -0.52);
-    solid(-0.66, -2.48, -0.18, -2.02); solid(0.06, -2.98, 0.58, -2.46);
+    solid(-1.36, -1.74, -0.88, -1.26); solid(0.06, -2.98, 0.58, -2.46);
 
     // laptop (hotspot object): base + lid + glowing listing screen, facing the player (+z)
     const LX = 0.12, LZ = -1.42;
@@ -300,7 +306,7 @@ export default {
       B.satin.torus(col, 0.027, 0.008, x + 0.045, TY + 0.05, z, 0, 0, 0, PI);
       B.satin.cyl('#4a2c1a', 0.036, 0.036, 0.004, x, TY + 0.085, z, 10);
     };
-    mug(-0.42, -1.25, '#2f6b6b'); mug(0.55, -1.75, C.white);
+    mug(-0.42, -1.25, '#2f6b6b'); mug(0.55, -1.75, C.white); mug(-0.6, -1.72, '#b5523b');
     B.satin.cyl(C.white, 0.12, 0.1, 0.015, -0.32, TY + 0.008, -1.6, 14);
     B.satin.box('#d9a35b', 0.1, 0.012, 0.1, -0.35, TY + 0.022, -1.62, 0.3);
     B.satin.box('#c98b45', 0.1, 0.012, 0.1, -0.29, TY + 0.034, -1.57, -0.2);
@@ -346,6 +352,10 @@ export default {
     B.matte.box(C.terracotta, 0.12, 0.32, 0.32, 2.62, 0.73, -0.85, -0.25, 0, -0.25);
     B.matte.box(C.knit, 0.92, 0.03, 0.5, 2.66, 0.655, -0.5, 0, 0, 0.05);             // throw over the arm
     B.matte.box(C.knit, 0.03, 0.4, 0.5, 3.12, 0.46, -0.5);
+    B.matte.box('#7f9a8c', 0.6, 0.08, 0.7, 2.8, 0.6, -1.85, 0.4, 0.1, 0.05);           // crumpled blanket (Ben slept here)
+    B.matte.box('#7f9a8c', 0.45, 0.1, 0.5, 2.85, 0.65, -1.45, -0.3, -0.12, 0.08);
+    B.matte.box('#7f9a8c', 0.04, 0.35, 0.55, 3.12, 0.4, -1.75, 0.1);
+    B.matte.box(C.white, 0.35, 0.1, 0.24, 2.6, 0.62, -2.25, 0.3);                         // pillow
     solid(2.15, -2.65, 3.15, -0.35);
     // floor lamp at the sofa's south end
     B.matte.fcyl(C.black, 0.15, 0.17, 0.03, 2.4, 0, 0.0, 12);
@@ -372,7 +382,7 @@ export default {
     B.satin.quad('#273342', 1.24, 0.7, 5.745, 0.98, -1.5, -PI / 2);
     B.matte.fbox('#d4c3a3', 0.12, 0.14, 0.12, 5.75, 0.52, -2.2);                         // small vase
     solid(5.47, -2.43, 6, -0.57);
-    // bookshelf with the Mushaf alone on the top shelf
+    // bookshelf: books, the family Bible and photos on the top shelf, a small wooden cross on the wall above
     const BX0 = 3.2, BX1 = 4.4, BZ0 = Z0, BZ1 = Z0 + 0.32;
     B.matte.span(C.shelfWood, BX0, 0, BZ0, BX0 + 0.03, 1.8, BZ1);
     B.matte.span(C.shelfWood, BX1 - 0.03, 0, BZ0, BX1, 1.8, BZ1);
@@ -394,10 +404,20 @@ export default {
         x += w + 0.004;
       }
     }
-    // top shelf: wooden stand (rehal) holding the green Mushaf, nothing else beside it
-    B.matte.fbox('#8a5a36', 0.3, 0.03, 0.18, 3.8, shelves[3], BZ0 + 0.16);
-    B.satin.box('#2f6b4a', 0.22, 0.05, 0.17, 3.8, shelves[3] + 0.07, BZ0 + 0.16, 0, 0.25);
-    B.metal.box('#d6b46a', 0.225, 0.012, 0.172, 3.8, shelves[3] + 0.07, BZ0 + 0.16, 0, 0.25);
+    // top shelf: brown leather Bible lying flat, two small framed family photos
+    B.satin.fbox('#6b4423', 0.16, 0.04, 0.22, 3.62, shelves[3], BZ0 + 0.17, 0.08);
+    B.satin.fbox('#e8dcc0', 0.15, 0.03, 0.005, 3.62, shelves[3] + 0.005, BZ0 + 0.06, 0.08);  // page edge
+    for (const [px, w, h, ry] of [[3.92, 0.16, 0.2, -0.15], [4.13, 0.2, 0.15, 0.2]]) {
+      B.satin.push(px, shelves[3], BZ0 + 0.14, ry, -0.12);
+      B.satin.box('#2b2420', w, h, 0.02, 0, h / 2, 0);
+      B.satin.pop();
+      B.photo.push(px, shelves[3], BZ0 + 0.14, ry, -0.12);
+      B.photo.quad('#ffffff', w - 0.03, h - 0.03, 0, h / 2, 0.011);
+      B.photo.pop();
+    }
+    // simple wooden cross on the wall above the shelf
+    B.satin.box('#a0763f', 0.04, 0.3, 0.03, 3.8, 2.12, Z0 + 0.016);
+    B.satin.box('#a0763f', 0.18, 0.04, 0.03, 3.8, 2.19, Z0 + 0.016);
     B.matte.fcyl(C.potWhite, 0.07, 0.06, 0.12, 4.22, 1.8, BZ0 + 0.16, 8);                 // trailing plant on top
     for (let i = 0; i < 6; i++) B.matte.ico(i % 2 ? C.leaf : C.leaf2, 0.06, 4.22 + (i - 2.5) * 0.04, 1.95 - (i % 3) * 0.08, BZ0 + 0.22, 1, 1, 1, i);
     solid(BX0, BZ0, BX1, BZ1);
@@ -413,7 +433,7 @@ export default {
     };
     tallPlant(2.42, -4.0);
     solid(2.2, -4.25, 2.65, -3.75);
-    // snake plant in the prayer corner and by the door
+    // snake plants in the reading nook and by the door
     const snakePlant = (x, z) => {
       B.matte.fcyl(C.potWhite, 0.15, 0.12, 0.3, x, 0, z, 10);
       for (let i = 0; i < 7; i++) {
@@ -425,18 +445,24 @@ export default {
     snakePlant(5.7, 3.2);
     solid(5.52, -2.96, 5.9, -2.6, 0.9); solid(5.5, 3.0, 5.9, 3.4, 0.9);
 
-    // ---- PRAYER CORNER (NE): rug facing the north wall (qibla), tasbih, prayer cap, framed geometric art
-    const pr = new THREE.Mesh(own(new THREE.PlaneGeometry(0.7, 1.2)), tmat.prayer);
-    pr.rotation.x = -PI / 2;                          // texture top (mihrab) points to -z = the wall
-    pr.position.set(5.3, 0.009, -3.65);
-    pr.receiveShadow = true; pr.name = 'home:prayerRug';
-    group.add(pr);
-    B.matte.span(C.walnut, 5.72, 0, -4.5, 6.0, 0.36, -4.1);                                // low side stand
-    B.satin.torus('#7a2f3a', 0.05, 0.006, 5.86, 0.37, -4.3, 0, -PI / 2);                   // tasbih
-    B.matte.cyl(C.white, 0.075, 0.08, 0.06, 5.84, 0.39, -4.18, 10);                        // folded kufi
-    B.matte.box(C.black, 0.56, 0.56, 0.03, 5.3, 1.55, Z0 + 0.015);
-    B.art.quad('#ffffff', 0.48, 0.48, 5.3, 1.55, Z0 + 0.032);
-    solid(5.7, -4.5, 6, -4.08, 0.36);
+    // ---- READING NOOK (NE): armchair + side table, family photos on the wall
+    B.matte.push(5.15, 0, -3.75, -2.4);   // armchair facing the room (south-west)
+    B.matte.fbox(C.terracotta, 0.78, 0.4, 0.74, 0, 0.06, 0);
+    B.matte.fbox(C.terracotta, 0.78, 0.5, 0.16, 0, 0.42, 0.29);
+    for (const sx of [-1, 1]) B.matte.fbox(C.terracotta, 0.14, 0.24, 0.66, sx * 0.32, 0.42, 0.02);
+    B.matte.fbox(C.knit, 0.5, 0.1, 0.5, 0, 0.46, -0.02);
+    for (const sx of [-1, 1]) for (const sz of [-1, 1]) B.matte.fbox('#3a2a20', 0.05, 0.06, 0.05, sx * 0.33, 0, sz * 0.3);
+    B.matte.pop();
+    solid(4.68, -4.25, 5.62, -3.25, 0.9);
+    B.matte.span(C.walnut, 5.66, 0, -4.5, 6.0, 0.55, -4.12);                               // side table
+    B.satin.fcyl(C.white, 0.04, 0.036, 0.09, 5.82, 0.55, -4.3, 10);
+    B.matte.fbox('#2f4f6f', 0.14, 0.03, 0.2, 5.8, 0.55, -4.2, 0.4);
+    solid(5.64, -4.5, 6, -4.1, 0.55);
+    // a small gallery of family photos on the wall
+    for (const [px, py, w, h] of [[4.95, 1.45, 0.34, 0.26], [5.45, 1.55, 0.3, 0.4], [4.98, 1.82, 0.28, 0.2]]) {
+      B.walls.quad('#2b2420', w, h, px, py, Z0 + 0.006);
+      B.photo.quad('#ffffff', w - 0.05, h - 0.05, px, py, Z0 + 0.01);
+    }
 
     // radiator under the east window (Ohio winter)
     for (let i = 0; i < 12; i++) B.satin.span(C.white, 5.88, 0.15, 1.15 + i * 0.1, 5.98, 0.75, 1.2 + i * 0.1);
@@ -502,6 +528,14 @@ export default {
     for (const [x, y, col] of [[3.28, 0.04, '#2b2b2b'], [3.36, 0.04, '#2b2b2b'], [3.58, 0.04, '#f0f0f0'], [3.66, 0.04, '#f0f0f0'], [3.32, 0.25, '#7a4e2e'], [3.4, 0.25, '#7a4e2e'], [3.62, 0.25, '#3a5f9a'], [3.7, 0.25, '#3a5f9a']]) B.matte.fbox(col, 0.07, 0.08, 0.24, x, y, 4.33);
     B.matte.fbox('#5a4a3c', 1.0, 0.012, 0.6, 4.5, 0, 3.95);
     solid(3.12, 4.15, 3.88, 4.5, 0.46);
+    // snow shovel leaning on the wall next to the door (Omar brought it back)
+    B.satin.push(5.18, 0, 4.24, 0, 0.2);
+    B.satin.fcyl('#9a6b3f', 0.016, 0.016, 1.18, 0, 0.1, 0, 6);                         // handle
+    B.satin.box(C.black, 0.12, 0.03, 0.03, 0, 1.3, 0);                                  // grip
+    B.satin.box(C.black, 0.42, 0.34, 0.025, 0, 0.17, -0.02, 0, -0.12);                  // blade
+    B.satin.box('#f1f5f8', 0.38, 0.03, 0.03, 0, 0.03, -0.035);                           // snow on the lip
+    B.satin.pop();
+    solid(4.96, 4.1, 5.4, 4.5, 0.9);
     // coat rack with winter coats
     B.matte.fcyl('#3b2e25', 0.2, 0.22, 0.04, 5.6, 0, 4.2, 10);
     B.matte.fcyl('#3b2e25', 0.025, 0.025, 1.75, 5.6, 0.04, 4.2, 6);
@@ -557,6 +591,7 @@ export default {
     if (glassMesh) glassMesh.renderOrder = 2;
     add(B.tile.build(tmat.tile, { cast: false }));
     add(B.art.build(tmat.art, { cast: false }));
+    add(B.photo.build(tmat.photo, { cast: false }));
     add(B.outside.build(mat.matte));
 
     // ------------------------------------------------------------------ lights
@@ -594,48 +629,90 @@ export default {
     const propMats = {
       dark: own(new THREE.MeshStandardMaterial({ color: '#222326', roughness: 0.5 })),
       phoneGlow: own(new THREE.MeshBasicMaterial({ color: '#7fc4ff', toneMapped: false })),
-      candy: own(new THREE.MeshStandardMaterial({ color: '#e84a8a', roughness: 0.4 }))
+      paper: own(new THREE.MeshStandardMaterial({ color: '#f6f3ea', roughness: 0.8 })),
+      mug: own(new THREE.MeshStandardMaterial({ color: '#c9a227', roughness: 0.4 })),
+      beanie: own(new THREE.MeshStandardMaterial({ color: '#7d8187', roughness: 1, flatShading: true })),
+      silver: own(new THREE.MeshStandardMaterial({ color: '#c9c9c9', roughness: 0.9, flatShading: true })),
+      chestnut: own(new THREE.MeshStandardMaterial({ color: '#8a4b2a', roughness: 0.9, flatShading: true })),
+      blond: own(new THREE.MeshStandardMaterial({ color: '#8b6b3d', roughness: 0.9, flatShading: true }))
     };
     const posed = [];   // [{ part, x }] arm poses re-applied after the engine's idle animation
+    const prop = (geo, m, parent, x, y, z) => { const o = new THREE.Mesh(own(geo), m); o.position.set(x, y, z); o.castShadow = true; parent.add(o); return o; };
 
-    const saraLook = { skin: '#c68642', shirt: '#e8dcc4', hijab: '#5b7b5a', dress: '#6b5d52', pants: '#6b5d52', shoes: '#8a7a6a', height: 1.66 };
-    npcs.push({ id: 'sara', position: [0.9, 0, -2.2], yaw: yawTo([0.9, -2.2], [0.2, 0.2]), look: saraLook });
+    // Omar (situation NPC, laptop): tall, short beard, grey wool beanie, olive jacket, coffee mug in hand
+    const omarLook = { skin: '#5a3a22', shirt: '#556b2f', pants: '#3b3d42', shoes: '#3a2a20', hair: '#1a1410', beard: '#1a1410', height: 1.85 };
+    // Carol (situation NPC, fridge): Adam's mom, short silver bob, olive cardigan, reading glasses, menu notepad
+    const carolLook = { skin: '#f0c8a8', shirt: '#6b7a3a', pants: '#4a4a52', shoes: '#4a3a30', hair: '#c9c9c9', glasses: true, height: 1.62 };
+    // Ben (situation NPC, mail table): Adam's younger brother, messy dark-blond hair, grey hoodie, headphones, phone
+    const benLook = { skin: '#f3d3b5', shirt: '#8a8f98', pants: '#2f3542', hair: '#8b6b3d', shoes: '#f0f0f0', height: 1.8, build: 0.9 };
+    // Sarah (background): Adam's wife, seated at the west end of the table looking at her laptop
+    const sarahLook = { skin: '#f1cfae', shirt: '#9c3d54', pants: '#2f3542', shoes: '#5a4a3c', hair: '#8a4b2a', height: 1.66 };
+    const omarPos = [1.0, 0, -2.3], benPos = [-1.2, 0, 3.4];
 
-    const khadijaLook = { skin: '#b88a5e', shirt: '#2c3550', dress: '#2c3550', pants: '#2c3550', hijab: '#e6e6e6', glasses: true, height: 1.58, shoes: '#4a3a30' };
-    const bilalLook = { skin: '#c99a6e', shirt: '#8a8f98', pants: '#2f3542', hair: '#1e1611', shoes: '#f0f0f0', height: 1.8, build: 0.9 };
     if (typeof ctx.makeNPC === 'function') {
-      const kh = ctx.makeNPC(khadijaLook);
-      const p = kh.userData.parts;
-      if (p?.armL) {
-        const bag = new THREE.Mesh(own(new THREE.BoxGeometry(0.13, 0.17, 0.045)), propMats.candy);
-        bag.position.set(0, -0.68, -0.04); bag.castShadow = true;
-        p.armL.add(bag);
-        posed.push({ part: p.armL, x: 1.05 });
+      const om = ctx.makeNPC(omarLook);
+      const po = om.userData.parts;
+      if (po?.head) {
+        const cap = prop(new THREE.SphereGeometry(0.148, 12, 6, 0, PI * 2, 0, PI * 0.5), propMats.beanie, po.head, 0, 0.015, 0.008);
+        cap.scale.set(1, 1.05, 1);
+        const cuff = prop(new THREE.TorusGeometry(0.142, 0.022, 5, 16), propMats.beanie, po.head, 0, 0.03, 0.008);
+        cuff.rotation.x = PI / 2;
       }
-      npcs.push({ id: 'khadija', position: [-4.4, 0, -3.0], yaw: 2.35, object: kh });
+      if (po?.armR) {
+        prop(new THREE.CylinderGeometry(0.04, 0.036, 0.1, 10), propMats.mug, po.armR, 0, -0.68, -0.05);
+        posed.push({ part: po.armR, x: 0.9 });
+      }
+      npcs.push({ id: 'omar', position: omarPos, yaw: yawTo([omarPos[0], omarPos[2]], [0.3, 0.4]), object: om });
 
-      const bi = ctx.makeNPC(bilalLook);
-      const q2 = bi.userData.parts;
-      if (q2?.body) {
-        const band = new THREE.Mesh(own(new THREE.TorusGeometry(0.1, 0.018, 5, 14)), propMats.dark);
-        band.rotation.x = PI / 2 - 0.25; band.position.set(0, 1.47, 0.02); band.castShadow = true;
+      const ca = ctx.makeNPC(carolLook);
+      const pc = ca.userData.parts;
+      if (pc?.head) {
+        const bob = prop(new THREE.SphereGeometry(0.152, 12, 8, 0, PI * 2, 0, PI * 0.64), propMats.silver, pc.head, 0, 0.005, 0.02);
+        bob.scale.set(1.04, 1, 1);
+      }
+      if (pc?.armL) {
+        prop(new THREE.BoxGeometry(0.11, 0.15, 0.015), propMats.paper, pc.armL, 0, -0.68, -0.05).rotation.x = -0.6;
+        posed.push({ part: pc.armL, x: 1.0 });
+      }
+      npcs.push({ id: 'carol', position: [-4.4, 0, -3.0], yaw: 2.35, object: ca });
+
+      const be = ctx.makeNPC(benLook);
+      const pb = be.userData.parts;
+      if (pb?.head) {   // messy hair tufts
+        for (let i = 0; i < 6; i++) {
+          const a2 = i * 1.05;
+          prop(new THREE.IcosahedronGeometry(0.05, 0), propMats.blond, pb.head, Math.cos(a2) * 0.07, 0.11 + (i % 2) * 0.02, Math.sin(a2) * 0.07).rotation.set(i, i * 2, 0);
+        }
+      }
+      if (pb?.body) {
+        const band = prop(new THREE.TorusGeometry(0.1, 0.018, 5, 14), propMats.dark, pb.body, 0, 1.47, 0.02);
+        band.rotation.x = PI / 2 - 0.25;
         const cupGeo = own(new THREE.CylinderGeometry(0.045, 0.045, 0.035, 10));
-        for (const sx of [-1, 1]) { const cup = new THREE.Mesh(cupGeo, propMats.dark); cup.rotation.z = PI / 2; cup.position.set(sx * 0.105, 1.44, -0.02); q2.body.add(cup); }
-        q2.body.add(band);
+        for (const sx of [-1, 1]) { const cup = new THREE.Mesh(cupGeo, propMats.dark); cup.rotation.z = PI / 2; cup.position.set(sx * 0.105, 1.44, -0.02); pb.body.add(cup); }
       }
-      if (q2?.armR) {
-        const phone = new THREE.Mesh(own(new THREE.BoxGeometry(0.075, 0.15, 0.012)), propMats.dark);
-        phone.position.set(0, -0.7, -0.03); phone.rotation.x = -0.5;
-        const face = new THREE.Mesh(own(new THREE.PlaneGeometry(0.065, 0.13)), propMats.phoneGlow);
-        face.position.set(0, 0, -0.007); face.rotation.y = PI;
-        phone.add(face);
-        q2.armR.add(phone);
-        posed.push({ part: q2.armR, x: 1.15 });
+      if (pb?.armR) {
+        const phone = prop(new THREE.BoxGeometry(0.075, 0.15, 0.012), propMats.dark, pb.armR, 0, -0.7, -0.03);
+        phone.rotation.x = -0.5;
+        const face = prop(new THREE.PlaneGeometry(0.065, 0.13), propMats.phoneGlow, phone, 0, 0, -0.007);
+        face.rotation.y = PI;
+        posed.push({ part: pb.armR, x: 1.15 });
       }
-      npcs.push({ id: 'bilal', position: [-1.2, 0, 3.4], yaw: yawTo([-1.2, 3.4], [0.3, 2.4]), object: bi });
+      npcs.push({ id: 'ben', position: benPos, yaw: yawTo([benPos[0], benPos[2]], [0.3, 2.4]), object: be });
+
+      const sa = ctx.makeNPC(sarahLook);
+      const ps = sa.userData.parts;
+      if (ps) {
+        ps.legL.rotation.x = ps.legR.rotation.x = PI / 2;   // seated: thighs forward
+        ps.armL.rotation.x = ps.armR.rotation.x = 0.75;     // hands toward the table
+        const tail = prop(new THREE.SphereGeometry(0.05, 8, 6), propMats.chestnut, ps.head, 0, -0.02, 0.15);
+        tail.scale.set(0.9, 1.8, 0.9);
+      }
+      npcs.push({ id: 'bg_sarah', position: [-1.1, -0.38, -1.5], yaw: -PI / 2, object: sa, animate: false, collide: false, showName: false });
     } else {
-      npcs.push({ id: 'khadija', position: [-4.4, 0, -3.0], yaw: 2.35, look: khadijaLook });
-      npcs.push({ id: 'bilal', position: [-1.2, 0, 3.4], yaw: yawTo([-1.2, 3.4], [0.3, 2.4]), look: bilalLook });
+      npcs.push({ id: 'omar', position: omarPos, yaw: yawTo([omarPos[0], omarPos[2]], [0.3, 0.4]), look: omarLook });
+      npcs.push({ id: 'carol', position: [-4.4, 0, -3.0], yaw: 2.35, look: carolLook });
+      npcs.push({ id: 'ben', position: benPos, yaw: yawTo([benPos[0], benPos[2]], [0.3, 2.4]), look: benLook });
+      npcs.push({ id: 'bg_sarah', position: [-1.1, 0, -2.0], yaw: yawTo([-1.1, -2.0], [0.12, -1.42]), look: sarahLook, collide: false });
     }
 
     // ------------------------------------------------------------------ result

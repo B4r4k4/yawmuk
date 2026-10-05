@@ -12,6 +12,9 @@
 // card section against content/rulings, "try another choice", the revisit menu, the language switch,
 // location transitions, localStorage resume after a reload, the final summary (score = max), and
 // horizontal overflow (RTL/LTR) of the page and the ruling card.
+// Christian-learner premise: "In plain words" + "Common ground" panels (Bible text verbatim, KJV/Van Dyck with
+// their own links), NPC stations (Samir moves; mobile-en plays work out of order), Adam's look per scene, the
+// end screen (learned / next topic / referral) and privacy (no belief data in any browser storage).
 //
 // Usage:  npm run test:e2e                       (builds dist/ if missing)
 //         node tests/e2e/playthrough.mjs --only=desktop-en,mobile-ar --no-shots --build --camera
@@ -25,7 +28,9 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { execSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
+import os from 'node:os';
 import { startServer } from '../../tools/serve.mjs';
+import { PLAYER, THEMES } from '../../src/engine/config.js';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 const args = Object.fromEntries(process.argv.slice(2).map((a) => { const [k, v] = a.replace(/^--/, '').split('='); return [k, v ?? true]; }));
@@ -50,6 +55,14 @@ const RULINGS = {};
 for (const f of fs.readdirSync(path.join(ROOT, 'content/rulings'))) for (const r of readJson(`content/rulings/${f}`)) RULINGS[r.id] = r;
 const SCRIPTS = Object.fromEntries(LOCATIONS.map((l) => [l, readJson(`content/script/${l}.json`)]));
 const MAX_SCORE = LOCATIONS.flatMap((l) => SCRIPTS[l].situations).reduce((a, s) => a + Math.max(0, ...s.choices.map((c) => c.points || 0)) + (s.check_question ? 5 : 0), 0);
+const UI = readJson('content/script/ui_strings.json');
+// Adam's look per scene: PLAYER.look (config.js) + the scene's optional playerLook (street: navy winter jacket)
+const SCENE_PLAYER_LOOK = Object.fromEntries(LOCATIONS.map((l) => {
+  const src = fs.readFileSync(path.join(ROOT, `src/scenes/${l}.js`), 'utf8');
+  const m = /playerLook:\s*\{\s*jacket:\s*'(#[0-9a-fA-F]{6})'/.exec(src);
+  return [l, m ? { jacket: m[1].toLowerCase() } : {}];
+}));
+const firstSentence = (p) => (typeof p === 'string' ? (p.match(/^[^.!?؟۔]+[.!?؟۔]?/) || [p])[0] : '');
 const TOTAL = LOCATIONS.reduce((a, l) => a + SCRIPTS[l].situations.length, 0);
 
 // ------------------------------------------------------------------ browser discovery
@@ -62,6 +75,7 @@ function findChrome() {
 }
 
 // ------------------------------------------------------------------ helpers
+const norm = (s) => String(s ?? '').normalize('NFC').replace(/\s+/g, ' ').trim();
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const OPEN = '.overlay:not(.leaving)';
 class Fail extends Error {}
@@ -77,7 +91,19 @@ function makeRunner(page, cfg, log) {
     const vis = [];
     for (const e of els) if (await e.evaluate((n) => n.offsetParent !== null && !n.disabled)) vis.push(e);
     const el = vis[index];
-    await el.evaluate((n) => n.scrollIntoView({ block: 'nearest' }));
+    // Centre the element and make sure nothing (e.g. the sticky "Next" bar of the ruling card) covers it,
+    // otherwise a tap could land on another button. This made the mobile madhhab-tab check flaky.
+    const hit = await el.evaluate((n) => {
+      n.scrollIntoView({ block: 'center', inline: 'nearest' });
+      const r = n.getBoundingClientRect();
+      const top = document.elementFromPoint(r.left + r.width / 2, r.top + r.height / 2);
+      return !!top && (top === n || n.contains(top));
+    });
+    if (!hit) {
+      await sleep(250); // let smooth layout/transition settle and retry the hit test once
+      const again = await el.evaluate((n) => { const r = n.getBoundingClientRect(); const top = document.elementFromPoint(r.left + r.width / 2, r.top + r.height / 2); return !!top && (top === n || n.contains(top)); });
+      if (!again) throw new Fail(`${selector}[${index}] is covered by another element; refusing to click blindly`);
+    }
     if (cfg.mobile) await el.tap(); else await el.click();
   }
   const waitSel = (s, timeout = 20000) => page.waitForSelector(s, { visible: true, timeout });
@@ -170,6 +196,31 @@ function reachabilityInPage() {
   return { cells: qt, area: +reachedArea.toFixed(1), targets: out };
 }
 
+// ------------------------------------------------------------------ in-page: Adam's look (built by makeNPC)
+function playerLookInPage() {
+  const fig = window.yawmuk.player.figure;
+  const hex = (m) => '#' + m.color.getHexString();
+  const out = { torso: null, beard: false, kufi: false, jacket: null, onStage: !!fig.parent };
+  fig.traverse((o) => {
+    if (!o.isMesh) return;
+    const p = o.geometry.parameters || {}, t = o.geometry.type;
+    if (t === 'CylinderGeometry' && p.radiusTop === 0.2 && p.radiusBottom === 0.17) out.torso = hex(o.material);
+    if (t === 'CylinderGeometry' && p.radiusTop === 0.215 && p.openEnded) out.jacket = hex(o.material);
+    if (t === 'CylinderGeometry' && p.radiusTop === 0.125 && p.radiusBottom === 0.135) out.kufi = true;
+    if (t === 'SphereGeometry' && p.radius === 0.115) out.beard = true;
+  });
+  return out;
+}
+function stationsInPage() {
+  const a = window.yawmuk.scenes.active, out = {};
+  for (const [id, fig] of Object.entries(a.npcs)) {
+    const st = fig.userData.stations; if (!st) continue;
+    const c = fig.userData.collider;
+    out[id] = { keys: Object.keys(st), station: fig.userData.station, pos: [fig.position.x, fig.position.z], stations: st, collider: c ? [(c.min[0] + c.max[0]) / 2, (c.min[2] + c.max[2]) / 2] : null };
+  }
+  return { npcs: out, done: Object.fromEntries(Object.entries(window.yawmuk.progress().situations).map(([k, v]) => [k, !!v.done])) };
+}
+
 // ------------------------------------------------------------------ in-page: camera occlusion sweep
 function cameraSweepInPage(stand, target) {
   const { THREE, world, player, scenes } = window.yawmuk;
@@ -236,6 +287,53 @@ function validateRulingCardInPage(r, lang) {
   if (!q('.rc-scholar p')) errs.push('refer-to-scholar section missing');
   if (qa('.rc-foot p').length !== 2) errs.push('disclaimer footer missing');
   for (const a of qa('a')) if (!/^https?:\/\//.test(a.getAttribute('href') || '')) errs.push(`bad link ${a.getAttribute('href')}`);
+  // ---- pivot: "In plain words" (newcomer_explainer) right under the header
+  const sq = (x) => String(x ?? '').replace(/\s+/g, ' ').trim();
+  const plain = q('.rc-plain');
+  if (tr(r.newcomer_explainer)) {
+    if (!plain) errs.push('"In plain words" section missing');
+    else {
+      if (sq(plain.querySelector('.plain')?.textContent) !== sq(tr(r.newcomer_explainer))) errs.push('"In plain words" text differs from newcomer_explainer');
+      if (plain.previousElementSibling !== q('.rc-header')) errs.push('"In plain words" is not directly under the verdict header');
+    }
+  } else if (plain) errs.push('"In plain words" shown without data');
+  // ---- pivot: "Common ground" (summary, Bible verses verbatim in the UI language, differences)
+  const cg = r.common_ground || {};
+  const verses = (cg.bible || []).filter((b) => b && (b.text_ar || b.text_en));
+  const cgEl = q('.rc-common');
+  const wantCg = !!(tr(cg.summary) || tr(cg.differences) || verses.length);
+  if (wantCg && !cgEl) errs.push('"Common ground" section missing');
+  if (!wantCg && cgEl) errs.push('"Common ground" shown without data');
+  if (cgEl) {
+    if (tr(cg.summary) && !sq(cgEl.textContent).includes(sq(tr(cg.summary)))) errs.push('common_ground.summary not shown verbatim');
+    if (tr(cg.differences) && sq(cgEl.querySelector('.cg-diff p')?.textContent) !== sq(tr(cg.differences))) errs.push('common_ground.differences not shown verbatim');
+    const figs = [...cgEl.querySelectorAll('figure.bible-verse')];
+    if (figs.length !== verses.length) errs.push(`bible verses ${figs.length}/${verses.length}`);
+    // the renderer may drop an unmatched quotation mark at display time (Van Dyck verses that open a quote
+    // closed in another verse); apart from quote marks the text must be identical to the data
+    const noQuotes = (x) => sq(x).replace(/[«»“”"]/g, '').trim();
+    verses.forEach((b, i) => {
+      const fig = figs[i]; if (!fig) return;
+      const want = lang === 'ar' ? b.text_ar || b.text_en : b.text_en || b.text_ar;
+      const wantLang = want === b.text_ar ? 'ar' : 'en';
+      const shown = fig.querySelector('blockquote.bible-text');
+      if (!shown) { errs.push(`bible[${i}] text missing`); return; }
+      if (noQuotes(shown.textContent) !== noQuotes(want)) errs.push(`bible[${i}] ${b.ref_en}: text differs from the data (${wantLang === 'ar' ? 'Van Dyck' : 'KJV'})`);
+      if (shown.getAttribute('lang') !== wantLang || shown.getAttribute('dir') !== (wantLang === 'ar' ? 'rtl' : 'ltr')) errs.push(`bible[${i}] lang/dir ${shown.getAttribute('lang')}/${shown.getAttribute('dir')}`);
+      const cap = fig.querySelector('figcaption')?.textContent || '';
+      const ref = lang === 'ar' ? b.ref_ar || b.ref_en : b.ref_en || b.ref_ar;
+      if (!cap.includes(ref)) errs.push(`bible[${i}] reference "${ref}" missing`);
+      if (!cap.includes(wantLang === 'ar' ? 'Van Dyck' : 'KJV')) errs.push(`bible[${i}] translation label missing`);
+      const href = fig.querySelector('a')?.getAttribute('href');
+      const wantUrl = wantLang === 'ar' ? b.source_url_ar || b.source_url : b.source_url || b.source_url_ar;
+      if (wantUrl && href !== new URL(wantUrl).href) errs.push(`bible[${i}] link ${href} expected ${wantUrl} (${wantLang === 'ar' ? 'Arabic link for Arabic text' : 'KJV link'})`);
+    });
+    if (verses.length && !cgEl.querySelector('.bible-note')) errs.push('bible translation note missing');
+    // common ground must come after the Islamic evidence, never before it
+    const order = [...card.children];
+    const iMad = order.indexOf(q('.rc-madhahib')), iCg = order.indexOf(cgEl);
+    if (iMad >= 0 && iCg < iMad) errs.push('common ground placed before the madhhab section');
+  }
   if (card.scrollWidth - card.clientWidth > 2) errs.push(`card overflows horizontally (${card.scrollWidth}>${card.clientWidth})`);
   if (document.documentElement.dir !== (lang === 'ar' ? 'rtl' : 'ltr')) errs.push(`dir=${document.documentElement.dir}`);
   return errs;
@@ -258,12 +356,34 @@ async function runConfig(browser, baseUrl, cfg) {
     } else if (m.type() === 'warn' || m.type() === 'warning') warnings.push(txt);
   });
   page.on('pageerror', (e) => errors.push(`pageerror: ${e.message}`));
+  const externalRequests = [];
+  page.on('request', (r) => { const u = r.url(); if (!/^(http:\/\/127\.0\.0\.1|data:|blob:)/.test(u) && !/^https:\/\/fonts\.(googleapis|gstatic)\.com\//.test(u)) externalRequests.push(u); });
   page.on('requestfailed', (r) => { if (!/fonts\.g/.test(r.url())) errors.push(`requestfailed: ${r.url()} ${r.failure()?.errorText}`); });
 
+  if (SHOTS) fs.rmSync(path.join(SHOT_DIR, cfg.name), { recursive: true, force: true }); // one coherent set per run
   const R = makeRunner(page, cfg, log);
   const { press, waitSel, waitFn, evalp, shot, check } = R;
-  const perf = {}, reach = {}, camera = {}, rulingsChecked = [];
+  const perf = {}, reach = {}, camera = {}, rulingsChecked = [], stationLog = [], looks = {};
   let hotspotShot = 0;
+
+  /** NPCs with stations stand at their first unfinished hotspot (script order), collider included. */
+  async function checkStations(loc, when) {
+    const { npcs, done } = await evalp(stationsInPage);
+    const sits = SCRIPTS[loc].situations;
+    for (const [id, n] of Object.entries(npcs)) {
+      const order = [...new Set(sits.map((x) => x.hotspot))].filter((h) => n.keys.includes(h));
+      const hsDone = (h) => sits.filter((x) => x.hotspot === h).every((x) => done[x.ruling_id]);
+      const want = order.find((h) => !hsDone(h)) || order[order.length - 1];
+      check(n.station === want, `${loc} ${when}: ${id} at station "${n.station}", expected "${want}"`);
+      const p = n.stations[want]?.position;
+      if (p) {
+        check(Math.hypot(n.pos[0] - p[0], n.pos[1] - p[2]) < 0.01, `${loc} ${when}: ${id} not at the ${want} station position`);
+        if (n.collider) check(Math.hypot(n.collider[0] - p[0], n.collider[1] - p[2]) < 0.01, `${loc} ${when}: ${id}'s collider did not move with it`);
+      }
+      stationLog.push(`${loc} ${when}: ${id} @ ${n.station}`);
+    }
+    return Object.keys(npcs).length;
+  }
 
   async function waitPlay(loc) {
     await waitFn((l) => window.yawmuk && window.yawmuk.mode === 'play' && window.yawmuk.scenes.active?.location === l, 60000, loc);
@@ -301,6 +421,15 @@ async function runConfig(browser, baseUrl, cfg) {
     check(!info.placeholder, `${loc}: placeholder scene loaded instead of the real one`);
     check(info.pointLights <= 3 && info.shadowLights === 0, `${loc}: ${info.pointLights} point/spot lights and ${info.shadowLights} shadow-casting scene lights (budget: <= 3, none casting shadows)`);
     check(!info.auto.length, `${loc}: auto-placed hotspots ${info.auto}`);
+    // Adam's look: PLAYER.look everywhere, plus the scene's playerLook (street jacket) only in that scene
+    const look = await evalp(playerLookInPage);
+    looks[loc] = look;
+    const wantLook = { ...PLAYER.look, ...SCENE_PLAYER_LOOK[loc] };
+    check(look.onStage, `${loc}: Adam is not in the scene`);
+    check(look.torso === String(wantLook.shirt).toLowerCase(), `${loc}: Adam's shirt ${look.torso}, expected ${wantLook.shirt}`);
+    check(look.beard === !!wantLook.beard && look.kufi === !!wantLook.kufi, `${loc}: Adam's beard/kufi ${look.beard}/${look.kufi}, expected ${!!wantLook.beard}/${!!wantLook.kufi}`);
+    check((look.jacket || null) === (wantLook.jacket ? String(wantLook.jacket).toLowerCase() : null), `${loc}: Adam's jacket ${look.jacket}, expected ${wantLook.jacket || 'none'}`);
+    if (await checkStations(loc, 'on entry')) log(`  ✓ ${loc}: station NPC placed on entry`);
     reach[loc] = await evalp(reachabilityInPage);
     check(!reach[loc].error, `${loc}: ${reach[loc].error}`);
     for (const [id, t] of Object.entries(reach[loc].targets || {})) check(t.reachable, `${loc}: ${id} is NOT reachable on foot from spawn`);
@@ -309,7 +438,10 @@ async function runConfig(browser, baseUrl, cfg) {
 
   /** Walk-teleport to a reachable spot inside the hotspot radius, facing it, then interact like a player. */
   async function goAndInteract(loc, id) {
+    reach[loc] = await evalp(reachabilityInPage); // NPC stations move colliders between situations
     const t = reach[loc].targets[id];
+    check(t?.reachable, `${loc}: ${id} is NOT reachable on foot right now`);
+    if (!t?.reachable) throw new Fail(`${loc}: ${id} unreachable`);
     await evalp((stand, target) => {
       const y = Math.atan2(-(target[0] - stand[0]), -(target[1] - stand[1]));
       window.yawmuk.player.teleport([stand[0], 0, stand[1]], y);
@@ -335,12 +467,20 @@ async function runConfig(browser, baseUrl, cfg) {
   async function playChoices(sit, pickQuality, { shots = false, locName = '' } = {}) {
     await waitSel(`${OPEN} .dialogue .choices .choice`);
     if (shots) await shot(`${locName}-choices`);
-    const want = sit.choices.find((c) => c.quality === pickQuality) || sit.choices.find((c) => c.quality !== 'best') || sit.choices[0];
-    const idx = await evalp((label) => [...document.querySelectorAll('.overlay:not(.leaving) .dialogue .choices .choice span:last-child')].findIndex((s) => s.textContent.trim() === label.trim()), want.label[cfg.lang]);
-    check(idx >= 0, `${sit.ruling_id}: choice "${want.id}" label not found among rendered choices`);
-    const n = await evalp(() => document.querySelectorAll('.overlay:not(.leaving) .dialogue .choices .choice').length);
-    check(n === sit.choices.length, `${sit.ruling_id}: rendered ${n} choices, script has ${sit.choices.length}`);
-    await press(`${OPEN} .dialogue .choices .choice`, { index: Math.max(0, idx) });
+    // Choices are shuffled on every display. Map each rendered button back to its script choice by its
+    // normalised label, then pick the wanted quality among what is actually on screen.
+    const rendered = await evalp(() => [...document.querySelectorAll('.overlay:not(.leaving) .dialogue .choices .choice span:last-child')].map((s) => s.textContent));
+    const byIdx = rendered.map((txt) => sit.choices.find((c) => norm(c.label[cfg.lang]) === norm(txt)) || null);
+    byIdx.forEach((c, i) => check(!!c, `${sit.ruling_id}: rendered choice #${i + 1} "${rendered[i].slice(0, 60)}" matches no script choice (content and build out of sync?)`));
+    check(rendered.length === sit.choices.length, `${sit.ruling_id}: rendered ${rendered.length} choices, script has ${sit.choices.length}`);
+    check(new Set(byIdx.filter(Boolean).map((c) => c.id)).size === sit.choices.length, `${sit.ruling_id}: rendered choices are not exactly the script's choices`);
+    const order = [pickQuality, ...(pickQuality === 'best' ? [] : ['wrong', 'acceptable'])];
+    let idx = -1;
+    for (const q of order) { idx = byIdx.findIndex((c) => c && c.quality === q); if (idx >= 0) break; }
+    if (idx < 0) idx = byIdx.findIndex(Boolean);
+    if (idx < 0) throw new Fail(`${sit.ruling_id}: no usable choice on screen`);
+    const want = byIdx[idx];
+    await press(`${OPEN} .dialogue .choices .choice`, { index: idx });
     await waitSel(`${OPEN} .dialogue .consequence`);
     const pts = await evalp(() => document.querySelector('.overlay:not(.leaving) .dialogue .points')?.textContent || '');
     check(pts.includes(`+${want.points}`), `${sit.ruling_id}: points badge "${pts}" expected +${want.points}`);
@@ -362,6 +502,7 @@ async function runConfig(browser, baseUrl, cfg) {
       // scroll to the madhhab section for a look at the RTL/LTR tabs/columns
       await evalp(() => { const m = document.querySelector('.overlay:not(.leaving) .ruling-card .rc-madhahib'); m?.scrollIntoView({ block: 'start' }); });
       await shot(`${locName}-ruling-madhahib`);
+      if (await evalp(() => { const c = document.querySelector('.overlay:not(.leaving) .ruling-card .rc-common'); c?.scrollIntoView({ block: 'start' }); return !!c; })) await shot(`${locName}-ruling-common-ground`);
       if (cfg.mobile) {
         // tabs on narrow screens: activate the 3rd tab and check its panel shows
         await press(`${OPEN} .ruling-card .madhahib [role=tab]`, { index: 2 });
@@ -393,6 +534,9 @@ async function runConfig(browser, baseUrl, cfg) {
     await goAndInteract(loc, sit.hotspot);
     // dialogue: click Next until the choices show
     await waitSel(`${OPEN} .dialogue`);
+    // the speaking NPC, if it has stations, must be standing at THIS hotspot (moved instantly when out of order)
+    const st = await evalp((id) => { const n = window.yawmuk.scenes.active.npcs[id]; return n?.userData.stations ? n.userData.station : null; }, sit.npc?.id);
+    if (st !== null) check(st === sit.hotspot, `${sit.ruling_id}: ${sit.npc.id} talks from station "${st}", expected "${sit.hotspot}"`);
     let lines = 0;
     for (let guard = 0; guard < 40; guard++) {
       const state = await evalp(() => (document.querySelector('.overlay:not(.leaving) .dialogue .choices') ? 'choices' : document.querySelector('.overlay:not(.leaving) .dialogue .line') ? 'line' : 'wait'));
@@ -416,6 +560,7 @@ async function runConfig(browser, baseUrl, cfg) {
     }
     await press(`${OPEN} .ruling-modal .row.end.wrap .btn.primary`); // done
     await waitPlay(loc);
+    await checkStations(loc, `after ${sit.ruling_id}`);
     const done = await evalp((k) => !!window.yawmuk.progress().situations[k]?.done, sit.ruling_id);
     check(done, `${sit.ruling_id}: not marked done in progress`);
     const stored = await evalp((k) => { try { return !!JSON.parse(localStorage.getItem('yawmuk.progress.v1')).situations[k]?.done; } catch { return false; } }, sit.ruling_id);
@@ -432,6 +577,32 @@ async function runConfig(browser, baseUrl, cfg) {
     errs.forEach((e) => check(false, `review ${sit.ruling_id}: ${e}`));
     await press(`${OPEN} .ruling-modal .sticky-actions .btn.primary`); // close
     await waitPlay(loc);
+  }
+
+  /** Open the end screen from the menu mid-game: it must suggest an unexplored situation in the theme explored
+   * most, and "Go there now" must take the player there. Returns true when it jumped to `next`. */
+  async function midGameSummary(loc, next) {
+    await press('.hud-menu');
+    await waitSel(`${OPEN} .menu .stack .btn`);
+    await press(`${OPEN} .menu .stack .btn.ghost`, { index: 1 }); // ghost buttons: [language, summary]
+    await waitSel(`${OPEN} .summary .next-topic`, 20000);
+    const still = await evalp(() => document.querySelector('.overlay:not(.leaving) .next-topic .still .next-title')?.textContent || null);
+    const prog = await evalp(() => window.yawmuk.progress().situations);
+    const all = LOCATIONS.flatMap((l) => SCRIPTS[l].situations.map((x) => ({ ...x, location: l })));
+    const isDone = (id) => !!prog[id]?.done;
+    const themes = Object.values(THEMES).map((th) => ({ th, n: th.ids.filter((id) => isDone(id)).length })).sort((a, b) => b.n - a.n);
+    let sug = null;
+    for (const { th } of themes) { sug = all.find((x) => !isDone(x.ruling_id) && th.ids.includes(x.ruling_id)); if (sug) break; }
+    check(!!still && still.includes(RULINGS[sug.ruling_id].title[cfg.lang]), `mid-game end screen suggests "${still}", expected ${sug.ruling_id}`);
+    await shot('summary-midgame');
+    if (sug.location === next) {
+      await press(`${OPEN} .summary .next-topic .still .btn`);
+      log(`  ✓ mid-game end screen: "go there now" -> ${next}`);
+      return true;
+    }
+    await press(`${OPEN} .summary .row.center .btn.ghost`);
+    await waitPlay(loc);
+    return false;
   }
 
   async function exitTo(loc, next) {
@@ -472,9 +643,11 @@ async function runConfig(browser, baseUrl, cfg) {
       const script = SCRIPTS[loc];
       await onLocationEntered(loc, li);
       if (li === 0) await exitLockedTest(loc);
-      for (let i = 0; i < script.situations.length; i++) {
-        await playSituation(loc, script.situations[i], i);
-        log(`  ✓ ${script.situations[i].ruling_id}`);
+      // mobile-en plays work in reverse order: Samir must jump to a later station when it is triggered first
+      const playOrder = cfg.name === 'mobile-en' && loc === 'work' ? [...script.situations].reverse() : script.situations;
+      for (let i = 0; i < playOrder.length; i++) {
+        await playSituation(loc, playOrder[i], i);
+        log(`  ✓ ${playOrder[i].ruling_id}`);
       }
       if (li === 0) await revisitTest(loc, script.situations[0]);
       const hud = await evalp(() => document.querySelector('.hud-done')?.textContent);
@@ -495,7 +668,9 @@ async function runConfig(browser, baseUrl, cfg) {
         await press(`${OPEN} .menu .stack .btn.primary`); // resume
         await waitPlay(loc);
       }
-      await exitTo(loc, LOCATIONS[li + 1]);
+      let jumped = false;
+      if (li === 1 && cfg.name === 'desktop-en') jumped = await midGameSummary(loc, LOCATIONS[li + 1]);
+      if (!jumped) await exitTo(loc, LOCATIONS[li + 1]);
 
       if (li === 0) {
         // ---------- resume after reload (localStorage)
@@ -533,6 +708,39 @@ async function runConfig(browser, baseUrl, cfg) {
     check(sum.nums[2] === String(TOTAL), `summary best choices ${sum.nums[2]}`);
     check(sum.nums[3] === String(TOTAL), `summary correct checks ${sum.nums[3]}`);
     check(sum.topics === TOTAL && sum.done === TOTAL && sum.verdicts === TOTAL, `summary topics ${sum.done}/${sum.topics} verdicts ${sum.verdicts}`);
+    // ---------- end screen (pivot): what Adam learned, next topic, mosque referral, no belief question
+    const end = await evalp(() => {
+      const root = document.querySelector('.overlay:not(.leaving) .summary');
+      const txt = (el) => (el ? el.textContent.replace(/\s+/g, ' ').trim() : null);
+      return {
+        h2: [...root.querySelectorAll('h2')].map(txt),
+        points: [...root.querySelectorAll('.learned-points li')].map(txt),
+        plains: [...root.querySelectorAll('.topics li .topic-plain')].map(txt),
+        next: [...root.querySelectorAll('.next-topic .next-title')].map(txt),
+        still: !!root.querySelector('.next-topic .still'),
+        links: [...root.querySelectorAll('a')].map((a) => a.getAttribute('href')),
+        aboutRulings: !!root.querySelector('.notice.scholar'),
+        inputs: root.querySelectorAll('input, select, textarea, [contenteditable]').length
+      };
+    });
+    const L = cfg.lang, sqz = (x) => String(x).replace(/\s+/g, ' ').trim();
+    check(end.h2.includes(sqz(UI.end.summary_title[L])), `end: "what Adam learned" heading missing (${end.h2.join(' | ')})`);
+    check(JSON.stringify(end.points) === JSON.stringify(UI.end.summary_points[L].map(sqz)), 'end: summary_points not shown verbatim');
+    const wantPlains = LOCATIONS.flatMap((l) => SCRIPTS[l].situations).map((x) => sqz(firstSentence(RULINGS[x.ruling_id].newcomer_explainer?.[L]))).filter(Boolean);
+    check(end.plains.length === TOTAL && JSON.stringify(end.plains) === JSON.stringify(wantPlains), `end: ${end.plains.length}/${TOTAL} topics carry the first sentence of their plain-words explainer`);
+    // next topic: theme explored most (all done -> the theme with the most situations) -> THEMES[..].nextTopic
+    const themeScores = Object.values(THEMES).map((th) => ({ th, n: th.ids.length })).sort((a, b) => b.n - a.n);
+    const wantNext = sqz(UI.end.next_topics[L][Math.min(themeScores[0].th.nextTopic, UI.end.next_topics[L].length - 1)]);
+    check(end.next[0] === wantNext, `end: next topic "${end.next[0]}", expected "${wantNext}"`);
+    check(!end.still, 'end: "still to explore" shown although everything is done');
+    const maps = end.links.filter((h) => /google\.com\/maps/.test(h || ''));
+    check(maps.length === 1, `end: ${maps.length} referral links`);
+    if (maps[0]) {
+      const u = new URL(maps[0]);
+      check(u.origin + u.pathname === `https://www.google.com/maps/search/${encodeURIComponent(UI.end.referral_search_query[L])}` && !u.search && !u.hash, `end: referral link carries more than the fixed query: ${maps[0]}`);
+    }
+    check(end.aboutRulings, 'end: rulings/scholar note missing');
+    check(end.inputs === 0, 'end: the end screen contains form inputs (it must not ask the player anything)');
     await R.checkOverflow('summary');
     const top = await evalp(() => { const s = document.querySelector('.overlay-screen:not(.leaving)'); s.scrollTop = 0; const r = document.querySelector('.summary h1').getBoundingClientRect(); return Math.round(r.top); });
     check(top >= 0, `summary title is cut off above the viewport (top=${top}px) and cannot be scrolled to`);
@@ -540,6 +748,22 @@ async function runConfig(browser, baseUrl, cfg) {
     await evalp(() => { const s = document.querySelector('.overlay:not(.leaving) .overlay-screen, .overlay-screen'); if (s) s.scrollTop = s.scrollHeight; });
     await shot('summary-bottom');
     check(await evalp(() => JSON.parse(localStorage.getItem('yawmuk.progress.v1')).finished === true), 'finished flag not stored');
+    // ---------- privacy: nothing about religion or belief is stored (localStorage/sessionStorage/cookies/IndexedDB)
+    const store = await evalp(async () => ({
+      local: Object.fromEntries(Object.keys(localStorage).map((k) => [k, localStorage.getItem(k)])),
+      session: Object.keys(sessionStorage),
+      cookie: document.cookie,
+      idb: indexedDB.databases ? (await indexedDB.databases()).map((d) => d.name) : []
+    }));
+    check(JSON.stringify(Object.keys(store.local)) === JSON.stringify(['yawmuk.progress.v1']), `privacy: unexpected localStorage keys ${Object.keys(store.local)}`);
+    check(!store.session.length && !store.cookie && !store.idb.length, `privacy: sessionStorage/cookies/IndexedDB used (${store.session} | ${store.cookie} | ${store.idb})`);
+    const prog = JSON.parse(store.local['yawmuk.progress.v1']);
+    const allowedTop = ['v', 'lang', 'location', 'situations', 'visited', 'finished', 'introSeen'];
+    check(Object.keys(prog).every((k) => allowedTop.includes(k)), `privacy: unexpected progress fields ${Object.keys(prog).filter((k) => !allowedTop.includes(k))}`);
+    check(Object.values(prog.situations).every((r) => Object.keys(r).every((k) => ['tried', 'best', 'done', 'check', 'last'].includes(k))), 'privacy: unexpected per-situation fields');
+    check(Object.keys(prog.situations).every((k) => RULINGS[k]), 'privacy: progress keys are not situation ids');
+    check(!/relig|belief|faith|christ|muslim|islam|convert|shahad|church|mosque|pray/i.test(JSON.stringify(Object.keys(prog)) + JSON.stringify(Object.values(prog.situations))), 'privacy: belief-related data in localStorage');
+    check(!externalRequests.length, `privacy: requests to third parties other than Google Fonts: ${[...new Set(externalRequests)].slice(0, 5)}`);
     await press(`${OPEN} .summary .row.center .btn.ghost`); // back to game
     await waitFn(() => window.yawmuk.mode === 'play', 10000);
   } catch (e) {
@@ -553,7 +777,7 @@ async function runConfig(browser, baseUrl, cfg) {
   await ctx.close();
   const secs = Math.round((Date.now() - t0) / 1000);
   log(`${R.failures.length ? 'FAIL' : 'PASS'} — ${rulingsChecked.length} ruling cards checked, ${R.failures.length} failure(s), ${secs}s`);
-  return { config: cfg.name, pass: !R.failures.length, failures: R.failures, warnings, rulingsChecked: rulingsChecked.length, perf, reach, camera, seconds: secs };
+  return { config: cfg.name, pass: !R.failures.length, failures: R.failures, warnings, rulingsChecked: rulingsChecked.length, stations: stationLog, looks, perf, reach, camera, seconds: secs };
 }
 
 // ------------------------------------------------------------------ main
@@ -566,7 +790,11 @@ if (args.build || !fs.existsSync(path.join(ROOT, 'dist/index.html'))) {
   console.log('building dist/ …');
   execSync('npm run build', { cwd: ROOT, stdio: 'inherit' });
 }
-const srv = await startServer(path.join(ROOT, 'dist'), 0);
+// Serve a private snapshot of dist/: a rebuild in another terminal during the run would otherwise swap the
+// hashed chunk names under the page (404 -> placeholder scene).
+const SNAP = fs.mkdtempSync(path.join(os.tmpdir(), 'yawmuk-dist-'));
+fs.cpSync(path.join(ROOT, 'dist'), SNAP, { recursive: true });
+const srv = await startServer(SNAP, 0);
 console.log(`serving dist/ at ${srv.url} (static, no Vite) — browser: ${chrome}`);
 const GL = process.env.E2E_GL || (process.platform === 'win32' ? 'd3d11' : 'default');
 const GL_ARGS = GL === 'swiftshader' ? ['--use-angle=swiftshader', '--enable-unsafe-swiftshader'] : GL === 'default' ? ['--enable-gpu'] : [`--use-angle=${GL}`, '--enable-gpu'];
@@ -587,6 +815,7 @@ try {
 } finally {
   await browser.close();
   await srv.close();
+  fs.rmSync(SNAP, { recursive: true, force: true });
 }
 fs.mkdirSync(path.dirname(RESULTS_FILE), { recursive: true });
 fs.writeFileSync(RESULTS_FILE, JSON.stringify({ date: new Date().toISOString(), gl: GL, maxScore: MAX_SCORE, total: TOTAL, results }, null, 2));

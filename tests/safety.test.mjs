@@ -169,6 +169,7 @@ describe('Ruling card renderer (src/engine/ui/rulingCard.js) never invents relig
   test('abstention: a citation with no verified text shows "not provided" instead of any text', () => {
     setLang('ar');
     const r = structuredClone(rulings[0]);
+    delete r.common_ground; // Bible verses (figure > blockquote) are covered by their own test below
     r.quran = [{ surah: 2, surah_name_ar: 'البقرة', ayah: '275', text_ar: '', source_url: 'https://quran.com/2/275' }];
     r.hadith = [{ text_ar: '', collection: 'صحيح مسلم', number: '1598', grade: 'صحيح', source_url: 'https://sunnah.com/muslim:1598' }];
     const card = render(r, r.id);
@@ -191,6 +192,36 @@ describe('Ruling card renderer (src/engine/ui/rulingCard.js) never invents relig
     const statusOf = (s) => render({ ...rulings[0], review_status: s }, rulings[0].id).byClass('status')[0];
     for (const s of ['ai_draft', 'ai_verified', 'pending_scholar_review', '']) assert.ok(!statusOf(s).classList.contains('ok'), `${s} shown as reviewed`);
     assert.ok(statusOf('scholar_reviewed').classList.contains('ok'));
+  });
+
+  test('optional newcomer_explainer / common_ground: hidden when absent, rendered verbatim when present', () => {
+    for (const lang of ['ar', 'en']) {
+      setLang(lang);
+      const bare = structuredClone(rulings[0]);
+      delete bare.newcomer_explainer; delete bare.common_ground;
+      const c0 = render(bare, bare.id);
+      assert.equal(c0.byClass('rc-plain').length, 0);
+      assert.equal(c0.byClass('rc-common').length, 0);
+      const empty = render({ ...bare, common_ground: { summary: { ar: '', en: '' }, bible: [], differences: { ar: '', en: '' } } }, bare.id);
+      assert.equal(empty.byClass('rc-common').length, 0, 'empty common_ground must be hidden');
+      const full = render({
+        ...bare,
+        newcomer_explainer: { ar: 'شرح مبسط', en: 'plain words' },
+        common_ground: { summary: { ar: 'تلاق', en: 'shared' }, bible: [{ ref_en: 'Exodus 22:25', ref_ar: 'خروج 22: 25', text_en: 'KJV TEXT', text_ar: 'نص فاندايك', source_url: 'javascript:x' }], differences: { ar: 'فرق', en: 'differ' } }
+      }, bare.id);
+      assert.ok(text(full.byClass('rc-plain')[0]).includes(lang === 'ar' ? 'شرح مبسط' : 'plain words'));
+      const cg = full.byClass('rc-common')[0];
+      assert.ok(text(cg).includes(lang === 'ar' ? 'نص فاندايك' : 'KJV TEXT'), 'bible text verbatim in UI language');
+      assert.ok(text(cg).includes(lang === 'ar' ? 'خروج 22: 25' : 'Exodus 22:25'));
+      assert.equal(cg.byTag('a').length, 0, 'unsafe bible link not rendered');
+      const ar = render({ ...bare, common_ground: { bible: [{ ref_ar: 'تثنية 23: 19', text_ar: '«لَا تُقْرِضْ أَخَاكَ بِرِبًا،', text_en: 'Thou shalt not lend upon usury', source_url: 'https://bible-api.com/x', source_url_ar: 'https://api.getbible.net/y' }] } }, bare.id).byClass('rc-common')[0];
+      if (lang === 'ar') {
+        assert.ok(!text(ar).includes('«'), 'unmatched quote stripped at display time');
+        assert.ok(text(ar).includes('لَا تُقْرِضْ أَخَاكَ بِرِبًا'));
+        assert.equal(ar.byTag('a')[0].getAttribute('href'), 'https://api.getbible.net/y', 'Arabic text links source_url_ar');
+      } else assert.equal(ar.byTag('a')[0].getAttribute('href'), 'https://bible-api.com/x');
+      assert.equal(full.byClass('ayah').length, bare.quran.length, 'bible verses are not counted as ayat');
+    }
   });
 
   for (const r of rulings) {

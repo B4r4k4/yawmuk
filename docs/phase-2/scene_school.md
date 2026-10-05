@@ -41,3 +41,13 @@ The engine pulls the camera in front of large **non-instanced** meshes by raycas
 2. `makeLabel` defaults to `depthTest:false`, so hotspot and NPC name labels show through walls. For example, Tyler's label is visible from the corridor. This is cosmetic; the engine could use depthTest for NPC name labels.
 3. `src/engine/README.md` did not exist when I finished. I built against `kit.js`, `mats.js` and `sceneManager.js` directly.
 4. Tooling: Chrome (claude-in-chrome) could not reach `127.0.0.1:5183` ("connection refused"), and screenshots on the LAN IP are blocked by permissions. I verified with headless Chrome driven over CDP from a scratch script instead.
+
+## Update 2026-10-05: premise change (Adam is a Christian learning about Islam)
+I applied the `school` part of "CHANGES FOR SCENE AGENTS" in `docs/hotspots.md`, together with `content/script/school.json`. Hotspot ids and positions, spawn, exit and the QA limit of 3 point lights are unchanged.
+- `tyler` is now **`kareem`** at `[-5.22,0,-3.95]`: olive jacket `#4b5320`, trimmed beard, black beanie, 1.83 m. **`bg_tyler`** (red cap) sits at the desk in the row in front of him; he is posed seated with `animate:false, collide:false`.
+- `rosa` is now **`bg_rosa`** behind the counter. **`omar`** stands in front of the counter at `[1,0,1.8]` in blue nursing scrubs with a short beard and an ID badge. A pile of white forms sits on the counter in front of him.
+- `dr_mitchell` has been removed. **`noor`** stands at `[6,0,-1.5]`, by the study room door: light-blue hijab `#7fb3d5`, white top, denim jacket, holding a notebook, 1.64 m.
+- The glass study room is **empty**: `bg_hannah`, `bg_carlos`, the laptops and the papers are gone. The round table and chairs stay, and the wall screen now reads "Study Room 2 · Door stays open".
+- The **open study table** is now centred at `[4,0,-4]` with 4 chairs, 2 open laptops, papers and a desk lamp. Its pendant light moved with it.
+- Background people in the corridor: a young woman with curly hair at the lockers (replacing the hijab student) and the man in the orange work jacket.
+- Checks: `npm run build` OK. `npm test` gives 178/178 pass. A headless screenshot of `?scene=school` shows `isPlaceholder:false`, hotspots `exam_desk, aid_office, study_room` (none auto-placed), NPCs `kareem, omar, noor` plus 4 background people, and 3 point lights.

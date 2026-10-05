@@ -1,5 +1,6 @@
 // «يومك» — Street at night (Monday 21:00), Columbus OH.
-// Bus stop (lost wallet), gas-station mart counter (lottery), e-bike sale in the lot, Omar's car = exit.
+// Bus stop (Omar with the lost wallet), Tariq's mart counter (lottery billboard outside), e-bike sale with Yusuf,
+// Omar's car = exit.
 // Procedural geometry only. Static props are merged per material bucket (see street/batcher.js);
 // repeated props (lamps, trees, snow piles, light pools) are InstancedMeshes.
 import { createBatcher } from './street/batcher.js';
@@ -35,7 +36,7 @@ export default {
       lot: own(new THREE.MeshStandardMaterial({ map: T.lot, roughness: 0.5, metalness: 0.08 })),
       tiles: own(new THREE.MeshStandardMaterial({ map: T.tiles, roughness: 0.35 })),
       products: own(new THREE.MeshStandardMaterial({ map: T.products, roughness: 0.6 })),
-      tickets: own(new THREE.MeshStandardMaterial({ map: T.tickets, emissiveMap: T.tickets, emissive: '#666666', roughness: 0.25, metalness: 0.3 })),
+      tea: own(new THREE.MeshStandardMaterial({ map: T.tea, emissiveMap: T.tea, emissive: '#3a3a3a', roughness: 0.6 })),
       cooler: own(new THREE.MeshBasicMaterial({ map: T.cooler, toneMapped: false, color: '#cfd8df' })),
       jackpot: own(new THREE.MeshBasicMaterial({ map: T.jackpot, toneMapped: false })),
       price: own(new THREE.MeshBasicMaterial({ map: T.price, toneMapped: false, color: '#d8d8d8' })),
@@ -137,24 +138,28 @@ export default {
     B.box('vc', '#6e4428', 0.2, 1.0, 2.85, -1.6, 0, -8.18);
     B.box('vc', '#6e4428', 0.2, 1.0, 2.85, 1.6, 0, -8.18);
     B.box('gloss', '#c8a24a', 3.0, 0.06, 0.04, 0, 0.5, -6.74); // brass trim
-    // register + ticket machine
+    // register + card-payment terminal (Tariq sells no lottery: no ticket machine, no scratch-offs)
     B.box('gloss', '#23262b', 0.42, 0.22, 0.36, 0.7, 1.05, -7.2);
     B.box('glow', '#7fe0a0', 0.3, 0.14, 0.02, 0.7, 1.29, -7.05, 0, -0.3);
-    B.box('gloss', '#1e2a44', 0.36, 0.34, 0.3, -0.95, 1.05, -7.2);
-    B.box('glow', '#58b6ff', 0.26, 0.16, 0.02, -0.95, 1.2, -7.04);
-    B.box('gloss', '#e8e8e8', 0.12, 0.02, 0.2, -0.95, 1.39, -7.22); // ticket paper
-    // scratch-off case on the counter (glass box + tilted ticket panel)
-    B.box('vc', '#1c1d22', 0.95, 0.08, 0.5, -0.1, 1.05, -6.98);
-    add(plane(0.9, 0.42), M.tickets, -0.1, 1.2, -6.98, -PI / 2 + 0.55);
-    B.box('glass', 0, 0.95, 0.24, 0.5, -0.1, 1.13, -6.98);
-    // ticket dispenser + products behind the counter
+    B.box('gloss', '#2a2d33', 0.1, 0.05, 0.16, 0.15, 1.05, -6.95, 0.2, -0.35);
+    B.box('glow', '#9fd1ff', 0.07, 0.005, 0.07, 0.15, 1.1, -6.97, 0.2, -0.35);
+    // small tea & snacks rack on the counter (wooden stepped stand + tea-box face)
+    B.box('vc', '#7a5232', 0.95, 0.08, 0.42, -0.75, 1.05, -7.05);
+    B.box('vc', '#7a5232', 0.95, 0.3, 0.06, -0.75, 1.05, -7.24);
+    add(plane(0.92, 0.42), M.tea, -0.75, 1.32, -7.0, -0.35);
+    // hot tea kettle + paper cups
+    B.cyl('gloss', '#b9bec4', 0.11, 0.13, 0.26, 1.2, 1.18, -7.1, 12);
+    B.cyl('gloss', '#2a2d31', 0.03, 0.03, 0.06, 1.2, 1.34, -7.1, 8);
+    B.cyl('gloss', '#b9bec4', 0.018, 0.018, 0.16, 1.07, 1.2, -7.0, 6, 0.9, 0.6);
+    for (const [x, z] of [[1.38, -6.92], [1.42, -7.12]]) B.cyl('vc', '#efe6d4', 0.035, 0.028, 0.09, x, 1.095, z, 8);
+    // snacks behind the counter, tea shelf above it
     B.box('vc', '#2c2f35', 3.0, 2.2, 0.35, 0, 0, -9.73);
     add(plane(2.9, 1.5), M.products, 0, 1.05, -9.54);
-    add(plane(1.5, 0.42), M.tickets, 0, 2.0, -9.54);
-    // jackpot screen hanging from the ceiling
-    B.box('gloss', '#15171b', 1.75, 0.66, 0.08, 0, 2.47, -7.78);
-    const jackpot = add(plane(1.62, 0.56), M.jackpot, 0, 2.8, -7.73);
-    for (const x of [-0.7, 0.7]) B.cyl('gloss', '#3a3d42', 0.015, 0.015, 0.1, x, 3.17, -7.78, 5);
+    add(plane(2.0, 0.6), M.tea, 0, 2.05, -9.54);
+    if (typeof ctx.makeLabel === 'function') {                   // small house-rule sign (optional per hotspots.md)
+      const noLotto = ctx.makeLabel({ ar: 'لا نبيع اليانصيب هنا', en: 'No lottery sold here' }, { size: 0.16, depthTest: true, background: 'rgba(120,20,20,0.85)' });
+      noLotto.position.set(0, 2.62, -9.45); group.add(noLotto);
+    }
     // cooler (left wall) + gondola (right)
     B.box('vc', '#2a2f36', 0.6, 2.3, 3.6, -3.6, 0, -7.5);
     add(plane(3.4, 1.9), M.cooler, -3.29, 1.12, -7.5, 0, PI / 2);
@@ -193,6 +198,19 @@ export default {
     add(plane(1.7, 1.06), M.price, 4.8, 3.8, 2.335);
     add(plane(1.7, 1.06), M.price, 4.8, 3.8, 2.065, 0, PI);
 
+    // ------------------------------------------------------------ lottery billboard by the road (outside the store)
+    // hotspots.md asks for ~[-4, 4, 9]; z 9 is the middle of the road, so it stands on the far sidewalk (z 15.3),
+    // facing the lot / bus stop, readable from the whole play area.
+    const BBX = -4, BBZ = 15.3;
+    for (const x of [BBX - 2.2, BBX + 2.2]) B.box('gloss', '#3a3e44', 0.22, 3.45, 0.22, x, 0, BBZ);
+    B.box('gloss', '#15171b', 5.9, 2.35, 0.3, BBX, 3.3, BBZ);
+    add(plane(5.6, 2.1), M.jackpot, BBX, 4.475, BBZ - 0.16, 0, PI);
+    B.box('gloss', '#2a2d31', 5.9, 0.08, 0.6, BBX, 3.22, BBZ - 0.2);           // catwalk
+    for (const x of [-1.8, 0, 1.8]) {                                           // flood lamps
+      B.box('gloss', '#2a2d31', 0.05, 0.05, 0.5, BBX + x, 5.68, BBZ - 0.35);
+      B.box('glow', '#fff1c4', 0.3, 0.06, 0.14, BBX + x, 5.62, BBZ - 0.62);
+    }
+
     // ------------------------------------------------------------ bus stop (x -11.6..-8.4)
     for (const [x, z] of [[-11.6, 2.5], [-8.4, 2.5], [-11.6, 4.03], [-8.4, 4.03]]) B.box('gloss', '#4a525c', 0.08, 2.5, 0.08, x, 0, z);
     B.box('gloss', '#3a4048', 3.45, 0.08, 1.9, -10, 2.5, 3.25);
@@ -207,10 +225,8 @@ export default {
     for (const z of [2.9, 3.03, 3.16]) B.box('gloss', '#7d8590', 2.0, 0.04, 0.11, -10, 0.43, z);
     for (const y of [0.58, 0.74]) B.box('gloss', '#7d8590', 2.0, 0.1, 0.03, -10, y, 2.78);
     for (const x of [-10.9, -10, -9.1]) B.box('gloss', '#3a3f46', 0.05, 0.43, 0.4, x, 0, 3.02);
-    // the wallet (oversized for readability) + a card peeking out
-    B.box('vc', '#6b3a1c', 0.24, 0.05, 0.17, -9.85, 0.47, 3.05, 0.35);
-    B.box('vc', '#4f2a13', 0.245, 0.012, 0.012, -9.85, 0.495, 3.05, 0.35);
-    B.box('gloss', '#2e86de', 0.1, 0.006, 0.08, -9.76, 0.522, 3.0, 0.6);
+    // the wallet is in Omar's hands (see NPCs); a dropped receipt hints where it was found
+    B.box('vc', '#efe9dc', 0.08, 0.004, 0.14, -10.2, 0.47, 3.05, 0.5);
     // bus stop sign
     B.box('gloss', '#4a525c', 0.07, 2.6, 0.07, -12.2, 0, 4.9);
     B.box('glow', '#2f7fd8', 0.45, 0.55, 0.03, -12.2, 2.1, 4.9);
@@ -357,7 +373,7 @@ export default {
       [-13.6, -6.5, 1.0], [-11.0, -5.5, 0.85], [-8.6, -6.9, 0.95],
       [-14, -10.6, 1.2], [-10.5, -10.8, 1.05], [-7, -10.4, 1.15], [7, -10.6, 1.1], [10.5, -10.4, 1.25], [14, -10.8, 1.0],
       [-2.5, -12.2, 1.3], [2, -12.6, 1.15], [5.5, -12.0, 1.0],
-      [-14, 15.9, 0.8], [-4.5, 15.9, 0.75], [8.5, 15.9, 0.8], [19, 15.9, 0.8],
+      [-14, 15.9, 0.8], [0.4, 15.9, 0.75], [8.5, 15.9, 0.8], [19, 15.9, 0.8],
       [17.2, -5, 1.1], [17.6, 0.8, 0.95], [-17.4, -3, 1.05]
     ];
     const trunkI = inst(new THREE.CylinderGeometry(0.12, 0.17, 1.2, 6).translate(0, 0.6, 0), M.trunk, TREES.length);
@@ -388,7 +404,7 @@ export default {
     const POOLS = [
       ...LAMPS.map(([x, z]) => [x, z < 10 ? 0.014 : 0.014, z < 10 ? 5.4 : 14.6, 8, '#6a4417']),
       [CX, 0.012, CZ, 11, '#3d4552'], [-0.6, 0.012, -2.9, 6, '#33414c'], [-10, 0.014, 3.6, 4, '#24303d'],
-      [13.0, 0.012, -0.6, 4.5, '#4a4433'], [-0.8, 0.014, -6.6, 6, '#3a3f45']
+      [13.0, 0.012, -0.6, 4.5, '#4a4433'], [BBX, 0.014, BBZ - 0.8, 6, '#5a4310'], [-0.8, 0.014, -6.6, 6, '#3a3f45']
     ];
     const poolI = inst(new THREE.PlaneGeometry(1, 1).rotateX(-PI / 2), M.pool, POOLS.length, false);
     poolI.receiveShadow = false;
@@ -465,11 +481,11 @@ export default {
 
     const LOOK = {
       officer: { skin: '#8d5524', shirt: '#1f2a44', pants: '#1f2a44', shoes: '#111', hair: '#1a1410', hijab: false, height: 1.82, build: 1.08 },
-      omar: { skin: '#5a3a22', shirt: '#556b2f', pants: '#2e2f33', hair: '#141010', beard: '#141010', hijab: false, height: 1.88, build: 0.92 },
-      denise: { skin: '#6b4226', shirt: '#c9a227', dress: '#c9a227', pants: '#2b2b33', hair: '#1b1410', hijab: false, height: 1.66 },
-      raj: { skin: '#a0673d', shirt: '#c0392b', pants: '#2d2f36', hair: '#16110d', hijab: false, height: 1.74 },
-      bilal: { skin: '#c99a6e', shirt: '#8a8f98', pants: '#3a4150', hair: '#2b1d14', hijab: false, height: 1.76, build: 0.9 }
+      omar: { skin: '#5a3a22', shirt: '#556b2f', pants: '#2e2f33', hair: '#141010', beard: '#141010', hijab: false, height: 1.85, build: 0.92 },
+      tariq: { skin: '#b88a5e', shirt: '#c0392b', pants: '#2d2f36', hair: '#8f8f8f', hijab: false, height: 1.74, build: 1.15 },
+      yusuf: { skin: '#8d5524', shirt: '#6b4f3a', dress: '#6b4f3a', pants: '#2b2b33', hair: '#15100c', beard: '#15100c', hijab: false, height: 1.8 }
     };
+    // background: Officer Daniels by his cruiser (hi-vis vest, cap, duty belt)
     const officer = dress(LOOK.officer, (p) => {
       const navy = accMat('#1b2338');
       p.head.add(mesh(accGeo(new THREE.CylinderGeometry(0.15, 0.14, 0.09, 12)), navy, 0, 0.11, 0));
@@ -478,32 +494,40 @@ export default {
       p.body.add(mesh(accGeo(new THREE.CylinderGeometry(0.228, 0.215, 0.05, 8)), accMat('#d9dde2'), 0, 1.12, 0));
       p.body.add(mesh(accGeo(new THREE.CylinderGeometry(0.205, 0.205, 0.07, 8)), accMat('#121212'), 0, 0.88, 0)); // duty belt
     });
+    // Omar sits on the bus-stop bench holding the found wallet (static seated pose: animate:false)
     const omar = dress(LOOK.omar, (p) => {
       p.head.add(mesh(accGeo(new THREE.SphereGeometry(0.145, 12, 6, 0, PI * 2, 0, PI * 0.5)), accMat('#7d8086'), 0, 0.015, 0.005));
+      p.legL.rotation.x = p.legR.rotation.x = 1.05;              // thighs forward/down from the seat
+      p.armL.rotation.x = p.armR.rotation.x = 0.95;              // forearms over the lap
+      p.armL.rotation.z = -0.25; p.armR.rotation.z = 0.25;
+      p.head.rotation.x = 0.12;                                  // looking at the wallet / up at Adam
+      const wallet = mesh(accGeo(new THREE.BoxGeometry(0.2, 0.05, 0.14)), accMat('#6b3a1c'), 0, -0.66, -0.05);
+      p.armR.add(wallet);
+      wallet.add(mesh(accGeo(new THREE.BoxGeometry(0.09, 0.006, 0.07)), accMat('#2e86de'), 0.05, 0.03, 0.01)); // a card peeking out
     });
-    const denise = dress(LOOK.denise, (p) => {
-      const sc = mesh(accGeo(new THREE.TorusGeometry(0.085, 0.045, 6, 14)), accMat('#b3262b'), 0, 1.5, 0);
-      sc.rotation.x = PI / 2; p.body.add(sc);
-      p.body.add(mesh(accGeo(new THREE.BoxGeometry(0.1, 0.3, 0.05)), accMat('#b3262b'), 0.08, 1.33, -0.17));
+    // Tariq, the Muslim owner, behind the counter: grey hair + grey moustache
+    const tariq = dress(LOOK.tariq, (p) => {
+      p.head.add(mesh(accGeo(new THREE.BoxGeometry(0.11, 0.025, 0.03)), accMat('#8a8580'), 0, -0.045, -0.12));
     });
-    const bilal = dress(LOOK.bilal, (p) => {
-      const hp = mesh(accGeo(new THREE.TorusGeometry(0.075, 0.022, 6, 14)), accMat('#18191c'), 0, 1.5, 0);
-      hp.rotation.x = PI / 2; p.body.add(hp);
+    // Yusuf at the e-bike: brown winter coat (long), light beard (makeNPC)
+    const yusuf = dress(LOOK.yusuf, (p) => {
+      p.body.add(mesh(accGeo(new THREE.CylinderGeometry(0.1, 0.12, 0.08, 10)), accMat('#4d3828'), 0, 1.5, 0)); // coat collar
     });
 
+    const OMAR_SEAT = [-9.35, 3.02];
+    const omarDrop = -0.43 * (LOOK.omar.height / 1.75);          // hip (0.86 m, scaled) down to the bench seat
     const npcs = [
-      { id: 'officer_daniels', position: [-8, 0, 4.5], yaw: yawTo([-8, 4.5], [-10.5, 3.4]), look: LOOK.officer, object: officer },
-      { id: 'omar', position: [1.2, 0, -6], yaw: yawTo([1.2, -6], [-0.8, -4]), look: LOOK.omar, object: omar },
-      { id: 'denise', position: [9, 0, 2], yaw: yawTo([9, 2], [6, 2.6]), look: LOOK.denise, object: denise },
-      { id: 'bg_raj', position: [0, 0, -8], yaw: yawTo([0, -8], [-0.8, -4]), look: LOOK.raj },
-      { id: 'bg_bilal', position: [7.3, 0, 0.35], yaw: yawTo([7.3, 0.35], [8.2, 1.0]), look: LOOK.bilal, object: bilal }
+      { id: 'omar', position: [OMAR_SEAT[0], omarDrop, OMAR_SEAT[1]], yaw: PI, look: LOOK.omar, object: omar, animate: false },
+      { id: 'tariq', position: [0, 0, -8], yaw: yawTo([0, -8], [-0.8, -4]), look: LOOK.tariq, object: tariq },
+      { id: 'yusuf', position: [9, 0, 2], yaw: yawTo([9, 2], [6, 2.6]), look: LOOK.yusuf, object: yusuf },
+      { id: 'bg_officer_daniels', position: [-8, 0, 4.5], yaw: yawTo([-8, 4.5], [-9.6, 3.4]), look: LOOK.officer, object: officer }
     ];
     for (const n of npcs) if (!n.object) delete n.object;
 
     // ------------------------------------------------------------ hotspots / spawn / exit
     const hotspots = [
       { id: 'bus_bench', position: [-10, 0.5, 3.0], radius: 1.7, label: { ar: 'مقعد محطة الحافلات', en: 'Bus stop bench' } },
-      { id: 'gas_station_counter', position: [0, 1.0, -7.0], radius: 1.8, markerHeight: 1.95, label: { ar: 'كاونتر محطة الوقود', en: 'Gas station counter' } },
+      { id: 'gas_station_counter', position: [0, 1.0, -7.0], radius: 1.8, markerHeight: 1.95, label: { ar: 'كاونتر متجر طارق', en: "Tariq's counter" } },
       { id: 'ebike', position: [8, 0.6, 1.0], radius: 1.8, label: { ar: 'الدراجة الكهربائية', en: 'The e-bike' } }
     ];
 
@@ -515,7 +539,7 @@ export default {
       const blue = ((ph > 0.5 && ph < 0.62) || (ph > 0.7 && ph < 0.82)) ? 1 : 0.15;
       M.sirenR.color.setRGB(red, 0.05 * red, 0.05 * red);
       M.sirenB.color.setRGB(0.08 * blue, 0.2 * blue, blue);
-      // jackpot screen pulse
+      // lottery billboard pulse
       M.jackpot.color.setScalar(0.82 + 0.18 * Math.sin(t * 5));
       // steam
       for (let i = 0; i < steam.length; i++) {
@@ -545,6 +569,7 @@ export default {
       hotspots,
       npcs,
       exit: { position: [11.2, 0, -3.4], radius: 1.6 },
+      playerLook: { jacket: '#1f2d4d' },   // Adam in a navy winter jacket (optional engine field)
       lights: 'night',
       cameraOccluders,
       update,

@@ -44,3 +44,22 @@ Other props:
 ## Notes for the lead
 - The script calls Jake's table drinks wine. They show only as dark unlabelled bottles and dark red glasses, with no brands.
 - Possible tuning after a real look: the PointLight intensities (22/12/12/10/10) and how strongly the evening hemisphere light tints the interior.
+
+## Phase 3 update: new premise (Adam is a Christian learning about Islam)
+- **Samir is the NPC for both `gift_table` and `dinner_table`.** He is defined once in `npcs` with `stations: { gift_table: {position:[-5,0,3.9], yaw}, dinner_table: {position:[0.9,0,-0.2], yaw} }`, as described in engine README §2. His `position` is the gift-table station. Look: dark suit, white shirt, no tie, short beard, glasses.
+- **Rania stands in front of the raffle booth** at `[4.65,0,4.0]`. She wears a long grey dress and a purple hijab (`#6a4c93`). Her position is shifted from `[5.2,0,4.4]`, which is inside this booth's table.
+- **New background NPCs and changes:**
+  - Dave is now `bg_dave` at `[-4,0,5.5]` and keeps the Santa hat.
+  - Jake is now `bg_jake` at a slot of his table, next to `bg_emily`.
+  - Linda is now `bg_linda`, behind the booth.
+  - New `bg_sarah` stands by the juice table.
+  - `bg_amina`'s hijab is now navy, so Rania is the only one in purple.
+- **Props:**
+  - A small transparent donation box with bills inside and a gold lid sits between the ticket jars.
+  - The juice table now has 4 pale-gold sparkling apple-juice bottles with green caps.
+- **Still 3 PointLights.** The QA edits to the light count and background colour are kept.
+- **Verification:**
+  - `npm run build` passes.
+  - Headless Chrome (SwiftShader) on dist: the real scene loaded (not the placeholder), all 13 NPCs are present, Samir has both stations, and there are 3 point lights.
+  - The 200-bulb twinkle InstancedMesh is present and visible, with GL error 0 and no console errors. Screenshots show the string bulbs and the coloured tree bulbs.
+  - `npm test` has 1 failure outside this scene: `tests/safety.test.mjs`, "abstention: a citation with no verified text shows 'not provided'", in `src/engine/ui/rulingCard.js`.

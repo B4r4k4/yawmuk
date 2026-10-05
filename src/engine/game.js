@@ -68,7 +68,9 @@ export async function startGame() {
     const active = await scenes.load(loc, script, (m) => warns.push(m));
     player.setColliders(active.colliders, active.bounds);
     player.setCameraOccluders(active.occluders);
+    player.setLook(active.res.playerLook && typeof active.res.playerLook === 'object' ? active.res.playerLook : null);
     player.teleport(active.spawn.position, active.spawn.yaw);
+    active.placeStationNpcs((hid) => { const ss = (script?.situations || []).filter((s) => s.hotspot === hid); return ss.length > 0 && ss.every((s) => isDone(s.key)); });
     setLocation(loc);
     refreshHud();
     updateMarkers();
@@ -97,6 +99,7 @@ export async function startGame() {
     const wasComplete = locationComplete(a.location);
     setMode('ui');
     const npc = a.npcs[(pending || sits[0]).npc?.id];
+    if (npc?.userData.stations?.[near.id] && npc.userData.station !== near.id) a.placeStationNpcs(() => false, { force: near.id });
     const restoreYaw = npc?.rotation.y;
     if (npc) {
       npc.rotation.y = Math.atan2(-(player.pos.x - npc.position.x), -(player.pos.z - npc.position.z));
@@ -117,6 +120,9 @@ export async function startGame() {
       toast(String(e.message || e), 5000, 'warn');
     } finally {
       if (npc) npc.rotation.y = restoreYaw;
+      // NPCs with stations move (behind a short fade) to the next unfinished situation that names them
+      const done = (hid) => { const ss = sitsAt(hid); return ss.length > 0 && ss.every((s) => isDone(s.key)); };
+      if (a.placeStationNpcs(done, { dryRun: true }).length) { await fade(true); a.placeStationNpcs(done); await fade(false); }
       refreshHud();
       updateMarkers();
       setMode('play');
@@ -162,6 +168,7 @@ export async function startGame() {
     setFlag('finished', true);
     const r = await summaryScreen();
     if (r === 'again') { resetProgress(); await enterLocation(LOCATIONS[0]); }
+    else if (typeof r === 'string' && r.startsWith('goto:')) await enterLocation(r.slice(5));
     else setMode('play');
   }
 

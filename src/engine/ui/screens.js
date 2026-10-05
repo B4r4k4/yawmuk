@@ -1,7 +1,7 @@
 // Full-screen and modal screens: start, intro/disclaimer, location intro/outro, exit confirm, menu, summary.
-import { h } from '../dom.js';
+import { h, link } from '../dom.js';
 import { t, tr, getLang, setLang, STRINGS } from '../i18n.js';
-import { LOCATIONS, LOCATION_TITLES, CATALOG, CHECK_BONUS } from '../config.js';
+import { LOCATIONS, LOCATION_TITLES, CATALOG, CHECK_BONUS, THEMES } from '../config.js';
 import { getScript, getRuling, allSituations } from '../content.js';
 import { progress, isDone, totalScore, hasSave, sitRecord } from '../progress.js';
 import { openModal, setContent, btn } from './overlay.js';
@@ -124,7 +124,66 @@ export function menuScreen(handlers) {
   return m;
 }
 
-/** Final summary. Resolves 'again' | 'back'. */
+const titleOf = (s) => tr(getRuling(s.ruling_id)?.title) || tr(CATALOG.find((c) => c.id === s.ruling_id)?.title) || s.ruling_id;
+
+/** What Adam learned: completed topics, each with its "in plain words" line when the ruling has one. */
+function learnedList(done) {
+  if (!done.length) return p(t('nothingYet'), 'muted');
+  return h('ul', { class: 'topics' }, done.map((s) => {
+    const r = getRuling(s.ruling_id);
+    const plain = tr(r?.newcomer_explainer);
+    const first = typeof plain === 'string' ? (plain.match(/^[^.!?؟۔]+[.!?؟۔]?/) || [plain])[0] : '';
+    return h('li', { class: 'done' },
+      h('span', { class: 'check', 'aria-hidden': 'true' }, '✓'),
+      h('span', { class: 'topic-title' }, titleOf(s), first ? h('small', { class: 'topic-plain' }, first) : null),
+      verdictBadge(r?.verdict || 'unknown'));
+  }));
+}
+
+/** Suggest the next topic: an unfinished situation in the theme the player explored most; else any unfinished one. */
+export function suggestNext(sits) {
+  const todo = sits.filter((s) => !isDone(s.key));
+  if (!todo.length) return null;
+  const themes = Object.entries(THEMES).map(([k, th]) => ({ k, th, done: th.ids.filter((id) => sits.some((s) => s.ruling_id === id && isDone(s.key))).length }));
+  themes.sort((a, b) => b.done - a.done);
+  for (const { k, th } of themes) {
+    const pick = todo.find((s) => th.ids.includes(s.ruling_id));
+    if (pick) return { sit: pick, theme: k };
+  }
+  return { sit: todo[0], theme: null };
+}
+
+/** Index into ui_strings end.next_topics suggested by the theme the player explored most. */
+export function suggestTopicIndex(sits, count) {
+  if (!count) return -1;
+  const scores = Object.values(THEMES).map((th) => ({ th, n: th.ids.filter((id) => sits.some((s) => s.ruling_id === id && isDone(s.key))).length }));
+  scores.sort((x, y) => y.n - x.n);
+  const idx = scores[0]?.n ? scores[0].th.nextTopic ?? 0 : 0;
+  return Math.min(idx, count - 1);
+}
+
+function nextTopicBlock(sits, onGo) {
+  const topics = t('nextTopics');
+  const list = Array.isArray(topics) ? topics.filter(Boolean) : [];
+  const i = suggestTopicIndex(sits, list.length);
+  const sug = suggestNext(sits); // an unexplored situation still in the game, if any
+  return h('div', { class: 'notice next-topic' },
+    h('h3', {}, t('nextTopic')),
+    i >= 0 ? h('p', { class: 'next-title' }, list[i]) : null,
+    sug ? h('div', { class: 'still' },
+      h('p', { class: 'muted' }, t('stillToExplore')),
+      h('p', { class: 'next-title' }, titleOf(sug.sit), ' ', h('span', { class: 'muted' }, `(${tr(getScript(sug.sit.location)?.title || LOCATION_TITLES[sug.sit.location])})`)),
+      h('div', { class: 'row' }, btn(t('goThereNow'), () => onGo(sug.sit.location), 'ghost'))) : (i < 0 ? p(t('nextTopicAllDone')) : null));
+}
+
+/** Referral to a local mosque / Islamic center. The search link carries only a generic query — no player data. */
+function referralBlock() {
+  const q = encodeURIComponent(String(t('referralQuery') || 'mosque near me'));
+  return h('div', { class: 'notice learn-more' }, h('h3', {}, t('learnMoreTitle')), p(t('learnMoreBody')),
+    h('div', { class: 'row' }, link(`https://www.google.com/maps/search/${q}`, t('referralButton'))));
+}
+
+/** Final summary. Resolves 'again' | 'back' | 'goto:<location>'. Stores/asks nothing about the player's beliefs. */
 export function summaryScreen() {
   const sits = allSituations();
   const done = sits.filter((s) => isDone(s.key));
@@ -141,16 +200,12 @@ export function summaryScreen() {
         h('div', { class: 'stat' }, h('span', { class: 'big-num' }, `${done.length}/${sits.length}`), h('span', { class: 'muted' }, t('completed'))),
         h('div', { class: 'stat' }, h('span', { class: 'big-num' }, String(sits.filter((s) => { const r = sitRecord(s.key); const best = (s.choices || []).find((c) => c.quality === 'best'); return r && best && r.tried.includes(best.id) && r.best >= best.points; }).length)), h('span', { class: 'muted' }, t('bestChoices'))),
         h('div', { class: 'stat' }, h('span', { class: 'big-num' }, String(sits.filter((s) => sitRecord(s.key)?.check === true).length)), h('span', { class: 'muted' }, t('correctChecks')))),
-      h('h2', {}, t('topicsLearned')),
-      h('ul', { class: 'topics' }, sits.map((s) => {
-        const r = getRuling(s.ruling_id);
-        const title = tr(r?.title) || tr(CATALOG.find((c) => c.id === s.ruling_id)?.title) || s.ruling_id;
-        return h('li', { class: isDone(s.key) ? 'done' : 'todo' },
-          h('span', { class: 'check', 'aria-hidden': 'true' }, isDone(s.key) ? '✓' : '○'),
-          h('span', { class: 'topic-title' }, title),
-          verdictBadge(r?.verdict || 'unknown'));
-      })),
-      h('div', { class: 'notice scholar' }, h('h3', {}, t('referScholar')), p(t('scholarNote')), p(t('disc_ai'), 'muted')),
+      h('h2', {}, t('adamLearned')),
+      Array.isArray(t('summaryPoints')) && t('summaryPoints').length ? h('ul', { class: 'rc-list learned-points' }, t('summaryPoints').map((x) => h('li', {}, x))) : null,
+      learnedList(done),
+      nextTopicBlock(sits, (loc) => m.close(`goto:${loc}`)),
+      referralBlock(),
+      h('div', { class: 'notice scholar' }, h('h3', {}, t('aboutRulings')), p(t('scholarNote')), p(t('disc_ai'), 'muted')),
       h('div', { class: 'row center wrap' },
         btn(t('backToGame'), () => m.close('back'), 'ghost'),
         btn(t('playAgain'), () => m.close('again'), 'primary', { 'data-autofocus': true })))]);

@@ -1,5 +1,5 @@
 {
-  "date": "2026-10-05T18:38:01.410Z",
+  "date": "2026-10-05T20:39:44.758Z",
   "gl": "d3d11",
   "maxScore": 270,
   "total": 18,
@@ -10,24 +10,78 @@
       "failures": [],
       "warnings": [],
       "rulingsChecked": 36,
+      "stations": [
+        "work on entry: samir @ coffee_machine",
+        "work after work.alcohol_pork_job: samir @ adam_desk",
+        "work after work.retirement_401k: samir @ adam_desk",
+        "work after work.honesty_gifts: samir @ adam_desk",
+        "public_events on entry: samir @ gift_table",
+        "public_events after public_events.holiday_greetings: samir @ dinner_table",
+        "public_events after public_events.alcohol_table: samir @ dinner_table",
+        "public_events after public_events.raffle: samir @ dinner_table"
+      ],
+      "looks": {
+        "home": {
+          "torso": "#2f4a6d",
+          "beard": false,
+          "kufi": false,
+          "jacket": null,
+          "onStage": true
+        },
+        "work": {
+          "torso": "#2f4a6d",
+          "beard": false,
+          "kufi": false,
+          "jacket": null,
+          "onStage": true
+        },
+        "school": {
+          "torso": "#2f4a6d",
+          "beard": false,
+          "kufi": false,
+          "jacket": null,
+          "onStage": true
+        },
+        "street": {
+          "torso": "#2f4a6d",
+          "beard": false,
+          "kufi": false,
+          "jacket": "#1f2d4d",
+          "onStage": true
+        },
+        "public_events": {
+          "torso": "#2f4a6d",
+          "beard": false,
+          "kufi": false,
+          "jacket": null,
+          "onStage": true
+        },
+        "private_events": {
+          "torso": "#2f4a6d",
+          "beard": false,
+          "kufi": false,
+          "jacket": null,
+          "onStage": true
+        }
+      },
       "perf": {
         "home": {
           "pointLights": 3,
           "shadowLights": 0,
           "placeholder": false,
           "auto": [],
-          "meshes": 89,
+          "meshes": 107,
           "instanced": 0,
-          "trisDrawn": 15834,
+          "trisDrawn": 16204,
           "statsApi": {
-            "meshes": 89,
-            "tris": 15834
+            "meshes": 107,
+            "tris": 16204
           },
-          "drawCalls": 114,
-          "frameTris": 16892,
-          "geometries": 50,
+          "drawCalls": 131,
+          "frameTris": 17152,
+          "geometries": 56,
           "textures": 13,
-          "colliders": 32,
+          "colliders": 34,
           "occluders": 10,
           "lights": "day",
           "frameMs": 16.7,
@@ -38,18 +92,18 @@
           "shadowLights": 0,
           "placeholder": false,
           "auto": [],
-          "meshes": 113,
+          "meshes": 132,
           "instanced": 11,
-          "trisDrawn": 13528,
+          "trisDrawn": 15082,
           "statsApi": {
-            "meshes": 113,
-            "tris": 4786
+            "meshes": 132,
+            "tris": 5772
           },
-          "drawCalls": 112,
-          "frameTris": 13364,
-          "geometries": 31,
-          "textures": 12,
-          "colliders": 42,
+          "drawCalls": 121,
+          "frameTris": 14516,
+          "geometries": 32,
+          "textures": 11,
+          "colliders": 43,
           "occluders": 14,
           "lights": "day",
           "frameMs": 16.7,
@@ -60,18 +114,18 @@
           "shadowLights": 0,
           "placeholder": false,
           "auto": [],
-          "meshes": 202,
+          "meshes": 212,
           "instanced": 25,
-          "trisDrawn": 17666,
+          "trisDrawn": 18078,
           "statsApi": {
-            "meshes": 202,
-            "tris": 7920
+            "meshes": 212,
+            "tris": 8284
           },
-          "drawCalls": 226,
-          "frameTris": 18596,
-          "geometries": 49,
+          "drawCalls": 235,
+          "frameTris": 18898,
+          "geometries": 58,
           "textures": 27,
-          "colliders": 64,
+          "colliders": 63,
           "occluders": 32,
           "lights": "evening",
           "frameMs": 16.6,
@@ -82,21 +136,21 @@
           "shadowLights": 0,
           "placeholder": false,
           "auto": [],
-          "meshes": 124,
+          "meshes": 112,
           "instanced": 7,
-          "trisDrawn": 12132,
+          "trisDrawn": 11484,
           "statsApi": {
-            "meshes": 124,
-            "tris": 10278
+            "meshes": 112,
+            "tris": 9628
           },
-          "drawCalls": 153,
-          "frameTris": 13206,
-          "geometries": 70,
-          "textures": 20,
-          "colliders": 46,
-          "occluders": 39,
+          "drawCalls": 142,
+          "frameTris": 12466,
+          "geometries": 71,
+          "textures": 21,
+          "colliders": 45,
+          "occluders": 43,
           "lights": "night",
-          "frameMs": 16.7,
+          "frameMs": 17.2,
           "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 620 (0x00005917) Direct3D11 vs_5_0 ps_5_0, D3D11)"
         },
         "public_events": {
@@ -104,21 +158,21 @@
           "shadowLights": 0,
           "placeholder": false,
           "auto": [],
-          "meshes": 253,
-          "instanced": 35,
-          "trisDrawn": 48876,
+          "meshes": 309,
+          "instanced": 36,
+          "trisDrawn": 52062,
           "statsApi": {
-            "meshes": 253,
-            "tris": 12118
+            "meshes": 309,
+            "tris": 15272
           },
-          "drawCalls": 236,
-          "frameTris": 47084,
-          "geometries": 109,
-          "textures": 15,
-          "colliders": 70,
+          "drawCalls": 289,
+          "frameTris": 49934,
+          "geometries": 112,
+          "textures": 14,
+          "colliders": 72,
           "occluders": 48,
           "lights": "evening",
-          "frameMs": 16.6,
+          "frameMs": 16.7,
           "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 620 (0x00005917) Direct3D11 vs_5_0 ps_5_0, D3D11)"
         },
         "private_events": {
@@ -126,28 +180,28 @@
           "shadowLights": 0,
           "placeholder": false,
           "auto": [],
-          "meshes": 201,
-          "instanced": 16,
-          "trisDrawn": 57818,
+          "meshes": 236,
+          "instanced": 18,
+          "trisDrawn": 37440,
           "statsApi": {
-            "meshes": 201,
-            "tris": 10666
+            "meshes": 236,
+            "tris": 12200
           },
-          "drawCalls": 209,
-          "frameTris": 57936,
-          "geometries": 53,
+          "drawCalls": 207,
+          "frameTris": 35310,
+          "geometries": 58,
           "textures": 11,
-          "colliders": 70,
-          "occluders": 18,
+          "colliders": 72,
+          "occluders": 27,
           "lights": "day",
-          "frameMs": 16.6,
+          "frameMs": 16.7,
           "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 620 (0x00005917) Direct3D11 vs_5_0 ps_5_0, D3D11)"
         }
       },
       "reach": {
         "home": {
-          "cells": 6416,
-          "area": 64.2,
+          "cells": 6238,
+          "area": 62.4,
           "targets": {
             "laptop": {
               "reachable": true,
@@ -200,8 +254,8 @@
           }
         },
         "work": {
-          "cells": 13891,
-          "area": 138.9,
+          "cells": 13787,
+          "area": 137.9,
           "targets": {
             "coffee_machine": {
               "reachable": true,
@@ -254,8 +308,8 @@
           }
         },
         "school": {
-          "cells": 10802,
-          "area": 108,
+          "cells": 10833,
+          "area": 108.3,
           "targets": {
             "exam_desk": {
               "reachable": true,
@@ -308,14 +362,14 @@
           }
         },
         "street": {
-          "cells": 28909,
-          "area": 289.1,
+          "cells": 29110,
+          "area": 291.1,
           "targets": {
             "bus_bench": {
               "reachable": true,
               "stand": [
-                -10.200000000000003,
-                4
+                -9.799999999999997,
+                2
               ],
               "dist": 1.02,
               "target": [
@@ -338,8 +392,8 @@
             "ebike": {
               "reachable": true,
               "stand": [
-                7.1000000000000085,
-                1.6000000000000085
+                7.400000000000006,
+                0.10000000000000853
               ],
               "dist": 1.08,
               "target": [
@@ -362,8 +416,8 @@
           }
         },
         "public_events": {
-          "cells": 22583,
-          "area": 225.8,
+          "cells": 22354,
+          "area": 223.5,
           "targets": {
             "gift_table": {
               "reachable": true,
@@ -416,14 +470,14 @@
           }
         },
         "private_events": {
-          "cells": 69472,
-          "area": 694.7,
+          "cells": 69435,
+          "area": 694.4,
           "targets": {
             "harris_porch": {
               "reachable": true,
               "stand": [
                 -4.5,
-                6.5
+                5.5
               ],
               "dist": 1.07,
               "target": [
@@ -510,8 +564,8 @@
           },
           {
             "yaw": 4.71,
-            "occluded": false,
-            "by": null,
+            "occluded": true,
+            "by": "OctahedronGeometry",
             "camDist": 5.2
           },
           {
@@ -580,8 +634,8 @@
           },
           {
             "yaw": 0.79,
-            "occluded": false,
-            "by": null,
+            "occluded": true,
+            "by": "OctahedronGeometry",
             "camDist": 5.2
           },
           {
@@ -1254,21 +1308,21 @@
           },
           {
             "yaw": 3.93,
-            "occluded": true,
-            "by": "BoxGeometry",
-            "camDist": 5.2
+            "occluded": false,
+            "by": null,
+            "camDist": 3.11
           },
           {
             "yaw": 4.71,
-            "occluded": true,
-            "by": "BoxGeometry",
-            "camDist": 5.2
+            "occluded": false,
+            "by": null,
+            "camDist": 3.11
           },
           {
             "yaw": 5.5,
             "occluded": false,
             "by": null,
-            "camDist": 5.2
+            "camDist": 3.11
           }
         ],
         "private_events/garcia_yard": [
@@ -1282,13 +1336,13 @@
             "yaw": 0.79,
             "occluded": false,
             "by": null,
-            "camDist": 5.2
+            "camDist": 1.74
           },
           {
             "yaw": 1.57,
             "occluded": false,
             "by": null,
-            "camDist": 5.2
+            "camDist": 4.78
           },
           {
             "yaw": 2.36,
@@ -1298,8 +1352,8 @@
           },
           {
             "yaw": 3.14,
-            "occluded": true,
-            "by": "SphereGeometry",
+            "occluded": false,
+            "by": null,
             "camDist": 5.2
           },
           {
@@ -1342,21 +1396,21 @@
           },
           {
             "yaw": 2.36,
-            "occluded": true,
-            "by": "BoxGeometry",
-            "camDist": 3.52
+            "occluded": false,
+            "by": null,
+            "camDist": 2.98
           },
           {
             "yaw": 3.14,
-            "occluded": true,
-            "by": "BoxGeometry",
-            "camDist": 5.2
+            "occluded": false,
+            "by": null,
+            "camDist": 2.05
           },
           {
             "yaw": 3.93,
             "occluded": false,
             "by": null,
-            "camDist": 3.75
+            "camDist": 2.98
           },
           {
             "yaw": 4.71,
@@ -1372,7 +1426,7 @@
           }
         ]
       },
-      "seconds": 85
+      "seconds": 155
     },
     {
       "config": "desktop-en",
@@ -1380,27 +1434,81 @@
       "failures": [],
       "warnings": [],
       "rulingsChecked": 18,
+      "stations": [
+        "work on entry: samir @ coffee_machine",
+        "work after work.alcohol_pork_job: samir @ adam_desk",
+        "work after work.retirement_401k: samir @ adam_desk",
+        "work after work.honesty_gifts: samir @ adam_desk",
+        "public_events on entry: samir @ gift_table",
+        "public_events after public_events.holiday_greetings: samir @ dinner_table",
+        "public_events after public_events.alcohol_table: samir @ dinner_table",
+        "public_events after public_events.raffle: samir @ dinner_table"
+      ],
+      "looks": {
+        "home": {
+          "torso": "#2f4a6d",
+          "beard": false,
+          "kufi": false,
+          "jacket": null,
+          "onStage": true
+        },
+        "work": {
+          "torso": "#2f4a6d",
+          "beard": false,
+          "kufi": false,
+          "jacket": null,
+          "onStage": true
+        },
+        "school": {
+          "torso": "#2f4a6d",
+          "beard": false,
+          "kufi": false,
+          "jacket": null,
+          "onStage": true
+        },
+        "street": {
+          "torso": "#2f4a6d",
+          "beard": false,
+          "kufi": false,
+          "jacket": "#1f2d4d",
+          "onStage": true
+        },
+        "public_events": {
+          "torso": "#2f4a6d",
+          "beard": false,
+          "kufi": false,
+          "jacket": null,
+          "onStage": true
+        },
+        "private_events": {
+          "torso": "#2f4a6d",
+          "beard": false,
+          "kufi": false,
+          "jacket": null,
+          "onStage": true
+        }
+      },
       "perf": {
         "home": {
           "pointLights": 3,
           "shadowLights": 0,
           "placeholder": false,
           "auto": [],
-          "meshes": 89,
+          "meshes": 107,
           "instanced": 0,
-          "trisDrawn": 15834,
+          "trisDrawn": 16204,
           "statsApi": {
-            "meshes": 89,
-            "tris": 15834
+            "meshes": 107,
+            "tris": 16204
           },
-          "drawCalls": 114,
-          "frameTris": 16892,
-          "geometries": 50,
+          "drawCalls": 131,
+          "frameTris": 17152,
+          "geometries": 56,
           "textures": 13,
-          "colliders": 32,
+          "colliders": 34,
           "occluders": 10,
           "lights": "day",
-          "frameMs": 16.7,
+          "frameMs": 16.6,
           "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 620 (0x00005917) Direct3D11 vs_5_0 ps_5_0, D3D11)"
         },
         "work": {
@@ -1408,18 +1516,18 @@
           "shadowLights": 0,
           "placeholder": false,
           "auto": [],
-          "meshes": 113,
+          "meshes": 132,
           "instanced": 11,
-          "trisDrawn": 13528,
+          "trisDrawn": 15082,
           "statsApi": {
-            "meshes": 113,
-            "tris": 4786
+            "meshes": 132,
+            "tris": 5772
           },
-          "drawCalls": 112,
-          "frameTris": 13364,
-          "geometries": 31,
-          "textures": 12,
-          "colliders": 42,
+          "drawCalls": 121,
+          "frameTris": 14516,
+          "geometries": 32,
+          "textures": 11,
+          "colliders": 43,
           "occluders": 14,
           "lights": "day",
           "frameMs": 16.7,
@@ -1430,18 +1538,18 @@
           "shadowLights": 0,
           "placeholder": false,
           "auto": [],
-          "meshes": 202,
+          "meshes": 212,
           "instanced": 25,
-          "trisDrawn": 17666,
+          "trisDrawn": 18078,
           "statsApi": {
-            "meshes": 202,
-            "tris": 7920
+            "meshes": 212,
+            "tris": 8284
           },
-          "drawCalls": 226,
-          "frameTris": 18596,
-          "geometries": 49,
+          "drawCalls": 235,
+          "frameTris": 18898,
+          "geometries": 58,
           "textures": 27,
-          "colliders": 64,
+          "colliders": 63,
           "occluders": 32,
           "lights": "evening",
           "frameMs": 16.6,
@@ -1452,19 +1560,19 @@
           "shadowLights": 0,
           "placeholder": false,
           "auto": [],
-          "meshes": 124,
+          "meshes": 112,
           "instanced": 7,
-          "trisDrawn": 12132,
+          "trisDrawn": 11484,
           "statsApi": {
-            "meshes": 124,
-            "tris": 10278
+            "meshes": 112,
+            "tris": 9628
           },
-          "drawCalls": 153,
-          "frameTris": 13206,
-          "geometries": 70,
-          "textures": 20,
-          "colliders": 46,
-          "occluders": 39,
+          "drawCalls": 142,
+          "frameTris": 12466,
+          "geometries": 71,
+          "textures": 21,
+          "colliders": 45,
+          "occluders": 43,
           "lights": "night",
           "frameMs": 16.7,
           "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 620 (0x00005917) Direct3D11 vs_5_0 ps_5_0, D3D11)"
@@ -1474,21 +1582,21 @@
           "shadowLights": 0,
           "placeholder": false,
           "auto": [],
-          "meshes": 253,
-          "instanced": 35,
-          "trisDrawn": 48876,
+          "meshes": 309,
+          "instanced": 36,
+          "trisDrawn": 52062,
           "statsApi": {
-            "meshes": 253,
-            "tris": 12118
+            "meshes": 309,
+            "tris": 15272
           },
-          "drawCalls": 236,
-          "frameTris": 47084,
-          "geometries": 109,
-          "textures": 15,
-          "colliders": 70,
+          "drawCalls": 289,
+          "frameTris": 49934,
+          "geometries": 112,
+          "textures": 14,
+          "colliders": 72,
           "occluders": 48,
           "lights": "evening",
-          "frameMs": 16.6,
+          "frameMs": 16.7,
           "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 620 (0x00005917) Direct3D11 vs_5_0 ps_5_0, D3D11)"
         },
         "private_events": {
@@ -1496,28 +1604,28 @@
           "shadowLights": 0,
           "placeholder": false,
           "auto": [],
-          "meshes": 201,
-          "instanced": 16,
-          "trisDrawn": 57818,
+          "meshes": 236,
+          "instanced": 18,
+          "trisDrawn": 37440,
           "statsApi": {
-            "meshes": 201,
-            "tris": 10666
+            "meshes": 236,
+            "tris": 12200
           },
-          "drawCalls": 209,
-          "frameTris": 57936,
-          "geometries": 53,
+          "drawCalls": 207,
+          "frameTris": 35310,
+          "geometries": 58,
           "textures": 11,
-          "colliders": 70,
-          "occluders": 18,
+          "colliders": 72,
+          "occluders": 27,
           "lights": "day",
-          "frameMs": 16.7,
+          "frameMs": 16.6,
           "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 620 (0x00005917) Direct3D11 vs_5_0 ps_5_0, D3D11)"
         }
       },
       "reach": {
         "home": {
-          "cells": 6416,
-          "area": 64.2,
+          "cells": 6238,
+          "area": 62.4,
           "targets": {
             "laptop": {
               "reachable": true,
@@ -1570,8 +1678,8 @@
           }
         },
         "work": {
-          "cells": 13891,
-          "area": 138.9,
+          "cells": 13787,
+          "area": 137.9,
           "targets": {
             "coffee_machine": {
               "reachable": true,
@@ -1624,8 +1732,8 @@
           }
         },
         "school": {
-          "cells": 10802,
-          "area": 108,
+          "cells": 10833,
+          "area": 108.3,
           "targets": {
             "exam_desk": {
               "reachable": true,
@@ -1678,14 +1786,14 @@
           }
         },
         "street": {
-          "cells": 28909,
-          "area": 289.1,
+          "cells": 29110,
+          "area": 291.1,
           "targets": {
             "bus_bench": {
               "reachable": true,
               "stand": [
-                -10.200000000000003,
-                4
+                -9.799999999999997,
+                2
               ],
               "dist": 1.02,
               "target": [
@@ -1708,8 +1816,8 @@
             "ebike": {
               "reachable": true,
               "stand": [
-                7.1000000000000085,
-                1.6000000000000085
+                7.400000000000006,
+                0.10000000000000853
               ],
               "dist": 1.08,
               "target": [
@@ -1732,8 +1840,8 @@
           }
         },
         "public_events": {
-          "cells": 22583,
-          "area": 225.8,
+          "cells": 22354,
+          "area": 223.5,
           "targets": {
             "gift_table": {
               "reachable": true,
@@ -1786,14 +1894,14 @@
           }
         },
         "private_events": {
-          "cells": 69472,
-          "area": 694.7,
+          "cells": 69435,
+          "area": 694.4,
           "targets": {
             "harris_porch": {
               "reachable": true,
               "stand": [
                 -4.5,
-                6.5
+                5.5
               ],
               "dist": 1.07,
               "target": [
@@ -1880,8 +1988,8 @@
           },
           {
             "yaw": 4.71,
-            "occluded": false,
-            "by": null,
+            "occluded": true,
+            "by": "OctahedronGeometry",
             "camDist": 5.2
           },
           {
@@ -2624,21 +2732,21 @@
           },
           {
             "yaw": 3.93,
-            "occluded": true,
-            "by": "BoxGeometry",
-            "camDist": 5.2
+            "occluded": false,
+            "by": null,
+            "camDist": 3.11
           },
           {
             "yaw": 4.71,
-            "occluded": true,
-            "by": "BoxGeometry",
-            "camDist": 5.2
+            "occluded": false,
+            "by": null,
+            "camDist": 3.11
           },
           {
             "yaw": 5.5,
             "occluded": false,
             "by": null,
-            "camDist": 5.2
+            "camDist": 3.11
           }
         ],
         "private_events/garcia_yard": [
@@ -2652,13 +2760,13 @@
             "yaw": 0.79,
             "occluded": false,
             "by": null,
-            "camDist": 5.2
+            "camDist": 1.74
           },
           {
             "yaw": 1.57,
             "occluded": false,
             "by": null,
-            "camDist": 5.2
+            "camDist": 4.78
           },
           {
             "yaw": 2.36,
@@ -2668,8 +2776,8 @@
           },
           {
             "yaw": 3.14,
-            "occluded": true,
-            "by": "SphereGeometry",
+            "occluded": false,
+            "by": null,
             "camDist": 5.2
           },
           {
@@ -2712,21 +2820,21 @@
           },
           {
             "yaw": 2.36,
-            "occluded": true,
-            "by": "BoxGeometry",
-            "camDist": 3.52
+            "occluded": false,
+            "by": null,
+            "camDist": 2.98
           },
           {
             "yaw": 3.14,
-            "occluded": true,
-            "by": "BoxGeometry",
-            "camDist": 5.2
+            "occluded": false,
+            "by": null,
+            "camDist": 2.05
           },
           {
             "yaw": 3.93,
             "occluded": false,
             "by": null,
-            "camDist": 3.75
+            "camDist": 2.98
           },
           {
             "yaw": 4.71,
@@ -2742,7 +2850,7 @@
           }
         ]
       },
-      "seconds": 72
+      "seconds": 124
     },
     {
       "config": "mobile-ar",
@@ -2750,27 +2858,81 @@
       "failures": [],
       "warnings": [],
       "rulingsChecked": 18,
+      "stations": [
+        "work on entry: samir @ coffee_machine",
+        "work after work.alcohol_pork_job: samir @ adam_desk",
+        "work after work.retirement_401k: samir @ adam_desk",
+        "work after work.honesty_gifts: samir @ adam_desk",
+        "public_events on entry: samir @ gift_table",
+        "public_events after public_events.holiday_greetings: samir @ dinner_table",
+        "public_events after public_events.alcohol_table: samir @ dinner_table",
+        "public_events after public_events.raffle: samir @ dinner_table"
+      ],
+      "looks": {
+        "home": {
+          "torso": "#2f4a6d",
+          "beard": false,
+          "kufi": false,
+          "jacket": null,
+          "onStage": true
+        },
+        "work": {
+          "torso": "#2f4a6d",
+          "beard": false,
+          "kufi": false,
+          "jacket": null,
+          "onStage": true
+        },
+        "school": {
+          "torso": "#2f4a6d",
+          "beard": false,
+          "kufi": false,
+          "jacket": null,
+          "onStage": true
+        },
+        "street": {
+          "torso": "#2f4a6d",
+          "beard": false,
+          "kufi": false,
+          "jacket": "#1f2d4d",
+          "onStage": true
+        },
+        "public_events": {
+          "torso": "#2f4a6d",
+          "beard": false,
+          "kufi": false,
+          "jacket": null,
+          "onStage": true
+        },
+        "private_events": {
+          "torso": "#2f4a6d",
+          "beard": false,
+          "kufi": false,
+          "jacket": null,
+          "onStage": true
+        }
+      },
       "perf": {
         "home": {
           "pointLights": 3,
           "shadowLights": 0,
           "placeholder": false,
           "auto": [],
-          "meshes": 89,
+          "meshes": 107,
           "instanced": 0,
-          "trisDrawn": 15834,
+          "trisDrawn": 16204,
           "statsApi": {
-            "meshes": 89,
-            "tris": 15834
+            "meshes": 107,
+            "tris": 16204
           },
-          "drawCalls": 81,
-          "frameTris": 15016,
-          "geometries": 43,
+          "drawCalls": 101,
+          "frameTris": 15776,
+          "geometries": 49,
           "textures": 9,
-          "colliders": 32,
+          "colliders": 34,
           "occluders": 10,
           "lights": "day",
-          "frameMs": 16.6,
+          "frameMs": 16.7,
           "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 620 (0x00005917) Direct3D11 vs_5_0 ps_5_0, D3D11)"
         },
         "work": {
@@ -2778,21 +2940,21 @@
           "shadowLights": 0,
           "placeholder": false,
           "auto": [],
-          "meshes": 113,
+          "meshes": 132,
           "instanced": 11,
-          "trisDrawn": 13528,
+          "trisDrawn": 15082,
           "statsApi": {
-            "meshes": 113,
-            "tris": 4786
+            "meshes": 132,
+            "tris": 5772
           },
-          "drawCalls": 51,
-          "frameTris": 10690,
-          "geometries": 24,
-          "textures": 5,
-          "colliders": 42,
+          "drawCalls": 33,
+          "frameTris": 10430,
+          "geometries": 25,
+          "textures": 4,
+          "colliders": 43,
           "occluders": 14,
           "lights": "day",
-          "frameMs": 16.6,
+          "frameMs": 16.7,
           "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 620 (0x00005917) Direct3D11 vs_5_0 ps_5_0, D3D11)"
         },
         "school": {
@@ -2800,18 +2962,18 @@
           "shadowLights": 0,
           "placeholder": false,
           "auto": [],
-          "meshes": 202,
+          "meshes": 212,
           "instanced": 25,
-          "trisDrawn": 17666,
+          "trisDrawn": 18078,
           "statsApi": {
-            "meshes": 202,
-            "tris": 7920
+            "meshes": 212,
+            "tris": 8284
           },
-          "drawCalls": 170,
-          "frameTris": 16196,
-          "geometries": 45,
+          "drawCalls": 171,
+          "frameTris": 16064,
+          "geometries": 55,
           "textures": 21,
-          "colliders": 64,
+          "colliders": 63,
           "occluders": 32,
           "lights": "evening",
           "frameMs": 16.6,
@@ -2822,21 +2984,21 @@
           "shadowLights": 0,
           "placeholder": false,
           "auto": [],
-          "meshes": 124,
+          "meshes": 112,
           "instanced": 7,
-          "trisDrawn": 12132,
+          "trisDrawn": 11484,
           "statsApi": {
-            "meshes": 124,
-            "tris": 10278
+            "meshes": 112,
+            "tris": 9628
           },
-          "drawCalls": 109,
-          "frameTris": 11398,
-          "geometries": 58,
+          "drawCalls": 112,
+          "frameTris": 11574,
+          "geometries": 59,
           "textures": 12,
-          "colliders": 46,
-          "occluders": 39,
+          "colliders": 45,
+          "occluders": 43,
           "lights": "night",
-          "frameMs": 16.6,
+          "frameMs": 16.7,
           "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 620 (0x00005917) Direct3D11 vs_5_0 ps_5_0, D3D11)"
         },
         "public_events": {
@@ -2844,21 +3006,21 @@
           "shadowLights": 0,
           "placeholder": false,
           "auto": [],
-          "meshes": 253,
-          "instanced": 35,
-          "trisDrawn": 48876,
+          "meshes": 309,
+          "instanced": 36,
+          "trisDrawn": 52062,
           "statsApi": {
-            "meshes": 253,
-            "tris": 12118
+            "meshes": 309,
+            "tris": 15272
           },
-          "drawCalls": 114,
-          "frameTris": 37586,
+          "drawCalls": 112,
+          "frameTris": 37314,
           "geometries": 84,
-          "textures": 8,
-          "colliders": 70,
+          "textures": 7,
+          "colliders": 72,
           "occluders": 48,
           "lights": "evening",
-          "frameMs": 16.6,
+          "frameMs": 16.7,
           "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 620 (0x00005917) Direct3D11 vs_5_0 ps_5_0, D3D11)"
         },
         "private_events": {
@@ -2866,19 +3028,19 @@
           "shadowLights": 0,
           "placeholder": false,
           "auto": [],
-          "meshes": 201,
-          "instanced": 16,
-          "trisDrawn": 57818,
+          "meshes": 236,
+          "instanced": 18,
+          "trisDrawn": 37440,
           "statsApi": {
-            "meshes": 201,
-            "tris": 10666
+            "meshes": 236,
+            "tris": 12200
           },
-          "drawCalls": 205,
-          "frameTris": 57782,
-          "geometries": 51,
+          "drawCalls": 202,
+          "frameTris": 34940,
+          "geometries": 56,
           "textures": 10,
-          "colliders": 70,
-          "occluders": 18,
+          "colliders": 72,
+          "occluders": 27,
           "lights": "day",
           "frameMs": 16.7,
           "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 620 (0x00005917) Direct3D11 vs_5_0 ps_5_0, D3D11)"
@@ -2886,8 +3048,8 @@
       },
       "reach": {
         "home": {
-          "cells": 6416,
-          "area": 64.2,
+          "cells": 6238,
+          "area": 62.4,
           "targets": {
             "laptop": {
               "reachable": true,
@@ -2940,8 +3102,8 @@
           }
         },
         "work": {
-          "cells": 13891,
-          "area": 138.9,
+          "cells": 13787,
+          "area": 137.9,
           "targets": {
             "coffee_machine": {
               "reachable": true,
@@ -2994,8 +3156,8 @@
           }
         },
         "school": {
-          "cells": 10802,
-          "area": 108,
+          "cells": 10833,
+          "area": 108.3,
           "targets": {
             "exam_desk": {
               "reachable": true,
@@ -3048,14 +3210,14 @@
           }
         },
         "street": {
-          "cells": 28909,
-          "area": 289.1,
+          "cells": 29110,
+          "area": 291.1,
           "targets": {
             "bus_bench": {
               "reachable": true,
               "stand": [
-                -10.200000000000003,
-                4
+                -9.799999999999997,
+                2
               ],
               "dist": 1.02,
               "target": [
@@ -3078,8 +3240,8 @@
             "ebike": {
               "reachable": true,
               "stand": [
-                7.1000000000000085,
-                1.6000000000000085
+                7.400000000000006,
+                0.10000000000000853
               ],
               "dist": 1.08,
               "target": [
@@ -3102,8 +3264,8 @@
           }
         },
         "public_events": {
-          "cells": 22583,
-          "area": 225.8,
+          "cells": 22354,
+          "area": 223.5,
           "targets": {
             "gift_table": {
               "reachable": true,
@@ -3156,14 +3318,14 @@
           }
         },
         "private_events": {
-          "cells": 69472,
-          "area": 694.7,
+          "cells": 69435,
+          "area": 694.4,
           "targets": {
             "harris_porch": {
               "reachable": true,
               "stand": [
                 -4.5,
-                6.5
+                5.5
               ],
               "dist": 1.07,
               "target": [
@@ -3250,8 +3412,8 @@
           },
           {
             "yaw": 4.71,
-            "occluded": true,
-            "by": "OctahedronGeometry",
+            "occluded": false,
+            "by": null,
             "camDist": 5.2
           },
           {
@@ -3994,41 +4156,41 @@
           },
           {
             "yaw": 3.93,
-            "occluded": true,
-            "by": "BoxGeometry",
-            "camDist": 5.2
+            "occluded": false,
+            "by": null,
+            "camDist": 3.11
           },
           {
             "yaw": 4.71,
-            "occluded": true,
-            "by": "BoxGeometry",
-            "camDist": 5.2
+            "occluded": false,
+            "by": null,
+            "camDist": 3.11
           },
           {
             "yaw": 5.5,
             "occluded": false,
             "by": null,
-            "camDist": 5.2
+            "camDist": 3.11
           }
         ],
         "private_events/garcia_yard": [
           {
             "yaw": 0,
-            "occluded": true,
-            "by": "SphereGeometry",
+            "occluded": false,
+            "by": null,
             "camDist": 5.2
           },
           {
             "yaw": 0.79,
             "occluded": false,
             "by": null,
-            "camDist": 5.2
+            "camDist": 1.74
           },
           {
             "yaw": 1.57,
             "occluded": false,
             "by": null,
-            "camDist": 5.2
+            "camDist": 4.78
           },
           {
             "yaw": 2.36,
@@ -4038,8 +4200,8 @@
           },
           {
             "yaw": 3.14,
-            "occluded": true,
-            "by": "SphereGeometry",
+            "occluded": false,
+            "by": null,
             "camDist": 5.2
           },
           {
@@ -4082,21 +4244,21 @@
           },
           {
             "yaw": 2.36,
-            "occluded": true,
-            "by": "BoxGeometry",
-            "camDist": 3.52
+            "occluded": false,
+            "by": null,
+            "camDist": 2.98
           },
           {
             "yaw": 3.14,
-            "occluded": true,
-            "by": "BoxGeometry",
-            "camDist": 5.2
+            "occluded": false,
+            "by": null,
+            "camDist": 2.05
           },
           {
             "yaw": 3.93,
             "occluded": false,
             "by": null,
-            "camDist": 3.75
+            "camDist": 2.98
           },
           {
             "yaw": 4.71,
@@ -4112,7 +4274,7 @@
           }
         ]
       },
-      "seconds": 82
+      "seconds": 147
     },
     {
       "config": "mobile-en",
@@ -4120,24 +4282,78 @@
       "failures": [],
       "warnings": [],
       "rulingsChecked": 18,
+      "stations": [
+        "work on entry: samir @ coffee_machine",
+        "work after work.honesty_gifts: samir @ coffee_machine",
+        "work after work.retirement_401k: samir @ coffee_machine",
+        "work after work.alcohol_pork_job: samir @ adam_desk",
+        "public_events on entry: samir @ gift_table",
+        "public_events after public_events.holiday_greetings: samir @ dinner_table",
+        "public_events after public_events.alcohol_table: samir @ dinner_table",
+        "public_events after public_events.raffle: samir @ dinner_table"
+      ],
+      "looks": {
+        "home": {
+          "torso": "#2f4a6d",
+          "beard": false,
+          "kufi": false,
+          "jacket": null,
+          "onStage": true
+        },
+        "work": {
+          "torso": "#2f4a6d",
+          "beard": false,
+          "kufi": false,
+          "jacket": null,
+          "onStage": true
+        },
+        "school": {
+          "torso": "#2f4a6d",
+          "beard": false,
+          "kufi": false,
+          "jacket": null,
+          "onStage": true
+        },
+        "street": {
+          "torso": "#2f4a6d",
+          "beard": false,
+          "kufi": false,
+          "jacket": "#1f2d4d",
+          "onStage": true
+        },
+        "public_events": {
+          "torso": "#2f4a6d",
+          "beard": false,
+          "kufi": false,
+          "jacket": null,
+          "onStage": true
+        },
+        "private_events": {
+          "torso": "#2f4a6d",
+          "beard": false,
+          "kufi": false,
+          "jacket": null,
+          "onStage": true
+        }
+      },
       "perf": {
         "home": {
           "pointLights": 3,
           "shadowLights": 0,
           "placeholder": false,
           "auto": [],
-          "meshes": 89,
+          "meshes": 107,
           "instanced": 0,
-          "trisDrawn": 15834,
+          "trisDrawn": 16204,
           "statsApi": {
-            "meshes": 89,
-            "tris": 15834
+            "meshes": 107,
+            "tris": 16204
           },
-          "drawCalls": 81,
-          "frameTris": 15016,
-          "geometries": 43,
+          "drawCalls": 101,
+          "frameTris": 15776,
+          "geometries": 49,
           "textures": 9,
-          "colliders": 32,
+          "colliders": 34,
           "occluders": 10,
           "lights": "day",
           "frameMs": 16.6,
@@ -4148,21 +4364,21 @@
           "shadowLights": 0,
           "placeholder": false,
           "auto": [],
-          "meshes": 113,
+          "meshes": 132,
           "instanced": 11,
-          "trisDrawn": 13528,
+          "trisDrawn": 15082,
           "statsApi": {
-            "meshes": 113,
-            "tris": 4786
+            "meshes": 132,
+            "tris": 5772
           },
-          "drawCalls": 51,
-          "frameTris": 10690,
-          "geometries": 24,
-          "textures": 5,
-          "colliders": 42,
+          "drawCalls": 33,
+          "frameTris": 10430,
+          "geometries": 25,
+          "textures": 4,
+          "colliders": 43,
           "occluders": 14,
           "lights": "day",
-          "frameMs": 16.7,
+          "frameMs": 16.6,
           "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 620 (0x00005917) Direct3D11 vs_5_0 ps_5_0, D3D11)"
         },
         "school": {
@@ -4170,21 +4386,21 @@
           "shadowLights": 0,
           "placeholder": false,
           "auto": [],
-          "meshes": 202,
+          "meshes": 212,
           "instanced": 25,
-          "trisDrawn": 17666,
+          "trisDrawn": 18078,
           "statsApi": {
-            "meshes": 202,
-            "tris": 7920
+            "meshes": 212,
+            "tris": 8284
           },
-          "drawCalls": 170,
-          "frameTris": 16196,
-          "geometries": 45,
+          "drawCalls": 171,
+          "frameTris": 16064,
+          "geometries": 55,
           "textures": 21,
-          "colliders": 64,
+          "colliders": 63,
           "occluders": 32,
           "lights": "evening",
-          "frameMs": 16.6,
+          "frameMs": 16.7,
           "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 620 (0x00005917) Direct3D11 vs_5_0 ps_5_0, D3D11)"
         },
         "street": {
@@ -4192,21 +4408,21 @@
           "shadowLights": 0,
           "placeholder": false,
           "auto": [],
-          "meshes": 124,
+          "meshes": 112,
           "instanced": 7,
-          "trisDrawn": 12132,
+          "trisDrawn": 11484,
           "statsApi": {
-            "meshes": 124,
-            "tris": 10278
+            "meshes": 112,
+            "tris": 9628
           },
-          "drawCalls": 109,
-          "frameTris": 11398,
-          "geometries": 58,
+          "drawCalls": 112,
+          "frameTris": 11574,
+          "geometries": 59,
           "textures": 12,
-          "colliders": 46,
-          "occluders": 39,
+          "colliders": 45,
+          "occluders": 43,
           "lights": "night",
-          "frameMs": 16.6,
+          "frameMs": 16.7,
           "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 620 (0x00005917) Direct3D11 vs_5_0 ps_5_0, D3D11)"
         },
         "public_events": {
@@ -4214,18 +4430,18 @@
           "shadowLights": 0,
           "placeholder": false,
           "auto": [],
-          "meshes": 253,
-          "instanced": 35,
-          "trisDrawn": 48876,
+          "meshes": 309,
+          "instanced": 36,
+          "trisDrawn": 52062,
           "statsApi": {
-            "meshes": 253,
-            "tris": 12118
+            "meshes": 309,
+            "tris": 15272
           },
-          "drawCalls": 114,
-          "frameTris": 37586,
+          "drawCalls": 112,
+          "frameTris": 37314,
           "geometries": 84,
-          "textures": 8,
-          "colliders": 70,
+          "textures": 7,
+          "colliders": 72,
           "occluders": 48,
           "lights": "evening",
           "frameMs": 16.6,
@@ -4236,28 +4452,28 @@
           "shadowLights": 0,
           "placeholder": false,
           "auto": [],
-          "meshes": 201,
-          "instanced": 16,
-          "trisDrawn": 57818,
+          "meshes": 236,
+          "instanced": 18,
+          "trisDrawn": 37440,
           "statsApi": {
-            "meshes": 201,
-            "tris": 10666
+            "meshes": 236,
+            "tris": 12200
           },
-          "drawCalls": 205,
-          "frameTris": 57782,
-          "geometries": 51,
+          "drawCalls": 202,
+          "frameTris": 34940,
+          "geometries": 56,
           "textures": 10,
-          "colliders": 70,
-          "occluders": 18,
+          "colliders": 72,
+          "occluders": 27,
           "lights": "day",
-          "frameMs": 16.6,
+          "frameMs": 16.7,
           "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 620 (0x00005917) Direct3D11 vs_5_0 ps_5_0, D3D11)"
         }
       },
       "reach": {
         "home": {
-          "cells": 6416,
-          "area": 64.2,
+          "cells": 6238,
+          "area": 62.4,
           "targets": {
             "laptop": {
               "reachable": true,
@@ -4310,8 +4526,8 @@
           }
         },
         "work": {
-          "cells": 13891,
-          "area": 138.9,
+          "cells": 13787,
+          "area": 137.9,
           "targets": {
             "coffee_machine": {
               "reachable": true,
@@ -4364,8 +4580,8 @@
           }
         },
         "school": {
-          "cells": 10802,
-          "area": 108,
+          "cells": 10833,
+          "area": 108.3,
           "targets": {
             "exam_desk": {
               "reachable": true,
@@ -4418,14 +4634,14 @@
           }
         },
         "street": {
-          "cells": 28909,
-          "area": 289.1,
+          "cells": 29110,
+          "area": 291.1,
           "targets": {
             "bus_bench": {
               "reachable": true,
               "stand": [
-                -10.200000000000003,
-                4
+                -9.799999999999997,
+                2
               ],
               "dist": 1.02,
               "target": [
@@ -4448,8 +4664,8 @@
             "ebike": {
               "reachable": true,
               "stand": [
-                7.1000000000000085,
-                1.6000000000000085
+                7.400000000000006,
+                0.10000000000000853
               ],
               "dist": 1.08,
               "target": [
@@ -4472,8 +4688,8 @@
           }
         },
         "public_events": {
-          "cells": 22583,
-          "area": 225.8,
+          "cells": 22354,
+          "area": 223.5,
           "targets": {
             "gift_table": {
               "reachable": true,
@@ -4526,14 +4742,14 @@
           }
         },
         "private_events": {
-          "cells": 69472,
-          "area": 694.7,
+          "cells": 69435,
+          "area": 694.4,
           "targets": {
             "harris_porch": {
               "reachable": true,
               "stand": [
                 -4.5,
-                6.5
+                5.5
               ],
               "dist": 1.07,
               "target": [
@@ -4620,8 +4836,8 @@
           },
           {
             "yaw": 4.71,
-            "occluded": true,
-            "by": "OctahedronGeometry",
+            "occluded": false,
+            "by": null,
             "camDist": 5.2
           },
           {
@@ -4731,7 +4947,7 @@
             "camDist": 5.2
           }
         ],
-        "work/coffee_machine": [
+        "work/adam_desk": [
           {
             "yaw": 0,
             "occluded": false,
@@ -4764,21 +4980,21 @@
           },
           {
             "yaw": 3.93,
-            "occluded": true,
-            "by": "work:matte",
-            "camDist": 2.12
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
           },
           {
             "yaw": 4.71,
             "occluded": false,
             "by": null,
-            "camDist": 1.44
+            "camDist": 5.2
           },
           {
             "yaw": 5.5,
-            "occluded": true,
-            "by": "work:matte",
-            "camDist": 2.12
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
           }
         ],
         "work/hr_desk": [
@@ -4831,7 +5047,7 @@
             "camDist": 5.2
           }
         ],
-        "work/adam_desk": [
+        "work/coffee_machine": [
           {
             "yaw": 0,
             "occluded": false,
@@ -4864,21 +5080,21 @@
           },
           {
             "yaw": 3.93,
-            "occluded": false,
-            "by": null,
-            "camDist": 5.2
+            "occluded": true,
+            "by": "work:matte",
+            "camDist": 2.12
           },
           {
             "yaw": 4.71,
             "occluded": false,
             "by": null,
-            "camDist": 5.2
+            "camDist": 1.44
           },
           {
             "yaw": 5.5,
-            "occluded": false,
-            "by": null,
-            "camDist": 5.2
+            "occluded": true,
+            "by": "work:matte",
+            "camDist": 2.12
           }
         ],
         "school/exam_desk": [
@@ -4940,8 +5156,8 @@
           },
           {
             "yaw": 0.79,
-            "occluded": true,
-            "by": "OctahedronGeometry",
+            "occluded": false,
+            "by": null,
             "camDist": 3.48
           },
           {
@@ -5364,21 +5580,21 @@
           },
           {
             "yaw": 3.93,
-            "occluded": true,
-            "by": "BoxGeometry",
-            "camDist": 5.2
+            "occluded": false,
+            "by": null,
+            "camDist": 3.11
           },
           {
             "yaw": 4.71,
-            "occluded": true,
-            "by": "BoxGeometry",
-            "camDist": 5.2
+            "occluded": false,
+            "by": null,
+            "camDist": 3.11
           },
           {
             "yaw": 5.5,
             "occluded": false,
             "by": null,
-            "camDist": 5.2
+            "camDist": 3.11
           }
         ],
         "private_events/garcia_yard": [
@@ -5390,15 +5606,15 @@
           },
           {
             "yaw": 0.79,
-            "occluded": true,
-            "by": "CylinderGeometry",
-            "camDist": 5.2
+            "occluded": false,
+            "by": null,
+            "camDist": 1.74
           },
           {
             "yaw": 1.57,
             "occluded": false,
             "by": null,
-            "camDist": 5.2
+            "camDist": 4.78
           },
           {
             "yaw": 2.36,
@@ -5408,8 +5624,8 @@
           },
           {
             "yaw": 3.14,
-            "occluded": true,
-            "by": "SphereGeometry",
+            "occluded": false,
+            "by": null,
             "camDist": 5.2
           },
           {
@@ -5452,21 +5668,21 @@
           },
           {
             "yaw": 2.36,
-            "occluded": true,
-            "by": "BoxGeometry",
-            "camDist": 3.52
+            "occluded": false,
+            "by": null,
+            "camDist": 2.98
           },
           {
             "yaw": 3.14,
-            "occluded": true,
-            "by": "BoxGeometry",
-            "camDist": 5.2
+            "occluded": false,
+            "by": null,
+            "camDist": 2.05
           },
           {
             "yaw": 3.93,
             "occluded": false,
             "by": null,
-            "camDist": 3.75
+            "camDist": 2.98
           },
           {
             "yaw": 4.71,
@@ -5482,7 +5698,7 @@
           }
         ]
       },
-      "seconds": 86
+      "seconds": 143
     }
   ]
 }

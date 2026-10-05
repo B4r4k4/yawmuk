@@ -62,6 +62,7 @@ export default {
       sky: '#cfd9e6',                                     // optional: overrides the preset background colour
       fog: { color: '#cfd9e6', near: 30, far: 100 },      // optional: overrides the preset fog (any subset)
       cameraOccluders: [wallProxyMesh],                   // optional: Mesh/Group or array; extra camera blockers (see §4)
+      playerLook: { jacket: '#1f2d4d' },                  // optional: merged over PLAYER.look for this scene only (see §8)
       update(dt, t) {},                                   // optional, every frame (dt seconds, t elapsed seconds)
       dispose() {}                                        // optional, free anything the engine can't see
     };
@@ -79,6 +80,19 @@ export default {
 - **NPCs.** The engine builds each NPC with `makeNPC(look)`, places it, adds a 0.56 m collider (set `collide: false` to skip it) and adds a gentle idle animation (set `animate: false` to skip it). It shows the name from the script's `npc.name`, or your `name`; set `showName: false` to hide it. During a situation the speaking NPC turns to face Adam.
   - IDs starting with `bg_` are background extras. They never get a name label and never speak.
   - To use your own figure instead, pass `object: someObject3D`. The engine positions it but does not build one.
+- **NPC stations (one NPC in several situations).** Add `stations` to an NPC:
+  ```js
+  { id: 'samir', look: {...}, position: [2, 0, 1], yaw: 0,      // position/yaw = fallback only
+    stations: {
+      coffee_machine: { position: [-6.7, 0, -0.2], yaw: Math.PI },
+      adam_desk:      { position: [-0.2, 0, 2.4],  yaw: 0 }
+    } }
+  ```
+  - When the scene loads, the NPC is placed at the station of the **first unfinished hotspot**, in script order.
+  - When a situation finishes, the NPC moves behind a short fade to the next unfinished station. When every station is done, it stays at the last one.
+  - If the player triggers a later station's hotspot out of order, the NPC is moved there instantly before the dialogue starts.
+  - Its collider moves with it, and the name label follows.
+  - Every key must be a hotspot id. Without `stations`, the NPC behaves exactly as before.
 - **Exit.** The engine places a teal marker on the exit. **It stays locked (grey) until every situation in the location is done.** After that, the outro card leads to `next_location`. `next_location: null` leads to the final summary.
 - **Bounds.** The player is clamped to the bounding box of your group plus colliders, with a 0.5 m margin. Even if you leave a gap in a wall, Adam cannot walk into the void.
 - **Lighting.** There is one hemisphere light and one directional "sun" that casts shadows. The sun's 32×32 m shadow frustum follows Adam, so large outdoor maps keep crisp shadows near him. Preset fog and background colours are listed in `world.js` (`LIGHT_PRESETS`). Without `lights`, the preset comes from the script's `time_of_day` (17:00 or later is evening, 20:00 or later is night).
@@ -121,7 +135,8 @@ makeNPC({
   skin: '#c68642', shirt: '#3a6ea5', pants: '#2f3542', shoes: '#1e1e1e', hair: '#2b1d14',  // hair:false = bald
   hijab: true, hijabColor: '#5b7b5a',  // full head covering with a face opening (hijab:'#hex' also works)
   kufi: true | '#hex', beard: true | '#hex', glasses: true,
-  suit: true | '#hex', tie: '#hex',     // jacket + tie
+  suit: true | '#hex', tie: '#hex' | false,   // jacket + tie
+  jacket: true | '#hex',                // open coat, no tie (e.g. winter jacket)
   dress: true | '#hex',                 // long skirt / abaya to the floor
   height: 1.75, build: 1                // metres; width factor
 })
@@ -129,7 +144,7 @@ makeNPC({
 
 - The feet are at y=0, and the figure **faces −Z when `rotation.y = 0`**, the same convention as `yaw`.
 - Heights from `docs/hotspots.md`: men 1.75–1.85, women 1.62–1.70, elderly people a little shorter, children 1.1–1.2.
-- `group.userData.parts = { legL, legR, armL, armR, head, body }` are pivot groups you can pose. For a seated figure, set `parts.legL.rotation.x = parts.legR.rotation.x = -Math.PI/2`, lower the figure about 0.4 m and set `animate: false`.
+- `group.userData.parts = { legL, legR, armL, armR, head, body }` are pivot groups you can pose. For a seated figure, set `parts.legL.rotation.x = parts.legR.rotation.x = Math.PI/2` (**positive**: the legs hang along −Y and the figure faces −Z, so +π/2 swings the thighs forward; −π/2 would point them backwards), lower the figure about 0.4 m and set `animate: false`.
 
 ---
 
@@ -212,7 +227,14 @@ export default {
 6. Switch the language (menu ☰ → English/العربية). Your labels switch with it.
 7. Do a `goto` to another location and back three times. Memory should not grow, and the console should show no errors on dispose.
 
-## 8. Engine architecture (for reference)
+## 8. The player character, ruling-card extras and end screen
+
+- **Adam's look** is one object: `PLAYER` in `src/engine/config.js` (`look` takes any `makeNPC` option). Edit only that. A scene can return `playerLook: { jacket: '#1f2d4d' }`, which is merged over `PLAYER.look` while that scene is loaded. The street scene uses this for Adam's navy winter jacket.
+- The **ruling card** shows two optional fields when present. `newcomer_explainer` appears as "In plain words", right under the verdict. `common_ground` (summary, Bible verses in Van Dyck or KJV in the UI language, and differences) appears as a soft-blue panel. Each section is hidden when its field is missing or empty.
+- The **end screen** shows what Adam learned, a suggested next topic (the theme the player explored most, using `THEMES` in `config.js`) and a referral to a local mosque or Islamic center. The game never asks about or stores the player's beliefs.
+- Label keys come from `content/script/ui_strings.json`. `i18n.js` `UI_MAP` lists the accepted key names, for example `ruling_card.newcomer_explainer`, `ruling_card.common_ground`, `ruling_card.bible`, `ruling_card.differences`, `end.learned`, `end.next_topic`, `end.learn_more_title` and `end.learn_more`. Each key falls back to a built-in default.
+
+## 9. Engine architecture (for reference)
 
 ```
 src/main.js                 boot → engine/game.js

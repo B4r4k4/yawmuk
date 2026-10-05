@@ -81,3 +81,29 @@ The Chrome extension cannot reach this machine's localhost, so verification used
 
 - `review_status` values in use are `ai_draft` and `ai_verified`. Both are shown as "pending scholar review". If a human review status is introduced, use a value containing `scholar` or `human` (for example `scholar_reviewed`).
 - The `index` chunk is about 570 kB because the rulings are embedded as raw JSON. This is acceptable; it could be split per location later if needed.
+
+## Update 2026-10-05: Adam is a Christian learner
+
+### Ruling card
+- **"In plain words"** shows `newcomer_explainer` right under the verdict.
+- **"Common ground with Christianity"** appears in a soft-blue panel. It shows `common_ground`:
+  - the summary
+  - the Bible verse in the UI language (Van Dyck in Arabic, KJV in English), linked to `source_url_ar` or `source_url` to match
+  - the differences
+  - the translation note
+- When displayed, unmatched quotation marks are dropped. The data itself is untouched.
+- Each section is hidden when its field is missing or empty.
+
+### End screen
+- "What Adam learned" uses `end.summary_points` plus the completed topics, each with the first sentence of its plain-words explainer.
+- "A topic to explore next" picks an entry from `end.next_topics` based on the theme the player explored most (`THEMES[...].nextTopic` in config.js), and also offers any situation the player hasn't explored yet.
+- The mosque or Islamic-center referral (`end.referral_*`) has a button that searches for "mosque open house near me". The link contains only that fixed text.
+- The game never asks about or stores the player's beliefs.
+
+### Other changes
+- **Player and scenes:**
+  - `PLAYER` in config.js holds Adam Reed's look.
+  - A scene can return `playerLook`, which is merged over it for that scene only.
+  - New `makeNPC` option `jacket`: an open coat with no tie.
+  - NPCs can have `stations` (documented in the README).
+- **Labels:** `ui_strings.json` keys are mapped with fallbacks. `UI_MAP` in i18n.js accepts several candidate names for each key.

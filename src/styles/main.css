@@ -138,6 +138,15 @@ html[lang='ar'] .line.narration .line-text { font-style: normal; color: #d3ddd8;
   .madhahib .tabpanel { min-width: 0; overflow-wrap: anywhere; display: block; background: rgba(255, 255, 255, 0.04); border: 1px solid var(--line); border-radius: 12px; padding: 12px; }
   .madhahib .madhhab-name { display: block; }
 }
+.rc-plain { margin-top: 8px; padding: 6px 16px 10px; border-radius: var(--radius); background: rgba(233, 185, 73, 0.1); border: 1px solid rgba(233, 185, 73, 0.4); }
+.rc-plain .plain { font-size: 1.1rem; }
+.rc-common { margin-top: 10px; padding: 6px 16px 12px; border-radius: var(--radius); background: rgba(110, 160, 220, 0.12); border: 1px solid rgba(140, 180, 230, 0.45); }
+.rc-common .rc-h { color: #a9cdf5 !important; }
+.rc-sub { font-family: var(--font-head); font-size: 0.92rem; color: #cfe2f7; margin: 0.8em 0 0.3em; }
+.bible-verse { margin: 0 0 10px; padding: 10px 14px; border-radius: 12px; background: rgba(255, 255, 255, 0.05); border-inline-start: 4px solid #8fb8e6; }
+.bible-text { margin: 0; font-family: var(--font-hadith); font-size: 1.12rem; line-height: 1.9; }
+.bible-text[lang='en'] { font-family: Georgia, 'Times New Roman', serif; font-size: 1.02rem; font-style: italic; }
+.cg-diff p { color: #e3ebf3; }
 .council { padding: 10px 14px; border-radius: 12px; background: rgba(255, 255, 255, 0.04); border: 1px solid var(--line); margin-bottom: 8px; }
 .rc-list { margin: 0.2em 0; padding-inline-start: 1.3em; line-height: 1.85; }
 .rc-scholar { margin-top: 10px; padding: 6px 16px 10px; border-radius: var(--radius); background: rgba(92, 196, 168, 0.1); border: 1px solid rgba(92, 196, 168, 0.45); }
@@ -236,3 +245,12 @@ body.touch .touch-controls { display: block; }
 }
 /* Phase 3 QA: gameplay toasts and the HUD must not cover full-screen screens (start, summary) */
 #ui:has(> .overlay-screen:not(.leaving)) :is(.toasts, .hud) { display: none; }
+
+/* ---------- end screen: learned / next topic / learn more */
+.topic-title small.topic-plain { display: block; color: var(--muted); font-size: 0.86rem; line-height: 1.6; margin-top: 2px; }
+.notice.next-topic, .notice.learn-more { max-width: 680px; margin: 1.2rem auto 0; text-align: start; }
+.notice.learn-more { border-color: rgba(140, 180, 230, 0.5); background: rgba(110, 160, 220, 0.1); }
+.next-title { font-weight: 700; font-size: 1.08rem; margin: 0.2em 0 !important; }
+.learn-more a.src-link { display: inline-flex; align-items: center; min-height: 44px; padding: 0.55em 1.1em; border-radius: 999px; background: #8fb8e6; color: #0d2236; font-weight: 700; font-size: 1rem; text-decoration: none; }
+.learned-points { max-width: 680px; margin: 0 auto 1rem; text-align: start; }
+.bible-note { margin-top: 4px !important; }

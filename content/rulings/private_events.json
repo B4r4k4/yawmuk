@@ -7,8 +7,8 @@
       "en": "A Muslim Friend's Wedding: Mahr, Walima, Announcement and Music"
     },
     "question": {
-      "ar": "صديق آدم «يوسف» يتزوج. ما الذي يجب في المهر والوليمة؟ وهل يجوز الدف والغناء؟ وما حكم المعازف (فرقة موسيقية/DJ)؟ وماذا يفعل آدم إن كان في الحفل منكرات كالخمر أو الاختلاط الماجن؟",
-      "en": "Adam's friend Yusuf is getting married. What is required regarding mahr and walima? Is the daff and singing allowed? What about musical instruments (a band/DJ)? And what should Adam do if the party includes wrongdoing such as alcohol or indecent mixing?"
+      "ar": "ماذا يعلّم الإسلام عن الزواج وحفله: ما الواجب في المهر والوليمة؟ وهل يجوز الدف والغناء؟ وما حكم المعازف (فرقة موسيقية/DJ)؟ وماذا يفعل المسلم المدعو إن كان في الحفل منكرات كالخمر أو الاختلاط الماجن؟",
+      "en": "What does Islam teach about a wedding and its celebration: what is required regarding mahr and walima? Are the daff and singing allowed? What about musical instruments (a band/DJ)? And what should a Muslim guest do if the party includes wrongdoing such as alcohol or indecent mixing?"
     },
     "verdict": "depends",
     "summary": {
@@ -188,7 +188,39 @@
     },
     "confidence": "medium",
     "review_status": "ai_draft",
-    "notes_for_reviewer": "نصوص الأحاديث من sunnah.com حرفياً. مواقف المذاهب وأرقام الصفحات منقولة من الموسوعة الفقهية بالدرر السنية (feqhia/4388، 4395، 4398، 4423، 4428، 4430) ولم نطابقها في المطبوعات. نسبة «إجابة الدعوة سنة» لكثير من الحنفية تحتاج تأكيداً (الدرر نقلت الوجوب عن بعض الحنفية فقط). حديث البخاري 5590 أوردناه بالصيغة المعلّقة كما في الصحيح؛ يُرجى أن يراجع المحدث المراجع عبارة الحكم. موقف القرضاوي وابن عاشور وغيرهما في الموسيقى لم نُدرجه لعدم مطالعة مصادرهم. الإشارة إلى رخصة الزواج المدني في أوهايو معلومة عامة (marriage license من probate court) لم نوثقها بمصدر رسمي.\n\n[تدقيق المرحلة 1 — 2026-10-05] يبقى ai_draft: (1) نسبة «إجابة الدعوة سنة عند كثير من الحنفية» و«الدف يكره تحريماً للرجال» عند الحنفية لم تُتحقق من نص معتمد. (2) فتوى دار الإفتاء المصرية 11981 في الموسيقى لم أفتحها. (3) تعارض مع السيناريو: الخيار b (البقاء حتى النهاية مع رقص مختلط وشرب في الموقف) موسوم acceptable، بينما ينص الحكم وأقوال المذاهب على الانصراف عند منكر لا يُقدر على تغييره. الأحاديث كلها اجتازت الفحص الآلي."
+    "notes_for_reviewer": "نصوص الأحاديث من sunnah.com حرفياً. مواقف المذاهب وأرقام الصفحات منقولة من الموسوعة الفقهية بالدرر السنية (feqhia/4388، 4395، 4398، 4423، 4428، 4430) ولم نطابقها في المطبوعات. نسبة «إجابة الدعوة سنة» لكثير من الحنفية تحتاج تأكيداً (الدرر نقلت الوجوب عن بعض الحنفية فقط). حديث البخاري 5590 أوردناه بالصيغة المعلّقة كما في الصحيح؛ يُرجى أن يراجع المحدث المراجع عبارة الحكم. موقف القرضاوي وابن عاشور وغيرهما في الموسيقى لم نُدرجه لعدم مطالعة مصادرهم. الإشارة إلى رخصة الزواج المدني في أوهايو معلومة عامة (marriage license من probate court) لم نوثقها بمصدر رسمي.\n\n[تدقيق المرحلة 1 — 2026-10-05] يبقى ai_draft: (1) نسبة «إجابة الدعوة سنة عند كثير من الحنفية» و«الدف يكره تحريماً للرجال» عند الحنفية لم تُتحقق من نص معتمد. (2) فتوى دار الإفتاء المصرية 11981 في الموسيقى لم أفتحها. (3) تعارض مع السيناريو: الخيار b (البقاء حتى النهاية مع رقص مختلط وشرب في الموقف) موسوم acceptable، بينما ينص الحكم وأقوال المذاهب على الانصراف عند منكر لا يُقدر على تغييره. الأحاديث كلها اجتازت الفحص الآلي.",
+    "newcomer_explainer": {
+      "ar": "الزواج في الإسلام عقد وسنّة: يقدّم الزوج لزوجته مهراً هو حق خالص لها (النساء 4)، وتُقام وليمة العرس، وإجابة دعوتها واجبة عند الجمهور ما لم يكن فيها منكر لا يُقدر على تغييره. ويُعلَن الزواج ولا يُخفى، وقد قال النبي ﷺ: «فصل ما بين الحرام والحلال الدف والصوت» (الترمذي 1088). أما المعازف غير الدف ففيها خلاف: حرّمتها المذاهب الأربعة، وأجازها بشروط ابن حزم وبعض المتأخرين ودار الإفتاء المصرية. وقد ذمّ النبي ﷺ الوليمة التي يُدعى إليها الأغنياء ويُترك الفقراء (البخاري 5177).",
+      "en": "In Islam marriage is a contract and a prophetic sunnah: the groom gives the bride a mahr (marriage gift) that belongs to her alone (4:4), a walima (wedding feast) is held, and accepting the invitation is obligatory for guests according to the majority unless it involves wrongdoing one cannot change. The marriage is to be announced publicly, and the Prophet ﷺ said that what distinguishes the lawful from the unlawful is the daff (frame drum) and the voice (Tirmidhi 1088). Instruments other than the daff are disputed: the four classical schools prohibit them, while Ibn Hazm, some later scholars and Egypt's Dar al-Ifta permit them with conditions. The Prophet ﷺ also criticised a wedding feast to which the rich are invited and the poor left out (Bukhari 5177)."
+    },
+    "common_ground": {
+      "summary": {
+        "ar": "المسيحيون أيضاً يرون «الزواج مكرّماً»، ويعلنون الزواج علناً (تاريخياً بإذاعة إعلانات الزواج في الكنيسة)، والمسيح علّم أن يُدعى الفقراء إلى الوليمة، وهذا قريب من الحديث الذي يذم وليمة تُقصي الفقراء.",
+        "en": "Christians too hold that \"marriage is honourable\" and announce marriages publicly (historically through the reading of banns in church), and Jesus taught that the poor should be invited to one's feast — close to the hadith that criticises a wedding feast that leaves out the poor."
+      },
+      "bible": [
+        {
+          "ref_en": "Hebrews 13:4",
+          "ref_ar": "عبرانيين 13: 4",
+          "text_en": "Marriage is honourable in all, and the bed undefiled: but whoremongers and adulterers God will judge.",
+          "text_ar": "لِيَكُنِ ٱلزِّوَاجُ مُكَرَّمًا عِنْدَ كُلِّ وَاحِدٍ، وَٱلْمَضْجَعُ غَيْرَ نَجِسٍ. وَأَمَّا ٱلْعَاهِرُونَ وَٱلزُّنَاةُ فَسَيَدِينُهُمُ ٱللهُ.",
+          "source_url": "https://bible-api.com/Hebrews+13:4?translation=kjv",
+          "source_url_ar": "https://api.getbible.net/v2/arabicsv/58/13.json"
+        },
+        {
+          "ref_en": "Luke 14:13",
+          "ref_ar": "لوقا 14: 13",
+          "text_en": "But when thou makest a feast, call the poor, the maimed, the lame, the blind:",
+          "text_ar": "بَلْ إِذَا صَنَعْتَ ضِيَافَةً فَٱدْعُ: ٱلْمَسَاكِينَ، ٱلْجُدْعَ، ٱلْعُرْجَ، ٱلْعُمْيَ،",
+          "source_url": "https://bible-api.com/Luke+14:13?translation=kjv",
+          "source_url_ar": "https://api.getbible.net/v2/arabicsv/42/14.json"
+        }
+      ],
+      "differences": {
+        "ar": "الزواج في كثير من التقاليد المسيحية سرّ كنسي أو عهد مقدس يُعقد في الكنيسة، أما في الإسلام فهو عقد بشهود لا يشترط أن يكون في المسجد؛ والمهر لا نظير مباشراً له في أغلب الأعراس المسيحية المعاصرة؛ والموسيقى بالآلات، الشائعة في الأعراس المسيحية، مسألة خلافية بين علماء المسلمين.",
+        "en": "In many Christian traditions marriage is a sacrament or holy covenant made in church, whereas in Islam it is a contract with witnesses that need not take place in a mosque; the mahr has no direct counterpart in most modern Christian weddings; and instrumental music, common at Christian weddings, is a matter of scholarly debate in Islam."
+      }
+    }
   },
   {
     "id": "private_events.neighbor_funeral",
@@ -198,8 +230,8 @@
       "en": "A Non-Muslim Neighbor's Death: Condolence, Funeral, Prayer"
     },
     "question": {
-      "ar": "توفي جار آدم المسن «مستر جونسون». هل يعزي آدم زوجته وأبناءه؟ هل يحضر الجنازة في الكنيسة أو المقبرة؟ وبماذا يدعو؟",
-      "en": "Adam's elderly neighbor, Mr. Johnson, has died. Should Adam console his widow and children? May he attend the funeral at the church or cemetery? And what may he pray?"
+      "ar": "إذا توفي جار غير مسلم، فهل يجوز للمسلم أن يعزّي أسرته؟ وهل يحضر الجنازة في الكنيسة أو المقبرة؟ وبماذا يدعو؟",
+      "en": "When a non-Muslim neighbor dies, may a Muslim console the family? May he attend the funeral at the church or cemetery? And what may he pray?"
     },
     "verdict": "mubah",
     "summary": {
@@ -355,7 +387,39 @@
     },
     "confidence": "medium",
     "review_status": "ai_verified",
-    "notes_for_reviewer": "مواقف المذاهب منقولة من الموسوعة الفقهية بالدرر السنية (feqhia/2070، aadab/1593) ومن بحث «حكم تعزية الكافر» (saaid.org/fatwa/f56.htm) الذي نقل نص المغني وروضة الطالبين؛ لم نطابق المطبوعات. اختلاف ترقيم المغني (3/486 مقابل 2/406) سببه اختلاف الطبعات. نسبة المنع إلى متأخري الحنابلة (الإقناع/المنتهى) لم نتحقق منها نصاً — يجب مراجعتها أو حذفها. صيغة «أخلف الله عليك ولا نقص عددك» قيدها بعض الفقهاء بالذمي، وتحتاج تعليقاً من المراجع لمناسبتها للسياق الأمريكي. عبارة «Rest in peace» مسألة اجتهادية في مدلولها العرفي؛ صغناها احتياطاً.\n\n[تدقيق المرحلة 1 — 2026-10-05] أُكّد أن المعتمد عند متأخري الحنابلة تحريم تعزية الكافر («ويحرم تهنئتهم وتعزيتهم وعيادتهم» — الإقناع/كشاف القناع، والإنصاف) فأُزيل وصف «لم نتحقق» وأُضيف ذلك إلى الملخص توازناً. فتوى AMJA 78565 تحققتُ منها مباشرة (د. مائن خالد القضاة، 14/4/2009) وصُحّح اسم المفتي. الحكم «mubah» يمثل قول الجمهور؛ للمراجع أن ينظر هل «disputed» أدق. نجحت الفحوص الآلية."
+    "notes_for_reviewer": "مواقف المذاهب منقولة من الموسوعة الفقهية بالدرر السنية (feqhia/2070، aadab/1593) ومن بحث «حكم تعزية الكافر» (saaid.org/fatwa/f56.htm) الذي نقل نص المغني وروضة الطالبين؛ لم نطابق المطبوعات. اختلاف ترقيم المغني (3/486 مقابل 2/406) سببه اختلاف الطبعات. نسبة المنع إلى متأخري الحنابلة (الإقناع/المنتهى) لم نتحقق منها نصاً — يجب مراجعتها أو حذفها. صيغة «أخلف الله عليك ولا نقص عددك» قيدها بعض الفقهاء بالذمي، وتحتاج تعليقاً من المراجع لمناسبتها للسياق الأمريكي. عبارة «Rest in peace» مسألة اجتهادية في مدلولها العرفي؛ صغناها احتياطاً.\n\n[تدقيق المرحلة 1 — 2026-10-05] أُكّد أن المعتمد عند متأخري الحنابلة تحريم تعزية الكافر («ويحرم تهنئتهم وتعزيتهم وعيادتهم» — الإقناع/كشاف القناع، والإنصاف) فأُزيل وصف «لم نتحقق» وأُضيف ذلك إلى الملخص توازناً. فتوى AMJA 78565 تحققتُ منها مباشرة (د. مائن خالد القضاة، 14/4/2009) وصُحّح اسم المفتي. الحكم «mubah» يمثل قول الجمهور؛ للمراجع أن ينظر هل «disputed» أدق. نجحت الفحوص الآلية.",
+    "newcomer_explainer": {
+      "ar": "يجيز جمهور العلماء للمسلم تعزية جاره غير المسلم ومواساة أهله، استئناساً بآية البر (الممتحنة 8)، وبعيادة النبي ﷺ لغلام يهودي مريض (البخاري 1356)، وقيامه لجنازة يهودي مرّت به وقوله: «أليست نفساً؟» (البخاري 1312)؛ ومنع ذلك متأخرو الحنابلة. وأجاز معاصرون حضور الجنازة احتراماً دون مشاركة في طقوسها الدينية. ويعتقد المسلمون أن الاستغفار بعد الموت خاص بمن مات مسلماً (التوبة 113)، ولذلك يدعو الصديق المسلم لأهل الفقيد بالصبر والعوض والخير.",
+      "en": "The majority of scholars allow a Muslim to console a non-Muslim neighbour and comfort the family, drawing on the verse on kindness (60:8), on the Prophet ﷺ visiting a sick Jewish boy (Bukhari 1356), and on his standing up when a Jewish funeral passed, saying \"Is it not a soul?\" (Bukhari 1312); the later Hanbali relied-upon view disallowed consoling. Contemporary scholars allow attending the funeral out of respect without joining its religious rites. Muslims believe that prayers for God's forgiveness after death are for those who died as Muslims (9:113), so a Muslim friend will instead pray for the family's patience, comfort and good."
+    },
+    "common_ground": {
+      "summary": {
+        "ar": "مواساة المحزونين أرض مشتركة: فالكتاب المقدس يقول «بكاءً مع الباكين»، ويقول إن الذهاب إلى بيت النوح خير من الذهاب إلى بيت الوليمة؛ وحضور الجار المسلم الجنازة يصدر عن الرحمة نفسها.",
+        "en": "Comforting the bereaved is shared ground: the Bible says \"weep with them that weep\" and that it is better to go to the house of mourning than to the house of feasting; a Muslim neighbour attending the funeral is acting from that same compassion."
+      },
+      "bible": [
+        {
+          "ref_en": "Romans 12:15",
+          "ref_ar": "رومية 12: 15",
+          "text_en": "Rejoice with them that do rejoice, and weep with them that weep.",
+          "text_ar": "فَرَحًا مَعَ ٱلْفَرِحِينَ وَبُكَاءً مَعَ ٱلْبَاكِينَ.",
+          "source_url": "https://bible-api.com/Romans+12:15?translation=kjv",
+          "source_url_ar": "https://api.getbible.net/v2/arabicsv/45/12.json"
+        },
+        {
+          "ref_en": "Ecclesiastes 7:2",
+          "ref_ar": "جامعة 7: 2",
+          "text_en": "It is better to go to the house of mourning, than to go to the house of feasting: for that is the end of all men; and the living will lay it to his heart.",
+          "text_ar": "اَلذَّهَابُ إِلَى بَيْتِ ٱلنَّوْحِ خَيْرٌ مِنَ ٱلذَّهَابِ إِلَى بَيْتِ ٱلْوَلِيمَةِ، لِأَنَّ ذَاكَ نِهَايَةُ كُلِّ إِنْسَانٍ، وَٱلْحَيُّ يَضَعُهُ فِي قَلْبِهِ.",
+          "source_url": "https://bible-api.com/Ecclesiastes+7:2?translation=kjv",
+          "source_url_ar": "https://api.getbible.net/v2/arabicsv/21/7.json"
+        }
+      ],
+      "differences": {
+        "ar": "يصلّي كثير من المسيحيين للميت أو يستودعونه الله في الجنازة، أما الحاضر المسلم فيلتزم الاحترام والهدوء أثناء الطقوس ويدعو لأهل الفقيد لا بالمغفرة للميت. وهذا الفرق نابع من الاعتقاد، لا من نقص في المحبة أو الاحترام.",
+        "en": "Many Christians pray for the deceased or commend them to God at the funeral, while a Muslim attending stays respectful and quiet during the rites and prays for the family rather than for the deceased's forgiveness. This difference comes from belief, not from any lack of love or respect."
+      }
+    }
   },
   {
     "id": "private_events.gifts_birthday",
@@ -365,8 +429,8 @@
       "en": "Gifts and Birthday Parties"
     },
     "question": {
-      "ar": "أهدت زميلة غير مسلمة لآدم سلة فيها شوكولاتة وزجاجة نبيذ، ودعاه جاره لحفل عيد ميلاد ابنه الخامس. هل يقبل الهدية؟ وماذا يفعل بالنبيذ؟ وهل يحضر الحفل؟",
-      "en": "A non-Muslim coworker gives Adam a basket with chocolate and a bottle of wine, and his neighbor invites him to his son's fifth birthday party. Should he accept the gift? What about the wine? And may he attend the party?"
+      "ar": "هل يجوز للمسلم أن يقبل هدية من زميل أو جار غير مسلم، ولو كانت فيها زجاجة نبيذ؟ وماذا يفعل بالنبيذ؟ وهل يحضر حفل عيد ميلاد طفل جاره؟",
+      "en": "May a Muslim accept a gift from a non-Muslim coworker or neighbor, even one that includes a bottle of wine? What should he do with the wine? And may he attend a neighbor's child's birthday party?"
     },
     "verdict": "depends",
     "summary": {
@@ -534,6 +598,30 @@
     },
     "confidence": "medium",
     "review_status": "ai_draft",
-    "notes_for_reviewer": "حديث المقوقس ليس في الكتب الستة؛ نصه منقول من الدرر السنية (حكم الهيثمي: رجاله رجال الصحيح)، والترجمة الإنجليزية لها من عملنا. حديث «تهادوا تحابوا» مختلف في درجته. نسبة الجمع بين حديث عياض وأحاديث القبول إلى ابن حجر لم نطابقها في فتح الباري — الترمذي نفسه ذكر احتمال النسخ (منقول حرفياً ضمن نص الحديث). مواقف المذاهب هنا عامة وغير مدعومة بنصوص معتمدة لكل مذهب في قبول هدية غير المسلم تحديداً — تحتاج إثراء من المراجع (مثلاً: شرح السير الكبير للسرخسي، المغني). مسألة «إراقة الخمر المهداة» إرشاد عملي يحتاج تأكيد المراجع. إشارة «هدايا العمال» تربط بموقف work.honesty_gifts.\n\n[تدقيق المرحلة 1 — 2026-10-05] تحققتُ من فتوى AMJA 22801 (د. صلاح الصاوي، 6/8/2007: لا يجوز الاحتفال بأعياد الميلاد ولا إجابة الدعوة إليها) ومن نص حديث المقوقس عند الهيثمي (مجمع الزوائد 4/155) ومن «تهادوا تحابوا» (الأدب المفرد 594) يدوياً. صُحّح اسم المفتي «د. مائن خالد القضاة». يبقى ai_draft لأن خانات المذاهب عامة بلا نص معتمد في قبول هدية غير المسلم (يُقترح شرح السير الكبير للسرخسي والمغني)، ولأن صياغة السيناريو للخيار best («keep the wine for yourself — I know it's your favorite!») قد تُفهم إقراراً بشرب الخمر — انظر التقرير."
+    "notes_for_reviewer": "حديث المقوقس ليس في الكتب الستة؛ نصه منقول من الدرر السنية (حكم الهيثمي: رجاله رجال الصحيح)، والترجمة الإنجليزية لها من عملنا. حديث «تهادوا تحابوا» مختلف في درجته. نسبة الجمع بين حديث عياض وأحاديث القبول إلى ابن حجر لم نطابقها في فتح الباري — الترمذي نفسه ذكر احتمال النسخ (منقول حرفياً ضمن نص الحديث). مواقف المذاهب هنا عامة وغير مدعومة بنصوص معتمدة لكل مذهب في قبول هدية غير المسلم تحديداً — تحتاج إثراء من المراجع (مثلاً: شرح السير الكبير للسرخسي، المغني). مسألة «إراقة الخمر المهداة» إرشاد عملي يحتاج تأكيد المراجع. إشارة «هدايا العمال» تربط بموقف work.honesty_gifts.\n\n[تدقيق المرحلة 1 — 2026-10-05] تحققتُ من فتوى AMJA 22801 (د. صلاح الصاوي، 6/8/2007: لا يجوز الاحتفال بأعياد الميلاد ولا إجابة الدعوة إليها) ومن نص حديث المقوقس عند الهيثمي (مجمع الزوائد 4/155) ومن «تهادوا تحابوا» (الأدب المفرد 594) يدوياً. صُحّح اسم المفتي «د. مائن خالد القضاة». يبقى ai_draft لأن خانات المذاهب عامة بلا نص معتمد في قبول هدية غير المسلم (يُقترح شرح السير الكبير للسرخسي والمغني)، ولأن صياغة السيناريو للخيار best («keep the wine for yourself — I know it's your favorite!») قد تُفهم إقراراً بشرب الخمر — انظر التقرير.",
+    "newcomer_explainer": {
+      "ar": "يحث الإسلام على تبادل الهدايا: «تهادوا تحابوا» (الأدب المفرد 594)، وقد قبل النبي ﷺ هدايا من غير المسلمين، كهدية ملك أيلة (البخاري 1481). أما الهدية التي يحرم الانتفاع بها كزجاجة خمر فيُعتذر عنها بلطف، ولا تُقبل ولا تُهدى لغيره. وحضور حفل عيد ميلاد طفل الجار مختلف فيه: أجازه بعض المعاصرين باعتباره عادة اجتماعية لا عبادة، ومنعه آخرون كفتوى لمجمع فقهاء الشريعة بأمريكا (AMJA). وفي كل الأحوال يحرص المسلم على دوام المودة مع جيرانه.",
+      "en": "Islam encourages exchanging gifts — \"give gifts and you will love one another\" (al-Adab al-Mufrad 594) — and the Prophet ﷺ accepted gifts from non-Muslims, such as the King of Ayla (Bukhari 1481). A gift whose use is forbidden, like a bottle of wine, is gently declined rather than accepted or passed on. Attending a neighbour's child's birthday party is debated: some contemporary scholars allow it as a social custom rather than worship, while others, such as an AMJA fatwa, do not. Either way, Muslims are encouraged to keep warm relations with their neighbours."
+    },
+    "common_ground": {
+      "summary": {
+        "ar": "الكرم أرض مشتركة: فالمسيح علّم أن «مغبوط هو العطاء أكثر من الأخذ»، وفي التقليدين معاً الهدية طريق إلى المحبة بين الجيران.",
+        "en": "Generosity is shared ground: Jesus taught that \"it is more blessed to give than to receive\", and in both traditions gifts are a way to build love between neighbours."
+      },
+      "bible": [
+        {
+          "ref_en": "Acts 20:35",
+          "ref_ar": "أعمال الرسل 20: 35",
+          "text_en": "I have shewed you all things, how that so labouring ye ought to support the weak, and to remember the words of the Lord Jesus, how he said, It is more blessed to give than to receive.",
+          "text_ar": "فِي كُلِّ شَيْءٍ أَرَيْتُكُمْ أَنَّهُ هَكَذَا يَنْبَغِي أَنَّكُمْ تَتْعَبُونَ وَتَعْضُدُونَ ٱلضُّعَفَاءَ، مُتَذَكِّرِينَ كَلِمَاتِ ٱلرَّبِّ يَسُوعَ أَنَّهُ قَالَ: مَغْبُوطٌ هُوَ ٱلْعَطَاءُ أَكْثَرُ مِنَ ٱلْأَخْذِ».",
+          "source_url": "https://bible-api.com/Acts+20:35?translation=kjv",
+          "source_url_ar": "https://api.getbible.net/v2/arabicsv/44/20.json"
+        }
+      ],
+      "differences": {
+        "ar": "يحتفل أغلب المسيحيين بأعياد الميلاد الشخصية بلا تحفظ، أما في الإسلام فالمسألة خلافية. والصديق المسلم الذي يعتذر عن هدية فيها خمر يتبع دينه ولا يرفض صاحب الهدية.",
+        "en": "Most Christians celebrate birthdays freely, while in Islam the question is debated. A Muslim friend who declines a gift of wine is following his faith, not rejecting the giver."
+      }
+    }
   }
 ]

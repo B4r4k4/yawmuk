@@ -95,12 +95,14 @@ export function buildInstancers(THREE, group, tex, own) {
   const geos = {
     boxB: own(new THREE.BoxGeometry(1, 1, 1).translate(0, 0.5, 0), 'geos'),
     boxC: own(new THREE.BoxGeometry(1, 1, 1), 'geos'),
-    cylB: own(new THREE.CylinderGeometry(1, 1, 1, 14).translate(0, 0.5, 0), 'geos'),
+    cylB: own(new THREE.CylinderGeometry(1, 1, 1, 12).translate(0, 0.5, 0), 'geos'),
     cylC: own(new THREE.CylinderGeometry(1, 1, 1, 4), 'geos'),
     discB: own(new THREE.CylinderGeometry(1, 1, 1, 40).translate(0, 0.5, 0), 'geos'),
+    discLo: own(new THREE.CylinderGeometry(1, 1, 1, 10).translate(0, 0.5, 0), 'geos'),
     coneB: own(new THREE.ConeGeometry(1, 1, 8).translate(0, 0.5, 0), 'geos'),
     ico: own(new THREE.IcosahedronGeometry(1, 1), 'geos'),
-    sph: own(new THREE.SphereGeometry(1, 14, 10), 'geos'),
+    icoLo: own(new THREE.IcosahedronGeometry(1, 0), 'geos'),
+    sph: own(new THREE.SphereGeometry(1, 12, 8), 'geos'),
     limb: own(new THREE.CylinderGeometry(0.55, 1, 1, 6).translate(0, 0.5, 0), 'geos'),
     prism: own(prismGeometry(THREE, 2.4 / 3.4), 'geos')
   };
@@ -145,16 +147,23 @@ export function buildInstancers(THREE, group, tex, own) {
     cslab: batch(geos.boxC, std()),
     ccyl: batch(geos.cylB, std()),
     ccone: batch(geos.coneB, std({ side: THREE.DoubleSide, flatShading: true })),
-    csph: batch(geos.ico, std({ flatShading: true })),
     flat: batch(geos.boxB, std({ roughness: 0.95 }), { cast: false }),
-    disc: batch(geos.discB, std({ roughness: 0.95 }), { cast: false }),
-    glow: batch(geos.ico, basic(), { cast: false, receive: false }),
+    glow: batch(geos.icoLo, basic(), { cast: false, receive: false }),
     glowBox: batch(geos.boxB, basic(), { cast: false, receive: false }),
     bodies: batch(geos.boxB, std({ map: tex.siding })),
     gables: batch(geos.prism, std({ map: tex.siding, flatShading: true })),
     glass: batch(geos.boxB, std({ roughness: 0.15, metalness: 0.2, emissive: '#1d2a36', emissiveIntensity: 0.4 }), { defColor: '#7d97ad' }),
     wood: batch(geos.limb, std({ flatShading: true }), { defColor: '#5d4632' })
   };
+
+  // spheres: small ones (blooms, knobs, picket caps, eyes) use a 20-triangle icosahedron, big ones (shrubs) 80
+  const sphHi = batch(geos.ico, std({ flatShading: true }));
+  const sphLo = batch(geos.icoLo, std({ flatShading: true }));
+  I.csph = { add: (x, y, z, sx, sy, sz, o) => (Math.max(sx, sy, sz) < 0.2 ? sphLo : sphHi).add(x, y, z, sx, sy, sz, o) };
+  // discs: the road circle / ring sidewalk are smooth (40 segments), small snow patches use 10
+  const discHi = batch(geos.discB, std({ roughness: 0.95 }), { cast: false });
+  const discLo = batch(geos.discLo, std({ roughness: 0.95 }), { cast: false });
+  I.disc = { add: (x, y, z, sx, sy, sz, o) => (Math.max(sx, sz) < 3 ? discLo : discHi).add(x, y, z, sx, sy, sz, o) };
 
   // thin cylinders between two points (wires, strings, bunting lines)
   const lineB = batch(geos.cylC, std({ roughness: 0.6 }), { cast: false });

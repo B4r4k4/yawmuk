@@ -41,3 +41,28 @@ Contents: night-wet asphalt/sidewalk/lot (low roughness), lane paint, curbs, man
 ## Notes for the supervisor
 - Some canvas textures contain short English text: "JACKPOT $900 MILLION" (quoted in the script's setup) and the fuel prices. hotspots.md says not to put text in the scene except through `makeLabel`. Remove them if that rule is strict.
 - `src/engine/README.md` did not exist while this scene was being written. Only the documented contract fields plus `object` and `markerHeight` (both read by `sceneManager.js`) were used.
+
+---
+## Update (2026-10-05): Adam is now a Christian learning about Islam. Street changes per hotspots.md "CHANGES FOR SCENE AGENTS"
+Re-read the scene first, so QA's Phase 3 changes are kept: the `cameraOccluders` proxies and the 3 point lights.
+- **NPCs**
+  - `omar` sits on the bus bench, `[-9.35, -0.46, 3.02]`, yaw π, `animate:false`, in a seated pose. He holds the brown wallet with a blue card peeking out. The bench wallet is gone; a small receipt lies there instead.
+  - `tariq` (grey hair, moustache, red polo, 1.74 m) replaces `bg_raj` behind the counter.
+  - `yusuf` (long brown coat, light beard) replaces `denise` at the e-bike.
+  - `bg_bilal` is removed.
+  - The officer is now background: `bg_officer_daniels`, same place, same look.
+- **Store**
+  - Removed: the scratch-off case, the ticket machine, the ticket dispenser and the indoor jackpot screen. The scratch-off texture was deleted.
+  - Added: a tea and snacks rack on the counter and a hot-tea kettle with paper cups. There is a card terminal next to the register.
+  - The shelf behind the counter now holds tea boxes (new `T.tea` canvas texture).
+  - The cooler shows soft drinks and water only.
+  - Optional bilingual `makeLabel` sign "No lottery sold here" on the back wall.
+  - Hotspot label is now "Tariq's counter".
+- **Lottery billboard:** two posts and a frame, with the pulsing gold "JACKPOT $900 MILLION" panel, flood lamps and a gold light pool. It stands at `[-4, 4.5, 15.3]` on the far sidewalk, facing the lot. The spec's z = 9 is the middle of the road. The tree that was there was moved.
+- `playerLook: { jacket: '#1f2d4d' }`. It shows on Adam in the screenshots.
+- Hotspot ids, spawn and exit are unchanged. There are still 3 point lights.
+- **Verification**
+  - `npm run build` passes.
+  - `npm test` passes, 178/178.
+  - Headless Chrome run (puppeteer-core, d3d11): not the placeholder; NPCs `omar, tariq, yusuf, bg_officer_daniels`; all 3 hotspots come from the scene; 116 meshes, 10k triangles, 3 point lights; no console errors.
+  - Screenshots are in `docs/phase-3/screenshots/street-v2/`.

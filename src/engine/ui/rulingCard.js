@@ -89,6 +89,56 @@ function contemporaryBlock(c) {
     link(c.source_url, t('source')));
 }
 
+/** "In plain words" — newcomer_explainer {ar,en}. Hidden when absent. */
+function plainWordsBlock(r) {
+  const txt = tr(r.newcomer_explainer);
+  if (!nonEmpty(txt)) return null;
+  return h('section', { class: 'rc-section rc-plain' }, h('h3', { class: 'rc-h' }, t('plainWords')), h('p', { class: 'plain' }, txt));
+}
+
+/** Display-only cleanup: drop quotation marks that have no partner (some Van Dyck verses start a quote that
+ * closes in another verse). The data is never modified. */
+export function balanceQuotes(str) {
+  if (typeof str !== 'string') return str;
+  let out = str;
+  for (const [open, close] of [['«', '»'], ['“', '”']]) {
+    const o = (out.match(new RegExp(open, 'g')) || []).length, c = (out.match(new RegExp(close, 'g')) || []).length;
+    if (o === c) continue;
+    if (o > c) { let extra = o - c; while (extra-- > 0) { const i = out.lastIndexOf(open); out = out.slice(0, i) + out.slice(i + 1); } }
+    else { let extra = c - o; while (extra-- > 0) { const i = out.indexOf(close); out = out.slice(0, i) + out.slice(i + 1); } }
+  }
+  if (((out.match(/"/g) || []).length) % 2) { const i = out.trim().startsWith('"') ? out.indexOf('"') : out.lastIndexOf('"'); out = out.slice(0, i) + out.slice(i + 1); }
+  return out.trim();
+}
+
+/** One Bible citation: ref + verbatim text in the UI language (Van Dyck / KJV), other language as fallback. */
+function bibleBlock(b) {
+  const lang = getLang();
+  const ar = b.text_ar, en = b.text_en;
+  const raw = lang === 'ar' ? ar || en : en || ar;
+  const textLang = raw === ar ? 'ar' : 'en';
+  const text = balanceQuotes(raw);
+  const url = textLang === 'ar' ? b.source_url_ar || b.source_url : b.source_url || b.source_url_ar;
+  const ref = (lang === 'ar' ? b.ref_ar || b.ref_en : b.ref_en || b.ref_ar) || '';
+  return h('figure', { class: 'bible-verse' },
+    text ? h('blockquote', { class: 'bible-text', lang: textLang, dir: textLang === 'ar' ? 'rtl' : 'ltr' }, text) : h('p', { class: 'muted' }, t('notProvided')),
+    h('figcaption', { class: 'ref' }, iso(ref), textLang === 'ar' ? ' · Van Dyck' : ' · KJV', ' ', link(url, t('source'))));
+}
+
+/** Common ground with Christianity — summary, Bible verses, differences. Hidden when absent/empty. */
+function commonGroundBlock(r) {
+  const cg = r.common_ground;
+  if (!cg || typeof cg !== 'object') return null;
+  const summary = tr(cg.summary), diff = tr(cg.differences);
+  const verses = (Array.isArray(cg.bible) ? cg.bible : []).filter((b) => b && (b.text_ar || b.text_en));
+  if (!nonEmpty(summary) && !nonEmpty(diff) && !verses.length) return null;
+  return h('section', { class: 'rc-section rc-common', 'aria-label': t('commonGround') },
+    h('h3', { class: 'rc-h' }, t('commonGround')),
+    nonEmpty(summary) ? h('p', {}, summary) : null,
+    verses.length ? h('div', { class: 'bible' }, h('h4', { class: 'rc-sub' }, t('fromBible')), verses.map(bibleBlock), h('p', { class: 'ref bible-note' }, t('bibleNote'))) : null,
+    nonEmpty(diff) ? h('div', { class: 'cg-diff' }, h('h4', { class: 'rc-sub' }, t('differences')), h('p', {}, diff)) : null);
+}
+
 /** Build the ruling card element. ruling may be null -> "content pending". */
 export function renderRulingCard(ruling, rulingId) {
   if (!ruling) {
@@ -110,12 +160,14 @@ export function renderRulingCard(ruling, rulingId) {
       h('h2', { class: 'rc-title' }, tr(r.title) || r.id),
       h('div', { class: 'badges' }, verdictBadge(r.verdict), statusBadge(r.review_status), conf,
         r._fixture ? h('span', { class: 'badge fixture' }, t('fixtureBadge')) : null)),
+    plainWordsBlock(r),
     nonEmpty(tr(r.question)) ? section('question', h('p', { class: 'question' }, tr(r.question))) : null,
     nonEmpty(tr(r.summary)) ? section('summary', h('p', { class: 'summary' }, tr(r.summary))) : null,
     section('quran', (r.quran || []).filter(Boolean).map(quranBlock)),
     section('hadith', (r.hadith || []).filter(Boolean).map(hadithBlock)),
     r.madhahib ? section('madhahib', madhahibBlock(r.madhahib)) : null,
     section('contemporary', (r.contemporary || []).filter(Boolean).map(contemporaryBlock)),
+    commonGroundBlock(r),
     section('guidance', list(Array.isArray(guidance) ? guidance : guidance ? [guidance] : [])),
     section('alternatives', list(Array.isArray(alts) ? alts : alts ? [alts] : [])),
     nonEmpty(tr(r.refer_to_scholar_when)) ? h('section', { class: 'rc-section rc-scholar' }, h('h3', { class: 'rc-h' }, t('referScholar')), h('p', {}, tr(r.refer_to_scholar_when))) : null,

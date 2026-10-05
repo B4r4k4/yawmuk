@@ -1,0 +1,568 @@
+
+«يومك» verify — 2026-10-05T19:57:50.355Z
+rulings: 18 | checks: 281 | PASS 278 | WARN 3 | FAIL 0
+
+[PASS] quran-text         home.mortgage                      2:275
+      matches quran.com (orthographic marks normalised)
+[PASS] quran-translation  home.mortgage                      2:275
+      Sahih International
+[PASS] quran-text         home.credit_card                   2:275
+      matches quran.com (orthographic marks normalised)
+[PASS] quran-translation  home.credit_card                   2:275
+      Sahih International
+[PASS] quran-text         school.student_loan                2:275
+      matches quran.com (orthographic marks normalised)
+[PASS] quran-translation  school.student_loan                2:275
+      Sahih International
+[PASS] quran-text         work.retirement_401k               2:275
+      matches quran.com (orthographic marks normalised)
+[PASS] quran-translation  work.retirement_401k               2:275
+      Sahih International
+[PASS] quran-text         home.mortgage                      2:278
+      matches quran.com (orthographic marks normalised)
+[PASS] quran-translation  home.mortgage                      2:278
+      Sahih International
+[PASS] quran-text         home.credit_card                   2:278
+      matches quran.com (orthographic marks normalised)
+[PASS] quran-translation  home.credit_card                   2:278
+      Sahih International
+[PASS] quran-text         school.student_loan                2:278
+      matches quran.com (orthographic marks normalised)
+[PASS] quran-translation  school.student_loan                2:278
+      Sahih International
+[PASS] quran-text         work.retirement_401k               2:278
+      matches quran.com (orthographic marks normalised)
+[PASS] quran-translation  work.retirement_401k               2:278
+      Sahih International
+[PASS] quran-text         home.mortgage                      2:279
+      matches quran.com (orthographic marks normalised)
+[PASS] quran-translation  home.mortgage                      2:279
+      Sahih International
+[PASS] quran-text         home.credit_card                   2:279
+      matches quran.com (orthographic marks normalised)
+[PASS] quran-translation  home.credit_card                   2:279
+      Sahih International
+[PASS] quran-text         school.student_loan                2:279
+      matches quran.com (orthographic marks normalised)
+[PASS] quran-translation  school.student_loan                2:279
+      Sahih International
+[PASS] quran-text         home.food_ingredients              5:5
+      matches Tanzil quran-uthmani
+[PASS] quran-translation  home.food_ingredients              5:5
+      Sahih International
+[PASS] quran-text         home.food_ingredients              5:3
+      matches quran.com (orthographic marks normalised)
+[PASS] quran-translation  home.food_ingredients              5:3
+      Sahih International
+[PASS] quran-text         work.alcohol_pork_job              5:3
+      matches quran.com (orthographic marks normalised)
+[PASS] quran-translation  work.alcohol_pork_job              5:3
+      Sahih International
+[PASS] quran-text         home.food_ingredients              6:121
+      matches quran.com (orthographic marks normalised)
+[PASS] quran-translation  home.food_ingredients              6:121
+      Sahih International
+[PASS] quran-text         private_events.wedding             4:4
+      matches quran.com (orthographic marks normalised)
+[PASS] quran-translation  private_events.wedding             4:4
+      Sahih International
+[PASS] quran-text         private_events.neighbor_funeral    60:8
+      matches quran.com (orthographic marks normalised)
+[PASS] quran-translation  private_events.neighbor_funeral    60:8
+      Sahih International
+[PASS] quran-text         private_events.gifts_birthday      60:8
+      matches quran.com (orthographic marks normalised)
+[PASS] quran-translation  private_events.gifts_birthday      60:8
+      Sahih International
+[PASS] quran-text         public_events.holiday_greetings    60:8
+      matches quran.com (orthographic marks normalised)
+[PASS] quran-translation  public_events.holiday_greetings    60:8
+      Sahih International
+[PASS] quran-text         private_events.neighbor_funeral    9:113
+      matches quran.com (orthographic marks normalised)
+[PASS] quran-translation  private_events.neighbor_funeral    9:113
+      Sahih International
+[PASS] quran-text         public_events.holiday_greetings    25:72
+      matches quran.com (orthographic marks normalised)
+[PASS] quran-translation  public_events.holiday_greetings    25:72
+      Sahih International
+[PASS] quran-text         public_events.holiday_greetings    4:86
+      matches quran.com (orthographic marks normalised)
+[PASS] quran-translation  public_events.holiday_greetings    4:86
+      Sahih International
+[PASS] quran-text         public_events.alcohol_table        5:90
+      matches quran.com (orthographic marks normalised)
+[PASS] quran-translation  public_events.alcohol_table        5:90
+      Sahih International
+[PASS] quran-text         public_events.raffle               5:90
+      matches quran.com (orthographic marks normalised)
+[PASS] quran-translation  public_events.raffle               5:90
+      Sahih International
+[PASS] quran-text         street.lottery                     5:90
+      matches quran.com (orthographic marks normalised)
+[PASS] quran-translation  street.lottery                     5:90
+      Sahih International
+[PASS] quran-text         work.alcohol_pork_job              5:90
+      matches quran.com (orthographic marks normalised)
+[PASS] quran-translation  work.alcohol_pork_job              5:90
+      Sahih International
+[PASS] quran-text         public_events.alcohol_table        4:140
+      matches quran.com (orthographic marks normalised)
+[PASS] quran-translation  public_events.alcohol_table        4:140
+      Sahih International
+[PASS] quran-text         public_events.raffle               5:91
+      matches quran.com (orthographic marks normalised)
+[PASS] quran-translation  public_events.raffle               5:91
+      Sahih International
+[PASS] quran-text         street.lottery                     5:91
+      matches quran.com (orthographic marks normalised)
+[PASS] quran-translation  street.lottery                     5:91
+      Sahih International
+[PASS] quran-text         school.cheating                    5:2
+      matches quran.com (orthographic marks normalised)
+[PASS] quran-translation  school.cheating                    5:2
+      Sahih International
+[PASS] quran-text         street.lost_wallet                 5:2
+      matches quran.com (orthographic marks normalised)
+[PASS] quran-translation  street.lost_wallet                 5:2
+      Sahih International
+[PASS] quran-text         work.alcohol_pork_job              5:2
+      matches quran.com (orthographic marks normalised)
+[PASS] quran-translation  work.alcohol_pork_job              5:2
+      Sahih International
+[PASS] quran-text         work.retirement_401k               5:2
+      matches quran.com (orthographic marks normalised)
+[PASS] quran-translation  work.retirement_401k               5:2
+      Sahih International
+[PASS] quran-text         school.cheating                    8:27
+      matches quran.com (orthographic marks normalised)
+[PASS] quran-translation  school.cheating                    8:27
+      Sahih International
+[PASS] quran-text         work.honesty_gifts                 8:27
+      matches quran.com (orthographic marks normalised)
+[PASS] quran-translation  work.honesty_gifts                 8:27
+      Sahih International
+[PASS] quran-text         school.cheating                    4:58
+      matches quran.com (orthographic marks normalised)
+[PASS] quran-translation  school.cheating                    4:58
+      Sahih International
+[PASS] quran-text         street.lost_wallet                 4:58
+      matches quran.com (orthographic marks normalised)
+[PASS] quran-translation  street.lost_wallet                 4:58
+      Sahih International
+[PASS] quran-text         work.honesty_gifts                 4:58
+      matches quran.com (orthographic marks normalised)
+[PASS] quran-translation  work.honesty_gifts                 4:58
+      Sahih International
+[PASS] quran-text         school.student_loan                6:119
+      matches quran.com (orthographic marks normalised)
+[PASS] quran-translation  school.student_loan                6:119
+      Sahih International
+[PASS] quran-text         school.mixed_social                24:30
+      matches quran.com (orthographic marks normalised)
+[PASS] quran-translation  school.mixed_social                24:30
+      Sahih International
+[PASS] quran-text         street.lottery                     2:219
+      matches quran.com (orthographic marks normalised)
+[PASS] quran-translation  street.lottery                     2:219
+      Sahih International
+[PASS] quran-text         street.lottery                     4:29
+      matches quran.com (orthographic marks normalised)
+[PASS] quran-translation  street.lottery                     4:29
+      Sahih International
+[PASS] quran-text         street.buying_selling              4:29
+      matches quran.com (orthographic marks normalised)
+[PASS] quran-translation  street.buying_selling              4:29
+      Sahih International
+[PASS] quran-text         street.buying_selling              83:1
+      matches quran.com (orthographic marks normalised)
+[PASS] quran-translation  street.buying_selling              83:1
+      Sahih International
+[PASS] quran-text         work.honesty_gifts                 83:1
+      matches quran.com (orthographic marks normalised)
+[PASS] quran-translation  work.honesty_gifts                 83:1
+      Sahih International
+[PASS] quran-text         street.buying_selling              83:2
+      matches quran.com (orthographic marks normalised)
+[PASS] quran-translation  street.buying_selling              83:2
+      Sahih International
+[PASS] quran-text         work.honesty_gifts                 83:2
+      matches quran.com (orthographic marks normalised)
+[PASS] quran-translation  work.honesty_gifts                 83:2
+      Sahih International
+[PASS] quran-text         street.buying_selling              83:3
+      matches quran.com (orthographic marks normalised)
+[PASS] quran-translation  street.buying_selling              83:3
+      Sahih International
+[PASS] quran-text         work.honesty_gifts                 83:3
+      matches quran.com (orthographic marks normalised)
+[PASS] quran-translation  work.honesty_gifts                 83:3
+      Sahih International
+[PASS] quran-text         street.buying_selling              22:30
+      matches quran.com (orthographic marks normalised)
+[PASS] quran-translation  street.buying_selling              22:30
+      Sahih International
+[PASS] quran-text         work.honesty_gifts                 2:188
+      matches quran.com (orthographic marks normalised)
+[PASS] quran-translation  work.honesty_gifts                 2:188
+      Sahih International
+[PASS] quran-text         work.honesty_gifts                 3:161
+      matches quran.com (orthographic marks normalised)
+[PASS] quran-translation  work.honesty_gifts                 3:161
+      Sahih International
+[PASS] hadith-text        home.mortgage                      صحيح مسلم 1598
+      matches muslim #1598 (diacritized)
+[PASS] hadith-text        home.food_ingredients              صحيح البخاري 5507
+      matches bukhari #5507 (diacritized)
+[PASS] hadith-text        home.food_ingredients              سنن أبي داود 3681
+      matches abudawud #3681 (diacritized)
+[PASS] hadith-grade       home.food_ingredients              سنن أبي داود 3681
+      al-Albani (hadith-api): Hasan Sahih; file: «حسن صحيح» / «الألباني (حسن صحيح)؛ شعيب الأرناؤوط (صحيح لغيره)»
+[PASS] hadith-text        home.food_ingredients              صحيح البخاري 52
+      matches bukhari #52 (diacritized)
+[PASS] hadith-text        home.credit_card                   صحيح مسلم 1598
+      matches muslim #1598 (diacritized)
+[PASS] hadith-text        home.credit_card                   صحيح البخاري 2287
+      matches bukhari #2287 (diacritized)
+[PASS] hadith-text        private_events.wedding             صحيح البخاري 5167
+      matches bukhari #5167 (diacritized)
+[PASS] hadith-text        private_events.wedding             صحيح البخاري 5177
+      matches bukhari #5177 (diacritized)
+[PASS] hadith-text        private_events.wedding             جامع الترمذي 1088
+      matches tirmidhi #1088 (diacritized)
+[PASS] hadith-grade-info  private_events.wedding             جامع الترمذي 1088
+      api grades: Ahmad Muhammad Shakir=Hasan; Al-Albani=Hasan; Bashar Awad Maarouf=Hasan; Zubair Ali Zai=Isnaad Hasan
+[PASS] hadith-text        private_events.wedding             صحيح البخاري 5162
+      matches bukhari #5162 (diacritized)
+[PASS] hadith-text        private_events.wedding             صحيح البخاري 5147
+      matches bukhari #5147 (diacritized)
+[PASS] hadith-text        private_events.wedding             جامع الترمذي 1089
+      matches tirmidhi #1089 (diacritized)
+[PASS] hadith-grade-info  private_events.wedding             جامع الترمذي 1089
+      api grades: Ahmad Muhammad Shakir=Daif; Al-Albani=Daif; Bashar Awad Maarouf=Daif; Zubair Ali Zai=Daif
+[PASS] hadith-text        private_events.wedding             صحيح البخاري 5590
+      matches bukhari #5590 (diacritized)
+[PASS] hadith-text        private_events.wedding             سنن أبي داود 2130
+      matches abudawud #2130 (diacritized)
+[PASS] hadith-grade       private_events.wedding             سنن أبي داود 2130
+      al-Albani (hadith-api): Sahih; file: «صحيح» / «الألباني (صحيح سنن أبي داود)؛ والترمذي (1091): حسن صحيح»
+[PASS] hadith-text        private_events.neighbor_funeral    صحيح البخاري 1356
+      matches bukhari #1356 (diacritized)
+[PASS] hadith-text        private_events.neighbor_funeral    صحيح البخاري 1312
+      matches bukhari #1312 (diacritized)
+[PASS] hadith-text        private_events.neighbor_funeral    صحيح مسلم 976
+      matches muslim #976.01 (diacritized)
+[PASS] hadith-text        private_events.neighbor_funeral    سنن أبي داود 3214
+      matches abudawud #3214 (diacritized)
+[PASS] hadith-grade       private_events.neighbor_funeral    سنن أبي داود 3214
+      al-Albani (hadith-api): Sahih; file: «صحيح» / «الألباني (صحيح سنن أبي داود)؛ وأخرجه النسائي (2006) وحسّنه دار السلام»
+[PASS] hadith-text        private_events.neighbor_funeral    جامع الترمذي 2739
+      matches tirmidhi #2739 (diacritized)
+[PASS] hadith-grade-info  private_events.neighbor_funeral    جامع الترمذي 2739
+      api grades: Ahmad Muhammad Shakir=Sahih; Al-Albani=Sahih; Bashar Awad Maarouf=Hasan Sahih; Zubair Ali Zai=Isnaad Sahih
+[PASS] hadith-text        private_events.gifts_birthday      صحيح البخاري 2616
+      matches bukhari #2616 (diacritized)
+[PASS] hadith-text        private_events.gifts_birthday      صحيح البخاري 1481
+      matches bukhari #1481 (diacritized)
+[PASS] hadith-text        private_events.gifts_birthday      صحيح البخاري 2617
+      matches bukhari #2617 (diacritized)
+[PASS] hadith-manual      private_events.gifts_birthday      مجمع الزوائد للهيثمي (وأخرجه الحارث في مسنده والطحاوي في شرح مشكل الآثار والطبراني في الأوسط) 4/155
+      outside six books — manually verified: Full text_ar matched (letters) against a saved copy of dorar.net/h/7JrcAD3x (المحدث: الهيثمي، المصدر: مجمع الزوائد 4/155، خلاصة الحكم: رجاله رجال الصحيح). Number and grade confirmed.
+[PASS] hadith-text        private_events.gifts_birthday      جامع الترمذي 1577
+      matches tirmidhi #1577 (diacritized)
+[PASS] hadith-grade       private_events.gifts_birthday      جامع الترمذي 1577
+      al-Albani (hadith-api): Hasan Sahih; file: «حسن صحيح» / «الترمذي: حسن صحيح؛ دار السلام: حسن؛ وأخرجه أبو داود (3057) وقال الألباني: حسن صحيح»
+[PASS] hadith-text        private_events.gifts_birthday      صحيح البخاري 2585
+      matches bukhari #2585 (diacritized)
+[PASS] hadith-manual      private_events.gifts_birthday      الأدب المفرد للبخاري 594
+      outside six books — manually verified: Text and number matched against a saved copy of sunnah.com/adab:594 (chapter: Accepting gifts). Grade is disputed (al-Albani: حسن in Sahih al-Adab al-Mufrad 462; Ibn Hajar: isnad hasan); no single automated grade source.
+[PASS] hadith-text        public_events.holiday_greetings    صحيح البخاري 5978
+      matches bukhari #5978 (diacritized)
+[PASS] hadith-text        public_events.holiday_greetings    سنن أبي داود 1134
+      matches abudawud #1134 (diacritized)
+[PASS] hadith-grade       public_events.holiday_greetings    سنن أبي داود 1134
+      al-Albani (hadith-api): Sahih; file: «صحيح» / «الألباني (صحيح سنن أبي داود)»
+[PASS] hadith-text        public_events.holiday_greetings    صحيح البخاري 952
+      matches bukhari #952 (diacritized)
+[PASS] hadith-text        public_events.holiday_greetings    سنن أبي داود 4031
+      matches abudawud #4031 (diacritized)
+[PASS] hadith-grade       public_events.holiday_greetings    سنن أبي داود 4031
+      al-Albani (hadith-api): Hasan Sahih; file: «حسن صحيح عند الألباني؛ ومختلف فيه» / «الألباني: حسن صحيح؛ ابن حجر: سنده حسن (فتح الباري 10/271)؛ ابن تيمية: جيد؛ وضعّفه المنذري والزيلعي لحال عبد الرحمن بن ثا»
+[PASS] hadith-text        public_events.alcohol_table        جامع الترمذي 2801
+      matches tirmidhi #2801 (diacritized)
+[PASS] hadith-grade       public_events.alcohol_table        جامع الترمذي 2801
+      al-Albani (hadith-api): Hasan; file: «حسن (مع خلاف في إسناده)» / «الترمذي: حسن غريب؛ الألباني: حسن (صحيح الترمذي 2801)؛ ابن حجر: إسناده جيد (فتح الباري 9/159)؛ دار السلام: حسن. وفي إسناد»
+[PASS] hadith-text        public_events.alcohol_table        سنن أبي داود 3774
+      matches abudawud #3774 (diacritized)
+[PASS] hadith-grade       public_events.alcohol_table        سنن أبي داود 3774
+      al-Albani (hadith-api): Sahih; file: «مختلف فيه» / «أبو داود: «هذا الحديث لم يسمعه جعفر من الزهري وهو منكر»؛ والألباني: صحيح (بشواهده)»
+[PASS] hadith-text        public_events.raffle               صحيح البخاري 4860
+      matches bukhari #4860 (diacritized)
+[PASS] hadith-text        public_events.raffle               صحيح مسلم 1513
+      matches muslim #1513 (diacritized)
+[PASS] hadith-text        public_events.raffle               سنن أبي داود 3685
+      matches abudawud #3685 (diacritized)
+[PASS] hadith-grade       public_events.raffle               سنن أبي داود 3685
+      al-Albani (hadith-api): Sahih; file: «صحيح» / «الألباني (صحيح سنن أبي داود)»
+[PASS] hadith-text        school.cheating                    صحيح مسلم 101
+      matches muslim #101 (diacritized)
+[PASS] hadith-text        school.cheating                    صحيح مسلم 102
+      matches muslim #102 (diacritized)
+[PASS] hadith-text        school.cheating                    صحيح البخاري 5219
+      matches bukhari #5219 (diacritized)
+[PASS] hadith-text        school.student_loan                صحيح مسلم 1598
+      matches muslim #1598 (diacritized)
+[PASS] hadith-text        school.mixed_social                صحيح البخاري 5233
+      matches bukhari #5233 (diacritized)
+[PASS] hadith-text        school.mixed_social                صحيح البخاري 5234
+      matches bukhari #5234 (diacritized)
+[PASS] hadith-text        school.mixed_social                سنن النسائي 4181
+      matches nasai #4181 (diacritized)
+[PASS] hadith-grade       school.mixed_social                سنن النسائي 4181
+      al-Albani (hadith-api): Sahih; file: «صحيح» / «الألباني (صحيح سنن النسائي)؛ وأخرجه ابن ماجه (2874) وصححه الألباني وشعيب الأرناؤوط»
+[PASS] hadith-text        school.mixed_social                صحيح البخاري 4891
+      matches bukhari #4891 (diacritized)
+[PASS] hadith-manual      school.mixed_social                المعجم الكبير للطبراني 20/212 (حسب تخريج الموسوعة الفقهية الكويتية ٣٧/٣٦٠)
+      outside six books — manually verified: Wording confirmed via the dorar.net mirror (surahquran.com/Hadith-119470: الألباني، صحيح الجامع 5045: صحيح؛ السلسلة الصحيحة 226: إسناده جيد). Letters identical; dorar vocalises «بِمَخْيَط». Al-Haythami's «رجاله رجال الصحيح» is standard (مجمع الزوائد 4/326). The al-Suyuti da'if symbol could not be confirmed automatically and is flagged for the human reviewer.
+[PASS] hadith-text        street.lost_wallet                 صحيح البخاري 2372
+      matches bukhari #2372 (diacritized)
+[PASS] hadith-text        street.lost_wallet                 صحيح مسلم 1722 (الرواية الخامسة في الباب)
+      matches muslim #1722.05 (diacritized)
+[PASS] hadith-text        street.lost_wallet                 صحيح البخاري 1349
+      matches bukhari #1349 (diacritized)
+[PASS] hadith-text        street.lottery                     صحيح البخاري 4860
+      matches bukhari #4860 (diacritized)
+[PASS] hadith-text        street.buying_selling              صحيح البخاري 2079
+      matches bukhari #2079 (diacritized)
+[PASS] hadith-text        street.buying_selling              سنن ابن ماجه 2246
+      matches ibnmajah #2246 (diacritized)
+[PASS] hadith-grade       street.buying_selling              سنن ابن ماجه 2246
+      al-Albani (hadith-api): Sahih; file: «صحيح» / «الألباني (صحيح سنن ابن ماجه)»
+[PASS] hadith-text        street.buying_selling              صحيح مسلم 102
+      matches muslim #102 (diacritized)
+[PASS] hadith-text        street.buying_selling              صحيح البخاري 2654
+      matches bukhari #2654 (diacritized)
+[PASS] hadith-text        street.buying_selling              صحيح البخاري 2076
+      matches bukhari #2076 (diacritized)
+[PASS] hadith-text        work.alcohol_pork_job              سنن أبي داود 3674
+      matches abudawud #3674 (diacritized)
+[PASS] hadith-grade       work.alcohol_pork_job              سنن أبي داود 3674
+      al-Albani (hadith-api): Sahih; file: «صحيح» / «الألباني (صحيح)؛ شعيب الأرناؤوط في تخريج سنن أبي داود (صحيح بطرقه وشواهده)»
+[PASS] hadith-text        work.alcohol_pork_job              جامع الترمذي 1295
+      matches tirmidhi #1295 (diacritized)
+[PASS] hadith-grade       work.alcohol_pork_job              جامع الترمذي 1295
+      al-Albani (hadith-api): Hasan Sahih; file: «حسن صحيح» / «الألباني (حسن صحيح)؛ وقال الترمذي: غريب من حديث أنس، وروي نحوه عن ابن عباس وابن مسعود وابن عمر»
+[PASS] hadith-text        work.alcohol_pork_job              صحيح البخاري 2236
+      matches bukhari #2236 (diacritized)
+[PASS] hadith-text        work.alcohol_pork_job              سنن أبي داود 3488
+      matches abudawud #3488 (diacritized)
+[PASS] hadith-grade       work.alcohol_pork_job              سنن أبي داود 3488
+      al-Albani (hadith-api): Sahih Hadith; file: «صحيح» / «الألباني (صحيح)؛ شعيب الأرناؤوط (صحيح)»
+[PASS] hadith-text        work.retirement_401k               صحيح مسلم 1598
+      matches muslim #1598 (diacritized)
+[PASS] hadith-text        work.retirement_401k               جامع الترمذي 2518
+      matches tirmidhi #2518 (diacritized)
+[PASS] hadith-grade       work.retirement_401k               جامع الترمذي 2518
+      al-Albani (hadith-api): Sahih; file: «صحيح» / «الترمذي (حسن صحيح)؛ الألباني (صحيح)»
+[PASS] hadith-text        work.honesty_gifts                 صحيح البخاري 2597
+      matches bukhari #2597 (diacritized)
+[PASS] hadith-text        work.honesty_gifts                 صحيح مسلم 1833
+      matches muslim #1833.01 (diacritized)
+[PASS] hadith-text        work.honesty_gifts                 سنن أبي داود 2943
+      matches abudawud #2943 (diacritized)
+[PASS] hadith-grade       work.honesty_gifts                 سنن أبي داود 2943
+      al-Albani (hadith-api): Sahih; file: «صحيح» / «الألباني (صحيح)؛ الحاكم (صحيح على شرط الشيخين)»
+[PASS] hadith-text        work.honesty_gifts                 صحيح البخاري 33
+      matches bukhari #33 (diacritized)
+[PASS] hadith-text        work.honesty_gifts                 صحيح مسلم 101
+      matches muslim #101 (diacritized)
+[PASS] bible-kjv          home.mortgage                      Exodus 22:25
+      matches bible-api.com KJV
+[PASS] bible-vandyck      home.mortgage                      Exodus 22:25
+      matches getbible arabicsv (Smith & Van Dyke) exactly
+[PASS] bible-kjv          home.mortgage                      Deuteronomy 23:19
+      matches bible-api.com KJV
+[PASS] bible-vandyck      home.mortgage                      Deuteronomy 23:19
+      matches getbible arabicsv (Smith & Van Dyke) exactly
+[PASS] bible-kjv          home.food_ingredients              Leviticus 11:7
+      matches bible-api.com KJV
+[PASS] bible-vandyck      home.food_ingredients              Leviticus 11:7
+      matches getbible arabicsv (Smith & Van Dyke) exactly
+[PASS] bible-kjv          home.food_ingredients              Acts 15:29
+      matches bible-api.com KJV
+[PASS] bible-vandyck      home.food_ingredients              Acts 15:29
+      matches getbible arabicsv (Smith & Van Dyke) exactly
+[PASS] bible-kjv          home.credit_card                   Romans 13:8
+      matches bible-api.com KJV
+[PASS] bible-vandyck      home.credit_card                   Romans 13:8
+      matches getbible arabicsv (Smith & Van Dyke) exactly
+[PASS] bible-kjv          home.credit_card                   Psalms 37:21
+      matches bible-api.com KJV
+[PASS] bible-vandyck      home.credit_card                   Psalms 37:21
+      matches getbible arabicsv (Smith & Van Dyke) exactly
+[PASS] bible-kjv          private_events.wedding             Hebrews 13:4
+      matches bible-api.com KJV
+[PASS] bible-vandyck      private_events.wedding             Hebrews 13:4
+      matches getbible arabicsv (Smith & Van Dyke) exactly
+[PASS] bible-kjv          private_events.wedding             Luke 14:13
+      matches bible-api.com KJV
+[PASS] bible-vandyck      private_events.wedding             Luke 14:13
+      matches getbible arabicsv (Smith & Van Dyke) exactly
+[PASS] bible-kjv          private_events.neighbor_funeral    Romans 12:15
+      matches bible-api.com KJV
+[PASS] bible-vandyck      private_events.neighbor_funeral    Romans 12:15
+      matches getbible arabicsv (Smith & Van Dyke) exactly
+[PASS] bible-kjv          private_events.neighbor_funeral    Ecclesiastes 7:2
+      matches bible-api.com KJV
+[PASS] bible-vandyck      private_events.neighbor_funeral    Ecclesiastes 7:2
+      matches getbible arabicsv (Smith & Van Dyke) exactly
+[PASS] bible-kjv          private_events.gifts_birthday      Acts 20:35
+      matches bible-api.com KJV
+[PASS] bible-vandyck      private_events.gifts_birthday      Acts 20:35
+      matches getbible arabicsv (Smith & Van Dyke) exactly
+[PASS] bible-kjv          public_events.holiday_greetings    Romans 12:18
+      matches bible-api.com KJV
+[PASS] bible-vandyck      public_events.holiday_greetings    Romans 12:18
+      matches getbible arabicsv (Smith & Van Dyke) exactly
+[PASS] bible-kjv          public_events.holiday_greetings    Psalms 107:1
+      matches bible-api.com KJV
+[PASS] bible-vandyck      public_events.holiday_greetings    Psalms 107:1
+      matches getbible arabicsv (Smith & Van Dyke) exactly
+[PASS] bible-kjv          public_events.alcohol_table        Proverbs 20:1
+      matches bible-api.com KJV
+[PASS] bible-vandyck      public_events.alcohol_table        Proverbs 20:1
+      matches getbible arabicsv (Smith & Van Dyke) exactly
+[PASS] bible-kjv          public_events.alcohol_table        Ephesians 5:18
+      matches bible-api.com KJV
+[PASS] bible-vandyck      public_events.alcohol_table        Ephesians 5:18
+      matches getbible arabicsv (Smith & Van Dyke) exactly
+[PASS] bible-kjv          public_events.alcohol_table        Romans 14:21
+      matches bible-api.com KJV
+[PASS] bible-vandyck      public_events.alcohol_table        Romans 14:21
+      matches getbible arabicsv (Smith & Van Dyke) exactly
+[PASS] bible-kjv          public_events.raffle               2 Corinthians 9:7
+      matches bible-api.com KJV
+[PASS] bible-vandyck      public_events.raffle               2 Corinthians 9:7
+      matches getbible arabicsv (Smith & Van Dyke) exactly
+[PASS] bible-kjv          school.cheating                    Proverbs 12:22
+      matches bible-api.com KJV
+[PASS] bible-vandyck      school.cheating                    Proverbs 12:22
+      matches getbible arabicsv (Smith & Van Dyke) exactly
+[PASS] bible-kjv          school.cheating                    Colossians 3:9
+      matches bible-api.com KJV
+[PASS] bible-vandyck      school.cheating                    Colossians 3:9
+      matches getbible arabicsv (Smith & Van Dyke) exactly
+[PASS] bible-kjv          school.student_loan                Proverbs 22:7
+      matches bible-api.com KJV
+[PASS] bible-vandyck      school.student_loan                Proverbs 22:7
+      matches getbible arabicsv (Smith & Van Dyke) exactly
+[PASS] bible-kjv          school.student_loan                Exodus 22:25
+      matches bible-api.com KJV
+[PASS] bible-vandyck      school.student_loan                Exodus 22:25
+      matches getbible arabicsv (Smith & Van Dyke) exactly
+[PASS] bible-kjv          school.mixed_social                Job 31:1
+      matches bible-api.com KJV
+[PASS] bible-vandyck      school.mixed_social                Job 31:1
+      matches getbible arabicsv (Smith & Van Dyke) exactly
+[PASS] bible-kjv          school.mixed_social                Matthew 5:28
+      matches bible-api.com KJV
+[PASS] bible-vandyck      school.mixed_social                Matthew 5:28
+      matches getbible arabicsv (Smith & Van Dyke) exactly
+[PASS] bible-kjv          street.lost_wallet                 Deuteronomy 22:2
+      matches bible-api.com KJV
+[PASS] bible-vandyck      street.lost_wallet                 Deuteronomy 22:2
+      matches getbible arabicsv (Smith & Van Dyke) exactly
+[PASS] bible-kjv          street.lost_wallet                 Deuteronomy 22:3
+      matches getbible KJV (bible-api.com differs: «st things of thy bro»)
+[PASS] bible-vandyck      street.lost_wallet                 Deuteronomy 22:3
+      matches getbible arabicsv (Smith & Van Dyke) exactly
+[PASS] bible-kjv          street.lottery                     Proverbs 13:11
+      matches bible-api.com KJV
+[PASS] bible-vandyck      street.lottery                     Proverbs 13:11
+      matches getbible arabicsv (Smith & Van Dyke) exactly
+[PASS] bible-kjv          street.lottery                     Hebrews 13:5
+      matches bible-api.com KJV
+[PASS] bible-vandyck      street.lottery                     Hebrews 13:5
+      matches getbible arabicsv (Smith & Van Dyke) exactly
+[PASS] bible-kjv          street.buying_selling              Leviticus 25:14
+      matches bible-api.com KJV
+[PASS] bible-vandyck      street.buying_selling              Leviticus 25:14
+      matches getbible arabicsv (Smith & Van Dyke) exactly
+[PASS] bible-kjv          street.buying_selling              Proverbs 11:1
+      matches bible-api.com KJV
+[PASS] bible-vandyck      street.buying_selling              Proverbs 11:1
+      matches getbible arabicsv (Smith & Van Dyke) exactly
+[PASS] bible-kjv          street.buying_selling              Exodus 20:16
+      matches bible-api.com KJV
+[PASS] bible-vandyck      street.buying_selling              Exodus 20:16
+      matches getbible arabicsv (Smith & Van Dyke) exactly
+[PASS] bible-kjv          work.alcohol_pork_job              Romans 14:21
+      matches bible-api.com KJV
+[PASS] bible-vandyck      work.alcohol_pork_job              Romans 14:21
+      matches getbible arabicsv (Smith & Van Dyke) exactly
+[PASS] bible-kjv          work.retirement_401k               Psalms 15:5
+      matches bible-api.com KJV
+[PASS] bible-vandyck      work.retirement_401k               Psalms 15:5
+      matches getbible arabicsv (Smith & Van Dyke) exactly
+[PASS] bible-kjv          work.honesty_gifts                 Exodus 23:8
+      matches bible-api.com KJV
+[PASS] bible-vandyck      work.honesty_gifts                 Exodus 23:8
+      matches getbible arabicsv (Smith & Van Dyke) exactly
+[PASS] bible-kjv          work.honesty_gifts                 Luke 16:10
+      matches bible-api.com KJV
+[PASS] bible-vandyck      work.honesty_gifts                 Luke 16:10
+      matches getbible arabicsv (Smith & Van Dyke) exactly
+[PASS] quote              home.credit_card                   «مطل الغني ظلم»
+      quote found in this ruling's verified texts
+[PASS] quote              private_events.wedding             «فصل ما بين الحرام والحلال الدف»
+      quote found in this ruling's verified texts
+[PASS] quote              private_events.wedding             «الزواج مكرّماً»
+      quote found in this ruling's verified texts
+[PASS] quote              private_events.neighbor_funeral    «أليست نفساً؟»
+      quote found in this ruling's verified texts
+[PASS] quote              private_events.neighbor_funeral    «بكاءً مع الباكين»
+      quote found in this ruling's verified texts
+[PASS] quote              private_events.gifts_birthday      «تهادوا تحابوا»
+      quote found in this ruling's verified texts
+[PASS] quote              private_events.gifts_birthday      «مغبوط هو العطاء أكثر من الأخذ»
+      quote found in this ruling's verified texts
+[PASS] quote              public_events.alcohol_table        «الخمر مستهزئة»
+      quote found in this ruling's verified texts
+[PASS] quote              public_events.alcohol_table        «لا تسكروا بالخمر»
+      quote found in this ruling's verified texts
+[PASS] quote              public_events.raffle               «المعطي المسرور يحبه الله»
+      quote found in this ruling's verified texts
+[PASS] quote              school.cheating                    «من غشنا فليس منا»
+      quote found in this ruling's verified texts
+[PASS] quote              school.cheating                    «كراهة الرب شفتا كذب»
+      quote found in this ruling's verified texts
+[PASS] quote              school.cheating                    «لا تكذبوا بعضكم على بعض»
+      quote found in this ruling's verified texts
+[PASS] quote              school.student_loan                «المقترض عبد للمقرض»
+      quote found in this ruling's verified texts
+[WARN] quote              school.mixed_social                «قاعدة بيلي غراهام»
+      quote not found verbatim in this ruling's hadith/Qur'an/Bible texts — check it is a paraphrase or a sourced statement
+[PASS] quote              street.lost_wallet                 «حتى يطلبه أخوك»
+      quote found in this ruling's verified texts
+[PASS] quote              street.lost_wallet                 «ولتكن وديعة عندك، فإن جاء طالب»
+      quote found in this ruling's verified texts
+[WARN] quote              street.lottery                     «الرهان المجاني»
+      quote not found verbatim in this ruling's hadith/Qur'an/Bible texts — check it is a paraphrase or a sourced statement
+[PASS] quote              street.lottery                     «غنى البُطل يقل»
+      quote found in this ruling's verified texts
+[WARN] quote              street.lottery                     «خطراً على المجتمع»
+      quote not found verbatim in this ruling's hadith/Qur'an/Bible texts — check it is a paraphrase or a sourced statement
+[PASS] quote              street.buying_selling              «فلا يغبن أحدكم أخاه»
+      quote found in this ruling's verified texts
+[PASS] quote              street.buying_selling              «لا تشهد على قريبك شهادة زور»
+      quote found in this ruling's verified texts
+[PASS] quote              work.retirement_401k               «دع ما يريبك إلى ما لا يريبك»
+      quote found in this ruling's verified texts
+[PASS] quote              work.retirement_401k               «فضته لا يعطيها بالربا»
+      quote found in this ruling's verified texts
+[PASS] quote              work.honesty_gifts                 «هذا لكم، وهذا أُهدي لي»
+      quote found in this ruling's verified texts
+[PASS] quote              work.honesty_gifts                 «فهلّا جلس في بيت أبيه أو بيت أ»
+      quote found in this ruling's verified texts
+
+Summary: unique ayat verified 27; hadith citations verified 64; Bible citations verified KJV 34 / Van Dyck 34; WARN 3; FAIL 0

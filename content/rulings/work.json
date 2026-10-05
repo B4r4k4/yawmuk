@@ -162,7 +162,31 @@
     },
     "confidence": "medium",
     "review_status": "ai_draft",
-    "notes_for_reviewer": "رد على ملاحظة المشرف بخصوص اختيار «تطبيق مصنع الجعة» الموسوم wrong في السيناريو: الأدلة لا تدعم وصفه بالتحريم القطعي المتفق عليه. (أ) تقديم الخمر وصبّها وبيعها وحملها لمن يشربها محرم عند الجمهور بنص حديث اللعن، فوسمه wrong صحيح. (ب) أما البرمجة لمصنع جعة فإعانة غير مباشرة، وفيها خلاف معاصر موثق: دائرة الإفتاء الأردنية (فتوى 2037) تحرّم برمجة أنظمة لشركات الخمور، وSeekersGuidance (حنفي) يجيز إنشاء منصة يبيع عبرها الغير مع الكراهة كلما اقترب العمل من المباشرة. وأصل الخلاف قول أبي حنيفة في الإجارة على حمل الخمر ومخالفة صاحبيه والجمهور (المغني). نقترح: الاعتذار = best، وقبول تطبيق مصنع الجعة = acceptable مع عاقبة تشرح أنه خلافي والأحوط تركه، أو إبقاؤه wrong مع تعديل الصياغة إلى «الأحوط/الراجح عند كثير من العلماء المنع» لا «حرام قطعاً». وإن كان التطبيق نفسه للتسويق وزيادة المبيعات (كما في سؤال فتوى الأردن) فالمنع أقوى. تحتاج مراجعة: (1) نص ابن عابدين في التسبب البعيد لم نطّلع عليه مباشرة (نقلٌ عن SeekersGuidance الذي يذكر رد المحتار دون جزء وصفحة). (2) المرجعان المالكي والشافعي منقولان عن المغني لا من كتبهما. (3) عزو قول المغني لـ«ويكيمصدر» يحتاج مطابقة مع طبعة محققة. (4) Title VII وفكرة التسهيل الديني معلومة قانونية عامة، وليست فتوى.\n\n[تدقيق المرحلة 1 — 2026-10-05] يبقى ai_draft: (1) السؤال يشمل تقديم لحم الخنزير لكن الحكم والإرشاد يركزان على الخمر؛ يلزم بيان صريح لحكم تقديم الخنزير لغير المسلم وأجرته (الخلاف بين الجمهور والحنفية في بيع الخنزير لغير المسلم/خدمته). (2) قولا المالكية والشافعية منقولان عن المغني لا من كتبهما. (3) فتوى AMJA المذكورة في «مجالسة» من يقدّمون المحرم لا في «العمل» لديهم — صلتها بالمسألة غير مباشرة. وصف «تطبيق مصنع الجعة» في السيناريو (صفحة «اطلب برميلاً» وزر «أضف إلى السلة») هو صورة الإعانة القريبة على البيع، وهي أقوى من الصورة التي أجازها SeekersGuidance — انظر التقرير."
+    "notes_for_reviewer": "رد على ملاحظة المشرف بخصوص اختيار «تطبيق مصنع الجعة» الموسوم wrong في السيناريو: الأدلة لا تدعم وصفه بالتحريم القطعي المتفق عليه. (أ) تقديم الخمر وصبّها وبيعها وحملها لمن يشربها محرم عند الجمهور بنص حديث اللعن، فوسمه wrong صحيح. (ب) أما البرمجة لمصنع جعة فإعانة غير مباشرة، وفيها خلاف معاصر موثق: دائرة الإفتاء الأردنية (فتوى 2037) تحرّم برمجة أنظمة لشركات الخمور، وSeekersGuidance (حنفي) يجيز إنشاء منصة يبيع عبرها الغير مع الكراهة كلما اقترب العمل من المباشرة. وأصل الخلاف قول أبي حنيفة في الإجارة على حمل الخمر ومخالفة صاحبيه والجمهور (المغني). نقترح: الاعتذار = best، وقبول تطبيق مصنع الجعة = acceptable مع عاقبة تشرح أنه خلافي والأحوط تركه، أو إبقاؤه wrong مع تعديل الصياغة إلى «الأحوط/الراجح عند كثير من العلماء المنع» لا «حرام قطعاً». وإن كان التطبيق نفسه للتسويق وزيادة المبيعات (كما في سؤال فتوى الأردن) فالمنع أقوى. تحتاج مراجعة: (1) نص ابن عابدين في التسبب البعيد لم نطّلع عليه مباشرة (نقلٌ عن SeekersGuidance الذي يذكر رد المحتار دون جزء وصفحة). (2) المرجعان المالكي والشافعي منقولان عن المغني لا من كتبهما. (3) عزو قول المغني لـ«ويكيمصدر» يحتاج مطابقة مع طبعة محققة. (4) Title VII وفكرة التسهيل الديني معلومة قانونية عامة، وليست فتوى.\n\n[تدقيق المرحلة 1 — 2026-10-05] يبقى ai_draft: (1) السؤال يشمل تقديم لحم الخنزير لكن الحكم والإرشاد يركزان على الخمر؛ يلزم بيان صريح لحكم تقديم الخنزير لغير المسلم وأجرته (الخلاف بين الجمهور والحنفية في بيع الخنزير لغير المسلم/خدمته). (2) قولا المالكية والشافعية منقولان عن المغني لا من كتبهما. (3) فتوى AMJA المذكورة في «مجالسة» من يقدّمون المحرم لا في «العمل» لديهم — صلتها بالمسألة غير مباشرة. وصف «تطبيق مصنع الجعة» في السيناريو (صفحة «اطلب برميلاً» وزر «أضف إلى السلة») هو صورة الإعانة القريبة على البيع، وهي أقوى من الصورة التي أجازها SeekersGuidance — انظر التقرير.",
+    "newcomer_explainer": {
+      "ar": "لا يحرّم الإسلام شرب الخمر فقط، بل يحرّم كذلك تقديمها وبيعها وحملها لمن يشربها، فقد لعن النبي ﷺ في الخمر عشرة منهم ساقيها وحاملها (الترمذي 1295)، وهذا قول الجمهور، وخالف أبو حنيفة في حملها بأجرة. والحكمة التي يذكرها العلماء أن من أعان على الضرر شارك فيه، وأن كسب المسلم ينبغي أن يكون من عمل حلال. وبيع الخنزير داخل في الحكم نفسه (البخاري 2236). أما العمل غير المباشر كبرمجة تطبيق لمصنع جعة ففيه خلاف بين المعاصرين، فقد يعتذر صديق مسلم عن وظيفة أو مناوبة بينما يقبلها آخر مع التحفظ.",
+      "en": "Islam forbids not only drinking alcohol but also serving, selling or carrying it for people to drink: the Prophet ﷺ cursed ten parties involved in wine, including its server and its carrier (Tirmidhi 1295). This is the majority view; Abu Hanifa differed on carrying it for a fee. The reasoning scholars give is that whoever helps bring about a harm shares in it, and that a Muslim's earnings should come from lawful work; selling pork falls under the same rule (Bukhari 2236). Indirect work, such as building software for a brewery, is debated among contemporary scholars, so one Muslim friend may decline such a job or shift while another accepts it with reservations."
+    },
+    "common_ground": {
+      "summary": {
+        "ar": "يعلّم بولس أنه حسن ألا يشرب الإنسان خمراً ولا يفعل شيئاً يعثر به أخوه، ففكرة أن يراعي الإنسان أثر عمله في غيره ولا يعينه على ما يضره قيمة مشتركة، وكثير من المسيحيين يتفهمون زميلاً يعتذر عن عمل بدافع الضمير.",
+        "en": "Paul teaches that it is good not to drink wine or do anything by which a brother stumbles, so caring about how one's actions affect others, and not helping them toward harm, is a shared value; many Christians readily understand a coworker who steps back from a task out of conscience."
+      },
+      "bible": [
+        {
+          "ref_en": "Romans 14:21",
+          "ref_ar": "رومية 14: 21",
+          "text_en": "It is good neither to eat flesh, nor to drink wine, nor any thing whereby thy brother stumbleth, or is offended, or is made weak.",
+          "text_ar": "حَسَنٌ أَنْ لَا تَأْكُلَ لَحْمًا وَلَا تَشْرَبَ خَمْرًا وَلَا شَيْئًا يَصْطَدِمُ بِهِ أَخُوكَ أَوْ يَعْثُرُ أَوْ يَضْعُفُ.",
+          "source_url": "https://bible-api.com/Romans+14:21?translation=kjv",
+          "source_url_ar": "https://api.getbible.net/v2/arabicsv/45/14.json"
+        }
+      ],
+      "differences": {
+        "ar": "تبيح أغلب التقاليد المسيحية الشرب المعتدل ولا ترى إثماً في تقديم الخمر أو لحم الخنزير، والخمر تُستعمل في سرّ العشاء الرباني، مع أن بعض الطوائف تدعو إلى الامتناع التام. أما الإسلام فيمتد تحريمه إلى سلسلة التقديم والبيع كلها لا إلى السُّكر وحده.",
+        "en": "Most Christian traditions permit moderate drinking and see no sin in serving alcohol or pork, and wine is used in Holy Communion, though some denominations encourage total abstinence. Islam's prohibition extends to the whole chain of serving and selling, not only to drunkenness."
+      }
+    }
   },
   {
     "id": "work.retirement_401k",
@@ -311,7 +335,31 @@
     },
     "confidence": "medium",
     "review_status": "ai_verified",
-    "notes_for_reviewer": "تحتاج مراجعة: (1) نص المعيار الشرعي 21 لـAAOIFI غير متاح علناً (للأعضاء فقط)، فالنسب 30%/5% منقولة عن أدوات فحص ومصادر ثانوية لا من نص المعيار، وصيغت بلفظ «المشهورة في التطبيقات». (2) قرار المجمع الفقهي لرابطة العالم الإسلامي في الأسهم (الدورة 14) لم نتمكن من فتح نصه فلم نذكره. (3) خانات المذاهب «أصول» لا نصوص لأن المسألة معاصرة. (4) نسبة التطهير 5-15% اجتهاد من مفتٍ واحد في AMJA وليست قراراً مجمعياً. (5) حكم القرض من الـ401(k) (جوازه لأنه من مال الموظف نفسه) ورد في بحث منسوب إلى د. القضاة على موقع AMJA عبر نتيجة بحث فقط، فلم يُدرج في المتن. (6) اعتبار المطابقة «جزءاً من الأجر» تكييف شائع لم نجد له قراراً مجمعياً منصوصاً.\n\n[تدقيق المرحلة 1 — 2026-10-05] المحتوى منسجم: قرار المجمع 63 (1/7) صحيح الرقم والمضمون، ونسب AAOIFI (30% ديون/ودائع ربوية من القيمة السوقية، 5% إيراد محرم) هي المعتمدة في التطبيقات. تنبيه للمراجع: الإرشاد «إن اضطررت إلى صندوق مؤشر عام مؤقتاً... طهّر الأرباح» ترخيص يستند إلى فتوى مفتٍ واحد في AMJA ويخالف أصل قرار المجمع 63؛ يحسن أن يُصاغ بوصفه قولاً لا توجيهاً عاماً. نجحت الفحوص الآلية."
+    "notes_for_reviewer": "تحتاج مراجعة: (1) نص المعيار الشرعي 21 لـAAOIFI غير متاح علناً (للأعضاء فقط)، فالنسب 30%/5% منقولة عن أدوات فحص ومصادر ثانوية لا من نص المعيار، وصيغت بلفظ «المشهورة في التطبيقات». (2) قرار المجمع الفقهي لرابطة العالم الإسلامي في الأسهم (الدورة 14) لم نتمكن من فتح نصه فلم نذكره. (3) خانات المذاهب «أصول» لا نصوص لأن المسألة معاصرة. (4) نسبة التطهير 5-15% اجتهاد من مفتٍ واحد في AMJA وليست قراراً مجمعياً. (5) حكم القرض من الـ401(k) (جوازه لأنه من مال الموظف نفسه) ورد في بحث منسوب إلى د. القضاة على موقع AMJA عبر نتيجة بحث فقط، فلم يُدرج في المتن. (6) اعتبار المطابقة «جزءاً من الأجر» تكييف شائع لم نجد له قراراً مجمعياً منصوصاً.\n\n[تدقيق المرحلة 1 — 2026-10-05] المحتوى منسجم: قرار المجمع 63 (1/7) صحيح الرقم والمضمون، ونسب AAOIFI (30% ديون/ودائع ربوية من القيمة السوقية، 5% إيراد محرم) هي المعتمدة في التطبيقات. تنبيه للمراجع: الإرشاد «إن اضطررت إلى صندوق مؤشر عام مؤقتاً... طهّر الأرباح» ترخيص يستند إلى فتوى مفتٍ واحد في AMJA ويخالف أصل قرار المجمع 63؛ يحسن أن يُصاغ بوصفه قولاً لا توجيهاً عاماً. نجحت الفحوص الآلية.",
+    "newcomer_explainer": {
+      "ar": "الادخار للمستقبل أمر حسن في الإسلام، ويجيز كثير من العلماء المعاصرين، ومنهم مفتو AMJA، الاشتراك في خطة 401(k) حفاظاً على مساهمة صاحب العمل، بشرط اختيار استثمارات مباحة. فصناديق السندات والودائع بفائدة ممنوعة لأن الفائدة ربا، أما أسهم الشركات التي نشاطها الأساسي مباح فجائزة في الأصل، لأن السهم ملكية لجزء من تجارة حقيقية يشارك صاحبه في ربحها وخسارتها. ويختلف العلماء في الشركات المباحة النشاط التي تتعامل أحياناً بالفائدة: فمنعها مجمع الفقه الإسلامي الدولي، وأجازها آخرون بضوابط مع تطهير الجزء المختلط. والقاعدة الهادية: «دع ما يريبك إلى ما لا يريبك» (الترمذي 2518).",
+      "en": "Saving for the future is a good thing in Islam, and many contemporary scholars, including AMJA muftis, allow joining a 401(k) to keep the employer match, as long as the money goes into lawful investments. Bond and interest-bearing funds are excluded because interest is riba, while shares in companies whose core business is lawful are permitted in principle, since a share is ownership of part of a real business with its profit and loss. Scholars differ about lawful companies that sometimes deal in interest: the International Islamic Fiqh Academy forbids them, while others allow them within limits with purification of the tainted portion. The guiding principle is \"leave what makes you doubt for what does not\" (Tirmidhi 2518)."
+    },
+    "common_ground": {
+      "summary": {
+        "ar": "الاستثمار وفق القيم مألوف لكثير من المسيحيين أيضاً: فكنائس وصناديق مسيحية كثيرة تستبعد قطاعات كالقمار والخمور والتبغ، والمزمور يمدح من «فضته لا يعطيها بالربا».",
+        "en": "Values-based investing is familiar to many Christians too: many churches and Christian funds screen out industries such as gambling, alcohol or tobacco, and the Psalm praises the one who \"putteth not out his money to usury\"."
+      },
+      "bible": [
+        {
+          "ref_en": "Psalms 15:5",
+          "ref_ar": "مزمور 15: 5",
+          "text_en": "He that putteth not out his money to usury, nor taketh reward against the innocent. He that doeth these things shall never be moved.",
+          "text_ar": "فِضَّتُهُ لَا يُعْطِيهَا بِٱلرِّبَا، وَلَا يَأْخُذُ ٱلرِّشْوَةَ عَلَى ٱلْبَرِيءِ. ٱلَّذِي يَصْنَعُ هَذَا لَا يَتَزَعْزَعُ إِلَى ٱلدَّهْرِ.",
+          "source_url": "https://bible-api.com/Psalms+15:5?translation=kjv",
+          "source_url_ar": "https://api.getbible.net/v2/arabicsv/19/15.json"
+        }
+      ],
+      "differences": {
+        "ar": "يرى أغلب المسيحيين اليوم السندات والمدخرات ذات الفائدة مشروعة، بل إن مثل الوزنات في إنجيل متى (25: 27) يذكر أخذ الفائدة من الصيارفة دون ذم، فالحدّ الذي يرسمه الإسلام عند صناديق الفائدة لا نظير له غالباً في الممارسة المسيحية المعاصرة.",
+        "en": "Most Christians today regard bonds and interest-bearing savings as legitimate, and the parable of the talents (Matthew 25:27) even mentions receiving interest from bankers without disapproval, so the line Islam draws at interest-bearing funds usually has no counterpart in contemporary Christian practice."
+      }
+    }
   },
   {
     "id": "work.honesty_gifts",
@@ -506,6 +554,38 @@
     },
     "confidence": "high",
     "review_status": "ai_verified",
-    "notes_for_reviewer": "ثقة عالية في أصل الحكم والأدلة (حديث ابن اللتبية في الصحيحين، وحديث عدي بن عميرة في مسلم 1833، وحديث بريدة في أبي داود 2943). تحتاج مراجعة: (1) الإحالات المذهبية في هدية القاضي والعامل لم نطّلع على نصوصها في كتب المذاهب، وإنما في نتائج بحث (نقل الطحاوي، وإشارة الدرر السنية إلى اتفاق المذاهب، وكلام ابن قدامة)، وخانة الشافعية بلا نص موثق. (2) لم نجد قراراً مجمعياً دولياً خاصاً بهدايا الموظفين في القطاع الخاص، فاكتفينا بفتوى ابن باز، ويُستحسن إضافة قرار مجمعي إن وُجد. (3) قياس موظف الشركة الخاصة على العامل العام (الوالي) قياس مشهور عند المعاصرين، لكن يُراجَع أثر إذن صاحب العمل الخاص. (4) آيات المطففين استُشهد بها على من يُنقص العمل ويستوفي الأجر، وهو تطبيق مشهور عند الوعاظ والمفسرين المعاصرين لا نص صريح. (5) رقم مسلم 1833 مأخوذ من نتيجة بحث تطابق نص hadith-api (الترقيم الداخلي 33/42)، وsunnah.com يمنع الجلب المباشر.\n\n[تدقيق المرحلة 1 — 2026-10-05] الحكم والأدلة متينة (حديث ابن اللتبية، عدي بن عميرة، بريدة). الإحالات المذهبية في هدية العامل منقولة عن نتائج بحث — يُستحسن توثيقها من الموسوعة الكويتية (مادة «هدية»/«رشوة»). نجحت الفحوص الآلية."
+    "notes_for_reviewer": "ثقة عالية في أصل الحكم والأدلة (حديث ابن اللتبية في الصحيحين، وحديث عدي بن عميرة في مسلم 1833، وحديث بريدة في أبي داود 2943). تحتاج مراجعة: (1) الإحالات المذهبية في هدية القاضي والعامل لم نطّلع على نصوصها في كتب المذاهب، وإنما في نتائج بحث (نقل الطحاوي، وإشارة الدرر السنية إلى اتفاق المذاهب، وكلام ابن قدامة)، وخانة الشافعية بلا نص موثق. (2) لم نجد قراراً مجمعياً دولياً خاصاً بهدايا الموظفين في القطاع الخاص، فاكتفينا بفتوى ابن باز، ويُستحسن إضافة قرار مجمعي إن وُجد. (3) قياس موظف الشركة الخاصة على العامل العام (الوالي) قياس مشهور عند المعاصرين، لكن يُراجَع أثر إذن صاحب العمل الخاص. (4) آيات المطففين استُشهد بها على من يُنقص العمل ويستوفي الأجر، وهو تطبيق مشهور عند الوعاظ والمفسرين المعاصرين لا نص صريح. (5) رقم مسلم 1833 مأخوذ من نتيجة بحث تطابق نص hadith-api (الترقيم الداخلي 33/42)، وsunnah.com يمنع الجلب المباشر.\n\n[تدقيق المرحلة 1 — 2026-10-05] الحكم والأدلة متينة (حديث ابن اللتبية، عدي بن عميرة، بريدة). الإحالات المذهبية في هدية العامل منقولة عن نتائج بحث — يُستحسن توثيقها من الموسوعة الكويتية (مادة «هدية»/«رشوة»). نجحت الفحوص الآلية.",
+    "newcomer_explainer": {
+      "ar": "الوظيفة في الإسلام أمانة. فحين بعث النبي ﷺ ابن اللتبية لجمع الصدقات وعاد يقول «هذا لكم، وهذا أُهدي لي»، أنكر عليه وقال: «فهلّا جلس في بيت أبيه أو بيت أمه، فينظر يُهدى له أم لا» (البخاري 2597)؛ فالهدية التي تأتي بسبب الوظيفة لجهة العمل إلا إذا أذنت. وتسجيل ساعات لم تُعمل كذب وأكل للمال بالباطل، واستعمال موارد الشركة مقيّد بإذنها الصريح أو العرفي. والمقصد حفظ الأمانة، وسدّ باب الرشوة المتنكرة في صورة هدية، وتطييب الكسب.",
+      "en": "In Islam a job is an amanah, a trust. When the Prophet ﷺ sent Ibn al-Lutbiyya to collect alms and he came back saying \"this has been given to me as a present\", the Prophet ﷺ asked why he had not stayed in his father's or mother's house to see whether he would be given presents or not (Bukhari 2597); so gifts that come because of your position belong to the employer unless it allows them. Logging hours not worked is lying and taking wealth without right, and company resources may be used only as the company permits, explicitly or by custom. The aim is to protect trust, close the door to bribery dressed up as gifts, and keep one's earnings clean."
+    },
+    "common_ground": {
+      "summary": {
+        "ar": "الأمانة في العمل أرض مشتركة واسعة: فالتوراة تنهى عن أخذ الرشوة لأنها تعمي المبصرين، والمسيح يعلّم أن الأمين في القليل أمين في الكثير.",
+        "en": "Honesty at work is wide common ground: the Torah forbids taking a gift (bribe) because it blinds the wise, and Jesus teaches that whoever is faithful in little is faithful also in much."
+      },
+      "bible": [
+        {
+          "ref_en": "Exodus 23:8",
+          "ref_ar": "خروج 23: 8",
+          "text_en": "And thou shalt take no gift: for the gift blindeth the wise, and perverteth the words of the righteous.",
+          "text_ar": "وَلَا تَأْخُذْ رَشْوَةً، لِأَنَّ ٱلرَّشْوَةَ تُعْمِي ٱلْمُبْصِرِينَ، وَتُعَوِّجُ كَلَامَ ٱلْأَبْرَارِ.",
+          "source_url": "https://bible-api.com/Exodus+23:8?translation=kjv",
+          "source_url_ar": "https://api.getbible.net/v2/arabicsv/2/23.json"
+        },
+        {
+          "ref_en": "Luke 16:10",
+          "ref_ar": "لوقا 16: 10",
+          "text_en": "He that is faithful in that which is least is faithful also in much: and he that is unjust in the least is unjust also in much.",
+          "text_ar": "اَلْأَمِينُ فِي ٱلْقَلِيلِ أَمِينٌ أَيْضًا فِي ٱلْكَثِيرِ، وَٱلظَّالِمُ فِي ٱلْقَلِيلِ ظَالِمٌ أَيْضًا فِي ٱلْكَثِيرِ.",
+          "source_url": "https://bible-api.com/Luke+16:10?translation=kjv",
+          "source_url_ar": "https://api.getbible.net/v2/arabicsv/42/16.json"
+        }
+      ],
+      "differences": {
+        "ar": "لا فرق جوهري في المبدأ. وإنما فصّل الفقه الإسلامي، استناداً إلى حديث ابن اللتبية، أن ما يُهدى للموظف بسبب منصبه يعود لجهة العمل، بينما يتبع المسيحيون عادة التوجيه الكتابي العام وسياسة جهة العمل.",
+        "en": "There is no real difference in principle. Islamic law, based on the hadith of Ibn al-Lutbiyya, spells out that a gift received because of one's post belongs to the employer, while Christians usually follow the general biblical teaching together with their employer's policy."
+      }
+    }
   }
 ]

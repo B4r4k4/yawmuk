@@ -79,18 +79,22 @@ export function createTextures(THREE, rand) {
     }
   });
 
-  T.tickets = tex(256, 256, (g, w, h) => {
-    g.fillStyle = '#1a1a22'; g.fillRect(0, 0, w, h);
-    const cols = 6, rows = 4, tw = w / cols, th = h / rows;
-    for (let y = 0; y < rows; y++) for (let x = 0; x < cols; x++) {
-      const c = BRIGHT[(x * 3 + y * 5) % BRIGHT.length];
-      const gx = x * tw + 3, gy = y * th + 3, gw = tw - 6, gh = th - 6;
-      const gr = g.createLinearGradient(gx, gy, gx + gw, gy + gh);
-      gr.addColorStop(0, c); gr.addColorStop(0.5, '#ffffff'); gr.addColorStop(1, c);
-      g.fillStyle = gr; g.fillRect(gx, gy, gw, gh);
-      g.fillStyle = c; g.fillRect(gx + 4, gy + gh * 0.35, gw - 8, gh * 0.3);
-      g.fillStyle = '#ffd700'; g.beginPath(); g.arc(gx + gw / 2, gy + gh * 0.22, 6, 0, Math.PI * 2); g.fill();
-      g.fillStyle = '#c0c0c8'; g.fillRect(gx + 5, gy + gh * 0.72, gw - 10, gh * 0.18); // scratch area
+  // tea boxes & snack packs (shelf on / behind the counter)
+  const TEA = ['#2e7d32', '#c62828', '#f9a825', '#6a1b9a', '#00838f', '#ef6c00', '#8d6e63', '#ad1457'];
+  T.tea = tex(256, 128, (g, w, h) => {
+    g.fillStyle = '#4a3324'; g.fillRect(0, 0, w, h);
+    for (let row = 0; row < 2; row++) {
+      const base = (row + 1) * (h / 2) - 6;
+      let x = 4, i = row * 3;
+      while (x < w - 20) {
+        const bw = 22 + (i % 3) * 4, bh = 34 + (i % 2) * 8;
+        const c = TEA[i % TEA.length];
+        g.fillStyle = c; g.fillRect(x, base - bh, bw, bh);
+        g.fillStyle = 'rgba(255,255,255,0.85)'; g.fillRect(x + 3, base - bh + 6, bw - 6, 9);   // label band
+        g.fillStyle = '#f5e6c8'; g.beginPath(); g.arc(x + bw / 2, base - bh * 0.35, 5, 0, Math.PI * 2); g.fill(); // cup/leaf mark
+        x += bw + 3; i++;
+      }
+      g.fillStyle = '#c8a46a'; g.fillRect(0, base, w, 6); // shelf lip
     }
   });
 
@@ -103,7 +107,8 @@ export function createTextures(THREE, rand) {
       for (let row = 0; row < 4; row++) {
         const y = 14 + row * ((h - 24) / 4);
         for (let x = x0 + 3; x < x1 - 6; x += 7) {
-          g.fillStyle = BRIGHT[(r() * BRIGHT.length) | 0];
+          // soft drinks and water only (no beer in Tariq's store)
+          g.fillStyle = row % 2 ? (r() > 0.5 ? '#7fc8ff' : '#bfe6ff') : BRIGHT[(r() * BRIGHT.length) | 0];
           g.fillRect(x, y, 5, 18);
         }
         g.fillStyle = '#9fb4c4'; g.fillRect(x0, y + 19, x1 - x0, 2);

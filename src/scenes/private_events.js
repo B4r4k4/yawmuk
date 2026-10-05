@@ -6,8 +6,8 @@
 //
 // Layout (metres, +x right, +z toward the camera at spawn):
 //   road x∈[-3.5,3.5] from z=+30 down to a turning circle centred at z=-8.5 (r=6.8)
-//   left : Harris house x∈[-15.5,-8.5] z∈[2,10] (porch faces +x), sage house, rose house
-//   right: Adam's house x∈[9.5,15.5] z∈[9,15], Garcia house x≥10.5 z∈[-1.5,5.5] + fenced yard x∈[5.4,10.5]
+//   left : Harris house x∈[-15.5,-8.5] z∈[2,10] (porch faces +x), sage house, Omar's (plain beige) house
+//   right: the Reed house (Adam's family) x∈[9.5,15.5] z∈[9,15], Garcia house x≥10.5 z∈[-1.5,5.5] + fenced yard x∈[5.4,10.5]
 //   end  : community hall x∈[-6,6] z∈[-25,-17], door at z=-17, parking lot on its east side
 import { buildInstancers, makeTextures, boxUV } from './private_events/kit.js';
 
@@ -52,7 +52,9 @@ export default {
     flat.add(7.4, 0, 12, 4.2, 0.045, 1.2, { c: WALK });                // Adam's front walk
     flat.add(7.9, 0, 1.2, 5.0, 0.03, 1.4, { c: '#cdbf9f' });           // Garcia yard path (pavers)
     flat.add(-12.5, 0, -6.5, 6.0, 0.04, 1.2, { c: WALK });             // sage house walk
-    flat.add(-12.2, 0, 15.5, 6.6, 0.04, 1.2, { c: WALK });             // rose house walk
+    flat.add(-12.2, 0, 15.5, 6.6, 0.04, 1.2, { c: WALK });             // Omar's house walk
+    flat.add(-7.75, 0, 1.0, 4.9, 0.05, 1.9, { c: '#eef2f6' });          // snow-covered Harris driveway
+    for (const dz of [-0.45, 0.45]) flat.add(-7.75, 0, 1.0 + dz, 4.9, 0.055, 0.22, { c: '#c9ced3' }); // tyre tracks
     flat.add(9.8, 0, -21.2, 6.4, 0.04, 7.6, { c: '#55585d' });         // parking lot
     for (const z of [-17.8, -20.3, -22.8, -25.0]) flat.add(10.2, 0, z, 4.8, 0.05, 0.1, { c: '#e9e6dc' });
 
@@ -60,7 +62,7 @@ export default {
     const r = ctx.rand(7);
     const paved = (x, z) =>
       (Math.abs(x) < 5.6 && z > -3) || Math.hypot(x, z - CZ) < 8.8 || (Math.abs(x) < 6.6 && z < -15) ||
-      (x > 6.4 && x < 13.2 && z < -17) || (x > 5.2 && x < 10.6 && z > -1.8 && z < 5.7);
+      (x > 6.4 && x < 13.2 && z < -17) || (x > 5.2 && x < 10.6 && z > -1.8 && z < 5.7) || (x > -10.6 && x < -5 && z > -0.2 && z < 2.2);
     for (let n = 0, tries = 0; n < 46 && tries < 400; tries++) {
       const x = -13 + r() * 26, z = -27 + r() * 46;
       if (paved(x, z)) continue;
@@ -74,12 +76,22 @@ export default {
     const houses = [
       { key: 'harris', x0: -15.5, x1: -8.5, z0: 2, z1: 10, front: 1, doorZ: 6, wall: '#8fa3b5', roof: '#4a4f57', door: '#eeeae2', shutter: '#5d6b78', chimney: true },
       { key: 'sage', x0: -16, x1: -9.5, z0: -10, z1: -3, front: 1, doorZ: -6.5, wall: '#b6c4a6', roof: '#5a4636', door: '#6b3b2a', shutter: '#4f5d45' },
-      { key: 'rose', x0: -15.5, x1: -9, z0: 12, z1: 19, front: 1, doorZ: 15.5, wall: '#d6c2bd', roof: '#4a4f57', door: '#2f4a6a', shutter: '#7a5a5a', chimney: true },
-      { key: 'adam', x0: 9.5, x1: 15.5, z0: 9, z1: 15, front: -1, doorZ: 12, wall: '#f1efe8', roof: '#5b4a42', door: '#2f7a4a', shutter: '#3e5a48' },
+      { key: 'omar', x0: -15.5, x1: -9, z0: 12, z1: 19, front: 1, doorZ: 15.5, wall: '#d8c8a8', roof: '#5a4636', door: '#5e3d22', shutter: '#8a7a62' }, // plain, no decorations
+      { key: 'reed', x0: 9.5, x1: 15.5, z0: 9, z1: 15, front: -1, doorZ: 12, wall: '#f1efe8', roof: '#5b4a42', door: '#2f7a4a', shutter: '#3e5a48' },
       { key: 'garcia', x0: 10.5, x1: 17, z0: -1.5, z1: 5.5, front: -1, doorZ: 2, wall: '#f2d98b', roof: '#7a4b3a', door: '#b5452f', shutter: '#5f8fb0', chimney: true },
-      { key: 'beige', x0: 10, x1: 16, z0: -12, z1: -4.5, front: -1, doorZ: -8.2, wall: '#cdbba6', roof: '#4d4a48', door: '#5e3d22', shutter: '#6d5a48' }
+      { key: 'rose', x0: 10, x1: 16, z0: -12, z1: -4.5, front: -1, doorZ: -8.2, wall: '#d6c2bd', roof: '#4d4a48', door: '#2f4a6a', shutter: '#7a5a5a' }
     ];
     const WHITE = '#f4f2ec';
+    // invisible DoubleSide proxy boxes: the orbit camera pulls in front of them (houses etc. are instanced,
+    // which the engine's automatic camera occlusion skips)
+    const camProxies = [];
+    const proxyMat = own(new THREE.MeshBasicMaterial({ side: THREE.DoubleSide }), 'mats');
+    const proxyGeo = own(new THREE.BoxGeometry(1, 1, 1), 'geos');
+    const proxy = (x0, x1, y0, y1, z0, z1) => {
+      const m = new THREE.Mesh(proxyGeo, proxyMat);
+      m.position.set((x0 + x1) / 2, (y0 + y1) / 2, (z0 + z1) / 2); m.scale.set(x1 - x0, y1 - y0, z1 - z0);
+      m.visible = false; m.updateMatrixWorld(true); camProxies.push(m); return m;
+    };
     for (const h of houses) {
       const W = h.x1 - h.x0, D = h.z1 - h.z0, cx = (h.x0 + h.x1) / 2, cz = (h.z0 + h.z1) / 2;
       bodies.add(cx, 0, cz, W, HOUSE_WALL_H, D, { c: h.wall });
@@ -98,6 +110,7 @@ export default {
       cslab.add(cx, HOUSE_WALL_H + ROOF_RISE + 0.1, cz, 0.22, 0.12, D + 0.62, { c: h.roof }); // ridge cap
       if (h.chimney) cbox.add(cx - h.front * W * 0.22, HOUSE_WALL_H + 0.6, h.z0 + D * 0.25, 0.7, 2.9, 0.7, { c: '#8a4b3a' });
       col(h.x0, h.x1, h.z0, h.z1, 0, HOUSE_WALL_H + ROOF_RISE);
+      proxy(h.x0 - 0.45, h.x1 + 0.45, 0, HOUSE_WALL_H + ROOF_RISE + 0.3, h.z0 - 0.3, h.z1 + 0.3);
 
       // façade: door, frame, stoop, windows with shutters
       const fx = h.front > 0 ? h.x1 : h.x0, s = h.front;
@@ -152,6 +165,7 @@ export default {
     rail(-6.75, 3.55, -6.75, 5.1); rail(-6.75, 6.9, -6.75, 8.45);
     rail(-8.45, 3.5, -6.75, 3.5); rail(-8.45, 8.5, -6.75, 8.5);
     col(PX0, -6.3, PZ0, PZ1, 0, 3);
+    proxy(-8.8, -6.2, 2.8, 3.2, 3.15, 8.85);                                                  // porch roof camera proxy
     // white wreath on the door
     const wreathGeo = own(new THREE.TorusGeometry(0.27, 0.07, 6, 18), 'geos');
     const wreath = new THREE.Mesh(wreathGeo, mats.color('#f3f1ea', { roughness: 0.9 }));
@@ -162,6 +176,12 @@ export default {
       csph.add(-8.36, 1.55 + Math.sin(a2) * 0.27, 6 + Math.cos(a2) * 0.27, 0.06, 0.06, 0.06, { c: i % 2 ? '#f7f5ee' : '#e9edf0' });
     }
     csph.add(-8.35, 1.3, 6, 0.05, 0.08, 0.05, { c: '#cfd5da' }); // ribbon tail
+    // the Reed family's Christmas wreath: evergreen ring with a red bow (front door faces -x at x=9.5)
+    const xmas = new THREE.Mesh(wreathGeo, mats.color('#2f6b3c', { roughness: 0.9 }));
+    xmas.position.set(9.4, 1.55, 12); xmas.rotation.y = Math.PI / 2; xmas.castShadow = true; group.add(xmas);
+    for (const dz of [-0.09, 0.09]) csph.add(9.35, 1.83, 12 + dz, 0.06, 0.05, 0.09, { c: '#c0392b' });
+    csph.add(9.34, 1.83, 12, 0.04, 0.04, 0.04, { c: '#a93226' });
+    for (const dz of [-0.05, 0.05]) cslab.add(9.35, 1.7, 12 + dz, 0.02, 0.22, 0.04, { c: '#c0392b', rx: dz * 3 });
     // rocking chair
     const RC = { x: -7.75, z: 7.55 };
     for (const dz of [-0.24, 0.24]) {
@@ -188,7 +208,7 @@ export default {
         csph.add(x + Math.cos(a2) * rad, y + 0.4 + rr() * 0.1, z + Math.sin(a2) * rad, 0.065, 0.06, 0.065, { c });
       }
     };
-    bouquet(-6.05, 0, 4.85, 11); bouquet(-6.05, 0, 7.15, 12);
+    bouquet(-6.05, 0, 4.85, 11); bouquet(-6.2, 0, 8.35, 12);
     bouquet(-7.0, PORCH_Y, 3.85, 13); bouquet(-7.0, PORCH_Y, 8.15, 14); bouquet(-8.15, PORCH_Y, 5.15, 15);
 
     // ------------------------------------------------------------------ zone 2: Garcia yard (Leo's birthday)
@@ -207,7 +227,7 @@ export default {
     picket(FX, YZ0, YX1, YZ0); picket(FX, YZ1, YX1, YZ1);
     for (const z of [GATE0, GATE1]) cbox.add(FX, 0, z, 0.14, 1.05, 0.14, { c: WHITE }); // gate posts
 
-    // party table with a bright striped cloth, green cake with candles, a dark-red gift bag
+    // party table: bright striped cloth, green cake with candles, an open pizza box and a straw gift basket
     const TX = 7.6, TZ = 1.2;
     const clothGeo = own(new THREE.BoxGeometry(0.96, 0.42, 1.9), 'geos');
     boxUV(clothGeo, 0.96, 0.42, 1.9, 0.5, 0.42);
@@ -223,14 +243,28 @@ export default {
       ccyl.add(x, 1.0, z, 0.012, 0.09, 0.012, { c: ['#ef5350', '#42a5f5', '#ffca28', '#ab47bc', '#26a69a'][i] });
       glow.add(x, 1.115, z, 0.016, 0.03, 0.016, { c: '#ffcf6b' });
     }
-    cbox.add(TX + 0.05, 0.78, TZ + 0.55, 0.16, 0.3, 0.26, { c: '#7a1f2b' });                         // gift bag
-    cbox.add(TX + 0.05, 0.9, TZ + 0.55, 0.165, 0.04, 0.265, { c: '#d4af37' });                         // gold band
-    const handleGeo = own(new THREE.TorusGeometry(0.07, 0.008, 4, 12, Math.PI), 'geos');
-    const handle = new THREE.Mesh(handleGeo, mats.gold); handle.position.set(TX + 0.05, 1.08, TZ + 0.55); handle.rotation.y = Math.PI / 2; group.add(handle);
+    // open pizza box (base + lid standing open at the back) with a pepperoni pizza
+    const PZx = TX - 0.12, PZz = TZ + 0.56;
+    cbox.add(PZx, 0.78, PZz, 0.42, 0.04, 0.42, { c: '#c8a26b' });
+    cslab.add(PZx + 0.22, 0.99, PZz, 0.02, 0.42, 0.42, { c: '#d2b07a', rz: -0.12 });
+    ccyl.add(PZx, 0.82, PZz, 0.18, 0.015, 0.18, { c: '#e3b55b' });
+    for (let i = 0; i < 7; i++) {
+      const a2 = i * 0.9 + 0.3, rad = i ? 0.11 : 0;
+      ccyl.add(PZx + Math.cos(a2) * rad, 0.835, PZz + Math.sin(a2) * rad, 0.03, 0.006, 0.03, { c: '#b23a2a' });
+    }
+    // straw gift basket: a dark wine bottle, little coloured boxes and a folded scarf
+    const BKx = TX + 0.2, BKz = TZ - 0.66;
+    ccyl.add(BKx, 0.78, BKz, 0.17, 0.15, 0.17, { c: '#d8b46a' });
+    ccyl.add(BKx, 0.93, BKz, 0.175, 0.02, 0.175, { c: '#b8914a' });                                    // woven rim
+    ccyl.add(BKx + 0.06, 0.8, BKz - 0.04, 0.035, 0.24, 0.035, { c: '#3a0d14' });                       // wine bottle
+    ccyl.add(BKx + 0.06, 1.04, BKz - 0.04, 0.013, 0.09, 0.013, { c: '#2a0a0f' });
+    cbox.add(BKx - 0.07, 0.86, BKz + 0.05, 0.09, 0.1, 0.07, { c: '#1e88e5' });
+    cbox.add(BKx - 0.05, 0.86, BKz - 0.08, 0.07, 0.12, 0.06, { c: '#fdd835' });
+    cslab.add(BKx - 0.02, 0.97, BKz + 0.03, 0.2, 0.03, 0.1, { c: '#c0504d', rz: 0.3 });               // scarf
     for (const [dx, dz, c] of [[-0.25, 0.25, '#f4f4f4'], [-0.28, 0.0, '#ffd54f'], [0.28, 0.35, '#f48fb1']]) {
       ccyl.add(TX + dx, 0.78, TZ + dz, 0.05, 0.1, 0.05, { c }); // party cups
     }
-    for (const [dx, dz] of [[-0.15, 0.25], [0.25, -0.55], [-0.25, -0.6]]) ccyl.add(TX + dx, 0.78, TZ + dz, 0.1, 0.012, 0.1, { c: '#ffffff' }); // plates
+    for (const [dx, dz] of [[-0.2, 0.22], [-0.25, -0.6]]) ccyl.add(TX + dx, 0.78, TZ + dz, 0.1, 0.012, 0.1, { c: '#ffffff' }); // plates
 
     // green dinosaur bounce house
     const BX0 = 7.0, BX1 = 10.2, BZ0 = 2.9, BZ1 = 5.25, bcx = (BX0 + BX1) / 2, bcz = (BZ0 + BZ1) / 2;
@@ -269,11 +303,13 @@ export default {
     // balloons (green, white and gold) tied to the gate posts, the table and the bounce house
     const B_COLORS = ['#3fae49', '#7ccf5a', '#2e8b57', '#a5d65f', '#f4f4f4', '#e8c547'];
     const tie = (x, y, z, list) => list.forEach(([dx, dh, dz], i) => balloons.addBalloon([x, y, z], [x + dx, y + dh, z + dz], B_COLORS[(i * 2 + Math.round(x * 3)) % B_COLORS.length]));
-    tie(FX, 1.05, GATE0, [[-0.2, 1.0, -0.15], [0.1, 1.25, 0.05], [-0.05, 0.85, 0.25], [0.18, 1.05, -0.25]]);
-    tie(FX, 1.05, GATE1, [[-0.18, 1.1, 0.1], [0.12, 1.3, -0.08], [0.0, 0.9, 0.3], [-0.1, 1.2, -0.3]]);
-    tie(TX + 0.4, 0.8, TZ + 0.9, [[0.1, 1.05, 0.0], [-0.15, 1.25, 0.1], [0.2, 1.35, 0.15]]);
-    tie(BX0, 2.0, BZ0, [[-0.1, 0.8, -0.1], [0.15, 1.0, 0.05]]);
+    // (kept to the outside of the gate and away from the table side, so they don't sit on the camera line)
+    tie(FX, 1.05, GATE0, [[-0.3, 1.0, -0.3], [-0.12, 1.25, -0.45], [-0.4, 0.85, -0.1], [-0.05, 1.05, -0.65]]);
+    tie(FX, 1.05, GATE1, [[-0.3, 1.1, 0.3], [-0.12, 1.3, 0.5], [-0.42, 0.9, 0.1], [-0.05, 1.2, 0.7]]);
+    tie(TX + 0.45, 0.8, TZ + 0.9, [[0.25, 1.05, 0.1], [0.4, 1.25, -0.1], [0.55, 1.35, 0.2]]);
     tie(BX1, 2.0, BZ0, [[0.1, 0.85, -0.1], [-0.12, 1.05, 0.0]]);
+    tie(BX1, 2.0, BZ1, [[0.15, 0.8, 0.1], [-0.1, 1.0, 0.05]]);
+    proxy(BX0 - 0.3, BX1 + 0.3, 0, 2.3, BZ0 - 0.25, BZ1 + 0.25);                     // bounce house camera proxy
 
     // ------------------------------------------------------------------ zone 3: the community / wedding hall
     const HX0 = -6, HX1 = 6, HZ0 = -25, HZ1 = -17, HH = 4.4, WT = 0.3, DOOR = 1.3;
@@ -294,6 +330,8 @@ export default {
     col(HX0 - WT / 2, HX0 + WT / 2, HZ0, HZ1, 0, HH); col(HX1 - WT / 2, HX1 + WT / 2, HZ0, HZ1, 0, HH);
     col(HX0, HX1, HZ0 - WT / 2, HZ0 + WT / 2, 0, HH);
     colliders.push({ min: [HX0, HH, HZ0], max: [HX1, HH + 1.6, HZ1] }); // roof: keeps the orbit camera inside
+    // façade proxy (doorway included): keeps the camera in front of the trims instead of inside the wall
+    proxy(HX0 - 0.3, HX1 + 0.3, 0, HH + 0.5, HZ1 - 0.35, HZ1 + 0.35);
     cbox.add(0, HH, (HZ0 + HZ1) / 2, HX1 - HX0 + 0.5, 0.3, HZ1 - HZ0 + 0.5, { c: '#5b4b44' });          // roof slab
     cbox.add(0, HH - 0.1, HZ1 + 0.2, HX1 - HX0 + 0.6, 0.45, 0.14, { c: '#efe8da' });                   // cornice
     cbox.add(0, 2.75, HZ1 + 0.18, 2 * DOOR + 0.3, 0.18, 0.08, { c: '#efe8da' });                       // door head trim
@@ -457,10 +495,25 @@ export default {
     const rose = new THREE.Mesh(own(new THREE.IcosahedronGeometry(0.045, 0), 'geos'), mats.color('#fbf8f1'));
     rose.position.set(0.12, 1.53, -0.19); yusuf.add(rose);
     const leo = ctx.makeNPC({ skin: '#d1a17a', shirt: '#4caf50', pants: '#2f4f7f', hair: '#3b2414', height: 1.15 });
+    const dinoCap = new THREE.Mesh(own(new THREE.SphereGeometry(0.15, 8, 4, 0, Math.PI * 2, 0, Math.PI / 2), 'geos'), mats.color('#43a047'));
+    dinoCap.position.set(0, 1.69, 0.01); leo.add(dinoCap);                                   // dinosaur hat
+    // Omar on the porch steps with the snow shovel he used to clear the Harris walk
+    const omar = ctx.makeNPC({ skin: '#5a3a22', shirt: '#556b2f', pants: '#3a3f47', kufi: '#7a7a7a', beard: '#1d1410', hair: '#1d1410', height: 1.85 });
+    const shovelH = new THREE.Mesh(own(new THREE.CylinderGeometry(0.018, 0.018, 1.25, 6), 'geos'), mats.woodDark);
+    shovelH.position.set(-0.36, 0.72, -0.1); shovelH.rotation.z = 0.1; shovelH.castShadow = true; omar.add(shovelH);
+    const shovelB = new THREE.Mesh(own(new THREE.BoxGeometry(0.36, 0.3, 0.03), 'geos'), mats.black);
+    shovelB.position.set(-0.42, 0.15, -0.1); shovelB.castShadow = true; omar.add(shovelB);
+    // Hodan beside him, carrying a covered dish
+    const hodan = ctx.makeNPC({ skin: '#5a3a22', shirt: '#c19a6b', dress: '#c19a6b', hijab: '#2c3550', height: 1.65 });
+    const tray = new THREE.Mesh(own(new THREE.BoxGeometry(0.4, 0.07, 0.3), 'geos'), mats.color('#c9ced3', { roughness: 0.35, metalness: 0.5 }));
+    tray.position.set(0, 1.08, -0.5); tray.castShadow = true; hodan.add(tray);
+    hodan.userData.parts.armL.rotation.x = 1.0; hodan.userData.parts.armR.rotation.x = 1.0; // arms forward under the tray
     const LEO_BASE = 0.5;
 
     const npcs = [
-      { id: 'margaret', position: [-7.25, PORCH_Y, 6.55], yaw: -Math.PI / 2,
+      { id: 'omar', object: omar, position: [-6.0, 0, 7.2], yaw: ctx.yawTo([-6.0, 7.2], [-4.2, 5.6]) },
+      { id: 'bg_hodan', object: hodan, position: [-5.2, 0, 7.45], yaw: ctx.yawTo([-5.2, 7.45], [-4.0, 6.0]), animate: false },
+      { id: 'bg_margaret', position: [-7.25, PORCH_Y, 6.55], yaw: -Math.PI / 2,
         look: { skin: '#f3d3b5', shirt: '#6d6d72', dress: '#1a1a1a', pants: '#1a1a1a', hair: '#e8e6e1', shoes: '#111111', height: 1.58 } },
       { id: 'maria', position: [6.35, 0, 2.75], yaw: ctx.yawTo([6.35, 2.75], [4.4, 1.2]),
         look: { skin: '#d1a17a', shirt: '#d46a8c', hair: '#5a3a22', pants: '#3b4a6b', height: 1.66 } },
@@ -473,11 +526,11 @@ export default {
         look: { skin: '#f1c27d', shirt: '#f2f2f2', suit: '#1f2a44', hair: '#8a5a2b', pants: '#1f2a44', height: 1.82 } },
       { id: 'bg_emily', position: [-3.3, 0, -18.6], yaw: ctx.yawTo([-3.3, -18.6], [-2.2, -18.55]),
         look: { skin: '#ffdbac', shirt: '#2f7d4f', dress: '#2f7d4f', hair: '#d4a76a', height: 1.66 } },
-      { id: 'bg_khadija', position: [9.3, 0, 1.1], yaw: ctx.yawTo([9.3, 1.1], [7.6, 1.2]),
-        look: { skin: '#b88a5e', shirt: '#2c3550', dress: '#2c3550', hijab: '#e6e6e6', glasses: true, height: 1.58 } },
+      { id: 'bg_carol', position: [9.3, 0, 1.1], yaw: ctx.yawTo([9.3, 1.1], [7.6, 1.2]),
+        look: { skin: '#f0c8a8', shirt: '#6b7a3a', pants: '#4a4a52', hair: '#c9c9c9', glasses: true, height: 1.62 } },
+      { id: 'bg_idris', position: [6.05, 0, 3.75], yaw: ctx.yawTo([6.05, 3.75], [8.5, 4.05]),
+        look: { skin: '#5a3a22', shirt: '#e67e22', pants: '#2f3542', hair: '#1d1410', height: 1.15 } },
       { id: 'bg_leo', object: leo, position: [8.5, LEO_BASE, 4.05], yaw: ctx.yawTo([8.5, 4.05], [6, 1.5]), collide: false },
-      { id: 'bg_kid_1', position: [8.2, 0, -0.75], yaw: ctx.yawTo([8.2, -0.75], [7.6, 1.2]),
-        look: { skin: '#8d5524', shirt: '#f2a93b', pants: '#4a4a4a', hair: '#1d1410', height: 1.12 } }
     ];
 
     // ------------------------------------------------------------------ hotspots / spawn / exit
@@ -495,11 +548,15 @@ export default {
       npcs,
       exit: { position: [0, 0, -20.8], radius: 1.5 },
       lights: 'day',
+      sky: '#cfd9e6',
+      fog: { color: '#cfd9e6', near: 35, far: 110 },
+      cameraOccluders: camProxies,
       update(dt, t) {
         balloons.tick(t);
         leo.position.y = LEO_BASE + Math.abs(Math.sin(t * 3.2)) * 0.38;
       },
       dispose() {
+        camProxies.length = 0;
         owned.lights.forEach((l) => { group.remove(l); l.dispose?.(); });
         owned.geos.forEach((g) => g.dispose());
         owned.mats.forEach((m) => m.dispose());

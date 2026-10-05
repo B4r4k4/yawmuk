@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.1.0",
   "type": "module",
-  "description": "«يومك» Yawmuk — a browser 3D educational game on the fiqh of daily dealings for a Muslim living in the USA",
+  "description": "«يومك» Yawmuk — a browser 3D educational game for discovering Islam through everyday situations in the USA",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

@@ -98,7 +98,20 @@ export function createSceneManager(world, mats) {
         lbl.position.set(0, fig.userData.isNPC ? 2.02 : 2.1, 0);
         fig.add(lbl);
       }
-      if (n.collide !== false) colliders.push({ min: [p[0] - 0.28, 0, p[2] - 0.28], max: [p[0] + 0.28, 1.8, p[2] + 0.28] });
+      if (n.collide !== false) {
+        const c = { min: [p[0] - 0.28, 0, p[2] - 0.28], max: [p[0] + 0.28, 1.8, p[2] + 0.28] };
+        colliders.push(c);
+        fig.userData.collider = c; // mutated in place when the NPC moves between stations
+      }
+      // optional stations: { <hotspotId>: { position:[x,0,z], yaw } } — one NPC serving several situations
+      if (n.stations && typeof n.stations === 'object') {
+        const st = {};
+        for (const [hid, s] of Object.entries(n.stations)) {
+          if (s && Array.isArray(s.position)) st[hid] = { position: vec3(s.position), yaw: Number(s.yaw) || 0 };
+          else warn(`npc "${n.id}": station "${hid}" needs { position:[x,0,z], yaw }`);
+        }
+        if (Object.keys(st).length) fig.userData.stations = st;
+      }
       npcObjects[n.id] = fig;
     }
 
@@ -214,6 +227,28 @@ export function createSceneManager(world, mats) {
       location, def, ctx, res, root, colliders, occluders, spawn, hotspots, exit, npcs: npcObjects, bounds, lights,
       isPlaceholder: usedPlaceholder,
       talkingTo: null,
+      /** Move every NPC that has stations to the station of its first unfinished hotspot. Returns ids that moved. */
+      placeStationNpcs(isHotspotDone, { dryRun = false, force = null } = {}) {
+        const moved = [];
+        const order = [...new Set((script?.situations || []).map((s) => s.hotspot))];
+        for (const [id, fig] of Object.entries(npcObjects)) {
+          const st = fig.userData.stations; if (!st) continue;
+          if (force && !st[force]) continue;
+          const ids = order.filter((h) => st[h]).concat(Object.keys(st).filter((h) => !order.includes(h)));
+          if (!ids.length) continue;
+          const target = force && st[force] ? force : ids.find((h) => !isHotspotDone(h)) || ids[ids.length - 1];
+          if (fig.userData.station === target) continue;
+          if (dryRun) { moved.push(id); continue; }
+          const { position: p, yaw } = st[target];
+          fig.position.set(p[0], p[1], p[2]);
+          fig.rotation.y = yaw; fig.userData.baseYaw = yaw;
+          const c = fig.userData.collider;
+          if (c) { c.min[0] = p[0] - 0.28; c.min[2] = p[2] - 0.28; c.max[0] = p[0] + 0.28; c.max[2] = p[2] + 0.28; }
+          if (fig.userData.station !== undefined) moved.push(id);
+          fig.userData.station = target;
+        }
+        return moved;
+      },
       update(dt, t, near) {
         for (const hs of hotspots) hs.marker?.tick(t, near === hs);
         exit.marker.tick(t, near === exit);

@@ -157,7 +157,39 @@
     },
     "confidence": "high",
     "review_status": "ai_verified",
-    "notes_for_reviewer": "ثقة عالية في أصل الحكم (تحريم القرض بفائدة) وفي نصوص الأدلة. تحتاج مراجعة: (1) الإحالات المذهبية للحنفية والشافعية والحنابلة منقولة بأرقام أجزاء وصفحات من مواقع فتوى (askimam، islamqa) ولم تُطابق على طبعة محددة. (2) المرجع المالكي من موسوعة عامة مصرية وليس من كتاب مالكي معتمد. (3) نسبة فتوى ديترويت 1999 إلى Fiqh Council of North America لم يُتحقق منها رسمياً، فوُضعت بوصف «مؤتمر فقهي». (4) تصنيف AMJA للشركات من 2014 وقد يكون تغيّر. (5) لم نجد نصاً عربياً رسمياً لقرار المجمع 50 (1/6) فصيغ الموقف العربي بالمعنى من النص الإنجليزي الرسمي. (6) الإجارة المنتهية بالتمليك: لم يُتحقق من رقم قرار المجمع فيها فلم يُذكر. نصوص الآيات من Tanzil (رسم عثماني) عبر api.alquran.cloud مع ترجمة Sahih International. نص الحديث منقول آلياً من hadith-api (مصدر sunnah.com) وتُحقق من الرقم 1598 بالبحث، لأن sunnah.com يمنع الجلب المباشر (403).\n\n[تدقيق المرحلة 1 — 2026-10-05] تحققتُ مباشرة من قرار AMJA (هيوستن 15-17 سبتمبر 2014): التصنيف مطابق (Guidance: يجوز للحاجة؛ Devon Bank بعقديه وUIF: للحاجة الشديدة؛ LARIBA وIjara Loan: لا يجوز؛ Ameen Housing: جائز بعد تعديل يناير 2015)، وأُضيفت شركتان صنّفهما القرار جائزتين (Mubarak Mortgage، Neeyah). أرقام قرارات المجمع 10 (10/2)، 50 (1/6)، 40-41 (2/5، 3/5)، 136 (2/15) صحيحة. ملاحظات الباحث بشأن المراجع المذهبية الثانوية (islamqa/askimam) ما تزال قائمة لكنها لا تمس الحكم المجمع عليه. نجحت الفحوص الآلية."
+    "notes_for_reviewer": "ثقة عالية في أصل الحكم (تحريم القرض بفائدة) وفي نصوص الأدلة. تحتاج مراجعة: (1) الإحالات المذهبية للحنفية والشافعية والحنابلة منقولة بأرقام أجزاء وصفحات من مواقع فتوى (askimam، islamqa) ولم تُطابق على طبعة محددة. (2) المرجع المالكي من موسوعة عامة مصرية وليس من كتاب مالكي معتمد. (3) نسبة فتوى ديترويت 1999 إلى Fiqh Council of North America لم يُتحقق منها رسمياً، فوُضعت بوصف «مؤتمر فقهي». (4) تصنيف AMJA للشركات من 2014 وقد يكون تغيّر. (5) لم نجد نصاً عربياً رسمياً لقرار المجمع 50 (1/6) فصيغ الموقف العربي بالمعنى من النص الإنجليزي الرسمي. (6) الإجارة المنتهية بالتمليك: لم يُتحقق من رقم قرار المجمع فيها فلم يُذكر. نصوص الآيات من Tanzil (رسم عثماني) عبر api.alquran.cloud مع ترجمة Sahih International. نص الحديث منقول آلياً من hadith-api (مصدر sunnah.com) وتُحقق من الرقم 1598 بالبحث، لأن sunnah.com يمنع الجلب المباشر (403).\n\n[تدقيق المرحلة 1 — 2026-10-05] تحققتُ مباشرة من قرار AMJA (هيوستن 15-17 سبتمبر 2014): التصنيف مطابق (Guidance: يجوز للحاجة؛ Devon Bank بعقديه وUIF: للحاجة الشديدة؛ LARIBA وIjara Loan: لا يجوز؛ Ameen Housing: جائز بعد تعديل يناير 2015)، وأُضيفت شركتان صنّفهما القرار جائزتين (Mubarak Mortgage، Neeyah). أرقام قرارات المجمع 10 (10/2)، 50 (1/6)، 40-41 (2/5، 3/5)، 136 (2/15) صحيحة. ملاحظات الباحث بشأن المراجع المذهبية الثانوية (islamqa/askimam) ما تزال قائمة لكنها لا تمس الحكم المجمع عليه. نجحت الفحوص الآلية.",
+    "newcomer_explainer": {
+      "ar": "يحرّم الإسلام الربا، أي اشتراط زيادة على القرض أخذاً أو دفعاً، ولذلك لا يجوز القرض العقاري بفائدة عند المذاهب الأربعة وأكثر المجامع الفقهية المعاصرة. ويذكر العلماء أن الحكمة هي العدل: فالمقرض بفائدة يضمن ربحه ويحمّل المقترض المحتاج كل المخاطرة، أما التجارة فيتقاسم فيها الطرفان الربح والخسارة، ولهذا فرّق القرآن بين البيع والربا (البقرة 275). لذلك يلجأ كثير من المسلمين في أمريكا إلى عقود التمويل الإسلامي القائمة على البيع أو المشاركة أو الإجارة. وقد أجاز المجلس الأوروبي للإفتاء القرض الربوي لمسكن الحاجة عند فقد البديل وبشروط مشددة، لكنه قول لا يأخذ به جمهور العلماء.",
+      "en": "Islam forbids riba — stipulating any increase on a loan, whether receiving or paying it — so a conventional interest-bearing mortgage is not allowed according to the four classical schools and most contemporary fiqh bodies. Scholars explain the wisdom as fairness: an interest lender secures a guaranteed gain while the borrower in need carries all the risk, whereas in trade both sides share profit and loss, which is why the Quran distinguishes trade from riba (2:275). For this reason many Muslims in the US use Islamic home-finance contracts based on sale, partnership or lease instead. The European Council for Fatwa allowed an interest mortgage for a needed family home under strict conditions when no alternative exists, but most scholars do not accept that view."
+    },
+    "common_ground": {
+      "summary": {
+        "ar": "الكتاب المقدس أيضاً ينهى عن الإقراض بالربا للأخ وللفقير، وقد ظلت الكنيسة قروناً تدين الربا؛ ففي التقليدين معاً إقراضُ المحتاج بابُ رحمة لا باب تكسّب.",
+        "en": "The Bible also forbids lending at interest to a brother and to the poor, and for centuries the Church condemned usury; in both traditions lending to someone in need is an act of mercy, not a business opportunity."
+      },
+      "bible": [
+        {
+          "ref_en": "Exodus 22:25",
+          "ref_ar": "خروج 22: 25",
+          "text_en": "If thou lend money to any of my people that is poor by thee, thou shalt not be to him as an usurer, neither shalt thou lay upon him usury.",
+          "text_ar": "إِنْ أَقْرَضْتَ فِضَّةً لِشَعْبِي ٱلْفَقِيرِ ٱلَّذِي عِنْدَكَ فَلَا تَكُنْ لَهُ كَٱلْمُرَابِي. لَا تَضَعُوا عَلَيْهِ رِبًا.",
+          "source_url": "https://bible-api.com/Exodus+22:25?translation=kjv",
+          "source_url_ar": "https://api.getbible.net/v2/arabicsv/2/22.json"
+        },
+        {
+          "ref_en": "Deuteronomy 23:19",
+          "ref_ar": "تثنية 23: 19",
+          "text_en": "Thou shalt not lend upon usury to thy brother; usury of money, usury of victuals, usury of any thing that is lent upon usury:",
+          "text_ar": "«لَا تُقْرِضْ أَخَاكَ بِرِبًا، رِبَا فِضَّةٍ، أَوْ رِبَا طَعَامٍ، أَوْ رِبَا شَيْءٍ مَّا مِمَّا يُقْرَضُ بِرِبًا،",
+          "source_url": "https://bible-api.com/Deuteronomy+23:19?translation=kjv",
+          "source_url_ar": "https://api.getbible.net/v2/arabicsv/5/23.json"
+        }
+      ],
+      "differences": {
+        "ar": "النهي في التوراة موجّه إلى الإقراض داخل جماعة بني إسرائيل، والآية التالية (تثنية 23: 20) تجيز الربا من الأجنبي. ومع الزمن قبلت أغلب الكنائس الفائدة المعتدلة في الإقراض التجاري وصارت تقصر لفظ «الربا» على الفائدة الفاحشة أو الاستغلالية، فأغلب المسيحيين اليوم يرون القرض العقاري العادي مشروعاً، بينما يعدّ جمهور علماء المسلمين كل زيادة مشروطة على القرض ربا.",
+        "en": "The Torah's prohibition addresses lending within the Israelite community, and the next verse (Deuteronomy 23:20) permits interest from a foreigner. Over time most churches came to accept moderate interest in commercial lending and reserved the word 'usury' for excessive or exploitative rates, so most Christians today see an ordinary mortgage as legitimate, whereas mainstream Islamic scholarship treats any stipulated increase on a loan as riba."
+      }
+    }
   },
   {
     "id": "home.food_ingredients",
@@ -321,7 +353,39 @@
     },
     "confidence": "medium",
     "review_status": "ai_draft",
-    "notes_for_reviewer": "المسألة مركّبة وفيها خلاف واسع، فوُضع الحكم «depends». تحتاج مراجعة: (1) أقوال المذاهب في الاستحالة أُخذت من ملخص الموسوعة الفقهية (الدرر السنية) عبر نتيجة بحث، لأن الموقع حجب الجلب المباشر؛ ومسائل التسمية من الجزيري وتيسير التفسير للقطان، وهما مرجعان ثانويان، فينبغي توثيقها من كتب كل مذهب. (2) قول أبي حنيفة وأبي يوسف في الأشربة نُقل عن تكملة فتح الملهم بواسطة فتوى، ولم نطّلع على النص. (3) وثيقة AMJA عنوانها الداخلي «المؤتمر التاسع» واسم ملفها «13th»، ولم نتحقق من سنة انعقاده. (4) تطبيق قرار المجمع 210 على خلاصة الفانيليا اجتهاد منا: القرار يعفو عن الكحول المذيب في التصنيع، وخلاصة الفانيليا كحول مضاف بنسبة كبيرة يستعمله المستهلك مباشرة، فيحتاج حكماً صريحاً من عالم. لم نتمكن من فتح نص لائحة FDA (21 CFR 169.175) لتوثيق نسبة 35% فلم نذكر الرقم. (5) نص حديث «ما أسكر كثيره فقليله حرام» ورد في سنن أبي داود 3681 وحكم عليه الألباني «حسن صحيح» والأرناؤوط «صحيح لغيره» (من بيانات hadith-api).\n\n[تدقيق المرحلة 1 — 2026-10-05] تحققتُ من نص وثيقة AMJA (قراءة PDF): عنوانها «المؤتمر السنوي التاسع»، وفيها حرفياً تحريم أبقار وأغنام المسالخ الأمريكية لقوة الشبهة والترخيص في الدواجن مع استحباب التورع، والجيلاتين والكحول كما لُخّص — فصُحّح decision_ref. وتحققتُ من قرار المجمع 210 (6/22) الكويت مارس 2015: المنع من الأطعمة المحتوية على خمر ولو قليلاً، وجواز الكحول المذيب لعموم البلوى، وإرجاء الجيلاتين — مطابق. يبقى ai_draft لأن تنزيل القرار على «خلاصة الفانيليا» (كحول بنسبة كبيرة يضيفه المستهلك) اجتهاد من الباحث، ولأن أقوال المذاهب في الاستحالة والتسمية منقولة من مراجع ثانوية (الجزيري، تيسير التفسير) — يحتاج عالماً."
+    "notes_for_reviewer": "المسألة مركّبة وفيها خلاف واسع، فوُضع الحكم «depends». تحتاج مراجعة: (1) أقوال المذاهب في الاستحالة أُخذت من ملخص الموسوعة الفقهية (الدرر السنية) عبر نتيجة بحث، لأن الموقع حجب الجلب المباشر؛ ومسائل التسمية من الجزيري وتيسير التفسير للقطان، وهما مرجعان ثانويان، فينبغي توثيقها من كتب كل مذهب. (2) قول أبي حنيفة وأبي يوسف في الأشربة نُقل عن تكملة فتح الملهم بواسطة فتوى، ولم نطّلع على النص. (3) وثيقة AMJA عنوانها الداخلي «المؤتمر التاسع» واسم ملفها «13th»، ولم نتحقق من سنة انعقاده. (4) تطبيق قرار المجمع 210 على خلاصة الفانيليا اجتهاد منا: القرار يعفو عن الكحول المذيب في التصنيع، وخلاصة الفانيليا كحول مضاف بنسبة كبيرة يستعمله المستهلك مباشرة، فيحتاج حكماً صريحاً من عالم. لم نتمكن من فتح نص لائحة FDA (21 CFR 169.175) لتوثيق نسبة 35% فلم نذكر الرقم. (5) نص حديث «ما أسكر كثيره فقليله حرام» ورد في سنن أبي داود 3681 وحكم عليه الألباني «حسن صحيح» والأرناؤوط «صحيح لغيره» (من بيانات hadith-api).\n\n[تدقيق المرحلة 1 — 2026-10-05] تحققتُ من نص وثيقة AMJA (قراءة PDF): عنوانها «المؤتمر السنوي التاسع»، وفيها حرفياً تحريم أبقار وأغنام المسالخ الأمريكية لقوة الشبهة والترخيص في الدواجن مع استحباب التورع، والجيلاتين والكحول كما لُخّص — فصُحّح decision_ref. وتحققتُ من قرار المجمع 210 (6/22) الكويت مارس 2015: المنع من الأطعمة المحتوية على خمر ولو قليلاً، وجواز الكحول المذيب لعموم البلوى، وإرجاء الجيلاتين — مطابق. يبقى ai_draft لأن تنزيل القرار على «خلاصة الفانيليا» (كحول بنسبة كبيرة يضيفه المستهلك) اجتهاد من الباحث، ولأن أقوال المذاهب في الاستحالة والتسمية منقولة من مراجع ثانوية (الجزيري، تيسير التفسير) — يحتاج عالماً.",
+    "newcomer_explainer": {
+      "ar": "يبيح الإسلام أكثر الأطعمة، ومنها ذبائح اليهود والنصارى إذا ذُبحت ذبحاً شرعياً إذ نصّ القرآن على حِلّ طعام الذين أوتوا الكتاب (المائدة 5)، ويحرّم الخنزير والدم والميتة والخمر. ويربط العلماء هذه الحدود بالعبادة والطهارة: فالذبيحة تُذكّى بذكر اسم الله وإنهار الدم، والمسكر يُجتنب قليله وكثيره. ويختلف العلماء المعاصرون في لحوم المسالخ الأمريكية بسبب الصعق وطريقة الذبح، وفي الجيلاتين الخنزيري، وفي الكحول المستعمل مذيباً للنكهات، فقد تختلف اختيارات أصدقاء آدم المسلمين. ومن لم يتبيّن الأمر فالأحوط عنده ترك المشتبه (البخاري 52).",
+      "en": "Islam permits most foods, including meat slaughtered by Jews and Christians when properly slaughtered (\"the food of those who were given the Scripture is lawful for you\", 5:5), while forbidding pork, blood, carrion and alcohol. Scholars connect these limits to worship and purity: an animal is slaughtered with God's name mentioned and its blood drained, and intoxicants are avoided in small and large amounts alike. Contemporary scholars differ on ordinary US slaughterhouse meat because of stunning and method, on pork gelatin, and on alcohol used as a flavour solvent, so Adam's Muslim friends may make different choices. When unsure, many prefer to avoid what is doubtful (Bukhari 52)."
+    },
+    "common_ground": {
+      "summary": {
+        "ar": "سفر اللاويين يحرّم الخنزير، وفي سفر أعمال الرسل طُلب من المؤمنين الأوائل الامتناع عن الدم والمخنوق وما ذُبح للأصنام، وهذا قريب جداً من أحكام الإسلام في الدم والذبح. والإسلام من جهته يبيح طعام أهل الكتاب، وهذا جسر حقيقي على مائدة الأسرة.",
+        "en": "Leviticus forbids pork, and in Acts the early believers were asked to abstain from blood, from things strangled and from meat offered to idols — very close to Islam's rules on blood and slaughter. Islam, for its part, treats the food of Christians as lawful, which is a real bridge at the family table."
+      },
+      "bible": [
+        {
+          "ref_en": "Leviticus 11:7",
+          "ref_ar": "لاويين 11: 7",
+          "text_en": "And the swine, though he divide the hoof, and be clovenfooted, yet he cheweth not the cud; he is unclean to you.",
+          "text_ar": "وَٱلْخِنْزِيرَ، لِأَنَّهُ يَشُقُّ ظِلْفًا وَيَقْسِمُهُ ظِلْفَيْنِ، لَكِنَّهُ لَا يَجْتَرُّ، فَهُوَ نَجِسٌ لَكُمْ.",
+          "source_url": "https://bible-api.com/Leviticus+11:7?translation=kjv",
+          "source_url_ar": "https://api.getbible.net/v2/arabicsv/3/11.json"
+        },
+        {
+          "ref_en": "Acts 15:29",
+          "ref_ar": "أعمال الرسل 15: 29",
+          "text_en": "That ye abstain from meats offered to idols, and from blood, and from things strangled, and from fornication: from which if ye keep yourselves, ye shall do well. Fare ye well.",
+          "text_ar": "أَنْ تَمْتَنِعُوا عَمَّا ذُبِحَ لِلْأَصْنَامِ، وَعَنِ ٱلدَّمِ، وَٱلْمَخْنُوقِ، وَٱلزِّنَا، ٱلَّتِي إِنْ حَفِظْتُمْ أَنْفُسَكُمْ مِنْهَا فَنِعِمَّا تَفْعَلُونَ. كُونُوا مُعَافَيْنَ».",
+          "source_url": "https://bible-api.com/Acts+15:29?translation=kjv",
+          "source_url_ar": "https://api.getbible.net/v2/arabicsv/44/15.json"
+        }
+      ],
+      "differences": {
+        "ar": "يرى أغلب المسيحيين أن شريعة الأطعمة في العهد القديم لم تعد ملزمة بعد العهد الجديد (ويستشهدون عادة بمرقس 7 وأعمال الرسل 10)، ويعدّون توجيه أعمال الرسل 15 تدبيراً مؤقتاً، مع أن بعض الجماعات المسيحية كالسبتيين (الأدفنتست) والكنيسة الأرثوذكسية الإثيوبية ما زالت تتجنب الخنزير. كما يبيح أغلب المسيحيين الشرب المعتدل، بينما يحرّم الإسلام الخمر قليلها وكثيرها.",
+        "en": "Most Christians believe the Old Testament food laws are no longer binding after the New Testament (commonly citing Mark 7 and Acts 10) and regard the Acts 15 instructions as a temporary measure, though some communities such as Seventh-day Adventists and the Ethiopian Orthodox Church still avoid pork. Most Christians also allow moderate drinking, whereas Islam forbids alcohol in any amount."
+      }
+    }
   },
   {
     "id": "home.credit_card",
@@ -472,6 +536,38 @@
     },
     "confidence": "medium",
     "review_status": "ai_verified",
-    "notes_for_reviewer": "وُضع الحكم «disputed» لأن الخلاف معتبر بين المجمع الدولي (القرار 108: المنع حتى مع نية السداد) وAMJA (الإجازة للحاجة بشرط السداد الكامل). تحتاج مراجعة: (1) لم نفتح النص الرسمي للقرار 108 على موقع المجمع، فنُقل عن islamqa.info/ar/97530 الذي ينقل نصه. (2) اسم المفتي في فتوى AMJA 80196 جاء في الصفحة «Dr. Main Khalid Al-Qudah» (د. مائن خالد القضاة)؛ صحّح الكتابة العربية للاسم. (3) لم نجد قراراً مجمعياً صريحاً في BNPL، فالحكم مبني على القرار 51 في غرامات التأخير، والخلاصة في الإرشاد اجتهاد يحتاج مراجعة. (4) أقوال المذاهب هنا «أصول» لا نصوص في المسألة، والإحالة للمالكية والشافعية عبر الإجماع المنقول في المغني تحتاج توثيقاً من كتبهم.\n\n[تدقيق المرحلة 1 — 2026-10-05] صُحّح الملخص: عبارة «غرامة التأخير المشروطة ربا باتفاق» تعميم غير دقيق؛ فالمنع قول المجمع (القرار 51) والجمهور، وفي المسألة خلاف معاصر معروف (التعويض عن ضرر المماطلة عند بعض المعاصرين، والتزام التصدق بغرامة التأخير في معايير AAOIFI). يُستحسن أن يضيف المراجع مرجعاً لهذا الخلاف. تعارض مع السيناريو: الخيار c (بطاقة ائتمان مع سداد تلقائي) موسوم best والخيار b (بطاقة خصم) acceptable، بينما الحكم «disputed» والإرشاد العملي يقدّم بطاقة الخصم لأنها «بلا شبهة» — انظر docs/audit/phase1_audit.md. نجحت الفحوص الآلية."
+    "notes_for_reviewer": "وُضع الحكم «disputed» لأن الخلاف معتبر بين المجمع الدولي (القرار 108: المنع حتى مع نية السداد) وAMJA (الإجازة للحاجة بشرط السداد الكامل). تحتاج مراجعة: (1) لم نفتح النص الرسمي للقرار 108 على موقع المجمع، فنُقل عن islamqa.info/ar/97530 الذي ينقل نصه. (2) اسم المفتي في فتوى AMJA 80196 جاء في الصفحة «Dr. Main Khalid Al-Qudah» (د. مائن خالد القضاة)؛ صحّح الكتابة العربية للاسم. (3) لم نجد قراراً مجمعياً صريحاً في BNPL، فالحكم مبني على القرار 51 في غرامات التأخير، والخلاصة في الإرشاد اجتهاد يحتاج مراجعة. (4) أقوال المذاهب هنا «أصول» لا نصوص في المسألة، والإحالة للمالكية والشافعية عبر الإجماع المنقول في المغني تحتاج توثيقاً من كتبهم.\n\n[تدقيق المرحلة 1 — 2026-10-05] صُحّح الملخص: عبارة «غرامة التأخير المشروطة ربا باتفاق» تعميم غير دقيق؛ فالمنع قول المجمع (القرار 51) والجمهور، وفي المسألة خلاف معاصر معروف (التعويض عن ضرر المماطلة عند بعض المعاصرين، والتزام التصدق بغرامة التأخير في معايير AAOIFI). يُستحسن أن يضيف المراجع مرجعاً لهذا الخلاف. تعارض مع السيناريو: الخيار c (بطاقة ائتمان مع سداد تلقائي) موسوم best والخيار b (بطاقة خصم) acceptable، بينما الحكم «disputed» والإرشاد العملي يقدّم بطاقة الخصم لأنها «بلا شبهة» — انظر docs/audit/phase1_audit.md. نجحت الفحوص الآلية.",
+    "newcomer_explainer": {
+      "ar": "الشراء بالتقسيط بلا فائدة جائز في الإسلام، وبطاقة الخصم (debit) لا إشكال فيها، لكن دفع الفائدة ربا، وغرامة التأخير المشروطة لصالح الدائن يعدّها مجمع الفقه الإسلامي الدولي وجمهور المعاصرين من الربا أيضاً. ويختلف العلماء في توقيع عقد فيه شرط فائدة مع العزم على السداد الكامل دائماً: فمنعه مجمع الفقه الإسلامي الدولي، وأجازه مجمع فقهاء الشريعة بأمريكا (AMJA) للمسلمين هناك للحاجة. والقيم التي وراء ذلك: تجنّب الدَّين الاستغلالي، وأداء الحقوق في وقتها، فقد قال النبي ﷺ: «مطل الغني ظلم» (البخاري 2287).",
+      "en": "Buying in interest-free instalments is permissible in Islam and a debit card raises no issue, but paying interest is riba, and a stipulated late fee paid to the lender is treated as riba too by the International Islamic Fiqh Academy and most contemporary scholars. Scholars differ on signing an agreement that contains an interest clause while always paying in full: the International Islamic Fiqh Academy forbade it, while AMJA allowed it for Muslims in the US because of need. The values behind this are avoiding exploitative debt and paying what you owe on time; the Prophet ﷺ called a wealthy person's delay in repaying an injustice (Bukhari 2287)."
+    },
+    "common_ground": {
+      "summary": {
+        "ar": "يحذّر التقليدان من الوقوع في الدَّين ويمدحان المبادرة إلى سداده؛ فالمزمور يجعل عدم الوفاء بالقرض من صفات الشرير، وهو قريب من الحديث الذي يسمّي مماطلة الغني ظلماً.",
+        "en": "Both traditions warn against sliding into debt and praise repaying promptly; the Psalm counts failing to repay as a mark of the wicked, much like the hadith that calls a well-off debtor's delay an injustice."
+      },
+      "bible": [
+        {
+          "ref_en": "Romans 13:8",
+          "ref_ar": "رومية 13: 8",
+          "text_en": "Owe no man any thing, but to love one another: for he that loveth another hath fulfilled the law.",
+          "text_ar": "لَا تَكُونُوا مَدْيُونِينَ لِأَحَدٍ بِشَيْءٍ إِلَّا بِأَنْ يُحِبَّ بَعْضُكُمْ بَعْضًا، لِأَنَّ مَنْ أَحَبَّ غَيْرَهُ فَقَدْ أَكْمَلَ ٱلنَّامُوسَ.",
+          "source_url": "https://bible-api.com/Romans+13:8?translation=kjv",
+          "source_url_ar": "https://api.getbible.net/v2/arabicsv/45/13.json"
+        },
+        {
+          "ref_en": "Psalms 37:21",
+          "ref_ar": "مزمور 37: 21",
+          "text_en": "The wicked borroweth, and payeth not again: but the righteous sheweth mercy, and giveth.",
+          "text_ar": "ٱلشِّرِّيرُ يَسْتَقْرِضُ وَلَا يَفِي، أَمَّا ٱلصِّدِّيقُ فَيَتَرَأَّفُ وَيُعْطِي.",
+          "source_url": "https://bible-api.com/Psalms+37:21?translation=kjv",
+          "source_url_ar": "https://api.getbible.net/v2/arabicsv/19/37.json"
+        }
+      ],
+      "differences": {
+        "ar": "لا يرى أغلب المسيحيين في دفع فائدة البطاقة العادية إثماً في ذاته، وإن كان كثير من المرشدين الماليين المسيحيين ينصحون بتجنب ديون الاستهلاك؛ أما في الإسلام فالإشكال في الفائدة نفسها لا في ثقل الدَّين فقط.",
+        "en": "Most Christians do not consider paying ordinary card interest sinful in itself, though many Christian financial teachers urge avoiding consumer debt; in Islam the problem is the interest itself, not only the burden of debt."
+      }
+    }
   }
 ]

@@ -1,13 +1,14 @@
 // «يومك» — School scene: Scioto Valley Community College, Monday 18:30 (evening).
 // A mint-green corridor (x -12..10, z -2..2) linking:
-//   • exam classroom 114 (left, x -10..-2, z -9..-2)  → hotspot `exam_desk`  (Tyler)
-//   • Financial Aid office (right, x -1..3, z 2..6)   → hotspot `aid_office` (Ms. Rodriguez)
-//   • library corner + glass study room (left end, x 2..10, z -8..-2) → hotspot `study_room` (Dr. Mitchell)
+//   • exam classroom 114 (left, x -10..-2, z -9..-2)  → hotspot `exam_desk`  (Kareem; Tyler seated in front)
+//   • Financial Aid office (right, x -1..3, z 2..6)   → hotspot `aid_office` (Omar in scrubs; Ms. Rodriguez behind)
+//   • library corner + EMPTY glass study room (left end, x 2..10, z -8..-2) → hotspot `study_room` (Noor)
+// Premise (2026-10-05): Adam is a Christian learning about Islam from his Muslim friends.
 // Exit: glass doors to the parking lot at the corridor's east end.
 //
 // Procedural geometry only. Almost every static box goes through per-material InstancedMesh
 // "batches" (one draw call per material), so the whole building is ~70 meshes.
-// A ceiling slab collider (y 3..4.5) keeps the third-person camera under the ceiling indoors.
+// An invisible merged occluder mesh (ceiling + full-height walls) keeps the third-person camera indoors.
 
 const H = 3; // ceiling height
 
@@ -242,7 +243,7 @@ export default {
       g.fillStyle = '#334'; g.fillRect(98, 30, 22, 60); g.fillStyle = '#7cf'; g.fillRect(101, 34, 16, 10);
       g.fillStyle = '#222'; g.fillRect(10, 216, 80, 28);
     });
-    const tvTex = poster(256, 144, '#f5f7fb', [['Group Project — Sprint 3', 34, 18, '#1d3f73'], ['■ API  ■ UI  ■ Tests', 80, 15, '#2f7a78', 600], ['Hannah · Carlos · Adam', 120, 13, '#555', 600]]);
+    const tvTex = poster(256, 144, '#f5f7fb', [['Study Room 2', 34, 20, '#1d3f73'], ['Door stays open · 4 seats', 80, 15, '#2f7a78', 600], ['Room free · book at the desk', 120, 13, '#555', 600]]);
     const lapTex = poster(128, 80, '#e9f1ff', [['notes.md', 20, 12, '#1d3f73'], ['— — — — —', 44, 10, '#666', 500]]);
 
     const emis = (tex, intensity = 0.9) => mat('#ffffff', { map: tex, emissive: '#ffffff', emissiveMap: tex, emissiveIntensity: intensity, roughness: 0.5 });
@@ -449,6 +450,8 @@ export default {
     // service bell
     mesh(new THREE.CylinderGeometry(0.05, 0.055, 0.015, 14), M.metal, 2.3, 1.058, 3.0);
     mesh(new THREE.SphereGeometry(0.04, 12, 6, 0, Math.PI * 2, 0, Math.PI / 2), mat('#d8b23a', { metalness: 0.8, roughness: 0.25 }), 2.3, 1.065, 3.0);
+    // pile of white forms (aid / loan paperwork) in front of Omar
+    for (let i = 0; i < 5; i++) C(M.paper, 1.15 + (i % 2) * 0.01, 1.055 + i * 0.008, 3.05, 0.22, 0.007, 0.29, (i - 2) * 0.05);
     // brochure stand: three tilted pockets (orange / green / blue)
     B(M.alu, 0.0, 1.05, 3.12, 0.75, 1.08, 3.3);
     [[0.12, M.orange], [0.37, M.green], [0.62, M.blue]].forEach(([x, m], i) => {
@@ -517,15 +520,16 @@ export default {
       C(seatM, x + s * 0.2, 0.7, z + c * 0.2, 0.4, 0.4, 0.04, yaw);
       C(M.metal, x, 0.22, z, 0.36, 0.44, 0.36, yaw);
     };
-    // open study table
-    B(M.woodL, 3.2, 0.72, -5.3, 4.8, 0.76, -4.5);
-    for (const [x, z] of [[3.3, -5.2], [4.7, -5.2], [3.3, -4.6], [4.7, -4.6]]) B(M.metal, x - 0.03, 0, z - 0.03, x + 0.03, 0.72, z + 0.03);
-    col(3.2, -5.3, 4.8, -4.5, 0, 0.76);
-    chair(3.6, -4.0, 0); chair(4.4, -4.0, 0); chair(3.6, -5.8, Math.PI); chair(4.4, -5.8, Math.PI);
-    C(M.blue, 3.7, 0.79, -4.85, 0.22, 0.06, 0.3, 0.2); C(M.orange, 4.3, 0.78, -4.95, 0.2, 0.04, 0.28, -0.3);
-    const lampShade = mesh(new THREE.ConeGeometry(0.12, 0.14, 12, 1, true), M.warmGlow, 4.5, 1.05, -5.1, { cast: false });
+    // open study table at [4, 0, -4]: four chairs, two laptops (placed below, once lapLid exists)
+    B(M.woodL, 3.2, 0.72, -4.4, 4.8, 0.76, -3.6);
+    for (const [x, z] of [[3.3, -4.3], [4.7, -4.3], [3.3, -3.7], [4.7, -3.7]]) B(M.metal, x - 0.03, 0, z - 0.03, x + 0.03, 0.72, z + 0.03);
+    col(3.2, -4.4, 4.8, -3.6, 0, 0.76);
+    chair(3.6, -3.1, 0); chair(4.4, -3.1, 0); chair(3.6, -4.9, Math.PI); chair(4.4, -4.9, Math.PI);
+    C(M.blue, 3.37, 0.79, -3.75, 0.22, 0.06, 0.3, 0.2); C(M.orange, 4.62, 0.78, -3.8, 0.2, 0.04, 0.28, -0.3);
+    for (const [x, z, r] of [[3.95, -3.95, 0.4], [4.1, -4.1, -0.3]]) C(M.paper, x, 0.765, z, 0.21, 0.004, 0.29, r);
+    const lampShade = mesh(new THREE.ConeGeometry(0.12, 0.14, 12, 1, true), M.warmGlow, 3.35, 1.05, -4.25, { cast: false });
     lampShade.material.side = THREE.DoubleSide;
-    B(M.dark, 4.48, 0.76, -5.12, 4.52, 0.98, -5.08);
+    B(M.dark, 3.33, 0.76, -4.27, 3.37, 0.98, -4.23);
 
     // glass study room 2 (x 5.6..8.6, z -6.8..-3.8), door open toward the corridor
     const GX0 = 5.6, GX1 = 8.6, GZ0 = -6.8, GZ1 = -3.8, DX0 = 6.55, DX1 = 7.55, GH = 2.7;
@@ -547,7 +551,7 @@ export default {
     B(M.alu, DX1 - 0.06, 0.02, GZ1 - 0.98, DX1, 2.22, GZ1 - 0.92);
     B(M.alu, DX1 - 0.1, 0.9, GZ1 - 0.9, DX1 - 0.07, 1.2, GZ1 - 0.86);
     plane(emis(studySignTex, 0.5), 0.6, 0.15, (DX0 + DX1) / 2, 2.85, GZ1 + 0.055);
-    // round table, chairs, laptops, papers, wall screen
+    // round table + chairs; the room is EMPTY now (no people, laptops or papers); wall screen
     mesh(new THREE.CylinderGeometry(0.62, 0.62, 0.04, 28), M.white, 7.1, 0.74, -5.3);
     mesh(new THREE.CylinderGeometry(0.05, 0.05, 0.72, 8), M.metal, 7.1, 0.36, -5.3);
     mesh(new THREE.CylinderGeometry(0.3, 0.32, 0.03, 16), M.metal, 7.1, 0.015, -5.3);
@@ -563,16 +567,15 @@ export default {
       const sc = new THREE.Mesh(unitPlane, lapM); sc.scale.set(0.29, 0.18, 1); sc.position.set(0, 0.108, 0.006); inner.add(sc);
     };
     const lapM = emis(lapTex, 0.8);
-    // laptops face their (absent) users: rotation yaw so the screen faces the user seat
-    lapLid(6.7, -5.15, Math.PI / 2 + Math.PI);
-    lapLid(7.45, -5.55, Math.PI / 2);
-    for (const [x, z, r] of [[7.0, -5.0, 0.3], [7.2, -5.65, -0.4], [6.95, -5.6, 1.1]]) C(M.paper, x, 0.765, z, 0.21, 0.004, 0.29, r);
+    // two laptops on the open study table (yaw 0 → screen faces a sitter on the +z side)
+    lapLid(3.6, -3.85, 0);
+    lapLid(4.4, -4.15, Math.PI);
     C(M.dark, 7.1, 1.4, GZ0 + 0.1, 1.1, 0.65, 0.04);
     plane(emis(tvTex, 0.7), 1.02, 0.58, 7.1, 1.4, GZ0 + 0.125);
     B(M.metal, 7.07, 0, GZ0 + 0.06, 7.13, 1.1, GZ0 + 0.12);
     // pendant lights (warm)
     const pendG = new THREE.CylinderGeometry(0.16, 0.22, 0.14, 14, 1, true);
-    for (const [x, z] of [[4.0, -4.9], [7.1, -5.3]]) {
+    for (const [x, z] of [[4.0, -4.0], [7.1, -5.3]]) {
       const p = mesh(pendG, M.warmGlow, x, 2.55, z, { cast: false }); p.material.side = THREE.DoubleSide;
       B(M.dark, x - 0.01, 2.62, z - 0.01, x + 0.01, H, z + 0.01);
     }
@@ -635,40 +638,62 @@ export default {
     const yawTo = (from, to) => Math.atan2(-(to[0] - from[0]), -(to[1] - from[1]));
     const capM = mat('#b33a3a', { roughness: 0.7 });
 
+    const blackM = mat('#151515', { roughness: 0.9 });
     const tylerLook = { skin: '#f3d3b5', shirt: '#3a6ea5', pants: '#3b4250', hair: '#8a6a3a' };
     const rosaLook = { skin: '#c68642', shirt: '#d9822b', pants: '#3a3340', hair: '#3b2416', height: 1.64 };
-    const mitchLook = { skin: '#6b4226', shirt: '#2a6f6b', pants: '#2b2b33', hair: '#1a1410', dress: '#2b2b33', glasses: true, height: 1.7 };
+    const kareemLook = { skin: '#6b4226', shirt: '#4b5320', pants: '#2f3542', hair: '#141010', beard: '#141010', height: 1.83 };
+    const omarLook = { skin: '#5a3a22', shirt: '#4a7fb5', pants: '#4a7fb5', shoes: '#e8e8e8', hair: '#151010', beard: '#151010', height: 1.8 };
+    const noorLook = { skin: '#c68642', shirt: '#f5f5f5', suit: '#4a6fa5', tie: '#f5f5f5', hijab: true, hijabColor: '#7fb3d5', pants: '#3a3f55', dress: '#3a4660', height: 1.64 };
+    const curlyLook = { skin: '#8d5524', shirt: '#b5517a', pants: '#2f3542', hair: '#24160e', height: 1.66 };
+    const workerLook = { skin: '#e0b98f', shirt: '#f07a1a', pants: '#3b4a5e', hair: '#7a7470', beard: '#8a8580', build: 1.1 };
 
     const npcs = [
-      {
-        id: 'tyler', position: [-5.22, 0, -3.95], yaw: yawTo([-5.22, -3.95], [-4.2, -2.6]), look: tylerLook,
+      { // situation NPC: Muslim classmate in the aisle next to the exam desk (olive jacket, trimmed beard, black beanie)
+        id: 'kareem', position: [-5.22, 0, -3.95], yaw: yawTo([-5.22, -3.95], [-4.2, -2.6]), look: kareemLook,
+        object: npcObj(kareemLook, (p) => {
+          addTo(p.head, new THREE.SphereGeometry(0.145, 12, 6, 0, Math.PI * 2, 0, Math.PI * 0.45), blackM, 0, 0.02, 0.005);
+          addTo(p.head, new THREE.CylinderGeometry(0.146, 0.146, 0.035, 12), blackM, 0, 0.035, 0.005);
+        })
+      },
+      { // situation NPC: Adam's neighbour in blue nursing scrubs, in front of the aid counter
+        id: 'omar', position: [1, 0, 1.8], yaw: yawTo([1, 1.8], [-1.5, 0.6]), look: omarLook,
+        object: npcObj(omarLook, (p) => { // hospital ID badge
+          addTo(p.body, new THREE.BoxGeometry(0.07, 0.09, 0.01), mat('#f2f2f2'), 0.1, 1.3, -0.19);
+        })
+      },
+      { // situation NPC: study-group partner at the open study-room door, holding a notebook
+        id: 'noor', position: [6, 0, -1.5], yaw: yawTo([6, -1.5], [3.5, 0.2]), look: noorLook,
+        object: npcObj(noorLook, (p) => {
+          addTo(p.armL, new THREE.BoxGeometry(0.03, 0.26, 0.2), M.yellow, 0.04, -0.45, -0.06);
+          if (p.armL) p.armL.rotation.x = -0.35;
+        })
+      },
+      { // background: Tyler (red cap) seated in the row in front of Kareem — desk (-4.5, -5.55)
+        id: 'bg_tyler', position: [-4.5, -0.4, -5.43], yaw: 0, look: tylerLook, showName: false, animate: false, collide: false,
         object: npcObj(tylerLook, (p) => {
+          if (p.legL && p.legR) p.legL.rotation.x = p.legR.rotation.x = Math.PI / 2; // thighs forward (figure faces -z)
           addTo(p.head, new THREE.SphereGeometry(0.142, 12, 6, 0, Math.PI * 2, 0, Math.PI / 2), capM, 0, 0.025, 0.005);
           addTo(p.head, new THREE.BoxGeometry(0.17, 0.014, 0.13), capM, 0, 0.03, -0.17);
         })
       },
-      {
-        id: 'rosa', position: [1, 0, 4.2], yaw: 0, look: rosaLook,
+      { // background: Ms. Rodriguez behind the counter
+        id: 'bg_rosa', position: [1, 0, 4.2], yaw: 0, look: rosaLook, showName: false,
         object: npcObj(rosaLook, (p) => { addTo(p.head, new THREE.SphereGeometry(0.07, 10, 8), mat('#3b2416'), 0, 0.11, 0.1); })
       },
-      {
-        id: 'dr_mitchell', position: [6, 0, -1.5], yaw: yawTo([6, -1.5], [3.5, 0.2]), look: mitchLook,
-        object: npcObj(mitchLook, (p) => {
-          const f = addTo(p.armL, new THREE.BoxGeometry(0.03, 0.3, 0.23), M.blue, 0.04, -0.45, -0.06);
-          if (p.armL) p.armL.rotation.x = -0.35;
-          return f;
+      { // background: young woman with curly hair at the lockers
+        id: 'bg_student_curly', position: [-6.6, 0, 1.15], yaw: Math.PI, look: curlyLook, showName: false,
+        object: npcObj(curlyLook, (p) => {
+          const hairM = mat('#24160e', { roughness: 1 });
+          for (const [x, y, z] of [[0.1, 0.06, 0.02], [-0.1, 0.06, 0.02], [0, 0.1, 0.08], [0.08, -0.02, 0.09], [-0.08, -0.02, 0.09], [0, 0.13, -0.02]]) {
+            addTo(p.head, new THREE.IcosahedronGeometry(0.075, 0), hairM, x, y, z);
+          }
         })
       },
-      { id: 'bg_hannah', position: [6.05, 0, -4.55], yaw: yawTo([6.05, -4.55], [7.1, -5.3]), look: { skin: '#f0d5b8', shirt: '#f2c94c', hair: '#141414', pants: '#3a3f55', height: 1.65 }, showName: false },
-      { id: 'bg_carlos', position: [8.05, 0, -6.0], yaw: yawTo([8.05, -6.0], [7.1, -5.3]), look: { skin: '#c68642', shirt: '#4a7c59', hair: '#2b1d14', pants: '#2f3542' }, showName: false },
-      { id: 'bg_student_hijab', position: [-6.6, 0, 1.15], yaw: Math.PI, look: { skin: '#d1a17a', shirt: '#8a9bb0', hijab: '#1f2d4d', dress: '#2f3542', height: 1.62 }, showName: false },
-      {
-        id: 'bg_worker', position: [0.1, 0, -1.35], yaw: Math.PI,
-        look: { skin: '#e0b98f', shirt: '#f07a1a', pants: '#3b4a5e', hair: '#7a7470', beard: '#8a8580', build: 1.1 },
-        object: npcObj({ skin: '#e0b98f', shirt: '#f07a1a', pants: '#3b4a5e', hair: '#7a7470', beard: '#8a8580', build: 1.1 }, (p) => {
+      { // background: man in his forties, orange work jacket with reflective band, reading the bulletin board
+        id: 'bg_worker', position: [0.1, 0, -1.35], yaw: Math.PI, look: workerLook, showName: false,
+        object: npcObj(workerLook, (p) => {
           addTo(p.body, new THREE.CylinderGeometry(0.208, 0.19, 0.045, 10), mat('#e6eef0', { emissive: '#9aa5a8', emissiveIntensity: 0.4 }), 0, 1.25, 0);
-        }),
-        showName: false
+        })
       }
     ];
     for (const n of npcs) if (!n.object) delete n.object;

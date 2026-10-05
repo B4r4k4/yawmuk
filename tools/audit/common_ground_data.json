@@ -1,0 +1,1256 @@
+{
+  "_meta": {
+    "purpose": "newcomer_explainer + common_ground for each ruling (TEAM_BRIEF update 2026-10-05). Applied by apply_common_ground.cjs.",
+    "bible_en": "King James Version (public domain)",
+    "bible_ar": "Smith & Van Dyck Arabic Bible (public domain), vocalized edition as served by getbible.net \"arabicsv\"",
+    "method": "Every verse fetched programmatically on 2026-10-05; KJV compared across bible-api.com, api.getbible.net (kjv) and bolls.life (KJV); Arabic compared across api.getbible.net (arabicsv) and bolls.life (SVD) on the consonantal skeleton. See docs/research/common_ground.md.",
+    "review_status": "ai_draft"
+  },
+  "verses": {
+    "Exodus 22:25": {
+      "ref_en": "Exodus 22:25",
+      "ref_ar": "خروج 22: 25",
+      "text_en": "If thou lend money to any of my people that is poor by thee, thou shalt not be to him as an usurer, neither shalt thou lay upon him usury.",
+      "text_ar": "إِنْ أَقْرَضْتَ فِضَّةً لِشَعْبِي ٱلْفَقِيرِ ٱلَّذِي عِنْدَكَ فَلَا تَكُنْ لَهُ كَٱلْمُرَابِي. لَا تَضَعُوا عَلَيْهِ رِبًا.",
+      "source_url": "https://bible-api.com/Exodus+22:25?translation=kjv",
+      "source_url_ar": "https://api.getbible.net/v2/arabicsv/2/22.json",
+      "used": true,
+      "verification": {
+        "kjv_sources": [
+          "https://bible-api.com/Exodus+22:25?translation=kjv",
+          "https://api.getbible.net/v2/kjv/2/22.json",
+          "https://bolls.life/get-text/KJV/2/22/"
+        ],
+        "kjv_bibleapi": "If thou lend money to any of my people that is poor by thee, thou shalt not be to him as an usurer, neither shalt thou lay upon him usury.",
+        "kjv_getbible": "If thou lend money to any of my people that is poor by thee, thou shalt not be to him as an usurer, neither shalt thou lay upon him usury.",
+        "kjv_bolls": "If thou lend money to any of my people that is poor by thee, thou shalt not be to him as an usurer, neither shalt thou lay upon him usury.",
+        "ar_sources": [
+          "https://api.getbible.net/v2/arabicsv/2/22.json",
+          "https://bolls.life/get-text/SVD/2/22/"
+        ],
+        "ar_bolls_svd": "إِنْ أَقْرَضْتَ فِضَّةً لِشَعْبِي الْفَقِيرِ الَّذِي عِنْدَكَ فَلاَ تَكُنْ لَهُ كَالْمُرَابِي. لاَ تَضَعُوا عَلَيْهِ رِبًا.",
+        "ar_consonantal_match": true,
+        "fetched": "2026-10-05"
+      }
+    },
+    "Deuteronomy 23:19": {
+      "ref_en": "Deuteronomy 23:19",
+      "ref_ar": "تثنية 23: 19",
+      "text_en": "Thou shalt not lend upon usury to thy brother; usury of money, usury of victuals, usury of any thing that is lent upon usury:",
+      "text_ar": "«لَا تُقْرِضْ أَخَاكَ بِرِبًا، رِبَا فِضَّةٍ، أَوْ رِبَا طَعَامٍ، أَوْ رِبَا شَيْءٍ مَّا مِمَّا يُقْرَضُ بِرِبًا،",
+      "source_url": "https://bible-api.com/Deuteronomy+23:19?translation=kjv",
+      "source_url_ar": "https://api.getbible.net/v2/arabicsv/5/23.json",
+      "used": true,
+      "verification": {
+        "kjv_sources": [
+          "https://bible-api.com/Deuteronomy+23:19?translation=kjv",
+          "https://api.getbible.net/v2/kjv/5/23.json",
+          "https://bolls.life/get-text/KJV/5/23/"
+        ],
+        "kjv_bibleapi": "Thou shalt not lend upon usury to thy brother; usury of money, usury of victuals, usury of any thing that is lent upon usury:",
+        "kjv_getbible": "Thou shalt not lend upon usury to thy brother; usury of money, usury of victuals, usury of any thing that is lent upon usury:",
+        "kjv_bolls": "Thou shalt not lend upon usury to thy brother; usury of money, usury of victuals, usury of any thing that is lent upon usury:",
+        "ar_sources": [
+          "https://api.getbible.net/v2/arabicsv/5/23.json",
+          "https://bolls.life/get-text/SVD/5/23/"
+        ],
+        "ar_bolls_svd": "«لاَ تُقْرِضْ أَخَاكَ بِرِبًا، رِبَا فِضَّةٍ، أَوْ رِبَا طَعَامٍ، أَوْ رِبَا شَيْءٍ مَّا مِمَّا يُقْرَضُ بِرِبًا،",
+        "ar_consonantal_match": true,
+        "fetched": "2026-10-05"
+      }
+    },
+    "Leviticus 11:7": {
+      "ref_en": "Leviticus 11:7",
+      "ref_ar": "لاويين 11: 7",
+      "text_en": "And the swine, though he divide the hoof, and be clovenfooted, yet he cheweth not the cud; he is unclean to you.",
+      "text_ar": "وَٱلْخِنْزِيرَ، لِأَنَّهُ يَشُقُّ ظِلْفًا وَيَقْسِمُهُ ظِلْفَيْنِ، لَكِنَّهُ لَا يَجْتَرُّ، فَهُوَ نَجِسٌ لَكُمْ.",
+      "source_url": "https://bible-api.com/Leviticus+11:7?translation=kjv",
+      "source_url_ar": "https://api.getbible.net/v2/arabicsv/3/11.json",
+      "used": true,
+      "verification": {
+        "kjv_sources": [
+          "https://bible-api.com/Leviticus+11:7?translation=kjv",
+          "https://api.getbible.net/v2/kjv/3/11.json",
+          "https://bolls.life/get-text/KJV/3/11/"
+        ],
+        "kjv_bibleapi": "And the swine, though he divide the hoof, and be clovenfooted, yet he cheweth not the cud; he is unclean to you.",
+        "kjv_getbible": "And the swine, though he divide the hoof, and be clovenfooted, yet he cheweth not the cud; he is unclean to you.",
+        "kjv_bolls": "And the swine, though he divide the hoof, and be clovenfooted , yet he cheweth not the cud; he is unclean to you.",
+        "ar_sources": [
+          "https://api.getbible.net/v2/arabicsv/3/11.json",
+          "https://bolls.life/get-text/SVD/3/11/"
+        ],
+        "ar_bolls_svd": "وَالْخِنْزِيرَ، لأَنَّهُ يَشُقُّ ظِلْفًا وَيَقْسِمُهُ ظِلْفَيْنِ، لكِنَّهُ لاَ يَجْتَرُّ، فَهُوَ نَجِسٌ لَكُمْ.",
+        "ar_consonantal_match": true,
+        "fetched": "2026-10-05"
+      }
+    },
+    "Acts 15:29": {
+      "ref_en": "Acts 15:29",
+      "ref_ar": "أعمال الرسل 15: 29",
+      "text_en": "That ye abstain from meats offered to idols, and from blood, and from things strangled, and from fornication: from which if ye keep yourselves, ye shall do well. Fare ye well.",
+      "text_ar": "أَنْ تَمْتَنِعُوا عَمَّا ذُبِحَ لِلْأَصْنَامِ، وَعَنِ ٱلدَّمِ، وَٱلْمَخْنُوقِ، وَٱلزِّنَا، ٱلَّتِي إِنْ حَفِظْتُمْ أَنْفُسَكُمْ مِنْهَا فَنِعِمَّا تَفْعَلُونَ. كُونُوا مُعَافَيْنَ».",
+      "source_url": "https://bible-api.com/Acts+15:29?translation=kjv",
+      "source_url_ar": "https://api.getbible.net/v2/arabicsv/44/15.json",
+      "used": true,
+      "verification": {
+        "kjv_sources": [
+          "https://bible-api.com/Acts+15:29?translation=kjv",
+          "https://api.getbible.net/v2/kjv/44/15.json",
+          "https://bolls.life/get-text/KJV/44/15/"
+        ],
+        "kjv_bibleapi": "That ye abstain from meats offered to idols, and from blood, and from things strangled, and from fornication: from which if ye keep yourselves, ye shall do well. Fare ye well.",
+        "kjv_getbible": "That ye abstain from meats offered to idols, and from blood, and from things strangled, and from fornication: from which if ye keep yourselves, ye shall do well. Fare ye well.",
+        "kjv_bolls": "That ye abstain from meats offered to idols, and from blood, and from things strangled, and from fornication: from which if ye keep yourselves, ye shall do well. Fare ye well.",
+        "ar_sources": [
+          "https://api.getbible.net/v2/arabicsv/44/15.json",
+          "https://bolls.life/get-text/SVD/44/15/"
+        ],
+        "ar_bolls_svd": "أَنْ تَمْتَنِعُوا عَمَّا ذُبحَ لِلأَصْنَامِ، وَعَنِ الدَّمِ، وَالْمَخْنُوقِ، وَالزِّنَا، الَّتِي إِنْ حَفِظْتُمْ أَنْفُسَكُمْ مِنْهَا فَنِعِمَّا تَفْعَلُونَ. كُونُوا مُعَافَيْنَ».",
+        "ar_consonantal_match": true,
+        "fetched": "2026-10-05"
+      }
+    },
+    "Romans 13:8": {
+      "ref_en": "Romans 13:8",
+      "ref_ar": "رومية 13: 8",
+      "text_en": "Owe no man any thing, but to love one another: for he that loveth another hath fulfilled the law.",
+      "text_ar": "لَا تَكُونُوا مَدْيُونِينَ لِأَحَدٍ بِشَيْءٍ إِلَّا بِأَنْ يُحِبَّ بَعْضُكُمْ بَعْضًا، لِأَنَّ مَنْ أَحَبَّ غَيْرَهُ فَقَدْ أَكْمَلَ ٱلنَّامُوسَ.",
+      "source_url": "https://bible-api.com/Romans+13:8?translation=kjv",
+      "source_url_ar": "https://api.getbible.net/v2/arabicsv/45/13.json",
+      "used": true,
+      "verification": {
+        "kjv_sources": [
+          "https://bible-api.com/Romans+13:8?translation=kjv",
+          "https://api.getbible.net/v2/kjv/45/13.json",
+          "https://bolls.life/get-text/KJV/45/13/"
+        ],
+        "kjv_bibleapi": "Owe no man any thing, but to love one another: for he that loveth another hath fulfilled the law.",
+        "kjv_getbible": "Owe no man any thing, but to love one another: for he that loveth another hath fulfilled the law.",
+        "kjv_bolls": "Owe no man any thing, but to love one another: for he that loveth another hath fulfilled the law.",
+        "ar_sources": [
+          "https://api.getbible.net/v2/arabicsv/45/13.json",
+          "https://bolls.life/get-text/SVD/45/13/"
+        ],
+        "ar_bolls_svd": "لاَ تَكُونُوا مَدْيُونِينَ لأَحَدٍ بِشَيْءٍ إِلاَّ بِأَنْ يُحِبَّ بَعْضُكُمْ بَعْضًا، لأَنَّ مَنْ أَحَبَّ غَيْرَهُ فَقَدْ أَكْمَلَ النَّامُوسَ.",
+        "ar_consonantal_match": true,
+        "fetched": "2026-10-05"
+      }
+    },
+    "Psalms 37:21": {
+      "ref_en": "Psalms 37:21",
+      "ref_ar": "مزمور 37: 21",
+      "text_en": "The wicked borroweth, and payeth not again: but the righteous sheweth mercy, and giveth.",
+      "text_ar": "ٱلشِّرِّيرُ يَسْتَقْرِضُ وَلَا يَفِي، أَمَّا ٱلصِّدِّيقُ فَيَتَرَأَّفُ وَيُعْطِي.",
+      "source_url": "https://bible-api.com/Psalms+37:21?translation=kjv",
+      "source_url_ar": "https://api.getbible.net/v2/arabicsv/19/37.json",
+      "used": true,
+      "verification": {
+        "kjv_sources": [
+          "https://bible-api.com/Psalms+37:21?translation=kjv",
+          "https://api.getbible.net/v2/kjv/19/37.json",
+          "https://bolls.life/get-text/KJV/19/37/"
+        ],
+        "kjv_bibleapi": "The wicked borroweth, and payeth not again: but the righteous sheweth mercy, and giveth.",
+        "kjv_getbible": "The wicked borroweth, and payeth not again: but the righteous sheweth mercy, and giveth.",
+        "kjv_bolls": "The wicked borroweth, and payeth not again: but the righteous sheweth mercy, and giveth.",
+        "ar_sources": [
+          "https://api.getbible.net/v2/arabicsv/19/37.json",
+          "https://bolls.life/get-text/SVD/19/37/"
+        ],
+        "ar_bolls_svd": "الشِّرِّيرُ يَسْتَقْرِضُ وَلاَ يَفِي، أَمَّا الصِّدِّيقُ فَيَتَرَأَّفُ وَيُعْطِي.",
+        "ar_consonantal_match": true,
+        "fetched": "2026-10-05"
+      }
+    },
+    "Habakkuk 2:15": {
+      "ref_en": "Habakkuk 2:15",
+      "ref_ar": "حبقوق 2: 15",
+      "text_en": "Woe unto him that giveth his neighbour drink, that puttest thy bottle to him, and makest him drunken also, that thou mayest look on their nakedness!",
+      "text_ar": "«وَيْلٌ لِمَنْ يَسْقِي صَاحِبَهُ سَافِحًا حُمُوَّكَ وَمُسْكِرًا أَيْضًا، لِلنَّظَرِ إِلَى عَوْرَاتِهِمْ.",
+      "source_url": "https://bible-api.com/Habakkuk+2:15?translation=kjv",
+      "source_url_ar": "https://api.getbible.net/v2/arabicsv/35/2.json",
+      "used": false,
+      "verification": {
+        "kjv_sources": [
+          "https://bible-api.com/Habakkuk+2:15?translation=kjv",
+          "https://api.getbible.net/v2/kjv/35/2.json",
+          "https://bolls.life/get-text/KJV/35/2/"
+        ],
+        "kjv_bibleapi": "Woe unto him that giveth his neighbour drink, that puttest thy bottle to him, and makest him drunken also, that thou mayest look on their nakedness!",
+        "kjv_getbible": "Woe unto him that giveth his neighbour drink, that puttest thy bottle to him, and makest him drunken also, that thou mayest look on their nakedness!",
+        "kjv_bolls": "Woe unto him that giveth his neighbour drink, that puttest thy bottle to him, and makest him drunken also, that thou mayest look on their nakedness!",
+        "ar_sources": [
+          "https://api.getbible.net/v2/arabicsv/35/2.json",
+          "https://bolls.life/get-text/SVD/35/2/"
+        ],
+        "ar_bolls_svd": "«وَيْلٌ لِمَنْ يَسْقِي صَاحِبَهُ سَافِحًا حُمُوَّكَ وَمُسْكِرًا أَيْضًا، لِلنَّظَرِ إِلَى عَوْرَاتِهِمْ.",
+        "ar_consonantal_match": true,
+        "fetched": "2026-10-05"
+      },
+      "dropped_reason": "Pivot audit 2026-10-05: context (woe on making a neighbour drunk to look on his nakedness) is forced for serving drinks at work; replaced by Romans 14:21 on supervisor decision."
+    },
+    "Psalms 15:5": {
+      "ref_en": "Psalms 15:5",
+      "ref_ar": "مزمور 15: 5",
+      "text_en": "He that putteth not out his money to usury, nor taketh reward against the innocent. He that doeth these things shall never be moved.",
+      "text_ar": "فِضَّتُهُ لَا يُعْطِيهَا بِٱلرِّبَا، وَلَا يَأْخُذُ ٱلرِّشْوَةَ عَلَى ٱلْبَرِيءِ. ٱلَّذِي يَصْنَعُ هَذَا لَا يَتَزَعْزَعُ إِلَى ٱلدَّهْرِ.",
+      "source_url": "https://bible-api.com/Psalms+15:5?translation=kjv",
+      "source_url_ar": "https://api.getbible.net/v2/arabicsv/19/15.json",
+      "used": true,
+      "verification": {
+        "kjv_sources": [
+          "https://bible-api.com/Psalms+15:5?translation=kjv",
+          "https://api.getbible.net/v2/kjv/19/15.json",
+          "https://bolls.life/get-text/KJV/19/15/"
+        ],
+        "kjv_bibleapi": "He that putteth not out his money to usury, nor taketh reward against the innocent. He that doeth these things shall never be moved.",
+        "kjv_getbible": "He that putteth not out his money to usury, nor taketh reward against the innocent. He that doeth these things shall never be moved.",
+        "kjv_bolls": "He that putteth not out his money to usury, nor taketh reward against the innocent. He that doeth these things shall never be moved.",
+        "ar_sources": [
+          "https://api.getbible.net/v2/arabicsv/19/15.json",
+          "https://bolls.life/get-text/SVD/19/15/"
+        ],
+        "ar_bolls_svd": "فِضَّتُهُ لاَ يُعْطِيهَا بِالرِّبَا، وَلاَ يَأْخُذُ الرِّشْوَةَ عَلَى الْبَرِيءِ. الَّذِي يَصْنَعُ هذَا لاَ يَتَزَعْزَعُ إِلَى الدَّهْرِ.",
+        "ar_consonantal_match": true,
+        "fetched": "2026-10-05"
+      }
+    },
+    "Exodus 23:8": {
+      "ref_en": "Exodus 23:8",
+      "ref_ar": "خروج 23: 8",
+      "text_en": "And thou shalt take no gift: for the gift blindeth the wise, and perverteth the words of the righteous.",
+      "text_ar": "وَلَا تَأْخُذْ رَشْوَةً، لِأَنَّ ٱلرَّشْوَةَ تُعْمِي ٱلْمُبْصِرِينَ، وَتُعَوِّجُ كَلَامَ ٱلْأَبْرَارِ.",
+      "source_url": "https://bible-api.com/Exodus+23:8?translation=kjv",
+      "source_url_ar": "https://api.getbible.net/v2/arabicsv/2/23.json",
+      "used": true,
+      "verification": {
+        "kjv_sources": [
+          "https://bible-api.com/Exodus+23:8?translation=kjv",
+          "https://api.getbible.net/v2/kjv/2/23.json",
+          "https://bolls.life/get-text/KJV/2/23/"
+        ],
+        "kjv_bibleapi": "And thou shalt take no gift: for the gift blindeth the wise, and perverteth the words of the righteous.",
+        "kjv_getbible": "And thou shalt take no gift: for the gift blindeth the wise, and perverteth the words of the righteous.",
+        "kjv_bolls": "And thou shalt take no gift: for the gift blindeth the wise, and perverteth the words of the righteous. the wise: Heb. the seeing",
+        "ar_sources": [
+          "https://api.getbible.net/v2/arabicsv/2/23.json",
+          "https://bolls.life/get-text/SVD/2/23/"
+        ],
+        "ar_bolls_svd": "وَلاَ تَأْخُذْ رَشْوَةً، لأَنَّ الرَّشْوَةَ تُعْمِي الْمُبْصِرِينَ، وَتُعَوِّجُ كَلاَمَ الأَبْرَارِ.",
+        "ar_consonantal_match": true,
+        "fetched": "2026-10-05"
+      }
+    },
+    "Luke 16:10": {
+      "ref_en": "Luke 16:10",
+      "ref_ar": "لوقا 16: 10",
+      "text_en": "He that is faithful in that which is least is faithful also in much: and he that is unjust in the least is unjust also in much.",
+      "text_ar": "اَلْأَمِينُ فِي ٱلْقَلِيلِ أَمِينٌ أَيْضًا فِي ٱلْكَثِيرِ، وَٱلظَّالِمُ فِي ٱلْقَلِيلِ ظَالِمٌ أَيْضًا فِي ٱلْكَثِيرِ.",
+      "source_url": "https://bible-api.com/Luke+16:10?translation=kjv",
+      "source_url_ar": "https://api.getbible.net/v2/arabicsv/42/16.json",
+      "used": true,
+      "verification": {
+        "kjv_sources": [
+          "https://bible-api.com/Luke+16:10?translation=kjv",
+          "https://api.getbible.net/v2/kjv/42/16.json",
+          "https://bolls.life/get-text/KJV/42/16/"
+        ],
+        "kjv_bibleapi": "He that is faithful in that which is least is faithful also in much: and he that is unjust in the least is unjust also in much.",
+        "kjv_getbible": "He that is faithful in that which is least is faithful also in much: and he that is unjust in the least is unjust also in much.",
+        "kjv_bolls": "He that is faithful in that which is least is faithful also in much: and he that is unjust in the least is unjust also in much.",
+        "ar_sources": [
+          "https://api.getbible.net/v2/arabicsv/42/16.json",
+          "https://bolls.life/get-text/SVD/42/16/"
+        ],
+        "ar_bolls_svd": "اَلأَمِينُ فِي الْقَلِيلِ أَمِينٌ أَيْضًا فِي الْكَثِيرِ، وَالظَّالِمُ فِي الْقَلِيلِ ظَالِمٌ أَيْضًا فِي الْكَثِيرِ.",
+        "ar_consonantal_match": true,
+        "fetched": "2026-10-05"
+      }
+    },
+    "Proverbs 12:22": {
+      "ref_en": "Proverbs 12:22",
+      "ref_ar": "أمثال 12: 22",
+      "text_en": "Lying lips are abomination to the LORD: but they that deal truly are his delight.",
+      "text_ar": "كَرَاهَةُ ٱلرَّبِّ شَفَتَا كَذِبٍ، أَمَّا ٱلْعَامِلُونَ بِٱلصِّدْقِ فَرِضَاهُ.",
+      "source_url": "https://bible-api.com/Proverbs+12:22?translation=kjv",
+      "source_url_ar": "https://api.getbible.net/v2/arabicsv/20/12.json",
+      "used": true,
+      "verification": {
+        "kjv_sources": [
+          "https://bible-api.com/Proverbs+12:22?translation=kjv",
+          "https://api.getbible.net/v2/kjv/20/12.json",
+          "https://bolls.life/get-text/KJV/20/12/"
+        ],
+        "kjv_bibleapi": "Lying lips are abomination to the LORD: but they that deal truly are his delight.",
+        "kjv_getbible": "Lying lips are abomination to the Lord: but they that deal truly are his delight.",
+        "kjv_bolls": "Lying lips are abomination to the LORD: but they that deal truly are his delight.",
+        "ar_sources": [
+          "https://api.getbible.net/v2/arabicsv/20/12.json",
+          "https://bolls.life/get-text/SVD/20/12/"
+        ],
+        "ar_bolls_svd": "كَرَاهَةُ الرَّبِّ شَفَتَا كَذِبٍ، أَمَّا الْعَامِلُونَ بِالصِّدْقِ فَرِضَاهُ.",
+        "ar_consonantal_match": true,
+        "fetched": "2026-10-05"
+      }
+    },
+    "Colossians 3:9": {
+      "ref_en": "Colossians 3:9",
+      "ref_ar": "كولوسي 3: 9",
+      "text_en": "Lie not one to another, seeing that ye have put off the old man with his deeds;",
+      "text_ar": "لَا تَكْذِبُوا بَعْضُكُمْ عَلَى بَعْضٍ، إِذْ خَلَعْتُمُ ٱلْإِنْسَانَ ٱلْعَتِيقَ مَعَ أَعْمَالِهِ،",
+      "source_url": "https://bible-api.com/Colossians+3:9?translation=kjv",
+      "source_url_ar": "https://api.getbible.net/v2/arabicsv/51/3.json",
+      "used": true,
+      "verification": {
+        "kjv_sources": [
+          "https://bible-api.com/Colossians+3:9?translation=kjv",
+          "https://api.getbible.net/v2/kjv/51/3.json",
+          "https://bolls.life/get-text/KJV/51/3/"
+        ],
+        "kjv_bibleapi": "Lie not one to another, seeing that ye have put off the old man with his deeds;",
+        "kjv_getbible": "Lie not one to another, seeing that ye have put off the old man with his deeds;",
+        "kjv_bolls": "Lie not one to another , seeing that ye have put off the old man with his deeds;",
+        "ar_sources": [
+          "https://api.getbible.net/v2/arabicsv/51/3.json",
+          "https://bolls.life/get-text/SVD/51/3/"
+        ],
+        "ar_bolls_svd": "لاَ تَكْذِبُوا بَعْضُكُمْ عَلَى بَعْضٍ، إِذْ خَلَعْتُمُ الإِنْسَانَ الْعَتِيقَ مَعَ أَعْمَالِهِ،",
+        "ar_consonantal_match": true,
+        "fetched": "2026-10-05"
+      }
+    },
+    "Leviticus 25:37": {
+      "ref_en": "Leviticus 25:37",
+      "ref_ar": "لاويين 25: 37",
+      "text_en": "Thou shalt not give him thy money upon usury, nor lend him thy victuals for increase.",
+      "text_ar": "فِضَّتَكَ لَا تُعْطِهِ بِٱلرِّبَا، وَطَعَامَكَ لَا تُعْطِ بِٱلْمُرَابَحَةِ.",
+      "source_url": "https://bible-api.com/Leviticus+25:37?translation=kjv",
+      "source_url_ar": "https://api.getbible.net/v2/arabicsv/3/25.json",
+      "used": false,
+      "verification": {
+        "kjv_sources": [
+          "https://bible-api.com/Leviticus+25:37?translation=kjv",
+          "https://api.getbible.net/v2/kjv/3/25.json",
+          "https://bolls.life/get-text/KJV/3/25/"
+        ],
+        "kjv_bibleapi": "Thou shalt not give him thy money upon usury, nor lend him thy victuals for increase.",
+        "kjv_getbible": "Thou shalt not give him thy money upon usury, nor lend him thy victuals for increase.",
+        "kjv_bolls": "Thou shalt not give him thy money upon usury, nor lend him thy victuals for increase.",
+        "ar_sources": [
+          "https://api.getbible.net/v2/arabicsv/3/25.json",
+          "https://bolls.life/get-text/SVD/3/25/"
+        ],
+        "ar_bolls_svd": "فِضَّتَكَ لاَ تُعْطِهِ بِالرِّبَا، وَطَعَامَكَ لاَ تُعْطِ بِالْمُرَابَحَةِ.",
+        "ar_consonantal_match": true,
+        "fetched": "2026-10-05"
+      }
+    },
+    "Proverbs 22:7": {
+      "ref_en": "Proverbs 22:7",
+      "ref_ar": "أمثال 22: 7",
+      "text_en": "The rich ruleth over the poor, and the borrower is servant to the lender.",
+      "text_ar": "اَلْغَنِيُّ يَتَسَلَّطُ عَلَى ٱلْفَقِيرِ، وَٱلْمُقْتَرِضُ عَبْدٌ لِلْمُقْرِضِ.",
+      "source_url": "https://bible-api.com/Proverbs+22:7?translation=kjv",
+      "source_url_ar": "https://api.getbible.net/v2/arabicsv/20/22.json",
+      "used": true,
+      "verification": {
+        "kjv_sources": [
+          "https://bible-api.com/Proverbs+22:7?translation=kjv",
+          "https://api.getbible.net/v2/kjv/20/22.json",
+          "https://bolls.life/get-text/KJV/20/22/"
+        ],
+        "kjv_bibleapi": "The rich ruleth over the poor, and the borrower is servant to the lender.",
+        "kjv_getbible": "The rich ruleth over the poor, and the borrower is servant to the lender.",
+        "kjv_bolls": "The rich ruleth over the poor, and the borrower is servant to the lender . the lender: Heb. the man that lendeth",
+        "ar_sources": [
+          "https://api.getbible.net/v2/arabicsv/20/22.json",
+          "https://bolls.life/get-text/SVD/20/22/"
+        ],
+        "ar_bolls_svd": "اَلْغَنِيُّ يَتَسَلَّطُ عَلَى الْفَقِيرِ، وَالْمُقْتَرِضُ عَبْدٌ لِلْمُقْرِضِ.",
+        "ar_consonantal_match": true,
+        "fetched": "2026-10-05"
+      }
+    },
+    "Job 31:1": {
+      "ref_en": "Job 31:1",
+      "ref_ar": "أيوب 31: 1",
+      "text_en": "I made a covenant with mine eyes; why then should I think upon a maid?",
+      "text_ar": "«عَهْدًا قَطَعْتُ لِعَيْنَيَّ، فَكَيْفَ أَتَطَلَّعُ فِي عَذْرَاءَ؟",
+      "source_url": "https://bible-api.com/Job+31:1?translation=kjv",
+      "source_url_ar": "https://api.getbible.net/v2/arabicsv/18/31.json",
+      "used": true,
+      "verification": {
+        "kjv_sources": [
+          "https://bible-api.com/Job+31:1?translation=kjv",
+          "https://api.getbible.net/v2/kjv/18/31.json",
+          "https://bolls.life/get-text/KJV/18/31/"
+        ],
+        "kjv_bibleapi": "I made a covenant with mine eyes; why then should I think upon a maid?",
+        "kjv_getbible": "I made a covenant with mine eyes; why then should I think upon a maid?",
+        "kjv_bolls": "I made a covenant with mine eyes; why then should I think upon a maid?",
+        "ar_sources": [
+          "https://api.getbible.net/v2/arabicsv/18/31.json",
+          "https://bolls.life/get-text/SVD/18/31/"
+        ],
+        "ar_bolls_svd": "«عَهْدًا قَطَعْتُ لِعَيْنَيَّ، فَكَيْفَ أَتَطَلَّعُ فِي عَذْرَاءَ؟",
+        "ar_consonantal_match": true,
+        "fetched": "2026-10-05"
+      }
+    },
+    "Matthew 5:28": {
+      "ref_en": "Matthew 5:28",
+      "ref_ar": "متى 5: 28",
+      "text_en": "But I say unto you, That whosoever looketh on a woman to lust after her hath committed adultery with her already in his heart.",
+      "text_ar": "وَأَمَّا أَنَا فَأَقُولُ لَكُمْ: إِنَّ كُلَّ مَنْ يَنْظُرُ إِلَى ٱمْرَأَةٍ لِيَشْتَهِيَهَا، فَقَدْ زَنَى بِهَا فِي قَلْبِهِ.",
+      "source_url": "https://bible-api.com/Matthew+5:28?translation=kjv",
+      "source_url_ar": "https://api.getbible.net/v2/arabicsv/40/5.json",
+      "used": true,
+      "verification": {
+        "kjv_sources": [
+          "https://bible-api.com/Matthew+5:28?translation=kjv",
+          "https://api.getbible.net/v2/kjv/40/5.json",
+          "https://bolls.life/get-text/KJV/40/5/"
+        ],
+        "kjv_bibleapi": "But I say unto you, That whosoever looketh on a woman to lust after her hath committed adultery with her already in his heart.",
+        "kjv_getbible": "But I say unto you, That whosoever looketh on a woman to lust after her hath committed adultery with her already in his heart.",
+        "kjv_bolls": "But I say unto you, That whosoever looketh on a woman to lust after her hath committed adultery with her already in his heart.",
+        "ar_sources": [
+          "https://api.getbible.net/v2/arabicsv/40/5.json",
+          "https://bolls.life/get-text/SVD/40/5/"
+        ],
+        "ar_bolls_svd": "وَأَمَّا أَنَا فَأَقُولُ لَكُمْ: إِنَّ كُلَّ مَنْ يَنْظُرُ إِلَى امْرَأَةٍ لِيَشْتَهِيَهَا، فَقَدْ زَنَى بِهَا فِي قَلْبِهِ.",
+        "ar_consonantal_match": true,
+        "fetched": "2026-10-05"
+      }
+    },
+    "Deuteronomy 22:2": {
+      "ref_en": "Deuteronomy 22:2",
+      "ref_ar": "تثنية 22: 2",
+      "text_en": "And if thy brother be not nigh unto thee, or if thou know him not, then thou shalt bring it unto thine own house, and it shall be with thee until thy brother seek after it, and thou shalt restore it to him again.",
+      "text_ar": "وَإِنْ لَمْ يَكُنْ أَخُوكَ قَرِيبًا مِنْكَ أَوْ لَمْ تَعْرِفْهُ، فَضُمَّهُ إِلَى دَاخِلِ بَيْتِكَ. وَيَكُونُ عِنْدَكَ حَتَّى يَطْلُبَهُ أَخُوكَ، حِينَئِذٍ تَرُدُّهُ إِلَيْهِ.",
+      "source_url": "https://bible-api.com/Deuteronomy+22:2?translation=kjv",
+      "source_url_ar": "https://api.getbible.net/v2/arabicsv/5/22.json",
+      "used": true,
+      "verification": {
+        "kjv_sources": [
+          "https://bible-api.com/Deuteronomy+22:2?translation=kjv",
+          "https://api.getbible.net/v2/kjv/5/22.json",
+          "https://bolls.life/get-text/KJV/5/22/"
+        ],
+        "kjv_bibleapi": "And if thy brother be not nigh unto thee, or if thou know him not, then thou shalt bring it unto thine own house, and it shall be with thee until thy brother seek after it, and thou shalt restore it to him again.",
+        "kjv_getbible": "And if thy brother be not nigh unto thee, or if thou know him not, then thou shalt bring it unto thine own house, and it shall be with thee until thy brother seek after it, and thou shalt restore it to him again.",
+        "kjv_bolls": "And if thy brother be not nigh unto thee, or if thou know him not, then thou shalt bring it unto thine own house, and it shall be with thee until thy brother seek after it, and thou shalt restore it to him again.",
+        "ar_sources": [
+          "https://api.getbible.net/v2/arabicsv/5/22.json",
+          "https://bolls.life/get-text/SVD/5/22/"
+        ],
+        "ar_bolls_svd": "وَإِنْ لَمْ يَكُنْ أَخُوكَ قَرِيبًا مِنْكَ أَوْ لَمْ تَعْرِفْهُ، فَضُمَّهُ إِلَى دَاخِلِ بَيْتِكَ. وَيَكُونُ عِنْدَكَ حَتَّى يَطْلُبَهُ أَخُوكَ، حِينَئِذٍ تَرُدُّهُ إِلَيْهِ.",
+        "ar_consonantal_match": true,
+        "fetched": "2026-10-05"
+      }
+    },
+    "Deuteronomy 22:3": {
+      "ref_en": "Deuteronomy 22:3",
+      "ref_ar": "تثنية 22: 3",
+      "text_en": "In like manner shalt thou do with his ass; and so shalt thou do with his raiment; and with all lost thing of thy brother’s, which he hath lost, and thou hast found, shalt thou do likewise: thou mayest not hide thyself.",
+      "text_ar": "وَهَكَذَا تَفْعَلُ بِحِمَارِهِ، وَهَكَذَا تَفْعَلُ بِثِيَابِهِ، وَهَكَذَا تَفْعَلُ بِكُلِّ مَفْقُودٍ لِأَخِيكَ يُفْقَدُ مِنْهُ وَتَجِدُهُ. لَا يَحِلُّ لَكَ أَنْ تَتَغَاضَى.",
+      "source_url": "https://api.getbible.net/v2/kjv/5/22.json",
+      "source_url_ar": "https://api.getbible.net/v2/arabicsv/5/22.json",
+      "used": true,
+      "verification": {
+        "kjv_sources": [
+          "https://bible-api.com/Deuteronomy+22:3?translation=kjv",
+          "https://api.getbible.net/v2/kjv/5/22.json",
+          "https://bolls.life/get-text/KJV/5/22/"
+        ],
+        "kjv_bibleapi": "In like manner shalt thou do with his ass; and so shalt thou do with his raiment; and with all lost things of thy brother’s, which he hath lost, and thou hast found, shalt thou do likewise: thou mayest not hide thyself.",
+        "kjv_getbible": "In like manner shalt thou do with his ass; and so shalt thou do with his raiment; and with all lost thing of thy brother’s, which he hath lost, and thou hast found, shalt thou do likewise: thou mayest not hide thyself.",
+        "kjv_bolls": "In like manner shalt thou do with his ass; and so shalt thou do with his raiment; and with all lost thing of thy brother's, which he hath lost, and thou hast found, shalt thou do likewise: thou mayest not hide thyself.",
+        "ar_sources": [
+          "https://api.getbible.net/v2/arabicsv/5/22.json",
+          "https://bolls.life/get-text/SVD/5/22/"
+        ],
+        "ar_bolls_svd": "وَهكَذَا تَفْعَلُ بِحِمَارِهِ، وَهكَذَا تَفْعَلُ بِثِيَابِهِ، وَهكَذَا تَفْعَلُ بِكُلِّ مَفْقُودٍ لأَخِيكَ يُفْقَدُ مِنْهُ وَتَجِدُهُ. لاَ يَحِلُّ لَكَ أَنْ تَتَغَاضَى.",
+        "ar_consonantal_match": true,
+        "fetched": "2026-10-05"
+      }
+    },
+    "Proverbs 13:11": {
+      "ref_en": "Proverbs 13:11",
+      "ref_ar": "أمثال 13: 11",
+      "text_en": "Wealth gotten by vanity shall be diminished: but he that gathereth by labour shall increase.",
+      "text_ar": "غِنَى ٱلْبُطْلِ يَقِلُّ، وَٱلْجَامِعُ بِيَدِهِ يَزْدَادُ.",
+      "source_url": "https://bible-api.com/Proverbs+13:11?translation=kjv",
+      "source_url_ar": "https://api.getbible.net/v2/arabicsv/20/13.json",
+      "used": true,
+      "verification": {
+        "kjv_sources": [
+          "https://bible-api.com/Proverbs+13:11?translation=kjv",
+          "https://api.getbible.net/v2/kjv/20/13.json",
+          "https://bolls.life/get-text/KJV/20/13/"
+        ],
+        "kjv_bibleapi": "Wealth gotten by vanity shall be diminished: but he that gathereth by labour shall increase.",
+        "kjv_getbible": "Wealth gotten by vanity shall be diminished: but he that gathereth by labour shall increase.",
+        "kjv_bolls": "Wealth gotten by vanity shall be diminished: but he that gathereth by labour shall increase. by labour: Heb. with the hand",
+        "ar_sources": [
+          "https://api.getbible.net/v2/arabicsv/20/13.json",
+          "https://bolls.life/get-text/SVD/20/13/"
+        ],
+        "ar_bolls_svd": "غِنَى الْبُطْلِ يَقِلُّ، وَالْجَامِعُ بِيَدِهِ يَزْدَادُ.",
+        "ar_consonantal_match": true,
+        "fetched": "2026-10-05"
+      }
+    },
+    "Hebrews 13:5": {
+      "ref_en": "Hebrews 13:5",
+      "ref_ar": "عبرانيين 13: 5",
+      "text_en": "Let your conversation be without covetousness; and be content with such things as ye have: for he hath said, I will never leave thee, nor forsake thee.",
+      "text_ar": "لِتَكُنْ سِيرَتُكُمْ خَالِيَةً مِنْ مَحَبَّةِ ٱلْمَالِ. كُونُوا مُكْتَفِينَ بِمَا عِنْدَكُمْ، لِأَنَّهُ قَالَ: «لَا أُهْمِلُكَ وَلَا أَتْرُكُكَ»،",
+      "source_url": "https://bible-api.com/Hebrews+13:5?translation=kjv",
+      "source_url_ar": "https://api.getbible.net/v2/arabicsv/58/13.json",
+      "used": true,
+      "verification": {
+        "kjv_sources": [
+          "https://bible-api.com/Hebrews+13:5?translation=kjv",
+          "https://api.getbible.net/v2/kjv/58/13.json",
+          "https://bolls.life/get-text/KJV/58/13/"
+        ],
+        "kjv_bibleapi": "Let your conversation be without covetousness; and be content with such things as ye have: for he hath said, I will never leave thee, nor forsake thee.",
+        "kjv_getbible": "Let your conversation be without covetousness; and be content with such things as ye have: for he hath said, I will never leave thee, nor forsake thee.",
+        "kjv_bolls": "Let your conversation be without covetousness; and be content with such things as ye have: for he hath said, I will never leave thee, nor forsake thee.",
+        "ar_sources": [
+          "https://api.getbible.net/v2/arabicsv/58/13.json",
+          "https://bolls.life/get-text/SVD/58/13/"
+        ],
+        "ar_bolls_svd": "لِتَكُنْ سِيرَتُكُمْ خَالِيَةً مِنْ مَحَبَّةِ الْمَالِ. كُونُوا مُكْتَفِينَ بِمَا عِنْدَكُمْ، لأَنَّهُ قَالَ:«لاَ أُهْمِلُكَ وَلاَ أَتْرُكُكَ»",
+        "ar_consonantal_match": true,
+        "fetched": "2026-10-05"
+      }
+    },
+    "Leviticus 25:14": {
+      "ref_en": "Leviticus 25:14",
+      "ref_ar": "لاويين 25: 14",
+      "text_en": "And if thou sell ought unto thy neighbour, or buyest ought of thy neighbour’s hand, ye shall not oppress one another:",
+      "text_ar": "فَمَتَى بِعْتَ صَاحِبَكَ مَبِيعًا، أَوِ ٱشْتَرَيْتَ مِنْ يَدِ صَاحِبِكَ، فَلَا يَغْبِنْ أَحَدُكُمْ أَخَاهُ.",
+      "source_url": "https://bible-api.com/Leviticus+25:14?translation=kjv",
+      "source_url_ar": "https://api.getbible.net/v2/arabicsv/3/25.json",
+      "used": true,
+      "verification": {
+        "kjv_sources": [
+          "https://bible-api.com/Leviticus+25:14?translation=kjv",
+          "https://api.getbible.net/v2/kjv/3/25.json",
+          "https://bolls.life/get-text/KJV/3/25/"
+        ],
+        "kjv_bibleapi": "And if thou sell ought unto thy neighbour, or buyest ought of thy neighbour’s hand, ye shall not oppress one another:",
+        "kjv_getbible": "And if thou sell ought unto thy neighbour, or buyest ought of thy neighbour’s hand, ye shall not oppress one another:",
+        "kjv_bolls": "And if thou sell ought unto thy neighbour, or buyest ought of thy neighbour's hand, ye shall not oppress one another:",
+        "ar_sources": [
+          "https://api.getbible.net/v2/arabicsv/3/25.json",
+          "https://bolls.life/get-text/SVD/3/25/"
+        ],
+        "ar_bolls_svd": "فَمَتَى بِعْتَ صَاحِبَكَ مَبِيعًا، أَوِ اشْتَرَيْتَ مِنْ يَدِ صَاحِبِكَ، فَلاَ يَغْبِنْ أَحَدُكُمْ أَخَاهُ.",
+        "ar_consonantal_match": true,
+        "fetched": "2026-10-05"
+      }
+    },
+    "Proverbs 11:1": {
+      "ref_en": "Proverbs 11:1",
+      "ref_ar": "أمثال 11: 1",
+      "text_en": "A false balance is abomination to the LORD: but a just weight is his delight.",
+      "text_ar": "مَوَازِينُ غِشٍّ مَكْرَهَةُ ٱلرَّبِّ، وَٱلْوَزْنُ ٱلصَّحِيحُ رِضَاهُ.",
+      "source_url": "https://bible-api.com/Proverbs+11:1?translation=kjv",
+      "source_url_ar": "https://api.getbible.net/v2/arabicsv/20/11.json",
+      "used": true,
+      "verification": {
+        "kjv_sources": [
+          "https://bible-api.com/Proverbs+11:1?translation=kjv",
+          "https://api.getbible.net/v2/kjv/20/11.json",
+          "https://bolls.life/get-text/KJV/20/11/"
+        ],
+        "kjv_bibleapi": "A false balance is abomination to the LORD: but a just weight is his delight.",
+        "kjv_getbible": "A false balance is abomination to the Lord: but a just weight is his delight.",
+        "kjv_bolls": "A false balance is abomination to the LORD: but a just weight is his delight. A false: Heb. Balances of deceit just: Heb. perfect stone",
+        "ar_sources": [
+          "https://api.getbible.net/v2/arabicsv/20/11.json",
+          "https://bolls.life/get-text/SVD/20/11/"
+        ],
+        "ar_bolls_svd": "مَوَازِينُ غِشٍّ مَكْرَهَةُ الرَّبِّ، وَالْوَزْنُ الصَّحِيحُ رِضَاهُ.",
+        "ar_consonantal_match": true,
+        "fetched": "2026-10-05"
+      }
+    },
+    "Exodus 20:16": {
+      "ref_en": "Exodus 20:16",
+      "ref_ar": "خروج 20: 16",
+      "text_en": "Thou shalt not bear false witness against thy neighbour.",
+      "text_ar": "لَا تَشْهَدْ عَلَى قَرِيبِكَ شَهَادَةَ زُورٍ.",
+      "source_url": "https://bible-api.com/Exodus+20:16?translation=kjv",
+      "source_url_ar": "https://api.getbible.net/v2/arabicsv/2/20.json",
+      "used": true,
+      "verification": {
+        "kjv_sources": [
+          "https://bible-api.com/Exodus+20:16?translation=kjv",
+          "https://api.getbible.net/v2/kjv/2/20.json",
+          "https://bolls.life/get-text/KJV/2/20/"
+        ],
+        "kjv_bibleapi": "Thou shalt not bear false witness against thy neighbour.",
+        "kjv_getbible": "Thou shalt not bear false witness against thy neighbour.",
+        "kjv_bolls": "Thou shalt not bear false witness against thy neighbour.",
+        "ar_sources": [
+          "https://api.getbible.net/v2/arabicsv/2/20.json",
+          "https://bolls.life/get-text/SVD/2/20/"
+        ],
+        "ar_bolls_svd": "لاَ تَشْهَدْ عَلَى قَرِيبِكَ شَهَادَةَ زُورٍ.",
+        "ar_consonantal_match": true,
+        "fetched": "2026-10-05"
+      }
+    },
+    "Romans 12:18": {
+      "ref_en": "Romans 12:18",
+      "ref_ar": "رومية 12: 18",
+      "text_en": "If it be possible, as much as lieth in you, live peaceably with all men.",
+      "text_ar": "إِنْ كَانَ مُمْكِنًا فَحَسَبَ طَاقَتِكُمْ سَالِمُوا جَمِيعَ ٱلنَّاسِ.",
+      "source_url": "https://bible-api.com/Romans+12:18?translation=kjv",
+      "source_url_ar": "https://api.getbible.net/v2/arabicsv/45/12.json",
+      "used": true,
+      "verification": {
+        "kjv_sources": [
+          "https://bible-api.com/Romans+12:18?translation=kjv",
+          "https://api.getbible.net/v2/kjv/45/12.json",
+          "https://bolls.life/get-text/KJV/45/12/"
+        ],
+        "kjv_bibleapi": "If it be possible, as much as lieth in you, live peaceably with all men.",
+        "kjv_getbible": "If it be possible, as much as lieth in you, live peaceably with all men.",
+        "kjv_bolls": "If it be possible, as much as lieth in you, live peaceably with all men.",
+        "ar_sources": [
+          "https://api.getbible.net/v2/arabicsv/45/12.json",
+          "https://bolls.life/get-text/SVD/45/12/"
+        ],
+        "ar_bolls_svd": "إِنْ كَانَ مُمْكِنًا فَحَسَبَ طَاقَتِكُمْ سَالِمُوا جَمِيعَ النَّاسِ.",
+        "ar_consonantal_match": true,
+        "fetched": "2026-10-05"
+      }
+    },
+    "Psalms 107:1": {
+      "ref_en": "Psalms 107:1",
+      "ref_ar": "مزمور 107: 1",
+      "text_en": "O give thanks unto the LORD, for he is good: for his mercy endureth for ever.",
+      "text_ar": "اِحْمَدُوا ٱلرَّبَّ لِأَنَّهُ صَالِحٌ، لِأَنَّ إِلَى ٱلْأَبَدِ رَحْمَتَهُ.",
+      "source_url": "https://bible-api.com/Psalms+107:1?translation=kjv",
+      "source_url_ar": "https://api.getbible.net/v2/arabicsv/19/107.json",
+      "used": true,
+      "verification": {
+        "kjv_sources": [
+          "https://bible-api.com/Psalms+107:1?translation=kjv",
+          "https://api.getbible.net/v2/kjv/19/107.json",
+          "https://bolls.life/get-text/KJV/19/107/"
+        ],
+        "kjv_bibleapi": "O give thanks unto the LORD, for he is good: for his mercy endureth for ever.",
+        "kjv_getbible": "O give thanks unto the Lord, for he is good: for his mercy endureth for ever.",
+        "kjv_bolls": "O give thanks unto the LORD, for he is good: for his mercy endureth for ever.",
+        "ar_sources": [
+          "https://api.getbible.net/v2/arabicsv/19/107.json",
+          "https://bolls.life/get-text/SVD/19/107/"
+        ],
+        "ar_bolls_svd": "اِحْمَدُوا الرَّبَّ لأَنَّهُ صَالِحٌ، لأَنَّ إِلَى الأَبَدِ رَحْمَتَهُ.",
+        "ar_consonantal_match": true,
+        "fetched": "2026-10-05"
+      }
+    },
+    "Proverbs 20:1": {
+      "ref_en": "Proverbs 20:1",
+      "ref_ar": "أمثال 20: 1",
+      "text_en": "Wine is a mocker, strong drink is raging: and whosoever is deceived thereby is not wise.",
+      "text_ar": "اَلْخَمْرُ مُسْتَهْزِئَةٌ. ٱلْمُسْكِرُ عَجَّاجٌ، وَمَنْ يَتَرَنَّحُ بِهِمَا فَلَيْسَ بِحَكِيمٍ.",
+      "source_url": "https://bible-api.com/Proverbs+20:1?translation=kjv",
+      "source_url_ar": "https://api.getbible.net/v2/arabicsv/20/20.json",
+      "used": true,
+      "verification": {
+        "kjv_sources": [
+          "https://bible-api.com/Proverbs+20:1?translation=kjv",
+          "https://api.getbible.net/v2/kjv/20/20.json",
+          "https://bolls.life/get-text/KJV/20/20/"
+        ],
+        "kjv_bibleapi": "Wine is a mocker, strong drink is raging: and whosoever is deceived thereby is not wise.",
+        "kjv_getbible": "Wine is a mocker, strong drink is raging: and whosoever is deceived thereby is not wise.",
+        "kjv_bolls": "Wine is a mocker, strong drink is raging: and whosoever is deceived thereby is not wise.",
+        "ar_sources": [
+          "https://api.getbible.net/v2/arabicsv/20/20.json",
+          "https://bolls.life/get-text/SVD/20/20/"
+        ],
+        "ar_bolls_svd": "اَلْخَمْرُ مُسْتَهْزِئَةٌ. الْمُسْكِرُ عَجَّاجٌ، وَمَنْ يَتَرَنَّحُ بِهِمَا فَلَيْسَ بِحَكِيمٍ.",
+        "ar_consonantal_match": true,
+        "fetched": "2026-10-05"
+      }
+    },
+    "Ephesians 5:18": {
+      "ref_en": "Ephesians 5:18",
+      "ref_ar": "أفسس 5: 18",
+      "text_en": "And be not drunk with wine, wherein is excess; but be filled with the Spirit;",
+      "text_ar": "وَلَا تَسْكَرُوا بِٱلْخَمْرِ ٱلَّذِي فِيهِ ٱلْخَلَاعَةُ، بَلِ ٱمْتَلِئُوا بِٱلرُّوحِ،",
+      "source_url": "https://bible-api.com/Ephesians+5:18?translation=kjv",
+      "source_url_ar": "https://api.getbible.net/v2/arabicsv/49/5.json",
+      "used": true,
+      "verification": {
+        "kjv_sources": [
+          "https://bible-api.com/Ephesians+5:18?translation=kjv",
+          "https://api.getbible.net/v2/kjv/49/5.json",
+          "https://bolls.life/get-text/KJV/49/5/"
+        ],
+        "kjv_bibleapi": "And be not drunk with wine, wherein is excess; but be filled with the Spirit;",
+        "kjv_getbible": "And be not drunk with wine, wherein is excess; but be filled with the Spirit;",
+        "kjv_bolls": "And be not drunk with wine, wherein is excess; but be filled with the Spirit;",
+        "ar_sources": [
+          "https://api.getbible.net/v2/arabicsv/49/5.json",
+          "https://bolls.life/get-text/SVD/49/5/"
+        ],
+        "ar_bolls_svd": "وَلاَ تَسْكَرُوا بِالْخَمْرِ الَّذِي فِيهِ الْخَلاَعَةُ، بَلِ امْتَلِئُوا بِالرُّوحِ،",
+        "ar_consonantal_match": true,
+        "fetched": "2026-10-05"
+      }
+    },
+    "Romans 14:21": {
+      "ref_en": "Romans 14:21",
+      "ref_ar": "رومية 14: 21",
+      "text_en": "It is good neither to eat flesh, nor to drink wine, nor any thing whereby thy brother stumbleth, or is offended, or is made weak.",
+      "text_ar": "حَسَنٌ أَنْ لَا تَأْكُلَ لَحْمًا وَلَا تَشْرَبَ خَمْرًا وَلَا شَيْئًا يَصْطَدِمُ بِهِ أَخُوكَ أَوْ يَعْثُرُ أَوْ يَضْعُفُ.",
+      "source_url": "https://bible-api.com/Romans+14:21?translation=kjv",
+      "source_url_ar": "https://api.getbible.net/v2/arabicsv/45/14.json",
+      "used": true,
+      "verification": {
+        "kjv_sources": [
+          "https://bible-api.com/Romans+14:21?translation=kjv",
+          "https://api.getbible.net/v2/kjv/45/14.json",
+          "https://bolls.life/get-text/KJV/45/14/"
+        ],
+        "kjv_bibleapi": "It is good neither to eat flesh, nor to drink wine, nor any thing whereby thy brother stumbleth, or is offended, or is made weak.",
+        "kjv_getbible": "It is good neither to eat flesh, nor to drink wine, nor any thing whereby thy brother stumbleth, or is offended, or is made weak.",
+        "kjv_bolls": "It is good neither to eat flesh, nor to drink wine, nor any thing whereby thy brother stumbleth, or is offended, or is made weak.",
+        "ar_sources": [
+          "https://api.getbible.net/v2/arabicsv/45/14.json",
+          "https://bolls.life/get-text/SVD/45/14/"
+        ],
+        "ar_bolls_svd": "حَسَنٌ أَنْ لاَ تَأْكُلَ لَحْمًا وَلاَ تَشْرَبَ خَمْرًا وَلاَ شَيْئًا يَصْطَدِمُ بِهِ أَخُوكَ أَوْ يَعْثُرُ أَوْ يَضْعُفُ.",
+        "ar_consonantal_match": true,
+        "fetched": "2026-10-05"
+      }
+    },
+    "2 Corinthians 9:7": {
+      "ref_en": "2 Corinthians 9:7",
+      "ref_ar": "كورنثوس الثانية 9: 7",
+      "text_en": "Every man according as he purposeth in his heart, so let him give; not grudgingly, or of necessity: for God loveth a cheerful giver.",
+      "text_ar": "كُلُّ وَاحِدٍ كَمَا يَنْوِي بِقَلْبِهِ، لَيْسَ عَنْ حُزْنٍ أَوِ ٱضْطِرَارٍ. لِأَنَّ ٱلْمُعْطِيَ ٱلْمَسْرُورَ يُحِبُّهُ ٱللهُ.",
+      "source_url": "https://bible-api.com/2%20Corinthians+9:7?translation=kjv",
+      "source_url_ar": "https://api.getbible.net/v2/arabicsv/47/9.json",
+      "used": true,
+      "verification": {
+        "kjv_sources": [
+          "https://bible-api.com/2%20Corinthians+9:7?translation=kjv",
+          "https://api.getbible.net/v2/kjv/47/9.json",
+          "https://bolls.life/get-text/KJV/47/9/"
+        ],
+        "kjv_bibleapi": "Every man according as he purposeth in his heart, so let him give; not grudgingly, or of necessity: for God loveth a cheerful giver.",
+        "kjv_getbible": "Every man according as he purposeth in his heart, so let him give; not grudgingly, or of necessity: for God loveth a cheerful giver.",
+        "kjv_bolls": "Every man according as he purposeth in his heart, so let him give; not grudgingly , or of necessity: for God loveth a cheerful giver.",
+        "ar_sources": [
+          "https://api.getbible.net/v2/arabicsv/47/9.json",
+          "https://bolls.life/get-text/SVD/47/9/"
+        ],
+        "ar_bolls_svd": "كُلُّ وَاحِدٍ كَمَا يَنْوِي بِقَلْبِهِ، لَيْسَ عَنْ حُزْنٍ أَوِ اضْطِرَارٍ. لأَنَّ الْمُعْطِيَ الْمَسْرُورَ يُحِبُّهُ اللهُ.",
+        "ar_consonantal_match": true,
+        "fetched": "2026-10-05"
+      }
+    },
+    "Luke 14:13": {
+      "ref_en": "Luke 14:13",
+      "ref_ar": "لوقا 14: 13",
+      "text_en": "But when thou makest a feast, call the poor, the maimed, the lame, the blind:",
+      "text_ar": "بَلْ إِذَا صَنَعْتَ ضِيَافَةً فَٱدْعُ: ٱلْمَسَاكِينَ، ٱلْجُدْعَ، ٱلْعُرْجَ، ٱلْعُمْيَ،",
+      "source_url": "https://bible-api.com/Luke+14:13?translation=kjv",
+      "source_url_ar": "https://api.getbible.net/v2/arabicsv/42/14.json",
+      "used": true,
+      "verification": {
+        "kjv_sources": [
+          "https://bible-api.com/Luke+14:13?translation=kjv",
+          "https://api.getbible.net/v2/kjv/42/14.json",
+          "https://bolls.life/get-text/KJV/42/14/"
+        ],
+        "kjv_bibleapi": "But when thou makest a feast, call the poor, the maimed, the lame, the blind:",
+        "kjv_getbible": "But when thou makest a feast, call the poor, the maimed, the lame, the blind:",
+        "kjv_bolls": "But when thou makest a feast, call the poor, the maimed, the lame, the blind:",
+        "ar_sources": [
+          "https://api.getbible.net/v2/arabicsv/42/14.json",
+          "https://bolls.life/get-text/SVD/42/14/"
+        ],
+        "ar_bolls_svd": "بَلْ إِذَا صَنَعْتَ ضِيَافَةً فَادْعُ: الْمَسَاكِينَ، الْجُدْعَ، الْعُرْجَ، الْعُمْيَ،",
+        "ar_consonantal_match": true,
+        "fetched": "2026-10-05"
+      }
+    },
+    "Hebrews 13:4": {
+      "ref_en": "Hebrews 13:4",
+      "ref_ar": "عبرانيين 13: 4",
+      "text_en": "Marriage is honourable in all, and the bed undefiled: but whoremongers and adulterers God will judge.",
+      "text_ar": "لِيَكُنِ ٱلزِّوَاجُ مُكَرَّمًا عِنْدَ كُلِّ وَاحِدٍ، وَٱلْمَضْجَعُ غَيْرَ نَجِسٍ. وَأَمَّا ٱلْعَاهِرُونَ وَٱلزُّنَاةُ فَسَيَدِينُهُمُ ٱللهُ.",
+      "source_url": "https://bible-api.com/Hebrews+13:4?translation=kjv",
+      "source_url_ar": "https://api.getbible.net/v2/arabicsv/58/13.json",
+      "used": true,
+      "verification": {
+        "kjv_sources": [
+          "https://bible-api.com/Hebrews+13:4?translation=kjv",
+          "https://api.getbible.net/v2/kjv/58/13.json",
+          "https://bolls.life/get-text/KJV/58/13/"
+        ],
+        "kjv_bibleapi": "Marriage is honourable in all, and the bed undefiled: but whoremongers and adulterers God will judge.",
+        "kjv_getbible": "Marriage is honourable in all, and the bed undefiled: but whoremongers and adulterers God will judge.",
+        "kjv_bolls": "Marriage is honourable in all, and the bed undefiled: but whoremongers and adulterers God will judge.",
+        "ar_sources": [
+          "https://api.getbible.net/v2/arabicsv/58/13.json",
+          "https://bolls.life/get-text/SVD/58/13/"
+        ],
+        "ar_bolls_svd": "لِيَكُنِ الزِّوَاجُ مُكَرَّمًا عِنْدَ كُلِّ وَاحِدٍ، وَالْمَضْجَعُ غَيْرَ نَجِسٍ. وَأَمَّا الْعَاهِرُونَ وَالزُّنَاةُ فَسَيَدِينُهُمُ اللهُ.",
+        "ar_consonantal_match": true,
+        "fetched": "2026-10-05"
+      }
+    },
+    "Romans 12:15": {
+      "ref_en": "Romans 12:15",
+      "ref_ar": "رومية 12: 15",
+      "text_en": "Rejoice with them that do rejoice, and weep with them that weep.",
+      "text_ar": "فَرَحًا مَعَ ٱلْفَرِحِينَ وَبُكَاءً مَعَ ٱلْبَاكِينَ.",
+      "source_url": "https://bible-api.com/Romans+12:15?translation=kjv",
+      "source_url_ar": "https://api.getbible.net/v2/arabicsv/45/12.json",
+      "used": true,
+      "verification": {
+        "kjv_sources": [
+          "https://bible-api.com/Romans+12:15?translation=kjv",
+          "https://api.getbible.net/v2/kjv/45/12.json",
+          "https://bolls.life/get-text/KJV/45/12/"
+        ],
+        "kjv_bibleapi": "Rejoice with them that do rejoice, and weep with them that weep.",
+        "kjv_getbible": "Rejoice with them that do rejoice, and weep with them that weep.",
+        "kjv_bolls": "Rejoice with them that do rejoice, and weep with them that weep.",
+        "ar_sources": [
+          "https://api.getbible.net/v2/arabicsv/45/12.json",
+          "https://bolls.life/get-text/SVD/45/12/"
+        ],
+        "ar_bolls_svd": "فَرَحًا مَعَ الْفَرِحِينَ وَبُكَاءً مَعَ الْبَاكِينَ.",
+        "ar_consonantal_match": true,
+        "fetched": "2026-10-05"
+      }
+    },
+    "Ecclesiastes 7:2": {
+      "ref_en": "Ecclesiastes 7:2",
+      "ref_ar": "جامعة 7: 2",
+      "text_en": "It is better to go to the house of mourning, than to go to the house of feasting: for that is the end of all men; and the living will lay it to his heart.",
+      "text_ar": "اَلذَّهَابُ إِلَى بَيْتِ ٱلنَّوْحِ خَيْرٌ مِنَ ٱلذَّهَابِ إِلَى بَيْتِ ٱلْوَلِيمَةِ، لِأَنَّ ذَاكَ نِهَايَةُ كُلِّ إِنْسَانٍ، وَٱلْحَيُّ يَضَعُهُ فِي قَلْبِهِ.",
+      "source_url": "https://bible-api.com/Ecclesiastes+7:2?translation=kjv",
+      "source_url_ar": "https://api.getbible.net/v2/arabicsv/21/7.json",
+      "used": true,
+      "verification": {
+        "kjv_sources": [
+          "https://bible-api.com/Ecclesiastes+7:2?translation=kjv",
+          "https://api.getbible.net/v2/kjv/21/7.json",
+          "https://bolls.life/get-text/KJV/21/7/"
+        ],
+        "kjv_bibleapi": "It is better to go to the house of mourning, than to go to the house of feasting: for that is the end of all men; and the living will lay it to his heart.",
+        "kjv_getbible": "It is better to go to the house of mourning, than to go to the house of feasting: for that is the end of all men; and the living will lay it to his heart.",
+        "kjv_bolls": "It is better to go to the house of mourning, than to go to the house of feasting: for that is the end of all men; and the living will lay it to his heart.",
+        "ar_sources": [
+          "https://api.getbible.net/v2/arabicsv/21/7.json",
+          "https://bolls.life/get-text/SVD/21/7/"
+        ],
+        "ar_bolls_svd": "اَلذَّهَابُ إِلَى بَيْتِ النَّوْحِ خَيْرٌ مِنَ الذَّهَابِ إِلَى بَيْتِ الْوَلِيمَةِ، لأَنَّ ذَاكَ نِهَايَةُ كُلِّ إِنْسَانٍ، وَالْحَيُّ يَضَعُهُ فِي قَلْبِهِ.",
+        "ar_consonantal_match": true,
+        "fetched": "2026-10-05"
+      }
+    },
+    "Acts 20:35": {
+      "ref_en": "Acts 20:35",
+      "ref_ar": "أعمال الرسل 20: 35",
+      "text_en": "I have shewed you all things, how that so labouring ye ought to support the weak, and to remember the words of the Lord Jesus, how he said, It is more blessed to give than to receive.",
+      "text_ar": "فِي كُلِّ شَيْءٍ أَرَيْتُكُمْ أَنَّهُ هَكَذَا يَنْبَغِي أَنَّكُمْ تَتْعَبُونَ وَتَعْضُدُونَ ٱلضُّعَفَاءَ، مُتَذَكِّرِينَ كَلِمَاتِ ٱلرَّبِّ يَسُوعَ أَنَّهُ قَالَ: مَغْبُوطٌ هُوَ ٱلْعَطَاءُ أَكْثَرُ مِنَ ٱلْأَخْذِ».",
+      "source_url": "https://bible-api.com/Acts+20:35?translation=kjv",
+      "source_url_ar": "https://api.getbible.net/v2/arabicsv/44/20.json",
+      "used": true,
+      "verification": {
+        "kjv_sources": [
+          "https://bible-api.com/Acts+20:35?translation=kjv",
+          "https://api.getbible.net/v2/kjv/44/20.json",
+          "https://bolls.life/get-text/KJV/44/20/"
+        ],
+        "kjv_bibleapi": "I have shewed you all things, how that so labouring ye ought to support the weak, and to remember the words of the Lord Jesus, how he said, It is more blessed to give than to receive.",
+        "kjv_getbible": "I have shewed you all things, how that so labouring ye ought to support the weak, and to remember the words of the Lord Jesus, how he said, It is more blessed to give than to receive.",
+        "kjv_bolls": "I have shewed you all things, how that so labouring ye ought to support the weak, and to remember the words of the Lord Jesus, how he said, It is more blessed to give than to receive.",
+        "ar_sources": [
+          "https://api.getbible.net/v2/arabicsv/44/20.json",
+          "https://bolls.life/get-text/SVD/44/20/"
+        ],
+        "ar_bolls_svd": "فِي كُلِّ شَيْءٍ أَرَيْتُكُمْ أَنَّهُ هكَذَا يَنْبَغِي أَنَّكُمْ تَتْعَبُونَ وَتَعْضُدُونَ الضُّعَفَاءَ، مُتَذَكِّرِينَ كَلِمَاتِ الرَّبِّ يَسُوعَ أَنَّهُ قَالَ: مَغْبُوطٌ هُوَ الْعَطَاءُ أَكْثَرُ مِنَ الأَخْذِ».",
+        "ar_consonantal_match": true,
+        "fetched": "2026-10-05"
+      }
+    }
+  },
+  "rulings": {
+    "home.mortgage": {
+      "newcomer_explainer": {
+        "ar": "يحرّم الإسلام الربا، أي اشتراط زيادة على القرض أخذاً أو دفعاً، ولذلك لا يجوز القرض العقاري بفائدة عند المذاهب الأربعة وأكثر المجامع الفقهية المعاصرة. ويذكر العلماء أن الحكمة هي العدل: فالمقرض بفائدة يضمن ربحه ويحمّل المقترض المحتاج كل المخاطرة، أما التجارة فيتقاسم فيها الطرفان الربح والخسارة، ولهذا فرّق القرآن بين البيع والربا (البقرة 275). لذلك يلجأ كثير من المسلمين في أمريكا إلى عقود التمويل الإسلامي القائمة على البيع أو المشاركة أو الإجارة. وقد أجاز المجلس الأوروبي للإفتاء القرض الربوي لمسكن الحاجة عند فقد البديل وبشروط مشددة، لكنه قول لا يأخذ به جمهور العلماء.",
+        "en": "Islam forbids riba — stipulating any increase on a loan, whether receiving or paying it — so a conventional interest-bearing mortgage is not allowed according to the four classical schools and most contemporary fiqh bodies. Scholars explain the wisdom as fairness: an interest lender secures a guaranteed gain while the borrower in need carries all the risk, whereas in trade both sides share profit and loss, which is why the Quran distinguishes trade from riba (2:275). For this reason many Muslims in the US use Islamic home-finance contracts based on sale, partnership or lease instead. The European Council for Fatwa allowed an interest mortgage for a needed family home under strict conditions when no alternative exists, but most scholars do not accept that view."
+      },
+      "common_ground": {
+        "summary": {
+          "ar": "الكتاب المقدس أيضاً ينهى عن الإقراض بالربا للأخ وللفقير، وقد ظلت الكنيسة قروناً تدين الربا؛ ففي التقليدين معاً إقراضُ المحتاج بابُ رحمة لا باب تكسّب.",
+          "en": "The Bible also forbids lending at interest to a brother and to the poor, and for centuries the Church condemned usury; in both traditions lending to someone in need is an act of mercy, not a business opportunity."
+        },
+        "bible": [
+          "Exodus 22:25",
+          "Deuteronomy 23:19"
+        ],
+        "differences": {
+          "ar": "النهي في التوراة موجّه إلى الإقراض داخل جماعة بني إسرائيل، والآية التالية (تثنية 23: 20) تجيز الربا من الأجنبي. ومع الزمن قبلت أغلب الكنائس الفائدة المعتدلة في الإقراض التجاري وصارت تقصر لفظ «الربا» على الفائدة الفاحشة أو الاستغلالية، فأغلب المسيحيين اليوم يرون القرض العقاري العادي مشروعاً، بينما يعدّ جمهور علماء المسلمين كل زيادة مشروطة على القرض ربا.",
+          "en": "The Torah's prohibition addresses lending within the Israelite community, and the next verse (Deuteronomy 23:20) permits interest from a foreigner. Over time most churches came to accept moderate interest in commercial lending and reserved the word 'usury' for excessive or exploitative rates, so most Christians today see an ordinary mortgage as legitimate, whereas mainstream Islamic scholarship treats any stipulated increase on a loan as riba."
+        }
+      }
+    },
+    "home.food_ingredients": {
+      "newcomer_explainer": {
+        "ar": "يبيح الإسلام أكثر الأطعمة، ومنها ذبائح اليهود والنصارى إذا ذُبحت ذبحاً شرعياً إذ نصّ القرآن على حِلّ طعام الذين أوتوا الكتاب (المائدة 5)، ويحرّم الخنزير والدم والميتة والخمر. ويربط العلماء هذه الحدود بالعبادة والطهارة: فالذبيحة تُذكّى بذكر اسم الله وإنهار الدم، والمسكر يُجتنب قليله وكثيره. ويختلف العلماء المعاصرون في لحوم المسالخ الأمريكية بسبب الصعق وطريقة الذبح، وفي الجيلاتين الخنزيري، وفي الكحول المستعمل مذيباً للنكهات، فقد تختلف اختيارات أصدقاء آدم المسلمين. ومن لم يتبيّن الأمر فالأحوط عنده ترك المشتبه (البخاري 52).",
+        "en": "Islam permits most foods, including meat slaughtered by Jews and Christians when properly slaughtered (\"the food of those who were given the Scripture is lawful for you\", 5:5), while forbidding pork, blood, carrion and alcohol. Scholars connect these limits to worship and purity: an animal is slaughtered with God's name mentioned and its blood drained, and intoxicants are avoided in small and large amounts alike. Contemporary scholars differ on ordinary US slaughterhouse meat because of stunning and method, on pork gelatin, and on alcohol used as a flavour solvent, so Adam's Muslim friends may make different choices. When unsure, many prefer to avoid what is doubtful (Bukhari 52)."
+      },
+      "common_ground": {
+        "summary": {
+          "ar": "سفر اللاويين يحرّم الخنزير، وفي سفر أعمال الرسل طُلب من المؤمنين الأوائل الامتناع عن الدم والمخنوق وما ذُبح للأصنام، وهذا قريب جداً من أحكام الإسلام في الدم والذبح. والإسلام من جهته يبيح طعام أهل الكتاب، وهذا جسر حقيقي على مائدة الأسرة.",
+          "en": "Leviticus forbids pork, and in Acts the early believers were asked to abstain from blood, from things strangled and from meat offered to idols — very close to Islam's rules on blood and slaughter. Islam, for its part, treats the food of Christians as lawful, which is a real bridge at the family table."
+        },
+        "bible": [
+          "Leviticus 11:7",
+          "Acts 15:29"
+        ],
+        "differences": {
+          "ar": "يرى أغلب المسيحيين أن شريعة الأطعمة في العهد القديم لم تعد ملزمة بعد العهد الجديد (ويستشهدون عادة بمرقس 7 وأعمال الرسل 10)، ويعدّون توجيه أعمال الرسل 15 تدبيراً مؤقتاً، مع أن بعض الجماعات المسيحية كالسبتيين (الأدفنتست) والكنيسة الأرثوذكسية الإثيوبية ما زالت تتجنب الخنزير. كما يبيح أغلب المسيحيين الشرب المعتدل، بينما يحرّم الإسلام الخمر قليلها وكثيرها.",
+          "en": "Most Christians believe the Old Testament food laws are no longer binding after the New Testament (commonly citing Mark 7 and Acts 10) and regard the Acts 15 instructions as a temporary measure, though some communities such as Seventh-day Adventists and the Ethiopian Orthodox Church still avoid pork. Most Christians also allow moderate drinking, whereas Islam forbids alcohol in any amount."
+        }
+      }
+    },
+    "home.credit_card": {
+      "newcomer_explainer": {
+        "ar": "الشراء بالتقسيط بلا فائدة جائز في الإسلام، وبطاقة الخصم (debit) لا إشكال فيها، لكن دفع الفائدة ربا، وغرامة التأخير المشروطة لصالح الدائن يعدّها مجمع الفقه الإسلامي الدولي وجمهور المعاصرين من الربا أيضاً. ويختلف العلماء في توقيع عقد فيه شرط فائدة مع العزم على السداد الكامل دائماً: فمنعه مجمع الفقه الإسلامي الدولي، وأجازه مجمع فقهاء الشريعة بأمريكا (AMJA) للمسلمين هناك للحاجة. والقيم التي وراء ذلك: تجنّب الدَّين الاستغلالي، وأداء الحقوق في وقتها، فقد قال النبي ﷺ: «مطل الغني ظلم» (البخاري 2287).",
+        "en": "Buying in interest-free instalments is permissible in Islam and a debit card raises no issue, but paying interest is riba, and a stipulated late fee paid to the lender is treated as riba too by the International Islamic Fiqh Academy and most contemporary scholars. Scholars differ on signing an agreement that contains an interest clause while always paying in full: the International Islamic Fiqh Academy forbade it, while AMJA allowed it for Muslims in the US because of need. The values behind this are avoiding exploitative debt and paying what you owe on time; the Prophet ﷺ called a wealthy person's delay in repaying an injustice (Bukhari 2287)."
+      },
+      "common_ground": {
+        "summary": {
+          "ar": "يحذّر التقليدان من الوقوع في الدَّين ويمدحان المبادرة إلى سداده؛ فالمزمور يجعل عدم الوفاء بالقرض من صفات الشرير، وهو قريب من الحديث الذي يسمّي مماطلة الغني ظلماً.",
+          "en": "Both traditions warn against sliding into debt and praise repaying promptly; the Psalm counts failing to repay as a mark of the wicked, much like the hadith that calls a well-off debtor's delay an injustice."
+        },
+        "bible": [
+          "Romans 13:8",
+          "Psalms 37:21"
+        ],
+        "differences": {
+          "ar": "لا يرى أغلب المسيحيين في دفع فائدة البطاقة العادية إثماً في ذاته، وإن كان كثير من المرشدين الماليين المسيحيين ينصحون بتجنب ديون الاستهلاك؛ أما في الإسلام فالإشكال في الفائدة نفسها لا في ثقل الدَّين فقط.",
+          "en": "Most Christians do not consider paying ordinary card interest sinful in itself, though many Christian financial teachers urge avoiding consumer debt; in Islam the problem is the interest itself, not only the burden of debt."
+        }
+      }
+    },
+    "work.alcohol_pork_job": {
+      "newcomer_explainer": {
+        "ar": "لا يحرّم الإسلام شرب الخمر فقط، بل يحرّم كذلك تقديمها وبيعها وحملها لمن يشربها، فقد لعن النبي ﷺ في الخمر عشرة منهم ساقيها وحاملها (الترمذي 1295)، وهذا قول الجمهور، وخالف أبو حنيفة في حملها بأجرة. والحكمة التي يذكرها العلماء أن من أعان على الضرر شارك فيه، وأن كسب المسلم ينبغي أن يكون من عمل حلال. وبيع الخنزير داخل في الحكم نفسه (البخاري 2236). أما العمل غير المباشر كبرمجة تطبيق لمصنع جعة ففيه خلاف بين المعاصرين، فقد يعتذر صديق مسلم عن وظيفة أو مناوبة بينما يقبلها آخر مع التحفظ.",
+        "en": "Islam forbids not only drinking alcohol but also serving, selling or carrying it for people to drink: the Prophet ﷺ cursed ten parties involved in wine, including its server and its carrier (Tirmidhi 1295). This is the majority view; Abu Hanifa differed on carrying it for a fee. The reasoning scholars give is that whoever helps bring about a harm shares in it, and that a Muslim's earnings should come from lawful work; selling pork falls under the same rule (Bukhari 2236). Indirect work, such as building software for a brewery, is debated among contemporary scholars, so one Muslim friend may decline such a job or shift while another accepts it with reservations."
+      },
+      "common_ground": {
+        "summary": {
+          "ar": "يعلّم بولس أنه حسن ألا يشرب الإنسان خمراً ولا يفعل شيئاً يعثر به أخوه، ففكرة أن يراعي الإنسان أثر عمله في غيره ولا يعينه على ما يضره قيمة مشتركة، وكثير من المسيحيين يتفهمون زميلاً يعتذر عن عمل بدافع الضمير.",
+          "en": "Paul teaches that it is good not to drink wine or do anything by which a brother stumbles, so caring about how one's actions affect others, and not helping them toward harm, is a shared value; many Christians readily understand a coworker who steps back from a task out of conscience."
+        },
+        "bible": [
+          "Romans 14:21"
+        ],
+        "differences": {
+          "ar": "تبيح أغلب التقاليد المسيحية الشرب المعتدل ولا ترى إثماً في تقديم الخمر أو لحم الخنزير، والخمر تُستعمل في سرّ العشاء الرباني، مع أن بعض الطوائف تدعو إلى الامتناع التام. أما الإسلام فيمتد تحريمه إلى سلسلة التقديم والبيع كلها لا إلى السُّكر وحده.",
+          "en": "Most Christian traditions permit moderate drinking and see no sin in serving alcohol or pork, and wine is used in Holy Communion, though some denominations encourage total abstinence. Islam's prohibition extends to the whole chain of serving and selling, not only to drunkenness."
+        }
+      }
+    },
+    "work.retirement_401k": {
+      "newcomer_explainer": {
+        "ar": "الادخار للمستقبل أمر حسن في الإسلام، ويجيز كثير من العلماء المعاصرين، ومنهم مفتو AMJA، الاشتراك في خطة 401(k) حفاظاً على مساهمة صاحب العمل، بشرط اختيار استثمارات مباحة. فصناديق السندات والودائع بفائدة ممنوعة لأن الفائدة ربا، أما أسهم الشركات التي نشاطها الأساسي مباح فجائزة في الأصل، لأن السهم ملكية لجزء من تجارة حقيقية يشارك صاحبه في ربحها وخسارتها. ويختلف العلماء في الشركات المباحة النشاط التي تتعامل أحياناً بالفائدة: فمنعها مجمع الفقه الإسلامي الدولي، وأجازها آخرون بضوابط مع تطهير الجزء المختلط. والقاعدة الهادية: «دع ما يريبك إلى ما لا يريبك» (الترمذي 2518).",
+        "en": "Saving for the future is a good thing in Islam, and many contemporary scholars, including AMJA muftis, allow joining a 401(k) to keep the employer match, as long as the money goes into lawful investments. Bond and interest-bearing funds are excluded because interest is riba, while shares in companies whose core business is lawful are permitted in principle, since a share is ownership of part of a real business with its profit and loss. Scholars differ about lawful companies that sometimes deal in interest: the International Islamic Fiqh Academy forbids them, while others allow them within limits with purification of the tainted portion. The guiding principle is \"leave what makes you doubt for what does not\" (Tirmidhi 2518)."
+      },
+      "common_ground": {
+        "summary": {
+          "ar": "الاستثمار وفق القيم مألوف لكثير من المسيحيين أيضاً: فكنائس وصناديق مسيحية كثيرة تستبعد قطاعات كالقمار والخمور والتبغ، والمزمور يمدح من «فضته لا يعطيها بالربا».",
+          "en": "Values-based investing is familiar to many Christians too: many churches and Christian funds screen out industries such as gambling, alcohol or tobacco, and the Psalm praises the one who \"putteth not out his money to usury\"."
+        },
+        "bible": [
+          "Psalms 15:5"
+        ],
+        "differences": {
+          "ar": "يرى أغلب المسيحيين اليوم السندات والمدخرات ذات الفائدة مشروعة، بل إن مثل الوزنات في إنجيل متى (25: 27) يذكر أخذ الفائدة من الصيارفة دون ذم، فالحدّ الذي يرسمه الإسلام عند صناديق الفائدة لا نظير له غالباً في الممارسة المسيحية المعاصرة.",
+          "en": "Most Christians today regard bonds and interest-bearing savings as legitimate, and the parable of the talents (Matthew 25:27) even mentions receiving interest from bankers without disapproval, so the line Islam draws at interest-bearing funds usually has no counterpart in contemporary Christian practice."
+        }
+      }
+    },
+    "work.honesty_gifts": {
+      "newcomer_explainer": {
+        "ar": "الوظيفة في الإسلام أمانة. فحين بعث النبي ﷺ ابن اللتبية لجمع الصدقات وعاد يقول «هذا لكم، وهذا أُهدي لي»، أنكر عليه وقال: «فهلّا جلس في بيت أبيه أو بيت أمه، فينظر يُهدى له أم لا» (البخاري 2597)؛ فالهدية التي تأتي بسبب الوظيفة لجهة العمل إلا إذا أذنت. وتسجيل ساعات لم تُعمل كذب وأكل للمال بالباطل، واستعمال موارد الشركة مقيّد بإذنها الصريح أو العرفي. والمقصد حفظ الأمانة، وسدّ باب الرشوة المتنكرة في صورة هدية، وتطييب الكسب.",
+        "en": "In Islam a job is an amanah, a trust. When the Prophet ﷺ sent Ibn al-Lutbiyya to collect alms and he came back saying \"this has been given to me as a present\", the Prophet ﷺ asked why he had not stayed in his father's or mother's house to see whether he would be given presents or not (Bukhari 2597); so gifts that come because of your position belong to the employer unless it allows them. Logging hours not worked is lying and taking wealth without right, and company resources may be used only as the company permits, explicitly or by custom. The aim is to protect trust, close the door to bribery dressed up as gifts, and keep one's earnings clean."
+      },
+      "common_ground": {
+        "summary": {
+          "ar": "الأمانة في العمل أرض مشتركة واسعة: فالتوراة تنهى عن أخذ الرشوة لأنها تعمي المبصرين، والمسيح يعلّم أن الأمين في القليل أمين في الكثير.",
+          "en": "Honesty at work is wide common ground: the Torah forbids taking a gift (bribe) because it blinds the wise, and Jesus teaches that whoever is faithful in little is faithful also in much."
+        },
+        "bible": [
+          "Exodus 23:8",
+          "Luke 16:10"
+        ],
+        "differences": {
+          "ar": "لا فرق جوهري في المبدأ. وإنما فصّل الفقه الإسلامي، استناداً إلى حديث ابن اللتبية، أن ما يُهدى للموظف بسبب منصبه يعود لجهة العمل، بينما يتبع المسيحيون عادة التوجيه الكتابي العام وسياسة جهة العمل.",
+          "en": "There is no real difference in principle. Islamic law, based on the hadith of Ibn al-Lutbiyya, spells out that a gift received because of one's post belongs to the employer, while Christians usually follow the general biblical teaching together with their employer's policy."
+        }
+      }
+    },
+    "school.cheating": {
+      "newcomer_explainer": {
+        "ar": "الغش في الامتحان محرّم في الإسلام باتفاق العلماء، لأنه كذب وخيانة للأمانة، وقد قال النبي ﷺ: «من غشنا فليس منا» (مسلم 101). ومساعدة زميل على الغش أو بيع الواجبات تعاون على الإثم (المائدة 2)، والمال المكتسب منها غير طيب. وتقديم عمل كتبه غيرك أو كتبه الذكاء الاصطناعي على أنه عملك، حين يمنع الأستاذ ذلك أو يشترط الإفصاح، يأخذ حكم الغش. والمقصد أن تدلّ الشهادة على علم حقيقي يعتمد عليه الناس.",
+        "en": "Cheating in exams is forbidden in Islam by scholarly agreement because it is lying and a betrayal of trust; the Prophet ﷺ said, \"Whoever cheats us is not of us\" (Muslim 101). Helping a classmate cheat or selling assignments is cooperating in wrongdoing (5:2), and money earned that way is not wholesome. Presenting work written by someone else or by AI as your own, where the instructor forbids it or requires disclosure, takes the same ruling. The aim is that a grade or certificate truthfully reflects real knowledge that other people will rely on."
+      },
+      "common_ground": {
+        "summary": {
+          "ar": "اتفاق تام: فالكتاب المقدس يقول: «كراهة الرب شفتا كذب»، ويأمر: «لا تكذبوا بعضكم على بعض»؛ والأمانة الأكاديمية قيمة يشترك فيها آدم وأصدقاؤه المسلمون كاملة.",
+          "en": "Complete agreement: the Bible calls lying lips an abomination to the LORD and commands, \"Lie not one to another\"; academic honesty is a value Adam and his Muslim friends fully share."
+        },
+        "bible": [
+          "Proverbs 12:22",
+          "Colossians 3:9"
+        ],
+        "differences": {
+          "ar": "لا يوجد فرق يُذكر في هذه المسألة.",
+          "en": "There is no meaningful difference on this issue."
+        }
+      }
+    },
+    "school.student_loan": {
+      "newcomer_explainer": {
+        "ar": "الأصل في الإسلام تحريم الاقتراض بفائدة، لأن النبي ﷺ لعن آكل الربا ومُوكِله، أي آخذه ودافعه (مسلم 1598). لذلك يبحث الطالب المسلم أولاً عن المنح والعمل والقروض الحسنة بلا فائدة. وأجاز بعض الهيئات المعاصرة كمجمع فقهاء الشريعة بأمريكا (AMJA) القرض الطلابي بفائدة عند الضرورة أو الحاجة الملحّة المتحققة وبقدرها فقط، مع بقاء وصف الفائدة محرّمة، وينصح العلماء بأن يُقدَّر ذلك مع عالم موثوق لا بالاجتهاد الشخصي. ووراء ذلك أن إقراض المحتاج في الإسلام عون له لا مصدر ربح منه.",
+        "en": "The default Islamic ruling is that borrowing with interest is not allowed, because the Prophet ﷺ cursed both the one who takes riba and the one who pays it (Muslim 1598). So a Muslim student first looks for grants, work and interest-free loans. Some contemporary bodies such as AMJA allow an interest-bearing student loan in genuine necessity or pressing need, only to the extent required, while the interest itself remains prohibited, and scholars advise making that judgment with a trusted scholar rather than alone. Behind this is the Islamic view that lending to someone in need should be help, not a source of profit."
+      },
+      "common_ground": {
+        "summary": {
+          "ar": "الكتاب المقدس أيضاً ينهى عن أخذ الربا من الفقير، ويحذّر من أن «المقترض عبد للمقرض»، وهو قلق يشاركه كثير من المسيحيين تجاه الطلاب المثقلين بالديون.",
+          "en": "The Bible also forbids taking interest from the poor and warns that \"the borrower is servant to the lender\" — a concern many Christians share about students weighed down by debt."
+        },
+        "bible": [
+          "Proverbs 22:7",
+          "Exodus 22:25"
+        ],
+        "differences": {
+          "ar": "لا يرى أغلب المسيحيين اليوم الاقتراض بفائدة إثماً في ذاته، وإن حذّر كثير من المرشدين المسيحيين من الديون الثقيلة؛ أما في الإسلام فالإشكال في الفائدة نفسها ولو كان الدَّين محتملاً.",
+          "en": "Most Christians today do not see borrowing at interest as sinful in itself, though many Christian advisers warn against heavy debt; in Islam the issue is the interest itself, even when the debt is manageable."
+        }
+      }
+    },
+    "school.mixed_social": {
+      "newcomer_explainer": {
+        "ar": "يجيز الإسلام للرجال والنساء الدراسة والعمل معاً في الأماكن العامة مع الاحتشام وغض البصر (النور 30)، لكنه يحرّم خلوة الرجل بامرأة أجنبية عنه (البخاري 5233). والحكمة التي يذكرها العلماء حفظ الأعراض والقلوب وسدّ باب الفتنة والريبة. ومصافحة المرأة الأجنبية الشابة محرمة عند المذاهب الأربعة، مع استثناءات عند بعضهم، وأجازها بعض المعاصرين عند انتفاء الشهوة والأحوط تركها؛ لذلك يضع كثير من المسلمين يدهم على صدورهم تحية بدلاً منها. والمسلم الذي يعتذر عن المصافحة يفعل ذلك احتراماً لا رفضاً.",
+        "en": "Islam allows men and women to study and work together in public settings with modest conduct and a lowered gaze (24:30), but forbids a man and an unrelated woman from being alone together in private (Bukhari 5233). The wisdom scholars mention is protecting people's honour and hearts and closing the door to temptation and suspicion. Shaking hands with a young unrelated woman is forbidden in the four classical schools, with some exceptions, while some contemporary scholars allow it where there is no desire, though avoiding it is more cautious; so many Muslims place a hand on the chest as a greeting instead. A Muslim who declines a handshake does so out of respect, not rejection."
+      },
+      "common_ground": {
+        "summary": {
+          "ar": "حفظ العين والقلب أرض مشتركة: فالمسيح علّم أن النظر بشهوة زنى في القلب، وأيوب قطع عهداً لعينيه. وبعض المسيحيين أيضاً يتجنبون الانفراد بغير الزوج أو الزوجة من الجنس الآخر (ما يُعرف بـ«قاعدة بيلي غراهام»).",
+          "en": "Guarding the eyes and the heart is shared ground: Jesus taught that looking with lust is already adultery in the heart, and Job \"made a covenant with mine eyes\". Some Christians also avoid being alone with someone of the opposite sex other than their spouse (often called the 'Billy Graham rule')."
+        },
+        "bible": [
+          "Job 31:1",
+          "Matthew 5:28"
+        ],
+        "differences": {
+          "ar": "يرى أغلب المسيحيين المصافحة مجاملة عادية لا إشكال دينياً فيها، والاختلاط الاجتماعي عندهم غير مقيّد في الغالب؛ أما أحكام الإسلام في اللمس والخلوة فأكثر تحديداً، ويكفي آدم أن يتبع ما يرتاح له صديقه.",
+          "en": "Most Christians see a handshake as ordinary courtesy with no religious issue, and mixed social settings are generally unrestricted; Islam's rules on touch and seclusion are more specific, and Adam can simply follow his friend's lead."
+        }
+      }
+    },
+    "street.lost_wallet": {
+      "newcomer_explainer": {
+        "ar": "المحفظة الضائعة في الإسلام أمانة: يجب على من التقطها أن يحفظها ويعرّفها ويردّها، ولا يحل له أخذ شيء منها أو استعماله (البخاري 2372). فإن كان فيها هوية أو بطاقات فالواجب إيصالها إلى صاحبها مباشرة أو عبر الشرطة دون انتظار. وإن لم يُعرف صاحبها فجمهور العلماء على تعريفها سنة، ثم يجوز للملتقط الانتفاع بها أو التصدق بها، مع ضمانها لصاحبها إن ظهر يوماً، على تفصيل بين المذاهب. والمقصد حفظ أموال الناس وبناء مجتمع تعود فيه المفقودات إلى أهلها.",
+        "en": "In Islam a found wallet is a trust: the finder must keep it safe, announce it and return it, and may not take or use anything in it (Bukhari 2372). If it contains an ID or cards, the duty is to get it back to the owner directly or through the police without waiting. If the owner is unknown, the majority of scholars require announcing it for a year, after which the finder may use it or give it in charity, while still owing it to the owner if he ever appears, with details differing among the schools. The aim is to protect people's property and build a society where lost things find their way home."
+      },
+      "common_ground": {
+        "summary": {
+          "ar": "من أوضح نقاط التلاقي: فسفر التثنية يأمر بحفظ مفقود الأخ «حتى يطلبه أخوك» ثم ردّه، وينهى عن التغاضي عنه؛ وهو قريب جداً من الحديث: «ولتكن وديعة عندك، فإن جاء طالبها يوماً من الدهر فأدّها إليه».",
+          "en": "One of the clearest meeting points: Deuteronomy commands keeping a neighbour's lost property \"until thy brother seek after it\" and restoring it, and forbids looking away — very close to the hadith \"let it be a trust with you; if the one seeking it comes one day, give it back to him\"."
+        },
+        "bible": [
+          "Deuteronomy 22:2",
+          "Deuteronomy 22:3"
+        ],
+        "differences": {
+          "ar": "الفرق في التفاصيل فقط: فالفقه الإسلامي يحدد مدة للتعريف (سنة عند الجمهور) وأحكاماً لما بعدها، بينما يقرر الكتاب المقدس الأمر العام؛ واليوم يسلّم المسيحيون والمسلمون في أمريكا مثل هذه المفقودات للشرطة غالباً.",
+          "en": "The difference is only in detail: Islamic law sets an announcement period (a year for the majority) and rules for what follows, while the Bible gives the general command; today Christians and Muslims in the US alike usually hand such items to the police."
+        }
+      }
+    },
+    "street.lottery": {
+      "newcomer_explainer": {
+        "ar": "اليانصيب وبطاقات الكشط والمراهنات الرياضية من الميسر (القمار) الذي حرّمه القرآن (المائدة 90–91). والعلة التي ذكرها القرآن نفسه أنه يوقع العداوة والبغضاء ويصدّ عن ذكر الله وعن الصلاة، ويضيف العلماء أنه نقل للمال بلا عمل ولا مقابل عادل، فربح أحدهم خسارة غيره. ومن ربح منه شيئاً تخلّص منه بإعطائه للفقراء دون قصد الثواب. أما المسابقات المجانية التي لا يدفع فيها المشارك شيئاً فليست قماراً، بخلاف «الرهان المجاني» في تطبيقات المراهنات، فهو رهان على نتيجة مباراة داخل منصة قمار، ولذلك يتجنبه المسلمون.",
+        "en": "Lotteries, scratch cards and sports betting are forms of maysir (gambling), which the Quran forbids (5:90–91). The Quran itself gives the reasons — gambling stirs up enmity and hatred and turns people away from remembering God and from prayer — and scholars add that it moves wealth without work or fair exchange, so one person's gain is another's loss. Anyone who wins must give the winnings away to the poor without seeking reward. A free sweepstakes that requires no payment is not gambling, unlike a promotional \"free bet\" in a betting app, which is still a wager on a game inside a gambling platform, so Muslims avoid it."
+      },
+      "common_ground": {
+        "summary": {
+          "ar": "لا يوجد في الكتاب المقدس نص يذكر اليانصيب باسمه، لكنه يعلّم أن «غنى البُطل يقل» وينهى عن محبة المال، ولهذه المعاني تحذّر كنائس كثيرة من القمار.",
+          "en": "No biblical verse names the lottery, but the Bible teaches that \"wealth gotten by vanity shall be diminished\" and warns against covetousness, and many churches discourage gambling for these reasons."
+        },
+        "bible": [
+          "Proverbs 13:11",
+          "Hebrews 13:5"
+        ],
+        "differences": {
+          "ar": "تتنوع المواقف المسيحية: فالكنيسة الميثودية المتحدة مثلاً تعدّ القمار «خطراً على المجتمع» وتدعو إلى الامتناع عنه بما فيه اليانصيب العام، بينما يقرر التعليم المسيحي للكنيسة الكاثوليكية (الفقرة 2413) أن ألعاب الحظ ليست مخالفة للعدل في ذاتها ما لم تحرم الإنسان مما يحتاجه هو وغيره؛ أما الإسلام فيحرّمها مطلقاً.",
+          "en": "Christian views vary: the United Methodist Church, for example, calls gambling \"a menace to society\" and urges abstaining from it, including public lotteries, while the Catechism of the Catholic Church (2413) holds that games of chance are not in themselves contrary to justice unless they deprive someone of what he and others need; Islam forbids them outright."
+        }
+      }
+    },
+    "street.buying_selling": {
+      "newcomer_explainer": {
+        "ar": "يعدّ الإسلام الصدق في التجارة جزءاً من الدين: فكتمان عيب السلعة محرّم باتفاق الفقهاء ويعطي المشتري حق الردّ، وقد قال النبي ﷺ إن البيّعين إن صدقا وبيّنا بورك لهما في بيعهما (البخاري 2079). والكذب في وصف السلعة أو سعرها، وكتابة التقييمات الكاذبة، محرّمة لأنها غش وقول زور. والغبن اليسير الذي يتسامح فيه الناس معفو عنه، أما الفاحش ففي إثباته حق الفسخ خلاف، ويحرم إذا صاحبه تغرير. والإكرامية إحسان مستحب، فإن أُعلنت في الفاتورة صارت جزءاً من الثمن.",
+        "en": "Islam treats honest trade as part of faith: concealing a defect is forbidden by agreement of the jurists and gives the buyer a right to return the item, and the Prophet ﷺ said that if buyer and seller are truthful and disclose, their deal is blessed (Bukhari 2079). Lying about an item or its price, and posting fake reviews, are forbidden as deception and false statement. A small price difference that people normally tolerate is excused, while gross overcharging is debated as grounds for cancellation and is forbidden when it involves deception. A tip is a recommended kindness, and if it is disclosed as a charge on the bill it becomes part of the price."
+      },
+      "common_ground": {
+        "summary": {
+          "ar": "تلاقٍ قوي: فالتوراة تقول للبائع والمشتري «فلا يغبن أحدكم أخاه»، والأمثال تجعل موازين الغش مكرهة الرب، ووصية «لا تشهد على قريبك شهادة زور» تشمل التقييمات الكاذبة كما يشملها التعليم الإسلامي.",
+          "en": "Strong common ground: the Torah tells buyer and seller \"ye shall not oppress one another\", Proverbs calls a false balance an abomination to the LORD, and the commandment against bearing false witness covers fake reviews just as Islamic teaching does."
+        },
+        "bible": [
+          "Leviticus 25:14",
+          "Proverbs 11:1",
+          "Exodus 20:16"
+        ],
+        "differences": {
+          "ar": "لا فرق يُذكر في المبدأ؛ ويضيف الفقه الإسلامي قواعد تفصيلية كخيار العيب الذي يعطي المشتري حق الرد.",
+          "en": "No meaningful difference in principle; Islamic law adds detailed rules such as the buyer's option to return an item for a hidden defect."
+        }
+      }
+    },
+    "public_events.holiday_greetings": {
+      "newcomer_explainer": {
+        "ar": "يأمر الإسلام بالبر والعدل مع الجيران من أهل الأديان الأخرى (الممتحنة 8) وبردّ التحية بأحسن منها (النساء 86)، لكنه لا يجيز المشاركة في الشعائر الدينية لأعياد الأديان الأخرى. ويختلف العلماء في التهنئة اللفظية بالعيد الديني: فمنعها ابن القيم وكثير من المتقدمين والمعاصرين، وأجازها المجلس الأوروبي للإفتاء وآخرون بضوابط من باب البر. وعيد الشكر مختلف فيه أيضاً: فمنهم من يراه مناسبة وطنية عائلية، ومنهم من يرى له أصلاً دينياً. والمسلمون يحبون المسيح عيسى ويجلّونه نبياً عظيماً، لكنهم لا يشاركون الاعتقاد بألوهيته الذي يحتفل به عيد الميلاد، ولذلك يبقي كثير منهم مشاركتهم اجتماعية لا دينية.",
+        "en": "Islam asks Muslims to be kind and just to neighbours of other faiths (60:8) and to return greetings with something better (4:86), but not to take part in the religious rites of another faith's holidays. Scholars differ on verbally congratulating someone on a religious holiday: Ibn al-Qayyim and many classical and contemporary scholars did not allow it, while the European Council for Fatwa and others allow it with conditions as an act of kindness. Thanksgiving is debated too: some see it as a civic family occasion, others consider it to have a religious origin. Muslims love and honour Jesus as a great prophet but do not share the belief in his divinity that Christmas celebrates, which is why many keep their participation social rather than religious."
+      },
+      "common_ground": {
+        "summary": {
+          "ar": "يدعو التقليدان إلى مسالمة جميع الناس وإلى شكر الله على نعمه؛ والصديق المسلم الذي يعتذر عن الجانب الديني من العيد ثم يقدّم تمنياته الطيبة أو هديته يتصرف بالاحترام نفسه للإيمان الذي يعرفه المسيحيون المتدينون.",
+          "en": "Both traditions call for living peaceably with all people and for giving thanks to God; a Muslim friend who sits out the religious part of a holiday yet offers warm wishes or a gift is acting from the same respect for faith that devout Christians recognise."
+        },
+        "bible": [
+          "Romans 12:18",
+          "Psalms 107:1"
+        ],
+        "differences": {
+          "ar": "يحتفل المسيحيون في عيد الميلاد بتجسّد المسيح وميلاده بوصفه ابن الله، أما المسلمون فيكرمون عيسى نبياً ومسيحاً وُلد من مريم العذراء ولا يعتقدون ألوهيته. واحتراماً للإيمانين تعرض اللعبة المسلمين وهم يتبادلون اللطف والهدايا دون المشاركة في العبادة، لا على سبيل المناظرة.",
+          "en": "At Christmas, Christians celebrate the incarnation and birth of Jesus as the Son of God; Muslims honour Jesus as a prophet and the Messiah born of the Virgin Mary but do not believe he is divine. Out of respect for both faiths, the game shows Muslims sharing kindness and gifts without joining worship, not as a matter for debate."
+        }
+      }
+    },
+    "public_events.alcohol_table": {
+      "newcomer_explainer": {
+        "ar": "يحرّم الإسلام الخمر، وقد نهى النبي ﷺ عن الجلوس على مائدة يُشرب عليها الخمر (الترمذي 2801 وحسّنه هو والألباني، مع كلام لبعض العلماء في إسناده؛ وله شاهد عند أبي داود 3774 مختلف فيه). والحكمة الابتعاد عمّا يضر، وألا يبدو المسلم مُقِرّاً له. ويجيز بعض المعاصرين حضور مناسبة العمل مع اختيار طاولة خالية من الخمر أو المغادرة عند بدء الشرب، بينما يرى آخرون عدم حضور مثل هذه المناسبات أصلاً. والزميل المسلم الذي ينتقل إلى طاولة أخرى يتبع دينه ولا يحكم على أحد.",
+        "en": "Islam forbids alcohol, and the Prophet ﷺ forbade sitting at a table where wine is being drunk (Tirmidhi 2801, graded hasan by al-Tirmidhi and al-Albani, though some scholars discuss its chain; a similar report in Abu Dawud 3774 is disputed). The wisdom is keeping a distance from what harms and not appearing to approve of it. Some contemporary scholars allow attending a work event while choosing an alcohol-free table or leaving when the drinking starts, while others advise not attending such events at all. A Muslim colleague who moves to another table is following his faith, not judging anyone."
+      },
+      "common_ground": {
+        "summary": {
+          "ar": "يحذّر الكتاب المقدس من أن «الخمر مستهزئة» ويأمر «لا تسكروا بالخمر»، ويقول بولس إنه حسن ألا يشرب الإنسان خمراً إن كان ذلك يُعثر أخاه — وهو مبدأ يستطيع آدم أن يطبّقه حين يجلس مع صديقه المسلم على طاولة بلا خمر.",
+          "en": "The Bible warns that \"wine is a mocker\" and commands \"be not drunk with wine\", and Paul says it is good not to drink wine if it makes a brother stumble — a principle Adam can live out by joining his Muslim friend at an alcohol-free table."
+        },
+        "bible": [
+          "Proverbs 20:1",
+          "Ephesians 5:18",
+          "Romans 14:21"
+        ],
+        "differences": {
+          "ar": "تبيح أغلب الكنائس الشرب المعتدل وتنهى عن السُّكر، والخمر تُستعمل في سرّ العشاء الرباني، مع أن بعض الطوائف تدعو إلى الامتناع التام؛ أما الإسلام فيحرّم الخمر قليلها وكثيرها، ولذلك يتجنب المسلم مجلس الشرب نفسه.",
+          "en": "Most churches permit moderate drinking while forbidding drunkenness, and wine is used in Holy Communion, though some denominations promote total abstinence; Islam forbids alcohol in any amount, which is why a Muslim avoids the drinking table itself."
+        }
+      }
+    },
+    "public_events.raffle": {
+      "newcomer_explainer": {
+        "ar": "شراء تذكرة سحب تُدفع قيمتها وتموَّل منها الجوائز يعدّه الإسلام من الميسر (القمار) المحرّم ولو ذهب الريع لعمل خيري، وبهذا صدر قرار مجمع الفقه الإسلامي الدولي 127. والعلة أن كل مشارك يدفع ماله رجاء أن يربح على حساب غيره، وقد ذكر القرآن أن الميسر يوقع العداوة والبغضاء (المائدة 91). أما السحب المجاني الذي لا يدفع فيه أحد شيئاً والجائزة فيه من الشركة فجائز. والمسلم الذي يريد دعم القضية الخيرية يتبرع مباشرة دون تذكرة.",
+        "en": "In Islam, buying a paid raffle ticket whose price funds the prizes counts as maysir (gambling) and is forbidden even when the proceeds go to charity, as stated in International Islamic Fiqh Academy Resolution 127. The reason is that each participant pays hoping to win at others' expense, and the Quran says gambling stirs up enmity and hatred (5:91). A free draw where nobody pays and the company funds the prize is permissible. A Muslim who wants to support the cause simply donates directly, without a ticket."
+      },
+      "common_ground": {
+        "summary": {
+          "ar": "يحب التقليدان العطاء الخيري لذاته؛ فبولس يكتب أن «المعطي المسرور يحبه الله»، وهذا يوافق تفضيل الإسلام للتبرع المباشر على التذكرة. ولا يوجد نص كتابي خاص بالسحب الخيري.",
+          "en": "Both traditions love charitable giving for its own sake; Paul writes that \"God loveth a cheerful giver\", which fits the Islamic preference for a direct donation over a ticket. There is no specific biblical text about raffles."
+        },
+        "bible": [
+          "2 Corinthians 9:7"
+        ],
+        "differences": {
+          "ar": "السحوبات الخيرية وأمسيات البنغو وسيلة شائعة لجمع التبرعات في بعض الكنائس (كثير من الأبرشيات الكاثوليكية مثلاً)، بينما تعارض كنائس أخرى كالميثودية المتحدة القمار بكل صوره؛ أما في الإسلام فالسحب المدفوع قمار مهما كانت غايته نبيلة.",
+          "en": "Raffles and bingo nights are common fundraisers in some churches (many Catholic parishes, for example), while other churches such as the United Methodist Church oppose gambling in all its forms; in Islam a paid raffle is gambling however good the cause."
+        }
+      }
+    },
+    "private_events.wedding": {
+      "newcomer_explainer": {
+        "ar": "الزواج في الإسلام عقد وسنّة: يقدّم الزوج لزوجته مهراً هو حق خالص لها (النساء 4)، وتُقام وليمة العرس، وإجابة دعوتها واجبة عند الجمهور ما لم يكن فيها منكر لا يُقدر على تغييره. ويُعلَن الزواج ولا يُخفى، وقد قال النبي ﷺ: «فصل ما بين الحرام والحلال الدف والصوت» (الترمذي 1088). أما المعازف غير الدف ففيها خلاف: حرّمتها المذاهب الأربعة، وأجازها بشروط ابن حزم وبعض المتأخرين ودار الإفتاء المصرية. وقد ذمّ النبي ﷺ الوليمة التي يُدعى إليها الأغنياء ويُترك الفقراء (البخاري 5177).",
+        "en": "In Islam marriage is a contract and a prophetic sunnah: the groom gives the bride a mahr (marriage gift) that belongs to her alone (4:4), a walima (wedding feast) is held, and accepting the invitation is obligatory for guests according to the majority unless it involves wrongdoing one cannot change. The marriage is to be announced publicly, and the Prophet ﷺ said that what distinguishes the lawful from the unlawful is the daff (frame drum) and the voice (Tirmidhi 1088). Instruments other than the daff are disputed: the four classical schools prohibit them, while Ibn Hazm, some later scholars and Egypt's Dar al-Ifta permit them with conditions. The Prophet ﷺ also criticised a wedding feast to which the rich are invited and the poor left out (Bukhari 5177)."
+      },
+      "common_ground": {
+        "summary": {
+          "ar": "المسيحيون أيضاً يرون «الزواج مكرّماً»، ويعلنون الزواج علناً (تاريخياً بإذاعة إعلانات الزواج في الكنيسة)، والمسيح علّم أن يُدعى الفقراء إلى الوليمة، وهذا قريب من الحديث الذي يذم وليمة تُقصي الفقراء.",
+          "en": "Christians too hold that \"marriage is honourable\" and announce marriages publicly (historically through the reading of banns in church), and Jesus taught that the poor should be invited to one's feast — close to the hadith that criticises a wedding feast that leaves out the poor."
+        },
+        "bible": [
+          "Hebrews 13:4",
+          "Luke 14:13"
+        ],
+        "differences": {
+          "ar": "الزواج في كثير من التقاليد المسيحية سرّ كنسي أو عهد مقدس يُعقد في الكنيسة، أما في الإسلام فهو عقد بشهود لا يشترط أن يكون في المسجد؛ والمهر لا نظير مباشراً له في أغلب الأعراس المسيحية المعاصرة؛ والموسيقى بالآلات، الشائعة في الأعراس المسيحية، مسألة خلافية بين علماء المسلمين.",
+          "en": "In many Christian traditions marriage is a sacrament or holy covenant made in church, whereas in Islam it is a contract with witnesses that need not take place in a mosque; the mahr has no direct counterpart in most modern Christian weddings; and instrumental music, common at Christian weddings, is a matter of scholarly debate in Islam."
+        }
+      }
+    },
+    "private_events.neighbor_funeral": {
+      "newcomer_explainer": {
+        "ar": "يجيز جمهور العلماء للمسلم تعزية جاره غير المسلم ومواساة أهله، استئناساً بآية البر (الممتحنة 8)، وبعيادة النبي ﷺ لغلام يهودي مريض (البخاري 1356)، وقيامه لجنازة يهودي مرّت به وقوله: «أليست نفساً؟» (البخاري 1312)؛ ومنع ذلك متأخرو الحنابلة. وأجاز معاصرون حضور الجنازة احتراماً دون مشاركة في طقوسها الدينية. ويعتقد المسلمون أن الاستغفار بعد الموت خاص بمن مات مسلماً (التوبة 113)، ولذلك يدعو الصديق المسلم لأهل الفقيد بالصبر والعوض والخير.",
+        "en": "The majority of scholars allow a Muslim to console a non-Muslim neighbour and comfort the family, drawing on the verse on kindness (60:8), on the Prophet ﷺ visiting a sick Jewish boy (Bukhari 1356), and on his standing up when a Jewish funeral passed, saying \"Is it not a soul?\" (Bukhari 1312); the later Hanbali relied-upon view disallowed consoling. Contemporary scholars allow attending the funeral out of respect without joining its religious rites. Muslims believe that prayers for God's forgiveness after death are for those who died as Muslims (9:113), so a Muslim friend will instead pray for the family's patience, comfort and good."
+      },
+      "common_ground": {
+        "summary": {
+          "ar": "مواساة المحزونين أرض مشتركة: فالكتاب المقدس يقول «بكاءً مع الباكين»، ويقول إن الذهاب إلى بيت النوح خير من الذهاب إلى بيت الوليمة؛ وحضور الجار المسلم الجنازة يصدر عن الرحمة نفسها.",
+          "en": "Comforting the bereaved is shared ground: the Bible says \"weep with them that weep\" and that it is better to go to the house of mourning than to the house of feasting; a Muslim neighbour attending the funeral is acting from that same compassion."
+        },
+        "bible": [
+          "Romans 12:15",
+          "Ecclesiastes 7:2"
+        ],
+        "differences": {
+          "ar": "يصلّي كثير من المسيحيين للميت أو يستودعونه الله في الجنازة، أما الحاضر المسلم فيلتزم الاحترام والهدوء أثناء الطقوس ويدعو لأهل الفقيد لا بالمغفرة للميت. وهذا الفرق نابع من الاعتقاد، لا من نقص في المحبة أو الاحترام.",
+          "en": "Many Christians pray for the deceased or commend them to God at the funeral, while a Muslim attending stays respectful and quiet during the rites and prays for the family rather than for the deceased's forgiveness. This difference comes from belief, not from any lack of love or respect."
+        }
+      }
+    },
+    "private_events.gifts_birthday": {
+      "newcomer_explainer": {
+        "ar": "يحث الإسلام على تبادل الهدايا: «تهادوا تحابوا» (الأدب المفرد 594)، وقد قبل النبي ﷺ هدايا من غير المسلمين، كهدية ملك أيلة (البخاري 1481). أما الهدية التي يحرم الانتفاع بها كزجاجة خمر فيُعتذر عنها بلطف، ولا تُقبل ولا تُهدى لغيره. وحضور حفل عيد ميلاد طفل الجار مختلف فيه: أجازه بعض المعاصرين باعتباره عادة اجتماعية لا عبادة، ومنعه آخرون كفتوى لمجمع فقهاء الشريعة بأمريكا (AMJA). وفي كل الأحوال يحرص المسلم على دوام المودة مع جيرانه.",
+        "en": "Islam encourages exchanging gifts — \"give gifts and you will love one another\" (al-Adab al-Mufrad 594) — and the Prophet ﷺ accepted gifts from non-Muslims, such as the King of Ayla (Bukhari 1481). A gift whose use is forbidden, like a bottle of wine, is gently declined rather than accepted or passed on. Attending a neighbour's child's birthday party is debated: some contemporary scholars allow it as a social custom rather than worship, while others, such as an AMJA fatwa, do not. Either way, Muslims are encouraged to keep warm relations with their neighbours."
+      },
+      "common_ground": {
+        "summary": {
+          "ar": "الكرم أرض مشتركة: فالمسيح علّم أن «مغبوط هو العطاء أكثر من الأخذ»، وفي التقليدين معاً الهدية طريق إلى المحبة بين الجيران.",
+          "en": "Generosity is shared ground: Jesus taught that \"it is more blessed to give than to receive\", and in both traditions gifts are a way to build love between neighbours."
+        },
+        "bible": [
+          "Acts 20:35"
+        ],
+        "differences": {
+          "ar": "يحتفل أغلب المسيحيين بأعياد الميلاد الشخصية بلا تحفظ، أما في الإسلام فالمسألة خلافية. والصديق المسلم الذي يعتذر عن هدية فيها خمر يتبع دينه ولا يرفض صاحب الهدية.",
+          "en": "Most Christians celebrate birthdays freely, while in Islam the question is debated. A Muslim friend who declines a gift of wine is following his faith, not rejecting the giver."
+        }
+      }
+    }
+  }
+}

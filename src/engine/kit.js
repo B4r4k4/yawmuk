@@ -74,7 +74,7 @@ function cmat(hex, o) {
 /**
  * makeNPC(look) -> THREE.Group. Feet at y=0, faces -Z when rotation.y = 0 (same convention as yaw).
  * look: { skin, shirt, pants, shoes, hair, hijab: bool|color, hijabColor: color (default neutral slate), kufi: bool|color, beard: bool|color,
- *         suit: bool|color (jacket+tie), tie, dress: bool|color (long skirt/abaya), glasses: bool,
+ *         suit: bool|color (jacket+tie), jacket: bool|color (open coat, no tie), tie: color|false, dress: bool|color (long skirt/abaya), glasses: bool,
  *         height: 1.75, build: 1 (width factor) }
  * The group exposes userData.parts = { legL, legR, armL, armR, head } (pivot groups) for animation.
  */
@@ -116,18 +116,21 @@ export function makeNPC(look = {}) {
   const torso = mesh(torsoG, shirt, 0, hipY + 0.31, 0);
   torso.scale.x = L.build;
   body.add(torso);
-  if (L.suit) {
+  const coat = L.suit || L.jacket; // jacket = open coat without a tie (e.g. a winter jacket)
+  if (coat) {
     const jacketG = geo('jacket', () => new THREE.CylinderGeometry(0.215, 0.185, 0.6, 8, 1, true, Math.PI * 0.12, Math.PI * 1.76));
-    const jacket = mesh(jacketG, cmat(col(L.suit, '#22293a'), { side: THREE.DoubleSide }), 0, hipY + 0.31, 0);
+    const jacket = mesh(jacketG, cmat(col(coat, '#22293a'), { side: THREE.DoubleSide }), 0, hipY + 0.31, 0);
     jacket.rotation.y = Math.PI; // opening faces -Z
     jacket.scale.x = L.build;
     body.add(jacket);
-    const tieG = geo('tie', () => new THREE.BoxGeometry(0.05, 0.36, 0.02));
-    body.add(mesh(tieG, cmat(col(L.tie, '#8e2b2b')), 0, hipY + 0.38, -0.2));
+    if (L.suit && L.tie !== false) {
+      const tieG = geo('tie', () => new THREE.BoxGeometry(0.05, 0.36, 0.02));
+      body.add(mesh(tieG, cmat(col(L.tie, '#8e2b2b')), 0, hipY + 0.38, -0.2));
+    }
   }
   body.add(mesh(neckG, skin, 0, hipY + 0.66, 0));
 
-  const armColor = L.suit ? cmat(col(L.suit, '#22293a')) : shirt;
+  const armColor = coat ? cmat(col(coat, '#22293a')) : shirt;
   const mkArm = (x) => {
     const p = new THREE.Group(); p.position.set(x * L.build, hipY + 0.58, 0);
     p.add(mesh(armG, armColor, 0, 0, 0));

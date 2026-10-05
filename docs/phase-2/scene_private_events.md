@@ -38,3 +38,13 @@
 3. **Sky colour `#cfd9e6` is not set.** The scene has no access to `world.scene`, and the `'day'` preset background is used.
 4. **`hijabColor` is passed as `hijab: '<color>'`**, which is what `makeNPC` supports.
 5. **`bg_kids` is reduced to one extra child (`bg_kid_1`)** to limit NPC mesh count.
+
+## Update 2026-10-05 — premise change (Adam is a Christian learning about Islam)
+Applied the `private_events` items from "CHANGES FOR SCENE AGENTS" (docs/hotspots.md):
+- **Harris porch:** `omar` (the situation NPC) stands on the porch steps at `[-6,0,7.2]` with a snow shovel; `bg_hodan` (hijab `#2c3550`) is beside him holding a covered dish; `margaret` became `bg_margaret` (same spot). There is a snow-covered driveway with tyre tracks beside the house.
+- **Garcia yard:** the gift bag is gone. The table now has an open pizza box (lid up, pepperoni) and a straw gift basket with a dark wine bottle, coloured boxes and a scarf. `bg_khadija` became `bg_carol` (no hijab), `bg_idris` (child, orange shirt) stands by the bounce house, and Leo has a dinosaur hat. `bg_kid_1` was removed to stay under the mesh budget.
+- **Houses:** Adam's house is now the Reed house, with a green Christmas wreath and red bow on its door. The old rose house at x≈−12, z≈15.5 is now Omar's plain beige house with a brown door and no decorations; its rose colour moved to the house on the right. No new geometry was added.
+- **Sky and fog:** the scene returns `sky: '#cfd9e6'` and `fog: {color:'#cfd9e6', near:35, far:110}`.
+- **Camera blocking:** the scene returns `cameraOccluders` with 9 invisible DoubleSide proxy boxes (6 houses, the bounce house, the hall façade, the Harris porch roof). Balloons were moved off the camera line at the gate. In an 8-yaw sweep (same method as QA's): harris_porch 0/8, garcia_yard 0/8, wedding_hall 0/8 (QA had 2/3/2).
+- **Budget:** small spheres (blooms, picket caps, eyes) now use a 20-triangle icosahedron and snow patches a 10-segment disc. Measured in headless Chrome (instances counted): **37.4k triangles** (was 57.8k), 236 meshes, 2 point lights. Hotspot ids, spawn and exit are unchanged.
+- **Verified:** `npm run build` passes, `npm test` passes 178/178, and the headless Chrome screenshots of spawn and the 3 hotspots show no console errors.

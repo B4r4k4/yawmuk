@@ -5,7 +5,29 @@ const listeners = new Set();
 
 export const STRINGS = {
   gameTitle: { ar: 'يومك', en: 'Yawmuk' },
-  tagline: { ar: 'يوم في حياة آدم — فقه المعاملات للمسلم في أمريكا', en: "A day in Adam's life — everyday Islamic fiqh for a Muslim in the USA" },
+  tagline: { ar: 'يوم مع آدم وأصدقائه المسلمين — تعرّف على الإسلام من مواقف الحياة اليومية', en: "A day with Adam and his Muslim friends — discover Islam through everyday life" },
+  // ---- learner framing (Adam is a Christian learning about Islam) — overridable from ui_strings.json
+  plainWords: { ar: 'بكلمات بسيطة', en: 'In plain words' },
+  commonGround: { ar: 'نقاط تلاقٍ مع المسيحية', en: 'Common ground with Christianity' },
+  fromBible: { ar: 'من الكتاب المقدس', en: 'From the Bible' },
+  differences: { ar: 'وأين يختلف الطرحان', en: 'Where the two traditions differ' },
+  bibleNote: { ar: 'النص العربي من ترجمة فاندايك، والإنجليزي من نسخة الملك جيمس (KJV).', en: 'Arabic text from the Van Dyck translation; English from the King James Version (KJV).' },
+  adamLearned: { ar: 'ما تعلّمه آدم اليوم', en: 'What Adam learned today' },
+  nextTopic: { ar: 'موضوع مقترح لتتابع التعلّم', en: 'A suggested next topic' },
+  nextTopicAllDone: { ar: 'استكشفت كل مواقف اليوم. يمكنك إعادة أي موقف وتجربة خيار آخر.', en: "You've explored every situation of the day. Replay any of them and try a different choice." },
+  learnMoreTitle: { ar: 'هل تريد أن تعرف المزيد؟', en: 'Want to learn more?' },
+  learnMoreBody: {
+    ar: 'أقرب مسجد أو مركز تعريف بالإسلام في مدينتك يرحّب بالأسئلة دائماً — كثير منها يقيم أيام «مسجد مفتوح» وجلسات تعريفية للزوار من كل الخلفيات، بلا أي التزام.',
+    en: 'Your nearest mosque or Islamic information center is always happy to answer questions — many host open-mosque days and introductory sessions for visitors of every background, with no commitment.'
+  },
+  goThereNow: { ar: 'اذهب إلى هذا الموقف', en: 'Go to this situation' },
+  aboutRulings: { ar: 'عن هذه الأحكام', en: 'About these rulings' },
+  referralButton: { ar: 'ابحث عن مسجد قريب منك', en: 'Find a mosque near you' },
+  referralQuery: { ar: 'مسجد قريب مني', en: 'mosque open house near me' },
+  summaryPoints: { ar: [], en: [] },
+  nextTopics: { ar: [], en: [] },
+  stillToExplore: { ar: 'ما زال في يوم آدم موقف لم تكتشفه:', en: "There's still a situation in Adam's day you haven't explored:" },
+  nothingYet: { ar: 'لم يكتمل أي موقف بعد — كل موقف تنهيه يظهر هنا.', en: 'No situations completed yet — each one you finish will appear here.' },
   chooseLang: { ar: 'اختر اللغة', en: 'Choose language' },
   newGame: { ar: 'ابدأ يوماً جديداً', en: 'Start a new day' },
   continue: { ar: 'متابعة', en: 'Continue' },
@@ -78,8 +100,8 @@ export const STRINGS = {
   // intro / disclaimer
   introTitle: { ar: 'قبل أن تبدأ', en: 'Before you begin' },
   introBody: {
-    ar: 'ستعيش يوماً كاملاً مع آدم، شاب مسلم يعمل مهندس برمجيات ويدرس مساءً في Columbus, Ohio. في كل محطة ستواجه مواقف يومية حقيقية، تختار فيها تصرفاً، ثم ترى بطاقة حكم موثقة بالقرآن والسنة وأقوال المذاهب الأربعة والمجامع الفقهية المعاصرة.',
-    en: 'You will live a full day with Adam, a young Muslim software engineer and evening student in Columbus, Ohio. At each stop you face real everyday situations, choose what to do, then see a ruling card documented from the Quran, the Sunnah, the four madhhabs and contemporary fiqh councils.'
+    ar: 'ستعيش يوماً كاملاً مع آدم، شاب مسيحي من Columbus, Ohio يحب أن يتعرّف على الإسلام من أصدقائه وزملائه وجيرانه المسلمين. في كل محطة موقف يومي حقيقي: تختار ماذا يسأل آدم أو كيف يتصرف، ثم ترى بطاقة تشرح ماذا يقول الإسلام ولماذا، موثقة بالقرآن والسنة وأقوال المذاهب الأربعة.',
+    en: 'You will spend a full day with Adam, a young Christian from Columbus, Ohio who is curious about Islam and learns from his Muslim friends, coworkers and neighbors. At each stop there is a real everyday situation: you choose what Adam asks or does, then see a card explaining what Islam says and why, documented from the Quran, the Sunnah and the four schools of law.'
   },
   disclaimerTitle: { ar: 'تنبيه مهم', en: 'Important notice' },
   disclaimerBody: {
@@ -98,8 +120,8 @@ export const STRINGS = {
   completed: { ar: 'المواقف المكتملة', en: 'Situations completed' },
   topicsLearned: { ar: 'ما تعلمته اليوم', en: 'What you learned today' },
   scholarNote: {
-    ar: 'هذه بداية التعلم لا نهايته. ما عرضته اللعبة مسودات تعليمية بانتظار مراجعة العلماء؛ فإذا واجهت موقفاً مشابهاً في حياتك فاسأل عالماً موثوقاً أو إمام مسجدك المحلي، واذكر له تفاصيل حالتك.',
-    en: 'This is the start of learning, not the end. What you saw are educational drafts pending scholarly review. When you face a similar situation in real life, ask a trusted scholar or your local imam, and share the details of your case.'
+    ar: 'هذه بداية التعرّف لا نهايته. ما عرضته اللعبة مسودات تعليمية بانتظار مراجعة العلماء، والأحكام قد تختلف باختلاف الأحوال؛ فللتفاصيل اسأل إمام مسجد قريب أو عالماً موثوقاً.',
+    en: "This is the start of learning, not the end. What you saw are educational drafts pending scholarly review, and rulings can depend on circumstances — for details, ask the imam of a nearby mosque or a trusted scholar."
   },
   playAgain: { ar: 'العب من جديد', en: 'Play again' },
   backToGame: { ar: 'عودة إلى اللعبة', en: 'Back to the game' },
@@ -181,7 +203,24 @@ const UI_MAP = {
   iUnderstand: 'instructions.got_it',
   disc_general: 'disclaimers.general_info', disc_fiction: 'disclaimers.fiction', disc_ai: 'disclaimers.ai_review',
   disc_disagreement: 'disclaimers.disagreement', discAccept: 'disclaimers.accept',
-  aboutTitle: 'about.title', aboutBody: 'about.body'
+  aboutTitle: 'about.title', aboutBody: 'about.body',
+  // learner framing — several candidate key names are accepted (first present wins)
+  plainWords: ['ruling_card.newcomer_explainer', 'ruling_card.plain_words', 'ruling_card.in_plain_words'],
+  commonGround: ['ruling_card.common_ground', 'ruling_card.common_ground_title'],
+  fromBible: ['ruling_card.common_ground_bible', 'ruling_card.bible', 'ruling_card.from_bible'],
+  differences: ['ruling_card.common_ground_differences', 'ruling_card.differences'],
+  bibleNote: ['ruling_card.bible_translation_note'],
+  adamLearned: ['end.summary_title', 'end.learned', 'end.adam_learned'],
+  nextTopic: ['end.next_topic_title', 'end.next_topic', 'end.suggested_topic'],
+  nextTopicAllDone: ['end.next_topic_all_done', 'end.all_done'],
+  learnMoreTitle: ['end.referral_title', 'end.learn_more_title'],
+  learnMoreBody: ['end.referral_body', 'end.learn_more'],
+  referralButton: ['end.referral_button'],
+  referralQuery: ['end.referral_search_query'],
+  summaryPoints: ['end.summary_points'],
+  nextTopics: ['end.next_topics'],
+  reviewRulings: ['end.review_rulings'],
+  scholarNote: ['end.scholar_note', 'end.ask_scholar']
 };
 
 const getPath = (o, p) => p.split('.').reduce((a, k) => (a && typeof a === 'object' ? a[k] : undefined), o);
@@ -190,9 +229,13 @@ const isBi = (v) => v && typeof v === 'object' && ('ar' in v || 'en' in v);
 /** Apply ui_strings.json. Returns the raw object so other modules can read extra sections (verdicts, result, locations). */
 export function applyUiStrings(ui) {
   if (!ui || typeof ui !== 'object') return null;
-  for (const [key, path] of Object.entries(UI_MAP)) {
-    const v = getPath(ui, path);
-    if (isBi(v)) STRINGS[key] = { ...(STRINGS[key] || {}), ...v };
+  for (const [key, paths] of Object.entries(UI_MAP)) {
+    for (const path of [paths].flat()) {
+      const v = getPath(ui, path);
+      // a section object like {title:{ar,en}} is accepted too
+      const bi = isBi(v) ? v : isBi(v?.title) ? v.title : null;
+      if (bi) { STRINGS[key] = { ...(STRINGS[key] || {}), ...bi }; break; }
+    }
   }
   return ui;
 }

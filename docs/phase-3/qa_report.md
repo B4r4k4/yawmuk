@@ -10,6 +10,106 @@
 - bug fixes in the engine UI and the scenes
 - the git repository: initial commit, no remote
 
+## Pivot re-test: Adam is a Christian learner (2026-10-05)
+
+This re-test followed the change of premise:
+- Adam Reed is a Christian learning about Islam from Muslim friends.
+- The rulings gained `newcomer_explainer` and `common_ground`, and the scripts were rewritten.
+- The engine gained the "In plain words" and "Common ground" card sections, the new end screen, NPC `stations` and `playerLook`.
+- All six scenes were updated.
+
+**The tree was stable during the run.** dist/ was freshly built, and the e2e now serves a private snapshot of it, so a rebuild in another terminal cannot swap the chunk names during a run.
+
+Sections 1–6 below describe the first pass and remain valid unless this section says otherwise.
+
+### Results
+
+| Suite | Result |
+|---|---|
+| `npm test` | **197 / 197 pass**, 0 skipped. That is 19 new tests: 18 pivot-contract tests and 1 that checks the README links. `verify.mjs` now also checks the Bible verses; with its cache it ran 281 checks, FAIL 0. |
+| `npm run test:e2e` | **4 / 4 configurations pass**, 0 failures. 90 ruling cards were validated, including the new panels. |
+| Flakiness | The two phone configurations were rerun twice more (3 runs in total). There were 0 failures, including 36 of 36 madhhab-tab taps. |
+
+Each configuration takes about 2–2½ minutes; the station fades and new scenes make runs slower than in the first pass.
+
+### Fixes to the e2e for the reported failures
+
+| Report | Cause | Fix (`tests/e2e/playthrough.mjs`) |
+|---|---|---|
+| mobile-en could not find choice "c" in `gifts_birthday` | The test looked up a fixed choice by its label. Choices are shuffled, and the content and build changed during that run. | Each rendered button is mapped back to its script choice by its normalised label. The test fails if any button matches no script choice, or if the rendered set differs from the script, which catches a content/build mismatch with a clear message. It then picks the wanted *quality* from what is on screen, so new or edited options (such as the wedding's new acceptable option) need no change to the test (line 470). |
+| desktop-ar got a placeholder scene after a 404 caused by a rebuild mid-run | dist/ was rebuilt while the test was serving it, so the hashed chunk names changed. | The test serves a temporary copy of dist/ (line 792). The placeholder check is unchanged, and it passed. |
+| Is the mobile madhhab-tab check flaky? | A risk was real. The old `press()` scrolled with `block:'nearest'`, so a tab at the bottom edge could sit under the ruling card's sticky "Next" bar, and a tap there would advance the card. | `press()` now centres the element and checks with `elementFromPoint` that nothing covers it, retries once, and otherwise fails with a clear message instead of clicking blindly (line 99). It was stable in 3 of 3 runs. |
+| — | The reachability grid was computed once per location, but Samir's collider now moves between stations. | Reachability is recomputed before every walk. |
+
+### New behaviour now covered by the e2e
+
+| Check | How |
+|---|---|
+| **"In plain words"** | It is present when `newcomer_explainer` exists, its text equals the data, and it sits **directly under the verdict header**. It must not appear without data. |
+| **"Common ground"** | The summary and differences are shown verbatim, the number of verses matches, and the panel comes after the madhhab section. |
+| **Bible text exactly as in the data** | Each verse is in the UI language: KJV in English and Van Dyck in Arabic, with the right `lang`/`dir`. Its text equals the data except for unmatched quotation marks, which the renderer intentionally drops at display time. The reference and the translation label ("KJV" or "Van Dyck") are present. |
+| **Arabic link for Arabic text** | Arabic text links to `source_url_ar` (getbible arabicsv); English text links to `source_url` (bible-api KJV). |
+| **Samir's stations** (work, public_events) | On entry he is at his first unfinished hotspot. After each situation he is at the next one, and his collider has moved with him. When he speaks, he stands at that hotspot. **mobile-en plays work in reverse order**, so Samir must jump to `adam_desk` first and then go back to `coffee_machine`. The log is in `e2e_results.json` → `stations`. |
+| **Adam's look** | In every scene, the player figure matches `PLAYER.look` in config.js: shirt `#2f4a6d`, no beard, no kufi. The navy jacket `#1f2d4d` appears **only in the street**, from that scene's `playerLook`. Results are in `e2e_results.json` → `looks`. |
+| **End screen** | The "What Adam learned" heading and `end.summary_points` are shown verbatim. The 18 topics each carry the first sentence of their plain-words explainer. The next topic matches the `THEMES` logic. The single mosque-referral link is exactly `https://www.google.com/maps/search/<fixed query>`, with no query string or extra data. The screen has no form inputs. |
+| **Mid-game end screen** (desktop-en) | Opened from the menu after *work*: it suggests the expected unexplored situation (`school.student_loan`, from the most-explored "money" theme). "Go there now" loads the college. |
+| **No belief data stored** | localStorage holds only `yawmuk.progress.v1`, with whitelisted fields (`v, lang, location, situations{tried,best,done,check,last}, visited, finished, introSeen`). There are no belief- or religion-related keys or values. sessionStorage, cookies and IndexedDB are empty. There are no requests to third parties other than Google Fonts. |
+
+### Screenshot review
+
+I reviewed the screenshots myself, including the new card panels on a phone in RTL:
+- The common-ground panel is mirrored correctly, with its border on the right in Arabic. The Van Dyck text is diacritized and readable.
+- The verbatim KJV verses are shown in italics.
+- The "In plain words" panel sits under the badges.
+- On a phone, the end screen shows its 2×2 stats tiles, the next-topic and mosque-referral cards, and the "About these rulings" note.
+- Adam's home shows a small cross and a Bible on the shelf. Adam has the new look, with a navy jacket in the street.
+
+No layout regressions were found.
+
+One small change came out of the review. Bible references in the caption (for example «رومية 14: 21 · Van Dyck») are now isolated with `<bdi>`, like the other content values (`src/engine/ui/rulingCard.js:125`).
+
+**Screenshot set:** I kept one current set: `docs/phase-3/screenshots/{desktop-ar,desktop-en,mobile-ar,mobile-en}/`, 279 images in total. Each configuration's folder is now cleared at the start of its run, so stale numbering cannot mix with a new run. I deleted `street-v2/`, the street agent's one-off hotspot shots, because the same views are covered by the playthrough.
+
+### Other fixes in this pass
+
+- **`src/engine/README.md` §3, seated legs:** the note now says `+Math.PI/2`. The legs hang along −Y and the figure faces −Z, so a positive rotation swings the thighs forward. home.js and school.js already used +π/2.
+- **`README.md`:** rewritten for the new premise, with the new screenshots, test coverage and methodology. A new test checks that every local README link exists.
+- **Tests:** in `tests/content.test.mjs`, every ruling must now have a bilingual `newcomer_explainer` and `common_ground.summary`. Every Bible verse must have `ref_en`/`ref_ar` with the same chapter and verse, KJV and Van Dyck text, https `source_url` and `source_url_ar`, and a `verified: true` entry in `content/sources.json`.
+
+### Performance after the pivot (desktop-en / mobile-ar)
+
+| Scene | Meshes | Instanced | Triangles (instances expanded) | Draw calls per frame, desktop / phone | Triangles per frame, desktop / phone | Point lights | Frame time* |
+|---|---|---|---|---|---|---|---|
+| home | 107 | 0 | 16.2k | 131 / 101 | 17.2k / 15.8k | 3 | 16.6 ms |
+| work | 132 | 11 | 15.1k | 121 / 33 | 14.5k / 10.4k | 0 | 16.7 ms |
+| school | 212 | 25 | 18.1k | 235 / 171 | 18.9k / 16.1k | 3 | 16.6 ms |
+| street | 112 | 7 | 11.5k | 142 / 112 | 12.5k / 11.6k | 3 | 16.7 ms |
+| public_events | **309** | 36 | **52.1k** | **289** / 112 | 49.9k / 37.3k | 3 | 16.7 ms |
+| private_events | 236 | 18 | 37.4k | 207 / 202 | 35.3k / 34.9k | 2 | 16.6 ms |
+
+\* Measured on an Intel UHD 620 laptop iGPU, capped by vsync. This is not a phone measurement.
+
+**Bundle:** `index` is 672.6 kB (up from 572 kB, because of the larger embedded content JSON), `three` is 687.5 kB, and dist/ totals 1.5 MB.
+
+**Camera sweep** (8 yaws per hotspot): every hotspot is 0/8 except home/laptop 1/8, home/fridge 1/8, work/coffee_machine 2/8, work/hr_desk 1/8 and private_events/garcia_yard 1/8. The gas-station counter is still 0/8.
+
+### Open issues after the pivot
+
+1. **public_events is over the README budget:** 309 meshes against ≤ 250, and 289 draw calls on desktop. It is also close to the triangle limit (52k of 60k). This is for the scene owner: merge or instance the new props, or drop decor on phones (it is 112 draw calls on the phone).
+2. **Content, from `docs/audit/pivot_audit.md` §3.3:**
+   - The `question` field of 9 rulings still addresses Adam as the Muslim who must follow the ruling (wedding, neighbor_funeral, gifts_birthday, holiday_greetings, alcohol_table, student_loan, mixed_social, lost_wallet, buying_selling).
+   - Claims about Christian practice need a reviewer familiar with Christianity.
+
+   I changed no content.
+3. **The end screen opened from the menu mid-game:**
+   - It uses the end-of-week title ("That's a Wrap") and a score-tier message.
+   - `showSummary()` sets `finished=true` (`src/engine/game.js:168`), although the week is not over. The flag is not read anywhere today.
+
+   Both are cosmetic, for the engine owner.
+4. Still open from the first pass: no scholar review yet, no real-phone or iOS testing, the size of the screenshots in the repo (18 MB), and the licence TODO.
+
+---
+
 ## 1. Results
 
 | Suite | Command | Result |

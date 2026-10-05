@@ -67,6 +67,15 @@ for (const f of fs.readdirSync(DIR).filter(f => f.endsWith('.json')).sort()) {
         verified_how: 'Attribution reviewed by the auditor for consistency with the well-known position of the school (and the Kuwaiti Fiqh Encyclopedia where cited); NOT matched against a printed edition page by page. Requires a human scholar.',
       }, r.id);
     }
+    for (const b of r.common_ground?.bible || []) {
+      const res = verify.filter(v => v.ruling === r.id && v.ref === b.ref_en && /^bible/.test(v.kind));
+      const ok = res.length >= 2 && res.every(v => v.level === 'PASS');
+      add(`bible:${slug(b.ref_en)}`, {
+        type: 'other', citation: `الكتاب المقدس — ${b.ref_ar} / ${b.ref_en} — النص الإنجليزي: King James Version؛ العربي: ترجمة سميث وفاندايك (ملك عام)`,
+        url: b.source_url, url_ar: b.source_url_ar || '', verified: !!ok,
+        verified_how: ok ? `verify.mjs: ${res.map(v => v.msg).join(' | ')}. KJV re-fetched from bible-api.com (fallback api.getbible.net/kjv); Van Dyck re-fetched from api.getbible.net/v2/arabicsv and compared exactly.` : `NOT verified: ${res.map(v => v.msg).join(' | ') || 'not checked'}`,
+      }, r.id);
+    }
     for (const c of r.contemporary || []) {
       const man = MANUAL_CONTEMPORARY.find(x => x.m.test(c.decision_ref) && x.b.test(c.body));
       const urls = String(c.source_url || '').split(/\s*;\s*/).filter(Boolean);
@@ -85,7 +94,22 @@ for (const e of reg.values()) if (e.type === 'hadith' && e.verified) {
   const m = manual.find(x => e.used_in.includes(x.ruling) && e.citation.includes(x.citation.split(' ')[0]));
   if (m) e.verified_how = `Manual (auditor): ${m.verified_how}`;
 }
+// Christian-practice facts quoted in common_ground.differences/summary (not Bible texts).
+const CHRISTIAN_FACTS = [
+  { id: 'other:ccc-2413', test: /2413/, citation: 'Catechism of the Catholic Church §2413 (games of chance / wagers)', url: 'https://www.vatican.va/archive/ENG0015/__P8D.HTM',
+    how: 'Auditor: wording in the ruling ("not in themselves contrary to justice… unless they deprive someone of what is necessary") matches the well-known text of CCC 2413; researcher confirmed via web search. Not re-fetched in this audit.' },
+  { id: 'other:umc-gambling', test: /الميثودية|Methodist/, citation: 'United Methodist Church — Social Principles / Book of Resolutions: "Gambling is a menace to society…"', url: 'https://www.umc.org/en/content/ask-the-umc-what-is-the-united-methodist-position-on-gambling',
+    how: 'Researcher confirmed via web search (umc.org); auditor did not re-fetch. Phrase is the standard Social Principles wording.' },
+  { id: 'other:billy-graham-rule', test: /بيلي غراهام|Billy Graham/, citation: '"Billy Graham rule" (Modesto Manifesto, 1948)', url: 'https://www.christianhistoryinstitute.org/',
+    how: 'Researcher confirmed via web search; general historical fact, not re-fetched by the auditor.' },
+];
+for (const f of fs.readdirSync(DIR).filter(f => f.endsWith('.json')))
+  for (const r of JSON.parse(fs.readFileSync(path.join(DIR, f), 'utf8'))) {
+    const t = JSON.stringify(r.common_ground || {});
+    for (const c of CHRISTIAN_FACTS) if (c.test.test(t))
+      add(c.id, { type: 'other', citation: c.citation, url: c.url, verified: false, verified_how: c.how }, r.id);
+  }
 const out = [...reg.values()];
 fs.writeFileSync(path.join(ROOT, 'content', 'sources.json'), JSON.stringify(out, null, 2) + '\n');
 const by = t => out.filter(x => x.type === t);
-console.log(`sources: ${out.length}`, ['quran', 'hadith', 'madhhab', 'contemporary'].map(t => `${t} ${by(t).length} (verified ${by(t).filter(x => x.verified).length})`).join(' | '));
+console.log(`sources: ${out.length}`, ['quran', 'hadith', 'madhhab', 'contemporary', 'other'].map(t => `${t} ${by(t).length} (verified ${by(t).filter(x => x.verified).length})`).join(' | '));

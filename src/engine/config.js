@@ -53,3 +53,32 @@ export const QUALITY = {
 
 export const CHECK_BONUS = 5; // points for answering the check question correctly
 export const STORAGE_KEY = 'yawmuk.progress.v1';
+
+// Topic categories used by the end screen to suggest a next topic (themes cut across locations).
+export const THEMES = {
+  // nextTopic = index into ui_strings end.next_topics (0 Ramadan, 1 prayers, 2 Jesus & Mary, 3 Zakat)
+  money: { nextTopic: 3, ar: 'المال والتمويل', en: 'Money & finance', ids: ['home.mortgage', 'home.credit_card', 'work.retirement_401k', 'school.student_loan', 'street.lottery', 'public_events.raffle'] },
+  food: { nextTopic: 0, ar: 'الطعام والشراب', en: 'Food & drink', ids: ['home.food_ingredients', 'work.alcohol_pork_job', 'public_events.alcohol_table'] },
+  honesty: { nextTopic: 1, ar: 'الأمانة والصدق', en: 'Honesty & trust', ids: ['work.honesty_gifts', 'school.cheating', 'street.lost_wallet', 'street.buying_selling'] },
+  social: { nextTopic: 2, ar: 'العلاقات والمناسبات', en: 'Relationships & occasions', ids: ['school.mixed_social', 'public_events.holiday_greetings', 'private_events.wedding', 'private_events.neighbor_funeral', 'private_events.gifts_birthday'] }
+};
+
+// ---------------------------------------------------------------- the player character
+// Single place to change how Adam looks. Any makeNPC(look) option works (see src/engine/README.md):
+// skin, shirt, pants, shoes, hair (false = bald), beard, glasses, suit, tie, kufi, height, build…
+export const PLAYER = {
+  name: { ar: 'آدم', en: 'Adam' }, // Adam Reed — see docs/story_bible.md
+  look: {
+    skin: '#e8c4a0',
+    hair: '#5a3b24',   // short brown hair
+    beard: false,      // clean-shaven
+    kufi: false,
+    shirt: '#2f4a6d',  // navy shirt
+    pants: '#5b6270',  // grey jeans
+    shoes: '#6b4a2f',  // brown shoes
+    glasses: false,
+    height: 1.78,
+    build: 1
+  }
+};
+// A scene may return `playerLook: { suit: '#1f2d4d', … }` — it is merged over PLAYER.look for that scene only.

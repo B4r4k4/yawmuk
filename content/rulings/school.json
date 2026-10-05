@@ -149,7 +149,39 @@
     },
     "confidence": "high",
     "review_status": "ai_verified",
-    "notes_for_reviewer": "1) نصوص الآيات منقولة آلياً من quran.com API v4 (text_uthmani + ترجمة Sahih International رقم 20). 2) نصوص الأحاديث تحقق آلياً أنها مقاطع حرفية من نسخة صحيحي البخاري ومسلم المطابقة لترقيم sunnah.com (مستودع fawazahmed0/hadith-api)، لأن sunnah.com وdorar.net حجبا الوصول الآلي (403/Cloudflare)؛ يُرجى مطابقة الروابط يدوياً. الترجمات الإنجليزية للأحاديث مقتبسة بتصرف يسير من ترجمات sunnah.com. 3) أقوال المذاهب منقولة عبر الموسوعة الفقهية الكويتية (مادتا غش ٣١/٢١٨-٢٢١ وغبن ٣١/١٣٨-١٤٢) من المكتبة الشاملة (shamela.ws/book/11430/19841)، لا من الكتب الأصلية مباشرة. 4) لا يوجد نص مذهبي قديم في الامتحانات؛ إلحاقها بالغش تخريج. 5) مسألة الذكاء الاصطناعي: لم أجد قراراً مجمعياً أو فتوى رسمية محددة؛ الحكم المكتوب تخريج على أصل الغش وحديث «المتشبع بما لم يعط» ومراعاة شرط الأستاذ — يحتاج مراجعة عالم. 6) لم أجد قراراً لمجمع الفقه الدولي أو AMJA في الغش الدراسي تحديداً. 7) حكم ما كُسب من بيع الواجبات (رده للمشتري أم التصدق به) فيه خلاف لم أحرره.\n\n[تدقيق المرحلة 1 — 2026-10-05] لا ملاحظات جوهرية؛ أقوال المذاهب عبر الموسوعة الكويتية مقبولة وفق العقد، ومسألة الذكاء الاصطناعي مخرّجة تخريجاً سليماً مع ربطها بشرط الأستاذ. نجحت الفحوص الآلية."
+    "notes_for_reviewer": "1) نصوص الآيات منقولة آلياً من quran.com API v4 (text_uthmani + ترجمة Sahih International رقم 20). 2) نصوص الأحاديث تحقق آلياً أنها مقاطع حرفية من نسخة صحيحي البخاري ومسلم المطابقة لترقيم sunnah.com (مستودع fawazahmed0/hadith-api)، لأن sunnah.com وdorar.net حجبا الوصول الآلي (403/Cloudflare)؛ يُرجى مطابقة الروابط يدوياً. الترجمات الإنجليزية للأحاديث مقتبسة بتصرف يسير من ترجمات sunnah.com. 3) أقوال المذاهب منقولة عبر الموسوعة الفقهية الكويتية (مادتا غش ٣١/٢١٨-٢٢١ وغبن ٣١/١٣٨-١٤٢) من المكتبة الشاملة (shamela.ws/book/11430/19841)، لا من الكتب الأصلية مباشرة. 4) لا يوجد نص مذهبي قديم في الامتحانات؛ إلحاقها بالغش تخريج. 5) مسألة الذكاء الاصطناعي: لم أجد قراراً مجمعياً أو فتوى رسمية محددة؛ الحكم المكتوب تخريج على أصل الغش وحديث «المتشبع بما لم يعط» ومراعاة شرط الأستاذ — يحتاج مراجعة عالم. 6) لم أجد قراراً لمجمع الفقه الدولي أو AMJA في الغش الدراسي تحديداً. 7) حكم ما كُسب من بيع الواجبات (رده للمشتري أم التصدق به) فيه خلاف لم أحرره.\n\n[تدقيق المرحلة 1 — 2026-10-05] لا ملاحظات جوهرية؛ أقوال المذاهب عبر الموسوعة الكويتية مقبولة وفق العقد، ومسألة الذكاء الاصطناعي مخرّجة تخريجاً سليماً مع ربطها بشرط الأستاذ. نجحت الفحوص الآلية.",
+    "newcomer_explainer": {
+      "ar": "الغش في الامتحان محرّم في الإسلام باتفاق العلماء، لأنه كذب وخيانة للأمانة، وقد قال النبي ﷺ: «من غشنا فليس منا» (مسلم 101). ومساعدة زميل على الغش أو بيع الواجبات تعاون على الإثم (المائدة 2)، والمال المكتسب منها غير طيب. وتقديم عمل كتبه غيرك أو كتبه الذكاء الاصطناعي على أنه عملك، حين يمنع الأستاذ ذلك أو يشترط الإفصاح، يأخذ حكم الغش. والمقصد أن تدلّ الشهادة على علم حقيقي يعتمد عليه الناس.",
+      "en": "Cheating in exams is forbidden in Islam by scholarly agreement because it is lying and a betrayal of trust; the Prophet ﷺ said, \"Whoever cheats us is not of us\" (Muslim 101). Helping a classmate cheat or selling assignments is cooperating in wrongdoing (5:2), and money earned that way is not wholesome. Presenting work written by someone else or by AI as your own, where the instructor forbids it or requires disclosure, takes the same ruling. The aim is that a grade or certificate truthfully reflects real knowledge that other people will rely on."
+    },
+    "common_ground": {
+      "summary": {
+        "ar": "اتفاق تام: فالكتاب المقدس يقول: «كراهة الرب شفتا كذب»، ويأمر: «لا تكذبوا بعضكم على بعض»؛ والأمانة الأكاديمية قيمة يشترك فيها آدم وأصدقاؤه المسلمون كاملة.",
+        "en": "Complete agreement: the Bible calls lying lips an abomination to the LORD and commands, \"Lie not one to another\"; academic honesty is a value Adam and his Muslim friends fully share."
+      },
+      "bible": [
+        {
+          "ref_en": "Proverbs 12:22",
+          "ref_ar": "أمثال 12: 22",
+          "text_en": "Lying lips are abomination to the LORD: but they that deal truly are his delight.",
+          "text_ar": "كَرَاهَةُ ٱلرَّبِّ شَفَتَا كَذِبٍ، أَمَّا ٱلْعَامِلُونَ بِٱلصِّدْقِ فَرِضَاهُ.",
+          "source_url": "https://bible-api.com/Proverbs+12:22?translation=kjv",
+          "source_url_ar": "https://api.getbible.net/v2/arabicsv/20/12.json"
+        },
+        {
+          "ref_en": "Colossians 3:9",
+          "ref_ar": "كولوسي 3: 9",
+          "text_en": "Lie not one to another, seeing that ye have put off the old man with his deeds;",
+          "text_ar": "لَا تَكْذِبُوا بَعْضُكُمْ عَلَى بَعْضٍ، إِذْ خَلَعْتُمُ ٱلْإِنْسَانَ ٱلْعَتِيقَ مَعَ أَعْمَالِهِ،",
+          "source_url": "https://bible-api.com/Colossians+3:9?translation=kjv",
+          "source_url_ar": "https://api.getbible.net/v2/arabicsv/51/3.json"
+        }
+      ],
+      "differences": {
+        "ar": "لا يوجد فرق يُذكر في هذه المسألة.",
+        "en": "There is no meaningful difference on this issue."
+      }
+    }
   },
   {
     "id": "school.student_loan",
@@ -159,8 +191,8 @@
       "en": "Interest-Bearing Student Loans and Their Alternatives"
     },
     "question": {
-      "ar": "هل يجوز لآدم أن يأخذ قرضاً طلابياً فيدرالياً بفائدة ليكمل دراسته المسائية؟ وما البدائل المشروعة؟",
-      "en": "May Adam take an interest-bearing federal student loan to finish his evening studies? What are the lawful alternatives?"
+      "ar": "هل يجوز للمسلم أن يأخذ قرضاً طلابياً فيدرالياً بفائدة ليكمل دراسته؟ وما البدائل المشروعة؟",
+      "en": "Is it permissible for a Muslim to take an interest-bearing federal student loan to finish his studies? What are the lawful alternatives?"
     },
     "verdict": "haram",
     "summary": {
@@ -269,7 +301,7 @@
       "ar": [
         "قدّم طلب FAFSA مبكراً كل عام؛ فهو بوابة المنح الفيدرالية غير المستردة مثل Pell Grant ومنح الولاية والكلية، وتقديمه لا يُلزمك بقبول أي قرض.",
         "في خطاب المساعدات (award letter) اقبل المنح وارفض القروض ذات الفائدة؛ يمكنك قبول بعض البنود ورفض بعضها.",
-        "اسأل عن برنامج Federal Work-Study، وعن دعم الرسوم من صاحب العمل (Tuition Assistance / Reimbursement) — وهو مهم لآدم لأنه موظف.",
+        "اسأل عن برنامج Federal Work-Study، وعن دعم الرسوم من صاحب العمل (Tuition Assistance / Reimbursement) — وهو مهم خاصة للطالب الذي يعمل.",
         "كثير من الكليات تقدم خطة تقسيط للرسوم (tuition payment plan) بلا فائدة؛ تأكد أن رسومها مقطوعة لا تزيد بالأجل، وتجنب الغرامات المحسوبة كنسبة على التأخير.",
         "رسوم كلية المجتمع أقل بكثير؛ والدراسة بدوام جزئي على قدر الدخل خير من دين ربوي.",
         "ابحث عن صناديق القرض الحسن، ومن أمثلتها منظمة A Continuous Charity (ACC) غير الربحية التي تقدم قروضاً تعليمية بلا فائدة، وصناديق المساجد المحلية — أمثلة لا تزكية، فتحقق من شروطها.",
@@ -279,7 +311,7 @@
       "en": [
         "File the FAFSA early each year; it is the gateway to non-repayable federal grants such as the Pell Grant, plus state and college grants, and filing does not oblige you to accept any loan.",
         "In your award letter, accept grants and decline interest-bearing loans; you can accept some items and decline others.",
-        "Ask about Federal Work-Study and employer tuition assistance/reimbursement — especially relevant for Adam as an employee.",
+        "Ask about Federal Work-Study and employer tuition assistance/reimbursement — especially relevant for students who are also employed.",
         "Many colleges offer interest-free tuition payment plans; make sure fees are flat and do not grow with time, and avoid late fees calculated as a percentage.",
         "Community college tuition is much lower; studying part-time within your income is better than interest-bearing debt.",
         "Look for interest-free (qard hasan) funds, e.g. the nonprofit A Continuous Charity (ACC), which offers interest-free education loans, and local mosque funds — examples, not endorsements; check their terms.",
@@ -309,7 +341,39 @@
     },
     "confidence": "medium",
     "review_status": "ai_verified",
-    "notes_for_reviewer": "1) اسم صاحب الفتوى 81740 في موقع AMJA بالإنجليزية: Dr. Main Khalid Al-Qudah (د. معين خالد القضاة) — صُحّح الاسم في decision_ref إن لزم. 2) قرار AMJA في المؤتمر السادس (كندا 2009) نُقل عبر الفتوى 87641 وملخص البحث، ولم أطّلع على نص القرار الأصلي كاملاً. 3) نص ابن نجيم «يجوز للمحتاج الاستقراض بالربح» تحقق منه عبر مصادر ثانوية متعددة لا من نسخة الأشباه مباشرة، ولم يُحدد رقم الصفحة. 4) أقوال المالكية والشافعية والحنابلة في القرض بالفائدة مبنية على نقل الموسوعة للإجماع (٢٢/٥٣) مع مراجعها؛ أما تطبيق قاعدة الضرورة فقاعدة عامة لم أنقل لها نصاً مذهبياً خاصاً بالاقتراض — يحتاج مراجعة. 5) قرار المجلس الأوروبي 4/18 عبارته «بغير زيادة ربوية مربوطة بمؤشر معدل تكاليف المعيشة» ملتبسة (هل الربط بالتضخم يُعد زيادة ربوية؟) — يحتاج تحرير. 6) القرض المدعوم: هل يجوز توقيع عقد فيه شرط فائدة مع نية السداد قبل سريانها؟ مسألة خلافية (شرط فاسد/الرضا بالربا)، ورسوم الإصدار (origination fee) تحتاج نظراً. 7) الأمثلة على صناديق القرض الحسن: ذكر الموجّه «Ihsan / IFL» ولم أستطع التحقق من وجود جهة أمريكية بهذين الاسمين (Ihsan Trust جهة باكستانية)، فاستبدلتهما بـ A Continuous Charity (acceducate.org) بعد التحقق من موقعها. 8) لم أجد قراراً لمجلس الفقه بأمريكا الشمالية (FCNA) في القرض الطلابي.\n\n[تدقيق المرحلة 1 — 2026-10-05] صُحّح اسم المفتي في decision_ref إلى «د. مائن خالد القضاة» (مؤكَّد من موقع AMJA). الحكم منسجم مع الأدلة وعرض قول الحاجة عند AMJA أمين. تنبيه قانوني للمراجع: شروط القرض المدعوم (Direct Subsidized) ودعم فائدة فترة السماح قد تتغير بتشريعات 2025-2026؛ يُتحقق من studentaid.gov قبل النشر. نجحت الفحوص الآلية."
+    "notes_for_reviewer": "1) اسم صاحب الفتوى 81740 في موقع AMJA بالإنجليزية: Dr. Main Khalid Al-Qudah (د. معين خالد القضاة) — صُحّح الاسم في decision_ref إن لزم. 2) قرار AMJA في المؤتمر السادس (كندا 2009) نُقل عبر الفتوى 87641 وملخص البحث، ولم أطّلع على نص القرار الأصلي كاملاً. 3) نص ابن نجيم «يجوز للمحتاج الاستقراض بالربح» تحقق منه عبر مصادر ثانوية متعددة لا من نسخة الأشباه مباشرة، ولم يُحدد رقم الصفحة. 4) أقوال المالكية والشافعية والحنابلة في القرض بالفائدة مبنية على نقل الموسوعة للإجماع (٢٢/٥٣) مع مراجعها؛ أما تطبيق قاعدة الضرورة فقاعدة عامة لم أنقل لها نصاً مذهبياً خاصاً بالاقتراض — يحتاج مراجعة. 5) قرار المجلس الأوروبي 4/18 عبارته «بغير زيادة ربوية مربوطة بمؤشر معدل تكاليف المعيشة» ملتبسة (هل الربط بالتضخم يُعد زيادة ربوية؟) — يحتاج تحرير. 6) القرض المدعوم: هل يجوز توقيع عقد فيه شرط فائدة مع نية السداد قبل سريانها؟ مسألة خلافية (شرط فاسد/الرضا بالربا)، ورسوم الإصدار (origination fee) تحتاج نظراً. 7) الأمثلة على صناديق القرض الحسن: ذكر الموجّه «Ihsan / IFL» ولم أستطع التحقق من وجود جهة أمريكية بهذين الاسمين (Ihsan Trust جهة باكستانية)، فاستبدلتهما بـ A Continuous Charity (acceducate.org) بعد التحقق من موقعها. 8) لم أجد قراراً لمجلس الفقه بأمريكا الشمالية (FCNA) في القرض الطلابي.\n\n[تدقيق المرحلة 1 — 2026-10-05] صُحّح اسم المفتي في decision_ref إلى «د. مائن خالد القضاة» (مؤكَّد من موقع AMJA). الحكم منسجم مع الأدلة وعرض قول الحاجة عند AMJA أمين. تنبيه قانوني للمراجع: شروط القرض المدعوم (Direct Subsidized) ودعم فائدة فترة السماح قد تتغير بتشريعات 2025-2026؛ يُتحقق من studentaid.gov قبل النشر. نجحت الفحوص الآلية.",
+    "newcomer_explainer": {
+      "ar": "الأصل في الإسلام تحريم الاقتراض بفائدة، لأن النبي ﷺ لعن آكل الربا ومُوكِله، أي آخذه ودافعه (مسلم 1598). لذلك يبحث الطالب المسلم أولاً عن المنح والعمل والقروض الحسنة بلا فائدة. وأجاز بعض الهيئات المعاصرة كمجمع فقهاء الشريعة بأمريكا (AMJA) القرض الطلابي بفائدة عند الضرورة أو الحاجة الملحّة المتحققة وبقدرها فقط، مع بقاء وصف الفائدة محرّمة، وينصح العلماء بأن يُقدَّر ذلك مع عالم موثوق لا بالاجتهاد الشخصي. ووراء ذلك أن إقراض المحتاج في الإسلام عون له لا مصدر ربح منه.",
+      "en": "The default Islamic ruling is that borrowing with interest is not allowed, because the Prophet ﷺ cursed both the one who takes riba and the one who pays it (Muslim 1598). So a Muslim student first looks for grants, work and interest-free loans. Some contemporary bodies such as AMJA allow an interest-bearing student loan in genuine necessity or pressing need, only to the extent required, while the interest itself remains prohibited, and scholars advise making that judgment with a trusted scholar rather than alone. Behind this is the Islamic view that lending to someone in need should be help, not a source of profit."
+    },
+    "common_ground": {
+      "summary": {
+        "ar": "الكتاب المقدس أيضاً ينهى عن أخذ الربا من الفقير، ويحذّر من أن «المقترض عبد للمقرض»، وهو قلق يشاركه كثير من المسيحيين تجاه الطلاب المثقلين بالديون.",
+        "en": "The Bible also forbids taking interest from the poor and warns that \"the borrower is servant to the lender\" — a concern many Christians share about students weighed down by debt."
+      },
+      "bible": [
+        {
+          "ref_en": "Proverbs 22:7",
+          "ref_ar": "أمثال 22: 7",
+          "text_en": "The rich ruleth over the poor, and the borrower is servant to the lender.",
+          "text_ar": "اَلْغَنِيُّ يَتَسَلَّطُ عَلَى ٱلْفَقِيرِ، وَٱلْمُقْتَرِضُ عَبْدٌ لِلْمُقْرِضِ.",
+          "source_url": "https://bible-api.com/Proverbs+22:7?translation=kjv",
+          "source_url_ar": "https://api.getbible.net/v2/arabicsv/20/22.json"
+        },
+        {
+          "ref_en": "Exodus 22:25",
+          "ref_ar": "خروج 22: 25",
+          "text_en": "If thou lend money to any of my people that is poor by thee, thou shalt not be to him as an usurer, neither shalt thou lay upon him usury.",
+          "text_ar": "إِنْ أَقْرَضْتَ فِضَّةً لِشَعْبِي ٱلْفَقِيرِ ٱلَّذِي عِنْدَكَ فَلَا تَكُنْ لَهُ كَٱلْمُرَابِي. لَا تَضَعُوا عَلَيْهِ رِبًا.",
+          "source_url": "https://bible-api.com/Exodus+22:25?translation=kjv",
+          "source_url_ar": "https://api.getbible.net/v2/arabicsv/2/22.json"
+        }
+      ],
+      "differences": {
+        "ar": "لا يرى أغلب المسيحيين اليوم الاقتراض بفائدة إثماً في ذاته، وإن حذّر كثير من المرشدين المسيحيين من الديون الثقيلة؛ أما في الإسلام فالإشكال في الفائدة نفسها ولو كان الدَّين محتملاً.",
+        "en": "Most Christians today do not see borrowing at interest as sinful in itself, though many Christian advisers warn against heavy debt; in Islam the issue is the interest itself, even when the debt is manageable."
+      }
+    }
   },
   {
     "id": "school.mixed_social",
@@ -319,8 +383,8 @@
       "en": "Mixed Study Groups and Shaking Hands with a Female Professor"
     },
     "question": {
-      "ar": "ما حدود التعامل مع الزميلات في مجموعة الدراسة؟ وما حكم الخلوة بزميلة؟ وهل يصافح آدم أستاذته إذا مدّت يدها؟",
-      "en": "What are the limits of interacting with female classmates in a study group? What is the ruling on being alone with a classmate? Should Adam shake his female professor's hand if she extends it?"
+      "ar": "ماذا يعلّم الإسلام عن التعامل بين الرجال والنساء في مجموعة الدراسة؟ وما حكم الخلوة بزميل أو زميلة؟ وهل يصافح المسلم أستاذته إذا مدّت يدها؟",
+      "en": "What does Islam teach about men and women interacting in a study group? What is the ruling on being alone with a classmate of the opposite sex? Should a Muslim shake a female professor's hand if she extends it?"
     },
     "verdict": "depends",
     "summary": {
@@ -468,6 +532,38 @@
     },
     "confidence": "medium",
     "review_status": "ai_verified",
-    "notes_for_reviewer": "1) أقوال المذاهب منقولة عبر الموسوعة الفقهية الكويتية: مادة «خلوة» ١٩/٢٦٧-٢٦٩ (shamela.ws/book/11430/11832) ومادة «مصافحة» ٣٧/٣٥٨-٣٦٠ (shamela.ws/book/11430/24255). 2) حديث معقل بن يسار: النص من الدرر السنية (عبر واجهة dorar_api) بلفظ الطبراني، ولم أتمكن من فتح صفحة الطبراني نفسها؛ أحكام المحدثين منقولة كما في الدرر. تخريج الموسوعة يذكر الهيثمي ٤/٣٢٦ والدرر ٤/٣٢٩ (فرق طبعات). الترجمة الإنجليزية من صياغتي. 3) فتوى AMJA 3253 تقول «اتفق أئمة المذاهب الأربعة على التحريم» بإطلاق، بينما تنقل الموسوعة استثناء الحنفية والحنابلة للعجوز؛ عرضتُ الاستثناء بأمانة. 4) فتوى القرضاوي نُقل ملخصها من إسلام أونلاين لا من كتاب «فتاوى معاصرة» مباشرة؛ يُرجى مطابقة الجزء والصفحة. 5) آية النور ٣١ لم تُدرج لطولها؛ يمكن إضافتها. 6) لم أجد قراراً مجمعياً (الدولي أو الأوروبي أو FCNA) في المصافحة. 7) حكم مجموعة دراسة فيها رجل واحد وعدة نساء: المشهور عند الشافعية الجواز، والحنابلة على التحريم — يحتاج تحريراً لتطبيقه على الواقع.\n\n[تدقيق المرحلة 1 — 2026-10-05] حديث معقل بن يسار (خارج الكتب الستة) تحققتُ من لفظه وأحكام الألباني (صحيح الجامع 5045، الصحيحة 226) يدوياً؛ رمز السيوطي بالضعف لم أتحقق منه. عرض الخلاف في المصافحة أمين (استثناء الحنفية والحنابلة للعجوز، وقول القرضاوي). نجحت الفحوص الآلية."
+    "notes_for_reviewer": "1) أقوال المذاهب منقولة عبر الموسوعة الفقهية الكويتية: مادة «خلوة» ١٩/٢٦٧-٢٦٩ (shamela.ws/book/11430/11832) ومادة «مصافحة» ٣٧/٣٥٨-٣٦٠ (shamela.ws/book/11430/24255). 2) حديث معقل بن يسار: النص من الدرر السنية (عبر واجهة dorar_api) بلفظ الطبراني، ولم أتمكن من فتح صفحة الطبراني نفسها؛ أحكام المحدثين منقولة كما في الدرر. تخريج الموسوعة يذكر الهيثمي ٤/٣٢٦ والدرر ٤/٣٢٩ (فرق طبعات). الترجمة الإنجليزية من صياغتي. 3) فتوى AMJA 3253 تقول «اتفق أئمة المذاهب الأربعة على التحريم» بإطلاق، بينما تنقل الموسوعة استثناء الحنفية والحنابلة للعجوز؛ عرضتُ الاستثناء بأمانة. 4) فتوى القرضاوي نُقل ملخصها من إسلام أونلاين لا من كتاب «فتاوى معاصرة» مباشرة؛ يُرجى مطابقة الجزء والصفحة. 5) آية النور ٣١ لم تُدرج لطولها؛ يمكن إضافتها. 6) لم أجد قراراً مجمعياً (الدولي أو الأوروبي أو FCNA) في المصافحة. 7) حكم مجموعة دراسة فيها رجل واحد وعدة نساء: المشهور عند الشافعية الجواز، والحنابلة على التحريم — يحتاج تحريراً لتطبيقه على الواقع.\n\n[تدقيق المرحلة 1 — 2026-10-05] حديث معقل بن يسار (خارج الكتب الستة) تحققتُ من لفظه وأحكام الألباني (صحيح الجامع 5045، الصحيحة 226) يدوياً؛ رمز السيوطي بالضعف لم أتحقق منه. عرض الخلاف في المصافحة أمين (استثناء الحنفية والحنابلة للعجوز، وقول القرضاوي). نجحت الفحوص الآلية.",
+    "newcomer_explainer": {
+      "ar": "يجيز الإسلام للرجال والنساء الدراسة والعمل معاً في الأماكن العامة مع الاحتشام وغض البصر (النور 30)، لكنه يحرّم خلوة الرجل بامرأة أجنبية عنه (البخاري 5233). والحكمة التي يذكرها العلماء حفظ الأعراض والقلوب وسدّ باب الفتنة والريبة. ومصافحة المرأة الأجنبية الشابة محرمة عند المذاهب الأربعة، مع استثناءات عند بعضهم، وأجازها بعض المعاصرين عند انتفاء الشهوة والأحوط تركها؛ لذلك يضع كثير من المسلمين يدهم على صدورهم تحية بدلاً منها. والمسلم الذي يعتذر عن المصافحة يفعل ذلك احتراماً لا رفضاً.",
+      "en": "Islam allows men and women to study and work together in public settings with modest conduct and a lowered gaze (24:30), but forbids a man and an unrelated woman from being alone together in private (Bukhari 5233). The wisdom scholars mention is protecting people's honour and hearts and closing the door to temptation and suspicion. Shaking hands with a young unrelated woman is forbidden in the four classical schools, with some exceptions, while some contemporary scholars allow it where there is no desire, though avoiding it is more cautious; so many Muslims place a hand on the chest as a greeting instead. A Muslim who declines a handshake does so out of respect, not rejection."
+    },
+    "common_ground": {
+      "summary": {
+        "ar": "حفظ العين والقلب أرض مشتركة: فالمسيح علّم أن النظر بشهوة زنى في القلب، وأيوب قطع عهداً لعينيه. وبعض المسيحيين أيضاً يتجنبون الانفراد بغير الزوج أو الزوجة من الجنس الآخر (ما يُعرف بـ«قاعدة بيلي غراهام»).",
+        "en": "Guarding the eyes and the heart is shared ground: Jesus taught that looking with lust is already adultery in the heart, and Job \"made a covenant with mine eyes\". Some Christians also avoid being alone with someone of the opposite sex other than their spouse (often called the 'Billy Graham rule')."
+      },
+      "bible": [
+        {
+          "ref_en": "Job 31:1",
+          "ref_ar": "أيوب 31: 1",
+          "text_en": "I made a covenant with mine eyes; why then should I think upon a maid?",
+          "text_ar": "«عَهْدًا قَطَعْتُ لِعَيْنَيَّ، فَكَيْفَ أَتَطَلَّعُ فِي عَذْرَاءَ؟",
+          "source_url": "https://bible-api.com/Job+31:1?translation=kjv",
+          "source_url_ar": "https://api.getbible.net/v2/arabicsv/18/31.json"
+        },
+        {
+          "ref_en": "Matthew 5:28",
+          "ref_ar": "متى 5: 28",
+          "text_en": "But I say unto you, That whosoever looketh on a woman to lust after her hath committed adultery with her already in his heart.",
+          "text_ar": "وَأَمَّا أَنَا فَأَقُولُ لَكُمْ: إِنَّ كُلَّ مَنْ يَنْظُرُ إِلَى ٱمْرَأَةٍ لِيَشْتَهِيَهَا، فَقَدْ زَنَى بِهَا فِي قَلْبِهِ.",
+          "source_url": "https://bible-api.com/Matthew+5:28?translation=kjv",
+          "source_url_ar": "https://api.getbible.net/v2/arabicsv/40/5.json"
+        }
+      ],
+      "differences": {
+        "ar": "يرى أغلب المسيحيين المصافحة مجاملة عادية لا إشكال دينياً فيها، والاختلاط الاجتماعي عندهم غير مقيّد في الغالب؛ أما أحكام الإسلام في اللمس والخلوة فأكثر تحديداً، ويكفي آدم أن يتبع ما يرتاح له صديقه.",
+        "en": "Most Christians see a handshake as ordinary courtesy with no religious issue, and mixed social settings are generally unrestricted; Islam's rules on touch and seclusion are more specific, and Adam can simply follow his friend's lead."
+      }
+    }
   }
 ]

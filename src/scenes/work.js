@@ -283,6 +283,20 @@ export default {
     cyl(CYL, -8.55, 0.93, -1.0, 0.04, 0.09, '#f4f1ea');           // cup under spout
     cyl(CYLG, -8.62, 0.9, -0.55, 0.07, 0.22, '#4a3b30');          // carafe
     ['#d9483b', '#e8c33a', '#2f8f8a', '#f4f1ea'].forEach((c, i) => cyl(CYL, -8.55, 0.9, -1.45 - i * 0.13, 0.042, 0.1, c));
+    // brass Arabic coffee pot (dallah) + small finjan cups — Samir brews Arabic coffee for the team
+    {
+      const BR = '#b87333', DX = -8.6, DZ = -0.15;
+      cyl(CYLG, DX, 0.9, DZ, 0.085, 0.02, BR);                                   // foot
+      POT.push({ x: DX, y: 0.99, z: DZ, sx: 0.17, sy: 0.14, sz: 0.17, ry: 0, rx: Math.PI, rz: 0, color: BR }); // belly (wide at bottom)
+      cyl(CYLG, DX, 1.06, DZ, 0.045, 0.03, BR);                                  // waist
+      POT.push({ x: DX, y: 1.14, z: DZ, sx: 0.11, sy: 0.13, sz: 0.11, ry: 0, rx: 0, rz: 0, color: BR });       // flared neck
+      cyl(CYLG, DX, 1.205, DZ, 0.05, 0.02, BR);                                  // lid
+      ICO.push({ x: DX, y: 1.24, z: DZ, sx: 0.035, sy: 0.05, sz: 0.035, ry: 0, rx: 0, rz: 0, color: '#d9a066' }); // finial
+      box(GLOSS, DX + 0.1, 1.04, DZ, 0.16, 0.022, 0.022, BR, 0, 0, 0.75);           // beak spout (toward the room)
+      box(GLOSS, DX - 0.09, 0.98, DZ, 0.02, 0.16, 0.02, BR, 0, 0, -0.25);           // handle
+      for (let i = 0; i < 3; i++) cyl(CYL, -8.6 + (i % 2) * 0.08, 0.9, 0.12 + i * 0.1, 0.028, 0.045, '#f4f1ea');
+      cyl(CYLG, -8.56, 0.9, 0.22, 0.11, 0.008, '#c9a227');                        // small tray
+    }
     cyl(CYL, -8.62, 0.9, -3.15, 0.15, 0.06, '#e8e3da');           // fruit bowl
     ico(-8.66, 1.0, -3.18, 0.055, '#f39c12'); ico(-8.57, 1.0, -3.1, 0.055, '#f39c12'); ico(-8.62, 1.05, -3.2, 0.05, '#c0392b');
     C(-9, -8.28, -3.65, 0.65, 1.2);
@@ -390,6 +404,11 @@ export default {
     box(GLOSS, ADX + 0.33, 0.853, ADZ + 0.1, 0.07, 0.03, 0.02, '#dfe3e8', 0.25, 0, 0.5);
     box(GLOSS, ADX + 0.39, 0.853, ADZ + 0.1, 0.07, 0.03, 0.02, '#dfe3e8', 0.25, 0, -0.5);
     box(MATTE, ADX - 0.15, 0.75, ADZ + 0.32, 0.16, 0.012, 0.22, '#fbfaf5', 0.1);  // notepad
+    // second smartwatch box, on the front edge of the desk next to Samir
+    { const gx = ADX + 0.52, gz = ADZ + 0.3, gr = -0.4;
+      box(MATTE, gx, 0.75, gz, 0.2, 0.1, 0.2, '#111214', gr);
+      box(GLOSS, gx, 0.75, gz, 0.205, 0.103, 0.03, '#dfe3e8', gr);
+      box(GLOSS, gx, 0.75, gz, 0.03, 0.103, 0.205, '#dfe3e8', gr); }
 
     // ================================================================ HR GLASS OFFICE (x 5..9, z -6..-2.8)
     const HZ = -2.8;
@@ -518,7 +537,7 @@ export default {
     for (let i = 0; i < 3; i++) {
       const m = track(new THREE.MeshBasicMaterial({ color: '#ffffff', transparent: true, opacity: 0.3, depthWrite: false }));
       const p = new THREE.Mesh(steamGeo, m);
-      p.position.set(-8.62, 1.15, -0.55); p.scale.setScalar(0.03);
+      p.position.set(-8.6, 1.22, -0.15); p.scale.setScalar(0.03);
       group.add(p); steam.push(p);
     }
 
@@ -552,10 +571,20 @@ export default {
       }
     }
 
+    const SAMIR_COFFEE = [-7.45, 0, -0.25], SAMIR_COFFEE_YAW = yawTo([-7.45, -0.25], [-5.8, 3.2]);
+    const SAMIR_DESK = [-0.2, 0, 2.45], SAMIR_DESK_YAW = yawTo([-0.2, 2.45], [-2.6, 4.2]);
     const npcs = [
-      { id: 'jake', position: [-7.55, 0, -0.25], yaw: yawTo([-7.55, -0.25], [-5.8, 3.2]),
+      // Samir (Muslim colleague) is the NPC of two situations. `stations` lets the engine move him to the
+      // next unfinished one; `position`/`yaw` (= coffee_machine station) is the fallback.
+      { id: 'samir', position: SAMIR_COFFEE, yaw: SAMIR_COFFEE_YAW,
+        stations: {
+          coffee_machine: { position: SAMIR_COFFEE, yaw: SAMIR_COFFEE_YAW },
+          adam_desk: { position: SAMIR_DESK, yaw: SAMIR_DESK_YAW }
+        },
+        look: { skin: '#c99a6e', shirt: '#f2f2f2', suit: '#6d7278', tie: '#f2f2f2', pants: '#2f3542', hair: '#141110', beard: '#141110', glasses: true, height: 1.78 } },
+      { id: 'bg_jake', position: [-5, 0, 1.5], yaw: yawTo([-5, 1.5], [-3.2, -3.5]), showName: false,
         look: { skin: '#f1c27d', shirt: '#a83232', pants: '#3b4a5e', hair: '#c9a45c', beard: '#c9a45c', build: 1.15, height: 1.84 } },
-      { id: 'mike', position: [-0.2, 0, 2.45], yaw: yawTo([-0.2, 2.45], [-2.6, 4.2]),
+      { id: 'bg_mike', position: [-7.6, 0, 3.4], yaw: yawTo([-7.6, 3.4], [-9, 5]), showName: false,
         look: { skin: '#e8b98a', shirt: '#f2f2f2', suit: '#1f2d4d', tie: '#7fb3e0', pants: '#1f2d4d', hair: '#5a3d2b', height: 1.8 } },
       { id: 'linda', position: [6.55, 0, -4.85], yaw: yawTo([6.55, -4.85], [6.9, -2.8]),
         look: { skin: '#e0b98f', shirt: '#f1e9e0', suit: '#7a2236', tie: '#f1e9e0', pants: '#2b2b33', hair: '#141414', height: 1.66 } },
@@ -585,12 +614,12 @@ export default {
       truckDot.position.x = TVX + (px / RW - 0.5) * TVW;
       truckDot.position.y = TVY + (0.5 - py / RH) * TVH;
       truckDot.scale.setScalar(1 + Math.sin(t * 6) * 0.25);
-      // steam over the carafe
+      // steam over the dallah
       for (let j = 0; j < steam.length; j++) {
         const f = (t * 0.32 + j / steam.length) % 1;
         const p = steam[j];
-        p.position.y = 1.15 + f * 0.4;
-        p.position.x = -8.62 + Math.sin(t * 1.3 + j * 2) * 0.03 * f;
+        p.position.y = 1.22 + f * 0.35;
+        p.position.x = -8.6 + Math.sin(t * 1.3 + j * 2) * 0.03 * f;
         p.scale.setScalar(0.025 + f * 0.05);
         p.material.opacity = 0.32 * (1 - f) * Math.min(1, f * 5);
       }

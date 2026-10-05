@@ -54,3 +54,32 @@ A 12 × 9 m open-plan ground floor of a modest rented house in Columbus on a sno
 - **Engine (not my code):**
   - `makeNPC` hijab faces look a little odd from some angles.
   - `src/engine/README.md` did not exist while I worked, so I used `ctx.makeNPC`/`ctx.rand` (from `kit.js`) only with fallbacks and created my own materials.
+
+---
+
+## Update 2026-10-05: premise change (the Reed family is Christian; Omar is the Muslim friend)
+I re-read the scene after the Phase-3 QA edit, which removed the fridge point light so the scene keeps 3 point lights. Then I applied the `home` items from "CHANGES FOR SCENE AGENTS" in `docs/hotspots.md` and the new `content/script/home.json`:
+- **Removed:** the prayer rug, the Mushaf and its stand, the tasbih and the kufi. No family member wears a hijab. `prayerRug()` is gone from `home/textures.js`.
+- **Bookshelf:** a brown leather Bible (`#6b4423`, 0.16×0.04×0.22) lies on the top shelf next to two framed family photos. A small honey-wood cross (`#a0763f`, 0.30 and 0.18 bars) hangs on the wall above the shelf at y≈2.1. The shelf is 1.8 m tall, so the requested ~1.7 m had to go a little higher.
+- **NE corner:** it is now a reading nook with a terracotta armchair, a side table and a 3-photo family gallery. The photos come from a new canvas `familyPhoto()` texture of four simple figures in the snow, with no faces or text.
+- **Counter by the fridge:**
+  - added a red Jell-O box, a dark red-wine bottle (`#3a0d14`) with a neck and capsule, the small vanilla bottle, and pink beef in cling wrap on a foam tray;
+  - removed the candy bag and the chicken tray;
+  - left the fridge unchanged.
+- **By the front door:** a snow shovel (wood handle, black blade) leans on the wall between the door and the coat rack. It has a collider, and the exit stays reachable.
+- **Table and sofa:** there are now 3 coffee mugs, the pulled-out chair is Omar's, and a crumpled blanket and pillow sit on the sofa (Ben slept there).
+- **NPCs:**
+  - `omar [1.0,0,-2.3]`: 1.85 m, olive jacket, short beard, grey wool beanie, coffee mug in hand.
+  - `carol [-4.4,0,-3.0]`: 1.62 m, silver bob, olive cardigan, glasses, menu notepad.
+  - `ben [-1.2,0,3.4]`: messy dark-blond hair, grey hoodie, headphones, phone.
+  - `bg_sarah`: seated at the west end of the table facing her laptop, `animate:false`, `collide:false`.
+  - Each NPC is used once at home, so `stations` isn't needed. `playerLook` isn't needed either, because Adam is indoors and uses the default `PLAYER` look.
+- **Unchanged:** the hotspot ids and positions, the spawn, the exit and the ≤3 point lights.
+
+**Verification**
+- `npm run build`: passes.
+- `npm test`: 178/178 pass. The very first run had the network-dependent citation verifier crash; the reruns were clean.
+- **Headless Chrome** (my own CDP driver, dev server stopped afterwards): 107 meshes and 16.2k triangles including the engine's NPCs and markers, 3 point lights, 0 console errors, all hotspots and the exit reachable.
+- `npm run test:e2e`: home passes in all 4 configurations (desktop/mobile × ar/en). The only failures were in `private_events`: a 404 on a dist asset whose hash changed mid-run, and `gifts_birthday` choice data. Neither is in home.
+
+**Note for the engine owner:** the README says seated figures use `legs.rotation.x = -Math.PI/2`. In this rig that swings the legs backwards. `+Math.PI/2` puts the thighs forward, and that is what home uses.

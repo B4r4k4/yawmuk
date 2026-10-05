@@ -7,8 +7,8 @@
       "en": "A Lost Wallet on the Street (Luqata)"
     },
     "question": {
-      "ar": "وجد آدم محفظة فيها نقود وبطاقات وهوية صاحبها؛ ماذا يجب عليه؟ وما حكم تملّكها إن لم يظهر صاحبها؟",
-      "en": "Adam found a wallet containing cash, cards and the owner's ID. What must he do, and may he keep it if the owner never appears?"
+      "ar": "إذا وجد المسلم محفظة فيها نقود وبطاقات وهوية صاحبها، فماذا يجب عليه؟ وما حكم تملّكها إن لم يظهر صاحبها؟",
+      "en": "If a Muslim finds a wallet containing cash, cards and the owner's ID, what must he do, and may he keep it if the owner never appears?"
     },
     "verdict": "wajib",
     "summary": {
@@ -122,7 +122,39 @@
     },
     "confidence": "high",
     "review_status": "ai_verified",
-    "notes_for_reviewer": "1) أقوال المذاهب منقولة من الموسوعة الفقهية الكويتية مادة «لقطة» ٣٥/٢٩٥-٣٠٨ (shamela.ws/book/11430/22668 وما بعدها) مع إحالاتها، لا من المصادر الأصلية مباشرة. 2) الموسوعة تنقل عن أبي حنيفة التفريق بين ما دون عشرة دراهم والعشرة فأكثر؛ والمشهور في متون المتأخرين (الدر المختار) أن التعريف «إلى أن يغلب على ظنه أن صاحبها لا يطلبها بعد ذلك» — لم أتحقق من نص الدر بنفسي؛ يُرجى تحرير المعتمد عند الحنفية. 3) قول المالكية في الخيار بعد السنة تحقق من نص مختصر خليل عبر كتاب «مواهب الجليل من أدلة خليل» للشنقيطي (shamela.ws/book/784/1374)، وليس «مواهب الجليل» للحطاب. 4) لقطة الحرم: الموسوعة تنسب لجمهور (ومنهم الحنابلة) عدم التفريق؛ وأذكر أن عن أحمد رواية كقول الشافعي اختارها بعض الأصحاب — لم أتحقق منها فلم أذكرها في المتن. 5) القول بأن وجود الهوية يوجب الإيصال المباشر دون انتظار سنة تطبيق للمقصد من التعريف (الوصول إلى المالك) وأداء الأمانة، لا نص مذهبي منقول — يحتاج تأكيداً. 6) لم أجد قراراً مجمعياً معاصراً (IIFA/AMJA/ECFR/FCNA) في اللقطة، فبقي حقل contemporary فارغاً؛ انقطع بحثي في موقع AMJA بسبب حد الاستخدام. 7) معلومة قانون أوهايو مصدرها نتائج بحث (law.justia.com لـ ORC 737.29 ومقالة قانونية) لا مراجعة قانونية مختصة. 8) رابط مسلم 1722e مبني على اصطلاح sunnah.com في ترقيم الروايات بالأحرف ولم أفتحه (حجب 403).\n\n[تدقيق المرحلة 1 — 2026-10-05] أقوال المذاهب الأربعة في اللقطة منقولة من الموسوعة الكويتية ومطابقة للمشهور. ملاحظة: معلومة قانون أوهايو (ORC 737.29 وما بعدها تنظم المفقودات لدى الشرطة) تحتاج مراجعة قانونية. نجحت الفحوص الآلية."
+    "notes_for_reviewer": "1) أقوال المذاهب منقولة من الموسوعة الفقهية الكويتية مادة «لقطة» ٣٥/٢٩٥-٣٠٨ (shamela.ws/book/11430/22668 وما بعدها) مع إحالاتها، لا من المصادر الأصلية مباشرة. 2) الموسوعة تنقل عن أبي حنيفة التفريق بين ما دون عشرة دراهم والعشرة فأكثر؛ والمشهور في متون المتأخرين (الدر المختار) أن التعريف «إلى أن يغلب على ظنه أن صاحبها لا يطلبها بعد ذلك» — لم أتحقق من نص الدر بنفسي؛ يُرجى تحرير المعتمد عند الحنفية. 3) قول المالكية في الخيار بعد السنة تحقق من نص مختصر خليل عبر كتاب «مواهب الجليل من أدلة خليل» للشنقيطي (shamela.ws/book/784/1374)، وليس «مواهب الجليل» للحطاب. 4) لقطة الحرم: الموسوعة تنسب لجمهور (ومنهم الحنابلة) عدم التفريق؛ وأذكر أن عن أحمد رواية كقول الشافعي اختارها بعض الأصحاب — لم أتحقق منها فلم أذكرها في المتن. 5) القول بأن وجود الهوية يوجب الإيصال المباشر دون انتظار سنة تطبيق للمقصد من التعريف (الوصول إلى المالك) وأداء الأمانة، لا نص مذهبي منقول — يحتاج تأكيداً. 6) لم أجد قراراً مجمعياً معاصراً (IIFA/AMJA/ECFR/FCNA) في اللقطة، فبقي حقل contemporary فارغاً؛ انقطع بحثي في موقع AMJA بسبب حد الاستخدام. 7) معلومة قانون أوهايو مصدرها نتائج بحث (law.justia.com لـ ORC 737.29 ومقالة قانونية) لا مراجعة قانونية مختصة. 8) رابط مسلم 1722e مبني على اصطلاح sunnah.com في ترقيم الروايات بالأحرف ولم أفتحه (حجب 403).\n\n[تدقيق المرحلة 1 — 2026-10-05] أقوال المذاهب الأربعة في اللقطة منقولة من الموسوعة الكويتية ومطابقة للمشهور. ملاحظة: معلومة قانون أوهايو (ORC 737.29 وما بعدها تنظم المفقودات لدى الشرطة) تحتاج مراجعة قانونية. نجحت الفحوص الآلية.",
+    "newcomer_explainer": {
+      "ar": "المحفظة الضائعة في الإسلام أمانة: يجب على من التقطها أن يحفظها ويعرّفها ويردّها، ولا يحل له أخذ شيء منها أو استعماله (البخاري 2372). فإن كان فيها هوية أو بطاقات فالواجب إيصالها إلى صاحبها مباشرة أو عبر الشرطة دون انتظار. وإن لم يُعرف صاحبها فجمهور العلماء على تعريفها سنة، ثم يجوز للملتقط الانتفاع بها أو التصدق بها، مع ضمانها لصاحبها إن ظهر يوماً، على تفصيل بين المذاهب. والمقصد حفظ أموال الناس وبناء مجتمع تعود فيه المفقودات إلى أهلها.",
+      "en": "In Islam a found wallet is a trust: the finder must keep it safe, announce it and return it, and may not take or use anything in it (Bukhari 2372). If it contains an ID or cards, the duty is to get it back to the owner directly or through the police without waiting. If the owner is unknown, the majority of scholars require announcing it for a year, after which the finder may use it or give it in charity, while still owing it to the owner if he ever appears, with details differing among the schools. The aim is to protect people's property and build a society where lost things find their way home."
+    },
+    "common_ground": {
+      "summary": {
+        "ar": "من أوضح نقاط التلاقي: فسفر التثنية يأمر بحفظ مفقود الأخ «حتى يطلبه أخوك» ثم ردّه، وينهى عن التغاضي عنه؛ وهو قريب جداً من الحديث: «ولتكن وديعة عندك، فإن جاء طالبها يوماً من الدهر فأدّها إليه».",
+        "en": "One of the clearest meeting points: Deuteronomy commands keeping a neighbour's lost property \"until thy brother seek after it\" and restoring it, and forbids looking away — very close to the hadith \"let it be a trust with you; if the one seeking it comes one day, give it back to him\"."
+      },
+      "bible": [
+        {
+          "ref_en": "Deuteronomy 22:2",
+          "ref_ar": "تثنية 22: 2",
+          "text_en": "And if thy brother be not nigh unto thee, or if thou know him not, then thou shalt bring it unto thine own house, and it shall be with thee until thy brother seek after it, and thou shalt restore it to him again.",
+          "text_ar": "وَإِنْ لَمْ يَكُنْ أَخُوكَ قَرِيبًا مِنْكَ أَوْ لَمْ تَعْرِفْهُ، فَضُمَّهُ إِلَى دَاخِلِ بَيْتِكَ. وَيَكُونُ عِنْدَكَ حَتَّى يَطْلُبَهُ أَخُوكَ، حِينَئِذٍ تَرُدُّهُ إِلَيْهِ.",
+          "source_url": "https://bible-api.com/Deuteronomy+22:2?translation=kjv",
+          "source_url_ar": "https://api.getbible.net/v2/arabicsv/5/22.json"
+        },
+        {
+          "ref_en": "Deuteronomy 22:3",
+          "ref_ar": "تثنية 22: 3",
+          "text_en": "In like manner shalt thou do with his ass; and so shalt thou do with his raiment; and with all lost thing of thy brother’s, which he hath lost, and thou hast found, shalt thou do likewise: thou mayest not hide thyself.",
+          "text_ar": "وَهَكَذَا تَفْعَلُ بِحِمَارِهِ، وَهَكَذَا تَفْعَلُ بِثِيَابِهِ، وَهَكَذَا تَفْعَلُ بِكُلِّ مَفْقُودٍ لِأَخِيكَ يُفْقَدُ مِنْهُ وَتَجِدُهُ. لَا يَحِلُّ لَكَ أَنْ تَتَغَاضَى.",
+          "source_url": "https://api.getbible.net/v2/kjv/5/22.json",
+          "source_url_ar": "https://api.getbible.net/v2/arabicsv/5/22.json"
+        }
+      ],
+      "differences": {
+        "ar": "الفرق في التفاصيل فقط: فالفقه الإسلامي يحدد مدة للتعريف (سنة عند الجمهور) وأحكاماً لما بعدها، بينما يقرر الكتاب المقدس الأمر العام؛ واليوم يسلّم المسيحيون والمسلمون في أمريكا مثل هذه المفقودات للشرطة غالباً.",
+        "en": "The difference is only in detail: Islamic law sets an announcement period (a year for the majority) and rules for what follows, while the Bible gives the general command; today Christians and Muslims in the US alike usually hand such items to the police."
+      }
+    }
   },
   {
     "id": "street.lottery",
@@ -260,7 +292,39 @@
     },
     "confidence": "high",
     "review_status": "ai_verified",
-    "notes_for_reviewer": "1) أقوال المذاهب عبر الموسوعة الفقهية الكويتية مادة «ميسر» ٣٩/٤٠٤-٤٠٨ (shamela.ws/book/11430/25825)؛ نص «المحرم العقد وأخذ المال» منسوب للرملي كما في الموسوعة. 2) قرار المجمع 127 منقول من النسخة الإنجليزية الرسمية على iifa-aifi.org، وصياغة العربية ترجمة بالمعنى مع نقل جملة «لا تجوز شرعاً» كما في مصادر ثانوية؛ يُرجى مطابقة النص العربي الرسمي. 3) حكم التخلص من مال القمار (للفقراء) من الموسوعة ٣٩/٤٠٧ نقلاً عن إحياء علوم الدين ٢/١٢٧؛ ومسألة استرداد رأس المال خلافية لم أحررها. 4) قانونية المراهنات الرياضية في أوهايو منذ 1 يناير 2023 من معرفتي العامة ولم أتحقق منها بمصدر في هذه الجلسة، وكذلك رقم 1-800-GAMBLER — يُرجى التحقق. 5) السحب الخيري (raffle) موقف مستقل public_events.raffle؛ أحلت إليه فقط.\n\n[تدقيق المرحلة 1 — 2026-10-05] قرار المجمع 127 صحيح (الموقع العربي يرقّمه (14/1) والإنجليزي (1/14)). تحقق: المراهنات الرياضية قانونية في أوهايو منذ 1/1/2023 (صحيح). تنبيه: الملخص يقول «المسابقات المجانية ليست قماراً»، والسيناريو يسم «الرهان المجاني» في تطبيق مراهنات بـ wrong ويحيل إلى البطاقة — يُستحسن إضافة جملة صريحة في الحكم عن «الرهانات المجانية الترويجية» في تطبيقات القمار (ذريعة إلى الإيداع، وتسجيل في منصة قمار). الخط الوطني الصحيح للمساعدة: 1-800-GAMBLER (أو 1-800-522-4700) وخط أوهايو 1-800-589-9966 — للمراجع. نجحت الفحوص الآلية.\n\n[تدقيق — إضافة «الرهان المجاني»، 2026-10-05] أُضيف بند في practical_guidance (عربي/إنجليزي) عن الرهانات المجانية الترويجية في تطبيقات المراهنة، مبني حصراً على أدلة موجودة في الملف: قرار المجمع 127 (تحريم المراهنة على نتيجة فعل الغير)، والمائدة 90 (الأمر بالاجتناب)، وحديث البخاري 4860. هو تخريج من المدقق لا فتوى منقولة؛ وعبارة «غالباً ما يُربط بإيداع أو بشرط مراهنة» وصف عام لممارسة السوق يحتاج تأكيد المراجع. يسند هذا وسم السيناريو wrong لخيار «الرهان المجاني»."
+    "notes_for_reviewer": "1) أقوال المذاهب عبر الموسوعة الفقهية الكويتية مادة «ميسر» ٣٩/٤٠٤-٤٠٨ (shamela.ws/book/11430/25825)؛ نص «المحرم العقد وأخذ المال» منسوب للرملي كما في الموسوعة. 2) قرار المجمع 127 منقول من النسخة الإنجليزية الرسمية على iifa-aifi.org، وصياغة العربية ترجمة بالمعنى مع نقل جملة «لا تجوز شرعاً» كما في مصادر ثانوية؛ يُرجى مطابقة النص العربي الرسمي. 3) حكم التخلص من مال القمار (للفقراء) من الموسوعة ٣٩/٤٠٧ نقلاً عن إحياء علوم الدين ٢/١٢٧؛ ومسألة استرداد رأس المال خلافية لم أحررها. 4) قانونية المراهنات الرياضية في أوهايو منذ 1 يناير 2023 من معرفتي العامة ولم أتحقق منها بمصدر في هذه الجلسة، وكذلك رقم 1-800-GAMBLER — يُرجى التحقق. 5) السحب الخيري (raffle) موقف مستقل public_events.raffle؛ أحلت إليه فقط.\n\n[تدقيق المرحلة 1 — 2026-10-05] قرار المجمع 127 صحيح (الموقع العربي يرقّمه (14/1) والإنجليزي (1/14)). تحقق: المراهنات الرياضية قانونية في أوهايو منذ 1/1/2023 (صحيح). تنبيه: الملخص يقول «المسابقات المجانية ليست قماراً»، والسيناريو يسم «الرهان المجاني» في تطبيق مراهنات بـ wrong ويحيل إلى البطاقة — يُستحسن إضافة جملة صريحة في الحكم عن «الرهانات المجانية الترويجية» في تطبيقات القمار (ذريعة إلى الإيداع، وتسجيل في منصة قمار). الخط الوطني الصحيح للمساعدة: 1-800-GAMBLER (أو 1-800-522-4700) وخط أوهايو 1-800-589-9966 — للمراجع. نجحت الفحوص الآلية.\n\n[تدقيق — إضافة «الرهان المجاني»، 2026-10-05] أُضيف بند في practical_guidance (عربي/إنجليزي) عن الرهانات المجانية الترويجية في تطبيقات المراهنة، مبني حصراً على أدلة موجودة في الملف: قرار المجمع 127 (تحريم المراهنة على نتيجة فعل الغير)، والمائدة 90 (الأمر بالاجتناب)، وحديث البخاري 4860. هو تخريج من المدقق لا فتوى منقولة؛ وعبارة «غالباً ما يُربط بإيداع أو بشرط مراهنة» وصف عام لممارسة السوق يحتاج تأكيد المراجع. يسند هذا وسم السيناريو wrong لخيار «الرهان المجاني».",
+    "newcomer_explainer": {
+      "ar": "اليانصيب وبطاقات الكشط والمراهنات الرياضية من الميسر (القمار) الذي حرّمه القرآن (المائدة 90–91). والعلة التي ذكرها القرآن نفسه أنه يوقع العداوة والبغضاء ويصدّ عن ذكر الله وعن الصلاة، ويضيف العلماء أنه نقل للمال بلا عمل ولا مقابل عادل، فربح أحدهم خسارة غيره. ومن ربح منه شيئاً تخلّص منه بإعطائه للفقراء دون قصد الثواب. أما المسابقات المجانية التي لا يدفع فيها المشارك شيئاً فليست قماراً، بخلاف «الرهان المجاني» في تطبيقات المراهنات، فهو رهان على نتيجة مباراة داخل منصة قمار، ولذلك يتجنبه المسلمون.",
+      "en": "Lotteries, scratch cards and sports betting are forms of maysir (gambling), which the Quran forbids (5:90–91). The Quran itself gives the reasons — gambling stirs up enmity and hatred and turns people away from remembering God and from prayer — and scholars add that it moves wealth without work or fair exchange, so one person's gain is another's loss. Anyone who wins must give the winnings away to the poor without seeking reward. A free sweepstakes that requires no payment is not gambling, unlike a promotional \"free bet\" in a betting app, which is still a wager on a game inside a gambling platform, so Muslims avoid it."
+    },
+    "common_ground": {
+      "summary": {
+        "ar": "لا يوجد في الكتاب المقدس نص يذكر اليانصيب باسمه، لكنه يعلّم أن «غنى البُطل يقل» وينهى عن محبة المال، ولهذه المعاني تحذّر كنائس كثيرة من القمار.",
+        "en": "No biblical verse names the lottery, but the Bible teaches that \"wealth gotten by vanity shall be diminished\" and warns against covetousness, and many churches discourage gambling for these reasons."
+      },
+      "bible": [
+        {
+          "ref_en": "Proverbs 13:11",
+          "ref_ar": "أمثال 13: 11",
+          "text_en": "Wealth gotten by vanity shall be diminished: but he that gathereth by labour shall increase.",
+          "text_ar": "غِنَى ٱلْبُطْلِ يَقِلُّ، وَٱلْجَامِعُ بِيَدِهِ يَزْدَادُ.",
+          "source_url": "https://bible-api.com/Proverbs+13:11?translation=kjv",
+          "source_url_ar": "https://api.getbible.net/v2/arabicsv/20/13.json"
+        },
+        {
+          "ref_en": "Hebrews 13:5",
+          "ref_ar": "عبرانيين 13: 5",
+          "text_en": "Let your conversation be without covetousness; and be content with such things as ye have: for he hath said, I will never leave thee, nor forsake thee.",
+          "text_ar": "لِتَكُنْ سِيرَتُكُمْ خَالِيَةً مِنْ مَحَبَّةِ ٱلْمَالِ. كُونُوا مُكْتَفِينَ بِمَا عِنْدَكُمْ، لِأَنَّهُ قَالَ: «لَا أُهْمِلُكَ وَلَا أَتْرُكُكَ»،",
+          "source_url": "https://bible-api.com/Hebrews+13:5?translation=kjv",
+          "source_url_ar": "https://api.getbible.net/v2/arabicsv/58/13.json"
+        }
+      ],
+      "differences": {
+        "ar": "تتنوع المواقف المسيحية: فالكنيسة الميثودية المتحدة مثلاً تعدّ القمار «خطراً على المجتمع» وتدعو إلى الامتناع عنه بما فيه اليانصيب العام، بينما يقرر التعليم المسيحي للكنيسة الكاثوليكية (الفقرة 2413) أن ألعاب الحظ ليست مخالفة للعدل في ذاتها ما لم تحرم الإنسان مما يحتاجه هو وغيره؛ أما الإسلام فيحرّمها مطلقاً.",
+        "en": "Christian views vary: the United Methodist Church, for example, calls gambling \"a menace to society\" and urges abstaining from it, including public lotteries, while the Catechism of the Catholic Church (2413) holds that games of chance are not in themselves contrary to justice unless they deprive someone of what he and others need; Islam forbids them outright."
+      }
+    }
   },
   {
     "id": "street.buying_selling",
@@ -270,8 +334,8 @@
       "en": "Buying and Selling: Hidden Defects, Overcharging, Tips and Fake Reviews"
     },
     "question": {
-      "ar": "يبيع آدم هاتفه المستعمل وفيه عيب في البطارية؛ هل يلزمه بيانه؟ وما حكم الغبن في السعر، والإكرامية (tip)، وكتابة تقييم كاذب لمتجر صديق مقابل خصم؟",
-      "en": "Adam is selling his used phone, which has a battery defect; must he disclose it? And what about overcharging, tipping, and writing a fake review for a friend's store in exchange for a discount?"
+      "ar": "هل يلزم المسلمَ الذي يبيع سلعة مستعملة فيها عيب (كبطارية هاتف ضعيفة) أن يبيّنه؟ وما حكم الغبن في السعر، والإكرامية (tip)، وكتابة تقييم كاذب لمتجر صديق مقابل خصم؟",
+      "en": "Must a Muslim selling a used item with a defect (such as a weak phone battery) disclose it? And what about overcharging, tipping, and writing a fake review for a friend's store in exchange for a discount?"
     },
     "verdict": "haram",
     "summary": {
@@ -448,6 +512,46 @@
     },
     "confidence": "high",
     "review_status": "ai_verified",
-    "notes_for_reviewer": "1) أقوال المذاهب عبر الموسوعة الفقهية الكويتية مادتي «غبن» ٣١/١٣٨-١٤٢ (shamela.ws/book/11430/19679) و«غش» ٣١/٢١٨-٢٢١ (shamela.ws/book/11430/19840). 2) جانب الإكرامية أضعف توثيقاً: لم أجد قراراً مجمعياً، والفتوى المذكورة فردية من مفتٍ حنفي في جنوب أفريقيا؛ وعبارة «يتأكد بالعرف» اجتهاد مني مبني على قاعدة العادة محكّمة — يحتاج مراجعة، ويمكن الاستدلال بحديث «المسلمون على شروطهم» (أبو داود 3594، حسن صحيح عند الألباني) لرسوم الخدمة المعلنة. 3) حظر FTC للتقييمات المزيفة (قاعدة 2024) معلومة عامة لم أفتح مصدرها الرسمي في هذه الجلسة. 4) حديث ابن ماجه 2246 صححه الألباني كما في بيانات الدرجات المرفقة بنسخة السنن (fawazahmed0/hadith-api). 5) آية الحج ٣٠ أُدرجت كاملة والشاهد في آخرها ﴿واجتنبوا قول الزور﴾.\n\n[تدقيق المرحلة 1 — 2026-10-05] لا ملاحظات جوهرية؛ أقوال المذاهب في الغبن والعيب مطابقة للموسوعة الكويتية. قاعدة FTC بحظر التقييمات المزيفة صدرت في أغسطس 2024 (صحيح). نجحت الفحوص الآلية."
+    "notes_for_reviewer": "1) أقوال المذاهب عبر الموسوعة الفقهية الكويتية مادتي «غبن» ٣١/١٣٨-١٤٢ (shamela.ws/book/11430/19679) و«غش» ٣١/٢١٨-٢٢١ (shamela.ws/book/11430/19840). 2) جانب الإكرامية أضعف توثيقاً: لم أجد قراراً مجمعياً، والفتوى المذكورة فردية من مفتٍ حنفي في جنوب أفريقيا؛ وعبارة «يتأكد بالعرف» اجتهاد مني مبني على قاعدة العادة محكّمة — يحتاج مراجعة، ويمكن الاستدلال بحديث «المسلمون على شروطهم» (أبو داود 3594، حسن صحيح عند الألباني) لرسوم الخدمة المعلنة. 3) حظر FTC للتقييمات المزيفة (قاعدة 2024) معلومة عامة لم أفتح مصدرها الرسمي في هذه الجلسة. 4) حديث ابن ماجه 2246 صححه الألباني كما في بيانات الدرجات المرفقة بنسخة السنن (fawazahmed0/hadith-api). 5) آية الحج ٣٠ أُدرجت كاملة والشاهد في آخرها ﴿واجتنبوا قول الزور﴾.\n\n[تدقيق المرحلة 1 — 2026-10-05] لا ملاحظات جوهرية؛ أقوال المذاهب في الغبن والعيب مطابقة للموسوعة الكويتية. قاعدة FTC بحظر التقييمات المزيفة صدرت في أغسطس 2024 (صحيح). نجحت الفحوص الآلية.",
+    "newcomer_explainer": {
+      "ar": "يعدّ الإسلام الصدق في التجارة جزءاً من الدين: فكتمان عيب السلعة محرّم باتفاق الفقهاء ويعطي المشتري حق الردّ، وقد قال النبي ﷺ إن البيّعين إن صدقا وبيّنا بورك لهما في بيعهما (البخاري 2079). والكذب في وصف السلعة أو سعرها، وكتابة التقييمات الكاذبة، محرّمة لأنها غش وقول زور. والغبن اليسير الذي يتسامح فيه الناس معفو عنه، أما الفاحش ففي إثباته حق الفسخ خلاف، ويحرم إذا صاحبه تغرير. والإكرامية إحسان مستحب، فإن أُعلنت في الفاتورة صارت جزءاً من الثمن.",
+      "en": "Islam treats honest trade as part of faith: concealing a defect is forbidden by agreement of the jurists and gives the buyer a right to return the item, and the Prophet ﷺ said that if buyer and seller are truthful and disclose, their deal is blessed (Bukhari 2079). Lying about an item or its price, and posting fake reviews, are forbidden as deception and false statement. A small price difference that people normally tolerate is excused, while gross overcharging is debated as grounds for cancellation and is forbidden when it involves deception. A tip is a recommended kindness, and if it is disclosed as a charge on the bill it becomes part of the price."
+    },
+    "common_ground": {
+      "summary": {
+        "ar": "تلاقٍ قوي: فالتوراة تقول للبائع والمشتري «فلا يغبن أحدكم أخاه»، والأمثال تجعل موازين الغش مكرهة الرب، ووصية «لا تشهد على قريبك شهادة زور» تشمل التقييمات الكاذبة كما يشملها التعليم الإسلامي.",
+        "en": "Strong common ground: the Torah tells buyer and seller \"ye shall not oppress one another\", Proverbs calls a false balance an abomination to the LORD, and the commandment against bearing false witness covers fake reviews just as Islamic teaching does."
+      },
+      "bible": [
+        {
+          "ref_en": "Leviticus 25:14",
+          "ref_ar": "لاويين 25: 14",
+          "text_en": "And if thou sell ought unto thy neighbour, or buyest ought of thy neighbour’s hand, ye shall not oppress one another:",
+          "text_ar": "فَمَتَى بِعْتَ صَاحِبَكَ مَبِيعًا، أَوِ ٱشْتَرَيْتَ مِنْ يَدِ صَاحِبِكَ، فَلَا يَغْبِنْ أَحَدُكُمْ أَخَاهُ.",
+          "source_url": "https://bible-api.com/Leviticus+25:14?translation=kjv",
+          "source_url_ar": "https://api.getbible.net/v2/arabicsv/3/25.json"
+        },
+        {
+          "ref_en": "Proverbs 11:1",
+          "ref_ar": "أمثال 11: 1",
+          "text_en": "A false balance is abomination to the LORD: but a just weight is his delight.",
+          "text_ar": "مَوَازِينُ غِشٍّ مَكْرَهَةُ ٱلرَّبِّ، وَٱلْوَزْنُ ٱلصَّحِيحُ رِضَاهُ.",
+          "source_url": "https://bible-api.com/Proverbs+11:1?translation=kjv",
+          "source_url_ar": "https://api.getbible.net/v2/arabicsv/20/11.json"
+        },
+        {
+          "ref_en": "Exodus 20:16",
+          "ref_ar": "خروج 20: 16",
+          "text_en": "Thou shalt not bear false witness against thy neighbour.",
+          "text_ar": "لَا تَشْهَدْ عَلَى قَرِيبِكَ شَهَادَةَ زُورٍ.",
+          "source_url": "https://bible-api.com/Exodus+20:16?translation=kjv",
+          "source_url_ar": "https://api.getbible.net/v2/arabicsv/2/20.json"
+        }
+      ],
+      "differences": {
+        "ar": "لا فرق يُذكر في المبدأ؛ ويضيف الفقه الإسلامي قواعد تفصيلية كخيار العيب الذي يعطي المشتري حق الرد.",
+        "en": "No meaningful difference in principle; Islamic law adds detailed rules such as the buyer's option to return an item for a hidden defect."
+      }
+    }
   }
 ]

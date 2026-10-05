@@ -7,8 +7,8 @@
       "en": "Christmas & Thanksgiving: Greetings, Office Party, Gifts"
     },
     "question": {
-      "ar": "هل يجوز لآدم أن يهنئ زملاءه بالكريسماس، وأن يحضر حفل نهاية العام في المكتب، وأن يشارك في تبادل الهدايا، وأن يجلس مع أسرة صديقه على عشاء عيد الشكر؟",
-      "en": "May Adam wish his coworkers \"Merry Christmas\", attend the end-of-year office party, join the gift exchange, and sit with a friend's family for Thanksgiving dinner?"
+      "ar": "هل يجوز للمسلم أن يهنئ زملاءه بالكريسماس، وأن يحضر حفل نهاية العام في العمل، وأن يشارك في تبادل الهدايا، وأن يجلس مع أسرة صديقه على عشاء عيد الشكر؟",
+      "en": "May a Muslim wish coworkers \"Merry Christmas\", attend the end-of-year office party, join the gift exchange, and sit with a friend's family for Thanksgiving dinner?"
     },
     "verdict": "disputed",
     "summary": {
@@ -183,7 +183,39 @@
     },
     "confidence": "medium",
     "review_status": "ai_verified",
-    "notes_for_reviewer": "نصوص الآيات من api.quran.com (رسم عثماني) والترجمة Sahih International (resource 20). الأحاديث مأخوذة حرفياً من sunnah.com (حُذف الإسناد واحتُفظ بالمتن من الصحابي). (1) نسبة قول الشافعية إلى مغني المحتاج 5/526 منقولة عن مصدر ثانوي (منشور د. محمد التميمي) ولم نطابقها في المطبوع. (2) نصوص الحنفية والمالكية منقولة عبر الموسوعة الفقهية الكويتية 12/7 بواسطة islamqa، لم نفتح الموسوعة نفسها. (3) لم نتحقق من رقم دورة قرار المجلس الأوروبي؛ المصدر موقع إسلام أون لاين. (4) آية الفرقان 72: تفسير «الزور» بأعياد المشركين قول بعض السلف (مجاهد والضحاك وابن سيرين وغيرهم كما في التفاسير) — لم ننقل نص التفسير، فالمرجع يحتاج إضافة. (5) فتوى دار الإفتاء المصرية بجواز التهنئة موجودة (dar-alifta.org/ar/articles/details/5603) ولم نُدرجها لاختصار القائمة. (6) د. مزمل صديقي يُعرَّف في مقال 2012 بأنه نائب رئيس المجلس، وفي الفتوى الأخرى رئيسه — يُرجى توحيد الصفة.\n\n[تدقيق المرحلة 1 — 2026-10-05] صُحّح اسم المفتي في decision_ref إلى «د. مائن خالد القضاة». عرض الخلاف متوازن (ابن القيم/العثيمين مقابل المجلس الأوروبي/FCNA). نص الشربيني «ويعزر من وافق الكفار في أعيادهم... ومن هنأه بعيده» معروف في مغني المحتاج (باب الجزية) لكن لم يُطابق الجزء والصفحة. نجحت الفحوص الآلية."
+    "notes_for_reviewer": "نصوص الآيات من api.quran.com (رسم عثماني) والترجمة Sahih International (resource 20). الأحاديث مأخوذة حرفياً من sunnah.com (حُذف الإسناد واحتُفظ بالمتن من الصحابي). (1) نسبة قول الشافعية إلى مغني المحتاج 5/526 منقولة عن مصدر ثانوي (منشور د. محمد التميمي) ولم نطابقها في المطبوع. (2) نصوص الحنفية والمالكية منقولة عبر الموسوعة الفقهية الكويتية 12/7 بواسطة islamqa، لم نفتح الموسوعة نفسها. (3) لم نتحقق من رقم دورة قرار المجلس الأوروبي؛ المصدر موقع إسلام أون لاين. (4) آية الفرقان 72: تفسير «الزور» بأعياد المشركين قول بعض السلف (مجاهد والضحاك وابن سيرين وغيرهم كما في التفاسير) — لم ننقل نص التفسير، فالمرجع يحتاج إضافة. (5) فتوى دار الإفتاء المصرية بجواز التهنئة موجودة (dar-alifta.org/ar/articles/details/5603) ولم نُدرجها لاختصار القائمة. (6) د. مزمل صديقي يُعرَّف في مقال 2012 بأنه نائب رئيس المجلس، وفي الفتوى الأخرى رئيسه — يُرجى توحيد الصفة.\n\n[تدقيق المرحلة 1 — 2026-10-05] صُحّح اسم المفتي في decision_ref إلى «د. مائن خالد القضاة». عرض الخلاف متوازن (ابن القيم/العثيمين مقابل المجلس الأوروبي/FCNA). نص الشربيني «ويعزر من وافق الكفار في أعيادهم... ومن هنأه بعيده» معروف في مغني المحتاج (باب الجزية) لكن لم يُطابق الجزء والصفحة. نجحت الفحوص الآلية.",
+    "newcomer_explainer": {
+      "ar": "يأمر الإسلام بالبر والعدل مع الجيران من أهل الأديان الأخرى (الممتحنة 8) وبردّ التحية بأحسن منها (النساء 86)، لكنه لا يجيز المشاركة في الشعائر الدينية لأعياد الأديان الأخرى. ويختلف العلماء في التهنئة اللفظية بالعيد الديني: فمنعها ابن القيم وكثير من المتقدمين والمعاصرين، وأجازها المجلس الأوروبي للإفتاء وآخرون بضوابط من باب البر. وعيد الشكر مختلف فيه أيضاً: فمنهم من يراه مناسبة وطنية عائلية، ومنهم من يرى له أصلاً دينياً. والمسلمون يحبون المسيح عيسى ويجلّونه نبياً عظيماً، لكنهم لا يشاركون الاعتقاد بألوهيته الذي يحتفل به عيد الميلاد، ولذلك يبقي كثير منهم مشاركتهم اجتماعية لا دينية.",
+      "en": "Islam asks Muslims to be kind and just to neighbours of other faiths (60:8) and to return greetings with something better (4:86), but not to take part in the religious rites of another faith's holidays. Scholars differ on verbally congratulating someone on a religious holiday: Ibn al-Qayyim and many classical and contemporary scholars did not allow it, while the European Council for Fatwa and others allow it with conditions as an act of kindness. Thanksgiving is debated too: some see it as a civic family occasion, others consider it to have a religious origin. Muslims love and honour Jesus as a great prophet but do not share the belief in his divinity that Christmas celebrates, which is why many keep their participation social rather than religious."
+    },
+    "common_ground": {
+      "summary": {
+        "ar": "يدعو التقليدان إلى مسالمة جميع الناس وإلى شكر الله على نعمه؛ والصديق المسلم الذي يعتذر عن الجانب الديني من العيد ثم يقدّم تمنياته الطيبة أو هديته يتصرف بالاحترام نفسه للإيمان الذي يعرفه المسيحيون المتدينون.",
+        "en": "Both traditions call for living peaceably with all people and for giving thanks to God; a Muslim friend who sits out the religious part of a holiday yet offers warm wishes or a gift is acting from the same respect for faith that devout Christians recognise."
+      },
+      "bible": [
+        {
+          "ref_en": "Romans 12:18",
+          "ref_ar": "رومية 12: 18",
+          "text_en": "If it be possible, as much as lieth in you, live peaceably with all men.",
+          "text_ar": "إِنْ كَانَ مُمْكِنًا فَحَسَبَ طَاقَتِكُمْ سَالِمُوا جَمِيعَ ٱلنَّاسِ.",
+          "source_url": "https://bible-api.com/Romans+12:18?translation=kjv",
+          "source_url_ar": "https://api.getbible.net/v2/arabicsv/45/12.json"
+        },
+        {
+          "ref_en": "Psalms 107:1",
+          "ref_ar": "مزمور 107: 1",
+          "text_en": "O give thanks unto the LORD, for he is good: for his mercy endureth for ever.",
+          "text_ar": "اِحْمَدُوا ٱلرَّبَّ لِأَنَّهُ صَالِحٌ، لِأَنَّ إِلَى ٱلْأَبَدِ رَحْمَتَهُ.",
+          "source_url": "https://bible-api.com/Psalms+107:1?translation=kjv",
+          "source_url_ar": "https://api.getbible.net/v2/arabicsv/19/107.json"
+        }
+      ],
+      "differences": {
+        "ar": "يحتفل المسيحيون في عيد الميلاد بتجسّد المسيح وميلاده بوصفه ابن الله، أما المسلمون فيكرمون عيسى نبياً ومسيحاً وُلد من مريم العذراء ولا يعتقدون ألوهيته. واحتراماً للإيمانين تعرض اللعبة المسلمين وهم يتبادلون اللطف والهدايا دون المشاركة في العبادة، لا على سبيل المناظرة.",
+        "en": "At Christmas, Christians celebrate the incarnation and birth of Jesus as the Son of God; Muslims honour Jesus as a prophet and the Messiah born of the Virgin Mary but do not believe he is divine. Out of respect for both faiths, the game shows Muslims sharing kindness and gifts without joining worship, not as a matter for debate."
+      }
+    }
   },
   {
     "id": "public_events.alcohol_table",
@@ -193,8 +225,8 @@
       "en": "Company Party: A Table Where Alcohol Is Served"
     },
     "question": {
-      "ar": "في حفل الشركة السنوي جلس الفريق حول طاولة تُصبّ عليها النبيذ والبيرة. هل يجلس آدم معهم؟ وما البديل المقبول دون أن يخسر علاقته بفريقه؟",
-      "en": "At the annual company party, Adam's team sits at a table where wine and beer are being poured. Should he sit with them, and what is an acceptable alternative that keeps his relationship with the team?"
+      "ar": "ماذا يعلّم الإسلام عن الجلوس إلى طاولة يُصبّ عليها النبيذ والبيرة في حفل الشركة؟ وما البديل المقبول الذي يحفظ للمسلم علاقته بفريقه؟",
+      "en": "What does Islam teach about sitting at a company-party table where wine and beer are being poured, and what acceptable alternative lets a Muslim keep good relations with the team?"
     },
     "verdict": "haram",
     "summary": {
@@ -320,7 +352,47 @@
     },
     "confidence": "medium",
     "review_status": "ai_verified",
-    "notes_for_reviewer": "درجة حديث الترمذي 2801 مختلف فيها (ليث بن أبي سليم)، والحكم عند المذاهب مبني أيضاً على باب الوليمة التي فيها منكر لا على هذا الحديث وحده. أرقام الأجزاء والصفحات للمذاهب منقولة من الموسوعة الفقهية بالدرر السنية (dorar.net/feqhia/4398) ونص المحيط البرهاني من المكتبة الشاملة (shamela.ws/book/10875/2001) — ولم نطابق بقية المراجع في المطبوع. لم نجد فتوى منشورة لـ AMJA أو مجمع الفقه الدولي في هذه الجزئية بعينها. التفريق بين «حضور المناسبة» و«الجلوس على المائدة» اجتهاد معاصر يحتاج تأكيد المراجع. أثر عمر بن عبد العزيز في جلد من جالس الشاربة وإن كان صائماً مذكور في كتب التفسير عند النساء 140 — لم نُدرجه لعدم مطالعة النص.\n\n[تدقيق المرحلة 1 — 2026-10-05] الحكم منسجم مع نصوص المذاهب في الوليمة ذات المنكر، ودرجة حديث الترمذي 2801 معروضة بأمانة (الألباني: حسن؛ بشار عواد وزبير علي زئي: ضعيف — بحسب hadith-api). نجحت الفحوص الآلية."
+    "notes_for_reviewer": "درجة حديث الترمذي 2801 مختلف فيها (ليث بن أبي سليم)، والحكم عند المذاهب مبني أيضاً على باب الوليمة التي فيها منكر لا على هذا الحديث وحده. أرقام الأجزاء والصفحات للمذاهب منقولة من الموسوعة الفقهية بالدرر السنية (dorar.net/feqhia/4398) ونص المحيط البرهاني من المكتبة الشاملة (shamela.ws/book/10875/2001) — ولم نطابق بقية المراجع في المطبوع. لم نجد فتوى منشورة لـ AMJA أو مجمع الفقه الدولي في هذه الجزئية بعينها. التفريق بين «حضور المناسبة» و«الجلوس على المائدة» اجتهاد معاصر يحتاج تأكيد المراجع. أثر عمر بن عبد العزيز في جلد من جالس الشاربة وإن كان صائماً مذكور في كتب التفسير عند النساء 140 — لم نُدرجه لعدم مطالعة النص.\n\n[تدقيق المرحلة 1 — 2026-10-05] الحكم منسجم مع نصوص المذاهب في الوليمة ذات المنكر، ودرجة حديث الترمذي 2801 معروضة بأمانة (الألباني: حسن؛ بشار عواد وزبير علي زئي: ضعيف — بحسب hadith-api). نجحت الفحوص الآلية.",
+    "newcomer_explainer": {
+      "ar": "يحرّم الإسلام الخمر، وقد نهى النبي ﷺ عن الجلوس على مائدة يُشرب عليها الخمر (الترمذي 2801 وحسّنه هو والألباني، مع كلام لبعض العلماء في إسناده؛ وله شاهد عند أبي داود 3774 مختلف فيه). والحكمة الابتعاد عمّا يضر، وألا يبدو المسلم مُقِرّاً له. ويجيز بعض المعاصرين حضور مناسبة العمل مع اختيار طاولة خالية من الخمر أو المغادرة عند بدء الشرب، بينما يرى آخرون عدم حضور مثل هذه المناسبات أصلاً. والزميل المسلم الذي ينتقل إلى طاولة أخرى يتبع دينه ولا يحكم على أحد.",
+      "en": "Islam forbids alcohol, and the Prophet ﷺ forbade sitting at a table where wine is being drunk (Tirmidhi 2801, graded hasan by al-Tirmidhi and al-Albani, though some scholars discuss its chain; a similar report in Abu Dawud 3774 is disputed). The wisdom is keeping a distance from what harms and not appearing to approve of it. Some contemporary scholars allow attending a work event while choosing an alcohol-free table or leaving when the drinking starts, while others advise not attending such events at all. A Muslim colleague who moves to another table is following his faith, not judging anyone."
+    },
+    "common_ground": {
+      "summary": {
+        "ar": "يحذّر الكتاب المقدس من أن «الخمر مستهزئة» ويأمر «لا تسكروا بالخمر»، ويقول بولس إنه حسن ألا يشرب الإنسان خمراً إن كان ذلك يُعثر أخاه — وهو مبدأ يستطيع آدم أن يطبّقه حين يجلس مع صديقه المسلم على طاولة بلا خمر.",
+        "en": "The Bible warns that \"wine is a mocker\" and commands \"be not drunk with wine\", and Paul says it is good not to drink wine if it makes a brother stumble — a principle Adam can live out by joining his Muslim friend at an alcohol-free table."
+      },
+      "bible": [
+        {
+          "ref_en": "Proverbs 20:1",
+          "ref_ar": "أمثال 20: 1",
+          "text_en": "Wine is a mocker, strong drink is raging: and whosoever is deceived thereby is not wise.",
+          "text_ar": "اَلْخَمْرُ مُسْتَهْزِئَةٌ. ٱلْمُسْكِرُ عَجَّاجٌ، وَمَنْ يَتَرَنَّحُ بِهِمَا فَلَيْسَ بِحَكِيمٍ.",
+          "source_url": "https://bible-api.com/Proverbs+20:1?translation=kjv",
+          "source_url_ar": "https://api.getbible.net/v2/arabicsv/20/20.json"
+        },
+        {
+          "ref_en": "Ephesians 5:18",
+          "ref_ar": "أفسس 5: 18",
+          "text_en": "And be not drunk with wine, wherein is excess; but be filled with the Spirit;",
+          "text_ar": "وَلَا تَسْكَرُوا بِٱلْخَمْرِ ٱلَّذِي فِيهِ ٱلْخَلَاعَةُ، بَلِ ٱمْتَلِئُوا بِٱلرُّوحِ،",
+          "source_url": "https://bible-api.com/Ephesians+5:18?translation=kjv",
+          "source_url_ar": "https://api.getbible.net/v2/arabicsv/49/5.json"
+        },
+        {
+          "ref_en": "Romans 14:21",
+          "ref_ar": "رومية 14: 21",
+          "text_en": "It is good neither to eat flesh, nor to drink wine, nor any thing whereby thy brother stumbleth, or is offended, or is made weak.",
+          "text_ar": "حَسَنٌ أَنْ لَا تَأْكُلَ لَحْمًا وَلَا تَشْرَبَ خَمْرًا وَلَا شَيْئًا يَصْطَدِمُ بِهِ أَخُوكَ أَوْ يَعْثُرُ أَوْ يَضْعُفُ.",
+          "source_url": "https://bible-api.com/Romans+14:21?translation=kjv",
+          "source_url_ar": "https://api.getbible.net/v2/arabicsv/45/14.json"
+        }
+      ],
+      "differences": {
+        "ar": "تبيح أغلب الكنائس الشرب المعتدل وتنهى عن السُّكر، والخمر تُستعمل في سرّ العشاء الرباني، مع أن بعض الطوائف تدعو إلى الامتناع التام؛ أما الإسلام فيحرّم الخمر قليلها وكثيرها، ولذلك يتجنب المسلم مجلس الشرب نفسه.",
+        "en": "Most churches permit moderate drinking while forbidding drunkenness, and wine is used in Holy Communion, though some denominations promote total abstinence; Islam forbids alcohol in any amount, which is why a Muslim avoids the drinking table itself."
+      }
+    }
   },
   {
     "id": "public_events.raffle",
@@ -460,6 +532,30 @@
     },
     "confidence": "high",
     "review_status": "ai_verified",
-    "notes_for_reviewer": "نص القرار 127 منقول حرفياً من موقع المجمع الرسمي (iifa-aifi.org/ar/2114.html). نصوص المذاهب منقولة من الموسوعة الفقهية بالدرر السنية (dorar.net/feqhia/11561، 11564، 11566) ولم نطابق المطبوعات؛ ومرجع الحنابلة عام (ابن تيمية) — يُستحسن إضافة نص من كشاف القناع أو المغني في تعريف القمار. حكم التذكرة المدمجة في ثمن الدخول اجتهاد عملي منا يحتاج تأكيد العالم المراجع. لم نجد فتوى AMJA منشورة بخصوص raffle تحديداً.\n\n[تدقيق المرحلة 1 — 2026-10-05] نص القرار 127 مطابق للموقع الرسمي (الموقع العربي يكتب الرقم (14/1) والإنجليزي (1/14)، فكلا الترقيمين وارد). نجحت الفحوص الآلية."
+    "notes_for_reviewer": "نص القرار 127 منقول حرفياً من موقع المجمع الرسمي (iifa-aifi.org/ar/2114.html). نصوص المذاهب منقولة من الموسوعة الفقهية بالدرر السنية (dorar.net/feqhia/11561، 11564، 11566) ولم نطابق المطبوعات؛ ومرجع الحنابلة عام (ابن تيمية) — يُستحسن إضافة نص من كشاف القناع أو المغني في تعريف القمار. حكم التذكرة المدمجة في ثمن الدخول اجتهاد عملي منا يحتاج تأكيد العالم المراجع. لم نجد فتوى AMJA منشورة بخصوص raffle تحديداً.\n\n[تدقيق المرحلة 1 — 2026-10-05] نص القرار 127 مطابق للموقع الرسمي (الموقع العربي يكتب الرقم (14/1) والإنجليزي (1/14)، فكلا الترقيمين وارد). نجحت الفحوص الآلية.",
+    "newcomer_explainer": {
+      "ar": "شراء تذكرة سحب تُدفع قيمتها وتموَّل منها الجوائز يعدّه الإسلام من الميسر (القمار) المحرّم ولو ذهب الريع لعمل خيري، وبهذا صدر قرار مجمع الفقه الإسلامي الدولي 127. والعلة أن كل مشارك يدفع ماله رجاء أن يربح على حساب غيره، وقد ذكر القرآن أن الميسر يوقع العداوة والبغضاء (المائدة 91). أما السحب المجاني الذي لا يدفع فيه أحد شيئاً والجائزة فيه من الشركة فجائز. والمسلم الذي يريد دعم القضية الخيرية يتبرع مباشرة دون تذكرة.",
+      "en": "In Islam, buying a paid raffle ticket whose price funds the prizes counts as maysir (gambling) and is forbidden even when the proceeds go to charity, as stated in International Islamic Fiqh Academy Resolution 127. The reason is that each participant pays hoping to win at others' expense, and the Quran says gambling stirs up enmity and hatred (5:91). A free draw where nobody pays and the company funds the prize is permissible. A Muslim who wants to support the cause simply donates directly, without a ticket."
+    },
+    "common_ground": {
+      "summary": {
+        "ar": "يحب التقليدان العطاء الخيري لذاته؛ فبولس يكتب أن «المعطي المسرور يحبه الله»، وهذا يوافق تفضيل الإسلام للتبرع المباشر على التذكرة. ولا يوجد نص كتابي خاص بالسحب الخيري.",
+        "en": "Both traditions love charitable giving for its own sake; Paul writes that \"God loveth a cheerful giver\", which fits the Islamic preference for a direct donation over a ticket. There is no specific biblical text about raffles."
+      },
+      "bible": [
+        {
+          "ref_en": "2 Corinthians 9:7",
+          "ref_ar": "كورنثوس الثانية 9: 7",
+          "text_en": "Every man according as he purposeth in his heart, so let him give; not grudgingly, or of necessity: for God loveth a cheerful giver.",
+          "text_ar": "كُلُّ وَاحِدٍ كَمَا يَنْوِي بِقَلْبِهِ، لَيْسَ عَنْ حُزْنٍ أَوِ ٱضْطِرَارٍ. لِأَنَّ ٱلْمُعْطِيَ ٱلْمَسْرُورَ يُحِبُّهُ ٱللهُ.",
+          "source_url": "https://bible-api.com/2%20Corinthians+9:7?translation=kjv",
+          "source_url_ar": "https://api.getbible.net/v2/arabicsv/47/9.json"
+        }
+      ],
+      "differences": {
+        "ar": "السحوبات الخيرية وأمسيات البنغو وسيلة شائعة لجمع التبرعات في بعض الكنائس (كثير من الأبرشيات الكاثوليكية مثلاً)، بينما تعارض كنائس أخرى كالميثودية المتحدة القمار بكل صوره؛ أما في الإسلام فالسحب المدفوع قمار مهما كانت غايته نبيلة.",
+        "en": "Raffles and bingo nights are common fundraisers in some churches (many Catholic parishes, for example), while other churches such as the United Methodist Church oppose gambling in all its forms; in Islam a paid raffle is gambling however good the cause."
+      }
+    }
   }
 ]
