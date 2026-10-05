@@ -116,7 +116,7 @@ export function menuScreen(handlers) {
       h('h3', {}, t('locations')),
       h('ul', { class: 'loc-list' }, rows),
       h('div', { class: 'stack' },
-        btn(t('summaryTitle'), () => { m.close(); handlers.onSummary(); }, 'ghost'),
+        btn(allSituations().every((s) => isDone(s.key)) ? t('summaryTitle') : t('progressTitle'), () => { m.close(); handlers.onSummary(); }, 'ghost'),
         btn(t('restart'), () => { if (confirm(t('confirmRestart'))) { m.close(); handlers.onRestart(); } }, 'danger'))
     ]);
   };
@@ -183,20 +183,22 @@ function referralBlock() {
     h('div', { class: 'row' }, link(`https://www.google.com/maps/search/${q}`, t('referralButton'))));
 }
 
-/** Final summary. Resolves 'again' | 'back' | 'goto:<location>'. Stores/asks nothing about the player's beliefs. */
+/** Final summary. Resolves 'again' | 'back' | 'goto:<location>'. Stores/asks nothing about the player's beliefs.
+ * Before all situations are done it is a "progress so far" view (no end-of-week title, no score verdict). */
 export function summaryScreen() {
   const sits = allSituations();
   const done = sits.filter((s) => isDone(s.key));
+  const final = sits.length > 0 && done.length === sits.length;
   const max = sits.reduce((a, s) => a + Math.max(0, ...(s.choices || []).map((c) => c.points || 0)) + (s.check_question ? CHECK_BONUS : 0), 0);
   return new Promise((resolve) => {
-    const m = openModal({ variant: 'screen', className: 'summary', label: t('summaryTitle'), onClose: (r) => resolve(r ?? 'back') });
+    const m = openModal({ variant: 'screen', className: 'summary', label: final ? t('summaryTitle') : t('progressTitle'), onClose: (r) => resolve(r ?? 'back') });
     setContent(m, [h('div', { class: 'summary-inner' },
       h('p', { class: 'eyebrow' }, t('gameTitle')),
-      h('h1', {}, t('summaryTitle')),
-      p(STRINGS.endMessage ? t('endMessage') : null, 'lead'),
-      p(STRINGS.tier_high ? t(max && totalScore() / max >= 0.75 ? 'tier_high' : max && totalScore() / max >= 0.45 ? 'tier_mid' : 'tier_low') : null, 'tier'),
+      h('h1', {}, final ? t('summaryTitle') : t('progressTitle')),
+      p(final ? (STRINGS.endMessage ? t('endMessage') : null) : t('progressMessage'), 'lead'),
+      p(final && STRINGS.tier_high ? t(max && totalScore() / max >= 0.75 ? 'tier_high' : max && totalScore() / max >= 0.45 ? 'tier_mid' : 'tier_low') : null, 'tier'),
       h('div', { class: 'stats' },
-        h('div', { class: 'stat' }, h('span', { class: 'big-num' }, `${totalScore()}`), h('span', { class: 'muted' }, `${t('finalScore')} (${t('of')} ${max})`)),
+        h('div', { class: 'stat' }, h('span', { class: 'big-num' }, `${totalScore()}`), h('span', { class: 'muted' }, `${final ? t('finalScore') : t('progressScore')} (${t('of')} ${max})`)),
         h('div', { class: 'stat' }, h('span', { class: 'big-num' }, `${done.length}/${sits.length}`), h('span', { class: 'muted' }, t('completed'))),
         h('div', { class: 'stat' }, h('span', { class: 'big-num' }, String(sits.filter((s) => { const r = sitRecord(s.key); const best = (s.choices || []).find((c) => c.quality === 'best'); return r && best && r.tried.includes(best.id) && r.best >= best.points; }).length)), h('span', { class: 'muted' }, t('bestChoices'))),
         h('div', { class: 'stat' }, h('span', { class: 'big-num' }, String(sits.filter((s) => sitRecord(s.key)?.check === true).length)), h('span', { class: 'muted' }, t('correctChecks')))),

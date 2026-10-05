@@ -156,6 +156,9 @@
 
   "end": {
     "title": {"ar": "انتهى الأسبوع", "en": "That's a Wrap"},
+    "progress_title": {"ar": "تقدّمك حتى الآن", "en": "Your progress so far"},
+    "progress_message": {"ar": "أسبوع آدم لم ينتهِ بعد. هذا ما تعلّمه حتى الآن — تابع اللعب لتكمل بقية المواقف.", "en": "Adam's week isn't over yet. Here's what he has learned so far — keep playing to explore the rest."},
+    "progress_score": {"ar": "النقاط حتى الآن", "en": "Score so far"},
     "message": {
       "ar": "عاش آدم أسبوعاً عادياً مع جيران وأصدقاء مسلمين، وتعلّم أن يسأل بدل أن يفترض. لم يتغير هو، ولم يتغير أصدقاؤه — لكنهم صاروا يفهمون بعضهم أكثر.",
       "en": "Adam spent an ordinary week with Muslim neighbors and friends, and learned to ask instead of assume. He didn't change who he is, and neither did they — but they understand each other a lot better now."

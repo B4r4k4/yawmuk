@@ -165,7 +165,8 @@ export async function startGame() {
 
   async function showSummary() {
     setMode('ui');
-    setFlag('finished', true);
+    // only a completed day counts as finished; the menu can open this screen mid-game as "progress so far"
+    if (allSituations().every((s) => isDone(s.key))) setFlag('finished', true);
     const r = await summaryScreen();
     if (r === 'again') { resetProgress(); await enterLocation(LOCATIONS[0]); }
     else if (typeof r === 'string' && r.startsWith('goto:')) await enterLocation(r.slice(5));
