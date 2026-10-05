@@ -63,3 +63,16 @@ Other props:
   - Headless Chrome (SwiftShader) on dist: the real scene loaded (not the placeholder), all 13 NPCs are present, Samir has both stations, and there are 3 point lights.
   - The 200-bulb twinkle InstancedMesh is present and visible, with GL error 0 and no console errors. Screenshots show the string bulbs and the coloured tree bulbs.
   - `npm test` has 1 failure outside this scene: `tests/safety.test.mjs`, "abstention: a citation with no verified text shows 'not provided'", in `src/engine/ui/rulingCard.js`.
+
+## Phase 3 performance pass
+- **Background guests are baked.** Each of the 11 `bg_*` NPCs is built with `ctx.makeNPC` (bg_dave keeps his Santa hat) and then merged into one vertex-coloured mesh. All 11 share one material and are passed as `object` with `animate:false` and `showName:false`. `samir` and `rania` stay as full animated engine figures, and Samir keeps his `stations`.
+- **Static decor is merged per material.** After the scene is built, every plain mesh that shares a material is merged into one mesh. The rotating star stays separate.
+- **Fewer triangles.** The 200 twinkle bulbs now use an icosahedron (20 tris each), and the chandelier glows use icosahedron detail 1.
+- **Results** (headless Chrome, desktop 1366×768, at spawn):
+
+  | | Meshes | Draw calls | Triangles | Point lights |
+  |---|---|---|---|---|
+  | Before (QA) | 309 | 289 | 52k | 3 |
+  | After | 120 | 136 | 44.8k | 3 |
+
+- **Verification:** `npm run build` passes. `npm test` passes 197/197. The desktop-en e2e run passes all 18 situations, and `public_events: station NPC placed on entry` passes. No console errors.

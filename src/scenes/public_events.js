@@ -239,7 +239,7 @@ export default {
       const r = treeR(y) * 0.9 + 0.05;
       bulbs.push({ p: [TREE[0] + Math.cos(a) * r, y, TREE[1] + Math.sin(a) * r], c: treeCols[i % 5] });
     }
-    instanced(new THREE.SphereGeometry(0.045, 6, 5), twinkleMat, bulbs, { cast: false, receive: false });
+    instanced(new THREE.IcosahedronGeometry(0.045, 0), twinkleMat, bulbs, { cast: false, receive: false });
 
     // ------------------------------------------------------------------ chandeliers
     const CH = [[-5, -2.9], [0, -1], [5, -2.9]];
@@ -251,7 +251,7 @@ export default {
       chGlow.push({ p: [x, CHY - 0.05, z], s: 1.7 });
       for (let k = 0; k < 8; k++) { const a = (k / 8) * Math.PI * 2; chGlow.push({ p: [x + Math.cos(a) * 0.6, CHY + 0.1, z + Math.sin(a) * 0.6], s: 0.7 }); }
     }
-    instanced(new THREE.SphereGeometry(0.1, 10, 8), glowMat, chGlow, { cast: false, receive: false });
+    instanced(new THREE.IcosahedronGeometry(0.1, 1), glowMat, chGlow, { cast: false, receive: false });
 
     // ------------------------------------------------------------------ round dinner tables (6) with chairs, plates, glasses, candles
     // slot k sits at angle off + k*45°; 'chair' (default), 'stand' (plate, no chair — a guest stands there), 'empty'
@@ -455,6 +455,43 @@ export default {
       }
     }
     const P = (id, pos, yaw, look, extra = {}) => ({ id, position: [pos[0], 0, pos[1]], yaw, look, ...extra });
+    // [Phase 3 perf] background guests are baked: makeNPC's ~20 meshes are merged into ONE mesh with vertex
+    // colours (all bg guests share one material) and passed as `object` with animate:false. Only the
+    // situation NPCs (samir, rania) stay as full animated engine figures.
+    const bakedMat = new THREE.MeshStandardMaterial({ vertexColors: true, roughness: 0.85, side: THREE.DoubleSide });
+    disposables.push(bakedMat);
+    const tmpCol = new THREE.Color();
+    const bake = (fig) => {
+      fig.updateMatrixWorld(true);
+      const parts = [];
+      fig.traverse((o) => {
+        if (!o.isMesh) return;
+        const g = o.geometry.index ? o.geometry.toNonIndexed() : o.geometry.clone();
+        g.applyMatrix4(o.matrixWorld);
+        const n = g.attributes.position.count, col = new Float32Array(n * 3);
+        tmpCol.copy(o.material.color);
+        for (let i = 0; i < n; i++) { col[i * 3] = tmpCol.r; col[i * 3 + 1] = tmpCol.g; col[i * 3 + 2] = tmpCol.b; }
+        parts.push({ g, col });
+        if (!o.geometry.userData?.shared) o.geometry.dispose();
+        if (!o.material.userData?.shared) o.material.dispose();
+      });
+      let count = 0; for (const p of parts) count += p.g.attributes.position.count;
+      const pos = new Float32Array(count * 3), nor = new Float32Array(count * 3), col = new Float32Array(count * 3);
+      let off = 0;
+      for (const p of parts) { pos.set(p.g.attributes.position.array, off * 3); nor.set(p.g.attributes.normal.array, off * 3); col.set(p.col, off * 3); off += p.g.attributes.position.count; p.g.dispose(); }
+      const geo = new THREE.BufferGeometry();
+      geo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+      geo.setAttribute('normal', new THREE.BufferAttribute(nor, 3));
+      geo.setAttribute('color', new THREE.BufferAttribute(col, 3));
+      geo.computeBoundingSphere();
+      const mesh = new THREE.Mesh(geo, bakedMat);
+      mesh.castShadow = true; mesh.receiveShadow = true;
+      return mesh;
+    };
+    const BG = (id, pos, yaw, look, prebuilt) => {
+      if (typeof ctx.makeNPC !== 'function') return P(id, pos, yaw, look);
+      return P(id, pos, yaw, look, { object: bake(prebuilt || ctx.makeNPC(look)), animate: false, showName: false });
+    };
     const jakeTable = TABLES[0];
     const sp = (t, k) => { const [x, z] = slotPos(t, k, 1.25); return [x, z]; };
     const emilyPos = sp(jakeTable, 4);
@@ -474,17 +511,17 @@ export default {
         }
       }),
       P('rania', raniaPos, yawTo(raniaPos, [0, 6.6]), { skin: '#d1a17a', shirt: '#7d7d85', dress: '#7d7d85', hijab: '#6a4c93', hijabColor: '#6a4c93', height: 1.65 }),
-      P('bg_dave', davePos, yawTo(davePos, [-6.3, 5]), daveLook, daveObj ? { object: daveObj } : {}),
-      P('bg_jake', jakePos, yawTo(jakePos, jakeTable.c), { skin: '#f1c27d', shirt: '#f4f4f4', suit: '#1c1c1c', tie: '#f4f4f4', hair: '#c9a45c', beard: '#c9a45c', pants: '#1c1c1c', height: 1.82, build: 1.1 }),
-      P('bg_linda', [6.55, 5.0], yawTo([6.55, 5.0], [0, 7]), { skin: '#e0b98f', shirt: '#2b5f9e', dress: '#2b5f9e', hair: '#141414', pants: '#2b5f9e', height: 1.67 }),
-      P('bg_emily', emilyPos, yawTo(emilyPos, jakeTable.c), { skin: '#f3d3b5', shirt: '#8e3b46', dress: '#8e3b46', hair: '#b5442a', height: 1.65 }),
-      P('bg_sarah', sarahPos, yawTo(sarahPos, [9.1, 1.85]), { skin: '#f1cfae', shirt: '#1f3b5c', dress: '#1f3b5c', hair: '#7b3f20', height: 1.66 }),
-      P('bg_priya', [9.25, 3.3], yawTo([9.25, 3.3], [8.6, 1.9]), { skin: '#a0673d', shirt: '#e07a5f', dress: '#e07a5f', hair: '#1e1611', height: 1.62, build: 1.15 }),
-      P('bg_tom', [9.1, 1.85], yawTo([9.1, 1.85], [9.25, 3.3]), { skin: '#f1c27d', shirt: '#4a4a4a', suit: '#4a4a4a', tie: '#7a2236', hair: '#b8b8b8', height: 1.78 }),
-      P('bg_amina', aminaPos, yawTo(aminaPos, TABLES[1].c), { skin: '#c99a6e', shirt: '#5b3f7a', hijab: '#2f3e66', dress: '#3b2f55', height: 1.64 }),
-      P('bg_marcus', marcusPos, yawTo(marcusPos, aminaPos), { skin: '#5a3a22', shirt: '#f2f2f2', suit: '#2a2a35', tie: '#8e2b2b', hair: '#141414', height: 1.83 }),
-      P('bg_grace', gracePos, yawTo(gracePos, TABLES[2].c), { skin: '#f0d5b8', shirt: '#2e7d6b', dress: '#2e7d6b', hair: '#d4a76a', height: 1.66 }),
-      P('bg_kenji', kenjiPos, yawTo(kenjiPos, TABLES[4].c), { skin: '#e8c39e', shirt: '#d9d4c7', suit: '#3a4a5a', tie: '#c9a227', hair: '#111111', glasses: true, height: 1.74 })
+      BG('bg_dave', davePos, yawTo(davePos, [-6.3, 5]), daveLook, daveObj),
+      BG('bg_jake', jakePos, yawTo(jakePos, jakeTable.c), { skin: '#f1c27d', shirt: '#f4f4f4', suit: '#1c1c1c', tie: '#f4f4f4', hair: '#c9a45c', beard: '#c9a45c', pants: '#1c1c1c', height: 1.82, build: 1.1 }),
+      BG('bg_linda', [6.55, 5.0], yawTo([6.55, 5.0], [0, 7]), { skin: '#e0b98f', shirt: '#2b5f9e', dress: '#2b5f9e', hair: '#141414', pants: '#2b5f9e', height: 1.67 }),
+      BG('bg_emily', emilyPos, yawTo(emilyPos, jakeTable.c), { skin: '#f3d3b5', shirt: '#8e3b46', dress: '#8e3b46', hair: '#b5442a', height: 1.65 }),
+      BG('bg_sarah', sarahPos, yawTo(sarahPos, [9.1, 1.85]), { skin: '#f1cfae', shirt: '#1f3b5c', dress: '#1f3b5c', hair: '#7b3f20', height: 1.66 }),
+      BG('bg_priya', [9.25, 3.3], yawTo([9.25, 3.3], [8.6, 1.9]), { skin: '#a0673d', shirt: '#e07a5f', dress: '#e07a5f', hair: '#1e1611', height: 1.62, build: 1.15 }),
+      BG('bg_tom', [9.1, 1.85], yawTo([9.1, 1.85], [9.25, 3.3]), { skin: '#f1c27d', shirt: '#4a4a4a', suit: '#4a4a4a', tie: '#7a2236', hair: '#b8b8b8', height: 1.78 }),
+      BG('bg_amina', aminaPos, yawTo(aminaPos, TABLES[1].c), { skin: '#c99a6e', shirt: '#5b3f7a', hijab: '#2f3e66', dress: '#3b2f55', height: 1.64 }),
+      BG('bg_marcus', marcusPos, yawTo(marcusPos, aminaPos), { skin: '#5a3a22', shirt: '#f2f2f2', suit: '#2a2a35', tie: '#8e2b2b', hair: '#141414', height: 1.83 }),
+      BG('bg_grace', gracePos, yawTo(gracePos, TABLES[2].c), { skin: '#f0d5b8', shirt: '#2e7d6b', dress: '#2e7d6b', hair: '#d4a76a', height: 1.66 }),
+      BG('bg_kenji', kenjiPos, yawTo(kenjiPos, TABLES[4].c), { skin: '#e8c39e', shirt: '#d9d4c7', suit: '#3a4a5a', tie: '#c9a227', hair: '#111111', glasses: true, height: 1.74 })
     ];
 
     // ------------------------------------------------------------------ hotspots / spawn / exit
@@ -493,6 +530,43 @@ export default {
       { id: 'dinner_table', position: [0, 0.8, -1.0], radius: 2.0, markerHeight: 1.45, label: { ar: 'مائدة جيك', en: "Jake's table" } },
       { id: 'raffle_booth', position: [5.6, 0.9, 5.0], radius: 1.8, markerHeight: 1.35, label: { ar: 'كشك السحب الخيري', en: 'Charity raffle booth' } }
     ];
+
+    // [Phase 3 perf] merge static decor per material: every plain (non-instanced) mesh directly in `group`
+    // that shares a material with others becomes one mesh (positions, normals, uvs baked in world space).
+    // The rotating star stays separate. Draw calls drop by ~40.
+    {
+      const buckets = new Map();
+      for (const o of group.children) {
+        if (!o.isMesh || o.isInstancedMesh || o === star) continue;
+        const k = o.material.uuid;
+        if (!buckets.has(k)) buckets.set(k, []);
+        buckets.get(k).push(o);
+      }
+      group.updateMatrixWorld(true);
+      for (const list of buckets.values()) {
+        if (list.length < 2) continue;
+        const geos = list.map((o) => { const g = o.geometry.index ? o.geometry.toNonIndexed() : o.geometry.clone(); g.applyMatrix4(o.matrixWorld); return g; });
+        let n = 0; for (const g of geos) n += g.attributes.position.count;
+        const pos = new Float32Array(n * 3), nor = new Float32Array(n * 3), uv = new Float32Array(n * 2);
+        let off = 0;
+        for (const g of geos) {
+          const c = g.attributes.position.count;
+          pos.set(g.attributes.position.array, off * 3); nor.set(g.attributes.normal.array, off * 3);
+          if (g.attributes.uv) uv.set(g.attributes.uv.array, off * 2);
+          off += c; g.dispose();
+        }
+        const geo = own(new THREE.BufferGeometry());
+        geo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+        geo.setAttribute('normal', new THREE.BufferAttribute(nor, 3));
+        geo.setAttribute('uv', new THREE.BufferAttribute(uv, 2));
+        geo.computeBoundingSphere();
+        const merged = new THREE.Mesh(geo, list[0].material);
+        merged.castShadow = list.some((o) => o.castShadow);
+        merged.receiveShadow = list.some((o) => o.receiveShadow);
+        for (const o of list) { group.remove(o); o.geometry.dispose(); }
+        group.add(merged);
+      }
+    }
 
     let flick = 0;
     return {
