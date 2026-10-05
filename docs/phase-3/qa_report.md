@@ -26,7 +26,7 @@ Sections 1–6 below describe the first pass and remain valid unless this sectio
 
 | Suite | Result |
 |---|---|
-| `npm test` | **197 / 197 pass**, 0 skipped. That is 19 new tests: 18 pivot-contract tests and 1 that checks the README links. `verify.mjs` now also checks the Bible verses; with its cache it ran 281 checks, FAIL 0. |
+| `npm test` | **197 / 197 pass**, 0 skipped. That is 19 new tests: 18 pivot-contract tests and 1 that checks the README links. `verify.mjs` ran with its cache, FAIL 0. *(Update 2026-10-06: verses removed by the owner's decision; `verify.mjs` now runs a `no-scripture` check instead.)* |
 | `npm run test:e2e` | **4 / 4 configurations pass**, 0 failures. 90 ruling cards were validated, including the new panels. |
 | Flakiness | The two phone configurations were rerun twice more (3 runs in total). There were 0 failures, including 36 of 36 madhhab-tab taps. |
 
@@ -46,9 +46,8 @@ Each configuration takes about 2–2½ minutes; the station fades and new scenes
 | Check | How |
 |---|---|
 | **"In plain words"** | It is present when `newcomer_explainer` exists, its text equals the data, and it sits **directly under the verdict header**. It must not appear without data. |
-| **"Common ground"** | The summary and differences are shown verbatim, the number of verses matches, and the panel comes after the madhhab section. |
-| **Bible text exactly as in the data** | Each verse is in the UI language: KJV in English and Van Dyck in Arabic, with the right `lang`/`dir`. Its text equals the data except for unmatched quotation marks, which the renderer intentionally drops at display time. The reference and the translation label ("KJV" or "Van Dyck") are present. |
-| **Arabic link for Arabic text** | Arabic text links to `source_url_ar` (getbible arabicsv); English text links to `source_url` (bible-api KJV). |
+| **"Common ground"** | The summary and differences are shown verbatim, and the panel comes after the madhhab section. |
+| **No scripture in "Common ground"** | **Update 2026-10-06:** by the owner's decision, all Bible/Torah verses and scripture references were removed from the project. The panel shows only the summary and the differences, with no quotations, source links or translation names. The e2e test checks this. |
 | **Samir's stations** (work, public_events) | On entry he is at his first unfinished hotspot. After each situation he is at the next one, and his collider has moved with him. When he speaks, he stands at that hotspot. **mobile-en plays work in reverse order**, so Samir must jump to `adam_desk` first and then go back to `coffee_machine`. The log is in `e2e_results.json` → `stations`. |
 | **Adam's look** | In every scene, the player figure matches `PLAYER.look` in config.js: shirt `#2f4a6d`, no beard, no kufi. The navy jacket `#1f2d4d` appears **only in the street**, from that scene's `playerLook`. Results are in `e2e_results.json` → `looks`. |
 | **End screen** | The "What Adam learned" heading and `end.summary_points` are shown verbatim. The 18 topics each carry the first sentence of their plain-words explainer. The next topic matches the `THEMES` logic. The single mosque-referral link is exactly `https://www.google.com/maps/search/<fixed query>`, with no query string or extra data. The screen has no form inputs. |
@@ -58,15 +57,14 @@ Each configuration takes about 2–2½ minutes; the station fades and new scenes
 ### Screenshot review
 
 I reviewed the screenshots myself, including the new card panels on a phone in RTL:
-- The common-ground panel is mirrored correctly, with its border on the right in Arabic. The Van Dyck text is diacritized and readable.
-- The verbatim KJV verses are shown in italics.
+- The common-ground panel is mirrored correctly, with its border on the right in Arabic.
 - The "In plain words" panel sits under the badges.
 - On a phone, the end screen shows its 2×2 stats tiles, the next-topic and mosque-referral cards, and the "About these rulings" note.
 - Adam's home shows a small cross and a Bible on the shelf. Adam has the new look, with a navy jacket in the street.
 
 No layout regressions were found.
 
-One small change came out of the review. Bible references in the caption (for example «رومية 14: 21 · Van Dyck») are now isolated with `<bdi>`, like the other content values (`src/engine/ui/rulingCard.js:125`).
+*(Verse captions were removed with the verses, by the owner's decision of 2026-10-06.)*
 
 **Screenshot set:** I kept one current set: `docs/phase-3/screenshots/{desktop-ar,desktop-en,mobile-ar,mobile-en}/`, 279 images in total. Each configuration's folder is now cleared at the start of its run, so stale numbering cannot mix with a new run. I deleted `street-v2/`, the street agent's one-off hotspot shots, because the same views are covered by the playthrough.
 
@@ -74,7 +72,7 @@ One small change came out of the review. Bible references in the caption (for ex
 
 - **`src/engine/README.md` §3, seated legs:** the note now says `+Math.PI/2`. The legs hang along −Y and the figure faces −Z, so a positive rotation swings the thighs forward. home.js and school.js already used +π/2.
 - **`README.md`:** rewritten for the new premise, with the new screenshots, test coverage and methodology. A new test checks that every local README link exists.
-- **Tests:** in `tests/content.test.mjs`, every ruling must now have a bilingual `newcomer_explainer` and `common_ground.summary`. Every Bible verse must have `ref_en`/`ref_ar` with the same chapter and verse, KJV and Van Dyck text, https `source_url` and `source_url_ar`, and a `verified: true` entry in `content/sources.json`.
+- **Tests:** in `tests/content.test.mjs`, every ruling must now have a bilingual `newcomer_explainer` and `common_ground.summary`. *(The verse checks were replaced on 2026-10-06, after the owner's decision to remove scripture. `common_ground` must have no `bible` field, and `tests/safety.test.mjs` fails on any scripture reference or translation marker.)*
 
 ### Performance after the pivot (desktop-en / mobile-ar)
 

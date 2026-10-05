@@ -143,9 +143,6 @@ html[lang='ar'] .line.narration .line-text { font-style: normal; color: #d3ddd8;
 .rc-common { margin-top: 10px; padding: 6px 16px 12px; border-radius: var(--radius); background: rgba(110, 160, 220, 0.12); border: 1px solid rgba(140, 180, 230, 0.45); }
 .rc-common .rc-h { color: #a9cdf5 !important; }
 .rc-sub { font-family: var(--font-head); font-size: 0.92rem; color: #cfe2f7; margin: 0.8em 0 0.3em; }
-.bible-verse { margin: 0 0 10px; padding: 10px 14px; border-radius: 12px; background: rgba(255, 255, 255, 0.05); border-inline-start: 4px solid #8fb8e6; }
-.bible-text { margin: 0; font-family: var(--font-hadith); font-size: 1.12rem; line-height: 1.9; }
-.bible-text[lang='en'] { font-family: Georgia, 'Times New Roman', serif; font-size: 1.02rem; font-style: italic; }
 .cg-diff p { color: #e3ebf3; }
 .council { padding: 10px 14px; border-radius: 12px; background: rgba(255, 255, 255, 0.04); border: 1px solid var(--line); margin-bottom: 8px; }
 .rc-list { margin: 0.2em 0; padding-inline-start: 1.3em; line-height: 1.85; }
@@ -253,4 +250,3 @@ body.touch .touch-controls { display: block; }
 .next-title { font-weight: 700; font-size: 1.08rem; margin: 0.2em 0 !important; }
 .learn-more a.src-link { display: inline-flex; align-items: center; min-height: 44px; padding: 0.55em 1.1em; border-radius: 999px; background: #8fb8e6; color: #0d2236; font-weight: 700; font-size: 1rem; text-decoration: none; }
 .learned-points { max-width: 680px; margin: 0 auto 1rem; text-align: start; }
-.bible-note { margin-top: 4px !important; }

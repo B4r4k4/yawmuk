@@ -86,12 +86,8 @@ The Chrome extension cannot reach this machine's localhost, so verification used
 
 ### Ruling card
 - **"In plain words"** shows `newcomer_explainer` right under the verdict.
-- **"Common ground with Christianity"** appears in a soft-blue panel. It shows `common_ground`:
-  - the summary
-  - the Bible verse in the UI language (Van Dyck in Arabic, KJV in English), linked to `source_url_ar` or `source_url` to match
-  - the differences
-  - the translation note
-- When displayed, unmatched quotation marks are dropped. The data itself is untouched.
+- **"Common ground with Christianity"** appears in a soft-blue panel. It shows `common_ground.summary` (short general shared values) and `common_ground.differences` (where the views differ).
+- **Update 2026-10-06 (owner's decision):** no scripture is quoted or referenced anywhere. The Bible-verse block, the translation note, the per-language source links and the quote-stripping were removed. A safety test now fails if a ruling or script contains a `bible` field or scripture markers.
 - Each section is hidden when its field is missing or empty.
 
 ### End screen

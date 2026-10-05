@@ -96,46 +96,16 @@ function plainWordsBlock(r) {
   return h('section', { class: 'rc-section rc-plain' }, h('h3', { class: 'rc-h' }, t('plainWords')), h('p', { class: 'plain' }, txt));
 }
 
-/** Display-only cleanup: drop quotation marks that have no partner (some Van Dyck verses start a quote that
- * closes in another verse). The data is never modified. */
-export function balanceQuotes(str) {
-  if (typeof str !== 'string') return str;
-  let out = str;
-  for (const [open, close] of [['«', '»'], ['“', '”']]) {
-    const o = (out.match(new RegExp(open, 'g')) || []).length, c = (out.match(new RegExp(close, 'g')) || []).length;
-    if (o === c) continue;
-    if (o > c) { let extra = o - c; while (extra-- > 0) { const i = out.lastIndexOf(open); out = out.slice(0, i) + out.slice(i + 1); } }
-    else { let extra = c - o; while (extra-- > 0) { const i = out.indexOf(close); out = out.slice(0, i) + out.slice(i + 1); } }
-  }
-  if (((out.match(/"/g) || []).length) % 2) { const i = out.trim().startsWith('"') ? out.indexOf('"') : out.lastIndexOf('"'); out = out.slice(0, i) + out.slice(i + 1); }
-  return out.trim();
-}
-
-/** One Bible citation: ref + verbatim text in the UI language (Van Dyck / KJV), other language as fallback. */
-function bibleBlock(b) {
-  const lang = getLang();
-  const ar = b.text_ar, en = b.text_en;
-  const raw = lang === 'ar' ? ar || en : en || ar;
-  const textLang = raw === ar ? 'ar' : 'en';
-  const text = balanceQuotes(raw);
-  const url = textLang === 'ar' ? b.source_url_ar || b.source_url : b.source_url || b.source_url_ar;
-  const ref = (lang === 'ar' ? b.ref_ar || b.ref_en : b.ref_en || b.ref_ar) || '';
-  return h('figure', { class: 'bible-verse' },
-    text ? h('blockquote', { class: 'bible-text', lang: textLang, dir: textLang === 'ar' ? 'rtl' : 'ltr' }, text) : h('p', { class: 'muted' }, t('notProvided')),
-    h('figcaption', { class: 'ref' }, iso(ref), textLang === 'ar' ? ' · Van Dyck' : ' · KJV', ' ', link(url, t('source'))));
-}
-
-/** Common ground with Christianity — summary, Bible verses, differences. Hidden when absent/empty. */
+/** Common ground with Christianity — short general shared values + where the views differ. No scripture is quoted.
+ * Hidden when absent/empty. Any legacy `bible` array in the data is ignored. */
 function commonGroundBlock(r) {
   const cg = r.common_ground;
   if (!cg || typeof cg !== 'object') return null;
   const summary = tr(cg.summary), diff = tr(cg.differences);
-  const verses = (Array.isArray(cg.bible) ? cg.bible : []).filter((b) => b && (b.text_ar || b.text_en));
-  if (!nonEmpty(summary) && !nonEmpty(diff) && !verses.length) return null;
+  if (!nonEmpty(summary) && !nonEmpty(diff)) return null;
   return h('section', { class: 'rc-section rc-common', 'aria-label': t('commonGround') },
     h('h3', { class: 'rc-h' }, t('commonGround')),
     nonEmpty(summary) ? h('p', {}, summary) : null,
-    verses.length ? h('div', { class: 'bible' }, h('h4', { class: 'rc-sub' }, t('fromBible')), verses.map(bibleBlock), h('p', { class: 'ref bible-note' }, t('bibleNote'))) : null,
     nonEmpty(diff) ? h('div', { class: 'cg-diff' }, h('h4', { class: 'rc-sub' }, t('differences')), h('p', {}, diff)) : null);
 }
 

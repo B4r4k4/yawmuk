@@ -165,8 +165,6 @@ describe('scripts: contract', () => {
 });
 
 describe('pivot fields: newcomer_explainer + common_ground (Adam is a Christian learner)', () => {
-  const sources = readJson('content/sources.json');
-  const bibleIds = new Map(sources.filter((s) => String(s.id).startsWith('bible:')).map((s) => [s.id, s]));
   for (const { ruling: r } of rulings) {
     test(`${r.id}: newcomer_explainer and common_ground are complete in both languages`, () => {
       assert.ok(bilingual(r.newcomer_explainer), 'newcomer_explainer {ar,en}');
@@ -174,18 +172,7 @@ describe('pivot fields: newcomer_explainer + common_ground (Adam is a Christian 
       assert.ok(cg && typeof cg === 'object', 'common_ground object');
       assert.ok(bilingual(cg.summary), 'common_ground.summary {ar,en}');
       if (cg.differences) assert.ok(bilingual(cg.differences), 'common_ground.differences must have both languages when present');
-      assert.ok(Array.isArray(cg.bible), 'common_ground.bible array (may be empty)');
-      for (const [i, b] of cg.bible.entries()) {
-        const where = `bible[${i}] ${b.ref_en}`;
-        for (const k of ['ref_en', 'ref_ar', 'text_en', 'text_ar']) assert.ok(nonEmptyStr(b[k]), `${where}: ${k}`);
-        assert.match(b.source_url || '', /^https:\/\//, `${where}: source_url (KJV)`);
-        assert.match(b.source_url_ar || '', /^https:\/\//, `${where}: source_url_ar (Van Dyck)`);
-        const [, ch, v] = /(\d+):(\d+)/.exec(b.ref_en) || [];
-        assert.ok(ch && b.ref_ar.includes(ch) && b.ref_ar.includes(v), `${where}: ref_ar "${b.ref_ar}" has a different chapter/verse`);
-        const id = `bible:${b.ref_en.replace(/ (\d+):/, '-$1-').replace(/ /g, '-')}`;
-        assert.equal(bibleIds.get(id)?.verified, true, `${where}: not verified in content/sources.json (${id})`);
-        assert.ok(!/[﴿﴾]/.test(b.text_ar), `${where}: Quranic brackets in a Bible verse`);
-      }
+      assert.equal(cg.bible, undefined, 'common_ground carries no scripture (owner decision 2026-10-06)');
     });
   }
 });

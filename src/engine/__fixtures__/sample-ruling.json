@@ -103,15 +103,6 @@
         "ar": "[بيانات اختبار] نقطة تلاقٍ تجريبية.",
         "en": "[FIXTURE] A placeholder point of common ground."
       },
-      "bible": [
-        {
-          "ref_en": "Fixture 0:0",
-          "ref_ar": "اختبار 0: 0",
-          "text_en": "[Fixture text — not a Bible verse]",
-          "text_ar": "[نص تجريبي — ليس من الكتاب المقدس]",
-          "source_url": "https://www.biblegateway.com"
-        }
-      ],
       "differences": {
         "ar": "[بيانات اختبار] فرق تجريبي.",
         "en": "[FIXTURE] A placeholder difference."

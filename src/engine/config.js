@@ -67,7 +67,7 @@ export const THEMES = {
 // Single place to change how Adam looks. Any makeNPC(look) option works (see src/engine/README.md):
 // skin, shirt, pants, shoes, hair (false = bald), beard, glasses, suit, tie, kufi, height, build…
 export const PLAYER = {
-  name: { ar: 'آدم', en: 'Adam' }, // Adam Reed — see docs/story_bible.md
+  name: { ar: 'آدم', en: 'Adam' }, // Adam Reed — character notes: docs/story_bible.md
   look: {
     skin: '#e8c4a0',
     hair: '#5a3b24',   // short brown hair

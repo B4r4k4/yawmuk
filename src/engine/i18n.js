@@ -9,9 +9,7 @@ export const STRINGS = {
   // ---- learner framing (Adam is a Christian learning about Islam) — overridable from ui_strings.json
   plainWords: { ar: 'بكلمات بسيطة', en: 'In plain words' },
   commonGround: { ar: 'نقاط تلاقٍ مع المسيحية', en: 'Common ground with Christianity' },
-  fromBible: { ar: 'من الكتاب المقدس', en: 'From the Bible' },
   differences: { ar: 'وأين يختلف الطرحان', en: 'Where the two traditions differ' },
-  bibleNote: { ar: 'النص العربي من ترجمة فاندايك، والإنجليزي من نسخة الملك جيمس (KJV).', en: 'Arabic text from the Van Dyck translation; English from the King James Version (KJV).' },
   adamLearned: { ar: 'ما تعلّمه آدم اليوم', en: 'What Adam learned today' },
   nextTopic: { ar: 'موضوع مقترح لتتابع التعلّم', en: 'A suggested next topic' },
   nextTopicAllDone: { ar: 'استكشفت كل مواقف اليوم. يمكنك إعادة أي موقف وتجربة خيار آخر.', en: "You've explored every situation of the day. Replay any of them and try a different choice." },
@@ -210,9 +208,7 @@ const UI_MAP = {
   // learner framing — several candidate key names are accepted (first present wins)
   plainWords: ['ruling_card.newcomer_explainer', 'ruling_card.plain_words', 'ruling_card.in_plain_words'],
   commonGround: ['ruling_card.common_ground', 'ruling_card.common_ground_title'],
-  fromBible: ['ruling_card.common_ground_bible', 'ruling_card.bible', 'ruling_card.from_bible'],
   differences: ['ruling_card.common_ground_differences', 'ruling_card.differences'],
-  bibleNote: ['ruling_card.bible_translation_note'],
   adamLearned: ['end.summary_title', 'end.learned', 'end.adam_learned'],
   nextTopic: ['end.next_topic_title', 'end.next_topic', 'end.suggested_topic'],
   nextTopicAllDone: ['end.next_topic_all_done', 'end.all_done'],

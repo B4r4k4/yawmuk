@@ -230,9 +230,9 @@ export default {
 ## 8. The player character, ruling-card extras and end screen
 
 - **Adam's look** is one object: `PLAYER` in `src/engine/config.js` (`look` takes any `makeNPC` option). Edit only that. A scene can return `playerLook: { jacket: '#1f2d4d' }`, which is merged over `PLAYER.look` while that scene is loaded. The street scene uses this for Adam's navy winter jacket.
-- The **ruling card** shows two optional fields when present. `newcomer_explainer` appears as "In plain words", right under the verdict. `common_ground` (summary, Bible verses in Van Dyck or KJV in the UI language, and differences) appears as a soft-blue panel. Each section is hidden when its field is missing or empty.
+- The **ruling card** shows two optional fields when present. `newcomer_explainer` appears as "In plain words", right under the verdict. `common_ground` (`summary` and `differences` only: short general shared values and where the views differ, with no scripture quotations or references) appears as a soft-blue panel. Each section is hidden when its field is missing or empty.
 - The **end screen** shows what Adam learned, a suggested next topic (the theme the player explored most, using `THEMES` in `config.js`) and a referral to a local mosque or Islamic center. The game never asks about or stores the player's beliefs.
-- Label keys come from `content/script/ui_strings.json`. `i18n.js` `UI_MAP` lists the accepted key names, for example `ruling_card.newcomer_explainer`, `ruling_card.common_ground`, `ruling_card.bible`, `ruling_card.differences`, `end.learned`, `end.next_topic`, `end.learn_more_title` and `end.learn_more`. Each key falls back to a built-in default.
+- Label keys come from `content/script/ui_strings.json`. `i18n.js` `UI_MAP` lists the accepted key names, for example `ruling_card.newcomer_explainer`, `ruling_card.common_ground`, `ruling_card.common_ground_differences`, `end.summary_title`, `end.next_topic_title`, `end.referral_title` and `end.referral_body`. Each key falls back to a built-in default.
 
 ## 9. Engine architecture (for reference)
 

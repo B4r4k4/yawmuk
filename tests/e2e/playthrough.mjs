@@ -12,8 +12,8 @@
 // card section against content/rulings, "try another choice", the revisit menu, the language switch,
 // location transitions, localStorage resume after a reload, the final summary (score = max), and
 // horizontal overflow (RTL/LTR) of the page and the ruling card.
-// Christian-learner premise: "In plain words" + "Common ground" panels (Bible text verbatim, KJV/Van Dyck with
-// their own links), NPC stations (Samir moves; mobile-en plays work out of order), Adam's look per scene, the
+// Christian-learner premise: "In plain words" + "Common ground" panels (short general shared values and
+// differences only — no scripture is quoted or referenced), NPC stations (Samir moves; mobile-en plays work out of order), Adam's look per scene, the
 // end screen (learned / next topic / referral) and privacy (no belief data in any browser storage).
 //
 // Usage:  npm run test:e2e                       (builds dist/ if missing)
@@ -297,38 +297,17 @@ function validateRulingCardInPage(r, lang) {
       if (plain.previousElementSibling !== q('.rc-header')) errs.push('"In plain words" is not directly under the verdict header');
     }
   } else if (plain) errs.push('"In plain words" shown without data');
-  // ---- pivot: "Common ground" (summary, Bible verses verbatim in the UI language, differences)
+  // ---- pivot: "Common ground" (summary + differences only; no scripture quotations or references)
   const cg = r.common_ground || {};
-  const verses = (cg.bible || []).filter((b) => b && (b.text_ar || b.text_en));
   const cgEl = q('.rc-common');
-  const wantCg = !!(tr(cg.summary) || tr(cg.differences) || verses.length);
+  const wantCg = !!(tr(cg.summary) || tr(cg.differences));
   if (wantCg && !cgEl) errs.push('"Common ground" section missing');
   if (!wantCg && cgEl) errs.push('"Common ground" shown without data');
   if (cgEl) {
     if (tr(cg.summary) && !sq(cgEl.textContent).includes(sq(tr(cg.summary)))) errs.push('common_ground.summary not shown verbatim');
     if (tr(cg.differences) && sq(cgEl.querySelector('.cg-diff p')?.textContent) !== sq(tr(cg.differences))) errs.push('common_ground.differences not shown verbatim');
-    const figs = [...cgEl.querySelectorAll('figure.bible-verse')];
-    if (figs.length !== verses.length) errs.push(`bible verses ${figs.length}/${verses.length}`);
-    // the renderer may drop an unmatched quotation mark at display time (Van Dyck verses that open a quote
-    // closed in another verse); apart from quote marks the text must be identical to the data
-    const noQuotes = (x) => sq(x).replace(/[«»“”"]/g, '').trim();
-    verses.forEach((b, i) => {
-      const fig = figs[i]; if (!fig) return;
-      const want = lang === 'ar' ? b.text_ar || b.text_en : b.text_en || b.text_ar;
-      const wantLang = want === b.text_ar ? 'ar' : 'en';
-      const shown = fig.querySelector('blockquote.bible-text');
-      if (!shown) { errs.push(`bible[${i}] text missing`); return; }
-      if (noQuotes(shown.textContent) !== noQuotes(want)) errs.push(`bible[${i}] ${b.ref_en}: text differs from the data (${wantLang === 'ar' ? 'Van Dyck' : 'KJV'})`);
-      if (shown.getAttribute('lang') !== wantLang || shown.getAttribute('dir') !== (wantLang === 'ar' ? 'rtl' : 'ltr')) errs.push(`bible[${i}] lang/dir ${shown.getAttribute('lang')}/${shown.getAttribute('dir')}`);
-      const cap = fig.querySelector('figcaption')?.textContent || '';
-      const ref = lang === 'ar' ? b.ref_ar || b.ref_en : b.ref_en || b.ref_ar;
-      if (!cap.includes(ref)) errs.push(`bible[${i}] reference "${ref}" missing`);
-      if (!cap.includes(wantLang === 'ar' ? 'Van Dyck' : 'KJV')) errs.push(`bible[${i}] translation label missing`);
-      const href = fig.querySelector('a')?.getAttribute('href');
-      const wantUrl = wantLang === 'ar' ? b.source_url_ar || b.source_url : b.source_url || b.source_url_ar;
-      if (wantUrl && href !== new URL(wantUrl).href) errs.push(`bible[${i}] link ${href} expected ${wantUrl} (${wantLang === 'ar' ? 'Arabic link for Arabic text' : 'KJV link'})`);
-    });
-    if (verses.length && !cgEl.querySelector('.bible-note')) errs.push('bible translation note missing');
+    if (cgEl.querySelector('figure, blockquote, a')) errs.push('common ground must not contain quotations or source links');
+    if (/\bKJV\b|Van ?Dyck|فاندايك/i.test(cgEl.textContent)) errs.push('common ground mentions a Bible translation');
     // common ground must come after the Islamic evidence, never before it
     const order = [...card.children];
     const iMad = order.indexOf(q('.rc-madhahib')), iCg = order.indexOf(cgEl);
