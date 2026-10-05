@@ -1,6 +1,6 @@
 
-«يومك» verify — 2026-10-05T19:57:50.355Z
-rulings: 18 | checks: 281 | PASS 278 | WARN 3 | FAIL 0
+«يومك» verify — 2026-10-05T21:30:06.872Z
+rulings: 18 | checks: 214 | PASS 213 | WARN 1 | FAIL 0
 
 [PASS] quran-text         home.mortgage                      2:275
       matches quran.com (orthographic marks normalised)
@@ -376,193 +376,59 @@ rulings: 18 | checks: 281 | PASS 278 | WARN 3 | FAIL 0
       matches bukhari #33 (diacritized)
 [PASS] hadith-text        work.honesty_gifts                 صحيح مسلم 101
       matches muslim #101 (diacritized)
-[PASS] bible-kjv          home.mortgage                      Exodus 22:25
-      matches bible-api.com KJV
-[PASS] bible-vandyck      home.mortgage                      Exodus 22:25
-      matches getbible arabicsv (Smith & Van Dyke) exactly
-[PASS] bible-kjv          home.mortgage                      Deuteronomy 23:19
-      matches bible-api.com KJV
-[PASS] bible-vandyck      home.mortgage                      Deuteronomy 23:19
-      matches getbible arabicsv (Smith & Van Dyke) exactly
-[PASS] bible-kjv          home.food_ingredients              Leviticus 11:7
-      matches bible-api.com KJV
-[PASS] bible-vandyck      home.food_ingredients              Leviticus 11:7
-      matches getbible arabicsv (Smith & Van Dyke) exactly
-[PASS] bible-kjv          home.food_ingredients              Acts 15:29
-      matches bible-api.com KJV
-[PASS] bible-vandyck      home.food_ingredients              Acts 15:29
-      matches getbible arabicsv (Smith & Van Dyke) exactly
-[PASS] bible-kjv          home.credit_card                   Romans 13:8
-      matches bible-api.com KJV
-[PASS] bible-vandyck      home.credit_card                   Romans 13:8
-      matches getbible arabicsv (Smith & Van Dyke) exactly
-[PASS] bible-kjv          home.credit_card                   Psalms 37:21
-      matches bible-api.com KJV
-[PASS] bible-vandyck      home.credit_card                   Psalms 37:21
-      matches getbible arabicsv (Smith & Van Dyke) exactly
-[PASS] bible-kjv          private_events.wedding             Hebrews 13:4
-      matches bible-api.com KJV
-[PASS] bible-vandyck      private_events.wedding             Hebrews 13:4
-      matches getbible arabicsv (Smith & Van Dyke) exactly
-[PASS] bible-kjv          private_events.wedding             Luke 14:13
-      matches bible-api.com KJV
-[PASS] bible-vandyck      private_events.wedding             Luke 14:13
-      matches getbible arabicsv (Smith & Van Dyke) exactly
-[PASS] bible-kjv          private_events.neighbor_funeral    Romans 12:15
-      matches bible-api.com KJV
-[PASS] bible-vandyck      private_events.neighbor_funeral    Romans 12:15
-      matches getbible arabicsv (Smith & Van Dyke) exactly
-[PASS] bible-kjv          private_events.neighbor_funeral    Ecclesiastes 7:2
-      matches bible-api.com KJV
-[PASS] bible-vandyck      private_events.neighbor_funeral    Ecclesiastes 7:2
-      matches getbible arabicsv (Smith & Van Dyke) exactly
-[PASS] bible-kjv          private_events.gifts_birthday      Acts 20:35
-      matches bible-api.com KJV
-[PASS] bible-vandyck      private_events.gifts_birthday      Acts 20:35
-      matches getbible arabicsv (Smith & Van Dyke) exactly
-[PASS] bible-kjv          public_events.holiday_greetings    Romans 12:18
-      matches bible-api.com KJV
-[PASS] bible-vandyck      public_events.holiday_greetings    Romans 12:18
-      matches getbible arabicsv (Smith & Van Dyke) exactly
-[PASS] bible-kjv          public_events.holiday_greetings    Psalms 107:1
-      matches bible-api.com KJV
-[PASS] bible-vandyck      public_events.holiday_greetings    Psalms 107:1
-      matches getbible arabicsv (Smith & Van Dyke) exactly
-[PASS] bible-kjv          public_events.alcohol_table        Proverbs 20:1
-      matches bible-api.com KJV
-[PASS] bible-vandyck      public_events.alcohol_table        Proverbs 20:1
-      matches getbible arabicsv (Smith & Van Dyke) exactly
-[PASS] bible-kjv          public_events.alcohol_table        Ephesians 5:18
-      matches bible-api.com KJV
-[PASS] bible-vandyck      public_events.alcohol_table        Ephesians 5:18
-      matches getbible arabicsv (Smith & Van Dyke) exactly
-[PASS] bible-kjv          public_events.alcohol_table        Romans 14:21
-      matches bible-api.com KJV
-[PASS] bible-vandyck      public_events.alcohol_table        Romans 14:21
-      matches getbible arabicsv (Smith & Van Dyke) exactly
-[PASS] bible-kjv          public_events.raffle               2 Corinthians 9:7
-      matches bible-api.com KJV
-[PASS] bible-vandyck      public_events.raffle               2 Corinthians 9:7
-      matches getbible arabicsv (Smith & Van Dyke) exactly
-[PASS] bible-kjv          school.cheating                    Proverbs 12:22
-      matches bible-api.com KJV
-[PASS] bible-vandyck      school.cheating                    Proverbs 12:22
-      matches getbible arabicsv (Smith & Van Dyke) exactly
-[PASS] bible-kjv          school.cheating                    Colossians 3:9
-      matches bible-api.com KJV
-[PASS] bible-vandyck      school.cheating                    Colossians 3:9
-      matches getbible arabicsv (Smith & Van Dyke) exactly
-[PASS] bible-kjv          school.student_loan                Proverbs 22:7
-      matches bible-api.com KJV
-[PASS] bible-vandyck      school.student_loan                Proverbs 22:7
-      matches getbible arabicsv (Smith & Van Dyke) exactly
-[PASS] bible-kjv          school.student_loan                Exodus 22:25
-      matches bible-api.com KJV
-[PASS] bible-vandyck      school.student_loan                Exodus 22:25
-      matches getbible arabicsv (Smith & Van Dyke) exactly
-[PASS] bible-kjv          school.mixed_social                Job 31:1
-      matches bible-api.com KJV
-[PASS] bible-vandyck      school.mixed_social                Job 31:1
-      matches getbible arabicsv (Smith & Van Dyke) exactly
-[PASS] bible-kjv          school.mixed_social                Matthew 5:28
-      matches bible-api.com KJV
-[PASS] bible-vandyck      school.mixed_social                Matthew 5:28
-      matches getbible arabicsv (Smith & Van Dyke) exactly
-[PASS] bible-kjv          street.lost_wallet                 Deuteronomy 22:2
-      matches bible-api.com KJV
-[PASS] bible-vandyck      street.lost_wallet                 Deuteronomy 22:2
-      matches getbible arabicsv (Smith & Van Dyke) exactly
-[PASS] bible-kjv          street.lost_wallet                 Deuteronomy 22:3
-      matches getbible KJV (bible-api.com differs: «st things of thy bro»)
-[PASS] bible-vandyck      street.lost_wallet                 Deuteronomy 22:3
-      matches getbible arabicsv (Smith & Van Dyke) exactly
-[PASS] bible-kjv          street.lottery                     Proverbs 13:11
-      matches bible-api.com KJV
-[PASS] bible-vandyck      street.lottery                     Proverbs 13:11
-      matches getbible arabicsv (Smith & Van Dyke) exactly
-[PASS] bible-kjv          street.lottery                     Hebrews 13:5
-      matches bible-api.com KJV
-[PASS] bible-vandyck      street.lottery                     Hebrews 13:5
-      matches getbible arabicsv (Smith & Van Dyke) exactly
-[PASS] bible-kjv          street.buying_selling              Leviticus 25:14
-      matches bible-api.com KJV
-[PASS] bible-vandyck      street.buying_selling              Leviticus 25:14
-      matches getbible arabicsv (Smith & Van Dyke) exactly
-[PASS] bible-kjv          street.buying_selling              Proverbs 11:1
-      matches bible-api.com KJV
-[PASS] bible-vandyck      street.buying_selling              Proverbs 11:1
-      matches getbible arabicsv (Smith & Van Dyke) exactly
-[PASS] bible-kjv          street.buying_selling              Exodus 20:16
-      matches bible-api.com KJV
-[PASS] bible-vandyck      street.buying_selling              Exodus 20:16
-      matches getbible arabicsv (Smith & Van Dyke) exactly
-[PASS] bible-kjv          work.alcohol_pork_job              Romans 14:21
-      matches bible-api.com KJV
-[PASS] bible-vandyck      work.alcohol_pork_job              Romans 14:21
-      matches getbible arabicsv (Smith & Van Dyke) exactly
-[PASS] bible-kjv          work.retirement_401k               Psalms 15:5
-      matches bible-api.com KJV
-[PASS] bible-vandyck      work.retirement_401k               Psalms 15:5
-      matches getbible arabicsv (Smith & Van Dyke) exactly
-[PASS] bible-kjv          work.honesty_gifts                 Exodus 23:8
-      matches bible-api.com KJV
-[PASS] bible-vandyck      work.honesty_gifts                 Exodus 23:8
-      matches getbible arabicsv (Smith & Van Dyke) exactly
-[PASS] bible-kjv          work.honesty_gifts                 Luke 16:10
-      matches bible-api.com KJV
-[PASS] bible-vandyck      work.honesty_gifts                 Luke 16:10
-      matches getbible arabicsv (Smith & Van Dyke) exactly
+[PASS] no-scripture       home.mortgage                      -
+      no Bible/Torah/Gospel text or reference
+[PASS] no-scripture       home.food_ingredients              -
+      no Bible/Torah/Gospel text or reference
+[PASS] no-scripture       home.credit_card                   -
+      no Bible/Torah/Gospel text or reference
+[PASS] no-scripture       private_events.wedding             -
+      no Bible/Torah/Gospel text or reference
+[PASS] no-scripture       private_events.neighbor_funeral    -
+      no Bible/Torah/Gospel text or reference
+[PASS] no-scripture       private_events.gifts_birthday      -
+      no Bible/Torah/Gospel text or reference
+[PASS] no-scripture       public_events.holiday_greetings    -
+      no Bible/Torah/Gospel text or reference
+[PASS] no-scripture       public_events.alcohol_table        -
+      no Bible/Torah/Gospel text or reference
+[PASS] no-scripture       public_events.raffle               -
+      no Bible/Torah/Gospel text or reference
+[PASS] no-scripture       school.cheating                    -
+      no Bible/Torah/Gospel text or reference
+[PASS] no-scripture       school.student_loan                -
+      no Bible/Torah/Gospel text or reference
+[PASS] no-scripture       school.mixed_social                -
+      no Bible/Torah/Gospel text or reference
+[PASS] no-scripture       street.lost_wallet                 -
+      no Bible/Torah/Gospel text or reference
+[PASS] no-scripture       street.lottery                     -
+      no Bible/Torah/Gospel text or reference
+[PASS] no-scripture       street.buying_selling              -
+      no Bible/Torah/Gospel text or reference
+[PASS] no-scripture       work.alcohol_pork_job              -
+      no Bible/Torah/Gospel text or reference
+[PASS] no-scripture       work.retirement_401k               -
+      no Bible/Torah/Gospel text or reference
+[PASS] no-scripture       work.honesty_gifts                 -
+      no Bible/Torah/Gospel text or reference
 [PASS] quote              home.credit_card                   «مطل الغني ظلم»
       quote found in this ruling's verified texts
 [PASS] quote              private_events.wedding             «فصل ما بين الحرام والحلال الدف»
       quote found in this ruling's verified texts
-[PASS] quote              private_events.wedding             «الزواج مكرّماً»
-      quote found in this ruling's verified texts
 [PASS] quote              private_events.neighbor_funeral    «أليست نفساً؟»
-      quote found in this ruling's verified texts
-[PASS] quote              private_events.neighbor_funeral    «بكاءً مع الباكين»
       quote found in this ruling's verified texts
 [PASS] quote              private_events.gifts_birthday      «تهادوا تحابوا»
       quote found in this ruling's verified texts
-[PASS] quote              private_events.gifts_birthday      «مغبوط هو العطاء أكثر من الأخذ»
-      quote found in this ruling's verified texts
-[PASS] quote              public_events.alcohol_table        «الخمر مستهزئة»
-      quote found in this ruling's verified texts
-[PASS] quote              public_events.alcohol_table        «لا تسكروا بالخمر»
-      quote found in this ruling's verified texts
-[PASS] quote              public_events.raffle               «المعطي المسرور يحبه الله»
-      quote found in this ruling's verified texts
 [PASS] quote              school.cheating                    «من غشنا فليس منا»
       quote found in this ruling's verified texts
-[PASS] quote              school.cheating                    «كراهة الرب شفتا كذب»
-      quote found in this ruling's verified texts
-[PASS] quote              school.cheating                    «لا تكذبوا بعضكم على بعض»
-      quote found in this ruling's verified texts
-[PASS] quote              school.student_loan                «المقترض عبد للمقرض»
-      quote found in this ruling's verified texts
-[WARN] quote              school.mixed_social                «قاعدة بيلي غراهام»
-      quote not found verbatim in this ruling's hadith/Qur'an/Bible texts — check it is a paraphrase or a sourced statement
-[PASS] quote              street.lost_wallet                 «حتى يطلبه أخوك»
-      quote found in this ruling's verified texts
-[PASS] quote              street.lost_wallet                 «ولتكن وديعة عندك، فإن جاء طالب»
-      quote found in this ruling's verified texts
 [WARN] quote              street.lottery                     «الرهان المجاني»
-      quote not found verbatim in this ruling's hadith/Qur'an/Bible texts — check it is a paraphrase or a sourced statement
-[PASS] quote              street.lottery                     «غنى البُطل يقل»
-      quote found in this ruling's verified texts
-[WARN] quote              street.lottery                     «خطراً على المجتمع»
-      quote not found verbatim in this ruling's hadith/Qur'an/Bible texts — check it is a paraphrase or a sourced statement
-[PASS] quote              street.buying_selling              «فلا يغبن أحدكم أخاه»
-      quote found in this ruling's verified texts
-[PASS] quote              street.buying_selling              «لا تشهد على قريبك شهادة زور»
-      quote found in this ruling's verified texts
+      quote not found verbatim in this ruling's hadith/Qur'an texts — check it is a paraphrase or a sourced statement
 [PASS] quote              work.retirement_401k               «دع ما يريبك إلى ما لا يريبك»
-      quote found in this ruling's verified texts
-[PASS] quote              work.retirement_401k               «فضته لا يعطيها بالربا»
       quote found in this ruling's verified texts
 [PASS] quote              work.honesty_gifts                 «هذا لكم، وهذا أُهدي لي»
       quote found in this ruling's verified texts
 [PASS] quote              work.honesty_gifts                 «فهلّا جلس في بيت أبيه أو بيت أ»
       quote found in this ruling's verified texts
 
-Summary: unique ayat verified 27; hadith citations verified 64; Bible citations verified KJV 34 / Van Dyck 34; WARN 3; FAIL 0
+Summary: unique ayat verified 27; hadith citations verified 64; WARN 1; FAIL 0

@@ -107,33 +107,6 @@
     "checked_at": "2026-10-05"
   },
   {
-    "id": "bible:Exodus-22-25",
-    "type": "other",
-    "citation": "الكتاب المقدس — خروج 22: 25 / Exodus 22:25 — النص الإنجليزي: King James Version؛ العربي: ترجمة سميث وفاندايك (ملك عام)",
-    "url": "https://bible-api.com/Exodus+22:25?translation=kjv",
-    "url_ar": "https://api.getbible.net/v2/arabicsv/2/22.json",
-    "verified": true,
-    "verified_how": "verify.mjs: matches bible-api.com KJV | matches getbible arabicsv (Smith & Van Dyke) exactly. KJV re-fetched from bible-api.com (fallback api.getbible.net/kjv); Van Dyck re-fetched from api.getbible.net/v2/arabicsv and compared exactly.",
-    "used_in": [
-      "home.mortgage",
-      "school.student_loan"
-    ],
-    "checked_at": "2026-10-05"
-  },
-  {
-    "id": "bible:Deuteronomy-23-19",
-    "type": "other",
-    "citation": "الكتاب المقدس — تثنية 23: 19 / Deuteronomy 23:19 — النص الإنجليزي: King James Version؛ العربي: ترجمة سميث وفاندايك (ملك عام)",
-    "url": "https://bible-api.com/Deuteronomy+23:19?translation=kjv",
-    "url_ar": "https://api.getbible.net/v2/arabicsv/5/23.json",
-    "verified": true,
-    "verified_how": "verify.mjs: matches bible-api.com KJV | matches getbible arabicsv (Smith & Van Dyke) exactly. KJV re-fetched from bible-api.com (fallback api.getbible.net/kjv); Van Dyck re-fetched from api.getbible.net/v2/arabicsv and compared exactly.",
-    "used_in": [
-      "home.mortgage"
-    ],
-    "checked_at": "2026-10-05"
-  },
-  {
     "id": "contemporary:مجمع-الفقه-الإسلامي-الدولي:القرار-10-10-2-الدورة-الثانية-جدة-ديسمبر",
     "type": "contemporary",
     "citation": "مجمع الفقه الإسلامي الدولي — القرار 10 (10/2)، الدورة الثانية، جدة، ديسمبر 1985",
@@ -327,32 +300,6 @@
     "checked_at": "2026-10-05"
   },
   {
-    "id": "bible:Leviticus-11-7",
-    "type": "other",
-    "citation": "الكتاب المقدس — لاويين 11: 7 / Leviticus 11:7 — النص الإنجليزي: King James Version؛ العربي: ترجمة سميث وفاندايك (ملك عام)",
-    "url": "https://bible-api.com/Leviticus+11:7?translation=kjv",
-    "url_ar": "https://api.getbible.net/v2/arabicsv/3/11.json",
-    "verified": true,
-    "verified_how": "verify.mjs: matches bible-api.com KJV | matches getbible arabicsv (Smith & Van Dyke) exactly. KJV re-fetched from bible-api.com (fallback api.getbible.net/kjv); Van Dyck re-fetched from api.getbible.net/v2/arabicsv and compared exactly.",
-    "used_in": [
-      "home.food_ingredients"
-    ],
-    "checked_at": "2026-10-05"
-  },
-  {
-    "id": "bible:Acts-15-29",
-    "type": "other",
-    "citation": "الكتاب المقدس — أعمال الرسل 15: 29 / Acts 15:29 — النص الإنجليزي: King James Version؛ العربي: ترجمة سميث وفاندايك (ملك عام)",
-    "url": "https://bible-api.com/Acts+15:29?translation=kjv",
-    "url_ar": "https://api.getbible.net/v2/arabicsv/44/15.json",
-    "verified": true,
-    "verified_how": "verify.mjs: matches bible-api.com KJV | matches getbible arabicsv (Smith & Van Dyke) exactly. KJV re-fetched from bible-api.com (fallback api.getbible.net/kjv); Van Dyck re-fetched from api.getbible.net/v2/arabicsv and compared exactly.",
-    "used_in": [
-      "home.food_ingredients"
-    ],
-    "checked_at": "2026-10-05"
-  },
-  {
     "id": "contemporary:مجمع-الفقه-الإسلامي-الدولي:القرار-95-3-10-بشأن-الذبائح-الدورة-العاش",
     "type": "contemporary",
     "citation": "مجمع الفقه الإسلامي الدولي — القرار 95 (3/10) بشأن الذبائح، الدورة العاشرة، جدة، 1997",
@@ -455,32 +402,6 @@
     "url": "",
     "verified": false,
     "verified_how": "Attribution reviewed by the auditor for consistency with the well-known position of the school (and the Kuwaiti Fiqh Encyclopedia where cited); NOT matched against a printed edition page by page. Requires a human scholar.",
-    "used_in": [
-      "home.credit_card"
-    ],
-    "checked_at": "2026-10-05"
-  },
-  {
-    "id": "bible:Romans-13-8",
-    "type": "other",
-    "citation": "الكتاب المقدس — رومية 13: 8 / Romans 13:8 — النص الإنجليزي: King James Version؛ العربي: ترجمة سميث وفاندايك (ملك عام)",
-    "url": "https://bible-api.com/Romans+13:8?translation=kjv",
-    "url_ar": "https://api.getbible.net/v2/arabicsv/45/13.json",
-    "verified": true,
-    "verified_how": "verify.mjs: matches bible-api.com KJV | matches getbible arabicsv (Smith & Van Dyke) exactly. KJV re-fetched from bible-api.com (fallback api.getbible.net/kjv); Van Dyck re-fetched from api.getbible.net/v2/arabicsv and compared exactly.",
-    "used_in": [
-      "home.credit_card"
-    ],
-    "checked_at": "2026-10-05"
-  },
-  {
-    "id": "bible:Psalms-37-21",
-    "type": "other",
-    "citation": "الكتاب المقدس — مزمور 37: 21 / Psalms 37:21 — النص الإنجليزي: King James Version؛ العربي: ترجمة سميث وفاندايك (ملك عام)",
-    "url": "https://bible-api.com/Psalms+37:21?translation=kjv",
-    "url_ar": "https://api.getbible.net/v2/arabicsv/19/37.json",
-    "verified": true,
-    "verified_how": "verify.mjs: matches bible-api.com KJV | matches getbible arabicsv (Smith & Van Dyke) exactly. KJV re-fetched from bible-api.com (fallback api.getbible.net/kjv); Van Dyck re-fetched from api.getbible.net/v2/arabicsv and compared exactly.",
     "used_in": [
       "home.credit_card"
     ],
@@ -679,32 +600,6 @@
     "checked_at": "2026-10-05"
   },
   {
-    "id": "bible:Hebrews-13-4",
-    "type": "other",
-    "citation": "الكتاب المقدس — عبرانيين 13: 4 / Hebrews 13:4 — النص الإنجليزي: King James Version؛ العربي: ترجمة سميث وفاندايك (ملك عام)",
-    "url": "https://bible-api.com/Hebrews+13:4?translation=kjv",
-    "url_ar": "https://api.getbible.net/v2/arabicsv/58/13.json",
-    "verified": true,
-    "verified_how": "verify.mjs: matches bible-api.com KJV | matches getbible arabicsv (Smith & Van Dyke) exactly. KJV re-fetched from bible-api.com (fallback api.getbible.net/kjv); Van Dyck re-fetched from api.getbible.net/v2/arabicsv and compared exactly.",
-    "used_in": [
-      "private_events.wedding"
-    ],
-    "checked_at": "2026-10-05"
-  },
-  {
-    "id": "bible:Luke-14-13",
-    "type": "other",
-    "citation": "الكتاب المقدس — لوقا 14: 13 / Luke 14:13 — النص الإنجليزي: King James Version؛ العربي: ترجمة سميث وفاندايك (ملك عام)",
-    "url": "https://bible-api.com/Luke+14:13?translation=kjv",
-    "url_ar": "https://api.getbible.net/v2/arabicsv/42/14.json",
-    "verified": true,
-    "verified_how": "verify.mjs: matches bible-api.com KJV | matches getbible arabicsv (Smith & Van Dyke) exactly. KJV re-fetched from bible-api.com (fallback api.getbible.net/kjv); Van Dyck re-fetched from api.getbible.net/v2/arabicsv and compared exactly.",
-    "used_in": [
-      "private_events.wedding"
-    ],
-    "checked_at": "2026-10-05"
-  },
-  {
     "id": "contemporary:الموسوعة-الفقهية-الدرر-السنية:كتاب-النكاح-اللهو-في-الأعراس-المعازف-وال",
     "type": "contemporary",
     "citation": "الموسوعة الفقهية (الدرر السنية) — كتاب النكاح — اللهو في الأعراس: المعازف والدف",
@@ -869,32 +764,6 @@
     "url": "",
     "verified": false,
     "verified_how": "Attribution reviewed by the auditor for consistency with the well-known position of the school (and the Kuwaiti Fiqh Encyclopedia where cited); NOT matched against a printed edition page by page. Requires a human scholar.",
-    "used_in": [
-      "private_events.neighbor_funeral"
-    ],
-    "checked_at": "2026-10-05"
-  },
-  {
-    "id": "bible:Romans-12-15",
-    "type": "other",
-    "citation": "الكتاب المقدس — رومية 12: 15 / Romans 12:15 — النص الإنجليزي: King James Version؛ العربي: ترجمة سميث وفاندايك (ملك عام)",
-    "url": "https://bible-api.com/Romans+12:15?translation=kjv",
-    "url_ar": "https://api.getbible.net/v2/arabicsv/45/12.json",
-    "verified": true,
-    "verified_how": "verify.mjs: matches bible-api.com KJV | matches getbible arabicsv (Smith & Van Dyke) exactly. KJV re-fetched from bible-api.com (fallback api.getbible.net/kjv); Van Dyck re-fetched from api.getbible.net/v2/arabicsv and compared exactly.",
-    "used_in": [
-      "private_events.neighbor_funeral"
-    ],
-    "checked_at": "2026-10-05"
-  },
-  {
-    "id": "bible:Ecclesiastes-7-2",
-    "type": "other",
-    "citation": "الكتاب المقدس — جامعة 7: 2 / Ecclesiastes 7:2 — النص الإنجليزي: King James Version؛ العربي: ترجمة سميث وفاندايك (ملك عام)",
-    "url": "https://bible-api.com/Ecclesiastes+7:2?translation=kjv",
-    "url_ar": "https://api.getbible.net/v2/arabicsv/21/7.json",
-    "verified": true,
-    "verified_how": "verify.mjs: matches bible-api.com KJV | matches getbible arabicsv (Smith & Van Dyke) exactly. KJV re-fetched from bible-api.com (fallback api.getbible.net/kjv); Van Dyck re-fetched from api.getbible.net/v2/arabicsv and compared exactly.",
     "used_in": [
       "private_events.neighbor_funeral"
     ],
@@ -1069,19 +938,6 @@
     "checked_at": "2026-10-05"
   },
   {
-    "id": "bible:Acts-20-35",
-    "type": "other",
-    "citation": "الكتاب المقدس — أعمال الرسل 20: 35 / Acts 20:35 — النص الإنجليزي: King James Version؛ العربي: ترجمة سميث وفاندايك (ملك عام)",
-    "url": "https://bible-api.com/Acts+20:35?translation=kjv",
-    "url_ar": "https://api.getbible.net/v2/arabicsv/44/20.json",
-    "verified": true,
-    "verified_how": "verify.mjs: matches bible-api.com KJV | matches getbible arabicsv (Smith & Van Dyke) exactly. KJV re-fetched from bible-api.com (fallback api.getbible.net/kjv); Van Dyck re-fetched from api.getbible.net/v2/arabicsv and compared exactly.",
-    "used_in": [
-      "private_events.gifts_birthday"
-    ],
-    "checked_at": "2026-10-05"
-  },
-  {
     "id": "contemporary:AMJA-د-صلاح-الصاوي:الفتوى-22801-2007-Celebrating-Birthdays",
     "type": "contemporary",
     "citation": "AMJA — د. صلاح الصاوي — الفتوى 22801 (2007) «Celebrating Birthdays»",
@@ -1233,32 +1089,6 @@
     "url": "",
     "verified": false,
     "verified_how": "Attribution reviewed by the auditor for consistency with the well-known position of the school (and the Kuwaiti Fiqh Encyclopedia where cited); NOT matched against a printed edition page by page. Requires a human scholar.",
-    "used_in": [
-      "public_events.holiday_greetings"
-    ],
-    "checked_at": "2026-10-05"
-  },
-  {
-    "id": "bible:Romans-12-18",
-    "type": "other",
-    "citation": "الكتاب المقدس — رومية 12: 18 / Romans 12:18 — النص الإنجليزي: King James Version؛ العربي: ترجمة سميث وفاندايك (ملك عام)",
-    "url": "https://bible-api.com/Romans+12:18?translation=kjv",
-    "url_ar": "https://api.getbible.net/v2/arabicsv/45/12.json",
-    "verified": true,
-    "verified_how": "verify.mjs: matches bible-api.com KJV | matches getbible arabicsv (Smith & Van Dyke) exactly. KJV re-fetched from bible-api.com (fallback api.getbible.net/kjv); Van Dyck re-fetched from api.getbible.net/v2/arabicsv and compared exactly.",
-    "used_in": [
-      "public_events.holiday_greetings"
-    ],
-    "checked_at": "2026-10-05"
-  },
-  {
-    "id": "bible:Psalms-107-1",
-    "type": "other",
-    "citation": "الكتاب المقدس — مزمور 107: 1 / Psalms 107:1 — النص الإنجليزي: King James Version؛ العربي: ترجمة سميث وفاندايك (ملك عام)",
-    "url": "https://bible-api.com/Psalms+107:1?translation=kjv",
-    "url_ar": "https://api.getbible.net/v2/arabicsv/19/107.json",
-    "verified": true,
-    "verified_how": "verify.mjs: matches bible-api.com KJV | matches getbible arabicsv (Smith & Van Dyke) exactly. KJV re-fetched from bible-api.com (fallback api.getbible.net/kjv); Van Dyck re-fetched from api.getbible.net/v2/arabicsv and compared exactly.",
     "used_in": [
       "public_events.holiday_greetings"
     ],
@@ -1424,46 +1254,6 @@
     "checked_at": "2026-10-05"
   },
   {
-    "id": "bible:Proverbs-20-1",
-    "type": "other",
-    "citation": "الكتاب المقدس — أمثال 20: 1 / Proverbs 20:1 — النص الإنجليزي: King James Version؛ العربي: ترجمة سميث وفاندايك (ملك عام)",
-    "url": "https://bible-api.com/Proverbs+20:1?translation=kjv",
-    "url_ar": "https://api.getbible.net/v2/arabicsv/20/20.json",
-    "verified": true,
-    "verified_how": "verify.mjs: matches bible-api.com KJV | matches getbible arabicsv (Smith & Van Dyke) exactly. KJV re-fetched from bible-api.com (fallback api.getbible.net/kjv); Van Dyck re-fetched from api.getbible.net/v2/arabicsv and compared exactly.",
-    "used_in": [
-      "public_events.alcohol_table"
-    ],
-    "checked_at": "2026-10-05"
-  },
-  {
-    "id": "bible:Ephesians-5-18",
-    "type": "other",
-    "citation": "الكتاب المقدس — أفسس 5: 18 / Ephesians 5:18 — النص الإنجليزي: King James Version؛ العربي: ترجمة سميث وفاندايك (ملك عام)",
-    "url": "https://bible-api.com/Ephesians+5:18?translation=kjv",
-    "url_ar": "https://api.getbible.net/v2/arabicsv/49/5.json",
-    "verified": true,
-    "verified_how": "verify.mjs: matches bible-api.com KJV | matches getbible arabicsv (Smith & Van Dyke) exactly. KJV re-fetched from bible-api.com (fallback api.getbible.net/kjv); Van Dyck re-fetched from api.getbible.net/v2/arabicsv and compared exactly.",
-    "used_in": [
-      "public_events.alcohol_table"
-    ],
-    "checked_at": "2026-10-05"
-  },
-  {
-    "id": "bible:Romans-14-21",
-    "type": "other",
-    "citation": "الكتاب المقدس — رومية 14: 21 / Romans 14:21 — النص الإنجليزي: King James Version؛ العربي: ترجمة سميث وفاندايك (ملك عام)",
-    "url": "https://bible-api.com/Romans+14:21?translation=kjv",
-    "url_ar": "https://api.getbible.net/v2/arabicsv/45/14.json",
-    "verified": true,
-    "verified_how": "verify.mjs: matches bible-api.com KJV | matches getbible arabicsv (Smith & Van Dyke) exactly. KJV re-fetched from bible-api.com (fallback api.getbible.net/kjv); Van Dyck re-fetched from api.getbible.net/v2/arabicsv and compared exactly.",
-    "used_in": [
-      "public_events.alcohol_table",
-      "work.alcohol_pork_job"
-    ],
-    "checked_at": "2026-10-05"
-  },
-  {
     "id": "contemporary:د-رفعت-فوزي-رئيس-قسم-الشريعة-ب:فتوى-Sharing-a-table-in-which-wine-is-se",
     "type": "contemporary",
     "citation": "د. رفعت فوزي (رئيس قسم الشريعة بجامعة القاهرة سابقاً) — موقع إسلام أون لاين — فتوى «Sharing a table in which wine is served»",
@@ -1592,19 +1382,6 @@
     "url": "",
     "verified": false,
     "verified_how": "Attribution reviewed by the auditor for consistency with the well-known position of the school (and the Kuwaiti Fiqh Encyclopedia where cited); NOT matched against a printed edition page by page. Requires a human scholar.",
-    "used_in": [
-      "public_events.raffle"
-    ],
-    "checked_at": "2026-10-05"
-  },
-  {
-    "id": "bible:2-Corinthians-9-7",
-    "type": "other",
-    "citation": "الكتاب المقدس — كورنثوس الثانية 9: 7 / 2 Corinthians 9:7 — النص الإنجليزي: King James Version؛ العربي: ترجمة سميث وفاندايك (ملك عام)",
-    "url": "https://bible-api.com/2%20Corinthians+9:7?translation=kjv",
-    "url_ar": "https://api.getbible.net/v2/arabicsv/47/9.json",
-    "verified": true,
-    "verified_how": "verify.mjs: matches bible-api.com KJV | matches getbible arabicsv (Smith & Van Dyke) exactly. KJV re-fetched from bible-api.com (fallback api.getbible.net/kjv); Van Dyck re-fetched from api.getbible.net/v2/arabicsv and compared exactly.",
     "used_in": [
       "public_events.raffle"
     ],
@@ -1763,32 +1540,6 @@
     "checked_at": "2026-10-05"
   },
   {
-    "id": "bible:Proverbs-12-22",
-    "type": "other",
-    "citation": "الكتاب المقدس — أمثال 12: 22 / Proverbs 12:22 — النص الإنجليزي: King James Version؛ العربي: ترجمة سميث وفاندايك (ملك عام)",
-    "url": "https://bible-api.com/Proverbs+12:22?translation=kjv",
-    "url_ar": "https://api.getbible.net/v2/arabicsv/20/12.json",
-    "verified": true,
-    "verified_how": "verify.mjs: matches bible-api.com KJV | matches getbible arabicsv (Smith & Van Dyke) exactly. KJV re-fetched from bible-api.com (fallback api.getbible.net/kjv); Van Dyck re-fetched from api.getbible.net/v2/arabicsv and compared exactly.",
-    "used_in": [
-      "school.cheating"
-    ],
-    "checked_at": "2026-10-05"
-  },
-  {
-    "id": "bible:Colossians-3-9",
-    "type": "other",
-    "citation": "الكتاب المقدس — كولوسي 3: 9 / Colossians 3:9 — النص الإنجليزي: King James Version؛ العربي: ترجمة سميث وفاندايك (ملك عام)",
-    "url": "https://bible-api.com/Colossians+3:9?translation=kjv",
-    "url_ar": "https://api.getbible.net/v2/arabicsv/51/3.json",
-    "verified": true,
-    "verified_how": "verify.mjs: matches bible-api.com KJV | matches getbible arabicsv (Smith & Van Dyke) exactly. KJV re-fetched from bible-api.com (fallback api.getbible.net/kjv); Van Dyck re-fetched from api.getbible.net/v2/arabicsv and compared exactly.",
-    "used_in": [
-      "school.cheating"
-    ],
-    "checked_at": "2026-10-05"
-  },
-  {
     "id": "contemporary:الشيخ-عبد-العزيز-بن-باز-المفتي:فتوى-منشورة-بالموقع-الرسمي-رقم-18083-حكم",
     "type": "contemporary",
     "citation": "الشيخ عبد العزيز بن باز (المفتي العام للمملكة العربية السعودية سابقاً) — فتوى منشورة بالموقع الرسمي رقم 18083: «حكم الغش في الامتحانات في غير المواد الدينية»",
@@ -1867,19 +1618,6 @@
     "url": "",
     "verified": false,
     "verified_how": "Attribution reviewed by the auditor for consistency with the well-known position of the school (and the Kuwaiti Fiqh Encyclopedia where cited); NOT matched against a printed edition page by page. Requires a human scholar.",
-    "used_in": [
-      "school.student_loan"
-    ],
-    "checked_at": "2026-10-05"
-  },
-  {
-    "id": "bible:Proverbs-22-7",
-    "type": "other",
-    "citation": "الكتاب المقدس — أمثال 22: 7 / Proverbs 22:7 — النص الإنجليزي: King James Version؛ العربي: ترجمة سميث وفاندايك (ملك عام)",
-    "url": "https://bible-api.com/Proverbs+22:7?translation=kjv",
-    "url_ar": "https://api.getbible.net/v2/arabicsv/20/22.json",
-    "verified": true,
-    "verified_how": "verify.mjs: matches bible-api.com KJV | matches getbible arabicsv (Smith & Van Dyke) exactly. KJV re-fetched from bible-api.com (fallback api.getbible.net/kjv); Van Dyck re-fetched from api.getbible.net/v2/arabicsv and compared exactly.",
     "used_in": [
       "school.student_loan"
     ],
@@ -2054,32 +1792,6 @@
     "checked_at": "2026-10-05"
   },
   {
-    "id": "bible:Job-31-1",
-    "type": "other",
-    "citation": "الكتاب المقدس — أيوب 31: 1 / Job 31:1 — النص الإنجليزي: King James Version؛ العربي: ترجمة سميث وفاندايك (ملك عام)",
-    "url": "https://bible-api.com/Job+31:1?translation=kjv",
-    "url_ar": "https://api.getbible.net/v2/arabicsv/18/31.json",
-    "verified": true,
-    "verified_how": "verify.mjs: matches bible-api.com KJV | matches getbible arabicsv (Smith & Van Dyke) exactly. KJV re-fetched from bible-api.com (fallback api.getbible.net/kjv); Van Dyck re-fetched from api.getbible.net/v2/arabicsv and compared exactly.",
-    "used_in": [
-      "school.mixed_social"
-    ],
-    "checked_at": "2026-10-05"
-  },
-  {
-    "id": "bible:Matthew-5-28",
-    "type": "other",
-    "citation": "الكتاب المقدس — متى 5: 28 / Matthew 5:28 — النص الإنجليزي: King James Version؛ العربي: ترجمة سميث وفاندايك (ملك عام)",
-    "url": "https://bible-api.com/Matthew+5:28?translation=kjv",
-    "url_ar": "https://api.getbible.net/v2/arabicsv/40/5.json",
-    "verified": true,
-    "verified_how": "verify.mjs: matches bible-api.com KJV | matches getbible arabicsv (Smith & Van Dyke) exactly. KJV re-fetched from bible-api.com (fallback api.getbible.net/kjv); Van Dyck re-fetched from api.getbible.net/v2/arabicsv and compared exactly.",
-    "used_in": [
-      "school.mixed_social"
-    ],
-    "checked_at": "2026-10-05"
-  },
-  {
     "id": "contemporary:مجمع-فقهاء-الشريعة-بأمريكا-AMJ:الفتوى-رقم-3253-قسم-الفتوى-22-7-2007",
     "type": "contemporary",
     "citation": "مجمع فقهاء الشريعة بأمريكا (AMJA) — الفتوى رقم 3253 (قسم الفتوى، 22/7/2007)",
@@ -2200,32 +1912,6 @@
     "checked_at": "2026-10-05"
   },
   {
-    "id": "bible:Deuteronomy-22-2",
-    "type": "other",
-    "citation": "الكتاب المقدس — تثنية 22: 2 / Deuteronomy 22:2 — النص الإنجليزي: King James Version؛ العربي: ترجمة سميث وفاندايك (ملك عام)",
-    "url": "https://bible-api.com/Deuteronomy+22:2?translation=kjv",
-    "url_ar": "https://api.getbible.net/v2/arabicsv/5/22.json",
-    "verified": true,
-    "verified_how": "verify.mjs: matches bible-api.com KJV | matches getbible arabicsv (Smith & Van Dyke) exactly. KJV re-fetched from bible-api.com (fallback api.getbible.net/kjv); Van Dyck re-fetched from api.getbible.net/v2/arabicsv and compared exactly.",
-    "used_in": [
-      "street.lost_wallet"
-    ],
-    "checked_at": "2026-10-05"
-  },
-  {
-    "id": "bible:Deuteronomy-22-3",
-    "type": "other",
-    "citation": "الكتاب المقدس — تثنية 22: 3 / Deuteronomy 22:3 — النص الإنجليزي: King James Version؛ العربي: ترجمة سميث وفاندايك (ملك عام)",
-    "url": "https://api.getbible.net/v2/kjv/5/22.json",
-    "url_ar": "https://api.getbible.net/v2/arabicsv/5/22.json",
-    "verified": true,
-    "verified_how": "verify.mjs: matches getbible KJV (bible-api.com differs: «st things of thy bro») | matches getbible arabicsv (Smith & Van Dyke) exactly. KJV re-fetched from bible-api.com (fallback api.getbible.net/kjv); Van Dyck re-fetched from api.getbible.net/v2/arabicsv and compared exactly.",
-    "used_in": [
-      "street.lost_wallet"
-    ],
-    "checked_at": "2026-10-05"
-  },
-  {
     "id": "quran:2:219",
     "type": "quran",
     "citation": "القرآن الكريم، سورة البقرة (2)، الآية 219 — رسم عثماني؛ الترجمة: Sahih International",
@@ -2293,32 +1979,6 @@
     "url": "",
     "verified": false,
     "verified_how": "Attribution reviewed by the auditor for consistency with the well-known position of the school (and the Kuwaiti Fiqh Encyclopedia where cited); NOT matched against a printed edition page by page. Requires a human scholar.",
-    "used_in": [
-      "street.lottery"
-    ],
-    "checked_at": "2026-10-05"
-  },
-  {
-    "id": "bible:Proverbs-13-11",
-    "type": "other",
-    "citation": "الكتاب المقدس — أمثال 13: 11 / Proverbs 13:11 — النص الإنجليزي: King James Version؛ العربي: ترجمة سميث وفاندايك (ملك عام)",
-    "url": "https://bible-api.com/Proverbs+13:11?translation=kjv",
-    "url_ar": "https://api.getbible.net/v2/arabicsv/20/13.json",
-    "verified": true,
-    "verified_how": "verify.mjs: matches bible-api.com KJV | matches getbible arabicsv (Smith & Van Dyke) exactly. KJV re-fetched from bible-api.com (fallback api.getbible.net/kjv); Van Dyck re-fetched from api.getbible.net/v2/arabicsv and compared exactly.",
-    "used_in": [
-      "street.lottery"
-    ],
-    "checked_at": "2026-10-05"
-  },
-  {
-    "id": "bible:Hebrews-13-5",
-    "type": "other",
-    "citation": "الكتاب المقدس — عبرانيين 13: 5 / Hebrews 13:5 — النص الإنجليزي: King James Version؛ العربي: ترجمة سميث وفاندايك (ملك عام)",
-    "url": "https://bible-api.com/Hebrews+13:5?translation=kjv",
-    "url_ar": "https://api.getbible.net/v2/arabicsv/58/13.json",
-    "verified": true,
-    "verified_how": "verify.mjs: matches bible-api.com KJV | matches getbible arabicsv (Smith & Van Dyke) exactly. KJV re-fetched from bible-api.com (fallback api.getbible.net/kjv); Van Dyck re-fetched from api.getbible.net/v2/arabicsv and compared exactly.",
     "used_in": [
       "street.lottery"
     ],
@@ -2490,45 +2150,6 @@
     "url": "",
     "verified": false,
     "verified_how": "Attribution reviewed by the auditor for consistency with the well-known position of the school (and the Kuwaiti Fiqh Encyclopedia where cited); NOT matched against a printed edition page by page. Requires a human scholar.",
-    "used_in": [
-      "street.buying_selling"
-    ],
-    "checked_at": "2026-10-05"
-  },
-  {
-    "id": "bible:Leviticus-25-14",
-    "type": "other",
-    "citation": "الكتاب المقدس — لاويين 25: 14 / Leviticus 25:14 — النص الإنجليزي: King James Version؛ العربي: ترجمة سميث وفاندايك (ملك عام)",
-    "url": "https://bible-api.com/Leviticus+25:14?translation=kjv",
-    "url_ar": "https://api.getbible.net/v2/arabicsv/3/25.json",
-    "verified": true,
-    "verified_how": "verify.mjs: matches bible-api.com KJV | matches getbible arabicsv (Smith & Van Dyke) exactly. KJV re-fetched from bible-api.com (fallback api.getbible.net/kjv); Van Dyck re-fetched from api.getbible.net/v2/arabicsv and compared exactly.",
-    "used_in": [
-      "street.buying_selling"
-    ],
-    "checked_at": "2026-10-05"
-  },
-  {
-    "id": "bible:Proverbs-11-1",
-    "type": "other",
-    "citation": "الكتاب المقدس — أمثال 11: 1 / Proverbs 11:1 — النص الإنجليزي: King James Version؛ العربي: ترجمة سميث وفاندايك (ملك عام)",
-    "url": "https://bible-api.com/Proverbs+11:1?translation=kjv",
-    "url_ar": "https://api.getbible.net/v2/arabicsv/20/11.json",
-    "verified": true,
-    "verified_how": "verify.mjs: matches bible-api.com KJV | matches getbible arabicsv (Smith & Van Dyke) exactly. KJV re-fetched from bible-api.com (fallback api.getbible.net/kjv); Van Dyck re-fetched from api.getbible.net/v2/arabicsv and compared exactly.",
-    "used_in": [
-      "street.buying_selling"
-    ],
-    "checked_at": "2026-10-05"
-  },
-  {
-    "id": "bible:Exodus-20-16",
-    "type": "other",
-    "citation": "الكتاب المقدس — خروج 20: 16 / Exodus 20:16 — النص الإنجليزي: King James Version؛ العربي: ترجمة سميث وفاندايك (ملك عام)",
-    "url": "https://bible-api.com/Exodus+20:16?translation=kjv",
-    "url_ar": "https://api.getbible.net/v2/arabicsv/2/20.json",
-    "verified": true,
-    "verified_how": "verify.mjs: matches bible-api.com KJV | matches getbible arabicsv (Smith & Van Dyke) exactly. KJV re-fetched from bible-api.com (fallback api.getbible.net/kjv); Van Dyck re-fetched from api.getbible.net/v2/arabicsv and compared exactly.",
     "used_in": [
       "street.buying_selling"
     ],
@@ -2751,19 +2372,6 @@
     "checked_at": "2026-10-05"
   },
   {
-    "id": "bible:Psalms-15-5",
-    "type": "other",
-    "citation": "الكتاب المقدس — مزمور 15: 5 / Psalms 15:5 — النص الإنجليزي: King James Version؛ العربي: ترجمة سميث وفاندايك (ملك عام)",
-    "url": "https://bible-api.com/Psalms+15:5?translation=kjv",
-    "url_ar": "https://api.getbible.net/v2/arabicsv/19/15.json",
-    "verified": true,
-    "verified_how": "verify.mjs: matches bible-api.com KJV | matches getbible arabicsv (Smith & Van Dyke) exactly. KJV re-fetched from bible-api.com (fallback api.getbible.net/kjv); Van Dyck re-fetched from api.getbible.net/v2/arabicsv and compared exactly.",
-    "used_in": [
-      "work.retirement_401k"
-    ],
-    "checked_at": "2026-10-05"
-  },
-  {
     "id": "contemporary:مجمع-الفقه-الإسلامي-الدولي:القرار-63-1-7-الدورة-السابعة-جدة-مايو-19",
     "type": "contemporary",
     "citation": "مجمع الفقه الإسلامي الدولي — القرار 63 (1/7)، الدورة السابعة، جدة، مايو 1992 (الأسواق المالية: الأسهم)",
@@ -2920,32 +2528,6 @@
     "checked_at": "2026-10-05"
   },
   {
-    "id": "bible:Exodus-23-8",
-    "type": "other",
-    "citation": "الكتاب المقدس — خروج 23: 8 / Exodus 23:8 — النص الإنجليزي: King James Version؛ العربي: ترجمة سميث وفاندايك (ملك عام)",
-    "url": "https://bible-api.com/Exodus+23:8?translation=kjv",
-    "url_ar": "https://api.getbible.net/v2/arabicsv/2/23.json",
-    "verified": true,
-    "verified_how": "verify.mjs: matches bible-api.com KJV | matches getbible arabicsv (Smith & Van Dyke) exactly. KJV re-fetched from bible-api.com (fallback api.getbible.net/kjv); Van Dyck re-fetched from api.getbible.net/v2/arabicsv and compared exactly.",
-    "used_in": [
-      "work.honesty_gifts"
-    ],
-    "checked_at": "2026-10-05"
-  },
-  {
-    "id": "bible:Luke-16-10",
-    "type": "other",
-    "citation": "الكتاب المقدس — لوقا 16: 10 / Luke 16:10 — النص الإنجليزي: King James Version؛ العربي: ترجمة سميث وفاندايك (ملك عام)",
-    "url": "https://bible-api.com/Luke+16:10?translation=kjv",
-    "url_ar": "https://api.getbible.net/v2/arabicsv/42/16.json",
-    "verified": true,
-    "verified_how": "verify.mjs: matches bible-api.com KJV | matches getbible arabicsv (Smith & Van Dyke) exactly. KJV re-fetched from bible-api.com (fallback api.getbible.net/kjv); Van Dyck re-fetched from api.getbible.net/v2/arabicsv and compared exactly.",
-    "used_in": [
-      "work.honesty_gifts"
-    ],
-    "checked_at": "2026-10-05"
-  },
-  {
     "id": "contemporary:الشيخ-عبد-العزيز-بن-باز-المفتي:فتوى-حكم-الهدايا-للعمال-والموظفين-binbaz",
     "type": "contemporary",
     "citation": "الشيخ عبد العزيز بن باز (المفتي العام للسعودية سابقاً) — فتوى «حكم الهدايا للعمال والموظفين»، binbaz.org.sa رقم 23949",
@@ -2988,7 +2570,7 @@
     "citation": "Catechism of the Catholic Church §2413 (games of chance / wagers)",
     "url": "https://www.vatican.va/archive/ENG0015/__P8D.HTM",
     "verified": false,
-    "verified_how": "Auditor: wording in the ruling (\"not in themselves contrary to justice… unless they deprive someone of what is necessary\") matches the well-known text of CCC 2413; researcher confirmed via web search. Not re-fetched in this audit.",
+    "verified_how": "Auditor: the general statement in the ruling (games of chance are not unjust in themselves unless they deprive people of what they need) matches the well-known text of CCC 2413 (a catechism, not scripture); researcher confirmed via web search. Not re-fetched in this audit.",
     "used_in": [
       "street.lottery"
     ],

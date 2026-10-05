@@ -193,24 +193,6 @@
         "ar": "يدعو التقليدان إلى مسالمة جميع الناس وإلى شكر الله على نعمه؛ والصديق المسلم الذي يعتذر عن الجانب الديني من العيد ثم يقدّم تمنياته الطيبة أو هديته يتصرف بالاحترام نفسه للإيمان الذي يعرفه المسيحيون المتدينون.",
         "en": "Both traditions call for living peaceably with all people and for giving thanks to God; a Muslim friend who sits out the religious part of a holiday yet offers warm wishes or a gift is acting from the same respect for faith that devout Christians recognise."
       },
-      "bible": [
-        {
-          "ref_en": "Romans 12:18",
-          "ref_ar": "رومية 12: 18",
-          "text_en": "If it be possible, as much as lieth in you, live peaceably with all men.",
-          "text_ar": "إِنْ كَانَ مُمْكِنًا فَحَسَبَ طَاقَتِكُمْ سَالِمُوا جَمِيعَ ٱلنَّاسِ.",
-          "source_url": "https://bible-api.com/Romans+12:18?translation=kjv",
-          "source_url_ar": "https://api.getbible.net/v2/arabicsv/45/12.json"
-        },
-        {
-          "ref_en": "Psalms 107:1",
-          "ref_ar": "مزمور 107: 1",
-          "text_en": "O give thanks unto the LORD, for he is good: for his mercy endureth for ever.",
-          "text_ar": "اِحْمَدُوا ٱلرَّبَّ لِأَنَّهُ صَالِحٌ، لِأَنَّ إِلَى ٱلْأَبَدِ رَحْمَتَهُ.",
-          "source_url": "https://bible-api.com/Psalms+107:1?translation=kjv",
-          "source_url_ar": "https://api.getbible.net/v2/arabicsv/19/107.json"
-        }
-      ],
       "differences": {
         "ar": "يحتفل المسيحيون في عيد الميلاد بتجسّد المسيح وميلاده بوصفه ابن الله، أما المسلمون فيكرمون عيسى نبياً ومسيحاً وُلد من مريم العذراء ولا يعتقدون ألوهيته. واحتراماً للإيمانين تعرض اللعبة المسلمين وهم يتبادلون اللطف والهدايا دون المشاركة في العبادة، لا على سبيل المناظرة.",
         "en": "At Christmas, Christians celebrate the incarnation and birth of Jesus as the Son of God; Muslims honour Jesus as a prophet and the Messiah born of the Virgin Mary but do not believe he is divine. Out of respect for both faiths, the game shows Muslims sharing kindness and gifts without joining worship, not as a matter for debate."
@@ -359,35 +341,9 @@
     },
     "common_ground": {
       "summary": {
-        "ar": "يحذّر الكتاب المقدس من أن «الخمر مستهزئة» ويأمر «لا تسكروا بالخمر»، ويقول بولس إنه حسن ألا يشرب الإنسان خمراً إن كان ذلك يُعثر أخاه — وهو مبدأ يستطيع آدم أن يطبّقه حين يجلس مع صديقه المسلم على طاولة بلا خمر.",
-        "en": "The Bible warns that \"wine is a mocker\" and commands \"be not drunk with wine\", and Paul says it is good not to drink wine if it makes a brother stumble — a principle Adam can live out by joining his Muslim friend at an alcohol-free table."
+        "ar": "تحذّر الأخلاق المسيحية أيضاً من السُّكر، ويرى كثير من المسيحيين أن من الحسن ترك الشرب مراعاةً لضمير صديق — وهو مبدأ يستطيع آدم أن يطبّقه حين يجلس مع صديقه المسلم على طاولة بلا خمر.",
+        "en": "Christian ethics also warns against drunkenness, and many Christians hold that it is good to forgo a drink out of consideration for a friend's conscience — a principle Adam can live out by joining his Muslim friend at an alcohol-free table."
       },
-      "bible": [
-        {
-          "ref_en": "Proverbs 20:1",
-          "ref_ar": "أمثال 20: 1",
-          "text_en": "Wine is a mocker, strong drink is raging: and whosoever is deceived thereby is not wise.",
-          "text_ar": "اَلْخَمْرُ مُسْتَهْزِئَةٌ. ٱلْمُسْكِرُ عَجَّاجٌ، وَمَنْ يَتَرَنَّحُ بِهِمَا فَلَيْسَ بِحَكِيمٍ.",
-          "source_url": "https://bible-api.com/Proverbs+20:1?translation=kjv",
-          "source_url_ar": "https://api.getbible.net/v2/arabicsv/20/20.json"
-        },
-        {
-          "ref_en": "Ephesians 5:18",
-          "ref_ar": "أفسس 5: 18",
-          "text_en": "And be not drunk with wine, wherein is excess; but be filled with the Spirit;",
-          "text_ar": "وَلَا تَسْكَرُوا بِٱلْخَمْرِ ٱلَّذِي فِيهِ ٱلْخَلَاعَةُ، بَلِ ٱمْتَلِئُوا بِٱلرُّوحِ،",
-          "source_url": "https://bible-api.com/Ephesians+5:18?translation=kjv",
-          "source_url_ar": "https://api.getbible.net/v2/arabicsv/49/5.json"
-        },
-        {
-          "ref_en": "Romans 14:21",
-          "ref_ar": "رومية 14: 21",
-          "text_en": "It is good neither to eat flesh, nor to drink wine, nor any thing whereby thy brother stumbleth, or is offended, or is made weak.",
-          "text_ar": "حَسَنٌ أَنْ لَا تَأْكُلَ لَحْمًا وَلَا تَشْرَبَ خَمْرًا وَلَا شَيْئًا يَصْطَدِمُ بِهِ أَخُوكَ أَوْ يَعْثُرُ أَوْ يَضْعُفُ.",
-          "source_url": "https://bible-api.com/Romans+14:21?translation=kjv",
-          "source_url_ar": "https://api.getbible.net/v2/arabicsv/45/14.json"
-        }
-      ],
       "differences": {
         "ar": "تبيح أغلب الكنائس الشرب المعتدل وتنهى عن السُّكر، والخمر تُستعمل في سرّ العشاء الرباني، مع أن بعض الطوائف تدعو إلى الامتناع التام؛ أما الإسلام فيحرّم الخمر قليلها وكثيرها، ولذلك يتجنب المسلم مجلس الشرب نفسه.",
         "en": "Most churches permit moderate drinking while forbidding drunkenness, and wine is used in Holy Communion, though some denominations promote total abstinence; Islam forbids alcohol in any amount, which is why a Muslim avoids the drinking table itself."
@@ -539,19 +495,9 @@
     },
     "common_ground": {
       "summary": {
-        "ar": "يحب التقليدان العطاء الخيري لذاته؛ فبولس يكتب أن «المعطي المسرور يحبه الله»، وهذا يوافق تفضيل الإسلام للتبرع المباشر على التذكرة. ولا يوجد نص كتابي خاص بالسحب الخيري.",
-        "en": "Both traditions love charitable giving for its own sake; Paul writes that \"God loveth a cheerful giver\", which fits the Islamic preference for a direct donation over a ticket. There is no specific biblical text about raffles."
+        "ar": "يحب التقليدان العطاء الخيري لذاته ويقدّران العطاء عن طيب نفس، وهذا يوافق تفضيل الإسلام للتبرع المباشر على شراء التذكرة.",
+        "en": "Both traditions love charitable giving for its own sake and value giving freely and gladly, which fits the Islamic preference for a direct donation over buying a ticket."
       },
-      "bible": [
-        {
-          "ref_en": "2 Corinthians 9:7",
-          "ref_ar": "كورنثوس الثانية 9: 7",
-          "text_en": "Every man according as he purposeth in his heart, so let him give; not grudgingly, or of necessity: for God loveth a cheerful giver.",
-          "text_ar": "كُلُّ وَاحِدٍ كَمَا يَنْوِي بِقَلْبِهِ، لَيْسَ عَنْ حُزْنٍ أَوِ ٱضْطِرَارٍ. لِأَنَّ ٱلْمُعْطِيَ ٱلْمَسْرُورَ يُحِبُّهُ ٱللهُ.",
-          "source_url": "https://bible-api.com/2%20Corinthians+9:7?translation=kjv",
-          "source_url_ar": "https://api.getbible.net/v2/arabicsv/47/9.json"
-        }
-      ],
       "differences": {
         "ar": "السحوبات الخيرية وأمسيات البنغو وسيلة شائعة لجمع التبرعات في بعض الكنائس (كثير من الأبرشيات الكاثوليكية مثلاً)، بينما تعارض كنائس أخرى كالميثودية المتحدة القمار بكل صوره؛ أما في الإسلام فالسحب المدفوع قمار مهما كانت غايته نبيلة.",
         "en": "Raffles and bingo nights are common fundraisers in some churches (many Catholic parishes, for example), while other churches such as the United Methodist Church oppose gambling in all its forms; in Islam a paid raffle is gambling however good the cause."

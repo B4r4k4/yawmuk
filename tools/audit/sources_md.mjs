@@ -13,7 +13,7 @@ const TYPES = [
   ['hadith', 'Hadith — الحديث النبوي'],
   ['madhhab', 'Madhhab references — مراجع المذاهب الأربعة'],
   ['contemporary', 'Contemporary fiqh bodies & fatwas — المجامع والهيئات المعاصرة'],
-  ['other', 'Bible (KJV + Van Dyck) & Christian-practice sources — الكتاب المقدس ومصادر الممارسة المسيحية']
+  ['other', 'Christian-practice sources — مصادر عن الممارسة المسيحية']
 ];
 const esc = (s) => String(s ?? '').replace(/\|/g, '\\|').replace(/\r?\n/g, ' ');
 const out = [];

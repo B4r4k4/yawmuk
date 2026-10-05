@@ -156,27 +156,9 @@
     },
     "common_ground": {
       "summary": {
-        "ar": "اتفاق تام: فالكتاب المقدس يقول: «كراهة الرب شفتا كذب»، ويأمر: «لا تكذبوا بعضكم على بعض»؛ والأمانة الأكاديمية قيمة يشترك فيها آدم وأصدقاؤه المسلمون كاملة.",
-        "en": "Complete agreement: the Bible calls lying lips an abomination to the LORD and commands, \"Lie not one to another\"; academic honesty is a value Adam and his Muslim friends fully share."
+        "ar": "اتفاق تام: فالأخلاق المسيحية أيضاً تدين الكذب والخداع، والأمانة الأكاديمية قيمة يشترك فيها آدم وأصدقاؤه المسلمون كاملة.",
+        "en": "Complete agreement: Christian ethics also condemns lying and deception, and academic honesty is a value Adam and his Muslim friends fully share."
       },
-      "bible": [
-        {
-          "ref_en": "Proverbs 12:22",
-          "ref_ar": "أمثال 12: 22",
-          "text_en": "Lying lips are abomination to the LORD: but they that deal truly are his delight.",
-          "text_ar": "كَرَاهَةُ ٱلرَّبِّ شَفَتَا كَذِبٍ، أَمَّا ٱلْعَامِلُونَ بِٱلصِّدْقِ فَرِضَاهُ.",
-          "source_url": "https://bible-api.com/Proverbs+12:22?translation=kjv",
-          "source_url_ar": "https://api.getbible.net/v2/arabicsv/20/12.json"
-        },
-        {
-          "ref_en": "Colossians 3:9",
-          "ref_ar": "كولوسي 3: 9",
-          "text_en": "Lie not one to another, seeing that ye have put off the old man with his deeds;",
-          "text_ar": "لَا تَكْذِبُوا بَعْضُكُمْ عَلَى بَعْضٍ، إِذْ خَلَعْتُمُ ٱلْإِنْسَانَ ٱلْعَتِيقَ مَعَ أَعْمَالِهِ،",
-          "source_url": "https://bible-api.com/Colossians+3:9?translation=kjv",
-          "source_url_ar": "https://api.getbible.net/v2/arabicsv/51/3.json"
-        }
-      ],
       "differences": {
         "ar": "لا يوجد فرق يُذكر في هذه المسألة.",
         "en": "There is no meaningful difference on this issue."
@@ -348,27 +330,9 @@
     },
     "common_ground": {
       "summary": {
-        "ar": "الكتاب المقدس أيضاً ينهى عن أخذ الربا من الفقير، ويحذّر من أن «المقترض عبد للمقرض»، وهو قلق يشاركه كثير من المسيحيين تجاه الطلاب المثقلين بالديون.",
-        "en": "The Bible also forbids taking interest from the poor and warns that \"the borrower is servant to the lender\" — a concern many Christians share about students weighed down by debt."
+        "ar": "دان التقليد المسيحي طويلاً أخذ الفائدة من الفقير، وكثير من المسيحيين اليوم يشاركون القلق على الطلاب المثقلين بالديون.",
+        "en": "Christian tradition long condemned taking interest from the poor, and many Christians today share the concern about students weighed down by debt."
       },
-      "bible": [
-        {
-          "ref_en": "Proverbs 22:7",
-          "ref_ar": "أمثال 22: 7",
-          "text_en": "The rich ruleth over the poor, and the borrower is servant to the lender.",
-          "text_ar": "اَلْغَنِيُّ يَتَسَلَّطُ عَلَى ٱلْفَقِيرِ، وَٱلْمُقْتَرِضُ عَبْدٌ لِلْمُقْرِضِ.",
-          "source_url": "https://bible-api.com/Proverbs+22:7?translation=kjv",
-          "source_url_ar": "https://api.getbible.net/v2/arabicsv/20/22.json"
-        },
-        {
-          "ref_en": "Exodus 22:25",
-          "ref_ar": "خروج 22: 25",
-          "text_en": "If thou lend money to any of my people that is poor by thee, thou shalt not be to him as an usurer, neither shalt thou lay upon him usury.",
-          "text_ar": "إِنْ أَقْرَضْتَ فِضَّةً لِشَعْبِي ٱلْفَقِيرِ ٱلَّذِي عِنْدَكَ فَلَا تَكُنْ لَهُ كَٱلْمُرَابِي. لَا تَضَعُوا عَلَيْهِ رِبًا.",
-          "source_url": "https://bible-api.com/Exodus+22:25?translation=kjv",
-          "source_url_ar": "https://api.getbible.net/v2/arabicsv/2/22.json"
-        }
-      ],
       "differences": {
         "ar": "لا يرى أغلب المسيحيين اليوم الاقتراض بفائدة إثماً في ذاته، وإن حذّر كثير من المرشدين المسيحيين من الديون الثقيلة؛ أما في الإسلام فالإشكال في الفائدة نفسها ولو كان الدَّين محتملاً.",
         "en": "Most Christians today do not see borrowing at interest as sinful in itself, though many Christian advisers warn against heavy debt; in Islam the issue is the interest itself, even when the debt is manageable."
@@ -539,27 +503,9 @@
     },
     "common_ground": {
       "summary": {
-        "ar": "حفظ العين والقلب أرض مشتركة: فالمسيح علّم أن النظر بشهوة زنى في القلب، وأيوب قطع عهداً لعينيه. وبعض المسيحيين أيضاً يتجنبون الانفراد بغير الزوج أو الزوجة من الجنس الآخر (ما يُعرف بـ«قاعدة بيلي غراهام»).",
-        "en": "Guarding the eyes and the heart is shared ground: Jesus taught that looking with lust is already adultery in the heart, and Job \"made a covenant with mine eyes\". Some Christians also avoid being alone with someone of the opposite sex other than their spouse (often called the 'Billy Graham rule')."
+        "ar": "حفظ العين والقلب أرض مشتركة: فالأخلاق المسيحية أيضاً تعدّ النظر بشهوة خطأً أخلاقياً، وبعض المسيحيين يتجنبون الانفراد بغير الزوج أو الزوجة من الجنس الآخر (ما يُعرف بقاعدة بيلي غراهام).",
+        "en": "Guarding the eyes and the heart is shared ground: Christian ethics also treats lustful looking as a moral wrong, and some Christians avoid being alone with someone of the opposite sex other than their spouse (often called the Billy Graham rule)."
       },
-      "bible": [
-        {
-          "ref_en": "Job 31:1",
-          "ref_ar": "أيوب 31: 1",
-          "text_en": "I made a covenant with mine eyes; why then should I think upon a maid?",
-          "text_ar": "«عَهْدًا قَطَعْتُ لِعَيْنَيَّ، فَكَيْفَ أَتَطَلَّعُ فِي عَذْرَاءَ؟",
-          "source_url": "https://bible-api.com/Job+31:1?translation=kjv",
-          "source_url_ar": "https://api.getbible.net/v2/arabicsv/18/31.json"
-        },
-        {
-          "ref_en": "Matthew 5:28",
-          "ref_ar": "متى 5: 28",
-          "text_en": "But I say unto you, That whosoever looketh on a woman to lust after her hath committed adultery with her already in his heart.",
-          "text_ar": "وَأَمَّا أَنَا فَأَقُولُ لَكُمْ: إِنَّ كُلَّ مَنْ يَنْظُرُ إِلَى ٱمْرَأَةٍ لِيَشْتَهِيَهَا، فَقَدْ زَنَى بِهَا فِي قَلْبِهِ.",
-          "source_url": "https://bible-api.com/Matthew+5:28?translation=kjv",
-          "source_url_ar": "https://api.getbible.net/v2/arabicsv/40/5.json"
-        }
-      ],
       "differences": {
         "ar": "يرى أغلب المسيحيين المصافحة مجاملة عادية لا إشكال دينياً فيها، والاختلاط الاجتماعي عندهم غير مقيّد في الغالب؛ أما أحكام الإسلام في اللمس والخلوة فأكثر تحديداً، ويكفي آدم أن يتبع ما يرتاح له صديقه.",
         "en": "Most Christians see a handshake as ordinary courtesy with no religious issue, and mixed social settings are generally unrestricted; Islam's rules on touch and seclusion are more specific, and Adam can simply follow his friend's lead."

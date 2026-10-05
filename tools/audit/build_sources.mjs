@@ -67,15 +67,6 @@ for (const f of fs.readdirSync(DIR).filter(f => f.endsWith('.json')).sort()) {
         verified_how: 'Attribution reviewed by the auditor for consistency with the well-known position of the school (and the Kuwaiti Fiqh Encyclopedia where cited); NOT matched against a printed edition page by page. Requires a human scholar.',
       }, r.id);
     }
-    for (const b of r.common_ground?.bible || []) {
-      const res = verify.filter(v => v.ruling === r.id && v.ref === b.ref_en && /^bible/.test(v.kind));
-      const ok = res.length >= 2 && res.every(v => v.level === 'PASS');
-      add(`bible:${slug(b.ref_en)}`, {
-        type: 'other', citation: `الكتاب المقدس — ${b.ref_ar} / ${b.ref_en} — النص الإنجليزي: King James Version؛ العربي: ترجمة سميث وفاندايك (ملك عام)`,
-        url: b.source_url, url_ar: b.source_url_ar || '', verified: !!ok,
-        verified_how: ok ? `verify.mjs: ${res.map(v => v.msg).join(' | ')}. KJV re-fetched from bible-api.com (fallback api.getbible.net/kjv); Van Dyck re-fetched from api.getbible.net/v2/arabicsv and compared exactly.` : `NOT verified: ${res.map(v => v.msg).join(' | ') || 'not checked'}`,
-      }, r.id);
-    }
     for (const c of r.contemporary || []) {
       const man = MANUAL_CONTEMPORARY.find(x => x.m.test(c.decision_ref) && x.b.test(c.body));
       const urls = String(c.source_url || '').split(/\s*;\s*/).filter(Boolean);
@@ -94,10 +85,10 @@ for (const e of reg.values()) if (e.type === 'hadith' && e.verified) {
   const m = manual.find(x => e.used_in.includes(x.ruling) && e.citation.includes(x.citation.split(' ')[0]));
   if (m) e.verified_how = `Manual (auditor): ${m.verified_how}`;
 }
-// Christian-practice facts quoted in common_ground.differences/summary (not Bible texts).
+// Christian-practice facts mentioned in common_ground (type 'other'). No scriptural sources exist in the project (decision 2026-10-06).
 const CHRISTIAN_FACTS = [
-  { id: 'other:ccc-2413', test: /2413/, citation: 'Catechism of the Catholic Church §2413 (games of chance / wagers)', url: 'https://www.vatican.va/archive/ENG0015/__P8D.HTM',
-    how: 'Auditor: wording in the ruling ("not in themselves contrary to justice… unless they deprive someone of what is necessary") matches the well-known text of CCC 2413; researcher confirmed via web search. Not re-fetched in this audit.' },
+  { id: 'other:ccc-2413', test: /التعليم الكاثوليكي|Catholic teaching/, citation: 'Catechism of the Catholic Church §2413 (games of chance / wagers)', url: 'https://www.vatican.va/archive/ENG0015/__P8D.HTM',
+    how: 'Auditor: the general statement in the ruling (games of chance are not unjust in themselves unless they deprive people of what they need) matches the well-known text of CCC 2413 (a catechism, not scripture); researcher confirmed via web search. Not re-fetched in this audit.' },
   { id: 'other:umc-gambling', test: /الميثودية|Methodist/, citation: 'United Methodist Church — Social Principles / Book of Resolutions: "Gambling is a menace to society…"', url: 'https://www.umc.org/en/content/ask-the-umc-what-is-the-united-methodist-position-on-gambling',
     how: 'Researcher confirmed via web search (umc.org); auditor did not re-fetch. Phrase is the standard Social Principles wording.' },
   { id: 'other:billy-graham-rule', test: /بيلي غراهام|Billy Graham/, citation: '"Billy Graham rule" (Modesto Manifesto, 1948)', url: 'https://www.christianhistoryinstitute.org/',

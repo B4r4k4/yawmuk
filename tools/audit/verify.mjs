@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-// «يومك» — Automated verification of Qur'an, hadith and Bible (KJV + Van Dyck) texts in content/rulings/*.json
-// (Bible checks: see checkBible() below — common_ground.bible[] vs bible-api.com / api.getbible.net kjv + arabicsv.)
+// «يومك» — Automated verification of Qur'an & hadith texts in content/rulings/*.json,
+// plus a guard that no Bible/Torah/Gospel text or reference appears anywhere (decision 2026-10-06).
 //
 // Usage:   node tools/audit/verify.mjs [--json] [--no-cache] [--quiet]
 // Exit:    0 = all checks passed, 1 = at least one FAIL, 2 = network/setup error
@@ -23,6 +23,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { createRequire } from 'node:module';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(HERE, '..', '..');
@@ -44,7 +45,6 @@ async function fetchText(url, tries = 6) {
   let last;
   for (let i = 0; i < tries; i++) {
     try {
-      if (url.includes('bible-api.com')) await new Promise(res => setTimeout(res, 2500)); // bible-api.com rate-limits (HTTP 429)
       const r = await fetch(url, { headers: { 'User-Agent': 'yawmak-audit/1.0' } });
       if (!r.ok) throw Object.assign(new Error(`HTTP ${r.status} for ${url}`), { status: r.status });
       return await r.text();
@@ -218,68 +218,30 @@ async function checkHadith() {
   }
 }
 
-// ---------- Bible (common_ground.bible[]) ----------
-// KJV: text_en must equal bible-api.com (?translation=kjv) OR api.getbible.net/v2/kjv after whitespace/quote
-//      normalisation (LORD/Lord case unified — getbible prints "Lord"). Any other difference = FAIL.
-// Van Dyck: text_ar must equal api.getbible.net/v2/arabicsv (Smith & Van Dyke) exactly after whitespace
-//      normalisation; if only harakat/hamza differ the message says so, but it is still FAIL.
-// Also: ref_ar must carry the same chapter:verse as ref_en, source_url must point to the same verse.
-const BOOKS_EN = ['Genesis', 'Exodus', 'Leviticus', 'Numbers', 'Deuteronomy', 'Joshua', 'Judges', 'Ruth', '1 Samuel', '2 Samuel', '1 Kings', '2 Kings', '1 Chronicles', '2 Chronicles', 'Ezra', 'Nehemiah', 'Esther', 'Job', 'Psalms', 'Proverbs', 'Ecclesiastes', 'Song of Solomon', 'Isaiah', 'Jeremiah', 'Lamentations', 'Ezekiel', 'Daniel', 'Hosea', 'Joel', 'Amos', 'Obadiah', 'Jonah', 'Micah', 'Nahum', 'Habakkuk', 'Zephaniah', 'Haggai', 'Zechariah', 'Malachi', 'Matthew', 'Mark', 'Luke', 'John', 'Acts', 'Romans', '1 Corinthians', '2 Corinthians', 'Galatians', 'Ephesians', 'Philippians', 'Colossians', '1 Thessalonians', '2 Thessalonians', '1 Timothy', '2 Timothy', 'Titus', 'Philemon', 'Hebrews', 'James', '1 Peter', '2 Peter', '1 John', '2 John', '3 John', 'Jude', 'Revelation'];
-const normBibleEn = s => nfc(s).replace(/[’‘]/g, "'").replace(/\bLORD\b/g, 'Lord').replace(/\s+([,;:.?!])/g, '$1').replace(/\s+/g, ' ').trim();
-const normBibleAr = s => nfc(s).replace(/\s+/g, ' ').trim();
-async function checkBible() {
-  const chapters = {};
-  const chapter = async (tr, bookNr, ch) => {
-    const k = `${tr}_${bookNr}_${ch}`;
-    if (!chapters[k]) chapters[k] = await cachedJSON(`gb_${k}.json`, `https://api.getbible.net/v2/${tr}/${bookNr}/${ch}.json`);
-    return chapters[k];
-  };
-  for (const { r } of rulings) for (const b of r.common_ground?.bible || []) {
-    const ref = b.ref_en || '?';
-    const m = String(b.ref_en).match(/^(.+?)\s+(\d+):(\d+)$/);
-    const bookNr = m ? BOOKS_EN.indexOf(m[1].replace(/^Psalm$/, 'Psalms')) + 1 : 0;
-    if (!m || !bookNr) { add('FAIL', 'bible-ref', r.id, ref, 'cannot parse ref_en'); continue; }
-    const [ch, vs] = [Number(m[2]), Number(m[3])];
-    const mAr = String(b.ref_ar || '').match(/(\d+)\s*:\s*(\d+)\s*$/);
-    if (!mAr || Number(mAr[1]) !== ch || Number(mAr[2]) !== vs) add('FAIL', 'bible-ref', r.id, ref, `ref_ar «${b.ref_ar}» does not match ${ch}:${vs}`);
-    let api, gbKjv, gbAr;
-    try {
-      api = await cachedJSON(`ba_${ref}.json`, `https://bible-api.com/${encodeURIComponent(m[1])}+${ch}:${vs}?translation=kjv`);
-      gbKjv = (await chapter('kjv', bookNr, ch)).verses.find(v => v.verse === vs)?.text || '';
-      gbAr = (await chapter('arabicsv', bookNr, ch)).verses.find(v => v.verse === vs)?.text || '';
-    } catch (e) { add('FAIL', 'bible-net', r.id, ref, `could not fetch: ${e.message}`); continue; }
-    const apiText = api.text || api.verses?.map(v => v.text).join(' ') || '';
-    const en = normBibleEn(b.text_en);
-    if (!en) add('FAIL', 'bible-kjv', r.id, ref, 'text_en empty');
-    else if (en === normBibleEn(apiText)) add('PASS', 'bible-kjv', r.id, ref, 'matches bible-api.com KJV');
-    else if (en === normBibleEn(gbKjv)) add('PASS', 'bible-kjv', r.id, ref, `matches getbible KJV (bible-api.com differs: «${firstDiff(en, normBibleEn(apiText)).theirs}»)`);
-    else { const d = firstDiff(en, normBibleEn(apiText)); add('FAIL', 'bible-kjv', r.id, ref, `KJV differs at ${d.at}: ours «${d.ours}» vs «${d.theirs}»`); }
-    const ar = normBibleAr(b.text_ar);
-    if (!ar) add('FAIL', 'bible-vandyck', r.id, ref, 'text_ar empty');
-    else if (ar === normBibleAr(gbAr)) add('PASS', 'bible-vandyck', r.id, ref, 'matches getbible arabicsv (Smith & Van Dyke) exactly');
-    else {
-      const skel = normSkeleton(ar) === normSkeleton(gbAr);
-      const d = firstDiff(ar, normBibleAr(gbAr));
-      add('FAIL', 'bible-vandyck', r.id, ref, `${skel ? 'letters match but harakat/hamza differ' : 'TEXT differs'} at ${d.at}: ours «${d.ours}» vs «${d.theirs}»`);
-    }
-    const okUrl = u => !u || u.includes(`/${bookNr}/${ch}.json`) || decodeURIComponent(u).replace(/\+/g, ' ').includes(`${m[1]} ${ch}:${vs}`);
-    if (!okUrl(b.source_url)) add('FAIL', 'bible-url', r.id, ref, `source_url ${b.source_url} does not point to ${ref}`);
-    if (b.source_url_ar && !okUrl(b.source_url_ar)) add('FAIL', 'bible-url', r.id, ref, `source_url_ar ${b.source_url_ar} does not point to ${ref}`);
+// ---------- No scripture (project-owner decision 2026-10-06) ----------
+// No Bible/Torah/Gospel text or reference may appear anywhere in a ruling (Qur'an/hadith excluded): no common_ground.bible
+// field, no book + chapter:verse, no named Bible translations or scripture mentions. Any hit = FAIL. See tools/audit/scripture_guard.cjs.
+const { scanRuling } = createRequire(import.meta.url)('./scripture_guard.cjs');
+function checkNoScripture() {
+  for (const { r } of rulings) {
+    const hits = scanRuling(r);
+    if (hits.length) for (const h of hits) add('FAIL', 'no-scripture', r.id, h.path, `scriptural reference not allowed: «${h.match}»`);
+    else add('PASS', 'no-scripture', r.id, '-', 'no Bible/Torah/Gospel text or reference');
   }
 }
 
 // Quotations in newcomer_explainer / common_ground: every «…» quote in the Arabic text must be a (letters-only)
-// substring of a hadith, Bible text or Qur'an text_ar *in the same ruling*. Unmatched quote = WARN (manual review),
+// substring of a hadith or Qur'an text_ar *in the same ruling*. Unmatched quote = WARN (manual review),
 // because explainers may legitimately quote a short phrase in paraphrase.
 function checkQuotes() {
   for (const { r } of rulings) {
-    const pool = [...(r.hadith || []).map(h => h.text_ar), ...(r.quran || []).map(q => q.text_ar), ...(r.common_ground?.bible || []).map(b => b.text_ar)]
+    const pool = [...(r.hadith || []).map(h => h.text_ar), ...(r.quran || []).map(q => q.text_ar)]
       .map(normSkeleton).join(' | ');
     const texts = [r.newcomer_explainer?.ar, r.common_ground?.summary?.ar, r.common_ground?.differences?.ar].filter(Boolean).join(' ');
     for (const q of texts.matchAll(/«([^»]{6,})»/g)) {
       const parts = q[1].split(/…|\.\.\./).map(normSkeleton).filter(p => p.length >= 4);
       if (parts.every(p => pool.includes(p))) add('PASS', 'quote', r.id, `«${q[1].slice(0, 30)}»`, 'quote found in this ruling\'s verified texts');
-      else add('WARN', 'quote', r.id, `«${q[1].slice(0, 40)}»`, 'quote not found verbatim in this ruling\'s hadith/Qur\'an/Bible texts — check it is a paraphrase or a sourced statement');
+      else add('WARN', 'quote', r.id, `«${q[1].slice(0, 40)}»`, 'quote not found verbatim in this ruling\'s hadith/Qur\'an texts — check it is a paraphrase or a sourced statement');
     }
   }
 }
@@ -288,7 +250,7 @@ function checkQuotes() {
 try {
   await checkQuran();
   await checkHadith();
-  await checkBible();
+  checkNoScripture();
   checkQuotes();
 } catch (e) { console.error('setup/network error:', e); process.exit(2); }
 
@@ -305,8 +267,6 @@ else {
   const qn = new Set(), hn = new Set();
   for (const x of results) if (x.level === 'PASS' && x.kind === 'quran-text') qn.add(x.ref);
   for (const x of results) if (x.level !== 'FAIL' && (x.kind === 'hadith-text' || x.kind === 'hadith-manual')) hn.add(x.ruling + '|' + x.ref);
-  const bk = results.filter(x => x.kind === 'bible-kjv' && x.level === 'PASS').length;
-  const bv = results.filter(x => x.kind === 'bible-vandyck' && x.level === 'PASS').length;
-  console.log(`\nSummary: unique ayat verified ${qn.size}; hadith citations verified ${hn.size}; Bible citations verified KJV ${bk} / Van Dyck ${bv}; WARN ${warns.length}; FAIL ${fails.length}`);
+  console.log(`\nSummary: unique ayat verified ${qn.size}; hadith citations verified ${hn.size}; WARN ${warns.length}; FAIL ${fails.length}`);
 }
 process.exit(fails.length ? 1 : 0);

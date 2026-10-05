@@ -195,27 +195,9 @@
     },
     "common_ground": {
       "summary": {
-        "ar": "المسيحيون أيضاً يرون «الزواج مكرّماً»، ويعلنون الزواج علناً (تاريخياً بإذاعة إعلانات الزواج في الكنيسة)، والمسيح علّم أن يُدعى الفقراء إلى الوليمة، وهذا قريب من الحديث الذي يذم وليمة تُقصي الفقراء.",
-        "en": "Christians too hold that \"marriage is honourable\" and announce marriages publicly (historically through the reading of banns in church), and Jesus taught that the poor should be invited to one's feast — close to the hadith that criticises a wedding feast that leaves out the poor."
+        "ar": "المسيحيون أيضاً يكرّمون الزواج ويعلنونه علناً (تاريخياً بإذاعة إعلانات الزواج في الكنيسة)، ويقدّر التقليدان الكرم مع الفقراء في الولائم، وهذا قريب من ذمّ الإسلام لوليمة تُقصي الفقراء.",
+        "en": "Christians too hold marriage in honour and announce it publicly (historically through the reading of banns in church), and both traditions value generosity to the poor at feasts — close to Islam's criticism of a wedding feast that leaves out the poor."
       },
-      "bible": [
-        {
-          "ref_en": "Hebrews 13:4",
-          "ref_ar": "عبرانيين 13: 4",
-          "text_en": "Marriage is honourable in all, and the bed undefiled: but whoremongers and adulterers God will judge.",
-          "text_ar": "لِيَكُنِ ٱلزِّوَاجُ مُكَرَّمًا عِنْدَ كُلِّ وَاحِدٍ، وَٱلْمَضْجَعُ غَيْرَ نَجِسٍ. وَأَمَّا ٱلْعَاهِرُونَ وَٱلزُّنَاةُ فَسَيَدِينُهُمُ ٱللهُ.",
-          "source_url": "https://bible-api.com/Hebrews+13:4?translation=kjv",
-          "source_url_ar": "https://api.getbible.net/v2/arabicsv/58/13.json"
-        },
-        {
-          "ref_en": "Luke 14:13",
-          "ref_ar": "لوقا 14: 13",
-          "text_en": "But when thou makest a feast, call the poor, the maimed, the lame, the blind:",
-          "text_ar": "بَلْ إِذَا صَنَعْتَ ضِيَافَةً فَٱدْعُ: ٱلْمَسَاكِينَ، ٱلْجُدْعَ، ٱلْعُرْجَ، ٱلْعُمْيَ،",
-          "source_url": "https://bible-api.com/Luke+14:13?translation=kjv",
-          "source_url_ar": "https://api.getbible.net/v2/arabicsv/42/14.json"
-        }
-      ],
       "differences": {
         "ar": "الزواج في كثير من التقاليد المسيحية سرّ كنسي أو عهد مقدس يُعقد في الكنيسة، أما في الإسلام فهو عقد بشهود لا يشترط أن يكون في المسجد؛ والمهر لا نظير مباشراً له في أغلب الأعراس المسيحية المعاصرة؛ والموسيقى بالآلات، الشائعة في الأعراس المسيحية، مسألة خلافية بين علماء المسلمين.",
         "en": "In many Christian traditions marriage is a sacrament or holy covenant made in church, whereas in Islam it is a contract with witnesses that need not take place in a mosque; the mahr has no direct counterpart in most modern Christian weddings; and instrumental music, common at Christian weddings, is a matter of scholarly debate in Islam."
@@ -394,27 +376,9 @@
     },
     "common_ground": {
       "summary": {
-        "ar": "مواساة المحزونين أرض مشتركة: فالكتاب المقدس يقول «بكاءً مع الباكين»، ويقول إن الذهاب إلى بيت النوح خير من الذهاب إلى بيت الوليمة؛ وحضور الجار المسلم الجنازة يصدر عن الرحمة نفسها.",
-        "en": "Comforting the bereaved is shared ground: the Bible says \"weep with them that weep\" and that it is better to go to the house of mourning than to the house of feasting; a Muslim neighbour attending the funeral is acting from that same compassion."
+        "ar": "مواساة المحزونين والوقوف مع أسرة الفقيد قيمة مشتركة عميقة في التقليدين؛ وحضور الجار المسلم يصدر عن الرحمة نفسها.",
+        "en": "Comforting the bereaved and standing with a grieving family is a deeply shared value in both traditions; a Muslim neighbour who comes to pay respects is acting from that same compassion."
       },
-      "bible": [
-        {
-          "ref_en": "Romans 12:15",
-          "ref_ar": "رومية 12: 15",
-          "text_en": "Rejoice with them that do rejoice, and weep with them that weep.",
-          "text_ar": "فَرَحًا مَعَ ٱلْفَرِحِينَ وَبُكَاءً مَعَ ٱلْبَاكِينَ.",
-          "source_url": "https://bible-api.com/Romans+12:15?translation=kjv",
-          "source_url_ar": "https://api.getbible.net/v2/arabicsv/45/12.json"
-        },
-        {
-          "ref_en": "Ecclesiastes 7:2",
-          "ref_ar": "جامعة 7: 2",
-          "text_en": "It is better to go to the house of mourning, than to go to the house of feasting: for that is the end of all men; and the living will lay it to his heart.",
-          "text_ar": "اَلذَّهَابُ إِلَى بَيْتِ ٱلنَّوْحِ خَيْرٌ مِنَ ٱلذَّهَابِ إِلَى بَيْتِ ٱلْوَلِيمَةِ، لِأَنَّ ذَاكَ نِهَايَةُ كُلِّ إِنْسَانٍ، وَٱلْحَيُّ يَضَعُهُ فِي قَلْبِهِ.",
-          "source_url": "https://bible-api.com/Ecclesiastes+7:2?translation=kjv",
-          "source_url_ar": "https://api.getbible.net/v2/arabicsv/21/7.json"
-        }
-      ],
       "differences": {
         "ar": "يصلّي كثير من المسيحيين للميت أو يستودعونه الله في الجنازة، أما الحاضر المسلم فيلتزم الاحترام والهدوء أثناء الطقوس ويدعو لأهل الفقيد لا بالمغفرة للميت. وهذا الفرق نابع من الاعتقاد، لا من نقص في المحبة أو الاحترام.",
         "en": "Many Christians pray for the deceased or commend them to God at the funeral, while a Muslim attending stays respectful and quiet during the rites and prays for the family rather than for the deceased's forgiveness. This difference comes from belief, not from any lack of love or respect."
@@ -605,19 +569,9 @@
     },
     "common_ground": {
       "summary": {
-        "ar": "الكرم أرض مشتركة: فالمسيح علّم أن «مغبوط هو العطاء أكثر من الأخذ»، وفي التقليدين معاً الهدية طريق إلى المحبة بين الجيران.",
-        "en": "Generosity is shared ground: Jesus taught that \"it is more blessed to give than to receive\", and in both traditions gifts are a way to build love between neighbours."
+        "ar": "الكرم أرض مشتركة: ففي التقليدين معاً العطاء فضيلة، والهدية طريق إلى المحبة بين الجيران.",
+        "en": "Generosity is shared ground: in both traditions giving is a virtue, and gifts are a way to build love between neighbours."
       },
-      "bible": [
-        {
-          "ref_en": "Acts 20:35",
-          "ref_ar": "أعمال الرسل 20: 35",
-          "text_en": "I have shewed you all things, how that so labouring ye ought to support the weak, and to remember the words of the Lord Jesus, how he said, It is more blessed to give than to receive.",
-          "text_ar": "فِي كُلِّ شَيْءٍ أَرَيْتُكُمْ أَنَّهُ هَكَذَا يَنْبَغِي أَنَّكُمْ تَتْعَبُونَ وَتَعْضُدُونَ ٱلضُّعَفَاءَ، مُتَذَكِّرِينَ كَلِمَاتِ ٱلرَّبِّ يَسُوعَ أَنَّهُ قَالَ: مَغْبُوطٌ هُوَ ٱلْعَطَاءُ أَكْثَرُ مِنَ ٱلْأَخْذِ».",
-          "source_url": "https://bible-api.com/Acts+20:35?translation=kjv",
-          "source_url_ar": "https://api.getbible.net/v2/arabicsv/44/20.json"
-        }
-      ],
       "differences": {
         "ar": "يحتفل أغلب المسيحيين بأعياد الميلاد الشخصية بلا تحفظ، أما في الإسلام فالمسألة خلافية. والصديق المسلم الذي يعتذر عن هدية فيها خمر يتبع دينه ولا يرفض صاحب الهدية.",
         "en": "Most Christians celebrate birthdays freely, while in Islam the question is debated. A Muslim friend who declines a gift of wine is following his faith, not rejecting the giver."

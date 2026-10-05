@@ -169,19 +169,9 @@
     },
     "common_ground": {
       "summary": {
-        "ar": "يعلّم بولس أنه حسن ألا يشرب الإنسان خمراً ولا يفعل شيئاً يعثر به أخوه، ففكرة أن يراعي الإنسان أثر عمله في غيره ولا يعينه على ما يضره قيمة مشتركة، وكثير من المسيحيين يتفهمون زميلاً يعتذر عن عمل بدافع الضمير.",
-        "en": "Paul teaches that it is good not to drink wine or do anything by which a brother stumbles, so caring about how one's actions affect others, and not helping them toward harm, is a shared value; many Christians readily understand a coworker who steps back from a task out of conscience."
+        "ar": "تعلّم الأخلاق المسيحية أيضاً أن يراعي الإنسان أثر عمله في غيره ولا يعينه على ما يضره، ولذلك يتفهم كثير من المسيحيين زميلاً يعتذر عن عمل بدافع الضمير.",
+        "en": "Christian ethics also teaches caring about how one's actions affect others and not helping them toward harm, so many Christians readily understand a coworker who steps back from a task out of conscience."
       },
-      "bible": [
-        {
-          "ref_en": "Romans 14:21",
-          "ref_ar": "رومية 14: 21",
-          "text_en": "It is good neither to eat flesh, nor to drink wine, nor any thing whereby thy brother stumbleth, or is offended, or is made weak.",
-          "text_ar": "حَسَنٌ أَنْ لَا تَأْكُلَ لَحْمًا وَلَا تَشْرَبَ خَمْرًا وَلَا شَيْئًا يَصْطَدِمُ بِهِ أَخُوكَ أَوْ يَعْثُرُ أَوْ يَضْعُفُ.",
-          "source_url": "https://bible-api.com/Romans+14:21?translation=kjv",
-          "source_url_ar": "https://api.getbible.net/v2/arabicsv/45/14.json"
-        }
-      ],
       "differences": {
         "ar": "تبيح أغلب التقاليد المسيحية الشرب المعتدل ولا ترى إثماً في تقديم الخمر أو لحم الخنزير، والخمر تُستعمل في سرّ العشاء الرباني، مع أن بعض الطوائف تدعو إلى الامتناع التام. أما الإسلام فيمتد تحريمه إلى سلسلة التقديم والبيع كلها لا إلى السُّكر وحده.",
         "en": "Most Christian traditions permit moderate drinking and see no sin in serving alcohol or pork, and wine is used in Holy Communion, though some denominations encourage total abstinence. Islam's prohibition extends to the whole chain of serving and selling, not only to drunkenness."
@@ -342,22 +332,12 @@
     },
     "common_ground": {
       "summary": {
-        "ar": "الاستثمار وفق القيم مألوف لكثير من المسيحيين أيضاً: فكنائس وصناديق مسيحية كثيرة تستبعد قطاعات كالقمار والخمور والتبغ، والمزمور يمدح من «فضته لا يعطيها بالربا».",
-        "en": "Values-based investing is familiar to many Christians too: many churches and Christian funds screen out industries such as gambling, alcohol or tobacco, and the Psalm praises the one who \"putteth not out his money to usury\"."
+        "ar": "الاستثمار وفق القيم مألوف لكثير من المسيحيين أيضاً: فكنائس وصناديق مسيحية كثيرة تستبعد قطاعات كالقمار والخمور والتبغ، وقد عدّ التقليد المسيحي الربا قروناً خطأً أخلاقياً.",
+        "en": "Values-based investing is familiar to many Christians too: many churches and Christian funds screen out industries such as gambling, alcohol or tobacco, and for centuries Christian tradition treated usury as a moral wrong."
       },
-      "bible": [
-        {
-          "ref_en": "Psalms 15:5",
-          "ref_ar": "مزمور 15: 5",
-          "text_en": "He that putteth not out his money to usury, nor taketh reward against the innocent. He that doeth these things shall never be moved.",
-          "text_ar": "فِضَّتُهُ لَا يُعْطِيهَا بِٱلرِّبَا، وَلَا يَأْخُذُ ٱلرِّشْوَةَ عَلَى ٱلْبَرِيءِ. ٱلَّذِي يَصْنَعُ هَذَا لَا يَتَزَعْزَعُ إِلَى ٱلدَّهْرِ.",
-          "source_url": "https://bible-api.com/Psalms+15:5?translation=kjv",
-          "source_url_ar": "https://api.getbible.net/v2/arabicsv/19/15.json"
-        }
-      ],
       "differences": {
-        "ar": "يرى أغلب المسيحيين اليوم السندات والمدخرات ذات الفائدة مشروعة، بل إن مثل الوزنات في إنجيل متى (25: 27) يذكر أخذ الفائدة من الصيارفة دون ذم، فالحدّ الذي يرسمه الإسلام عند صناديق الفائدة لا نظير له غالباً في الممارسة المسيحية المعاصرة.",
-        "en": "Most Christians today regard bonds and interest-bearing savings as legitimate, and the parable of the talents (Matthew 25:27) even mentions receiving interest from bankers without disapproval, so the line Islam draws at interest-bearing funds usually has no counterpart in contemporary Christian practice."
+        "ar": "يرى أغلب المسيحيين اليوم السندات والمدخرات ذات الفائدة مشروعة، فالحدّ الذي يرسمه الإسلام عند صناديق الفائدة لا نظير له غالباً في الممارسة المسيحية المعاصرة.",
+        "en": "Most Christians today regard bonds and interest-bearing savings as legitimate, so the line Islam draws at interest-bearing funds usually has no counterpart in contemporary Christian practice."
       }
     }
   },
@@ -561,30 +541,12 @@
     },
     "common_ground": {
       "summary": {
-        "ar": "الأمانة في العمل أرض مشتركة واسعة: فالتوراة تنهى عن أخذ الرشوة لأنها تعمي المبصرين، والمسيح يعلّم أن الأمين في القليل أمين في الكثير.",
-        "en": "Honesty at work is wide common ground: the Torah forbids taking a gift (bribe) because it blinds the wise, and Jesus teaches that whoever is faithful in little is faithful also in much."
+        "ar": "الأمانة في العمل أرض مشتركة واسعة: فالأخلاق المسيحية أيضاً تدين الرشوة لأنها تفسد الحكم، وتقدّر الأمانة في الأمور الصغيرة والكبيرة.",
+        "en": "Honesty at work is wide common ground: Christian ethics also condemns bribery because it corrupts judgment, and values faithfulness in small and great matters alike."
       },
-      "bible": [
-        {
-          "ref_en": "Exodus 23:8",
-          "ref_ar": "خروج 23: 8",
-          "text_en": "And thou shalt take no gift: for the gift blindeth the wise, and perverteth the words of the righteous.",
-          "text_ar": "وَلَا تَأْخُذْ رَشْوَةً، لِأَنَّ ٱلرَّشْوَةَ تُعْمِي ٱلْمُبْصِرِينَ، وَتُعَوِّجُ كَلَامَ ٱلْأَبْرَارِ.",
-          "source_url": "https://bible-api.com/Exodus+23:8?translation=kjv",
-          "source_url_ar": "https://api.getbible.net/v2/arabicsv/2/23.json"
-        },
-        {
-          "ref_en": "Luke 16:10",
-          "ref_ar": "لوقا 16: 10",
-          "text_en": "He that is faithful in that which is least is faithful also in much: and he that is unjust in the least is unjust also in much.",
-          "text_ar": "اَلْأَمِينُ فِي ٱلْقَلِيلِ أَمِينٌ أَيْضًا فِي ٱلْكَثِيرِ، وَٱلظَّالِمُ فِي ٱلْقَلِيلِ ظَالِمٌ أَيْضًا فِي ٱلْكَثِيرِ.",
-          "source_url": "https://bible-api.com/Luke+16:10?translation=kjv",
-          "source_url_ar": "https://api.getbible.net/v2/arabicsv/42/16.json"
-        }
-      ],
       "differences": {
-        "ar": "لا فرق جوهري في المبدأ. وإنما فصّل الفقه الإسلامي، استناداً إلى حديث ابن اللتبية، أن ما يُهدى للموظف بسبب منصبه يعود لجهة العمل، بينما يتبع المسيحيون عادة التوجيه الكتابي العام وسياسة جهة العمل.",
-        "en": "There is no real difference in principle. Islamic law, based on the hadith of Ibn al-Lutbiyya, spells out that a gift received because of one's post belongs to the employer, while Christians usually follow the general biblical teaching together with their employer's policy."
+        "ar": "لا فرق جوهري في المبدأ. وإنما فصّل الفقه الإسلامي، استناداً إلى حديث ابن اللتبية، أن ما يُهدى للموظف بسبب منصبه يعود لجهة العمل، بينما يتبع المسيحيون عادة المبادئ الأخلاقية العامة وسياسة جهة العمل.",
+        "en": "There is no real difference in principle. Islamic law, based on the hadith of Ibn al-Lutbiyya, spells out that a gift received because of one's post belongs to the employer, while Christians usually follow general ethical principles together with their employer's policy."
       }
     }
   }

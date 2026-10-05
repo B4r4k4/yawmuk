@@ -164,30 +164,12 @@
     },
     "common_ground": {
       "summary": {
-        "ar": "الكتاب المقدس أيضاً ينهى عن الإقراض بالربا للأخ وللفقير، وقد ظلت الكنيسة قروناً تدين الربا؛ ففي التقليدين معاً إقراضُ المحتاج بابُ رحمة لا باب تكسّب.",
-        "en": "The Bible also forbids lending at interest to a brother and to the poor, and for centuries the Church condemned usury; in both traditions lending to someone in need is an act of mercy, not a business opportunity."
+        "ar": "يشترك التقليدان في النظر إلى إقراض المحتاج على أنه باب رحمة لا باب تكسّب؛ فقد ظلت الكنيسة قروناً طويلة تدين الربا والإقراض بفائدة، ولا سيما إقراض الفقير.",
+        "en": "Both traditions see lending to someone in need as an act of mercy rather than a business opportunity; for many centuries the Church condemned usury and lending at interest, especially to the poor."
       },
-      "bible": [
-        {
-          "ref_en": "Exodus 22:25",
-          "ref_ar": "خروج 22: 25",
-          "text_en": "If thou lend money to any of my people that is poor by thee, thou shalt not be to him as an usurer, neither shalt thou lay upon him usury.",
-          "text_ar": "إِنْ أَقْرَضْتَ فِضَّةً لِشَعْبِي ٱلْفَقِيرِ ٱلَّذِي عِنْدَكَ فَلَا تَكُنْ لَهُ كَٱلْمُرَابِي. لَا تَضَعُوا عَلَيْهِ رِبًا.",
-          "source_url": "https://bible-api.com/Exodus+22:25?translation=kjv",
-          "source_url_ar": "https://api.getbible.net/v2/arabicsv/2/22.json"
-        },
-        {
-          "ref_en": "Deuteronomy 23:19",
-          "ref_ar": "تثنية 23: 19",
-          "text_en": "Thou shalt not lend upon usury to thy brother; usury of money, usury of victuals, usury of any thing that is lent upon usury:",
-          "text_ar": "«لَا تُقْرِضْ أَخَاكَ بِرِبًا، رِبَا فِضَّةٍ، أَوْ رِبَا طَعَامٍ، أَوْ رِبَا شَيْءٍ مَّا مِمَّا يُقْرَضُ بِرِبًا،",
-          "source_url": "https://bible-api.com/Deuteronomy+23:19?translation=kjv",
-          "source_url_ar": "https://api.getbible.net/v2/arabicsv/5/23.json"
-        }
-      ],
       "differences": {
-        "ar": "النهي في التوراة موجّه إلى الإقراض داخل جماعة بني إسرائيل، والآية التالية (تثنية 23: 20) تجيز الربا من الأجنبي. ومع الزمن قبلت أغلب الكنائس الفائدة المعتدلة في الإقراض التجاري وصارت تقصر لفظ «الربا» على الفائدة الفاحشة أو الاستغلالية، فأغلب المسيحيين اليوم يرون القرض العقاري العادي مشروعاً، بينما يعدّ جمهور علماء المسلمين كل زيادة مشروطة على القرض ربا.",
-        "en": "The Torah's prohibition addresses lending within the Israelite community, and the next verse (Deuteronomy 23:20) permits interest from a foreigner. Over time most churches came to accept moderate interest in commercial lending and reserved the word 'usury' for excessive or exploitative rates, so most Christians today see an ordinary mortgage as legitimate, whereas mainstream Islamic scholarship treats any stipulated increase on a loan as riba."
+        "ar": "مع الزمن قبلت أغلب الكنائس الفائدة المعتدلة في الإقراض التجاري وصارت تقصر وصف الربا على الفائدة الفاحشة أو الاستغلالية، فأغلب المسيحيين اليوم يرون القرض العقاري العادي مشروعاً، بينما يعدّ جمهور علماء المسلمين كل زيادة مشروطة على القرض ربا.",
+        "en": "Over time most churches came to accept moderate interest in commercial lending and reserved the word usury for excessive or exploitative rates, so most Christians today see an ordinary mortgage as legitimate, whereas mainstream Islamic scholarship treats any stipulated increase on a loan as riba."
       }
     }
   },
@@ -360,30 +342,12 @@
     },
     "common_ground": {
       "summary": {
-        "ar": "سفر اللاويين يحرّم الخنزير، وفي سفر أعمال الرسل طُلب من المؤمنين الأوائل الامتناع عن الدم والمخنوق وما ذُبح للأصنام، وهذا قريب جداً من أحكام الإسلام في الدم والذبح. والإسلام من جهته يبيح طعام أهل الكتاب، وهذا جسر حقيقي على مائدة الأسرة.",
-        "en": "Leviticus forbids pork, and in Acts the early believers were asked to abstain from blood, from things strangled and from meat offered to idols — very close to Islam's rules on blood and slaughter. Islam, for its part, treats the food of Christians as lawful, which is a real bridge at the family table."
+        "ar": "أحكام الطعام ليست غريبة على التقاليد الإبراهيمية: فالشريعة اليهودية تحرّم الخنزير، وبعض الجماعات المسيحية ما زالت تتجنبه وتتجنب الدم. والإسلام من جهته يبيح طعام أهل الكتاب، وهذا جسر حقيقي على مائدة الأسرة.",
+        "en": "Food rules are not foreign to the Abrahamic traditions: Jewish dietary law forbids pork, and some Christian communities still avoid pork and blood. Islam, for its part, treats the food of Christians as lawful, which is a real bridge at the family table."
       },
-      "bible": [
-        {
-          "ref_en": "Leviticus 11:7",
-          "ref_ar": "لاويين 11: 7",
-          "text_en": "And the swine, though he divide the hoof, and be clovenfooted, yet he cheweth not the cud; he is unclean to you.",
-          "text_ar": "وَٱلْخِنْزِيرَ، لِأَنَّهُ يَشُقُّ ظِلْفًا وَيَقْسِمُهُ ظِلْفَيْنِ، لَكِنَّهُ لَا يَجْتَرُّ، فَهُوَ نَجِسٌ لَكُمْ.",
-          "source_url": "https://bible-api.com/Leviticus+11:7?translation=kjv",
-          "source_url_ar": "https://api.getbible.net/v2/arabicsv/3/11.json"
-        },
-        {
-          "ref_en": "Acts 15:29",
-          "ref_ar": "أعمال الرسل 15: 29",
-          "text_en": "That ye abstain from meats offered to idols, and from blood, and from things strangled, and from fornication: from which if ye keep yourselves, ye shall do well. Fare ye well.",
-          "text_ar": "أَنْ تَمْتَنِعُوا عَمَّا ذُبِحَ لِلْأَصْنَامِ، وَعَنِ ٱلدَّمِ، وَٱلْمَخْنُوقِ، وَٱلزِّنَا، ٱلَّتِي إِنْ حَفِظْتُمْ أَنْفُسَكُمْ مِنْهَا فَنِعِمَّا تَفْعَلُونَ. كُونُوا مُعَافَيْنَ».",
-          "source_url": "https://bible-api.com/Acts+15:29?translation=kjv",
-          "source_url_ar": "https://api.getbible.net/v2/arabicsv/44/15.json"
-        }
-      ],
       "differences": {
-        "ar": "يرى أغلب المسيحيين أن شريعة الأطعمة في العهد القديم لم تعد ملزمة بعد العهد الجديد (ويستشهدون عادة بمرقس 7 وأعمال الرسل 10)، ويعدّون توجيه أعمال الرسل 15 تدبيراً مؤقتاً، مع أن بعض الجماعات المسيحية كالسبتيين (الأدفنتست) والكنيسة الأرثوذكسية الإثيوبية ما زالت تتجنب الخنزير. كما يبيح أغلب المسيحيين الشرب المعتدل، بينما يحرّم الإسلام الخمر قليلها وكثيرها.",
-        "en": "Most Christians believe the Old Testament food laws are no longer binding after the New Testament (commonly citing Mark 7 and Acts 10) and regard the Acts 15 instructions as a temporary measure, though some communities such as Seventh-day Adventists and the Ethiopian Orthodox Church still avoid pork. Most Christians also allow moderate drinking, whereas Islam forbids alcohol in any amount."
+        "ar": "يرى أغلب المسيحيين أن أحكام الأطعمة القديمة لم تعد ملزمة لهم، مع أن بعض الجماعات كالسبتيين (الأدفنتست) والكنيسة الأرثوذكسية الإثيوبية ما زالت تتجنب الخنزير. كما يبيح أغلب المسيحيين الشرب المعتدل، بينما يحرّم الإسلام الخمر قليلها وكثيرها.",
+        "en": "Most Christians consider the ancient food laws no longer binding on them, though some communities such as Seventh-day Adventists and the Ethiopian Orthodox Church still avoid pork. Most Christians also allow moderate drinking, whereas Islam forbids alcohol in any amount."
       }
     }
   },
@@ -543,27 +507,9 @@
     },
     "common_ground": {
       "summary": {
-        "ar": "يحذّر التقليدان من الوقوع في الدَّين ويمدحان المبادرة إلى سداده؛ فالمزمور يجعل عدم الوفاء بالقرض من صفات الشرير، وهو قريب من الحديث الذي يسمّي مماطلة الغني ظلماً.",
-        "en": "Both traditions warn against sliding into debt and praise repaying promptly; the Psalm counts failing to repay as a mark of the wicked, much like the hadith that calls a well-off debtor's delay an injustice."
+        "ar": "يحذّر التقليدان من الوقوع في الدَّين ويمدحان المبادرة إلى سداده؛ فالأخلاق المسيحية تعدّ المماطلة في ردّ الدين ظلماً، كما يعدّ الإسلام مماطلة القادر على السداد ظلماً.",
+        "en": "Both traditions warn against sliding into debt and praise repaying promptly; Christian ethics counts failing to repay what one owes as a wrong, just as Islam calls a well-off debtor's delay an injustice."
       },
-      "bible": [
-        {
-          "ref_en": "Romans 13:8",
-          "ref_ar": "رومية 13: 8",
-          "text_en": "Owe no man any thing, but to love one another: for he that loveth another hath fulfilled the law.",
-          "text_ar": "لَا تَكُونُوا مَدْيُونِينَ لِأَحَدٍ بِشَيْءٍ إِلَّا بِأَنْ يُحِبَّ بَعْضُكُمْ بَعْضًا، لِأَنَّ مَنْ أَحَبَّ غَيْرَهُ فَقَدْ أَكْمَلَ ٱلنَّامُوسَ.",
-          "source_url": "https://bible-api.com/Romans+13:8?translation=kjv",
-          "source_url_ar": "https://api.getbible.net/v2/arabicsv/45/13.json"
-        },
-        {
-          "ref_en": "Psalms 37:21",
-          "ref_ar": "مزمور 37: 21",
-          "text_en": "The wicked borroweth, and payeth not again: but the righteous sheweth mercy, and giveth.",
-          "text_ar": "ٱلشِّرِّيرُ يَسْتَقْرِضُ وَلَا يَفِي، أَمَّا ٱلصِّدِّيقُ فَيَتَرَأَّفُ وَيُعْطِي.",
-          "source_url": "https://bible-api.com/Psalms+37:21?translation=kjv",
-          "source_url_ar": "https://api.getbible.net/v2/arabicsv/19/37.json"
-        }
-      ],
       "differences": {
         "ar": "لا يرى أغلب المسيحيين في دفع فائدة البطاقة العادية إثماً في ذاته، وإن كان كثير من المرشدين الماليين المسيحيين ينصحون بتجنب ديون الاستهلاك؛ أما في الإسلام فالإشكال في الفائدة نفسها لا في ثقل الدَّين فقط.",
         "en": "Most Christians do not consider paying ordinary card interest sinful in itself, though many Christian financial teachers urge avoiding consumer debt; in Islam the problem is the interest itself, not only the burden of debt."

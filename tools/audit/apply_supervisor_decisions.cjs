@@ -1,31 +1,14 @@
 // Supervisor decisions on the pivot audit (2026-10-05). Re-runnable (idempotent).
-//  (1) work.alcohol_pork_job: replace Habakkuk 2:15 (forced context) with Romans 14:21 (verified KJV + Van Dyck)
-//      in tools/audit/common_ground_data.json and adjust the common_ground summary.
+//  (1) [withdrawn 2026-10-06 — common_ground no longer carries any scriptural text]
 //  (2) Reword `question` (AR+EN) in 9 rulings neutrally for a Christian learner (never addressing Adam as the Muslim),
 //      and fix practical_guidance wording only where it addressed Adam as the Muslim (school.student_loan) — substance unchanged.
-// Afterwards run: node tools/audit/apply_common_ground.cjs   (pushes common_ground into content/rulings)
 const fs = require('fs');
 const path = require('path');
 const ROOT = path.join(__dirname, '..', '..');
-const DATA = path.join(__dirname, 'common_ground_data.json');
 const DIR = path.join(ROOT, 'content', 'rulings');
 
-// ---- (1) common_ground_data.json
-const d = JSON.parse(fs.readFileSync(DATA, 'utf8'));
-if (!d.verses['Romans 14:21']) throw new Error('Romans 14:21 missing from verified verses table');
-const cg = d.rulings['work.alcohol_pork_job'].common_ground;
-cg.bible = ['Romans 14:21'];
-cg.summary = {
-  ar: 'يعلّم بولس أنه حسن ألا يشرب الإنسان خمراً ولا يفعل شيئاً يعثر به أخوه، ففكرة أن يراعي الإنسان أثر عمله في غيره ولا يعينه على ما يضره قيمة مشتركة، وكثير من المسيحيين يتفهمون زميلاً يعتذر عن عمل بدافع الضمير.',
-  en: 'Paul teaches that it is good not to drink wine or do anything by which a brother stumbles, so caring about how one\'s actions affect others, and not helping them toward harm, is a shared value; many Christians readily understand a coworker who steps back from a task out of conscience.',
-};
-if (d.verses['Habakkuk 2:15']) {
-  const stillUsed = Object.values(d.rulings).some(r => (r.common_ground.bible || []).includes('Habakkuk 2:15'));
-  d.verses['Habakkuk 2:15'].used = stillUsed;
-  if (!stillUsed) d.verses['Habakkuk 2:15'].dropped_reason = 'Pivot audit 2026-10-05: context (woe on making a neighbour drunk to look on his nakedness) is forced for serving drinks at work; replaced by Romans 14:21 on supervisor decision.';
-}
-d.verses['Romans 14:21'].used = true;
-fs.writeFileSync(DATA, JSON.stringify(d, null, 2) + '\n');
+// ---- (1) withdrawn: superseded by the project-owner decision of 2026-10-06 (no scriptural texts or references;
+//          see apply_no_scripture.cjs). Nothing is written to common_ground_data.json here any more.
 
 // ---- (2) neutral questions + one practical_guidance wording fix
 const Q = {
