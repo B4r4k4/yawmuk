@@ -1,0 +1,339 @@
+{
+  "location": "home",
+  "title": {
+    "ar": "البيت — صباح الاثنين",
+    "en": "Home — Monday Morning"
+  },
+  "time_of_day": "07:00",
+  "intro": {
+    "ar": "صباح بارد في كولومبس، أوهايو. رائحة القهوة والخبز المحمّص تملأ المطبخ، والثلج الخفيف يغطي الحديقة الصغيرة. أمام آدم يوم طويل: عمل، ثم محاضرة مسائية. لكن قبل أن يخرج، يبدو أن أهل البيت عندهم ما يقولونه.",
+    "en": "A cold morning in Columbus, Ohio. The kitchen smells like coffee and toast, and a light snow covers the little yard. Adam has a long day ahead: work, then night class. But before he heads out, it looks like everyone at home has something to tell him."
+  },
+  "situations": [
+    {
+      "ruling_id": "home.mortgage",
+      "hotspot": "laptop",
+      "npc": {
+        "id": "sara",
+        "name": {
+          "ar": "سارة",
+          "en": "Sara"
+        },
+        "role": {
+          "ar": "زوجة آدم",
+          "en": "Adam's wife"
+        }
+      },
+      "setup": {
+        "ar": "سارة جالسة إلى طاولة الطعام، ولابتوبها مفتوح على صور بيت صغير بثلاث غرف قرب حديقة عامة. على الشاشة نافذة أخرى: «موافقة مبدئية على قرض عقاري بفائدة 6.4%».",
+        "en": "Sara sits at the dining table, her laptop open to photos of a small three-bedroom house near a park. Another tab on the screen reads: 'Pre-approved: 30-year mortgage at 6.4% APR.'"
+      },
+      "dialogue": [
+        {
+          "speaker": "sara",
+          "ar": "آدم! تعال انظر. هذا هو البيت. فيه غرفة لأمك، وفناء خلفي، والمدرسة على بعد خمس دقائق.",
+          "en": "Adam! Come look. This is the one. There's a room for your mom, a backyard, and the school's five minutes away."
+        },
+        {
+          "speaker": "adam",
+          "ar": "ما شاء الله... جميل فعلاً. وما هذه النافذة الثانية؟",
+          "en": "Wow... it really is nice. What's that other tab?"
+        },
+        {
+          "speaker": "sara",
+          "ar": "البنك وافق مبدئياً على القرض. الوكيلة تقول إن هناك عرضاً آخر على البيت، وإن لم نوقّع خلال يومين قد يضيع.",
+          "en": "The bank pre-approved us. The agent says there's another offer on the house, and if we don't sign in two days we might lose it."
+        },
+        {
+          "speaker": "adam",
+          "ar": "يومان... سمعت أن هناك شركات تمويل إسلامي هنا في أمريكا، لكن لا أعرف هل تكون أبطأ أو أغلى.",
+          "en": "Two days... I've heard there are Islamic home financing companies here, but I don't know if they're slower or pricier."
+        },
+        {
+          "speaker": "sara",
+          "ar": "القرار قرارنا معاً. ماذا تقترح؟",
+          "en": "It's our call together. What do you think?"
+        }
+      ],
+      "choices": [
+        {
+          "id": "a",
+          "label": {
+            "ar": "نوقّع قرض البنك اليوم قبل أن يضيع البيت — الكل يفعل هذا، ولن نسأل أحداً حتى لا نتأخر.",
+            "en": "Let's sign the bank loan today before we lose the house — everyone does it, and asking around will just slow us down."
+          },
+          "quality": "wrong",
+          "consequence": {
+            "ar": "وقّعا بسرعة، وضاع منهما شيء أهم من البيت: لم يقارنا البدائل ولم يسألا أحداً عن حالتهما. في المساء قالت سارة: «كنت أتمنى لو تمهلنا قليلاً». بطاقة الحكم توضح أقوال العلماء في هذه المسألة.",
+            "en": "They signed in a rush and missed something bigger than the house: they never compared options or asked anyone about their own situation. That night Sara said, 'I wish we'd slowed down a little.' The ruling card explains what scholars say on this."
+          },
+          "points": 0
+        },
+        {
+          "id": "b",
+          "label": {
+            "ar": "نطلب عرضاً من جهتين للتمويل الإسلامي اليوم، ونقارن التكلفة الفعلية، وأتصل بالإمام حمزة لأشرح وضعنا.",
+            "en": "Let's get quotes from two Islamic financing providers today, compare the real cost, and I'll call Imam Hamza to explain our situation."
+          },
+          "quality": "best",
+          "consequence": {
+            "ar": "اتصلت سارة بجهتين؛ إحداهما ردّت خلال ساعة بعرض «مشاركة متناقصة» قريب في التكلفة. الوكيلة وافقت على مهلة إضافية حين علمت أن التمويل جاد. قالت سارة مبتسمة: «أترى؟ لم يكن الأمر مستحيلاً».",
+            "en": "Sara called two providers; one got back within an hour with a diminishing-partnership offer at a similar cost. The agent agreed to extend the deadline once she knew the financing was real. Sara smiled: 'See? It wasn't impossible.'"
+          },
+          "points": 10
+        },
+        {
+          "id": "c",
+          "label": {
+            "ar": "نترك هذا البيت ونستمر في الإيجار سنة أخرى، ونجمع دفعة أكبر حتى نتعلم الخيارات جيداً.",
+            "en": "Let's pass on this house, keep renting another year, and save a bigger down payment while we learn our options."
+          },
+          "quality": "acceptable",
+          "consequence": {
+            "ar": "حزنت سارة قليلاً على البيت، لكنها وافقت. فتحا حساب ادخار مشتركاً، وبدآ يقرآن عن صيغ التمويل المختلفة. قرار حذر، وإن كان قد فاتهما بيت جميل.",
+            "en": "Sara was a little sad about the house, but she agreed. They opened a joint savings account and started reading about different financing models. A careful call, even if they missed out on a lovely house."
+          },
+          "points": 5
+        }
+      ],
+      "check_question": {
+        "q": {
+          "ar": "ما الخطوة التي يتفق الجميع على أهميتها قبل أي قرار تمويل كبير لبيت؟",
+          "en": "What step does everyone agree matters before any big home-financing decision?"
+        },
+        "options": [
+          {
+            "ar": "التوقيع بسرعة لأن السوق لا ينتظر",
+            "en": "Signing fast because the market won't wait",
+            "correct": false
+          },
+          {
+            "ar": "مقارنة البدائل المتاحة وسؤال عالم موثوق عن الحالة الخاصة",
+            "en": "Comparing available alternatives and asking a trusted scholar about your specific case",
+            "correct": true
+          },
+          {
+            "ar": "الاعتماد على ما يفعله أغلب الناس",
+            "en": "Going with whatever most people do",
+            "correct": false
+          }
+        ]
+      }
+    },
+    {
+      "ruling_id": "home.food_ingredients",
+      "hotspot": "fridge",
+      "npc": {
+        "id": "khadija",
+        "name": {
+          "ar": "الحاجة خديجة",
+          "en": "Khadija"
+        },
+        "role": {
+          "ar": "أم آدم",
+          "en": "Adam's mother"
+        }
+      },
+      "setup": {
+        "ar": "أم آدم تقف أمام الثلاجة المفتوحة، ونظارتها على طرف أنفها، تقلّب علبة حلوى جيلاتينية ملونة، وبجانبها دجاج من السوبرماركت وزجاجة «خلاصة فانيليا» لكعكة المساء.",
+        "en": "Adam's mom stands at the open fridge, glasses perched on her nose, turning over a bag of colorful gummy bears. Next to her: supermarket chicken and a bottle of vanilla extract for tonight's cake."
+      },
+      "dialogue": [
+        {
+          "speaker": "khadija",
+          "ar": "يا آدم، بلال اشترى هذه الحلوى. مكتوب هنا: «جيلاتين». جيلاتين من ماذا؟ لا يقولون!",
+          "en": "Adam, Bilal bought these. It says 'gelatin.' Gelatin from what? They don't say!"
+        },
+        {
+          "speaker": "adam",
+          "ar": "وهذا الدجاج يا أمي؟ ليس عليه شعار حلال.",
+          "en": "And this chicken, Mom? There's no halal label on it."
+        },
+        {
+          "speaker": "khadija",
+          "ar": "جارتنا في ديربورن تقول إنه طعام أهل الكتاب ولا بأس، وأختك تقول لا نأكله. وأنا أريد أن أطبخ الغداء!",
+          "en": "Our neighbor back in Dearborn says it's food of the People of the Book, so it's fine. Your sister says we shouldn't eat it. And I just want to make lunch!"
+        },
+        {
+          "speaker": "khadija",
+          "ar": "والفانيليا مكتوب فيها «كحول 35%». الكعكة لسارة... ماذا نفعل؟",
+          "en": "And the vanilla says '35% alcohol.' The cake's for Sara... what do we do?"
+        }
+      ],
+      "choices": [
+        {
+          "id": "a",
+          "label": {
+            "ar": "يا أمي، كل هذا مبالغة. كميات صغيرة لا تضر، كلي واطبخي ولا تقرئي الملصقات.",
+            "en": "Mom, this is overthinking it. Tiny amounts don't matter — just cook and stop reading labels."
+          },
+          "quality": "wrong",
+          "consequence": {
+            "ar": "ضحكت أمه لكنها لم تقتنع. لاحقاً اكتشف بلال أن الجيلاتين في تلك الحلوى من مصدر خنزيري، فقال: «كان يكفي أن نبحث دقيقة!». تجاهل السؤال لم يجعل الإجابة تختفي.",
+            "en": "His mom laughed but wasn't convinced. Later Bilal found out the gelatin in those gummies was pork-derived: 'One minute of searching would've told us!' Ignoring the question didn't make the answer go away."
+          },
+          "points": 0
+        },
+        {
+          "id": "b",
+          "label": {
+            "ar": "نتأكد من مصدر الجيلاتين ونستبدل الحلوى إن لزم، ونشتري لحماً عليه شهادة حلال حين نستطيع، وأسأل الإمام عن لحم السوبرماركت والفانيليا.",
+            "en": "Let's check the gelatin source and swap the gummies if needed, buy halal-certified meat when we can, and I'll ask the imam about supermarket meat and the vanilla."
+          },
+          "quality": "best",
+          "consequence": {
+            "ar": "وجد آدم على موقع الشركة أن الجيلاتين من مصدر حيواني غير موثَّق، فاستبدله ببديل نباتي. أضافت سارة إلى قائمة التسوق ملحمة حلال قريبة. وأرسل آدم سؤاله للإمام حمزة. قالت أمه: «هكذا أرتاح».",
+            "en": "Adam found on the brand's site that the gelatin came from an unverified animal source, so he swapped it for a plant-based brand. Sara added a nearby halal butcher to the shopping list, and Adam texted his question to Imam Hamza. His mom said, 'Now I can relax.'"
+          },
+          "points": 10
+        },
+        {
+          "id": "c",
+          "label": {
+            "ar": "قرأت أن العلماء اختلفوا في لحم السوبرماركت، فلنطبخ الدجاج اليوم، ونتجنب الحلوى المشكوك فيها فقط.",
+            "en": "I've read that scholars differ on supermarket meat, so let's cook the chicken today and just skip the questionable gummies."
+          },
+          "quality": "acceptable",
+          "consequence": {
+            "ar": "طبخت أمه الغداء، وأُبعدت الحلوى. حل عملي في مسألة فيها خلاف معروف، وإن بقي آدم يفكر أن يسأل الإمام ليعرف ما يرتاح له قلبه على الدوام. بطاقة الحكم تعرض الأقوال.",
+            "en": "His mom made lunch and the gummies were set aside. A practical call on a known point of disagreement — though Adam still thinks he should ask the imam to settle it for the long run. The ruling card lays out the views."
+          },
+          "points": 5
+        }
+      ],
+      "check_question": {
+        "q": {
+          "ar": "حين لا يذكر الملصق مصدر الجيلاتين، ما التصرف المعقول؟",
+          "en": "When a label doesn't state the gelatin source, what's the sensible move?"
+        },
+        "options": [
+          {
+            "ar": "البحث عن المصدر أو اختيار منتج موثَّق أو نباتي",
+            "en": "Look up the source, or pick a certified or plant-based product",
+            "correct": true
+          },
+          {
+            "ar": "افتراض أنه حلال دائماً",
+            "en": "Assume it's always halal",
+            "correct": false
+          },
+          {
+            "ar": "التوقف عن شراء كل الأطعمة الجاهزة نهائياً",
+            "en": "Stop buying all packaged food forever",
+            "correct": false
+          }
+        ]
+      }
+    },
+    {
+      "ruling_id": "home.credit_card",
+      "hotspot": "mail_table",
+      "npc": {
+        "id": "bilal",
+        "name": {
+          "ar": "بلال",
+          "en": "Bilal"
+        },
+        "role": {
+          "ar": "أخو آدم الأصغر",
+          "en": "Adam's younger brother"
+        }
+      },
+      "setup": {
+        "ar": "على طاولة البريد قرب الباب: رسالة من متجر إلكترونيات «بطاقة المتجر: 0% فائدة لمدة 12 شهراً!». بلال يلوّح بهاتفه وعليه تطبيق «اشترِ الآن وادفع لاحقاً».",
+        "en": "On the mail table by the door: a flyer from an electronics store — 'Store Card: 0% interest for 12 months!' Bilal waves his phone, a buy-now-pay-later app open on the screen."
+      },
+      "dialogue": [
+        {
+          "speaker": "bilal",
+          "ar": "آدم، الهاتف الجديد بـ1200 دولار. بطاقة المتجر تقول صفر فائدة سنة كاملة! أو أقسّطه على أربع دفعات بالتطبيق.",
+          "en": "Adam, the new phone's $1,200. The store card says zero interest for a whole year! Or I can split it into four payments with the app."
+        },
+        {
+          "speaker": "adam",
+          "ar": "واقرأ الأسطر الصغيرة؟ ماذا لو تأخرت دفعة؟",
+          "en": "Did you read the fine print? What if you're late on a payment?"
+        },
+        {
+          "speaker": "bilal",
+          "ar": "آه... يقول: إن لم تُسدَّد كاملاً في 12 شهراً تُحسب الفائدة بأثر رجعي، وهناك غرامة تأخير. لكنني لن أتأخر! غالباً...",
+          "en": "Uh... it says if it's not paid in full in 12 months, interest is charged back to day one, plus late fees. But I won't be late! Probably..."
+        },
+        {
+          "speaker": "bilal",
+          "ar": "وأنت؟ عندك بطاقة ائتمان أصلاً، صحيح؟",
+          "en": "And you? You've got a credit card anyway, right?"
+        }
+      ],
+      "choices": [
+        {
+          "id": "a",
+          "label": {
+            "ar": "خذ البطاقة وادفع الحد الأدنى كل شهر؛ سنة طويلة وستتدبر الباقي.",
+            "en": "Grab the card and pay the minimum each month — a year's a long time, you'll figure out the rest."
+          },
+          "quality": "wrong",
+          "consequence": {
+            "ar": "بعد عشرة أشهر انشغل بلال بالامتحانات، وبقي عليه 400 دولار. وصلت رسالة: فائدة على المبلغ كله منذ اليوم الأول. قال بلال بصوت منخفض: «لم أتوقع هذا».",
+            "en": "Ten months later Bilal got buried in finals with $400 still owed. Then the letter came: interest on the whole amount, back to day one. Bilal said quietly, 'I didn't see that coming.'"
+          },
+          "points": 0
+        },
+        {
+          "id": "b",
+          "label": {
+            "ar": "لا داعي لأي بطاقة ائتمان. ادّخر ثمن هاتف مستعمل جيد واشترِه نقداً ببطاقة الخصم.",
+            "en": "Skip credit altogether. Save up for a good refurbished phone and pay with your debit card."
+          },
+          "quality": "best",
+          "consequence": {
+            "ar": "اشترى بلال هاتفاً مجدداً بنصف السعر بعد شهر من الادخار، ودفع ببطاقة الخصم. لا ديون ولا فوائد ولا غرامات ولا قلق. قال: «غريب... أشعر أنني أغنى مع أني لم أستدن».",
+            "en": "A month of saving later, Bilal bought a refurbished phone for half the price and paid with his debit card. No debt, no interest, no late fees, no stress. 'Weird... I feel richer, and I didn't even borrow anything.'"
+          },
+          "points": 10
+        },
+        {
+          "id": "c",
+          "label": {
+            "ar": "أنا أستعمل بطاقتي للمصاريف العادية فقط، وفعّلت السداد الكامل التلقائي كل شهر فلا أدفع فائدة. إن أردت هاتفاً، ادّخر له أولاً، وسأريك كيف تضبط ذلك.",
+            "en": "I use my card only for regular expenses and set autopay to the full balance every month, so I never pay interest. If you want the phone, save for it first — I'll show you how to set that up."
+          },
+          "quality": "acceptable",
+          "consequence": {
+            "ar": "جلس الأخوان عشر دقائق مع التطبيق البنكي، وفهم بلال الفرق بين «الحد الأدنى» و«الرصيد الكامل» وقرر أن يدّخر للهاتف. لكن آدم تذكّر أن توقيع عقد بطاقة فيه شرط فائدة مسألة اختلف فيها العلماء المعاصرون: منهم من منعه، ومنهم من أجازه للحاجة بشرط السداد الكامل دائماً. بطاقة الحكم تعرض الأقوال.",
+            "en": "The brothers spent ten minutes in the banking app. Bilal got the difference between 'minimum payment' and 'full balance' and decided to save for the phone. Still, Adam remembered that signing a card agreement with an interest clause is something contemporary scholars disagree on: some prohibit it, others allow it out of need as long as the balance is always paid in full. The ruling card lays out the views."
+          },
+          "points": 5
+        }
+      ],
+      "check_question": {
+        "q": {
+          "ar": "ما الذي يجعل عروض «0% لمدة 12 شهراً» خطيرة في الغالب؟",
+          "en": "What usually makes '0% for 12 months' offers risky?"
+        },
+        "options": [
+          {
+            "ar": "أنها تتطلب حساباً بنكياً",
+            "en": "They require a bank account",
+            "correct": false
+          },
+          {
+            "ar": "أن الفائدة أو الغرامة تُفرض إن تأخر السداد أو لم يكتمل في المدة",
+            "en": "Interest or penalties kick in if you're late or don't pay in full on time",
+            "correct": true
+          },
+          {
+            "ar": "أن الهاتف يكون مستعملاً",
+            "en": "The phone is used",
+            "correct": false
+          }
+        ]
+      }
+    }
+  ],
+  "outro": {
+    "ar": "يلبس آدم جاكيته، تقبّل أمه رأسه وتقول: «انتبه للطريق»، وتذكّره سارة: «لا تنسَ أن تتصل بالإمام!». السيارة باردة، والطريق إلى العمل مزدحم كالعادة.",
+    "en": "Adam zips up his jacket. His mom kisses his forehead — 'Drive safe' — and Sara calls after him, 'Don't forget to call the imam!' The car is freezing, and the commute is jammed as usual."
+  },
+  "next_location": "work"
+}

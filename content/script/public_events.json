@@ -1,0 +1,324 @@
+{
+  "location": "public_events",
+  "title": {
+    "ar": "حفل نهاية العام للشركة",
+    "en": "The Company Holiday Party"
+  },
+  "time_of_day": "19:00",
+  "intro": {
+    "ar": "مساء الجمعة، قاعة فندق في وسط كولومبس. شجرة كبيرة مضاءة، أضواء ذهبية معلقة، وموسيقى أعياد هادئة في الخلفية. الزملاء بملابس أنيقة وكنزات شتوية مضحكة. آدم جاء بقميص كحلي وسارة لم تستطع الحضور بسبب مناوبتها. هنا تُبنى العلاقات... وهنا تكثر المواقف المحرجة.",
+    "en": "Friday night, a hotel ballroom downtown. A big lit-up tree, strings of golden lights, soft holiday music in the background. Coworkers in nice outfits and goofy holiday sweaters. Adam came in a navy shirt; Sara couldn't make it because of her shift. This is where work relationships get built... and where awkward moments pile up."
+  },
+  "situations": [
+    {
+      "ruling_id": "public_events.holiday_greetings",
+      "hotspot": "gift_table",
+      "npc": {
+        "id": "dave",
+        "name": {
+          "ar": "ديف",
+          "en": "Dave"
+        },
+        "role": {
+          "ar": "مدير الفريق",
+          "en": "Team manager"
+        }
+      },
+      "setup": {
+        "ar": "عند طاولة تبادل الهدايا («سانتا السري») المزينة بالأشرطة، ديف بقبعة سانتا الحمراء يوزع الأسماء ضاحكاً. يلتفت إلى آدم بحرارة.",
+        "en": "At the ribbon-covered 'Secret Santa' gift table, Dave — red Santa hat and all — is handing out names, laughing. He turns to Adam warmly."
+      },
+      "dialogue": [
+        {
+          "speaker": "dave",
+          "ar": "آدم! «ميري كريسماس»! سعيد أنك جئت. هل تشارك في سانتا السري؟ الحد 25 دولاراً.",
+          "en": "Adam! Merry Christmas! Glad you made it. You doing Secret Santa? Twenty-five dollar limit."
+        },
+        {
+          "speaker": "adam",
+          "ar": "(في نفسه) قرأت أن العلماء تكلموا في التهنئة بهذه المناسبات بأقوال مختلفة... وديف رجل طيب يقصد المودة.",
+          "en": "(to himself) I've read scholars have different views on greetings for these holidays... and Dave's a good guy who just means kindness."
+        },
+        {
+          "speaker": "dave",
+          "ar": "بالمناسبة، لم أشكرك على قصة الساعة. هذا النوع من الأمانة نادر.",
+          "en": "By the way, never thanked you for the watch thing. That kind of integrity's rare."
+        }
+      ],
+      "choices": [
+        {
+          "id": "a",
+          "label": {
+            "ar": "«شكراً يا ديف! أتمنى لك ولعائلتك عطلة سعيدة ووقتاً جميلاً معاً». وأشارك في تبادل الهدايا بهدية عامة لطيفة (كوب وقهوة فاخرة).",
+            "en": "'Thanks, Dave! Wishing you and your family a happy holiday and a great time together.' And join the gift swap with a nice neutral gift (a mug and good coffee)."
+          },
+          "quality": "best",
+          "consequence": {
+            "ar": "ابتسم ديف: «وأنت أيضاً يا صديقي». بعبارة ودودة يطمئن إليها الجميع، حفظ آدم المودة دون أن يقع في نقطة مختلف فيها. الكوب أعجب لمى من قسم المحاسبة كثيراً.",
+            "en": "Dave grinned: 'You too, buddy.' With warm wording that sits comfortably with everyone, Adam kept the goodwill without stepping into the debated part. The mug was a big hit with Lama from accounting."
+          },
+          "points": 10
+        },
+        {
+          "id": "b",
+          "label": {
+            "ar": "أرد بالمثل: «ميري كريسماس يا ديف!» — مجاملة اجتماعية لزميل.",
+            "en": "Say it right back: 'Merry Christmas, Dave!' — a social courtesy to a coworker."
+          },
+          "quality": "acceptable",
+          "consequence": {
+            "ar": "ضحك ديف وصافحه بحرارة. هذه مسألة للعلماء فيها أقوال قديمة ومعاصرة متعددة، ويحسن بآدم أن يعرف ما يطمئن إليه منها. بطاقة الحكم تعرض الأقوال بإنصاف.",
+            "en": "Dave laughed and gave him a hearty handshake. This is a question with several classical and contemporary scholarly views, and it's worth Adam knowing which one he's settled on. The ruling card lays them out fairly."
+          },
+          "points": 5
+        },
+        {
+          "id": "c",
+          "label": {
+            "ar": "«آسف، لا نحتفل بهذا عندنا، ولا أشارك في هذه الأمور». وأمضي دون كلمة أخرى.",
+            "en": "'Sorry, we don't celebrate that, and I don't do this stuff.' Then walk off without another word."
+          },
+          "quality": "wrong",
+          "consequence": {
+            "ar": "تجمّد ديف لحظة: «أوه... بالطبع، لا مشكلة». بقية السهرة شعر الزملاء أن آدم بعيد. المشكلة لم تكن في الموقف بل في الطريقة: كان يمكن أن يقول الشيء نفسه بدفء.",
+            "en": "Dave froze for a second: 'Oh... sure, no problem.' For the rest of the night, coworkers felt Adam was distant. The issue wasn't his position — it was the delivery. He could've said the same thing warmly."
+          },
+          "points": 0
+        }
+      ],
+      "check_question": {
+        "q": {
+          "ar": "في مسألة يختلف فيها العلماء كالتهنئة بأعياد غير المسلمين، ما الذي لا خلاف فيه؟",
+          "en": "On a debated issue like greeting non-Muslims on their holidays, what's not in dispute?"
+        },
+        "options": [
+          {
+            "ar": "أن على المسلم مقاطعة زملائه في موسم الأعياد",
+            "en": "That a Muslim should avoid coworkers during the holiday season",
+            "correct": false
+          },
+          {
+            "ar": "أن حسن الخلق واللطف مع الزملاء غير المسلمين مطلوب، ويُسأل المختص عن تفاصيل الصيغ",
+            "en": "That good manners and kindness toward non-Muslim coworkers are called for, and a scholar can be asked about the exact wording",
+            "correct": true
+          },
+          {
+            "ar": "أن كل الأقوال متساوية ولا داعي للسؤال",
+            "en": "That all views are equal so there's no need to ask",
+            "correct": false
+          }
+        ]
+      }
+    },
+    {
+      "ruling_id": "public_events.alcohol_table",
+      "hotspot": "dinner_table",
+      "npc": {
+        "id": "jake",
+        "name": {
+          "ar": "جيك",
+          "en": "Jake"
+        },
+        "role": {
+          "ar": "زميل مبرمج",
+          "en": "Fellow developer"
+        }
+      },
+      "setup": {
+        "ar": "حان وقت العشاء. الطاولات المستديرة مزينة بالشموع، والنادل يدور بزجاجات النبيذ ويملأ الكؤوس. جيك وزوجته إميلي يشيران لآدم: «تعال، حجزنا لك كرسياً!». في زاوية القاعة طاولة صغيرة عليها عصير التفاح الفوار والقهوة.",
+        "en": "Dinner time. Round tables glow with candles, and a waiter circles with bottles of wine, filling glasses. Jake and his wife Emily wave Adam over: 'Come on, we saved you a seat!' In the corner of the room there's a small table with sparkling apple juice and coffee."
+      },
+      "dialogue": [
+        {
+          "speaker": "jake",
+          "ar": "اجلس معنا! لا تقلق، لن نجبرك على الشرب، نعرف أنك لا تشرب. سنطلب لك ماء.",
+          "en": "Sit with us! Don't worry, nobody's gonna make you drink — we know you don't. We'll get you a water."
+        },
+        {
+          "speaker": "adam",
+          "ar": "أنتم لطفاء جداً...",
+          "en": "You guys are so sweet..."
+        },
+        {
+          "speaker": "narrator",
+          "ar": "النادل يملأ الكأس الخامسة على الطاولة. ديف يقف ليلقي نخباً بعد قليل.",
+          "en": "The waiter fills the fifth glass at the table. Dave's about to stand up for a toast."
+        },
+        {
+          "speaker": "jake",
+          "ar": "إذاً؟ الكرسي ينتظرك!",
+          "en": "So? Seat's waiting!"
+        }
+      ],
+      "choices": [
+        {
+          "id": "a",
+          "label": {
+            "ar": "أجلس معهم؛ لن أشرب، وكأس الماء أمامي كافٍ، وأرفعه مع النخب.",
+            "en": "Sit with them — I won't drink, my water glass is enough, and I'll raise it for the toast."
+          },
+          "quality": "wrong",
+          "consequence": {
+            "ar": "قضى آدم ساعتين والكؤوس تُملأ أمامه، والنكات تعلو مع كل جولة. لم يشرب، لكنه شعر بأنه في المكان الخطأ. بطاقة الحكم توضح لماذا لا يكفي ألا يشرب المرء بنفسه.",
+            "en": "Adam spent two hours with glasses being refilled all around him and the jokes getting louder each round. He didn't drink, but he felt out of place. The ruling card explains why not drinking yourself isn't the whole story."
+          },
+          "points": 0
+        },
+        {
+          "id": "b",
+          "label": {
+            "ar": "«شكراً يا جيك! سأجلس هناك عند طاولة القهوة والعصير — تعالا أنتما وإميلي للحلوى». وأدعو زملاء آخرين لا يشربون للجلوس معي.",
+            "en": "'Thanks, Jake! I'm gonna grab a spot by the coffee and juice table — you and Emily come join me for dessert.' And invite other coworkers who don't drink to sit with me."
+          },
+          "quality": "best",
+          "consequence": {
+            "ar": "انضمت إلى آدم بريا الحامل، وتوم الذي توقف عن الشرب منذ سنوات، وليندا. صارت «طاولة العصير» أكثر الطاولات ضحكاً. جاء جيك وإميلي للحلوى وقالا: «طاولتكم أمتع!». وقرر آدم أن يقترح على ليندا طاولة بلا كحول رسمياً العام القادم.",
+            "en": "Pregnant Priya joined Adam, along with Tom, who quit drinking years ago, and Linda. The 'juice table' turned into the loudest-laughing table in the room. Jake and Emily came by for dessert: 'Your table's way more fun!' Adam decided to suggest an official alcohol-free table to Linda next year."
+          },
+          "points": 10
+        },
+        {
+          "id": "c",
+          "label": {
+            "ar": "أحضر الكلمات والتكريم واقفاً، ثم أعتذر بلطف وأغادر قبل العشاء.",
+            "en": "Stay standing for the speeches and awards, then politely excuse myself before dinner."
+          },
+          "quality": "acceptable",
+          "consequence": {
+            "ar": "صفّق آدم لزملائه في التكريم وودّع ديف بحرارة، ثم عاد للبيت مبكراً. حافظ على نفسه، وإن فاتته فرصة سهرة لطيفة كان يمكن أن يصنعها بطاولة بديلة.",
+            "en": "Adam cheered his coworkers through the awards, said a warm goodbye to Dave, and headed home early. He stayed true to himself, though he missed a fun evening he could've had at an alternative table."
+          },
+          "points": 5
+        }
+      ],
+      "check_question": {
+        "q": {
+          "ar": "ما البديل العملي الذي يحفظ العلاقة مع الزملاء في حفل فيه خمر؟",
+          "en": "What's a practical alternative that keeps good relations at a party with alcohol?"
+        },
+        "options": [
+          {
+            "ar": "الجلوس على مائدة الخمر مع الامتناع عن الشرب فقط",
+            "en": "Sitting at the drinking table and just not drinking",
+            "correct": false
+          },
+          {
+            "ar": "مقاطعة كل نشاطات الشركة",
+            "en": "Boycotting all company events",
+            "correct": false
+          },
+          {
+            "ar": "الجلوس في مكان بلا خمر أو اقتراح طاولة بديلة، مع المشاركة الودية في بقية الحفل",
+            "en": "Sitting somewhere without alcohol or suggesting an alternative table, while joining the rest of the event warmly",
+            "correct": true
+          }
+        ]
+      }
+    },
+    {
+      "ruling_id": "public_events.raffle",
+      "hotspot": "raffle_booth",
+      "npc": {
+        "id": "linda",
+        "name": {
+          "ar": "ليندا",
+          "en": "Linda"
+        },
+        "role": {
+          "ar": "مسؤولة الموارد البشرية ومنظمة الحفل",
+          "en": "HR manager and party organizer"
+        }
+      },
+      "setup": {
+        "ar": "قرب المدخل، كشك مزين لمستشفى الأطفال (حيث تعمل سارة!). لافتة: «سحب خيري — التذكرة 10 دولارات — الجوائز: تلفاز 65 بوصة، رحلة نهاية أسبوع». وبجانبها وعاء آخر: «سحب الحضور — مجاني لكل الحاضرين».",
+        "en": "Near the entrance, a booth decorated for the children's hospital (where Sara works!). The sign reads: 'Charity Raffle — $10 per ticket — Prizes: 65-inch TV, weekend getaway.' Next to it, another bowl: 'Door Prize Drawing — free for every attendee.'"
+      },
+      "dialogue": [
+        {
+          "speaker": "linda",
+          "ar": "آدم! كل الدخل يذهب لجناح السرطان في مستشفى الأطفال. كم تذكرة؟ خمس تذاكر بأربعين دولاراً — عرض خاص!",
+          "en": "Adam! Every dollar goes to the pediatric cancer wing. How many tickets? Five for forty — special deal!"
+        },
+        {
+          "speaker": "adam",
+          "ar": "مستشفى سارة... قضية رائعة فعلاً.",
+          "en": "Sara's hospital... that's a great cause."
+        },
+        {
+          "speaker": "linda",
+          "ar": "وتسجيلك في سحب الحضور تلقائي ومجاني بالطبع. والتلفاز... تخيله في بيتك الجديد!",
+          "en": "And you're automatically in the free door-prize drawing, of course. And that TV... picture it in your new house!"
+        }
+      ],
+      "choices": [
+        {
+          "id": "a",
+          "label": {
+            "ar": "أشتري خمس تذاكر؛ المال كله للأطفال المرضى، والجائزة مجرد إضافة.",
+            "en": "Buy five tickets — all the money goes to sick kids, and the prize is just a bonus."
+          },
+          "quality": "wrong",
+          "consequence": {
+            "ar": "دفع آدم 40 دولاراً، وظل يحدّق في وعاء التذاكر طوال السحب. حين لم يربح، شعر بخيبة صغيرة كشفت له أن الجائزة لم تكن «مجرد إضافة». بطاقة الحكم تفرّق بين التبرع وشراء فرصة.",
+            "en": "Adam paid $40 and stared at the ticket bowl the whole drawing. When he didn't win, a small sting of disappointment told him the prize wasn't 'just a bonus.' The ruling card explains the difference between donating and buying a chance."
+          },
+          "points": 0
+        },
+        {
+          "id": "b",
+          "label": {
+            "ar": "أتبرع بـ40 دولاراً مباشرة للمستشفى دون تذاكر، وأبقى في سحب الحضور المجاني.",
+            "en": "Donate $40 straight to the hospital, no tickets, and stay in the free door-prize drawing."
+          },
+          "quality": "best",
+          "consequence": {
+            "ar": "تأثرت ليندا: «تبرع دون مقابل؟ هذا لطيف جداً». وصل المال نفسه للأطفال. وفي سحب الحضور المجاني فاز آدم... ببطانية شتوية عليها شعار الشركة! ضحك الجميع.",
+            "en": "Linda was touched: 'Donating without a ticket? That's really sweet.' The same money reached the kids. And in the free door-prize drawing, Adam won... a fleece blanket with the company logo! Everyone laughed."
+          },
+          "points": 10
+        },
+        {
+          "id": "c",
+          "label": {
+            "ar": "أعتذر بلطف عن التذاكر والتبرع الآن، وأكتفي بسحب الحضور المجاني.",
+            "en": "Politely pass on tickets and donating for now, and just stay in the free door-prize drawing."
+          },
+          "quality": "acceptable",
+          "consequence": {
+            "ar": "ابتسمت ليندا: «لا مشكلة!». تجنب آدم ما يشبه القمار، لكنه فكّر في الطريق أن تبرعاً مباشراً كان سيجمع بين الحسنيين.",
+            "en": "Linda smiled: 'No worries!' Adam steered clear of anything gambling-like, but on the way home he thought a direct donation would've given him the best of both."
+          },
+          "points": 5
+        }
+      ],
+      "check_question": {
+        "q": {
+          "ar": "ما الفرق بين «سحب الحضور المجاني» و«تذكرة السحب المدفوعة»؟",
+          "en": "What's the difference between a free door-prize drawing and a paid raffle ticket?"
+        },
+        "options": [
+          {
+            "ar": "لا فرق، كلاهما سحب",
+            "en": "No difference — both are drawings",
+            "correct": false
+          },
+          {
+            "ar": "في المجاني لا يدفع المشارك شيئاً مقابل فرصة الفوز، وفي المدفوع يدفع مالاً مقابل احتمال الربح",
+            "en": "In the free one you pay nothing for the chance; in the paid one you pay money for a chance to win",
+            "correct": true
+          },
+          {
+            "ar": "المدفوع جائز إن كانت الجائزة صغيرة",
+            "en": "The paid one is fine if the prize is small",
+            "correct": false
+          }
+        ]
+      }
+    }
+  ],
+  "outro": {
+    "ar": "في موقف الفندق، يلوّح جيك: «نراك في العرس غداً؟ يوسف دعاني أنا وإميلي!». آدم يبتسم — لم يتخيل قبل سنة أن يحضر زملاؤه عرس صديقه من المسجد. غداً يوم طويل آخر: الجيران أولاً، ثم الفرح.",
+    "en": "In the hotel parking lot Jake calls out: 'See you at the wedding tomorrow? Yusuf invited me and Emily!' Adam smiles — a year ago he never imagined his coworkers at his mosque friend's wedding. Tomorrow's another long day: neighbors first, then the celebration."
+  },
+  "next_location": "private_events"
+}

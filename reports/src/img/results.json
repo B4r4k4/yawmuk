@@ -1,0 +1,110 @@
+{
+ "home": {
+  "ok": true,
+  "location": "home",
+  "isPlaceholder": false,
+  "hotspots": [
+   "laptop",
+   "fridge",
+   "mail_table"
+  ],
+  "colliders": 32,
+  "stats": {
+   "meshes": 89,
+   "tris": 15834
+  },
+  "issues": 0,
+  "shot2": "laptop",
+  "errors": []
+ },
+ "work": {
+  "ok": true,
+  "location": "work",
+  "isPlaceholder": false,
+  "hotspots": [
+   "coffee_machine",
+   "adam_desk",
+   "hr_desk"
+  ],
+  "colliders": 42,
+  "stats": {
+   "meshes": 113,
+   "tris": 4786
+  },
+  "issues": 0,
+  "shot2": "coffee_machine",
+  "errors": []
+ },
+ "school": {
+  "ok": true,
+  "location": "school",
+  "isPlaceholder": false,
+  "hotspots": [
+   "exam_desk",
+   "aid_office",
+   "study_room"
+  ],
+  "colliders": 64,
+  "stats": {
+   "meshes": 202,
+   "tris": 7920
+  },
+  "issues": 0,
+  "shot2": "exam_desk",
+  "errors": []
+ },
+ "street": {
+  "ok": true,
+  "location": "street",
+  "isPlaceholder": false,
+  "hotspots": [
+   "bus_bench",
+   "gas_station_counter",
+   "ebike"
+  ],
+  "colliders": 46,
+  "stats": {
+   "meshes": 124,
+   "tris": 10278
+  },
+  "issues": 0,
+  "shot2": "bus_bench",
+  "errors": []
+ },
+ "public_events": {
+  "ok": true,
+  "location": "public_events",
+  "isPlaceholder": false,
+  "hotspots": [
+   "gift_table",
+   "dinner_table",
+   "raffle_booth"
+  ],
+  "colliders": 70,
+  "stats": {
+   "meshes": 253,
+   "tris": 12118
+  },
+  "issues": 0,
+  "shot2": "gift_table",
+  "errors": []
+ },
+ "private_events": {
+  "ok": true,
+  "location": "private_events",
+  "isPlaceholder": false,
+  "hotspots": [
+   "harris_porch",
+   "garcia_yard",
+   "wedding_hall"
+  ],
+  "colliders": 70,
+  "stats": {
+   "meshes": 201,
+   "tris": 10666
+  },
+  "issues": 0,
+  "shot2": "harris_porch",
+  "errors": []
+ }
+}

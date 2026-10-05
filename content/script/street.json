@@ -1,0 +1,334 @@
+{
+  "location": "street",
+  "title": {
+    "ar": "الشارع — طريق العودة",
+    "en": "The Street — Heading Home"
+  },
+  "time_of_day": "21:00",
+  "intro": {
+    "ar": "ليل شتوي هادئ. أضواء محطة الوقود الحمراء تنعكس على الرصيف المبلل، ومحطة الحافلات تحت عمود إنارة أصفر. آدم نزل من الحافلة قبل بيته بشارعين. عمر سيمرّ ليأخذه، وبلال سيأتي بالدراجة الكهربائية لموعد البيع.",
+    "en": "A quiet winter night. The gas station's red lights reflect on the wet sidewalk, and the bus stop sits under a yellow streetlamp. Adam got off the bus two blocks from home. Omar's swinging by to pick him up, and Bilal's bringing the e-bike over for the sale."
+  },
+  "situations": [
+    {
+      "ruling_id": "street.lost_wallet",
+      "hotspot": "bus_bench",
+      "npc": {
+        "id": "officer_daniels",
+        "name": {
+          "ar": "الضابط دانيالز",
+          "en": "Officer Daniels"
+        },
+        "role": {
+          "ar": "شرطي دورية في الحي",
+          "en": "Neighborhood patrol officer"
+        }
+      },
+      "setup": {
+        "ar": "على مقعد محطة الحافلات، محفظة جلدية بنية منسية. يفتحها آدم: 340 دولاراً نقداً، رخصة قيادة باسم «ستيفن كارتر» بعنوان في الحي المجاور، وبطاقتان بنكيتان. على بعد أمتار، سيارة شرطة متوقفة.",
+        "en": "On the bus stop bench, a forgotten brown leather wallet. Adam opens it: $340 in cash, a driver's license for 'Steven Carter' with an address in the next neighborhood, and two bank cards. A few yards away, a police cruiser is parked."
+      },
+      "dialogue": [
+        {
+          "speaker": "adam",
+          "ar": "340 دولاراً... هذا ثمن فاتورة الكهرباء والتدفئة لشهرين.",
+          "en": "Three hundred forty bucks... that's two months of heating and electric."
+        },
+        {
+          "speaker": "narrator",
+          "ar": "لا أحد في المحطة. الكاميرا الوحيدة مكسورة منذ أشهر.",
+          "en": "Nobody's at the stop. The only camera's been broken for months."
+        },
+        {
+          "speaker": "officer_daniels",
+          "ar": "مساء الخير. كل شيء على ما يرام هنا؟",
+          "en": "Evening. Everything alright over here?"
+        },
+        {
+          "speaker": "adam",
+          "ar": "مساء النور يا حضرة الضابط... في الحقيقة، وجدت شيئاً.",
+          "en": "Evening, officer... actually, I found something."
+        }
+      ],
+      "choices": [
+        {
+          "id": "a",
+          "label": {
+            "ar": "أسلّم المحفظة كاملة للضابط، وأطلب رقم البلاغ، وأترك رقمي لو احتاج صاحبها التواصل.",
+            "en": "Hand the whole wallet to the officer, ask for a report number, and leave my number in case the owner wants to reach out."
+          },
+          "quality": "best",
+          "consequence": {
+            "ar": "دوّن الضابط دانيالز البلاغ وقال: «لا يحدث هذا كل يوم». بعد يومين اتصل ستيفن، رجل في الستين، صوته يرتجف: «كان فيها إيجار حفيدتي». أصرّ أن يكافئ آدم، فقال آدم: «ادعُ لي فقط».",
+            "en": "Officer Daniels filed the report: 'Doesn't happen every day.' Two days later Steven called — a man in his sixties, voice shaking: 'That was my granddaughter's rent money.' He insisted on a reward; Adam said, 'Just keep me in your prayers.'"
+          },
+          "points": 10
+        },
+        {
+          "id": "b",
+          "label": {
+            "ar": "أقول للضابط إنها مجرد محفظة فارغة؛ آخذ النقود وأرسل البطاقات والرخصة بالبريد إلى العنوان.",
+            "en": "Tell the officer it's nothing; keep the cash and mail the cards and license to the address."
+          },
+          "quality": "wrong",
+          "consequence": {
+            "ar": "وصلت البطاقات إلى ستيفن بعد أسبوع، لكن المال لم يصل. كان مال إيجار حفيدته. كلما مرّ آدم بمحطة الحافلات تذكّر تلك الليلة.",
+            "en": "Steven got his cards back a week later, but not the money — his granddaughter's rent. Every time Adam passed that bus stop, he remembered that night."
+          },
+          "points": 0
+        },
+        {
+          "id": "c",
+          "label": {
+            "ar": "لا أشغل الضابط؛ آخذ المحفظة إلى البيت وأحفظها جيداً، ثم أوصلها غداً بنفسي إلى العنوان المكتوب في الرخصة.",
+            "en": "Don't bother the officer — take the wallet home, keep it safe, and drop it off myself tomorrow at the address on the license."
+          },
+          "quality": "acceptable",
+          "consequence": {
+            "ar": "حفظ آدم المحفظة كما هي، وذهب في الغد إلى العنوان فلم يجد أحداً، ثم عاد مساءً وسلّمها لستيفن. وصل المال كاملاً، لكن ستيفن قضى ليلة قلقة وكان قد ألغى بطاقاته. تسليمها للضابط الحاضر بمحضر رسمي كان أسرع وأوثق.",
+            "en": "Adam kept the wallet untouched. The next day nobody was home at the address, so he went back that evening and handed it to Steven. Every dollar made it back, but Steven had spent an anxious night and already canceled his cards. Giving it to the officer standing right there, with a report, would've been faster and more reliable."
+          },
+          "points": 5
+        }
+      ],
+      "check_question": {
+        "q": {
+          "ar": "ما الواجب الأساسي على من يجد مالاً ضائعاً له قيمة؟",
+          "en": "What's the basic duty of someone who finds valuable lost property?"
+        },
+        "options": [
+          {
+            "ar": "أن يحتفظ به إن لم يره أحد",
+            "en": "Keep it if nobody saw",
+            "correct": false
+          },
+          {
+            "ar": "أن يحفظه ويجتهد في إيصاله لصاحبه أو تعريفه عبر جهة موثوقة",
+            "en": "Keep it safe and make a real effort to return it or announce it through a reliable channel",
+            "correct": true
+          },
+          {
+            "ar": "أن يتصدق به فوراً",
+            "en": "Give it to charity right away",
+            "correct": false
+          }
+        ]
+      }
+    },
+    {
+      "ruling_id": "street.lottery",
+      "hotspot": "gas_station_counter",
+      "npc": {
+        "id": "omar",
+        "name": {
+          "ar": "عمر",
+          "en": "Omar"
+        },
+        "role": {
+          "ar": "صديق آدم المقرّب",
+          "en": "Adam's best friend"
+        }
+      },
+      "setup": {
+        "ar": "داخل المحطة الدافئة، عمر يشتري شاي وكعكة. على الشاشة فوق الكاشير: «الجائزة الكبرى: 900 مليون دولار!». وبجانب الصندوق بطاقات الكشط اللامعة، وعلى هاتف عمر إعلان: «راهن على مباراة الليلة — أول رهان مجاني!».",
+        "en": "Inside the warm gas station, Omar's buying tea and a donut. The screen above the register flashes: 'JACKPOT: $900 MILLION!' Shiny scratch-offs line the counter, and an ad pops up on Omar's phone: 'Bet on tonight's game — first bet's on us!'"
+      },
+      "dialogue": [
+        {
+          "speaker": "omar",
+          "ar": "آدم! 900 مليون يا رجل! تذكرة واحدة بدولارين. لو ربحنا نبني مسجداً جديداً ونسدد ديون نصف الجالية!",
+          "en": "Adam! Nine hundred million, bro! One ticket, two bucks. If we win, we build a new masjid and pay off half the community's debt!"
+        },
+        {
+          "speaker": "adam",
+          "ar": "ونيتك صدقة طبعاً؟",
+          "en": "And it's all for charity, of course?"
+        },
+        {
+          "speaker": "omar",
+          "ar": "طبعاً! أو على الأقل... الرهان المجاني في التطبيق. مجاني! لا أخسر شيئاً من جيبي.",
+          "en": "Obviously! Or at least... the free bet on the app. It's free! Nothing out of my pocket."
+        },
+        {
+          "speaker": "narrator",
+          "ar": "الكاشير راج ينتظر بصبر، ويده على آلة التذاكر.",
+          "en": "Raj, the cashier, waits patiently, hand on the ticket machine."
+        }
+      ],
+      "choices": [
+        {
+          "id": "a",
+          "label": {
+            "ar": "نشتري تذكرة واحدة فقط بنية الصدقة؛ دولاران لا يضران.",
+            "en": "Let's get just one ticket and give any winnings to charity — two bucks won't hurt."
+          },
+          "quality": "wrong",
+          "consequence": {
+            "ar": "لم تربح التذكرة. بعدها صار عمر يشتري «تذكرة واحدة» كل أسبوع، ثم بطاقات كشط «للتسلية». بعد ثلاثة أشهر حسبها: 180 دولاراً. قال: «النية الحسنة لا تغيّر طبيعة اللعبة».",
+            "en": "The ticket lost. After that, Omar started buying 'just one ticket' every week, then scratch-offs 'for fun.' Three months later he did the math: $180. 'Good intentions don't change what the game is.'"
+          },
+          "points": 0
+        },
+        {
+          "id": "b",
+          "label": {
+            "ar": "يا عمر، اليانصيب والرهان — حتى «المجاني» الذي يجرّك للإيداع — باب لا أحب فتحه. تعال نضع الدولارين في صندوق التبرع للمسجد ونشرب الشاي.",
+            "en": "Omar, lottery and betting — even the 'free' one that hooks you into depositing — is a door I'd rather keep shut. Let's drop the two bucks in the masjid donation box and just have our tea."
+          },
+          "quality": "best",
+          "consequence": {
+            "ar": "ضحك عمر: «حسناً يا شيخ آدم!» وحذف التطبيق أمامه. في الجمعة التالية وضعا خمسة دولارات في صندوق المسجد. «فرصة ربح مضمونة»، قال عمر غامزاً.",
+            "en": "Omar laughed — 'Alright, Sheikh Adam!' — and deleted the app right there. The next Friday they dropped five dollars in the masjid box. 'Guaranteed return,' Omar winked."
+          },
+          "points": 10
+        },
+        {
+          "id": "c",
+          "label": {
+            "ar": "لن أشتري تذكرة اليانصيب، لكن الرهان المجاني لا يكلفنا شيئاً، فلنجرّبه مرة.",
+            "en": "I'll pass on the lottery, but the free bet costs us nothing — let's try it once."
+          },
+          "quality": "wrong",
+          "consequence": {
+            "ar": "للحصول على «الرهان المجاني» احتاج عمر أن يسجّل في تطبيق المراهنات ببطاقته البنكية وهويته. ربح 20 دولاراً، فأرسل التطبيق فوراً: «أودع 50 واحصل على 50 إضافية!». هذا ليس سحباً مجانياً بلا شراء؛ إنه باب دخول إلى منصة قمار، صُمم ليجرّك إلى الإيداع.",
+            "en": "To get the 'free bet,' Omar had to sign up on the betting app with his bank card and ID. He won $20, and the app immediately pinged: 'Deposit $50, get $50 more!' This isn't a no-purchase-necessary sweepstakes — it's the front door of a gambling platform, built to pull you into depositing."
+          },
+          "points": 0
+        }
+      ],
+      "check_question": {
+        "q": {
+          "ar": "ما الذي يجعل اليانصيب والمراهنات من باب القمار؟",
+          "en": "What makes lottery and betting a form of gambling?"
+        },
+        "options": [
+          {
+            "ar": "أن يدفع المشارك مالاً مقابل احتمال ربح أو خسارة يتوقف على الحظ",
+            "en": "Paying money for a chance to win or lose based on luck",
+            "correct": true
+          },
+          {
+            "ar": "أنها تُباع في محطات الوقود",
+            "en": "That they're sold at gas stations",
+            "correct": false
+          },
+          {
+            "ar": "أن الجائزة كبيرة فقط",
+            "en": "Only that the prize is big",
+            "correct": false
+          }
+        ]
+      }
+    },
+    {
+      "ruling_id": "street.buying_selling",
+      "hotspot": "ebike",
+      "npc": {
+        "id": "denise",
+        "name": {
+          "ar": "دينيس",
+          "en": "Denise"
+        },
+        "role": {
+          "ar": "مشترية من Marketplace",
+          "en": "Marketplace buyer"
+        }
+      },
+      "setup": {
+        "ar": "في موقف المحطة المضاء، أوقف بلال الدراجة الكهربائية القديمة. تبدو لامعة بعد التنظيف، لكن آدم يعرف أن بطاريتها لم تعد تحمل إلا نصف الشحن. الإعلان يقول 600 دولار. دينيس تصل في معطف أصفر.",
+        "en": "In the well-lit station lot, Bilal parks the old e-bike. It looks shiny after a wash, but Adam knows the battery only holds about half a charge now. The listing says $600. Denise walks up in a mustard-yellow coat."
+      },
+      "dialogue": [
+        {
+          "speaker": "denise",
+          "ar": "مرحباً! أنت آدم؟ ابني يقطع ميلين إلى عمله في المطعم، وهذه ستكون هدية عيده. تبدو رائعة!",
+          "en": "Hi! You're Adam? My son rides two miles to his job at the diner — this'd be his Christmas present. She looks great!"
+        },
+        {
+          "speaker": "adam",
+          "ar": "أهلاً بك. نعم، اعتنيت بها جيداً.",
+          "en": "Hi there. Yeah, I took good care of her."
+        },
+        {
+          "speaker": "denise",
+          "ar": "أنا لا أفهم في الدراجات كثيراً. كل شيء يعمل جيداً، صحيح؟ معي 600 نقداً.",
+          "en": "I don't know much about bikes, honestly. Everything works fine, right? I've got the six hundred in cash."
+        },
+        {
+          "speaker": "narrator",
+          "ar": "بلال ينظر إلى آدم. هو أيضاً يعرف قصة البطارية.",
+          "en": "Bilal glances at Adam. He knows about the battery too."
+        }
+      ],
+      "choices": [
+        {
+          "id": "a",
+          "label": {
+            "ar": "«نعم، كل شيء ممتاز!» — آخذ الـ600؛ هي لم تسأل عن البطارية تحديداً.",
+            "en": "'Yep, everything's great!' — take the $600. She didn't ask about the battery specifically."
+          },
+          "quality": "wrong",
+          "consequence": {
+            "ar": "بعد أسبوع، توقفت الدراجة بابن دينيس في منتصف الطريق في البرد. كتبت دينيس تقييماً: «البائع لم يذكر أن البطارية ضعيفة». شعر آدم بالخجل كلما فتح التطبيق.",
+            "en": "A week later the bike died on Denise's son halfway to work in the cold. Denise left a review: 'Seller didn't mention the battery was shot.' Adam felt ashamed every time he opened the app."
+          },
+          "points": 0
+        },
+        {
+          "id": "b",
+          "label": {
+            "ar": "أخبرها بصراحة أن البطارية تحمل نصف الشحن، وأن بطارية جديدة تكلف نحو 200، وأخفض السعر إلى 420.",
+            "en": "Tell her straight that the battery holds half a charge, that a new one runs about $200, and drop the price to $420."
+          },
+          "quality": "best",
+          "consequence": {
+            "ar": "تفاجأت دينيس ثم ابتسمت: «ميلان يكفيان بنصف الشحن! وصراحتك تساوي الكثير». اشترتها بـ420، وأرسلت لاحقاً صورة ابنها سعيداً بها، مع تقييم خمس نجوم لم يطلبه آدم.",
+            "en": "Denise was surprised, then smiled: 'Half a charge is plenty for two miles! And your honesty's worth a lot.' She bought it for $420, later sent a photo of her beaming son — and a five-star review Adam never asked for."
+          },
+          "points": 10
+        },
+        {
+          "id": "c",
+          "label": {
+            "ar": "أقول لها: «جرّبيها بنفسك وقرري»، فإن سألت عن البطارية أخبرتها.",
+            "en": "Say, 'Take her for a spin and decide for yourself' — and mention the battery only if she asks."
+          },
+          "quality": "wrong",
+          "consequence": {
+            "ar": "جرّبتها دينيس دقيقتين حول الموقف — طبعاً عملت جيداً. لم تسأل، ولم يقل آدم. اكتشفت العيب بعد أيام. السكوت عن عيب يعرفه البائع ليس حياداً.",
+            "en": "Denise rode it around the lot for two minutes — of course it ran fine. She didn't ask; Adam didn't say. She found out days later. Staying quiet about a flaw you know about isn't neutral."
+          },
+          "points": 0
+        }
+      ],
+      "check_question": {
+        "q": {
+          "ar": "ماذا يجب على البائع إن كان يعرف عيباً في السلعة؟",
+          "en": "What should a seller do if he knows the item has a defect?"
+        },
+        "options": [
+          {
+            "ar": "يذكر العيب للمشتري ولو لم يسأل",
+            "en": "Disclose it to the buyer even if they don't ask",
+            "correct": true
+          },
+          {
+            "ar": "يذكره فقط إن سأل المشتري",
+            "en": "Mention it only if the buyer asks",
+            "correct": false
+          },
+          {
+            "ar": "لا شيء ما دام السعر مناسباً",
+            "en": "Nothing, as long as the price is fair",
+            "correct": false
+          }
+        ]
+      }
+    }
+  ],
+  "outro": {
+    "ar": "يركب آدم سيارة عمر، والتدفئة تعمل أخيراً. «يوم طويل يا صاحبي». «طويل... لكنه جيد». في البيت، أمه نائمة أمام التلفاز، وسارة تركت له طبق عشاء دافئاً. الجمعة حفل الشركة، والسبت... يوم الجيران والعرس.",
+    "en": "Adam hops into Omar's car, the heater finally working. 'Long day, man.' 'Long... but good.' At home his mom's asleep in front of the TV, and Sara left him a warm plate of dinner. Friday's the company party, and Saturday... neighbors and a wedding."
+  },
+  "next_location": "public_events"
+}

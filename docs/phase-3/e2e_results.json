@@ -1,0 +1,5488 @@
+{
+  "date": "2026-10-05T18:38:01.410Z",
+  "gl": "d3d11",
+  "maxScore": 270,
+  "total": 18,
+  "results": [
+    {
+      "config": "desktop-ar",
+      "pass": true,
+      "failures": [],
+      "warnings": [],
+      "rulingsChecked": 36,
+      "perf": {
+        "home": {
+          "pointLights": 3,
+          "shadowLights": 0,
+          "placeholder": false,
+          "auto": [],
+          "meshes": 89,
+          "instanced": 0,
+          "trisDrawn": 15834,
+          "statsApi": {
+            "meshes": 89,
+            "tris": 15834
+          },
+          "drawCalls": 114,
+          "frameTris": 16892,
+          "geometries": 50,
+          "textures": 13,
+          "colliders": 32,
+          "occluders": 10,
+          "lights": "day",
+          "frameMs": 16.7,
+          "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 620 (0x00005917) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "work": {
+          "pointLights": 0,
+          "shadowLights": 0,
+          "placeholder": false,
+          "auto": [],
+          "meshes": 113,
+          "instanced": 11,
+          "trisDrawn": 13528,
+          "statsApi": {
+            "meshes": 113,
+            "tris": 4786
+          },
+          "drawCalls": 112,
+          "frameTris": 13364,
+          "geometries": 31,
+          "textures": 12,
+          "colliders": 42,
+          "occluders": 14,
+          "lights": "day",
+          "frameMs": 16.7,
+          "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 620 (0x00005917) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "school": {
+          "pointLights": 3,
+          "shadowLights": 0,
+          "placeholder": false,
+          "auto": [],
+          "meshes": 202,
+          "instanced": 25,
+          "trisDrawn": 17666,
+          "statsApi": {
+            "meshes": 202,
+            "tris": 7920
+          },
+          "drawCalls": 226,
+          "frameTris": 18596,
+          "geometries": 49,
+          "textures": 27,
+          "colliders": 64,
+          "occluders": 32,
+          "lights": "evening",
+          "frameMs": 16.6,
+          "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 620 (0x00005917) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "street": {
+          "pointLights": 3,
+          "shadowLights": 0,
+          "placeholder": false,
+          "auto": [],
+          "meshes": 124,
+          "instanced": 7,
+          "trisDrawn": 12132,
+          "statsApi": {
+            "meshes": 124,
+            "tris": 10278
+          },
+          "drawCalls": 153,
+          "frameTris": 13206,
+          "geometries": 70,
+          "textures": 20,
+          "colliders": 46,
+          "occluders": 39,
+          "lights": "night",
+          "frameMs": 16.7,
+          "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 620 (0x00005917) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "public_events": {
+          "pointLights": 3,
+          "shadowLights": 0,
+          "placeholder": false,
+          "auto": [],
+          "meshes": 253,
+          "instanced": 35,
+          "trisDrawn": 48876,
+          "statsApi": {
+            "meshes": 253,
+            "tris": 12118
+          },
+          "drawCalls": 236,
+          "frameTris": 47084,
+          "geometries": 109,
+          "textures": 15,
+          "colliders": 70,
+          "occluders": 48,
+          "lights": "evening",
+          "frameMs": 16.6,
+          "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 620 (0x00005917) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "private_events": {
+          "pointLights": 2,
+          "shadowLights": 0,
+          "placeholder": false,
+          "auto": [],
+          "meshes": 201,
+          "instanced": 16,
+          "trisDrawn": 57818,
+          "statsApi": {
+            "meshes": 201,
+            "tris": 10666
+          },
+          "drawCalls": 209,
+          "frameTris": 57936,
+          "geometries": 53,
+          "textures": 11,
+          "colliders": 70,
+          "occluders": 18,
+          "lights": "day",
+          "frameMs": 16.6,
+          "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 620 (0x00005917) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        }
+      },
+      "reach": {
+        "home": {
+          "cells": 6416,
+          "area": 64.2,
+          "targets": {
+            "laptop": {
+              "reachable": true,
+              "stand": [
+                1.2000000000000028,
+                -1.3999999999999986
+              ],
+              "dist": 1.08,
+              "target": [
+                0.12,
+                -1.42
+              ]
+            },
+            "fridge": {
+              "reachable": true,
+              "stand": [
+                -5.699999999999996,
+                -2.3999999999999986
+              ],
+              "dist": 1.14,
+              "target": [
+                -5,
+                -3.3
+              ]
+            },
+            "mail_table": {
+              "reachable": true,
+              "stand": [
+                -2.6999999999999957,
+                3.200000000000003
+              ],
+              "dist": 1.03,
+              "target": [
+                -2,
+                3.95
+              ]
+            },
+            "exit": {
+              "reachable": true,
+              "stand": [
+                4.5,
+                3.1000000000000014
+              ],
+              "dist": 0.9,
+              "target": [
+                4.5,
+                4
+              ]
+            }
+          }
+        },
+        "work": {
+          "cells": 13891,
+          "area": 138.9,
+          "targets": {
+            "coffee_machine": {
+              "reachable": true,
+              "stand": [
+                -7.5,
+                -1.299999999999983
+              ],
+              "dist": 1.14,
+              "target": [
+                -8.6,
+                -1
+              ]
+            },
+            "adam_desk": {
+              "reachable": true,
+              "stand": [
+                -1.8999999999999915,
+                0.8000000000000114
+              ],
+              "dist": 1.14,
+              "target": [
+                -1,
+                1.5
+              ]
+            },
+            "hr_desk": {
+              "reachable": true,
+              "stand": [
+                5.900000000000006,
+                -4.900000000000006
+              ],
+              "dist": 1.08,
+              "target": [
+                6.5,
+                -4
+              ]
+            },
+            "exit": {
+              "reachable": true,
+              "stand": [
+                8.400000000000006,
+                5
+              ],
+              "dist": 0.9,
+              "target": [
+                7.5,
+                5
+              ]
+            }
+          }
+        },
+        "school": {
+          "cells": 10802,
+          "area": 108,
+          "targets": {
+            "exam_desk": {
+              "reachable": true,
+              "stand": [
+                -6.699999999999999,
+                -3.3000003829598423
+              ],
+              "dist": 0.96,
+              "target": [
+                -5.95,
+                -3.9
+              ]
+            },
+            "aid_office": {
+              "reachable": true,
+              "stand": [
+                -0.29999999999999893,
+                1.599999617040158
+              ],
+              "dist": 0.96,
+              "target": [
+                0.3,
+                2.35
+              ]
+            },
+            "study_room": {
+              "reachable": true,
+              "stand": [
+                6.300000000000001,
+                -2.400000382959842
+              ],
+              "dist": 0.96,
+              "target": [
+                7.05,
+                -3
+              ]
+            },
+            "exit": {
+              "reachable": true,
+              "stand": [
+                8.600000000000001,
+                -3.8295984161607066e-7
+              ],
+              "dist": 0.9,
+              "target": [
+                9.5,
+                0
+              ]
+            }
+          }
+        },
+        "street": {
+          "cells": 28909,
+          "area": 289.1,
+          "targets": {
+            "bus_bench": {
+              "reachable": true,
+              "stand": [
+                -10.200000000000003,
+                4
+              ],
+              "dist": 1.02,
+              "target": [
+                -10,
+                3
+              ]
+            },
+            "gas_station_counter": {
+              "reachable": true,
+              "stand": [
+                -0.8999999999999915,
+                -6.3999999999999915
+              ],
+              "dist": 1.08,
+              "target": [
+                0,
+                -7
+              ]
+            },
+            "ebike": {
+              "reachable": true,
+              "stand": [
+                7.1000000000000085,
+                1.6000000000000085
+              ],
+              "dist": 1.08,
+              "target": [
+                8,
+                1
+              ]
+            },
+            "exit": {
+              "reachable": true,
+              "stand": [
+                11.5,
+                -2.5
+              ],
+              "dist": 0.95,
+              "target": [
+                11.2,
+                -3.4
+              ]
+            }
+          }
+        },
+        "public_events": {
+          "cells": 22583,
+          "area": 225.8,
+          "targets": {
+            "gift_table": {
+              "reachable": true,
+              "stand": [
+                -5.2,
+                5.6
+              ],
+              "dist": 1.08,
+              "target": [
+                -6.1,
+                5
+              ]
+            },
+            "dinner_table": {
+              "reachable": true,
+              "stand": [
+                0,
+                0.1999999999999993
+              ],
+              "dist": 1.2,
+              "target": [
+                0,
+                -1
+              ]
+            },
+            "raffle_booth": {
+              "reachable": true,
+              "stand": [
+                4.699999999999999,
+                5.6
+              ],
+              "dist": 1.08,
+              "target": [
+                5.6,
+                5
+              ]
+            },
+            "exit": {
+              "reachable": true,
+              "stand": [
+                10,
+                -5.1000000000000005
+              ],
+              "dist": 0.9,
+              "target": [
+                10,
+                -6
+              ]
+            }
+          }
+        },
+        "private_events": {
+          "cells": 69472,
+          "area": 694.7,
+          "targets": {
+            "harris_porch": {
+              "reachable": true,
+              "stand": [
+                -4.5,
+                6.5
+              ],
+              "dist": 1.07,
+              "target": [
+                -5.45,
+                6
+              ]
+            },
+            "garcia_yard": {
+              "reachable": true,
+              "stand": [
+                5.5,
+                1.4000000000000057
+              ],
+              "dist": 1.08,
+              "target": [
+                6.55,
+                1.15
+              ]
+            },
+            "wedding_hall": {
+              "reachable": true,
+              "stand": [
+                -1.0999999999999943,
+                -14.600000000000001
+              ],
+              "dist": 1.14,
+              "target": [
+                0,
+                -14.9
+              ]
+            },
+            "exit": {
+              "reachable": true,
+              "stand": [
+                -0.8999999999999986,
+                -20.799999999999997
+              ],
+              "dist": 0.9,
+              "target": [
+                0,
+                -20.8
+              ]
+            }
+          }
+        }
+      },
+      "camera": {
+        "home/laptop": [
+          {
+            "yaw": 0,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 0.79,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 1.57,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 2.36,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 3.14,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 3.93,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 4.71,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 5.5,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          }
+        ],
+        "home/fridge": [
+          {
+            "yaw": 0,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 0.79,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 1.57,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 2.36,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 3.14,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 3.93,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 4.71,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 5.5,
+            "occluded": true,
+            "by": "home:satin",
+            "camDist": 5.2
+          }
+        ],
+        "home/mail_table": [
+          {
+            "yaw": 0,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 0.79,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 1.57,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 2.36,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 3.14,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 3.93,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 4.71,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 5.5,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          }
+        ],
+        "work/coffee_machine": [
+          {
+            "yaw": 0,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 0.79,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 1.57,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 2.36,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 3.14,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 3.93,
+            "occluded": true,
+            "by": "work:matte",
+            "camDist": 2.12
+          },
+          {
+            "yaw": 4.71,
+            "occluded": false,
+            "by": null,
+            "camDist": 1.44
+          },
+          {
+            "yaw": 5.5,
+            "occluded": true,
+            "by": "work:matte",
+            "camDist": 2.12
+          }
+        ],
+        "work/hr_desk": [
+          {
+            "yaw": 0,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 0.79,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 1.57,
+            "occluded": true,
+            "by": "work:matte",
+            "camDist": 5.2
+          },
+          {
+            "yaw": 2.36,
+            "occluded": false,
+            "by": null,
+            "camDist": 1.5
+          },
+          {
+            "yaw": 3.14,
+            "occluded": false,
+            "by": null,
+            "camDist": 1
+          },
+          {
+            "yaw": 3.93,
+            "occluded": false,
+            "by": null,
+            "camDist": 1.5
+          },
+          {
+            "yaw": 4.71,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 5.5,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          }
+        ],
+        "work/adam_desk": [
+          {
+            "yaw": 0,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 0.79,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 1.57,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 2.36,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 3.14,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 3.93,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 4.71,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 5.5,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          }
+        ],
+        "school/exam_desk": [
+          {
+            "yaw": 0,
+            "occluded": false,
+            "by": null,
+            "camDist": 1.11
+          },
+          {
+            "yaw": 0.79,
+            "occluded": false,
+            "by": null,
+            "camDist": 1.66
+          },
+          {
+            "yaw": 1.57,
+            "occluded": false,
+            "by": null,
+            "camDist": 3.48
+          },
+          {
+            "yaw": 2.36,
+            "occluded": false,
+            "by": null,
+            "camDist": 3.48
+          },
+          {
+            "yaw": 3.14,
+            "occluded": false,
+            "by": null,
+            "camDist": 3.48
+          },
+          {
+            "yaw": 3.93,
+            "occluded": false,
+            "by": null,
+            "camDist": 3.48
+          },
+          {
+            "yaw": 4.71,
+            "occluded": false,
+            "by": null,
+            "camDist": 3.41
+          },
+          {
+            "yaw": 5.5,
+            "occluded": false,
+            "by": null,
+            "camDist": 1.66
+          }
+        ],
+        "school/aid_office": [
+          {
+            "yaw": 0,
+            "occluded": false,
+            "by": null,
+            "camDist": 3.48
+          },
+          {
+            "yaw": 0.79,
+            "occluded": false,
+            "by": null,
+            "camDist": 3.48
+          },
+          {
+            "yaw": 1.57,
+            "occluded": false,
+            "by": null,
+            "camDist": 3.48
+          },
+          {
+            "yaw": 2.36,
+            "occluded": false,
+            "by": null,
+            "camDist": 3.48
+          },
+          {
+            "yaw": 3.14,
+            "occluded": false,
+            "by": null,
+            "camDist": 3.48
+          },
+          {
+            "yaw": 3.93,
+            "occluded": false,
+            "by": null,
+            "camDist": 3.48
+          },
+          {
+            "yaw": 4.71,
+            "occluded": false,
+            "by": null,
+            "camDist": 1.88
+          },
+          {
+            "yaw": 5.5,
+            "occluded": false,
+            "by": null,
+            "camDist": 0.26
+          }
+        ],
+        "school/study_room": [
+          {
+            "yaw": 0,
+            "occluded": false,
+            "by": null,
+            "camDist": 3.48
+          },
+          {
+            "yaw": 0.79,
+            "occluded": false,
+            "by": null,
+            "camDist": 3.48
+          },
+          {
+            "yaw": 1.57,
+            "occluded": false,
+            "by": null,
+            "camDist": 3.48
+          },
+          {
+            "yaw": 2.36,
+            "occluded": false,
+            "by": null,
+            "camDist": 3.48
+          },
+          {
+            "yaw": 3.14,
+            "occluded": false,
+            "by": null,
+            "camDist": 3.48
+          },
+          {
+            "yaw": 3.93,
+            "occluded": false,
+            "by": null,
+            "camDist": 3.48
+          },
+          {
+            "yaw": 4.71,
+            "occluded": false,
+            "by": null,
+            "camDist": 3.48
+          },
+          {
+            "yaw": 5.5,
+            "occluded": false,
+            "by": null,
+            "camDist": 3.48
+          }
+        ],
+        "street/bus_bench": [
+          {
+            "yaw": 0,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 0.79,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 1.57,
+            "occluded": false,
+            "by": null,
+            "camDist": 1.82
+          },
+          {
+            "yaw": 2.36,
+            "occluded": false,
+            "by": null,
+            "camDist": 2.43
+          },
+          {
+            "yaw": 3.14,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 3.93,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 4.71,
+            "occluded": false,
+            "by": null,
+            "camDist": 1.38
+          },
+          {
+            "yaw": 5.5,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          }
+        ],
+        "street/gas_station_counter": [
+          {
+            "yaw": 0,
+            "occluded": false,
+            "by": null,
+            "camDist": 2.49
+          },
+          {
+            "yaw": 0.79,
+            "occluded": false,
+            "by": null,
+            "camDist": 3.35
+          },
+          {
+            "yaw": 1.57,
+            "occluded": false,
+            "by": null,
+            "camDist": 4.09
+          },
+          {
+            "yaw": 2.36,
+            "occluded": false,
+            "by": null,
+            "camDist": 4.09
+          },
+          {
+            "yaw": 3.14,
+            "occluded": false,
+            "by": null,
+            "camDist": 3.63
+          },
+          {
+            "yaw": 3.93,
+            "occluded": false,
+            "by": null,
+            "camDist": 4.09
+          },
+          {
+            "yaw": 4.71,
+            "occluded": false,
+            "by": null,
+            "camDist": 3.09
+          },
+          {
+            "yaw": 5.5,
+            "occluded": false,
+            "by": null,
+            "camDist": 3.35
+          }
+        ],
+        "street/ebike": [
+          {
+            "yaw": 0,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 0.79,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 1.57,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 2.36,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 3.14,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 3.93,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 4.71,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 5.5,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          }
+        ],
+        "public_events/gift_table": [
+          {
+            "yaw": 0,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 0.79,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 1.57,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 2.36,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 3.14,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 3.93,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 4.71,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 5.5,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          }
+        ],
+        "public_events/dinner_table": [
+          {
+            "yaw": 0,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 0.79,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 1.57,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 2.36,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 3.14,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 3.93,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 4.71,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 5.5,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          }
+        ],
+        "public_events/raffle_booth": [
+          {
+            "yaw": 0,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 0.79,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 1.57,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 2.36,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 3.14,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 3.93,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 4.71,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 5.5,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          }
+        ],
+        "private_events/harris_porch": [
+          {
+            "yaw": 0,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 0.79,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 1.57,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 2.36,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 3.14,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 3.93,
+            "occluded": true,
+            "by": "BoxGeometry",
+            "camDist": 5.2
+          },
+          {
+            "yaw": 4.71,
+            "occluded": true,
+            "by": "BoxGeometry",
+            "camDist": 5.2
+          },
+          {
+            "yaw": 5.5,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          }
+        ],
+        "private_events/garcia_yard": [
+          {
+            "yaw": 0,
+            "occluded": true,
+            "by": "SphereGeometry",
+            "camDist": 5.2
+          },
+          {
+            "yaw": 0.79,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 1.57,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 2.36,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 3.14,
+            "occluded": true,
+            "by": "SphereGeometry",
+            "camDist": 5.2
+          },
+          {
+            "yaw": 3.93,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 4.71,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 5.5,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          }
+        ],
+        "private_events/wedding_hall": [
+          {
+            "yaw": 0,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 0.79,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 1.57,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 2.36,
+            "occluded": true,
+            "by": "BoxGeometry",
+            "camDist": 3.52
+          },
+          {
+            "yaw": 3.14,
+            "occluded": true,
+            "by": "BoxGeometry",
+            "camDist": 5.2
+          },
+          {
+            "yaw": 3.93,
+            "occluded": false,
+            "by": null,
+            "camDist": 3.75
+          },
+          {
+            "yaw": 4.71,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 5.5,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          }
+        ]
+      },
+      "seconds": 85
+    },
+    {
+      "config": "desktop-en",
+      "pass": true,
+      "failures": [],
+      "warnings": [],
+      "rulingsChecked": 18,
+      "perf": {
+        "home": {
+          "pointLights": 3,
+          "shadowLights": 0,
+          "placeholder": false,
+          "auto": [],
+          "meshes": 89,
+          "instanced": 0,
+          "trisDrawn": 15834,
+          "statsApi": {
+            "meshes": 89,
+            "tris": 15834
+          },
+          "drawCalls": 114,
+          "frameTris": 16892,
+          "geometries": 50,
+          "textures": 13,
+          "colliders": 32,
+          "occluders": 10,
+          "lights": "day",
+          "frameMs": 16.7,
+          "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 620 (0x00005917) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "work": {
+          "pointLights": 0,
+          "shadowLights": 0,
+          "placeholder": false,
+          "auto": [],
+          "meshes": 113,
+          "instanced": 11,
+          "trisDrawn": 13528,
+          "statsApi": {
+            "meshes": 113,
+            "tris": 4786
+          },
+          "drawCalls": 112,
+          "frameTris": 13364,
+          "geometries": 31,
+          "textures": 12,
+          "colliders": 42,
+          "occluders": 14,
+          "lights": "day",
+          "frameMs": 16.7,
+          "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 620 (0x00005917) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "school": {
+          "pointLights": 3,
+          "shadowLights": 0,
+          "placeholder": false,
+          "auto": [],
+          "meshes": 202,
+          "instanced": 25,
+          "trisDrawn": 17666,
+          "statsApi": {
+            "meshes": 202,
+            "tris": 7920
+          },
+          "drawCalls": 226,
+          "frameTris": 18596,
+          "geometries": 49,
+          "textures": 27,
+          "colliders": 64,
+          "occluders": 32,
+          "lights": "evening",
+          "frameMs": 16.6,
+          "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 620 (0x00005917) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "street": {
+          "pointLights": 3,
+          "shadowLights": 0,
+          "placeholder": false,
+          "auto": [],
+          "meshes": 124,
+          "instanced": 7,
+          "trisDrawn": 12132,
+          "statsApi": {
+            "meshes": 124,
+            "tris": 10278
+          },
+          "drawCalls": 153,
+          "frameTris": 13206,
+          "geometries": 70,
+          "textures": 20,
+          "colliders": 46,
+          "occluders": 39,
+          "lights": "night",
+          "frameMs": 16.7,
+          "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 620 (0x00005917) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "public_events": {
+          "pointLights": 3,
+          "shadowLights": 0,
+          "placeholder": false,
+          "auto": [],
+          "meshes": 253,
+          "instanced": 35,
+          "trisDrawn": 48876,
+          "statsApi": {
+            "meshes": 253,
+            "tris": 12118
+          },
+          "drawCalls": 236,
+          "frameTris": 47084,
+          "geometries": 109,
+          "textures": 15,
+          "colliders": 70,
+          "occluders": 48,
+          "lights": "evening",
+          "frameMs": 16.6,
+          "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 620 (0x00005917) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "private_events": {
+          "pointLights": 2,
+          "shadowLights": 0,
+          "placeholder": false,
+          "auto": [],
+          "meshes": 201,
+          "instanced": 16,
+          "trisDrawn": 57818,
+          "statsApi": {
+            "meshes": 201,
+            "tris": 10666
+          },
+          "drawCalls": 209,
+          "frameTris": 57936,
+          "geometries": 53,
+          "textures": 11,
+          "colliders": 70,
+          "occluders": 18,
+          "lights": "day",
+          "frameMs": 16.7,
+          "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 620 (0x00005917) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        }
+      },
+      "reach": {
+        "home": {
+          "cells": 6416,
+          "area": 64.2,
+          "targets": {
+            "laptop": {
+              "reachable": true,
+              "stand": [
+                1.2000000000000028,
+                -1.3999999999999986
+              ],
+              "dist": 1.08,
+              "target": [
+                0.12,
+                -1.42
+              ]
+            },
+            "fridge": {
+              "reachable": true,
+              "stand": [
+                -5.699999999999996,
+                -2.3999999999999986
+              ],
+              "dist": 1.14,
+              "target": [
+                -5,
+                -3.3
+              ]
+            },
+            "mail_table": {
+              "reachable": true,
+              "stand": [
+                -2.6999999999999957,
+                3.200000000000003
+              ],
+              "dist": 1.03,
+              "target": [
+                -2,
+                3.95
+              ]
+            },
+            "exit": {
+              "reachable": true,
+              "stand": [
+                4.5,
+                3.1000000000000014
+              ],
+              "dist": 0.9,
+              "target": [
+                4.5,
+                4
+              ]
+            }
+          }
+        },
+        "work": {
+          "cells": 13891,
+          "area": 138.9,
+          "targets": {
+            "coffee_machine": {
+              "reachable": true,
+              "stand": [
+                -7.5,
+                -1.299999999999983
+              ],
+              "dist": 1.14,
+              "target": [
+                -8.6,
+                -1
+              ]
+            },
+            "adam_desk": {
+              "reachable": true,
+              "stand": [
+                -1.8999999999999915,
+                0.8000000000000114
+              ],
+              "dist": 1.14,
+              "target": [
+                -1,
+                1.5
+              ]
+            },
+            "hr_desk": {
+              "reachable": true,
+              "stand": [
+                5.900000000000006,
+                -4.900000000000006
+              ],
+              "dist": 1.08,
+              "target": [
+                6.5,
+                -4
+              ]
+            },
+            "exit": {
+              "reachable": true,
+              "stand": [
+                8.400000000000006,
+                5
+              ],
+              "dist": 0.9,
+              "target": [
+                7.5,
+                5
+              ]
+            }
+          }
+        },
+        "school": {
+          "cells": 10802,
+          "area": 108,
+          "targets": {
+            "exam_desk": {
+              "reachable": true,
+              "stand": [
+                -6.699999999999999,
+                -3.3000003829598423
+              ],
+              "dist": 0.96,
+              "target": [
+                -5.95,
+                -3.9
+              ]
+            },
+            "aid_office": {
+              "reachable": true,
+              "stand": [
+                -0.29999999999999893,
+                1.599999617040158
+              ],
+              "dist": 0.96,
+              "target": [
+                0.3,
+                2.35
+              ]
+            },
+            "study_room": {
+              "reachable": true,
+              "stand": [
+                6.300000000000001,
+                -2.400000382959842
+              ],
+              "dist": 0.96,
+              "target": [
+                7.05,
+                -3
+              ]
+            },
+            "exit": {
+              "reachable": true,
+              "stand": [
+                8.600000000000001,
+                -3.8295984161607066e-7
+              ],
+              "dist": 0.9,
+              "target": [
+                9.5,
+                0
+              ]
+            }
+          }
+        },
+        "street": {
+          "cells": 28909,
+          "area": 289.1,
+          "targets": {
+            "bus_bench": {
+              "reachable": true,
+              "stand": [
+                -10.200000000000003,
+                4
+              ],
+              "dist": 1.02,
+              "target": [
+                -10,
+                3
+              ]
+            },
+            "gas_station_counter": {
+              "reachable": true,
+              "stand": [
+                -0.8999999999999915,
+                -6.3999999999999915
+              ],
+              "dist": 1.08,
+              "target": [
+                0,
+                -7
+              ]
+            },
+            "ebike": {
+              "reachable": true,
+              "stand": [
+                7.1000000000000085,
+                1.6000000000000085
+              ],
+              "dist": 1.08,
+              "target": [
+                8,
+                1
+              ]
+            },
+            "exit": {
+              "reachable": true,
+              "stand": [
+                11.5,
+                -2.5
+              ],
+              "dist": 0.95,
+              "target": [
+                11.2,
+                -3.4
+              ]
+            }
+          }
+        },
+        "public_events": {
+          "cells": 22583,
+          "area": 225.8,
+          "targets": {
+            "gift_table": {
+              "reachable": true,
+              "stand": [
+                -5.2,
+                5.6
+              ],
+              "dist": 1.08,
+              "target": [
+                -6.1,
+                5
+              ]
+            },
+            "dinner_table": {
+              "reachable": true,
+              "stand": [
+                0,
+                0.1999999999999993
+              ],
+              "dist": 1.2,
+              "target": [
+                0,
+                -1
+              ]
+            },
+            "raffle_booth": {
+              "reachable": true,
+              "stand": [
+                4.699999999999999,
+                5.6
+              ],
+              "dist": 1.08,
+              "target": [
+                5.6,
+                5
+              ]
+            },
+            "exit": {
+              "reachable": true,
+              "stand": [
+                10,
+                -5.1000000000000005
+              ],
+              "dist": 0.9,
+              "target": [
+                10,
+                -6
+              ]
+            }
+          }
+        },
+        "private_events": {
+          "cells": 69472,
+          "area": 694.7,
+          "targets": {
+            "harris_porch": {
+              "reachable": true,
+              "stand": [
+                -4.5,
+                6.5
+              ],
+              "dist": 1.07,
+              "target": [
+                -5.45,
+                6
+              ]
+            },
+            "garcia_yard": {
+              "reachable": true,
+              "stand": [
+                5.5,
+                1.4000000000000057
+              ],
+              "dist": 1.08,
+              "target": [
+                6.55,
+                1.15
+              ]
+            },
+            "wedding_hall": {
+              "reachable": true,
+              "stand": [
+                -1.0999999999999943,
+                -14.600000000000001
+              ],
+              "dist": 1.14,
+              "target": [
+                0,
+                -14.9
+              ]
+            },
+            "exit": {
+              "reachable": true,
+              "stand": [
+                -0.8999999999999986,
+                -20.799999999999997
+              ],
+              "dist": 0.9,
+              "target": [
+                0,
+                -20.8
+              ]
+            }
+          }
+        }
+      },
+      "camera": {
+        "home/laptop": [
+          {
+            "yaw": 0,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 0.79,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 1.57,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 2.36,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 3.14,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 3.93,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 4.71,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 5.5,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          }
+        ],
+        "home/fridge": [
+          {
+            "yaw": 0,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 0.79,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 1.57,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 2.36,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 3.14,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 3.93,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 4.71,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 5.5,
+            "occluded": true,
+            "by": "home:satin",
+            "camDist": 5.2
+          }
+        ],
+        "home/mail_table": [
+          {
+            "yaw": 0,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 0.79,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 1.57,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 2.36,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 3.14,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 3.93,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 4.71,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 5.5,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          }
+        ],
+        "work/coffee_machine": [
+          {
+            "yaw": 0,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 0.79,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 1.57,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 2.36,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 3.14,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 3.93,
+            "occluded": true,
+            "by": "work:matte",
+            "camDist": 2.12
+          },
+          {
+            "yaw": 4.71,
+            "occluded": false,
+            "by": null,
+            "camDist": 1.44
+          },
+          {
+            "yaw": 5.5,
+            "occluded": true,
+            "by": "work:matte",
+            "camDist": 2.12
+          }
+        ],
+        "work/hr_desk": [
+          {
+            "yaw": 0,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 0.79,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 1.57,
+            "occluded": true,
+            "by": "work:matte",
+            "camDist": 5.2
+          },
+          {
+            "yaw": 2.36,
+            "occluded": false,
+            "by": null,
+            "camDist": 1.5
+          },
+          {
+            "yaw": 3.14,
+            "occluded": false,
+            "by": null,
+            "camDist": 1
+          },
+          {
+            "yaw": 3.93,
+            "occluded": false,
+            "by": null,
+            "camDist": 1.5
+          },
+          {
+            "yaw": 4.71,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 5.5,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          }
+        ],
+        "work/adam_desk": [
+          {
+            "yaw": 0,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 0.79,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 1.57,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 2.36,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 3.14,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 3.93,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 4.71,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 5.5,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          }
+        ],
+        "school/exam_desk": [
+          {
+            "yaw": 0,
+            "occluded": false,
+            "by": null,
+            "camDist": 1.11
+          },
+          {
+            "yaw": 0.79,
+            "occluded": false,
+            "by": null,
+            "camDist": 1.66
+          },
+          {
+            "yaw": 1.57,
+            "occluded": false,
+            "by": null,
+            "camDist": 3.48
+          },
+          {
+            "yaw": 2.36,
+            "occluded": false,
+            "by": null,
+            "camDist": 3.48
+          },
+          {
+            "yaw": 3.14,
+            "occluded": false,
+            "by": null,
+            "camDist": 3.48
+          },
+          {
+            "yaw": 3.93,
+            "occluded": false,
+            "by": null,
+            "camDist": 3.48
+          },
+          {
+            "yaw": 4.71,
+            "occluded": false,
+            "by": null,
+            "camDist": 3.41
+          },
+          {
+            "yaw": 5.5,
+            "occluded": false,
+            "by": null,
+            "camDist": 1.66
+          }
+        ],
+        "school/aid_office": [
+          {
+            "yaw": 0,
+            "occluded": false,
+            "by": null,
+            "camDist": 3.48
+          },
+          {
+            "yaw": 0.79,
+            "occluded": false,
+            "by": null,
+            "camDist": 3.48
+          },
+          {
+            "yaw": 1.57,
+            "occluded": false,
+            "by": null,
+            "camDist": 3.48
+          },
+          {
+            "yaw": 2.36,
+            "occluded": false,
+            "by": null,
+            "camDist": 3.48
+          },
+          {
+            "yaw": 3.14,
+            "occluded": false,
+            "by": null,
+            "camDist": 3.48
+          },
+          {
+            "yaw": 3.93,
+            "occluded": false,
+            "by": null,
+            "camDist": 3.48
+          },
+          {
+            "yaw": 4.71,
+            "occluded": false,
+            "by": null,
+            "camDist": 1.88
+          },
+          {
+            "yaw": 5.5,
+            "occluded": false,
+            "by": null,
+            "camDist": 0.26
+          }
+        ],
+        "school/study_room": [
+          {
+            "yaw": 0,
+            "occluded": false,
+            "by": null,
+            "camDist": 3.48
+          },
+          {
+            "yaw": 0.79,
+            "occluded": false,
+            "by": null,
+            "camDist": 3.48
+          },
+          {
+            "yaw": 1.57,
+            "occluded": false,
+            "by": null,
+            "camDist": 3.48
+          },
+          {
+            "yaw": 2.36,
+            "occluded": false,
+            "by": null,
+            "camDist": 3.48
+          },
+          {
+            "yaw": 3.14,
+            "occluded": false,
+            "by": null,
+            "camDist": 3.48
+          },
+          {
+            "yaw": 3.93,
+            "occluded": false,
+            "by": null,
+            "camDist": 3.48
+          },
+          {
+            "yaw": 4.71,
+            "occluded": false,
+            "by": null,
+            "camDist": 3.48
+          },
+          {
+            "yaw": 5.5,
+            "occluded": false,
+            "by": null,
+            "camDist": 3.48
+          }
+        ],
+        "street/bus_bench": [
+          {
+            "yaw": 0,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 0.79,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 1.57,
+            "occluded": false,
+            "by": null,
+            "camDist": 1.82
+          },
+          {
+            "yaw": 2.36,
+            "occluded": false,
+            "by": null,
+            "camDist": 2.43
+          },
+          {
+            "yaw": 3.14,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 3.93,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 4.71,
+            "occluded": false,
+            "by": null,
+            "camDist": 1.38
+          },
+          {
+            "yaw": 5.5,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          }
+        ],
+        "street/gas_station_counter": [
+          {
+            "yaw": 0,
+            "occluded": false,
+            "by": null,
+            "camDist": 2.49
+          },
+          {
+            "yaw": 0.79,
+            "occluded": false,
+            "by": null,
+            "camDist": 3.35
+          },
+          {
+            "yaw": 1.57,
+            "occluded": false,
+            "by": null,
+            "camDist": 4.09
+          },
+          {
+            "yaw": 2.36,
+            "occluded": false,
+            "by": null,
+            "camDist": 4.09
+          },
+          {
+            "yaw": 3.14,
+            "occluded": false,
+            "by": null,
+            "camDist": 3.63
+          },
+          {
+            "yaw": 3.93,
+            "occluded": false,
+            "by": null,
+            "camDist": 4.09
+          },
+          {
+            "yaw": 4.71,
+            "occluded": false,
+            "by": null,
+            "camDist": 3.09
+          },
+          {
+            "yaw": 5.5,
+            "occluded": false,
+            "by": null,
+            "camDist": 3.35
+          }
+        ],
+        "street/ebike": [
+          {
+            "yaw": 0,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 0.79,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 1.57,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 2.36,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 3.14,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 3.93,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 4.71,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 5.5,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          }
+        ],
+        "public_events/gift_table": [
+          {
+            "yaw": 0,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 0.79,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 1.57,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 2.36,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 3.14,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 3.93,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 4.71,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 5.5,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          }
+        ],
+        "public_events/dinner_table": [
+          {
+            "yaw": 0,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 0.79,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 1.57,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 2.36,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 3.14,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 3.93,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 4.71,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 5.5,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          }
+        ],
+        "public_events/raffle_booth": [
+          {
+            "yaw": 0,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 0.79,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 1.57,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 2.36,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 3.14,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 3.93,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 4.71,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 5.5,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          }
+        ],
+        "private_events/harris_porch": [
+          {
+            "yaw": 0,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 0.79,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 1.57,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 2.36,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 3.14,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 3.93,
+            "occluded": true,
+            "by": "BoxGeometry",
+            "camDist": 5.2
+          },
+          {
+            "yaw": 4.71,
+            "occluded": true,
+            "by": "BoxGeometry",
+            "camDist": 5.2
+          },
+          {
+            "yaw": 5.5,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          }
+        ],
+        "private_events/garcia_yard": [
+          {
+            "yaw": 0,
+            "occluded": true,
+            "by": "SphereGeometry",
+            "camDist": 5.2
+          },
+          {
+            "yaw": 0.79,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 1.57,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 2.36,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 3.14,
+            "occluded": true,
+            "by": "SphereGeometry",
+            "camDist": 5.2
+          },
+          {
+            "yaw": 3.93,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 4.71,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 5.5,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          }
+        ],
+        "private_events/wedding_hall": [
+          {
+            "yaw": 0,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 0.79,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 1.57,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 2.36,
+            "occluded": true,
+            "by": "BoxGeometry",
+            "camDist": 3.52
+          },
+          {
+            "yaw": 3.14,
+            "occluded": true,
+            "by": "BoxGeometry",
+            "camDist": 5.2
+          },
+          {
+            "yaw": 3.93,
+            "occluded": false,
+            "by": null,
+            "camDist": 3.75
+          },
+          {
+            "yaw": 4.71,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 5.5,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          }
+        ]
+      },
+      "seconds": 72
+    },
+    {
+      "config": "mobile-ar",
+      "pass": true,
+      "failures": [],
+      "warnings": [],
+      "rulingsChecked": 18,
+      "perf": {
+        "home": {
+          "pointLights": 3,
+          "shadowLights": 0,
+          "placeholder": false,
+          "auto": [],
+          "meshes": 89,
+          "instanced": 0,
+          "trisDrawn": 15834,
+          "statsApi": {
+            "meshes": 89,
+            "tris": 15834
+          },
+          "drawCalls": 81,
+          "frameTris": 15016,
+          "geometries": 43,
+          "textures": 9,
+          "colliders": 32,
+          "occluders": 10,
+          "lights": "day",
+          "frameMs": 16.6,
+          "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 620 (0x00005917) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "work": {
+          "pointLights": 0,
+          "shadowLights": 0,
+          "placeholder": false,
+          "auto": [],
+          "meshes": 113,
+          "instanced": 11,
+          "trisDrawn": 13528,
+          "statsApi": {
+            "meshes": 113,
+            "tris": 4786
+          },
+          "drawCalls": 51,
+          "frameTris": 10690,
+          "geometries": 24,
+          "textures": 5,
+          "colliders": 42,
+          "occluders": 14,
+          "lights": "day",
+          "frameMs": 16.6,
+          "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 620 (0x00005917) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "school": {
+          "pointLights": 3,
+          "shadowLights": 0,
+          "placeholder": false,
+          "auto": [],
+          "meshes": 202,
+          "instanced": 25,
+          "trisDrawn": 17666,
+          "statsApi": {
+            "meshes": 202,
+            "tris": 7920
+          },
+          "drawCalls": 170,
+          "frameTris": 16196,
+          "geometries": 45,
+          "textures": 21,
+          "colliders": 64,
+          "occluders": 32,
+          "lights": "evening",
+          "frameMs": 16.6,
+          "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 620 (0x00005917) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "street": {
+          "pointLights": 3,
+          "shadowLights": 0,
+          "placeholder": false,
+          "auto": [],
+          "meshes": 124,
+          "instanced": 7,
+          "trisDrawn": 12132,
+          "statsApi": {
+            "meshes": 124,
+            "tris": 10278
+          },
+          "drawCalls": 109,
+          "frameTris": 11398,
+          "geometries": 58,
+          "textures": 12,
+          "colliders": 46,
+          "occluders": 39,
+          "lights": "night",
+          "frameMs": 16.6,
+          "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 620 (0x00005917) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "public_events": {
+          "pointLights": 3,
+          "shadowLights": 0,
+          "placeholder": false,
+          "auto": [],
+          "meshes": 253,
+          "instanced": 35,
+          "trisDrawn": 48876,
+          "statsApi": {
+            "meshes": 253,
+            "tris": 12118
+          },
+          "drawCalls": 114,
+          "frameTris": 37586,
+          "geometries": 84,
+          "textures": 8,
+          "colliders": 70,
+          "occluders": 48,
+          "lights": "evening",
+          "frameMs": 16.6,
+          "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 620 (0x00005917) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "private_events": {
+          "pointLights": 2,
+          "shadowLights": 0,
+          "placeholder": false,
+          "auto": [],
+          "meshes": 201,
+          "instanced": 16,
+          "trisDrawn": 57818,
+          "statsApi": {
+            "meshes": 201,
+            "tris": 10666
+          },
+          "drawCalls": 205,
+          "frameTris": 57782,
+          "geometries": 51,
+          "textures": 10,
+          "colliders": 70,
+          "occluders": 18,
+          "lights": "day",
+          "frameMs": 16.7,
+          "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 620 (0x00005917) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        }
+      },
+      "reach": {
+        "home": {
+          "cells": 6416,
+          "area": 64.2,
+          "targets": {
+            "laptop": {
+              "reachable": true,
+              "stand": [
+                1.2000000000000028,
+                -1.3999999999999986
+              ],
+              "dist": 1.08,
+              "target": [
+                0.12,
+                -1.42
+              ]
+            },
+            "fridge": {
+              "reachable": true,
+              "stand": [
+                -5.699999999999996,
+                -2.3999999999999986
+              ],
+              "dist": 1.14,
+              "target": [
+                -5,
+                -3.3
+              ]
+            },
+            "mail_table": {
+              "reachable": true,
+              "stand": [
+                -2.6999999999999957,
+                3.200000000000003
+              ],
+              "dist": 1.03,
+              "target": [
+                -2,
+                3.95
+              ]
+            },
+            "exit": {
+              "reachable": true,
+              "stand": [
+                4.5,
+                3.1000000000000014
+              ],
+              "dist": 0.9,
+              "target": [
+                4.5,
+                4
+              ]
+            }
+          }
+        },
+        "work": {
+          "cells": 13891,
+          "area": 138.9,
+          "targets": {
+            "coffee_machine": {
+              "reachable": true,
+              "stand": [
+                -7.5,
+                -1.299999999999983
+              ],
+              "dist": 1.14,
+              "target": [
+                -8.6,
+                -1
+              ]
+            },
+            "adam_desk": {
+              "reachable": true,
+              "stand": [
+                -1.8999999999999915,
+                0.8000000000000114
+              ],
+              "dist": 1.14,
+              "target": [
+                -1,
+                1.5
+              ]
+            },
+            "hr_desk": {
+              "reachable": true,
+              "stand": [
+                5.900000000000006,
+                -4.900000000000006
+              ],
+              "dist": 1.08,
+              "target": [
+                6.5,
+                -4
+              ]
+            },
+            "exit": {
+              "reachable": true,
+              "stand": [
+                8.400000000000006,
+                5
+              ],
+              "dist": 0.9,
+              "target": [
+                7.5,
+                5
+              ]
+            }
+          }
+        },
+        "school": {
+          "cells": 10802,
+          "area": 108,
+          "targets": {
+            "exam_desk": {
+              "reachable": true,
+              "stand": [
+                -6.699999999999999,
+                -3.3000003829598423
+              ],
+              "dist": 0.96,
+              "target": [
+                -5.95,
+                -3.9
+              ]
+            },
+            "aid_office": {
+              "reachable": true,
+              "stand": [
+                -0.29999999999999893,
+                1.599999617040158
+              ],
+              "dist": 0.96,
+              "target": [
+                0.3,
+                2.35
+              ]
+            },
+            "study_room": {
+              "reachable": true,
+              "stand": [
+                6.300000000000001,
+                -2.400000382959842
+              ],
+              "dist": 0.96,
+              "target": [
+                7.05,
+                -3
+              ]
+            },
+            "exit": {
+              "reachable": true,
+              "stand": [
+                8.600000000000001,
+                -3.8295984161607066e-7
+              ],
+              "dist": 0.9,
+              "target": [
+                9.5,
+                0
+              ]
+            }
+          }
+        },
+        "street": {
+          "cells": 28909,
+          "area": 289.1,
+          "targets": {
+            "bus_bench": {
+              "reachable": true,
+              "stand": [
+                -10.200000000000003,
+                4
+              ],
+              "dist": 1.02,
+              "target": [
+                -10,
+                3
+              ]
+            },
+            "gas_station_counter": {
+              "reachable": true,
+              "stand": [
+                -0.8999999999999915,
+                -6.3999999999999915
+              ],
+              "dist": 1.08,
+              "target": [
+                0,
+                -7
+              ]
+            },
+            "ebike": {
+              "reachable": true,
+              "stand": [
+                7.1000000000000085,
+                1.6000000000000085
+              ],
+              "dist": 1.08,
+              "target": [
+                8,
+                1
+              ]
+            },
+            "exit": {
+              "reachable": true,
+              "stand": [
+                11.5,
+                -2.5
+              ],
+              "dist": 0.95,
+              "target": [
+                11.2,
+                -3.4
+              ]
+            }
+          }
+        },
+        "public_events": {
+          "cells": 22583,
+          "area": 225.8,
+          "targets": {
+            "gift_table": {
+              "reachable": true,
+              "stand": [
+                -5.2,
+                5.6
+              ],
+              "dist": 1.08,
+              "target": [
+                -6.1,
+                5
+              ]
+            },
+            "dinner_table": {
+              "reachable": true,
+              "stand": [
+                0,
+                0.1999999999999993
+              ],
+              "dist": 1.2,
+              "target": [
+                0,
+                -1
+              ]
+            },
+            "raffle_booth": {
+              "reachable": true,
+              "stand": [
+                4.699999999999999,
+                5.6
+              ],
+              "dist": 1.08,
+              "target": [
+                5.6,
+                5
+              ]
+            },
+            "exit": {
+              "reachable": true,
+              "stand": [
+                10,
+                -5.1000000000000005
+              ],
+              "dist": 0.9,
+              "target": [
+                10,
+                -6
+              ]
+            }
+          }
+        },
+        "private_events": {
+          "cells": 69472,
+          "area": 694.7,
+          "targets": {
+            "harris_porch": {
+              "reachable": true,
+              "stand": [
+                -4.5,
+                6.5
+              ],
+              "dist": 1.07,
+              "target": [
+                -5.45,
+                6
+              ]
+            },
+            "garcia_yard": {
+              "reachable": true,
+              "stand": [
+                5.5,
+                1.4000000000000057
+              ],
+              "dist": 1.08,
+              "target": [
+                6.55,
+                1.15
+              ]
+            },
+            "wedding_hall": {
+              "reachable": true,
+              "stand": [
+                -1.0999999999999943,
+                -14.600000000000001
+              ],
+              "dist": 1.14,
+              "target": [
+                0,
+                -14.9
+              ]
+            },
+            "exit": {
+              "reachable": true,
+              "stand": [
+                -0.8999999999999986,
+                -20.799999999999997
+              ],
+              "dist": 0.9,
+              "target": [
+                0,
+                -20.8
+              ]
+            }
+          }
+        }
+      },
+      "camera": {
+        "home/laptop": [
+          {
+            "yaw": 0,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 0.79,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 1.57,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 2.36,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 3.14,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 3.93,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 4.71,
+            "occluded": true,
+            "by": "OctahedronGeometry",
+            "camDist": 5.2
+          },
+          {
+            "yaw": 5.5,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          }
+        ],
+        "home/fridge": [
+          {
+            "yaw": 0,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 0.79,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 1.57,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 2.36,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 3.14,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 3.93,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 4.71,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 5.5,
+            "occluded": true,
+            "by": "home:satin",
+            "camDist": 5.2
+          }
+        ],
+        "home/mail_table": [
+          {
+            "yaw": 0,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 0.79,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 1.57,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 2.36,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 3.14,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 3.93,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 4.71,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 5.5,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          }
+        ],
+        "work/coffee_machine": [
+          {
+            "yaw": 0,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 0.79,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 1.57,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 2.36,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 3.14,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 3.93,
+            "occluded": true,
+            "by": "work:matte",
+            "camDist": 2.12
+          },
+          {
+            "yaw": 4.71,
+            "occluded": false,
+            "by": null,
+            "camDist": 1.44
+          },
+          {
+            "yaw": 5.5,
+            "occluded": true,
+            "by": "work:matte",
+            "camDist": 2.12
+          }
+        ],
+        "work/hr_desk": [
+          {
+            "yaw": 0,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 0.79,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 1.57,
+            "occluded": true,
+            "by": "work:matte",
+            "camDist": 5.2
+          },
+          {
+            "yaw": 2.36,
+            "occluded": false,
+            "by": null,
+            "camDist": 1.5
+          },
+          {
+            "yaw": 3.14,
+            "occluded": false,
+            "by": null,
+            "camDist": 1
+          },
+          {
+            "yaw": 3.93,
+            "occluded": false,
+            "by": null,
+            "camDist": 1.5
+          },
+          {
+            "yaw": 4.71,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 5.5,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          }
+        ],
+        "work/adam_desk": [
+          {
+            "yaw": 0,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 0.79,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 1.57,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 2.36,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 3.14,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 3.93,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 4.71,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 5.5,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          }
+        ],
+        "school/exam_desk": [
+          {
+            "yaw": 0,
+            "occluded": false,
+            "by": null,
+            "camDist": 1.11
+          },
+          {
+            "yaw": 0.79,
+            "occluded": false,
+            "by": null,
+            "camDist": 1.66
+          },
+          {
+            "yaw": 1.57,
+            "occluded": false,
+            "by": null,
+            "camDist": 3.48
+          },
+          {
+            "yaw": 2.36,
+            "occluded": false,
+            "by": null,
+            "camDist": 3.48
+          },
+          {
+            "yaw": 3.14,
+            "occluded": false,
+            "by": null,
+            "camDist": 3.48
+          },
+          {
+            "yaw": 3.93,
+            "occluded": false,
+            "by": null,
+            "camDist": 3.48
+          },
+          {
+            "yaw": 4.71,
+            "occluded": false,
+            "by": null,
+            "camDist": 3.41
+          },
+          {
+            "yaw": 5.5,
+            "occluded": false,
+            "by": null,
+            "camDist": 1.66
+          }
+        ],
+        "school/aid_office": [
+          {
+            "yaw": 0,
+            "occluded": false,
+            "by": null,
+            "camDist": 3.48
+          },
+          {
+            "yaw": 0.79,
+            "occluded": false,
+            "by": null,
+            "camDist": 3.48
+          },
+          {
+            "yaw": 1.57,
+            "occluded": false,
+            "by": null,
+            "camDist": 3.48
+          },
+          {
+            "yaw": 2.36,
+            "occluded": false,
+            "by": null,
+            "camDist": 3.48
+          },
+          {
+            "yaw": 3.14,
+            "occluded": false,
+            "by": null,
+            "camDist": 3.48
+          },
+          {
+            "yaw": 3.93,
+            "occluded": false,
+            "by": null,
+            "camDist": 3.48
+          },
+          {
+            "yaw": 4.71,
+            "occluded": false,
+            "by": null,
+            "camDist": 1.88
+          },
+          {
+            "yaw": 5.5,
+            "occluded": false,
+            "by": null,
+            "camDist": 0.26
+          }
+        ],
+        "school/study_room": [
+          {
+            "yaw": 0,
+            "occluded": false,
+            "by": null,
+            "camDist": 3.48
+          },
+          {
+            "yaw": 0.79,
+            "occluded": false,
+            "by": null,
+            "camDist": 3.48
+          },
+          {
+            "yaw": 1.57,
+            "occluded": false,
+            "by": null,
+            "camDist": 3.48
+          },
+          {
+            "yaw": 2.36,
+            "occluded": false,
+            "by": null,
+            "camDist": 3.48
+          },
+          {
+            "yaw": 3.14,
+            "occluded": false,
+            "by": null,
+            "camDist": 3.48
+          },
+          {
+            "yaw": 3.93,
+            "occluded": false,
+            "by": null,
+            "camDist": 3.48
+          },
+          {
+            "yaw": 4.71,
+            "occluded": false,
+            "by": null,
+            "camDist": 3.48
+          },
+          {
+            "yaw": 5.5,
+            "occluded": false,
+            "by": null,
+            "camDist": 3.48
+          }
+        ],
+        "street/bus_bench": [
+          {
+            "yaw": 0,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 0.79,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 1.57,
+            "occluded": false,
+            "by": null,
+            "camDist": 1.82
+          },
+          {
+            "yaw": 2.36,
+            "occluded": false,
+            "by": null,
+            "camDist": 2.43
+          },
+          {
+            "yaw": 3.14,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 3.93,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 4.71,
+            "occluded": false,
+            "by": null,
+            "camDist": 1.38
+          },
+          {
+            "yaw": 5.5,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          }
+        ],
+        "street/gas_station_counter": [
+          {
+            "yaw": 0,
+            "occluded": false,
+            "by": null,
+            "camDist": 2.49
+          },
+          {
+            "yaw": 0.79,
+            "occluded": false,
+            "by": null,
+            "camDist": 3.35
+          },
+          {
+            "yaw": 1.57,
+            "occluded": false,
+            "by": null,
+            "camDist": 4.09
+          },
+          {
+            "yaw": 2.36,
+            "occluded": false,
+            "by": null,
+            "camDist": 4.09
+          },
+          {
+            "yaw": 3.14,
+            "occluded": false,
+            "by": null,
+            "camDist": 3.63
+          },
+          {
+            "yaw": 3.93,
+            "occluded": false,
+            "by": null,
+            "camDist": 4.09
+          },
+          {
+            "yaw": 4.71,
+            "occluded": false,
+            "by": null,
+            "camDist": 3.09
+          },
+          {
+            "yaw": 5.5,
+            "occluded": false,
+            "by": null,
+            "camDist": 3.35
+          }
+        ],
+        "street/ebike": [
+          {
+            "yaw": 0,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 0.79,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 1.57,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 2.36,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 3.14,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 3.93,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 4.71,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 5.5,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          }
+        ],
+        "public_events/gift_table": [
+          {
+            "yaw": 0,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 0.79,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 1.57,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 2.36,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 3.14,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 3.93,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 4.71,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 5.5,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          }
+        ],
+        "public_events/dinner_table": [
+          {
+            "yaw": 0,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 0.79,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 1.57,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 2.36,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 3.14,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 3.93,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 4.71,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 5.5,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          }
+        ],
+        "public_events/raffle_booth": [
+          {
+            "yaw": 0,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 0.79,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 1.57,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 2.36,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 3.14,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 3.93,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 4.71,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 5.5,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          }
+        ],
+        "private_events/harris_porch": [
+          {
+            "yaw": 0,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 0.79,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 1.57,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 2.36,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 3.14,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 3.93,
+            "occluded": true,
+            "by": "BoxGeometry",
+            "camDist": 5.2
+          },
+          {
+            "yaw": 4.71,
+            "occluded": true,
+            "by": "BoxGeometry",
+            "camDist": 5.2
+          },
+          {
+            "yaw": 5.5,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          }
+        ],
+        "private_events/garcia_yard": [
+          {
+            "yaw": 0,
+            "occluded": true,
+            "by": "SphereGeometry",
+            "camDist": 5.2
+          },
+          {
+            "yaw": 0.79,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 1.57,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 2.36,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 3.14,
+            "occluded": true,
+            "by": "SphereGeometry",
+            "camDist": 5.2
+          },
+          {
+            "yaw": 3.93,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 4.71,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 5.5,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          }
+        ],
+        "private_events/wedding_hall": [
+          {
+            "yaw": 0,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 0.79,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 1.57,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 2.36,
+            "occluded": true,
+            "by": "BoxGeometry",
+            "camDist": 3.52
+          },
+          {
+            "yaw": 3.14,
+            "occluded": true,
+            "by": "BoxGeometry",
+            "camDist": 5.2
+          },
+          {
+            "yaw": 3.93,
+            "occluded": false,
+            "by": null,
+            "camDist": 3.75
+          },
+          {
+            "yaw": 4.71,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 5.5,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          }
+        ]
+      },
+      "seconds": 82
+    },
+    {
+      "config": "mobile-en",
+      "pass": true,
+      "failures": [],
+      "warnings": [],
+      "rulingsChecked": 18,
+      "perf": {
+        "home": {
+          "pointLights": 3,
+          "shadowLights": 0,
+          "placeholder": false,
+          "auto": [],
+          "meshes": 89,
+          "instanced": 0,
+          "trisDrawn": 15834,
+          "statsApi": {
+            "meshes": 89,
+            "tris": 15834
+          },
+          "drawCalls": 81,
+          "frameTris": 15016,
+          "geometries": 43,
+          "textures": 9,
+          "colliders": 32,
+          "occluders": 10,
+          "lights": "day",
+          "frameMs": 16.6,
+          "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 620 (0x00005917) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "work": {
+          "pointLights": 0,
+          "shadowLights": 0,
+          "placeholder": false,
+          "auto": [],
+          "meshes": 113,
+          "instanced": 11,
+          "trisDrawn": 13528,
+          "statsApi": {
+            "meshes": 113,
+            "tris": 4786
+          },
+          "drawCalls": 51,
+          "frameTris": 10690,
+          "geometries": 24,
+          "textures": 5,
+          "colliders": 42,
+          "occluders": 14,
+          "lights": "day",
+          "frameMs": 16.7,
+          "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 620 (0x00005917) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "school": {
+          "pointLights": 3,
+          "shadowLights": 0,
+          "placeholder": false,
+          "auto": [],
+          "meshes": 202,
+          "instanced": 25,
+          "trisDrawn": 17666,
+          "statsApi": {
+            "meshes": 202,
+            "tris": 7920
+          },
+          "drawCalls": 170,
+          "frameTris": 16196,
+          "geometries": 45,
+          "textures": 21,
+          "colliders": 64,
+          "occluders": 32,
+          "lights": "evening",
+          "frameMs": 16.6,
+          "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 620 (0x00005917) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "street": {
+          "pointLights": 3,
+          "shadowLights": 0,
+          "placeholder": false,
+          "auto": [],
+          "meshes": 124,
+          "instanced": 7,
+          "trisDrawn": 12132,
+          "statsApi": {
+            "meshes": 124,
+            "tris": 10278
+          },
+          "drawCalls": 109,
+          "frameTris": 11398,
+          "geometries": 58,
+          "textures": 12,
+          "colliders": 46,
+          "occluders": 39,
+          "lights": "night",
+          "frameMs": 16.6,
+          "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 620 (0x00005917) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "public_events": {
+          "pointLights": 3,
+          "shadowLights": 0,
+          "placeholder": false,
+          "auto": [],
+          "meshes": 253,
+          "instanced": 35,
+          "trisDrawn": 48876,
+          "statsApi": {
+            "meshes": 253,
+            "tris": 12118
+          },
+          "drawCalls": 114,
+          "frameTris": 37586,
+          "geometries": 84,
+          "textures": 8,
+          "colliders": 70,
+          "occluders": 48,
+          "lights": "evening",
+          "frameMs": 16.6,
+          "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 620 (0x00005917) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "private_events": {
+          "pointLights": 2,
+          "shadowLights": 0,
+          "placeholder": false,
+          "auto": [],
+          "meshes": 201,
+          "instanced": 16,
+          "trisDrawn": 57818,
+          "statsApi": {
+            "meshes": 201,
+            "tris": 10666
+          },
+          "drawCalls": 205,
+          "frameTris": 57782,
+          "geometries": 51,
+          "textures": 10,
+          "colliders": 70,
+          "occluders": 18,
+          "lights": "day",
+          "frameMs": 16.6,
+          "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 620 (0x00005917) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        }
+      },
+      "reach": {
+        "home": {
+          "cells": 6416,
+          "area": 64.2,
+          "targets": {
+            "laptop": {
+              "reachable": true,
+              "stand": [
+                1.2000000000000028,
+                -1.3999999999999986
+              ],
+              "dist": 1.08,
+              "target": [
+                0.12,
+                -1.42
+              ]
+            },
+            "fridge": {
+              "reachable": true,
+              "stand": [
+                -5.699999999999996,
+                -2.3999999999999986
+              ],
+              "dist": 1.14,
+              "target": [
+                -5,
+                -3.3
+              ]
+            },
+            "mail_table": {
+              "reachable": true,
+              "stand": [
+                -2.6999999999999957,
+                3.200000000000003
+              ],
+              "dist": 1.03,
+              "target": [
+                -2,
+                3.95
+              ]
+            },
+            "exit": {
+              "reachable": true,
+              "stand": [
+                4.5,
+                3.1000000000000014
+              ],
+              "dist": 0.9,
+              "target": [
+                4.5,
+                4
+              ]
+            }
+          }
+        },
+        "work": {
+          "cells": 13891,
+          "area": 138.9,
+          "targets": {
+            "coffee_machine": {
+              "reachable": true,
+              "stand": [
+                -7.5,
+                -1.299999999999983
+              ],
+              "dist": 1.14,
+              "target": [
+                -8.6,
+                -1
+              ]
+            },
+            "adam_desk": {
+              "reachable": true,
+              "stand": [
+                -1.8999999999999915,
+                0.8000000000000114
+              ],
+              "dist": 1.14,
+              "target": [
+                -1,
+                1.5
+              ]
+            },
+            "hr_desk": {
+              "reachable": true,
+              "stand": [
+                5.900000000000006,
+                -4.900000000000006
+              ],
+              "dist": 1.08,
+              "target": [
+                6.5,
+                -4
+              ]
+            },
+            "exit": {
+              "reachable": true,
+              "stand": [
+                8.400000000000006,
+                5
+              ],
+              "dist": 0.9,
+              "target": [
+                7.5,
+                5
+              ]
+            }
+          }
+        },
+        "school": {
+          "cells": 10802,
+          "area": 108,
+          "targets": {
+            "exam_desk": {
+              "reachable": true,
+              "stand": [
+                -6.699999999999999,
+                -3.3000003829598423
+              ],
+              "dist": 0.96,
+              "target": [
+                -5.95,
+                -3.9
+              ]
+            },
+            "aid_office": {
+              "reachable": true,
+              "stand": [
+                -0.29999999999999893,
+                1.599999617040158
+              ],
+              "dist": 0.96,
+              "target": [
+                0.3,
+                2.35
+              ]
+            },
+            "study_room": {
+              "reachable": true,
+              "stand": [
+                6.300000000000001,
+                -2.400000382959842
+              ],
+              "dist": 0.96,
+              "target": [
+                7.05,
+                -3
+              ]
+            },
+            "exit": {
+              "reachable": true,
+              "stand": [
+                8.600000000000001,
+                -3.8295984161607066e-7
+              ],
+              "dist": 0.9,
+              "target": [
+                9.5,
+                0
+              ]
+            }
+          }
+        },
+        "street": {
+          "cells": 28909,
+          "area": 289.1,
+          "targets": {
+            "bus_bench": {
+              "reachable": true,
+              "stand": [
+                -10.200000000000003,
+                4
+              ],
+              "dist": 1.02,
+              "target": [
+                -10,
+                3
+              ]
+            },
+            "gas_station_counter": {
+              "reachable": true,
+              "stand": [
+                -0.8999999999999915,
+                -6.3999999999999915
+              ],
+              "dist": 1.08,
+              "target": [
+                0,
+                -7
+              ]
+            },
+            "ebike": {
+              "reachable": true,
+              "stand": [
+                7.1000000000000085,
+                1.6000000000000085
+              ],
+              "dist": 1.08,
+              "target": [
+                8,
+                1
+              ]
+            },
+            "exit": {
+              "reachable": true,
+              "stand": [
+                11.5,
+                -2.5
+              ],
+              "dist": 0.95,
+              "target": [
+                11.2,
+                -3.4
+              ]
+            }
+          }
+        },
+        "public_events": {
+          "cells": 22583,
+          "area": 225.8,
+          "targets": {
+            "gift_table": {
+              "reachable": true,
+              "stand": [
+                -5.2,
+                5.6
+              ],
+              "dist": 1.08,
+              "target": [
+                -6.1,
+                5
+              ]
+            },
+            "dinner_table": {
+              "reachable": true,
+              "stand": [
+                0,
+                0.1999999999999993
+              ],
+              "dist": 1.2,
+              "target": [
+                0,
+                -1
+              ]
+            },
+            "raffle_booth": {
+              "reachable": true,
+              "stand": [
+                4.699999999999999,
+                5.6
+              ],
+              "dist": 1.08,
+              "target": [
+                5.6,
+                5
+              ]
+            },
+            "exit": {
+              "reachable": true,
+              "stand": [
+                10,
+                -5.1000000000000005
+              ],
+              "dist": 0.9,
+              "target": [
+                10,
+                -6
+              ]
+            }
+          }
+        },
+        "private_events": {
+          "cells": 69472,
+          "area": 694.7,
+          "targets": {
+            "harris_porch": {
+              "reachable": true,
+              "stand": [
+                -4.5,
+                6.5
+              ],
+              "dist": 1.07,
+              "target": [
+                -5.45,
+                6
+              ]
+            },
+            "garcia_yard": {
+              "reachable": true,
+              "stand": [
+                5.5,
+                1.4000000000000057
+              ],
+              "dist": 1.08,
+              "target": [
+                6.55,
+                1.15
+              ]
+            },
+            "wedding_hall": {
+              "reachable": true,
+              "stand": [
+                -1.0999999999999943,
+                -14.600000000000001
+              ],
+              "dist": 1.14,
+              "target": [
+                0,
+                -14.9
+              ]
+            },
+            "exit": {
+              "reachable": true,
+              "stand": [
+                -0.8999999999999986,
+                -20.799999999999997
+              ],
+              "dist": 0.9,
+              "target": [
+                0,
+                -20.8
+              ]
+            }
+          }
+        }
+      },
+      "camera": {
+        "home/laptop": [
+          {
+            "yaw": 0,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 0.79,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 1.57,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 2.36,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 3.14,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 3.93,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 4.71,
+            "occluded": true,
+            "by": "OctahedronGeometry",
+            "camDist": 5.2
+          },
+          {
+            "yaw": 5.5,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          }
+        ],
+        "home/fridge": [
+          {
+            "yaw": 0,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 0.79,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 1.57,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 2.36,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 3.14,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 3.93,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 4.71,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 5.5,
+            "occluded": true,
+            "by": "home:satin",
+            "camDist": 5.2
+          }
+        ],
+        "home/mail_table": [
+          {
+            "yaw": 0,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 0.79,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 1.57,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 2.36,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 3.14,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 3.93,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 4.71,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 5.5,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          }
+        ],
+        "work/coffee_machine": [
+          {
+            "yaw": 0,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 0.79,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 1.57,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 2.36,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 3.14,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 3.93,
+            "occluded": true,
+            "by": "work:matte",
+            "camDist": 2.12
+          },
+          {
+            "yaw": 4.71,
+            "occluded": false,
+            "by": null,
+            "camDist": 1.44
+          },
+          {
+            "yaw": 5.5,
+            "occluded": true,
+            "by": "work:matte",
+            "camDist": 2.12
+          }
+        ],
+        "work/hr_desk": [
+          {
+            "yaw": 0,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 0.79,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 1.57,
+            "occluded": true,
+            "by": "work:matte",
+            "camDist": 5.2
+          },
+          {
+            "yaw": 2.36,
+            "occluded": false,
+            "by": null,
+            "camDist": 1.5
+          },
+          {
+            "yaw": 3.14,
+            "occluded": false,
+            "by": null,
+            "camDist": 1
+          },
+          {
+            "yaw": 3.93,
+            "occluded": false,
+            "by": null,
+            "camDist": 1.5
+          },
+          {
+            "yaw": 4.71,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 5.5,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          }
+        ],
+        "work/adam_desk": [
+          {
+            "yaw": 0,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 0.79,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 1.57,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 2.36,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 3.14,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 3.93,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 4.71,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 5.5,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          }
+        ],
+        "school/exam_desk": [
+          {
+            "yaw": 0,
+            "occluded": false,
+            "by": null,
+            "camDist": 1.11
+          },
+          {
+            "yaw": 0.79,
+            "occluded": false,
+            "by": null,
+            "camDist": 1.66
+          },
+          {
+            "yaw": 1.57,
+            "occluded": false,
+            "by": null,
+            "camDist": 3.48
+          },
+          {
+            "yaw": 2.36,
+            "occluded": false,
+            "by": null,
+            "camDist": 3.48
+          },
+          {
+            "yaw": 3.14,
+            "occluded": false,
+            "by": null,
+            "camDist": 3.48
+          },
+          {
+            "yaw": 3.93,
+            "occluded": false,
+            "by": null,
+            "camDist": 3.48
+          },
+          {
+            "yaw": 4.71,
+            "occluded": false,
+            "by": null,
+            "camDist": 3.41
+          },
+          {
+            "yaw": 5.5,
+            "occluded": false,
+            "by": null,
+            "camDist": 1.66
+          }
+        ],
+        "school/aid_office": [
+          {
+            "yaw": 0,
+            "occluded": false,
+            "by": null,
+            "camDist": 3.48
+          },
+          {
+            "yaw": 0.79,
+            "occluded": true,
+            "by": "OctahedronGeometry",
+            "camDist": 3.48
+          },
+          {
+            "yaw": 1.57,
+            "occluded": false,
+            "by": null,
+            "camDist": 3.48
+          },
+          {
+            "yaw": 2.36,
+            "occluded": false,
+            "by": null,
+            "camDist": 3.48
+          },
+          {
+            "yaw": 3.14,
+            "occluded": false,
+            "by": null,
+            "camDist": 3.48
+          },
+          {
+            "yaw": 3.93,
+            "occluded": false,
+            "by": null,
+            "camDist": 3.48
+          },
+          {
+            "yaw": 4.71,
+            "occluded": false,
+            "by": null,
+            "camDist": 1.88
+          },
+          {
+            "yaw": 5.5,
+            "occluded": false,
+            "by": null,
+            "camDist": 0.26
+          }
+        ],
+        "school/study_room": [
+          {
+            "yaw": 0,
+            "occluded": false,
+            "by": null,
+            "camDist": 3.48
+          },
+          {
+            "yaw": 0.79,
+            "occluded": false,
+            "by": null,
+            "camDist": 3.48
+          },
+          {
+            "yaw": 1.57,
+            "occluded": false,
+            "by": null,
+            "camDist": 3.48
+          },
+          {
+            "yaw": 2.36,
+            "occluded": false,
+            "by": null,
+            "camDist": 3.48
+          },
+          {
+            "yaw": 3.14,
+            "occluded": false,
+            "by": null,
+            "camDist": 3.48
+          },
+          {
+            "yaw": 3.93,
+            "occluded": false,
+            "by": null,
+            "camDist": 3.48
+          },
+          {
+            "yaw": 4.71,
+            "occluded": false,
+            "by": null,
+            "camDist": 3.48
+          },
+          {
+            "yaw": 5.5,
+            "occluded": false,
+            "by": null,
+            "camDist": 3.48
+          }
+        ],
+        "street/bus_bench": [
+          {
+            "yaw": 0,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 0.79,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 1.57,
+            "occluded": false,
+            "by": null,
+            "camDist": 1.82
+          },
+          {
+            "yaw": 2.36,
+            "occluded": false,
+            "by": null,
+            "camDist": 2.43
+          },
+          {
+            "yaw": 3.14,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 3.93,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 4.71,
+            "occluded": false,
+            "by": null,
+            "camDist": 1.38
+          },
+          {
+            "yaw": 5.5,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          }
+        ],
+        "street/gas_station_counter": [
+          {
+            "yaw": 0,
+            "occluded": false,
+            "by": null,
+            "camDist": 2.49
+          },
+          {
+            "yaw": 0.79,
+            "occluded": false,
+            "by": null,
+            "camDist": 3.35
+          },
+          {
+            "yaw": 1.57,
+            "occluded": false,
+            "by": null,
+            "camDist": 4.09
+          },
+          {
+            "yaw": 2.36,
+            "occluded": false,
+            "by": null,
+            "camDist": 4.09
+          },
+          {
+            "yaw": 3.14,
+            "occluded": false,
+            "by": null,
+            "camDist": 3.63
+          },
+          {
+            "yaw": 3.93,
+            "occluded": false,
+            "by": null,
+            "camDist": 4.09
+          },
+          {
+            "yaw": 4.71,
+            "occluded": false,
+            "by": null,
+            "camDist": 3.09
+          },
+          {
+            "yaw": 5.5,
+            "occluded": false,
+            "by": null,
+            "camDist": 3.35
+          }
+        ],
+        "street/ebike": [
+          {
+            "yaw": 0,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 0.79,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 1.57,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 2.36,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 3.14,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 3.93,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 4.71,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 5.5,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          }
+        ],
+        "public_events/gift_table": [
+          {
+            "yaw": 0,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 0.79,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 1.57,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 2.36,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 3.14,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 3.93,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 4.71,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 5.5,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          }
+        ],
+        "public_events/dinner_table": [
+          {
+            "yaw": 0,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 0.79,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 1.57,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 2.36,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 3.14,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 3.93,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 4.71,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 5.5,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          }
+        ],
+        "public_events/raffle_booth": [
+          {
+            "yaw": 0,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 0.79,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 1.57,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 2.36,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 3.14,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 3.93,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 4.71,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 5.5,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          }
+        ],
+        "private_events/harris_porch": [
+          {
+            "yaw": 0,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 0.79,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 1.57,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 2.36,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 3.14,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 3.93,
+            "occluded": true,
+            "by": "BoxGeometry",
+            "camDist": 5.2
+          },
+          {
+            "yaw": 4.71,
+            "occluded": true,
+            "by": "BoxGeometry",
+            "camDist": 5.2
+          },
+          {
+            "yaw": 5.5,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          }
+        ],
+        "private_events/garcia_yard": [
+          {
+            "yaw": 0,
+            "occluded": true,
+            "by": "SphereGeometry",
+            "camDist": 5.2
+          },
+          {
+            "yaw": 0.79,
+            "occluded": true,
+            "by": "CylinderGeometry",
+            "camDist": 5.2
+          },
+          {
+            "yaw": 1.57,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 2.36,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 3.14,
+            "occluded": true,
+            "by": "SphereGeometry",
+            "camDist": 5.2
+          },
+          {
+            "yaw": 3.93,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 4.71,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 5.5,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          }
+        ],
+        "private_events/wedding_hall": [
+          {
+            "yaw": 0,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 0.79,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 1.57,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 2.36,
+            "occluded": true,
+            "by": "BoxGeometry",
+            "camDist": 3.52
+          },
+          {
+            "yaw": 3.14,
+            "occluded": true,
+            "by": "BoxGeometry",
+            "camDist": 5.2
+          },
+          {
+            "yaw": 3.93,
+            "occluded": false,
+            "by": null,
+            "camDist": 3.75
+          },
+          {
+            "yaw": 4.71,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          },
+          {
+            "yaw": 5.5,
+            "occluded": false,
+            "by": null,
+            "camDist": 5.2
+          }
+        ]
+      },
+      "seconds": 86
+    }
+  ]
+}

@@ -1,0 +1,171 @@
+{
+  "location": "school",
+  "title": {"ar": "الكلية — المساء", "en": "Community College — Evening"},
+  "time_of_day": "18:30",
+  "intro": {
+    "ar": "أضواء الممرات بيضاء، ورائحة القهوة من آلة البيع لا تشبه القهوة. طلاب من كل الأعمار: أمهات، عمال، شباب بعد دوامهم. امتحان «تحليل البيانات» النهائي بعد أسبوع، والجميع متوتر قليلاً.",
+    "en": "Fluorescent hallway lights, and the vending-machine 'coffee' doesn't taste like coffee. Students of every age: moms, tradespeople, young folks after their shifts. The Data Analytics final is next week, and everyone's a little on edge."
+  },
+  "situations": [
+    {
+      "ruling_id": "school.cheating",
+      "hotspot": "exam_desk",
+      "npc": {"id": "tyler", "name": {"ar": "تايلر", "en": "Tyler"}, "role": {"ar": "زميل في المادة", "en": "Classmate"}},
+      "setup": {
+        "ar": "في القاعة قبل المحاضرة، يفتح الطلاب اختبار الأسبوع القصير على الإنترنت (مفتوح 24 ساعة، فردي). تايلر يجلس بجانب آدم، عيناه حمراوان من التعب.",
+        "en": "In the classroom before lecture, students are opening this week's online quiz (open 24 hours, individual work only). Tyler slides into the seat next to Adam, eyes red from exhaustion."
+      },
+      "dialogue": [
+        {"speaker": "tyler", "ar": "يا رجل، اشتغلت مناوبتين هذا الأسبوع ولم أفتح الكتاب. هل حللت الاختبار؟ أرسل لي لقطة شاشة فقط، أرجوك.", "en": "Man, I pulled double shifts this week and didn't crack the book once. Did you finish the quiz? Just send me a screenshot, please."},
+        {"speaker": "adam", "ar": "حللته البارحة... لكن الدكتورة قالت إنه فردي.", "en": "I did it last night... but Dr. Mitchell said it's individual."},
+        {"speaker": "tyler", "ar": "إنه 5% من الدرجة فقط! ولا أحد سيعرف. وأيضاً — المقال النهائي — يقولون الذكاء الاصطناعي يكتبه في دقيقتين.", "en": "It's only five percent of the grade! Nobody'll know. And the final essay — people say AI can write it in two minutes."},
+        {"speaker": "tyler", "ar": "أنت صديقي، صحيح؟", "en": "You're my guy, right?"}
+      ],
+      "choices": [
+        {
+          "id": "a",
+          "label": {"ar": "أرسل له اللقطة؛ ظروفه صعبة والاختبار صغير، ومساعدة الصديق واجبة.", "en": "Send him the screenshot — he's having a rough time, it's a small quiz, and you help your friends."},
+          "quality": "wrong",
+          "consequence": {
+            "ar": "أُرسلت اللقطة. بعد أسبوع لاحظت الدكتورة تطابق الإجابات الخاطئة نفسها عند طالبين، واستدعت الاثنين. خسر آدم ثقة أستاذة كان يحترمها، ولم يتعلم تايلر شيئاً قبل النهائي.",
+            "en": "The screenshot went out. A week later Dr. Mitchell noticed the same wrong answers from two students and called both of them in. Adam lost the trust of a professor he respected, and Tyler still hadn't learned anything before the final."
+          }, "points": 0
+        },
+        {
+          "id": "b",
+          "label": {"ar": "لا أستطيع إرسال الإجابات يا تايلر، لكن تعال نذاكر معاً نصف ساعة بعد المحاضرة، وسأريك الفكرة حتى تحله بنفسك.", "en": "I can't send you my answers, Tyler, but let's study for half an hour after class — I'll walk you through it so you can do it yourself."},
+          "quality": "best",
+          "consequence": {
+            "ar": "تنهد تايلر ثم وافق. في المكتبة فهم الفكرة خلال عشرين دقيقة وحل الاختبار بنفسه. بعد النهائي أرسل لآدم: «حصلت على B! شكراً لأنك لم تعطني الإجابة».",
+            "en": "Tyler sighed, then agreed. In the library he got the concept in twenty minutes and did the quiz himself. After the final he texted Adam: 'Got a B! Thanks for not just giving me the answers.'"
+          }, "points": 10
+        },
+        {
+          "id": "c",
+          "label": {"ar": "أتجاهل الرسالة وأبتعد بهدوء دون أن أقول شيئاً حتى لا أُحرج.", "en": "Just ignore it and quietly move seats so things don't get awkward."},
+          "quality": "acceptable",
+          "consequence": {
+            "ar": "لم يغشّ آدم ولم يساعد على الغش، لكن تايلر شعر بأنه وحيد. لاحقاً تمنى آدم لو أنه قال «لا» بوضوح وعرض المساعدة الحقيقية بدل الصمت.",
+            "en": "Adam didn't cheat or help anyone cheat, but Tyler felt brushed off. Later Adam wished he'd said a clear 'no' and offered real help instead of silence."
+          }, "points": 5
+        }
+      ],
+      "check_question": {
+        "q": {"ar": "إن استعمل طالب الذكاء الاصطناعي لكتابة مقاله، فما الذي يجعل ذلك غشاً في الغالب؟", "en": "If a student uses AI to write an essay, what usually makes it cheating?"},
+        "options": [
+          {"ar": "تقديمه على أنه عمله الشخصي خلافاً لسياسة المادة ودون إفصاح", "en": "Submitting it as his own work against course policy and without disclosure", "correct": true},
+          {"ar": "استعمال الحاسوب في الكتابة", "en": "Using a computer to write", "correct": false},
+          {"ar": "لا يكون غشاً أبداً إن كان الوقت ضيقاً", "en": "It's never cheating if you're short on time", "correct": false}
+        ]
+      }
+    },
+    {
+      "ruling_id": "school.student_loan",
+      "hotspot": "aid_office",
+      "npc": {"id": "rosa", "name": {"ar": "السيدة روزا رودريغيز", "en": "Ms. Rosa Rodriguez"}, "role": {"ar": "مستشارة المساعدات المالية", "en": "Financial aid advisor"}},
+      "setup": {
+        "ar": "في استراحة المحاضرة يمر آدم بمكتب المساعدات المالية. رسوم الفصل القادم 4,200 دولار، وهو يدّخر للبيت. السيدة رودريغيز تبتسم من وراء مكتب مليء بالمطويات.",
+        "en": "During the class break Adam stops by Financial Aid. Next semester's tuition is $4,200, and he's saving for the house. Ms. Rodriguez smiles from behind a desk covered in brochures."
+      },
+      "dialogue": [
+        {"speaker": "rosa", "ar": "آدم، ملفك جاهز. أنت مؤهل لقرض فيدرالي مدعوم بفائدة منخفضة. توقيع إلكتروني واحد وننتهي!", "en": "Adam, your file's all set. You qualify for a subsidized federal loan at a low rate. One e-signature and you're done!"},
+        {"speaker": "adam", "ar": "قرض بفائدة... هل هناك خيارات أخرى؟", "en": "A loan with interest... are there any other options?"},
+        {"speaker": "rosa", "ar": "بالطبع! هناك منح، ومنحة الولاية للعاملين، وخطة دفع على أقساط بلا فائدة من الكلية، وأحياناً يدفع أصحاب العمل جزءاً من الرسوم. لكنها تحتاج أوراقاً ووقتاً.", "en": "Of course! There are grants, a state grant for working adults, an interest-free tuition payment plan from the college, and sometimes employers chip in. But those take paperwork and time."},
+        {"speaker": "adam", "ar": "وصديقي أخبرني أن المسجد عنده صندوق «قرض حسن» صغير للطلاب.", "en": "And a friend told me our mosque has a small interest-free loan fund for students."}
+      ],
+      "choices": [
+        {
+          "id": "a",
+          "label": {"ar": "أقدّم على المنح وخطة الأقساط بلا فائدة، وأسأل ديف عن دعم الشركة للدراسة، وأتواصل مع صندوق المسجد قبل أي قرض.", "en": "Apply for grants and the interest-free payment plan, ask Dave about tuition assistance at work, and reach out to the mosque fund before any loan."},
+          "quality": "best",
+          "consequence": {
+            "ar": "ساعدته السيدة رودريغيز في ثلاث استمارات. بعد أسبوعين: منحة الولاية غطت 1,500، والشركة 2,000، والباقي على أقساط بلا فائدة. قالت: «ليتك تعلّم هذا لبقية الطلاب!».",
+            "en": "Ms. Rodriguez helped him with three forms. Two weeks later: the state grant covered $1,500, his employer $2,000, and the rest went on the interest-free plan. 'I wish you'd teach this to the other students!'"
+          }, "points": 10
+        },
+        {
+          "id": "b",
+          "label": {"ar": "أوقّع القرض الآن؛ الفائدة منخفضة والكل يأخذه، ولا وقت عندي للبحث عن بدائل.", "en": "Sign the loan now — the rate's low, everyone takes one, and I don't have time to hunt for alternatives."},
+          "quality": "wrong",
+          "consequence": {
+            "ar": "وقّع آدم في دقيقة. لاحقاً علم أنه كان مؤهلاً لمنحة الولاية ولدعم الشركة، فلم يكن بحاجة للقرض أصلاً. العجلة حرمته من بدائل كانت أمامه.",
+            "en": "Adam signed in a minute. Later he found out he'd qualified for the state grant and his employer's tuition benefit — he never needed the loan at all. Rushing cost him options that were right in front of him."
+          }, "points": 0
+        },
+        {
+          "id": "c",
+          "label": {"ar": "أؤجل التسجيل فصلاً واحداً، وأعمل وأدّخر حتى أدفع نقداً.", "en": "Sit out one semester, work, and save up to pay in cash."},
+          "quality": "acceptable",
+          "consequence": {
+            "ar": "تأخر تخرج آدم أربعة أشهر، لكنه لم يستدن. تمنت السيدة رودريغيز لو أنه جرب المنح أولاً: «كان يمكن أن تحصل على الأمرين معاً».",
+            "en": "Adam's graduation slipped four months, but he stayed debt-free. Ms. Rodriguez wished he'd tried the grants first: 'You could've had both.'"
+          }, "points": 5
+        }
+      ],
+      "check_question": {
+        "q": {"ar": "حين يكون الأمر محل خلاف بين العلماء ويتعلق بظروف شخصية (كالحاجة الماسة)، ما الأنسب؟", "en": "When an issue is debated among scholars and depends on personal circumstances (like real need), what's best?"},
+        "options": [
+          {"ar": "اختيار أسهل قول دون النظر في الظروف", "en": "Pick the easiest opinion without looking at circumstances", "correct": false},
+          {"ar": "استنفاد البدائل المتاحة ثم سؤال عالم موثوق يعرف تفاصيل الحالة", "en": "Exhaust the available alternatives, then ask a trusted scholar who knows the details", "correct": true},
+          {"ar": "سؤال أصدقاء الدراسة فقط", "en": "Just ask your classmates", "correct": false}
+        ]
+      }
+    },
+    {
+      "ruling_id": "school.mixed_social",
+      "hotspot": "study_room",
+      "npc": {"id": "dr_mitchell", "name": {"ar": "د. كارين ميتشل", "en": "Dr. Karen Mitchell"}, "role": {"ar": "أستاذة المادة", "en": "Course professor"}},
+      "setup": {
+        "ar": "بعد المحاضرة، يخرج آدم من غرفة دراسة زجاجية في المكتبة حيث كانت مجموعته (هو وهانا وكارلوس) تراجع المشروع والباب مفتوح. د. ميتشل تمر وتتوقف مبتسمة وتمد يدها للمصافحة.",
+        "en": "After class, Adam steps out of a glass-walled library study room where his group (him, Hannah, and Carlos) had been reviewing their project with the door open. Dr. Mitchell walks by, stops with a smile, and holds out her hand."
+      },
+      "dialogue": [
+        {"speaker": "dr_mitchell", "ar": "آدم! عرض مجموعتكم اليوم كان ممتازاً. أحسنت!", "en": "Adam! Your group's presentation today was excellent. Great job!"},
+        {"speaker": "narrator", "ar": "يدها ممدودة. هانا وكارلوس ينظران. لحظة قصيرة تبدو طويلة جداً.", "en": "Her hand is out. Hannah and Carlos are watching. A short moment that feels very long."},
+        {"speaker": "adam", "ar": "(في نفسه) قرأت أن العلماء اختلفوا في المصافحة... وهي لا تقصد إلا الخير.", "en": "(to himself) I've read that scholars differ on handshakes... and she only means well."}
+      ],
+      "choices": [
+        {
+          "id": "a",
+          "label": {"ar": "أضع يدي على صدري وأبتسم: «شكراً جزيلاً يا دكتورة! أنا لا أصافح النساء لأسباب دينية، لكنني ممتن جداً لكلامك».", "en": "Hand on heart, smile: 'Thank you so much, Dr. Mitchell! I don't shake hands with women for religious reasons, but I really appreciate that.'"},
+          "quality": "best",
+          "consequence": {
+            "ar": "أومأت د. ميتشل بلطف: «لا مشكلة إطلاقاً، شكراً لأنك أخبرتني». وفي الأسبوع التالي حيّت آدم بابتسامة ويد على صدرها، وضحك الاثنان.",
+            "en": "Dr. Mitchell nodded warmly: 'No problem at all — thanks for letting me know.' The next week she greeted Adam with a smile and a hand on her own heart, and they both laughed."
+          }, "points": 10
+        },
+        {
+          "id": "b",
+          "label": {"ar": "أصافحها بسرعة حتى لا أحرجها أمام الطلاب.", "en": "Shake her hand quickly so she isn't embarrassed in front of the students."},
+          "quality": "acceptable",
+          "consequence": {
+            "ar": "مرّت اللحظة بسلاسة. لكن آدم ظل يفكر في الطريق: هذه مسألة فيها خلاف بين العلماء، وكان يريد أن يعرف رأياً يطمئن إليه بدل أن يقرر تحت ضغط اللحظة. بطاقة الحكم تعرض الأقوال.",
+            "en": "The moment passed smoothly. But on the way out Adam kept thinking: this is a question scholars differ on, and he'd rather know a view he's settled on than decide under pressure. The ruling card lays out the views."
+          }, "points": 5
+        },
+        {
+          "id": "c",
+          "label": {"ar": "أتجاهل يدها وأنظر إلى هاتفي وأمضي دون تفسير.", "en": "Ignore her hand, look down at my phone, and walk off without explaining."},
+          "quality": "wrong",
+          "consequence": {
+            "ar": "بقيت يد الدكتورة معلقة في الهواء، وتبادل كارلوس وهانا نظرة محرجة. ظنت أنها أساءت إليه بشيء. الالتزام لا يعني الجفاء — كلمة لطيفة كانت كفيلة بكل شيء.",
+            "en": "Dr. Mitchell's hand hung in the air, and Carlos and Hannah exchanged an awkward look. She wondered if she'd offended him. Commitment doesn't mean coldness — one kind sentence would've fixed everything."
+          }, "points": 0
+        }
+      ],
+      "check_question": {
+        "q": {"ar": "في مجموعة الدراسة المختلطة، ما الذي يتفق عليه العلماء بوجه عام؟", "en": "In a mixed study group, what do scholars broadly agree on?"},
+        "options": [
+          {"ar": "يجب ترك الدراسة في الكلية", "en": "You must quit college", "correct": false},
+          {"ar": "الدراسة في مكان مفتوح ومع مجموعة، وتجنب الانفراد برجل أو امرأة أجنبية خلف باب مغلق", "en": "Study in open spaces and in groups, and avoid being alone with a non-mahram behind a closed door", "correct": true},
+          {"ar": "لا حاجة لأي ضوابط ما دام الهدف دراسياً", "en": "No guidelines matter as long as it's for studying", "correct": false}
+        ]
+      }
+    }
+  ],
+  "outro": {
+    "ar": "التاسعة إلا ربعاً. موقف السيارات شبه فارغ، وسيارة آدم تأبى أن تشتغل في البرد. لا بأس — محطة الحافلات قريبة، والبيت ليس بعيداً. وفي هاتفه رسالة: «مرحباً، أنا دينيس، بخصوص الدراجة... هل نلتقي الليلة؟».",
+    "en": "Quarter to nine. The parking lot's almost empty, and Adam's car refuses to start in the cold. No worries — the bus stop's close and home isn't far. A text lights up his phone: 'Hi, this is Denise, about the bike... can we meet tonight?'"
+  },
+  "next_location": "street"
+}

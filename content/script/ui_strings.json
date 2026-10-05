@@ -1,0 +1,194 @@
+{
+  "game_title": {"ar": "يومك", "en": "Yawmuk — Your Day"},
+  "game_subtitle": {"ar": "يوم في حياة مسلم في أمريكا: قرارات صغيرة، أثر كبير", "en": "A day in the life of a Muslim in America: small choices, real impact"},
+
+  "start": {
+    "play": {"ar": "ابدأ اليوم", "en": "Start the Day"},
+    "continue": {"ar": "متابعة", "en": "Continue"},
+    "how_to_play": {"ar": "طريقة اللعب", "en": "How to Play"},
+    "about": {"ar": "عن اللعبة", "en": "About"},
+    "settings": {"ar": "الإعدادات", "en": "Settings"}
+  },
+
+  "language": {
+    "choose": {"ar": "اختر اللغة", "en": "Choose your language"},
+    "arabic": {"ar": "العربية", "en": "Arabic"},
+    "english": {"ar": "الإنجليزية", "en": "English"},
+    "switch": {"ar": "English", "en": "العربية"}
+  },
+
+  "instructions": {
+    "title": {"ar": "طريقة اللعب", "en": "How to Play"},
+    "desktop": {
+      "ar": ["تحرّك بالأسهم أو W A S D.", "اسحب بالفأرة للالتفات.", "اقترب من العلامة المضيئة واضغط E أو انقر عليها لبدء الموقف."],
+      "en": ["Move with the arrow keys or W A S D.", "Drag with the mouse to look around.", "Walk up to a glowing marker and press E or click it to start a situation."]
+    },
+    "mobile": {
+      "ar": ["استعمل عصا التحكم أسفل الشاشة للتحرك.", "اسحب بإصبعك على الشاشة للالتفات.", "المس العلامة المضيئة لبدء الموقف."],
+      "en": ["Use the on-screen joystick to move.", "Swipe the screen to look around.", "Tap a glowing marker to start a situation."]
+    },
+    "flow": {
+      "ar": ["في كل محطة ثلاثة مواقف. اختر ما كنت ستفعله فعلاً.", "بعد اختيارك سترى أثره في القصة، ثم بطاقة الحكم الشرعي بأدلتها وأقوال المذاهب.", "أجب عن سؤال الفهم القصير لتحصل على نقاط إضافية.", "حين تنتهي المواقف الثلاثة، اتجه إلى الباب للانتقال إلى المحطة التالية."],
+      "en": ["Each stop has three situations. Pick what you'd honestly do.", "After you choose, you'll see how it plays out, then a ruling card with evidence and the views of the four schools.", "Answer the short check question for bonus points.", "Once all three situations are done, head to the exit to move to the next stop."]
+    },
+    "got_it": {"ar": "فهمت، لنبدأ", "en": "Got it, let's go"}
+  },
+
+  "hud": {
+    "location": {"ar": "المكان", "en": "Location"},
+    "time": {"ar": "الوقت", "en": "Time"},
+    "score": {"ar": "النقاط", "en": "Score"},
+    "progress": {"ar": "المواقف", "en": "Situations"},
+    "interact_hint": {"ar": "اضغط E للتفاعل", "en": "Press E to interact"},
+    "interact_hint_mobile": {"ar": "المس للتفاعل", "en": "Tap to interact"},
+    "exit_locked": {"ar": "أكمل مواقف هذا المكان أولاً", "en": "Finish this location's situations first"},
+    "exit_ready": {"ar": "الطريق مفتوح — اتجه إلى الباب", "en": "You're all set — head for the exit"},
+    "pause": {"ar": "إيقاف مؤقت", "en": "Pause"},
+    "resume": {"ar": "استئناف", "en": "Resume"},
+    "mute": {"ar": "كتم الصوت", "en": "Mute"},
+    "unmute": {"ar": "تشغيل الصوت", "en": "Unmute"}
+  },
+
+  "locations": {
+    "home": {"ar": "البيت", "en": "Home"},
+    "work": {"ar": "العمل", "en": "Work"},
+    "school": {"ar": "الكلية", "en": "College"},
+    "street": {"ar": "الشارع", "en": "The Street"},
+    "public_events": {"ar": "حفل الشركة", "en": "Company Party"},
+    "private_events": {"ar": "الجيران والعرس", "en": "Neighbors & Wedding"}
+  },
+
+  "dialogue": {
+    "next": {"ar": "التالي", "en": "Next"},
+    "skip": {"ar": "تخطّي", "en": "Skip"},
+    "narrator": {"ar": "الراوي", "en": "Narrator"},
+    "adam": {"ar": "آدم", "en": "Adam"},
+    "what_do_you_do": {"ar": "ماذا ستفعل؟", "en": "What do you do?"}
+  },
+
+  "result": {
+    "best": {"ar": "أفضل تصرف", "en": "Best choice"},
+    "acceptable": {"ar": "تصرف مقبول", "en": "Acceptable choice"},
+    "wrong": {"ar": "تصرف غير موفق", "en": "Not the right call"},
+    "points_earned": {"ar": "نقاط مكتسبة", "en": "Points earned"},
+    "see_ruling": {"ar": "اعرض بطاقة الحكم", "en": "View the ruling card"}
+  },
+
+  "ruling_card": {
+    "title": {"ar": "بطاقة الحكم", "en": "Ruling Card"},
+    "question": {"ar": "المسألة", "en": "The question"},
+    "verdict": {"ar": "الحكم الإجمالي", "en": "Overall ruling"},
+    "summary": {"ar": "الخلاصة", "en": "Summary"},
+    "quran": {"ar": "من القرآن الكريم", "en": "From the Qur'an"},
+    "hadith": {"ar": "من السنة النبوية", "en": "From the Sunnah"},
+    "madhahib": {"ar": "أقوال المذاهب الأربعة", "en": "The four schools of thought"},
+    "hanafi": {"ar": "الحنفية", "en": "Hanafi"},
+    "maliki": {"ar": "المالكية", "en": "Maliki"},
+    "shafii": {"ar": "الشافعية", "en": "Shafi'i"},
+    "hanbali": {"ar": "الحنابلة", "en": "Hanbali"},
+    "contemporary": {"ar": "المجامع والهيئات المعاصرة", "en": "Contemporary fiqh councils"},
+    "practical": {"ar": "خطوات عملية", "en": "Practical steps"},
+    "alternatives": {"ar": "بدائل حلال", "en": "Halal alternatives"},
+    "refer": {"ar": "متى تسأل عالماً؟", "en": "When to ask a scholar"},
+    "source": {"ar": "المصدر", "en": "Source"},
+    "grade": {"ar": "الدرجة", "en": "Grade"},
+    "reference": {"ar": "المرجع", "en": "Reference"},
+    "text_pending": {"ar": "النص قيد التحقق ولم يُعرض بعد", "en": "Text pending verification — not shown yet"},
+    "confidence": {"ar": "درجة الثقة", "en": "Confidence"},
+    "review_status_ai_draft": {"ar": "مسودة بالذكاء الاصطناعي — بانتظار مراجعة بشرية", "en": "AI draft — awaiting human review"},
+    "close": {"ar": "إغلاق", "en": "Close"},
+    "verdicts": {
+      "haram": {"ar": "حرام", "en": "Prohibited (haram)"},
+      "halal": {"ar": "حلال", "en": "Permissible (halal)"},
+      "makruh": {"ar": "مكروه", "en": "Disliked (makruh)"},
+      "mubah": {"ar": "مباح", "en": "Permissible (mubah)"},
+      "mustahab": {"ar": "مستحب", "en": "Recommended (mustahab)"},
+      "wajib": {"ar": "واجب", "en": "Obligatory (wajib)"},
+      "disputed": {"ar": "مسألة خلافية", "en": "Scholars differ"},
+      "depends": {"ar": "يختلف بحسب الحال", "en": "Depends on the situation"}
+    },
+    "confidence_levels": {
+      "high": {"ar": "عالية", "en": "High"},
+      "medium": {"ar": "متوسطة", "en": "Medium"},
+      "low": {"ar": "منخفضة", "en": "Low"}
+    }
+  },
+
+  "check": {
+    "title": {"ar": "سؤال للفهم", "en": "Quick Check"},
+    "correct": {"ar": "إجابة صحيحة! +5", "en": "Correct! +5"},
+    "incorrect": {"ar": "ليست هذه. الإجابة الصحيحة مظللة.", "en": "Not quite. The correct answer is highlighted."},
+    "submit": {"ar": "تأكيد", "en": "Submit"}
+  },
+
+  "transition": {
+    "next_stop": {"ar": "المحطة التالية", "en": "Next stop"},
+    "loading": {"ar": "جارٍ التحميل...", "en": "Loading..."},
+    "later_that_week": {"ar": "بعد أيام...", "en": "A few days later..."}
+  },
+
+  "end": {
+    "title": {"ar": "انتهى اليوم", "en": "That's a Wrap"},
+    "message": {
+      "ar": "عاش آدم يوماً عادياً مليئاً بالقرارات الصغيرة. وأنت أيضاً تعيش كل يوم مثله. الالتزام ممكن، ولطيف، ولا يبعدك عن الناس.",
+      "en": "Adam lived an ordinary day full of small decisions — and so do you, every day. Living your faith is possible, it can be gracious, and it doesn't have to distance you from people."
+    },
+    "total_score": {"ar": "مجموع النقاط", "en": "Total score"},
+    "best_choices": {"ar": "اختيارات «الأفضل»", "en": "'Best' choices"},
+    "correct_checks": {"ar": "أسئلة الفهم الصحيحة", "en": "Correct check answers"},
+    "review_rulings": {"ar": "راجع بطاقات الأحكام", "en": "Review the ruling cards"},
+    "play_again": {"ar": "العب مرة أخرى", "en": "Play again"},
+    "share": {"ar": "شارك", "en": "Share"},
+    "tiers": {
+      "high": {"ar": "يوم موفق! قراراتك جمعت بين الالتزام وحسن الخلق.", "en": "Great day! Your choices balanced faith and good character."},
+      "mid": {"ar": "يوم جيد، وفيه دروس. راجع بطاقات الأحكام لتعرف المزيد.", "en": "A good day with some lessons. Check the ruling cards to learn more."},
+      "low": {"ar": "كل يوم فرصة جديدة. راجع البطاقات وجرّب مرة أخرى.", "en": "Every day's a fresh start. Review the cards and give it another go."}
+    }
+  },
+
+  "disclaimers": {
+    "general_info": {
+      "ar": "هذه معلومة عامة؛ لحالتك الخاصة اسأل عالماً موثوقاً.",
+      "en": "This is general information; for your specific situation, ask a trusted scholar."
+    },
+    "fiction": {
+      "ar": "القصة والشخصيات والشركات والمؤسسات في هذه اللعبة تخييلية، وأي تشابه مع الواقع غير مقصود.",
+      "en": "The story, characters, companies, and institutions in this game are fictional; any resemblance to real ones is unintended."
+    },
+    "ai_review": {
+      "ar": "الأحكام الشرعية في هذه اللعبة أُعدّت وروجعت بمساعدة الذكاء الاصطناعي، وتحتاج إلى مراجعة بشرية من أهل العلم قبل الاعتماد عليها.",
+      "en": "The rulings in this game were prepared and reviewed with the help of AI and still need human review by qualified scholars before being relied upon."
+    },
+    "disagreement": {
+      "ar": "حين يختلف العلماء نعرض الأقوال بإنصاف، ولا نُلزم اللاعب بقول واحد.",
+      "en": "Where scholars differ, we present the views fairly and don't push the player toward a single one."
+    },
+    "accept": {"ar": "فهمت", "en": "I understand"}
+  },
+
+  "about": {
+    "title": {"ar": "عن «يومك»", "en": "About Yawmuk"},
+    "body": {
+      "ar": "لعبة تعليمية ثلاثية الأبعاد عن فقه المعاملات اليومية للمسلم في أمريكا: المال، العمل، الدراسة، الشارع، والمناسبات. كل حكم معروض مع أدلته من القرآن والسنة وأقوال المذاهب الأربعة والمجامع الفقهية المعاصرة، مع روابط للمصادر.",
+      "en": "An educational 3D game about everyday Islamic transactional ethics for Muslims in America: money, work, school, the street, and social events. Each ruling is shown with evidence from the Qur'an and Sunnah, the four schools, and contemporary fiqh councils, with links to sources."
+    }
+  },
+
+  "settings": {
+    "title": {"ar": "الإعدادات", "en": "Settings"},
+    "language": {"ar": "اللغة", "en": "Language"},
+    "sound": {"ar": "الصوت", "en": "Sound"},
+    "quality": {"ar": "جودة الرسوم", "en": "Graphics quality"},
+    "quality_low": {"ar": "منخفضة", "en": "Low"},
+    "quality_high": {"ar": "عالية", "en": "High"},
+    "text_size": {"ar": "حجم النص", "en": "Text size"},
+    "reset_progress": {"ar": "إعادة التقدم", "en": "Reset progress"},
+    "back": {"ar": "رجوع", "en": "Back"}
+  },
+
+  "errors": {
+    "webgl": {"ar": "متصفحك لا يدعم WebGL. جرّب متصفحاً أحدث.", "en": "Your browser doesn't support WebGL. Try a newer browser."},
+    "load_failed": {"ar": "تعذّر تحميل المحتوى. أعد المحاولة.", "en": "Couldn't load content. Please try again."},
+    "retry": {"ar": "إعادة المحاولة", "en": "Retry"}
+  }
+}

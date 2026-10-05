@@ -1,0 +1,339 @@
+{
+  "location": "work",
+  "title": {
+    "ar": "العمل — Buckeye Freight Tech",
+    "en": "Work — Buckeye Freight Tech"
+  },
+  "time_of_day": "10:00",
+  "intro": {
+    "ar": "مكتب مفتوح في الطابق الثالث، شاشات مزدوجة، ونبتة صناعية لم يسقها أحد قط. الزملاء يتحدثون عن مباراة الأمس وحفل نهاية العام يوم الجمعة. آدم يضع كوب قهوته ويفتح بريده... ثم يبدأ يوم مليء بالمفاجآت الصغيرة.",
+    "en": "An open-plan office on the third floor, dual monitors, and a fake plant nobody has ever watered. Coworkers are talking about last night's game and Friday's holiday party. Adam sets down his coffee and opens his inbox... and the small surprises begin."
+  },
+  "situations": [
+    {
+      "ruling_id": "work.alcohol_pork_job",
+      "hotspot": "coffee_machine",
+      "npc": {
+        "id": "jake",
+        "name": {
+          "ar": "جيك",
+          "en": "Jake"
+        },
+        "role": {
+          "ar": "زميل مبرمج",
+          "en": "Fellow developer"
+        }
+      },
+      "setup": {
+        "ar": "عند آلة القهوة في المطبخ الصغير، جيك يصبّ قهوته الثالثة ويبدو متحمساً لفكرة جديدة.",
+        "en": "At the coffee machine in the kitchenette, Jake is pouring his third cup and looks excited about something."
+      },
+      "dialogue": [
+        {
+          "speaker": "jake",
+          "ar": "آدم! ابن عمي افتتح مطعم «بار آند غريل» قرب الملعب. يحتاج نادلاً في عطلات نهاية الأسبوع — 25 دولاراً في الساعة غير الإكراميات!",
+          "en": "Adam! My cousin just opened a bar and grill by the stadium. He needs a weekend server — twenty-five bucks an hour plus tips!"
+        },
+        {
+          "speaker": "adam",
+          "ar": "عرض كريم... ماذا سيكون عملي بالضبط؟",
+          "en": "That's generous... what would I actually be doing?"
+        },
+        {
+          "speaker": "jake",
+          "ar": "أخذ الطلبات، تقديم البيرة وأطباق الضلوع — ضلوع الخنزير المدخنة عندهم أسطورية! وإن لم تحب الوقوف، صديقه يملك مصنع بيرة صغيراً ويريد تطبيقاً للطلبات. عمل برمجي بحت.",
+          "en": "Taking orders, serving beer and ribs — their smoked pork ribs are legendary! And if you don't want to be on your feet, his buddy owns a small brewery and wants an ordering app. Pure coding."
+        },
+        {
+          "speaker": "adam",
+          "ar": "صراحة، أنا أدّخر لدفعة البيت... والمال يغري.",
+          "en": "Honestly, I'm saving for a house down payment... the money's tempting."
+        },
+        {
+          "speaker": "jake",
+          "ar": "إذاً؟ أرسل له رقمك؟",
+          "en": "So? Want me to send him your number?"
+        }
+      ],
+      "choices": [
+        {
+          "id": "a",
+          "label": {
+            "ar": "مشروع تطبيق مصنع البيرة يناسبني — أنا أبرمج فقط، لا أبيع ولا أشرب.",
+            "en": "The brewery app works for me — I'm just coding, not selling or drinking."
+          },
+          "quality": "wrong",
+          "consequence": {
+            "ar": "بدأ آدم المشروع، فوجد نفسه يصمم صفحة «اطلب صندوق بيرة لحفلتك» وزر «أضف للسلة»، وشعر بثقل كلما فتح الكود. اتصل بالإمام حمزة فقال له: كثير من العلماء يمنعون هذا لأنه إعانة قريبة على بيع الخمر، وبعض المعاصرين يرونه تسبباً بعيداً، والأسلم تركه ما دام عندك بديل. اعتذر آدم عن إكمال المشروع. بطاقة الحكم تفصّل.",
+            "en": "Adam took the project and found himself designing an 'Order a keg for your party' page and an 'Add to cart' button, and he felt uneasy every time he opened the code. He called Imam Hamza, who told him many scholars forbid this as close help in selling alcohol, some contemporary scholars see it as a remote cause, and staying away is the safer path when you have an alternative. Adam backed out of the project. The ruling card explains."
+          },
+          "points": 0
+        },
+        {
+          "id": "b",
+          "label": {
+            "ar": "شكراً يا جيك، أقدّر تفكيرك بي. لكنني لا أقدّم الخمر ولا لحم الخنزير لأسباب دينية. إن عرف ابن عمك أو أصدقاؤه مشروعاً برمجياً آخر، فأنا جاهز.",
+            "en": "Thanks, Jake, I really appreciate you thinking of me. But I don't serve alcohol or pork for religious reasons. If your cousin or his friends ever need a different coding project, I'm in."
+          },
+          "quality": "best",
+          "consequence": {
+            "ar": "هزّ جيك رأسه: «آه، فهمت، آسف لم أنتبه!». بعد أسبوعين أرسل لآدم رقم صديقة تملك مخبزاً تريد موقعاً للطلبات. قال جيك: «أعتقد أن هذا أنسب لك».",
+            "en": "Jake nodded: 'Oh, gotcha — my bad, didn't even think of that!' Two weeks later he sent Adam the number of a friend who owns a bakery and needs an ordering site. 'Figured this one's more your speed.'"
+          },
+          "points": 10
+        },
+        {
+          "id": "c",
+          "label": {
+            "ar": "سأقبل عمل النادل، وأقدّم البيرة وأطباق ضلوع الخنزير للزبائن دون أن أشرب أو آكل منها بنفسي.",
+            "en": "I'll take the server job — I'll bring out the beer and the pork ribs, I just won't drink or eat any myself."
+          },
+          "quality": "wrong",
+          "consequence": {
+            "ar": "في أول ليلة حمل آدم أكثر من مئة كأس بيرة وعشرات أطباق ضلوع الخنزير إلى الطاولات. الإكراميات كانت جيدة، لكنه عاد إلى البيت متعباً وصامتاً، وسألته سارة: «هل هذا ما تريده فعلاً؟».",
+            "en": "On his first night Adam carried over a hundred glasses of beer and dozens of plates of pork ribs to the tables. The tips were good, but he came home tired and quiet, and Sara asked, 'Is this really what you want?'"
+          },
+          "points": 0
+        }
+      ],
+      "check_question": {
+        "q": {
+          "ar": "ما المعيار الذي يساعد آدم على تقييم أي عمل جانبي؟",
+          "en": "What test helps Adam judge any side job?"
+        },
+        "options": [
+          {
+            "ar": "هل الأجر مرتفع بما يكفي؟",
+            "en": "Is the pay high enough?",
+            "correct": false
+          },
+          {
+            "ar": "هل يشرب هو شخصياً أم لا؟",
+            "en": "Whether he personally drinks or not",
+            "correct": false
+          },
+          {
+            "ar": "هل العمل نفسه يقدّم المحرّم أو يخدم بيعه مباشرة؟",
+            "en": "Whether the work itself serves or directly helps sell something prohibited",
+            "correct": true
+          }
+        ]
+      }
+    },
+    {
+      "ruling_id": "work.retirement_401k",
+      "hotspot": "hr_desk",
+      "npc": {
+        "id": "linda",
+        "name": {
+          "ar": "ليندا",
+          "en": "Linda"
+        },
+        "role": {
+          "ar": "مسؤولة الموارد البشرية",
+          "en": "HR manager"
+        }
+      },
+      "setup": {
+        "ar": "مكتب ليندا الزجاجي في آخر الممر، وعلى شاشتها نموذج «التسجيل في خطة 401(k)». المهلة تنتهي يوم الجمعة.",
+        "en": "Linda's glass-walled office at the end of the hall. On her screen: the 401(k) enrollment form. The deadline is Friday."
+      },
+      "dialogue": [
+        {
+          "speaker": "linda",
+          "ar": "آدم، لم تكمل التسجيل في خطة التقاعد بعد. الشركة تطابق مساهمتك حتى 5% من راتبك — هذا مال مجاني تقريباً!",
+          "en": "Adam, you still haven't finished your 401(k) enrollment. The company matches up to 5% of your salary — that's basically free money!"
+        },
+        {
+          "speaker": "adam",
+          "ar": "أعرف، لكنني متردد. أين يُستثمر المال بالضبط؟",
+          "en": "I know, I've just been hesitant. Where exactly does the money get invested?"
+        },
+        {
+          "speaker": "linda",
+          "ar": "الافتراضي هو «صندوق التاريخ المستهدف 2060»: خليط من الأسهم والسندات. لكن في القائمة صناديق أخرى، منها صندوق أسهم «متوافق مع الشريعة» أضفناه السنة الماضية بطلب من موظف.",
+          "en": "The default is the 2060 target-date fund — a mix of stocks and bonds. But there are other funds on the list, including a 'Shariah-compliant' equity fund we added last year after an employee asked."
+        },
+        {
+          "speaker": "adam",
+          "ar": "حقاً؟ لم أكن أعرف أن هذا الخيار موجود.",
+          "en": "Really? I didn't know that was an option."
+        }
+      ],
+      "choices": [
+        {
+          "id": "a",
+          "label": {
+            "ar": "أسجّل بنسبة 5% لأحصل على المطابقة كاملة، وأختار الصندوق المتوافق مع الشريعة، وأقرأ نشرته لأفهم معايير الفرز.",
+            "en": "Enroll at 5% to get the full match, pick the Shariah-compliant fund, and read its prospectus to understand how it screens."
+          },
+          "quality": "best",
+          "consequence": {
+            "ar": "أنهت ليندا التسجيل في دقيقتين. قرأ آدم في المساء أن الصندوق يستبعد البنوك الربوية وشركات الخمور والقمار. قالت ليندا: «سأضيف هذا إلى دليل الموظفين الجدد، شكراً لسؤالك».",
+            "en": "Linda finished the enrollment in two minutes. That evening Adam read that the fund screens out interest-based banks, alcohol, and gambling companies. Linda said, 'I'll add this to the new-hire guide — thanks for asking.'"
+          },
+          "points": 10
+        },
+        {
+          "id": "b",
+          "label": {
+            "ar": "أبقي الصندوق الافتراضي؛ لا وقت عندي للتفاصيل، والمهم ألا يضيع التطابق.",
+            "en": "Just keep the default fund — I don't have time for details, and the main thing is not losing the match."
+          },
+          "quality": "wrong",
+          "consequence": {
+            "ar": "التسجيل تم، لكن جزءاً كبيراً من المال ذهب إلى سندات بفائدة دون أن يعرف آدم. بعد أشهر سأله عمر عن صندوقه، فلم يعرف بماذا يجيب. الخيار المريح ليس دائماً الخيار المدروس.",
+            "en": "He was enrolled, but a big chunk of the money went into interest-bearing bonds without Adam realizing it. Months later Omar asked about his fund, and Adam had no answer. The easy option isn't always the thought-through one."
+          },
+          "points": 0
+        },
+        {
+          "id": "c",
+          "label": {
+            "ar": "لن أشترك في الخطة أصلاً حتى أتأكد من كل شيء، حتى لو خسرت المطابقة.",
+            "en": "I won't enroll at all until I'm sure about everything, even if I lose the match."
+          },
+          "quality": "acceptable",
+          "consequence": {
+            "ar": "استغربت ليندا: «تترك مالاً على الطاولة؟». احتاط آدم لدينه، لكنه فوّت مطابقة سنة كاملة كان يمكن أن يأخذها بطريقة مقبولة لو سأل عن البدائل.",
+            "en": "Linda raised an eyebrow: 'You're leaving money on the table?' Adam played it safe, but missed a full year of matching he could've gotten in an acceptable way if he'd asked about the alternatives."
+          },
+          "points": 5
+        }
+      ],
+      "check_question": {
+        "q": {
+          "ar": "ما الذي يجعل صندوق أسهم «متوافقاً مع الشريعة» عادةً؟",
+          "en": "What usually makes an equity fund 'Shariah-compliant'?"
+        },
+        "options": [
+          {
+            "ar": "أنه يضمن أرباحاً ثابتة",
+            "en": "It guarantees fixed returns",
+            "correct": false
+          },
+          {
+            "ar": "أنه يستبعد الشركات ذات النشاط المحرم أو الديون الربوية المرتفعة وفق معايير فرز",
+            "en": "It screens out companies with prohibited business or high interest-based debt",
+            "correct": true
+          },
+          {
+            "ar": "أن مديره مسلم",
+            "en": "Its manager is Muslim",
+            "correct": false
+          }
+        ]
+      }
+    },
+    {
+      "ruling_id": "work.honesty_gifts",
+      "hotspot": "adam_desk",
+      "npc": {
+        "id": "mike",
+        "name": {
+          "ar": "مايك",
+          "en": "Mike"
+        },
+        "role": {
+          "ar": "مندوب شركة مورّدة",
+          "en": "Vendor sales rep"
+        }
+      },
+      "setup": {
+        "ar": "آدم عضو في لجنة تقييم نظام تتبع الشاحنات الجديد. عاد إلى مكتبه فوجد مايك، مندوب إحدى الشركات المتنافسة، يضع علبة أنيقة فيها ساعة ذكية جديدة.",
+        "en": "Adam sits on the committee evaluating a new truck-tracking system. He comes back to his desk to find Mike, a rep from one of the competing vendors, setting down a sleek box with a brand-new smartwatch inside."
+      },
+      "dialogue": [
+        {
+          "speaker": "mike",
+          "ar": "مرحباً آدم! هدية صغيرة لموسم الأعياد. لا شروط، فقط تقدير لوقتك في العرض الأسبوع الماضي.",
+          "en": "Hey Adam! Little holiday something for you. No strings — just appreciation for your time at last week's demo."
+        },
+        {
+          "speaker": "adam",
+          "ar": "هذه ليست صغيرة يا مايك... هذه ساعة بـ400 دولار.",
+          "en": "That's not little, Mike... that's a $400 watch."
+        },
+        {
+          "speaker": "mike",
+          "ar": "هيا، الكل يفعل ذلك في الأعياد. ولا تقلق، لن أخبر أحداً. بالمناسبة، متى تصدر اللجنة توصيتها؟",
+          "en": "Come on, everybody does it during the holidays. And don't worry, I won't tell a soul. By the way, when's the committee making its recommendation?"
+        },
+        {
+          "speaker": "narrator",
+          "ar": "على الشاشة، تذكير من النظام: «سجّل ساعات الأسبوع قبل الخامسة». جيك كان قد قال صباحاً: «قرّبها إلى 40، الكل يفعل».",
+          "en": "A system reminder pops up on screen: 'Submit this week's timesheet by 5 PM.' This morning Jake had said, 'Just round it up to 40, everyone does.'"
+        }
+      ],
+      "choices": [
+        {
+          "id": "a",
+          "label": {
+            "ar": "أشكر مايك بلطف وأعيد الساعة، وأبلغ مديري ديف بما حدث وفق سياسة الشركة، وأسجّل ساعاتي الفعلية بدقة.",
+            "en": "Thank Mike kindly and hand the watch back, let my manager Dave know per company policy, and log my actual hours exactly."
+          },
+          "quality": "best",
+          "consequence": {
+            "ar": "ابتسم مايك بحرج: «فهمت، احترامي». شكر ديف آدم وأضاف: «هذا بالضبط سبب وجودك في اللجنة». وسجّل آدم 37 ساعة كما هي. نام تلك الليلة مرتاحاً.",
+            "en": "Mike smiled awkwardly: 'Fair enough, respect.' Dave thanked Adam: 'This is exactly why you're on that committee.' Adam logged 37 hours, just as they were. He slept well that night."
+          },
+          "points": 10
+        },
+        {
+          "id": "b",
+          "label": {
+            "ar": "أقبل الساعة؛ إنها هدية عيد ولن تؤثر في رأيي فعلاً. وأقرّب الساعات إلى 40 كالجميع.",
+            "en": "Keep the watch — it's a holiday gift and won't actually sway me. And round my hours up to 40 like everyone."
+          },
+          "quality": "wrong",
+          "consequence": {
+            "ar": "في اجتماع اللجنة، وجد آدم نفسه يدافع عن عرض مايك أكثر مما يستحق. سأله ديف: «هل هناك ما يجب أن أعرفه؟». تلعثم آدم. الهدية لم تكن «بلا شروط» بعد كل شيء.",
+            "en": "At the committee meeting, Adam caught himself defending Mike's bid harder than it deserved. Dave asked, 'Anything I should know?' Adam stumbled. The gift wasn't so 'no strings' after all."
+          },
+          "points": 0
+        },
+        {
+          "id": "c",
+          "label": {
+            "ar": "لا أحرج مايك الآن؛ آخذ العلبة ثم أسلّمها لديف ليتصرف فيها كما تقضي سياسة الشركة.",
+            "en": "Don't embarrass Mike right now — take the box, then hand it to Dave to deal with however company policy says."
+          },
+          "quality": "acceptable",
+          "consequence": {
+            "ar": "سلّم آدم العلبة لديف بعد ساعة، فأعادها ديف للمورّد مع رسالة مهذبة عن سياسة الهدايا. نجح الأمر، وإن كان الأوضح أن يُقال لمايك مباشرة وبلطف.",
+            "en": "Adam handed the box to Dave an hour later, and Dave returned it to the vendor with a polite note about the gift policy. It worked out, though telling Mike directly and kindly would've been clearer."
+          },
+          "points": 5
+        }
+      ],
+      "check_question": {
+        "q": {
+          "ar": "لماذا تختلف هدية المورّد لموظف في لجنة تقييم عن هدية صديق؟",
+          "en": "Why is a vendor's gift to an evaluation-committee member different from a gift from a friend?"
+        },
+        "options": [
+          {
+            "ar": "لأنها مرتبطة بوظيفته وقد تؤثر في قراره ولو دون قصد",
+            "en": "Because it's tied to his job and can sway his decision, even unintentionally",
+            "correct": true
+          },
+          {
+            "ar": "لأن الهدايا كلها ممنوعة دائماً",
+            "en": "Because all gifts are always forbidden",
+            "correct": false
+          },
+          {
+            "ar": "لأن ثمنها مرتفع فقط",
+            "en": "Only because it's expensive",
+            "correct": false
+          }
+        ]
+      }
+    }
+  ],
+  "outro": {
+    "ar": "الخامسة مساءً. يطفئ آدم شاشته، ويلوّح له جيك: «لا تنسَ الجمعة! سيكون هناك تبادل هدايا!». أمامه ساعة واحدة ليصل إلى الكلية.",
+    "en": "Five o'clock. Adam shuts down his monitors, and Jake waves: 'Don't forget Friday! There's a gift exchange!' He has an hour to get to campus."
+  },
+  "next_location": "school"
+}

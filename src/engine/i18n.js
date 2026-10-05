@@ -1,0 +1,198 @@
+// Language state + UI strings. Content strings come from JSON as {ar, en}; use tr() for those.
+
+let lang = 'ar';
+const listeners = new Set();
+
+export const STRINGS = {
+  gameTitle: { ar: 'يومك', en: 'Yawmuk' },
+  tagline: { ar: 'يوم في حياة آدم — فقه المعاملات للمسلم في أمريكا', en: "A day in Adam's life — everyday Islamic fiqh for a Muslim in the USA" },
+  chooseLang: { ar: 'اختر اللغة', en: 'Choose language' },
+  newGame: { ar: 'ابدأ يوماً جديداً', en: 'Start a new day' },
+  continue: { ar: 'متابعة', en: 'Continue' },
+  next: { ar: 'التالي', en: 'Next' },
+  start: { ar: 'ابدأ', en: 'Start' },
+  startExploring: { ar: 'ابدأ الاستكشاف', en: 'Start exploring' },
+  close: { ar: 'إغلاق', en: 'Close' },
+  interact: { ar: 'تفاعل', en: 'Interact' },
+  pressE: { ar: 'اضغط E', en: 'Press E' },
+  exitDoor: { ar: 'إلى المحطة التالية', en: 'To the next stop' },
+  finishDay: { ar: 'إنهاء اليوم', en: 'Finish the day' },
+  score: { ar: 'النقاط', en: 'Score' },
+  done: { ar: 'المواقف', en: 'Situations' },
+  menu: { ar: 'القائمة', en: 'Menu' },
+  resume: { ar: 'استئناف', en: 'Resume' },
+  locations: { ar: 'الانتقال إلى محطة', en: 'Jump to a location' },
+  language: { ar: 'English', en: 'العربية' },
+  restart: { ar: 'إعادة اللعبة من البداية', en: 'Restart from scratch' },
+  confirmRestart: { ar: 'سيُحذف تقدمك. هل أنت متأكد؟', en: 'Your progress will be erased. Are you sure?' },
+  whatDoYouDo: { ar: 'ماذا تفعل؟', en: 'What do you do?' },
+  points: { ar: 'نقطة', en: 'pts' },
+  seeRuling: { ar: 'اعرض الحكم الشرعي', en: 'See the ruling' },
+  checkTitle: { ar: 'سؤال للتثبيت', en: 'Quick check' },
+  correct: { ar: 'إجابة صحيحة! +5', en: 'Correct! +5' },
+  exitLocked: { ar: 'أكمل مواقف هذا المكان أولاً', en: "Finish this location's situations first" },
+  exitReady: { ar: 'الطريق مفتوح — اتجه إلى الباب', en: "You're all set — head for the exit" },
+  disc_general: { ar: 'هذه معلومة عامة؛ لحالتك الخاصة اسأل عالماً موثوقاً.', en: 'This is general information; for your specific situation, ask a trusted scholar.' },
+  disc_fiction: { ar: 'القصة والشخصيات في هذه اللعبة تخييلية.', en: 'The story and characters in this game are fictional.' },
+  disc_ai: { ar: 'الأحكام أُعدّت بمساعدة الذكاء الاصطناعي وتحتاج إلى مراجعة أهل العلم.', en: 'The rulings were prepared with AI help and need review by qualified scholars.' },
+  bestChoices: { ar: 'اختيارات «الأفضل»', en: "'Best' choices" },
+  correctChecks: { ar: 'أسئلة الفهم الصحيحة', en: 'Correct check answers' },
+  incorrect: { ar: 'ليست الإجابة الصحيحة. الصحيح موضّح باللون الأخضر.', en: 'Not quite. The correct answer is highlighted in green.' },
+  finishSituation: { ar: 'تم', en: 'Done' },
+  tryAnother: { ar: 'جرّب خياراً آخر', en: 'Try another choice' },
+  reviewRuling: { ar: 'راجع بطاقة الحكم', en: 'Review the ruling card' },
+  alreadyDone: { ar: 'أنهيت هذا الموقف. ماذا تريد؟', en: 'You finished this situation. What would you like to do?' },
+  leaveAnyway: { ar: 'غادر على أي حال', en: 'Leave anyway' },
+  stay: { ar: 'ابقَ واستكشف', en: 'Stay and explore' },
+  remaining: { ar: 'بقيت مواقف لم تكملها هنا:', en: "There are situations here you haven't completed:" },
+  // ruling card
+  ruling: { ar: 'بطاقة الحكم', en: 'Ruling card' },
+  question: { ar: 'المسألة', en: 'The question' },
+  summary: { ar: 'الخلاصة', en: 'Summary' },
+  quran: { ar: 'من القرآن الكريم', en: 'From the Quran' },
+  hadith: { ar: 'من السنة النبوية', en: 'From the Sunnah' },
+  madhahib: { ar: 'المذاهب الأربعة', en: 'The four madhhabs' },
+  hanafi: { ar: 'الحنفي', en: 'Hanafi' },
+  maliki: { ar: 'المالكي', en: 'Maliki' },
+  shafii: { ar: 'الشافعي', en: "Shafi'i" },
+  hanbali: { ar: 'الحنبلي', en: 'Hanbali' },
+  reference: { ar: 'المرجع', en: 'Reference' },
+  contemporary: { ar: 'المجامع والهيئات المعاصرة', en: 'Contemporary fiqh bodies' },
+  guidance: { ar: 'إرشادات عملية', en: 'Practical guidance' },
+  alternatives: { ar: 'بدائل حلال', en: 'Halal alternatives' },
+  referScholar: { ar: 'متى تسأل عالماً؟', en: 'When to ask a scholar' },
+  source: { ar: 'المصدر', en: 'Source' },
+  grade: { ar: 'الدرجة', en: 'Grade' },
+  narrator: { ar: 'الراوي', en: 'Narrator' },
+  confidence: { ar: 'درجة الثقة', en: 'Confidence' },
+  conf_high: { ar: 'عالية', en: 'High' },
+  conf_medium: { ar: 'متوسطة', en: 'Medium' },
+  conf_low: { ar: 'منخفضة', en: 'Low' },
+  status_ai_draft: { ar: 'مسودة بالذكاء الاصطناعي — بانتظار مراجعة عالم', en: 'AI draft — pending scholar review' },
+  status_ai_verified: { ar: 'روجِع آلياً بالذكاء الاصطناعي — بانتظار مراجعة عالم', en: 'AI-checked — pending scholar review' },
+  status_reviewed: { ar: 'تمت مراجعته من مختص', en: 'Reviewed by a scholar' },
+  pendingTitle: { ar: 'المحتوى قيد الإعداد', en: 'Content pending' },
+  pendingBody: { ar: 'بطاقة الحكم لهذا الموقف لم تكتمل بعد. يعمل فريق البحث الشرعي على توثيقها بالأدلة وأقوال المذاهب. إلى ذلك الحين، اسأل عالماً موثوقاً أو إمام مسجدك.', en: 'The ruling card for this situation is not ready yet. The research team is still documenting the evidence and the positions of the madhhabs. Until then, please ask a trusted scholar or your local imam.' },
+  notProvided: { ar: 'لم يُوثّق بعد', en: 'Not documented yet' },
+  fixtureBadge: { ar: 'بيانات اختبار (ليست محتوى حقيقياً)', en: 'Test fixture (not real content)' },
+  // intro / disclaimer
+  introTitle: { ar: 'قبل أن تبدأ', en: 'Before you begin' },
+  introBody: {
+    ar: 'ستعيش يوماً كاملاً مع آدم، شاب مسلم يعمل مهندس برمجيات ويدرس مساءً في Columbus, Ohio. في كل محطة ستواجه مواقف يومية حقيقية، تختار فيها تصرفاً، ثم ترى بطاقة حكم موثقة بالقرآن والسنة وأقوال المذاهب الأربعة والمجامع الفقهية المعاصرة.',
+    en: 'You will live a full day with Adam, a young Muslim software engineer and evening student in Columbus, Ohio. At each stop you face real everyday situations, choose what to do, then see a ruling card documented from the Quran, the Sunnah, the four madhhabs and contemporary fiqh councils.'
+  },
+  disclaimerTitle: { ar: 'تنبيه مهم', en: 'Important notice' },
+  disclaimerBody: {
+    ar: 'القصص والحوارات في اللعبة تخييلية. أما الأحكام فهي مسودات أعدّها الذكاء الاصطناعي من مصادر موثقة، وهي بانتظار مراجعة أهل العلم. هذه اللعبة أداة تعليمية وليست فتوى؛ الأحكام قد تختلف باختلاف الأحوال الشخصية، فاسأل عالماً موثوقاً أو إمام مسجدك في حالتك الخاصة.',
+    en: 'The stories and dialogue are fictional. The rulings are AI-prepared drafts based on documented sources and are pending review by qualified scholars. This game is an educational tool, not a fatwa; rulings can vary with personal circumstances — ask a trusted scholar or your local imam about your own case.'
+  },
+  controlsTitle: { ar: 'التحكم', en: 'Controls' },
+  controlsBody: {
+    ar: 'الحركة: W A S D أو الأسهم · تدوير الكاميرا: اسحب بالفأرة · تفاعل: E · القائمة: Esc. على الهاتف: عصا التحكم للحركة، اسحب الشاشة للتدوير، وزر «تفاعل».',
+    en: 'Move: W A S D or arrow keys · Orbit camera: drag with the mouse · Interact: E · Menu: Esc. On mobile: joystick to move, drag the screen to look, and the "Interact" button.'
+  },
+  iUnderstand: { ar: 'فهمت، لنبدأ', en: 'I understand, let’s go' },
+  // summary
+  summaryTitle: { ar: 'انتهى يومك', en: 'Your day is over' },
+  finalScore: { ar: 'مجموع النقاط', en: 'Final score' },
+  completed: { ar: 'المواقف المكتملة', en: 'Situations completed' },
+  topicsLearned: { ar: 'ما تعلمته اليوم', en: 'What you learned today' },
+  scholarNote: {
+    ar: 'هذه بداية التعلم لا نهايته. ما عرضته اللعبة مسودات تعليمية بانتظار مراجعة العلماء؛ فإذا واجهت موقفاً مشابهاً في حياتك فاسأل عالماً موثوقاً أو إمام مسجدك المحلي، واذكر له تفاصيل حالتك.',
+    en: 'This is the start of learning, not the end. What you saw are educational drafts pending scholarly review. When you face a similar situation in real life, ask a trusted scholar or your local imam, and share the details of your case.'
+  },
+  playAgain: { ar: 'العب من جديد', en: 'Play again' },
+  backToGame: { ar: 'عودة إلى اللعبة', en: 'Back to the game' },
+  loading: { ar: 'جارٍ التحميل…', en: 'Loading…' },
+  sceneError: { ar: 'تعذّر بناء المشهد؛ استُخدم مشهد بديل.', en: 'Scene failed to build; using a fallback room.' },
+  noSituations: { ar: 'لا توجد مواقف في هذه المحطة بعد.', en: 'No situations at this stop yet.' },
+  adam: { ar: 'آدم', en: 'Adam' },
+  narratorName: { ar: '', en: '' },
+  of: { ar: 'من', en: 'of' },
+  time: { ar: 'الوقت', en: 'Time' },
+  log: { ar: 'سجل المواقف', en: 'Situation log' },
+  notStarted: { ar: 'لم يبدأ', en: 'Not started' },
+  goThere: { ar: 'اذهب', en: 'Go' }
+};
+
+export function getLang() { return lang; }
+
+export function setLang(l) {
+  lang = l === 'en' ? 'en' : 'ar';
+  const root = document.documentElement;
+  root.lang = lang;
+  root.dir = lang === 'ar' ? 'rtl' : 'ltr';
+  listeners.forEach((fn) => { try { fn(lang); } catch (e) { console.error(e); } });
+}
+
+export function onLangChange(fn) { listeners.add(fn); return () => listeners.delete(fn); }
+
+/** UI string by key. */
+export function t(key) {
+  const s = STRINGS[key];
+  if (!s) return key;
+  return s[lang] ?? s.en ?? key;
+}
+
+/** Translate a bilingual content object {ar, en} (or a plain string). Falls back to the other language. */
+export function tr(obj, l = lang) {
+  if (obj == null) return '';
+  if (typeof obj === 'string' || typeof obj === 'number') return String(obj);
+  const other = l === 'ar' ? 'en' : 'ar';
+  const v = obj[l];
+  if (v != null && v !== '' && !(Array.isArray(v) && v.length === 0)) return v;
+  return obj[other] ?? '';
+}
+
+/** For fields shaped like position_ar / position_en. */
+export function trField(o, base, l = lang) {
+  if (!o) return '';
+  const other = l === 'ar' ? 'en' : 'ar';
+  return o[`${base}_${l}`] || o[`${base}_${other}`] || '';
+}
+
+/** Arabic-Indic digits are not used: Western digits stay readable in both languages. */
+export function fmtNum(n) { return String(n); }
+
+// ---------------------------------------------------------------- content/script/ui_strings.json overrides
+// Engine key -> dotted path in ui_strings.json. Anything present there wins over the built-in defaults above.
+const UI_MAP = {
+  gameTitle: 'game_title', tagline: 'game_subtitle',
+  newGame: 'start.play', continue: 'start.continue', howToPlay: 'start.how_to_play', about: 'start.about',
+  chooseLang: 'language.choose', language: 'language.switch',
+  next: 'dialogue.next', whatDoYouDo: 'dialogue.what_do_you_do', adam: 'dialogue.adam', narratorLabel: 'dialogue.narrator',
+  resume: 'hud.resume', score: 'hud.score', done: 'hud.progress', time: 'hud.time', menu: 'hud.pause',
+  interactHint: 'hud.interact_hint', interactHintMobile: 'hud.interact_hint_mobile',
+  exitLocked: 'hud.exit_locked', exitReady: 'hud.exit_ready',
+  seeRuling: 'result.see_ruling', pointsEarned: 'result.points_earned',
+  ruling: 'ruling_card.title', question: 'ruling_card.question', verdictLabel: 'ruling_card.verdict', summary: 'ruling_card.summary',
+  quran: 'ruling_card.quran', hadith: 'ruling_card.hadith', madhahib: 'ruling_card.madhahib',
+  hanafi: 'ruling_card.hanafi', maliki: 'ruling_card.maliki', shafii: 'ruling_card.shafii', hanbali: 'ruling_card.hanbali',
+  contemporary: 'ruling_card.contemporary', guidance: 'ruling_card.practical', alternatives: 'ruling_card.alternatives',
+  referScholar: 'ruling_card.refer', source: 'ruling_card.source', grade: 'ruling_card.grade', reference: 'ruling_card.reference',
+  notProvided: 'ruling_card.text_pending', confidence: 'ruling_card.confidence', status_ai_draft: 'ruling_card.review_status_ai_draft',
+  close: 'ruling_card.close',
+  conf_high: 'ruling_card.confidence_levels.high', conf_medium: 'ruling_card.confidence_levels.medium', conf_low: 'ruling_card.confidence_levels.low',
+  checkTitle: 'check.title', correct: 'check.correct', incorrect: 'check.incorrect',
+  exitDoor: 'transition.next_stop', loading: 'transition.loading',
+  summaryTitle: 'end.title', endMessage: 'end.message', finalScore: 'end.total_score', bestChoices: 'end.best_choices',
+  correctChecks: 'end.correct_checks', playAgain: 'end.play_again', tier_high: 'end.tiers.high', tier_mid: 'end.tiers.mid', tier_low: 'end.tiers.low',
+  controlsTitle: 'instructions.title', ctrlDesktop: 'instructions.desktop', ctrlMobile: 'instructions.mobile', howFlow: 'instructions.flow',
+  iUnderstand: 'instructions.got_it',
+  disc_general: 'disclaimers.general_info', disc_fiction: 'disclaimers.fiction', disc_ai: 'disclaimers.ai_review',
+  disc_disagreement: 'disclaimers.disagreement', discAccept: 'disclaimers.accept',
+  aboutTitle: 'about.title', aboutBody: 'about.body'
+};
+
+const getPath = (o, p) => p.split('.').reduce((a, k) => (a && typeof a === 'object' ? a[k] : undefined), o);
+const isBi = (v) => v && typeof v === 'object' && ('ar' in v || 'en' in v);
+
+/** Apply ui_strings.json. Returns the raw object so other modules can read extra sections (verdicts, result, locations). */
+export function applyUiStrings(ui) {
+  if (!ui || typeof ui !== 'object') return null;
+  for (const [key, path] of Object.entries(UI_MAP)) {
+    const v = getPath(ui, path);
+    if (isBi(v)) STRINGS[key] = { ...(STRINGS[key] || {}), ...v };
+  }
+  return ui;
+}

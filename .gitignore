@@ -1,0 +1,11 @@
+node_modules/
+dist/
+tools/audit/.cache/
+scratch/
+*.log
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+docs/phase-3/e2e-failure-*.jpg
+/dMQxOMZrPKCQCiP1BBNgD6sdPSyAXIwItPHMGlb9.pdf
