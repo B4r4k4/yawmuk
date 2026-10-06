@@ -170,7 +170,7 @@ Full write-up: **[docs/AI.md](docs/AI.md)**. The AI **arranges and explains revi
 
 ## Reliability & scientific safety · الموثوقية والسلامة العلمية
 
-**Online eval on production (yawmuk.world):** 682/695 checks pass, and all 13 failures are in the cautious direction (referral instead of an answer); **0 unsafe failures**. The same model without Yawmuk's design quoted or attributed Quran/hadith text with no verifiable record in **42/72** answers and cited an approved-package source in **0/72** ([EVAL.md](docs/EVAL.md), [EVAL_BASELINE.md](docs/EVAL_BASELINE.md)).
+**Online eval on production (yawmuk.world), current 7-situation content:** 459/466 checks pass. Six failures are in the cautious direction (referral instead of an answer) and one answer did not say explicitly that scholars differ; **0 unsafe failures** (no invented verse or hadith, no personal ruling). On the previous content (tag `submission-safe-2026-10-06`): 682/695. The same model without Yawmuk's design quoted or attributed Quran/hadith text with no verifiable record in **42/72** answers and cited an approved-package source in **0/72** ([EVAL.md](docs/EVAL.md), [EVAL_BASELINE.md](docs/EVAL_BASELINE.md)).
 
 | Document | What it proves |
 |---|---|
