@@ -6,7 +6,8 @@
 
 | | |
 |---|---|
-| 🎮 **التجربة المباشرة · Live demo** | {{LIVE_URL}} |
+| 🎮 **التجربة المباشرة · Live demo** | https://yawmuk.world (احتياطي · backup: https://yawmuk-851682870274.us-central1.run.app) |
+| 🏠 **صفحة التعريف · Landing page** | https://yawmuk.world/landing |
 | 🎬 **الفيديو (أقل من دقيقتين) · Video** | {{VIDEO_URL}} |
 | 📑 **العرض التقديمي · Deck (PDF)** | {{DECK_URL}} |
 | 💻 **المستودع · Repo** | https://github.com/B4r4k4/yawmuk |
@@ -24,18 +25,18 @@
 
 ## For judges: verify in 3 minutes · للمحكّمين: تحقّق في 3 دقائق
 
-Use **Chrome or Edge** on desktop: voice input relies on the Web Speech API, and other browsers fall back to text. Replace `{{LIVE_URL}}` below with the live link.
+Use **Chrome or Edge** on desktop: voice input relies on the Web Speech API, and other browsers fall back to text. If the main link is unreachable, use the backup: https://yawmuk-851682870274.us-central1.run.app
 
 | # | Open | Do | What you should see |
 |---|---|---|---|
-| 1 | `{{LIVE_URL}}/?scene=town&nointro=1` | Walk with **WASD** or the joystick. Doors are labelled. Press **E** near a door or a sign. | One connected neighbourhood with doors to home, work, school, street, events, **mosque** and **bank**, and a live **prayer-times** widget in the HUD. |
-| 2 | `{{LIVE_URL}}/?scene=mosque&nointro=1` | Press **E** at «المصحف المرتل والترجمة / Recited Quran & translation». Play an ayah. Then try the **adhkar** stand and the **prayer times** board. | KFGQPC Hafs text with a translation of meanings (quranenc.com) and per-ayah recitation (everyayah.com); adhkar with counters, each with its book, number, grade and dorar.net record; computed prayer times with the adhan at prayer time. |
-| 3 | `{{LIVE_URL}}/?scene=bank&nointro=1` | Press **E** at the «Islamic finance advisor» desk. | Contract cards (murabaha, ijara, diminishing musharaka…), each position attributed to a named body and linked; a zakat calculator; a loan vs murabaha vs musharaka comparison. Disputed (level C) items are marked as such. |
-| 4 | `{{LIVE_URL}}/?scene=home&nointro=1` | Talk to Omar, pick a choice, open the **ruling card**. | The verdict in plain words; verbatim Quran (with link) and hadith (number, grade, link); the four madhhabs side by side; "when to ask a scholar". |
+| 1 | `https://yawmuk.world/?scene=town&nointro=1` | Walk with **WASD** or the joystick. Doors are labelled. Press **E** near a door or a sign. | One connected neighbourhood with doors to home, work, school, street, events, **mosque** and **bank**, and a live **prayer-times** widget in the HUD. |
+| 2 | `https://yawmuk.world/?scene=mosque&nointro=1` | Press **E** at «المصحف المرتل والترجمة / Recited Quran & translation». Play an ayah. Then try the **adhkar** stand and the **prayer times** board. | KFGQPC Hafs text with a translation of meanings (quranenc.com) and per-ayah recitation (everyayah.com); adhkar with counters, each with its book, number, grade and dorar.net record; computed prayer times with the adhan at prayer time. |
+| 3 | `https://yawmuk.world/?scene=bank&nointro=1` | Press **E** at the «Islamic finance advisor» desk. | Contract cards (murabaha, ijara, diminishing musharaka…), each position attributed to a named body and linked; a zakat calculator; a loan vs murabaha vs musharaka comparison. Disputed (level C) items are marked as such. |
+| 4 | `https://yawmuk.world/?scene=home&nointro=1` | Talk to Omar, pick a choice, open the **ruling card**. | The verdict in plain words; verbatim Quran (with link) and hadith (number, grade, link); the four madhhabs side by side; "when to ask a scholar". |
 | 5 | Any scene → **«؟ Ask»** in the HUD (or the Guide desk in town) | Press 🎤 and ask aloud *"Why do Muslims avoid interest?"*, then type *"My wife and I want to take a mortgage in Ohio, is it okay for us?"* | First: an answer drawn **only** from reviewed passages, with the passages it used shown. Second: **no AI answer**, but a fixed referral and an «Ask a scholar» button. |
 | 6 | «Ask a scholar» (town or mosque) | Submit a question. Keep the ticket code. | A ticket, and the question waiting in the scholars' queue. |
-| 7 | `{{LIVE_URL}}/experts` | Log in with the **passcode given in the submission form**. It is never published here. | The scholar dashboard: the question from step 6 with an automatic level (أ/ب/ج/د) and related cards; answer it with sources; optionally publish it. Back in the game, the ticket shows the scholar's answer. |
-| 8 | `{{LIVE_URL}}/?study=1` then `{{LIVE_URL}}/results.html` | Consent, pre-test, play, post-test. | `/results.html` shows only **real** live aggregates. Below 5 participants per arm it says "insufficient data". |
+| 7 | `https://yawmuk.world/experts` | Log in with the **passcode given in the submission form**. It is never published here. | The scholar dashboard: the question from step 6 with an automatic level (أ/ب/ج/د) and related cards; answer it with sources; optionally publish it. Back in the game, the ticket shows the scholar's answer. |
+| 8 | `https://yawmuk.world/?study=1` then `https://yawmuk.world/results.html` | Consent, pre-test, play, post-test. | `/results.html` shows only **real** live aggregates. Below 5 participants per arm it says "insufficient data". |
 
 Offline check, no keys needed: `npm ci && npm test && npm run build`. The game still works without an AI provider: the planner falls back to a deterministic route, and the guide answers with the reviewed passages verbatim or abstains.
 

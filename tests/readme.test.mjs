@@ -23,8 +23,11 @@ describe('judge documentation', () => {
     for (const f of ['docs/DEPLOY.md', 'docs/OPERATIONS.md', 'docs/VIDEO_SCRIPT.md']) assert.ok(fs.existsSync(path.join(ROOT, f)), f);
   });
 
-  test('README uses integrator markers, not stale placeholders', () => {
-    for (const m of ['{{LIVE_URL}}', '{{VIDEO_URL}}', '{{DECK_URL}}']) assert.ok(README.includes(m), m);
+  test('README links are filled (or still show the integrator marker), never stale placeholders', () => {
+    for (const [m, label] of [['{{LIVE_URL}}', 'Live demo'], ['{{VIDEO_URL}}', 'Video'], ['{{DECK_URL}}', 'Deck']]) {
+      const row = README.split('\n').find((l) => l.includes(label)) || '';
+      assert.ok(row.includes(m) || /https:\/\/\S+/.test(row), `${label}: marker or a real https link`);
+    }
     assert.doesNotMatch(README, /_TBD>|<LIVE_URL|<VIDEO_URL|<DECK_TBD/);
   });
 
