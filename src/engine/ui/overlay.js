@@ -1,5 +1,8 @@
 // Modal / panel / toast primitives with focus management.
 import { h } from '../dom.js';
+import { initLoader } from './loading.js';
+
+if (typeof window !== 'undefined') initLoader();
 
 const FOCUSABLE = 'button:not([disabled]), [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
 let uiRoot = null;
@@ -64,6 +67,27 @@ export function toast(msg, ms = 3200, kind = '') {
   const tEl = h('div', { class: `toast ${kind}` }, msg);
   wrap.append(tEl);
   setTimeout(() => { tEl.classList.add('leaving'); setTimeout(() => tEl.remove(), 300); }, ms);
+}
+
+const reduceMotion = () => typeof matchMedia === 'function' && matchMedia('(prefers-reduced-motion: reduce)').matches;
+const finePointer = () => typeof matchMedia === 'function' && matchMedia('(hover: hover) and (pointer: fine)').matches;
+export const prefersReducedMotion = reduceMotion;
+
+/**
+ * Subtle pointer-follow tilt (a few degrees) for depth on cards. Desktop pointers only; off with reduced motion.
+ * Writes --rx/--ry custom properties consumed by the CSS transform, so CSS stays in charge of the look.
+ */
+export function tilt(el, max = 4) {
+  if (!el || reduceMotion() || !finePointer()) return el;
+  el.classList.add('tilt');
+  el.addEventListener('pointermove', (e) => {
+    const r = el.getBoundingClientRect();
+    const x = (e.clientX - r.left) / r.width - 0.5, y = (e.clientY - r.top) / r.height - 0.5;
+    el.style.setProperty('--ry', `${(x * max * 2).toFixed(2)}deg`);
+    el.style.setProperty('--rx', `${(-y * max * 2).toFixed(2)}deg`);
+  });
+  el.addEventListener('pointerleave', () => { el.style.setProperty('--rx', '0deg'); el.style.setProperty('--ry', '0deg'); });
+  return el;
 }
 
 export function btn(label, onclick, cls = '', attrs = {}) {

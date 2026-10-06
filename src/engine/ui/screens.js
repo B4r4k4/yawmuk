@@ -2,30 +2,40 @@
 import { h, link } from '../dom.js';
 import { t, tr, getLang, setLang, STRINGS } from '../i18n.js';
 import { LOCATIONS, LOCATION_TITLES, CATALOG, CHECK_BONUS, THEMES } from '../config.js';
-import { getScript, getRuling, allSituations } from '../content.js';
+import { getScript, getRuling, allSituations, uiStrings } from '../content.js';
 import { progress, isDone, totalScore, hasSave, sitRecord } from '../progress.js';
-import { openModal, setContent, btn } from './overlay.js';
-import { verdictBadge } from './rulingCard.js';
+import { openModal, setContent, btn, tilt } from './overlay.js';
+import { verdictBadge, statusBadge } from './rulingCard.js';
+import { applyExtraUi } from './strings.js';
+import { hideLoader } from './loading.js';
+import { creditsScreen } from './credits.js';
+
+applyExtraUi(uiStrings);
 
 const p = (text, cls) => (text ? h('p', { class: cls || '' }, text) : null);
 
 /** Start screen. Resolves { lang, mode: 'new'|'continue' }. */
 export function startScreen() {
   return new Promise((resolve) => {
+    hideLoader();
     const m = openModal({ variant: 'screen', className: 'start', label: 'Yawmuk' });
+    m.el.classList.add('overlay-start');
     const render = () => {
       const lang = getLang();
       const langBtn = (l, label) => h('button', { type: 'button', class: `lang-btn${lang === l ? ' active' : ''}`, 'aria-pressed': lang === l ? 'true' : 'false', lang: l, onclick: () => { setLang(l); render(); } }, label);
       setContent(m, [
         h('div', { class: 'start-inner' },
-          h('div', { class: 'logo', 'aria-hidden': 'true' }, '☾'),
-          h('h1', { class: 'title' }, h('span', { lang: 'ar' }, 'يومك'), h('span', { class: 'title-en', lang: 'en' }, 'Yawmuk')),
+          h('div', { class: 'lockup' },
+            h('div', { class: 'emblem', 'aria-hidden': 'true' }, h('span', { class: 'emblem-star' }), h('span', { class: 'emblem-star inner' }), h('span', { class: 'emblem-dot' })),
+            h('h1', { class: 'title' }, h('span', { class: 'title-ar', lang: 'ar' }, 'يومك'), h('span', { class: 'title-en', lang: 'en' }, 'Yawmuk'))),
           h('p', { class: 'tagline' }, t('tagline')),
-          h('div', { class: 'lang-pick', role: 'group', 'aria-label': t('chooseLang') }, langBtn('ar', 'العربية'), langBtn('en', 'English')),
-          h('div', { class: 'stack' },
-            hasSave() ? btn(t('continue'), () => { m.close(); resolve({ lang: getLang(), mode: 'continue' }); }, 'primary big', { 'data-autofocus': true }) : null,
-            btn(t('newGame'), () => { m.close(); resolve({ lang: getLang(), mode: 'new' }); }, hasSave() ? 'ghost big' : 'primary big', hasSave() ? {} : { 'data-autofocus': true })),
-          h('p', { class: 'fine' }, t('status_ai_draft')))
+          tilt(h('div', { class: 'start-card' },
+            h('div', { class: 'lang-pick', role: 'group', 'aria-label': t('chooseLang') }, langBtn('ar', 'العربية'), langBtn('en', 'English')),
+            h('div', { class: 'stack' },
+              hasSave() ? btn(t('continue'), () => { m.close(); resolve({ lang: getLang(), mode: 'continue' }); }, 'primary big', { 'data-autofocus': true }) : null,
+              btn(t('newGame'), () => { m.close(); resolve({ lang: getLang(), mode: 'new' }); }, hasSave() ? 'ghost big' : 'primary big', hasSave() ? {} : { 'data-autofocus': true }))), 2),
+          h('p', { class: 'fine' }, statusBadge('ai_draft')),
+          h('button', { type: 'button', class: 'credits-link', onclick: () => creditsScreen() }, t('creditsTitle')))
       ]);
     };
     render();
@@ -57,9 +67,13 @@ export function locationIntro(loc) {
   return new Promise((resolve) => {
     const m = openModal({ className: 'loc-intro', label: tr(s?.title || LOCATION_TITLES[loc]), onClose: resolve, dismissible: true });
     const n = s?.situations?.length || 0;
+    const idx = LOCATIONS.indexOf(loc);
     setContent(m, [
-      h('p', { class: 'eyebrow' }, `${t('time')} ${s?.time_of_day || ''}`),
-      h('h2', {}, tr(s?.title || LOCATION_TITLES[loc])),
+      h('div', { class: 'stop-row' },
+        h('p', { class: 'eyebrow' }, `${t('stopOf')} ${idx + 1}/${LOCATIONS.length}`),
+        s?.time_of_day ? h('span', { class: 'time-chip' }, h('span', { class: 'clock', 'aria-hidden': 'true' }), h('bdi', {}, s.time_of_day)) : null),
+      h('ol', { class: 'stops', 'aria-hidden': 'true' }, LOCATIONS.map((l, j) => h('li', { class: j < idx ? 'past' : j === idx ? 'now' : '' }))),
+      h('h2', { class: 'loc-title' }, tr(s?.title || LOCATION_TITLES[loc])),
       s?._fixture ? h('span', { class: 'badge fixture' }, t('fixtureBadge')) : null,
       p(tr(s?.intro)),
       n ? h('p', { class: 'muted' }, `${t('done')}: ${s.situations.filter((x) => isDone(x.key)).length}/${n}`) : p(t('noSituations'), 'muted'),
@@ -117,6 +131,7 @@ export function menuScreen(handlers) {
       h('ul', { class: 'loc-list' }, rows),
       h('div', { class: 'stack' },
         btn(allSituations().every((s) => isDone(s.key)) ? t('summaryTitle') : t('progressTitle'), () => { m.close(); handlers.onSummary(); }, 'ghost'),
+        btn(t('creditsTitle'), () => creditsScreen(), 'ghost credits-btn'),
         btn(t('restart'), () => { if (confirm(t('confirmRestart'))) { m.close(); handlers.onRestart(); } }, 'danger'))
     ]);
   };

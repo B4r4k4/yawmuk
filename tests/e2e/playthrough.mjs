@@ -488,7 +488,7 @@ async function runConfig(browser, baseUrl, cfg) {
         const ok = await evalp(() => { const p = document.querySelectorAll('.overlay:not(.leaving) .ruling-card .tabpanel'); return p[2]?.classList.contains('active') && p[2].offsetHeight > 0 && p[0].offsetHeight === 0; });
         check(ok, `${sit.ruling_id}: madhhab tab 3 did not activate its panel on mobile`);
       }
-      await evalp(() => { const m = document.querySelector('.overlay:not(.leaving) .ruling-modal'); m.scrollTop = m.scrollHeight; });
+      await evalp(() => { const m = document.querySelector('.overlay:not(.leaving) .ruling-modal .ruling-card') || document.querySelector('.overlay:not(.leaving) .ruling-modal'); m.scrollTop = m.scrollHeight; });
       await shot(`${locName}-ruling-bottom`);
     }
     await press(`${OPEN} .ruling-modal .sticky-actions .btn.primary`);

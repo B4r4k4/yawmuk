@@ -70,6 +70,8 @@
   "dialogue": {
     "next": {"ar": "التالي", "en": "Next"},
     "skip": {"ar": "تخطّي", "en": "Skip"},
+    "skip_line": {"ar": "أظهر الجملة كاملة", "en": "Show the full line"},
+    "choice_hint": {"ar": "اختر بالنقر أو بالأرقام 1–4", "en": "Tap a choice or press 1–4"},
     "narrator": {"ar": "الراوي", "en": "Narrator"},
     "adam": {"ar": "آدم", "en": "Adam"},
     "what_do_you_do": {"ar": "ماذا سيفعل آدم؟", "en": "What does Adam do?"}
@@ -111,6 +113,9 @@
     "confidence": {"ar": "درجة الثقة", "en": "Confidence"},
     "review_status_ai_draft": {"ar": "مسودة بالذكاء الاصطناعي — بانتظار مراجعة بشرية", "en": "AI draft — awaiting human review"},
     "close": {"ar": "إغلاق", "en": "Close"},
+    "expand": {"ar": "إظهار", "en": "Show"},
+    "collapse": {"ar": "إخفاء", "en": "Hide"},
+    "external_link": {"ar": "يفتح في نافذة جديدة", "en": "opens in a new tab"},
     "verdicts": {
       "haram": {"ar": "حرام", "en": "Prohibited (haram)"},
       "halal": {"ar": "حلال", "en": "Permissible (halal)"},
@@ -149,7 +154,14 @@
   "transition": {
     "next_stop": {"ar": "المحطة التالية", "en": "Next stop"},
     "loading": {"ar": "جارٍ التحميل...", "en": "Loading..."},
-    "later_that_week": {"ar": "بعد أيام...", "en": "A few days later..."}
+    "later_that_week": {"ar": "بعد أيام...", "en": "A few days later..."},
+    "stop": {"ar": "المحطة", "en": "Stop"},
+    "loading_title": {"ar": "نجهّز أسبوع آدم…", "en": "Setting up Adam's week…"},
+    "tip_label": {"ar": "هل تعلم؟", "en": "Good to know"},
+    "loading_tips": {
+      "ar": ["كل موقف ينتهي ببطاقة تشرح موقف الإسلام ببساطة، مع أدلته وأقوال المذاهب الأربعة.", "لا يوجد جواب «ذكي» واحد: الأسئلة المحترمة الفضولية هي التي تقود إلى فهم أعمق.", "على الحاسوب: استعمل الأرقام 1–4 لاختيار الرد بسرعة.", "حين يختلف العلماء تعرض البطاقة الأقوال بإنصاف — والمسلمون أنفسهم يتنوعون في التطبيق.", "الأحكام في اللعبة مسودات أُعدّت بمساعدة الذكاء الاصطناعي وتنتظر مراجعة أهل العلم."],
+      "en": ["Every situation ends with a card that explains Islam's position in plain words, with its evidence and the views of the four schools.", "There's no single 'clever' answer: respectful, curious questions lead to real understanding.", "On a computer, press 1–4 to pick a reply quickly.", "Where scholars differ, the card presents the views fairly — Muslims themselves vary in practice.", "The rulings in this game are AI-prepared drafts awaiting review by qualified scholars."]
+    }
   },
 
   "end": {
@@ -237,6 +249,17 @@
     "text_size": {"ar": "حجم النص", "en": "Text size"},
     "reset_progress": {"ar": "إعادة التقدم", "en": "Reset progress"},
     "back": {"ar": "رجوع", "en": "Back"}
+  },
+
+  "credits": {
+    "title": {"ar": "حقوق وشكر", "en": "Credits"},
+    "intro": {"ar": "بُنيت مشاهد اللعبة بنماذج ثلاثية الأبعاد وخامات من مبدعين يشاركون أعمالهم مجاناً. شكراً لهم.", "en": "The game's scenes are built with 3D models and textures shared freely by their creators. Thank you."},
+    "cc_by": {"ar": "نماذج برخصة CC-BY 3.0 (يلزم ذكر المؤلف)", "en": "Models licensed CC-BY 3.0 (attribution required)"},
+    "characters": {"ar": "الشخصيات", "en": "Characters"},
+    "cc0_title": {"ar": "شكر خاص (CC0)", "en": "Special thanks (CC0)"},
+    "cc0": {"ar": "شكر خاص لـ Kenney وQuaternius وPoly Haven ولمؤلفي نماذج poly.pizza الذين أتاحوا أعمالهم ملكاً عاماً (CC0).", "en": "Special thanks to Kenney, Quaternius, Poly Haven and the poly.pizza authors who released their work into the public domain (CC0)."},
+    "fonts_title": {"ar": "الخطوط", "en": "Fonts"},
+    "fonts": {"ar": "Amiri وAmiri Quran وIBM Plex Sans Arabic وReem Kufi — برخصة SIL Open Font License، عبر Google Fonts.", "en": "Amiri, Amiri Quran, IBM Plex Sans Arabic and Reem Kufi — SIL Open Font License, via Google Fonts."}
   },
 
   "errors": {
