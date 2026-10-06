@@ -12,8 +12,7 @@
 // card section against content/rulings, "try another choice", the revisit menu, the language switch,
 // location transitions, localStorage resume after a reload, the final summary (score = max), and
 // horizontal overflow (RTL/LTR) of the page and the ruling card.
-// Christian-learner premise: "In plain words" + "Common ground" panels (short general shared values and
-// differences only — no scripture is quoted or referenced), NPC stations (Samir moves; mobile-en plays work out of order), Adam's look per scene, the
+// Learner premise: "In plain words" panel (and no "Common ground" panel — no other religion is named), NPC stations (Samir moves; mobile-en plays work out of order), Adam's look per scene, the
 // end screen (learned / next topic / referral) and privacy (no belief data in any browser storage).
 //
 // Usage:  npm run test:e2e                       (builds dist/ if missing)
@@ -299,22 +298,7 @@ function validateRulingCardInPage(r, lang) {
       if (plain.previousElementSibling !== q('.rc-header')) errs.push('"In plain words" is not directly under the verdict header');
     }
   } else if (plain) errs.push('"In plain words" shown without data');
-  // ---- pivot: "Common ground" (summary + differences only; no scripture quotations or references)
-  const cg = r.common_ground || {};
-  const cgEl = q('.rc-common');
-  const wantCg = !!(tr(cg.summary) || tr(cg.differences));
-  if (wantCg && !cgEl) errs.push('"Common ground" section missing');
-  if (!wantCg && cgEl) errs.push('"Common ground" shown without data');
-  if (cgEl) {
-    if (tr(cg.summary) && !sq(cgEl.textContent).includes(sq(tr(cg.summary)))) errs.push('common_ground.summary not shown verbatim');
-    if (tr(cg.differences) && sq(cgEl.querySelector('.cg-diff p')?.textContent) !== sq(tr(cg.differences))) errs.push('common_ground.differences not shown verbatim');
-    if (cgEl.querySelector('figure, blockquote, a')) errs.push('common ground must not contain quotations or source links');
-    if (/\bKJV\b|Van ?Dyck|فاندايك/i.test(cgEl.textContent)) errs.push('common ground mentions a Bible translation');
-    // common ground must come after the Islamic evidence, never before it
-    const order = [...card.children];
-    const iMad = order.indexOf(q('.rc-madhahib')), iCg = order.indexOf(cgEl);
-    if (iMad >= 0 && iCg < iMad) errs.push('common ground placed before the madhhab section');
-  }
+  if (q('.rc-common')) errs.push('"Common ground" section must not be shown');
   if (card.scrollWidth - card.clientWidth > 2) errs.push(`card overflows horizontally (${card.scrollWidth}>${card.clientWidth})`);
   if (document.documentElement.dir !== (lang === 'ar' ? 'rtl' : 'ltr')) errs.push(`dir=${document.documentElement.dir}`);
   return errs;

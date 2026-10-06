@@ -414,10 +414,6 @@ a.src-link:hover { background: rgba(166, 200, 236, 0.16); color: #d3e5f8; }
 }
 .council { padding: 12px 14px; border-radius: 12px; background: rgba(5, 18, 19, 0.35); border: 1px solid var(--line); margin-bottom: 8px; }
 .council-head { line-height: 1.6; }
-.rc-common { background: linear-gradient(160deg, rgba(166, 200, 236, 0.13), rgba(166, 200, 236, 0.04)); border-color: rgba(166, 200, 236, 0.4); }
-.rc-common .rc-toggle { color: var(--sky-300); }
-.rc-sub { font-family: var(--font-head); font-weight: 600; font-size: 0.95rem; color: #cfe2f7; margin: 0.9em 0 0.3em !important; padding-top: 0.7em; border-top: 1px solid rgba(166, 200, 236, 0.2); }
-.cg-diff p { color: #e3ebf3; }
 .rc-scholar { background: linear-gradient(160deg, rgba(116, 207, 174, 0.13), rgba(116, 207, 174, 0.04)); border-color: rgba(116, 207, 174, 0.42); }
 .rc-scholar .rc-toggle { color: var(--emerald-300); }
 .rc-foot { font-size: 0.82rem; color: var(--muted); border-top: 1px solid var(--line); padding-top: 10px; margin-top: 16px !important; }

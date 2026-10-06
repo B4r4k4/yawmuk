@@ -1,8 +1,8 @@
 // «يومك» — HOME (Monday 07:00, winter morning in Columbus, Ohio).
 // Open-plan ground floor of a modest rented American house: kitchen (back-left), dining (centre),
 // living room + reading nook (right), entry with front door, mail table and stairs (front).
-// Premise (TEAM_BRIEF 2026-10-05): the Reed family is Christian (Bible on the shelf, small wooden cross,
-// family photos); their Muslim neighbour and friend Omar has dropped by for coffee.
+// The Reed family home (books and family photos on the shelf); their Muslim neighbour and friend
+// Omar has dropped by for coffee.
 // Procedural geometry only. Static props are merged into a handful of vertex-coloured meshes
 // (see ./home/batch.js) so the whole room stays at ~30 meshes.
 //
@@ -382,7 +382,7 @@ export default {
     B.satin.quad('#273342', 1.24, 0.7, 5.745, 0.98, -1.5, -PI / 2);
     B.matte.fbox('#d4c3a3', 0.12, 0.14, 0.12, 5.75, 0.52, -2.2);                         // small vase
     solid(5.47, -2.43, 6, -0.57);
-    // bookshelf: books, the family Bible and photos on the top shelf, a small wooden cross on the wall above
+    // bookshelf: books, with family photos on the top shelf
     const BX0 = 3.2, BX1 = 4.4, BZ0 = Z0, BZ1 = Z0 + 0.32;
     B.matte.span(C.shelfWood, BX0, 0, BZ0, BX0 + 0.03, 1.8, BZ1);
     B.matte.span(C.shelfWood, BX1 - 0.03, 0, BZ0, BX1, 1.8, BZ1);
@@ -404,9 +404,7 @@ export default {
         x += w + 0.004;
       }
     }
-    // top shelf: brown leather Bible lying flat, two small framed family photos
-    B.satin.fbox('#6b4423', 0.16, 0.04, 0.22, 3.62, shelves[3], BZ0 + 0.17, 0.08);
-    B.satin.fbox('#e8dcc0', 0.15, 0.03, 0.005, 3.62, shelves[3] + 0.005, BZ0 + 0.06, 0.08);  // page edge
+    // top shelf: two small framed family photos
     for (const [px, w, h, ry] of [[3.92, 0.16, 0.2, -0.15], [4.13, 0.2, 0.15, 0.2]]) {
       B.satin.push(px, shelves[3], BZ0 + 0.14, ry, -0.12);
       B.satin.box('#2b2420', w, h, 0.02, 0, h / 2, 0);
@@ -415,9 +413,6 @@ export default {
       B.photo.quad('#ffffff', w - 0.03, h - 0.03, 0, h / 2, 0.011);
       B.photo.pop();
     }
-    // simple wooden cross on the wall above the shelf
-    B.satin.box('#a0763f', 0.04, 0.3, 0.03, 3.8, 2.12, Z0 + 0.016);
-    B.satin.box('#a0763f', 0.18, 0.04, 0.03, 3.8, 2.19, Z0 + 0.016);
     B.matte.fcyl(C.potWhite, 0.07, 0.06, 0.12, 4.22, 1.8, BZ0 + 0.16, 8);                 // trailing plant on top
     for (let i = 0; i < 6; i++) B.matte.ico(i % 2 ? C.leaf : C.leaf2, 0.06, 4.22 + (i - 2.5) * 0.04, 1.95 - (i % 3) * 0.08, BZ0 + 0.22, 1, 1, 1, i);
     solid(BX0, BZ0, BX1, BZ1);

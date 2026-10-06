@@ -156,19 +156,6 @@ function plainWordsBlock(r) {
   return h('section', { class: 'rc-section rc-plain' }, h('h3', { class: 'rc-h' }, h('span', { class: 'rc-h-text' }, t('plainWords'))), h('p', { class: 'plain' }, txt));
 }
 
-/** Common ground with Christianity — short general shared values + where the views differ. No scripture is quoted.
- * Hidden when absent/empty. Any legacy `bible` array in the data is ignored. */
-function commonGroundBlock(r) {
-  const cg = r.common_ground;
-  if (!cg || typeof cg !== 'object') return null;
-  const summary = tr(cg.summary), diff = tr(cg.differences);
-  if (!nonEmpty(summary) && !nonEmpty(diff)) return null;
-  return collapsible('rc-section rc-common', t('commonGround'), [
-    nonEmpty(summary) ? h('p', {}, summary) : null,
-    nonEmpty(diff) ? h('div', { class: 'cg-diff' }, h('h4', { class: 'rc-sub' }, t('differences')), h('p', {}, diff)) : null
-  ].filter(Boolean), false, { 'aria-label': t('commonGround') });
-}
-
 /** Build the ruling card element. ruling may be null -> "content pending". */
 export function renderRulingCard(ruling, rulingId) {
   if (!ruling) {
@@ -199,7 +186,6 @@ export function renderRulingCard(ruling, rulingId) {
     section('hadith', (r.hadith || []).filter(Boolean).map(hadithBlock)),
     r.madhahib ? section('madhahib', madhahibBlock(r.madhahib)) : null,
     section('contemporary', (r.contemporary || []).filter(Boolean).map(contemporaryBlock)),
-    commonGroundBlock(r),
     section('guidance', list(Array.isArray(guidance) ? guidance : guidance ? [guidance] : [])),
     section('alternatives', list(Array.isArray(alts) ? alts : alts ? [alts] : [])),
     nonEmpty(tr(r.refer_to_scholar_when)) ? collapsible('rc-section rc-scholar', t('referScholar'), [h('p', {}, tr(r.refer_to_scholar_when))]) : null,

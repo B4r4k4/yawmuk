@@ -10,8 +10,8 @@
     "settings": {"ar": "الإعدادات", "en": "Settings"},
     "intro_title": {"ar": "تعرّف على آدم", "en": "Meet Adam"},
     "intro_body": {
-      "ar": "آدم ريد، 28 سنة، مبرمج من أوهايو ومسيحي يعيش مع زوجته سارة وأمه وأخيه في كولومبس. حوله جيران وزملاء مسلمون — صديقه عمر، زميله سمير، زميلته نور وغيرهم — وقد صار يتساءل: لماذا يختارون ما يختارونه؟ في هذه اللعبة ترافق آدم أسبوعاً، وتختار كيف يسأل ويتصرف، ثم تعرف ما يقوله الإسلام ولماذا.",
-      "en": "Adam Reed, 28, is a programmer from Ohio and a Christian, living in Columbus with his wife Sarah, his mom, and his brother. Around him are Muslim neighbors and coworkers — his friend Omar, his teammate Samir, his classmate Noor and others — and he's started to wonder: why do they make the choices they make? In this game you spend a week with Adam, choose how he asks and responds, and then learn what Islam says and why."
+      "ar": "آدم ريد، 28 سنة، مبرمج من أوهايو يعيش مع زوجته سارة وأمه وأخيه في كولومبس. حوله جيران وزملاء مسلمون — صديقه عمر، زميله سمير، زميلته نور وغيرهم — وقد صار يتساءل: لماذا يختارون ما يختارونه؟ في هذه اللعبة ترافق آدم أسبوعاً، وتختار كيف يسأل ويتصرف، ثم تعرف ما يقوله الإسلام ولماذا.",
+      "en": "Adam Reed, 28, is a programmer from Ohio, living in Columbus with his wife Sarah, his mom, and his brother. Around him are Muslim neighbors and coworkers — his friend Omar, his teammate Samir, his classmate Noor and others — and he's started to wonder: why do they make the choices they make? In this game you spend a week with Adam, choose how he asks and responds, and then learn what Islam says and why."
     },
     "intro_note": {
       "ar": "لا يُطلب منك أن تكون مسلماً أو غير مسلم لتلعب. اللعبة للتعرّف والفهم فقط.",
@@ -37,8 +37,8 @@
       "en": ["Use the on-screen joystick to move.", "Swipe the screen to look around.", "Tap a glowing marker to start a situation."]
     },
     "flow": {
-      "ar": ["في كل محطة ثلاثة مواقف يلتقي فيها آدم بصديق أو جار مسلم.", "اختر كيف يسأل آدم أو يتصرف. أفضل الخيارات هي الأكثر احتراماً وفضولاً، والتي تقود إلى فهم صحيح.", "بعد اختيارك سترى أثره في القصة، ثم بطاقة تشرح موقف الإسلام ببساطة، مع أدلته وأقوال العلماء، وما يتلاقى فيه مع المسيحية.", "أجب عن سؤال الفهم القصير لتحصل على نقاط إضافية.", "حين تنتهي المواقف الثلاثة، اتجه إلى الباب للانتقال إلى المحطة التالية."],
-      "en": ["Each stop has three situations where Adam meets a Muslim friend or neighbor.", "Choose how Adam asks or responds. The best choices are the most respectful and curious ones — the ones that lead to real understanding.", "After you choose, you'll see how it plays out, then a card explaining Islam's position in plain words, with its evidence, scholars' views, and common ground with Christianity.", "Answer the short check question for bonus points.", "Once all three situations are done, head to the exit to move to the next stop."]
+      "ar": ["في كل محطة ثلاثة مواقف يلتقي فيها آدم بصديق أو جار مسلم.", "اختر كيف يسأل آدم أو يتصرف. أفضل الخيارات هي الأكثر احتراماً وفضولاً، والتي تقود إلى فهم صحيح.", "بعد اختيارك سترى أثره في القصة، ثم بطاقة تشرح موقف الإسلام ببساطة، مع أدلته وأقوال العلماء.", "أجب عن سؤال الفهم القصير لتحصل على نقاط إضافية.", "حين تنتهي المواقف الثلاثة، اتجه إلى الباب للانتقال إلى المحطة التالية."],
+      "en": ["Each stop has three situations where Adam meets a Muslim friend or neighbor.", "Choose how Adam asks or responds. The best choices are the most respectful and curious ones — the ones that lead to real understanding.", "After you choose, you'll see how it plays out, then a card explaining Islam's position in plain words, with its evidence and scholars' views.", "Answer the short check question for bonus points.", "Once all three situations are done, head to the exit to move to the next stop."]
     },
     "got_it": {"ar": "فهمت، لنبدأ", "en": "Got it, let's go"}
   },
@@ -89,8 +89,6 @@
     "title": {"ar": "بطاقة الحكم", "en": "Ruling Card"},
     "question": {"ar": "المسألة", "en": "The question"},
     "newcomer_explainer": {"ar": "ببساطة", "en": "In plain words"},
-    "common_ground": {"ar": "قيم مشتركة مع المسيحية", "en": "Common ground with Christianity"},
-    "common_ground_differences": {"ar": "أين نختلف — باحترام", "en": "Where we differ — respectfully"},
     "verdict": {"ar": "الحكم الإجمالي", "en": "Overall ruling"},
     "summary": {"ar": "الخلاصة", "en": "Summary"},
     "quran": {"ar": "من القرآن الكريم", "en": "From the Qur'an"},
@@ -209,8 +207,8 @@
       "en": "This is an educational game for getting to know Islam through everyday life. It never asks for, and never stores, anything about your religion or beliefs."
     },
     "respect": {
-      "ar": "نحترم المسيحية والمسيحيين وكل الأديان. حين نذكر ما يتلاقى فيه الإسلام مع المسيحية أو يختلف، نفعل ذلك باختصار وأمانة، دون جدل أو مفاضلة.",
-      "en": "We respect Christianity, Christians, and all faiths. When we mention where Islam and Christianity meet or differ, we do it briefly and honestly — no debate, no ranking."
+      "ar": "نعرض موقف الإسلام بأمانة ووضوح، ونحترم كل لاعب أياً كانت خلفيته، دون جدل أو ضغط.",
+      "en": "We present Islam's position honestly and clearly, and respect every player whatever their background — no debate, no pressure."
     },
     "general_info": {
       "ar": "هذه معلومة عامة عن موقف الإسلام. للمسلم في حالته الخاصة: اسأل عالماً موثوقاً.",
@@ -234,8 +232,8 @@
   "about": {
     "title": {"ar": "عن «يومك»", "en": "About Yawmuk"},
     "body": {
-      "ar": "لعبة تعليمية ثلاثية الأبعاد تعرّفك بالإسلام من خلال أسبوع في حياة آدم، شاب مسيحي من أوهايو، مع جيرانه وأصدقائه المسلمين: المال، العمل، الدراسة، الشارع، والمناسبات. كل بطاقة تشرح موقف الإسلام ببساطة، مع أدلته من القرآن والسنة وأقوال المذاهب الأربعة والمجامع الفقهية المعاصرة، وما يتلاقى فيه مع المسيحية، مع روابط للمصادر.",
-      "en": "An educational 3D game that introduces Islam through a week in the life of Adam, a young Christian from Ohio, and his Muslim neighbors and friends: money, work, school, the street, and social events. Each card explains Islam's position in plain words, with evidence from the Qur'an and Sunnah, the four schools, and contemporary fiqh councils, plus common ground with Christianity and links to sources."
+      "ar": "لعبة تعليمية ثلاثية الأبعاد تعرّفك بالإسلام من خلال أسبوع في حياة آدم، شاب من أوهايو، مع جيرانه وأصدقائه المسلمين: المال، العمل، الدراسة، الشارع، والمناسبات. كل بطاقة تشرح موقف الإسلام ببساطة، مع أدلته من القرآن والسنة وأقوال المذاهب الأربعة والمجامع الفقهية المعاصرة، مع روابط للمصادر.",
+      "en": "An educational 3D game that introduces Islam through a week in the life of Adam, a young man from Ohio, and his Muslim neighbors and friends: money, work, school, the street, and social events. Each card explains Islam's position in plain words, with evidence from the Qur'an and Sunnah, the four schools, and contemporary fiqh councils, with links to sources."
     }
   },
 

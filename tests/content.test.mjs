@@ -164,17 +164,25 @@ describe('scripts: contract', () => {
   });
 });
 
-describe('pivot fields: newcomer_explainer + common_ground (Adam is a Christian learner)', () => {
+describe('learner framing: newcomer_explainer, and no other religion named (owner decision 2026-10-06)', () => {
   for (const { ruling: r } of rulings) {
-    test(`${r.id}: newcomer_explainer and common_ground are complete in both languages`, () => {
+    test(`${r.id}: newcomer_explainer is complete in both languages; no common_ground section`, () => {
       assert.ok(bilingual(r.newcomer_explainer), 'newcomer_explainer {ar,en}');
-      const cg = r.common_ground;
-      assert.ok(cg && typeof cg === 'object', 'common_ground object');
-      assert.ok(bilingual(cg.summary), 'common_ground.summary {ar,en}');
-      if (cg.differences) assert.ok(bilingual(cg.differences), 'common_ground.differences must have both languages when present');
-      assert.equal(cg.bible, undefined, 'common_ground carries no scripture (owner decision 2026-10-06)');
+      assert.equal(r.common_ground, undefined, 'common_ground was removed from the game');
     });
   }
+  test('story scripts and UI strings never name another religion', () => {
+    const OTHER = /مسيح|نصار|نصران|يهود|كنيس|كنائس|إنجيل|توراة|صليب|Christian|Jew|church|Bible|Gospel|Torah|synagogue|Abrahamic/i;
+    const bad = [];
+    for (const f of fs.readdirSync(path.join(ROOT, 'content/script')).filter((n) => n.endsWith('.json'))) {
+      const walk = (o, at) => {
+        if (typeof o === 'string') { if (OTHER.test(o)) bad.push(`${f}${at}: ${o.slice(0, 80)}`); }
+        else if (o && typeof o === 'object') for (const k of Object.keys(o)) walk(o[k], `${at}.${k}`);
+      };
+      walk(JSON.parse(fs.readFileSync(path.join(ROOT, 'content/script', f), 'utf8')), '$');
+    }
+    assert.deepEqual(bad, []);
+  });
 });
 
 describe('README', () => {

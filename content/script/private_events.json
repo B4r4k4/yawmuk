@@ -36,8 +36,8 @@
         },
         {
           "speaker": "narrator",
-          "ar": "مارغريت تمسك يد هودان: «التأبين يوم الثلاثاء في الكنيسة. لا أعرف إن كان مسموحاً لكم أن تأتوا... لكن وجودكم سيعني لي الكثير». ثم تدخل لتضع الطعام.",
-          "en": "Margaret squeezes Hodan's hand: 'The memorial's Tuesday at church. I don't know if you're allowed to come... but it would mean so much to have you.' Then she goes inside to put the food away."
+          "ar": "مارغريت تمسك يد هودان: «التأبين يوم الثلاثاء. لا أعرف إن كان مسموحاً لكم أن تأتوا... لكن وجودكم سيعني لي الكثير». ثم تدخل لتضع الطعام.",
+          "en": "Margaret squeezes Hodan's hand: 'The memorial's Tuesday. I don't know if you're allowed to come... but it would mean so much to have you.' Then she goes inside to put the food away."
         },
         {
           "speaker": "narrator",
@@ -75,8 +75,8 @@
         {
           "id": "c",
           "label": {
-            "ar": "«لا تقلق، سأخبرها أن المسلمين لا يُسمح لهم بحضور جنازات المسيحيين، حتى لا تنتظرك».",
-            "en": "'Don't worry, I'll tell her Muslims aren't allowed at Christian funerals, so she won't expect you.'"
+            "ar": "«لا تقلق، سأخبرها أن المسلمين لا يُسمح لهم بحضور جنازات غير المسلمين، حتى لا تنتظرك».",
+            "en": "'Don't worry, I'll tell her Muslims aren't allowed at non-Muslim funerals, so she won't expect you.'"
           },
           "quality": "wrong",
           "consequence": {
@@ -149,8 +149,8 @@
         {
           "id": "a",
           "label": {
-            "ar": "«المسلمون لا يحتفلون بأعياد الميلاد ولا يقبلون هدايا من المسيحيين. الأفضل ألا تعطيهم شيئاً».",
-            "en": "'Muslims don't do birthdays or take gifts from Christians. Better not to give them anything.'"
+            "ar": "«المسلمون لا يحتفلون بأعياد الميلاد ولا يقبلون هدايا من غير المسلمين. الأفضل ألا تعطيهم شيئاً».",
+            "en": "'Muslims don't do birthdays or take gifts from non-Muslims. Better not to give them anything.'"
           },
           "quality": "wrong",
           "consequence": {

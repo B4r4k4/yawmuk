@@ -178,8 +178,8 @@
       ]
     },
     "refer_to_scholar_when": {
-      "ar": "إذا طُلب منك حضور قدّاس أو شعيرة دينية داخل كنيسة، أو كان عملك يقتضي المشاركة في طقوس، أو كانت لك أسرة غير مسلمة (والدان/زوجة كتابية) وتريد ترتيب علاقتك بأعيادهم.",
-      "en": "If you are asked to attend a church service or religious rite, if your job requires taking part in rituals, or if you have non-Muslim family (parents/spouse) and need to navigate their holidays."
+      "ar": "إذا طُلب منك حضور شعيرة دينية لغير المسلمين، أو كان عملك يقتضي المشاركة في طقوس، أو كانت لك أسرة غير مسلمة (والدان/زوجة كتابية) وتريد ترتيب علاقتك بأعيادهم.",
+      "en": "If you are asked to attend a religious service or rite of another faith, if your job requires taking part in rituals, or if you have non-Muslim family (parents/spouse) and need to navigate their holidays."
     },
     "confidence": "medium",
     "review_status": "ai_verified",
@@ -187,16 +187,6 @@
     "newcomer_explainer": {
       "ar": "يأمر الإسلام بالبر والعدل مع الجيران من أهل الأديان الأخرى (الممتحنة 8) وبردّ التحية بأحسن منها (النساء 86)، لكنه لا يجيز المشاركة في الشعائر الدينية لأعياد الأديان الأخرى. ويختلف العلماء في التهنئة اللفظية بالعيد الديني: فمنعها ابن القيم وكثير من المتقدمين والمعاصرين، وأجازها المجلس الأوروبي للإفتاء وآخرون بضوابط من باب البر. وعيد الشكر مختلف فيه أيضاً: فمنهم من يراه مناسبة وطنية عائلية، ومنهم من يرى له أصلاً دينياً. والمسلمون يحبون المسيح عيسى ويجلّونه نبياً عظيماً، لكنهم لا يشاركون الاعتقاد بألوهيته الذي يحتفل به عيد الميلاد، ولذلك يبقي كثير منهم مشاركتهم اجتماعية لا دينية.",
       "en": "Islam asks Muslims to be kind and just to neighbours of other faiths (60:8) and to return greetings with something better (4:86), but not to take part in the religious rites of another faith's holidays. Scholars differ on verbally congratulating someone on a religious holiday: Ibn al-Qayyim and many classical and contemporary scholars did not allow it, while the European Council for Fatwa and others allow it with conditions as an act of kindness. Thanksgiving is debated too: some see it as a civic family occasion, others consider it to have a religious origin. Muslims love and honour Jesus as a great prophet but do not share the belief in his divinity that Christmas celebrates, which is why many keep their participation social rather than religious."
-    },
-    "common_ground": {
-      "summary": {
-        "ar": "يدعو التقليدان إلى مسالمة جميع الناس وإلى شكر الله على نعمه؛ والصديق المسلم الذي يعتذر عن الجانب الديني من العيد ثم يقدّم تمنياته الطيبة أو هديته يتصرف بالاحترام نفسه للإيمان الذي يعرفه المسيحيون المتدينون.",
-        "en": "Both traditions call for living peaceably with all people and for giving thanks to God; a Muslim friend who sits out the religious part of a holiday yet offers warm wishes or a gift is acting from the same respect for faith that devout Christians recognise."
-      },
-      "differences": {
-        "ar": "يحتفل المسيحيون في عيد الميلاد بتجسّد المسيح وميلاده بوصفه ابن الله، أما المسلمون فيكرمون عيسى نبياً ومسيحاً وُلد من مريم العذراء ولا يعتقدون ألوهيته. واحتراماً للإيمانين تعرض اللعبة المسلمين وهم يتبادلون اللطف والهدايا دون المشاركة في العبادة، لا على سبيل المناظرة.",
-        "en": "At Christmas, Christians celebrate the incarnation and birth of Jesus as the Son of God; Muslims honour Jesus as a prophet and the Messiah born of the Virgin Mary but do not believe he is divine. Out of respect for both faiths, the game shows Muslims sharing kindness and gifts without joining worship, not as a matter for debate."
-      }
     }
   },
   {
@@ -338,16 +328,6 @@
     "newcomer_explainer": {
       "ar": "يحرّم الإسلام الخمر، وقد نهى النبي ﷺ عن الجلوس على مائدة يُشرب عليها الخمر (الترمذي 2801 وحسّنه هو والألباني، مع كلام لبعض العلماء في إسناده؛ وله شاهد عند أبي داود 3774 مختلف فيه). والحكمة الابتعاد عمّا يضر، وألا يبدو المسلم مُقِرّاً له. ويجيز بعض المعاصرين حضور مناسبة العمل مع اختيار طاولة خالية من الخمر أو المغادرة عند بدء الشرب، بينما يرى آخرون عدم حضور مثل هذه المناسبات أصلاً. والزميل المسلم الذي ينتقل إلى طاولة أخرى يتبع دينه ولا يحكم على أحد.",
       "en": "Islam forbids alcohol, and the Prophet ﷺ forbade sitting at a table where wine is being drunk (Tirmidhi 2801, graded hasan by al-Tirmidhi and al-Albani, though some scholars discuss its chain; a similar report in Abu Dawud 3774 is disputed). The wisdom is keeping a distance from what harms and not appearing to approve of it. Some contemporary scholars allow attending a work event while choosing an alcohol-free table or leaving when the drinking starts, while others advise not attending such events at all. A Muslim colleague who moves to another table is following his faith, not judging anyone."
-    },
-    "common_ground": {
-      "summary": {
-        "ar": "تحذّر الأخلاق المسيحية أيضاً من السُّكر، ويرى كثير من المسيحيين أن من الحسن ترك الشرب مراعاةً لضمير صديق — وهو مبدأ يستطيع آدم أن يطبّقه حين يجلس مع صديقه المسلم على طاولة بلا خمر.",
-        "en": "Christian ethics also warns against drunkenness, and many Christians hold that it is good to forgo a drink out of consideration for a friend's conscience — a principle Adam can live out by joining his Muslim friend at an alcohol-free table."
-      },
-      "differences": {
-        "ar": "تبيح أغلب الكنائس الشرب المعتدل وتنهى عن السُّكر، والخمر تُستعمل في سرّ العشاء الرباني، مع أن بعض الطوائف تدعو إلى الامتناع التام؛ أما الإسلام فيحرّم الخمر قليلها وكثيرها، ولذلك يتجنب المسلم مجلس الشرب نفسه.",
-        "en": "Most churches permit moderate drinking while forbidding drunkenness, and wine is used in Holy Communion, though some denominations promote total abstinence; Islam forbids alcohol in any amount, which is why a Muslim avoids the drinking table itself."
-      }
     }
   },
   {
@@ -492,16 +472,6 @@
     "newcomer_explainer": {
       "ar": "شراء تذكرة سحب تُدفع قيمتها وتموَّل منها الجوائز يعدّه الإسلام من الميسر (القمار) المحرّم ولو ذهب الريع لعمل خيري، وبهذا صدر قرار مجمع الفقه الإسلامي الدولي 127. والعلة أن كل مشارك يدفع ماله رجاء أن يربح على حساب غيره، وقد ذكر القرآن أن الميسر يوقع العداوة والبغضاء (المائدة 91). أما السحب المجاني الذي لا يدفع فيه أحد شيئاً والجائزة فيه من الشركة فجائز. والمسلم الذي يريد دعم القضية الخيرية يتبرع مباشرة دون تذكرة.",
       "en": "In Islam, buying a paid raffle ticket whose price funds the prizes counts as maysir (gambling) and is forbidden even when the proceeds go to charity, as stated in International Islamic Fiqh Academy Resolution 127. The reason is that each participant pays hoping to win at others' expense, and the Quran says gambling stirs up enmity and hatred (5:91). A free draw where nobody pays and the company funds the prize is permissible. A Muslim who wants to support the cause simply donates directly, without a ticket."
-    },
-    "common_ground": {
-      "summary": {
-        "ar": "يحب التقليدان العطاء الخيري لذاته ويقدّران العطاء عن طيب نفس، وهذا يوافق تفضيل الإسلام للتبرع المباشر على شراء التذكرة.",
-        "en": "Both traditions love charitable giving for its own sake and value giving freely and gladly, which fits the Islamic preference for a direct donation over buying a ticket."
-      },
-      "differences": {
-        "ar": "السحوبات الخيرية وأمسيات البنغو وسيلة شائعة لجمع التبرعات في بعض الكنائس (كثير من الأبرشيات الكاثوليكية مثلاً)، بينما تعارض كنائس أخرى كالميثودية المتحدة القمار بكل صوره؛ أما في الإسلام فالسحب المدفوع قمار مهما كانت غايته نبيلة.",
-        "en": "Raffles and bingo nights are common fundraisers in some churches (many Catholic parishes, for example), while other churches such as the United Methodist Church oppose gambling in all its forms; in Islam a paid raffle is gambling however good the cause."
-      }
     }
   }
 ]

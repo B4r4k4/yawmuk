@@ -184,7 +184,7 @@
     },
     "refer_to_scholar_when": {
       "ar": "عند الخلاف في المهر أو شروط العقد، أو الزواج من كتابية، أو إذا كان أحد الطرفين بلا ولي، أو لترتيب التوثيق المدني والشرعي معاً.",
-      "en": "When there is disagreement over mahr or contract conditions, when marrying a Christian or Jewish woman, if a party lacks a guardian (wali), or to coordinate civil and Islamic registration."
+      "en": "When there is disagreement over mahr or contract conditions, when marrying a woman who is not Muslim, if a party lacks a guardian (wali), or to coordinate civil and Islamic registration."
     },
     "confidence": "medium",
     "review_status": "ai_draft",
@@ -192,16 +192,6 @@
     "newcomer_explainer": {
       "ar": "الزواج في الإسلام عقد وسنّة: يقدّم الزوج لزوجته مهراً هو حق خالص لها (النساء 4)، وتُقام وليمة العرس، وإجابة دعوتها واجبة عند الجمهور ما لم يكن فيها منكر لا يُقدر على تغييره. ويُعلَن الزواج ولا يُخفى، وقد قال النبي ﷺ: «فصل ما بين الحرام والحلال الدف والصوت» (الترمذي 1088). أما المعازف غير الدف ففيها خلاف: حرّمتها المذاهب الأربعة، وأجازها بشروط ابن حزم وبعض المتأخرين ودار الإفتاء المصرية. وقد ذمّ النبي ﷺ الوليمة التي يُدعى إليها الأغنياء ويُترك الفقراء (البخاري 5177).",
       "en": "In Islam marriage is a contract and a prophetic sunnah: the groom gives the bride a mahr (marriage gift) that belongs to her alone (4:4), a walima (wedding feast) is held, and accepting the invitation is obligatory for guests according to the majority unless it involves wrongdoing one cannot change. The marriage is to be announced publicly, and the Prophet ﷺ said that what distinguishes the lawful from the unlawful is the daff (frame drum) and the voice (Tirmidhi 1088). Instruments other than the daff are disputed: the four classical schools prohibit them, while Ibn Hazm, some later scholars and Egypt's Dar al-Ifta permit them with conditions. The Prophet ﷺ also criticised a wedding feast to which the rich are invited and the poor left out (Bukhari 5177)."
-    },
-    "common_ground": {
-      "summary": {
-        "ar": "المسيحيون أيضاً يكرّمون الزواج ويعلنونه علناً (تاريخياً بإذاعة إعلانات الزواج في الكنيسة)، ويقدّر التقليدان الكرم مع الفقراء في الولائم، وهذا قريب من ذمّ الإسلام لوليمة تُقصي الفقراء.",
-        "en": "Christians too hold marriage in honour and announce it publicly (historically through the reading of banns in church), and both traditions value generosity to the poor at feasts — close to Islam's criticism of a wedding feast that leaves out the poor."
-      },
-      "differences": {
-        "ar": "الزواج في كثير من التقاليد المسيحية سرّ كنسي أو عهد مقدس يُعقد في الكنيسة، أما في الإسلام فهو عقد بشهود لا يشترط أن يكون في المسجد؛ والمهر لا نظير مباشراً له في أغلب الأعراس المسيحية المعاصرة؛ والموسيقى بالآلات، الشائعة في الأعراس المسيحية، مسألة خلافية بين علماء المسلمين.",
-        "en": "In many Christian traditions marriage is a sacrament or holy covenant made in church, whereas in Islam it is a contract with witnesses that need not take place in a mosque; the mahr has no direct counterpart in most modern Christian weddings; and instrumental music, common at Christian weddings, is a matter of scholarly debate in Islam."
-      }
     }
   },
   {
@@ -212,8 +202,8 @@
       "en": "A Non-Muslim Neighbor's Death: Condolence, Funeral, Prayer"
     },
     "question": {
-      "ar": "إذا توفي جار غير مسلم، فهل يجوز للمسلم أن يعزّي أسرته؟ وهل يحضر الجنازة في الكنيسة أو المقبرة؟ وبماذا يدعو؟",
-      "en": "When a non-Muslim neighbor dies, may a Muslim console the family? May he attend the funeral at the church or cemetery? And what may he pray?"
+      "ar": "إذا توفي جار غير مسلم، فهل يجوز للمسلم أن يعزّي أسرته؟ وهل يحضر مراسم الجنازة أو الدفن؟ وبماذا يدعو؟",
+      "en": "When a non-Muslim neighbor dies, may a Muslim console the family? May he attend the funeral service or burial? And what may he pray?"
     },
     "verdict": "mubah",
     "summary": {
@@ -364,8 +354,8 @@
       ]
     },
     "refer_to_scholar_when": {
-      "ar": "إذا كان الميت قريباً لك (والداً أو أخاً) وتريد معرفة أحكام الدفن والميراث، أو طُلب منك أن تكون حامل نعش (pallbearer) أو تلقي كلمة داخل الكنيسة.",
-      "en": "If the deceased is your relative (parent or sibling) and you need rulings on burial and inheritance, or if you are asked to be a pallbearer or give a eulogy inside a church."
+      "ar": "إذا كان الميت قريباً لك (والداً أو أخاً) وتريد معرفة أحكام الدفن والميراث، أو طُلب منك أن تكون حامل نعش (pallbearer) أو أن تلقي كلمة في مراسم التأبين.",
+      "en": "If the deceased is your relative (parent or sibling) and you need rulings on burial and inheritance, or if you are asked to be a pallbearer or give a eulogy at the memorial service."
     },
     "confidence": "medium",
     "review_status": "ai_verified",
@@ -373,16 +363,6 @@
     "newcomer_explainer": {
       "ar": "يجيز جمهور العلماء للمسلم تعزية جاره غير المسلم ومواساة أهله، استئناساً بآية البر (الممتحنة 8)، وبعيادة النبي ﷺ لغلام يهودي مريض (البخاري 1356)، وقيامه لجنازة يهودي مرّت به وقوله: «أليست نفساً؟» (البخاري 1312)؛ ومنع ذلك متأخرو الحنابلة. وأجاز معاصرون حضور الجنازة احتراماً دون مشاركة في طقوسها الدينية. ويعتقد المسلمون أن الاستغفار بعد الموت خاص بمن مات مسلماً (التوبة 113)، ولذلك يدعو الصديق المسلم لأهل الفقيد بالصبر والعوض والخير.",
       "en": "The majority of scholars allow a Muslim to console a non-Muslim neighbour and comfort the family, drawing on the verse on kindness (60:8), on the Prophet ﷺ visiting a sick Jewish boy (Bukhari 1356), and on his standing up when a Jewish funeral passed, saying \"Is it not a soul?\" (Bukhari 1312); the later Hanbali relied-upon view disallowed consoling. Contemporary scholars allow attending the funeral out of respect without joining its religious rites. Muslims believe that prayers for God's forgiveness after death are for those who died as Muslims (9:113), so a Muslim friend will instead pray for the family's patience, comfort and good."
-    },
-    "common_ground": {
-      "summary": {
-        "ar": "مواساة المحزونين والوقوف مع أسرة الفقيد قيمة مشتركة عميقة في التقليدين؛ وحضور الجار المسلم يصدر عن الرحمة نفسها.",
-        "en": "Comforting the bereaved and standing with a grieving family is a deeply shared value in both traditions; a Muslim neighbour who comes to pay respects is acting from that same compassion."
-      },
-      "differences": {
-        "ar": "يصلّي كثير من المسيحيين للميت أو يستودعونه الله في الجنازة، أما الحاضر المسلم فيلتزم الاحترام والهدوء أثناء الطقوس ويدعو لأهل الفقيد لا بالمغفرة للميت. وهذا الفرق نابع من الاعتقاد، لا من نقص في المحبة أو الاحترام.",
-        "en": "Many Christians pray for the deceased or commend them to God at the funeral, while a Muslim attending stays respectful and quiet during the rites and prays for the family rather than for the deceased's forgiveness. This difference comes from belief, not from any lack of love or respect."
-      }
     }
   },
   {
@@ -566,16 +546,6 @@
     "newcomer_explainer": {
       "ar": "يحث الإسلام على تبادل الهدايا: «تهادوا تحابوا» (الأدب المفرد 594)، وقد قبل النبي ﷺ هدايا من غير المسلمين، كهدية ملك أيلة (البخاري 1481). أما الهدية التي يحرم الانتفاع بها كزجاجة خمر فيُعتذر عنها بلطف، ولا تُقبل ولا تُهدى لغيره. وحضور حفل عيد ميلاد طفل الجار مختلف فيه: أجازه بعض المعاصرين باعتباره عادة اجتماعية لا عبادة، ومنعه آخرون كفتوى لمجمع فقهاء الشريعة بأمريكا (AMJA). وفي كل الأحوال يحرص المسلم على دوام المودة مع جيرانه.",
       "en": "Islam encourages exchanging gifts — \"give gifts and you will love one another\" (al-Adab al-Mufrad 594) — and the Prophet ﷺ accepted gifts from non-Muslims, such as the King of Ayla (Bukhari 1481). A gift whose use is forbidden, like a bottle of wine, is gently declined rather than accepted or passed on. Attending a neighbour's child's birthday party is debated: some contemporary scholars allow it as a social custom rather than worship, while others, such as an AMJA fatwa, do not. Either way, Muslims are encouraged to keep warm relations with their neighbours."
-    },
-    "common_ground": {
-      "summary": {
-        "ar": "الكرم أرض مشتركة: ففي التقليدين معاً العطاء فضيلة، والهدية طريق إلى المحبة بين الجيران.",
-        "en": "Generosity is shared ground: in both traditions giving is a virtue, and gifts are a way to build love between neighbours."
-      },
-      "differences": {
-        "ar": "يحتفل أغلب المسيحيين بأعياد الميلاد الشخصية بلا تحفظ، أما في الإسلام فالمسألة خلافية. والصديق المسلم الذي يعتذر عن هدية فيها خمر يتبع دينه ولا يرفض صاحب الهدية.",
-        "en": "Most Christians celebrate birthdays freely, while in Islam the question is debated. A Muslim friend who declines a gift of wine is following his faith, not rejecting the giver."
-      }
     }
   }
 ]

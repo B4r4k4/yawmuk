@@ -126,16 +126,6 @@
     "newcomer_explainer": {
       "ar": "المحفظة الضائعة في الإسلام أمانة: يجب على من التقطها أن يحفظها ويعرّفها ويردّها، ولا يحل له أخذ شيء منها أو استعماله (البخاري 2372). فإن كان فيها هوية أو بطاقات فالواجب إيصالها إلى صاحبها مباشرة أو عبر الشرطة دون انتظار. وإن لم يُعرف صاحبها فجمهور العلماء على تعريفها سنة، ثم يجوز للملتقط الانتفاع بها أو التصدق بها، مع ضمانها لصاحبها إن ظهر يوماً، على تفصيل بين المذاهب. والمقصد حفظ أموال الناس وبناء مجتمع تعود فيه المفقودات إلى أهلها.",
       "en": "In Islam a found wallet is a trust: the finder must keep it safe, announce it and return it, and may not take or use anything in it (Bukhari 2372). If it contains an ID or cards, the duty is to get it back to the owner directly or through the police without waiting. If the owner is unknown, the majority of scholars require announcing it for a year, after which the finder may use it or give it in charity, while still owing it to the owner if he ever appears, with details differing among the schools. The aim is to protect people's property and build a society where lost things find their way home."
-    },
-    "common_ground": {
-      "summary": {
-        "ar": "من أوضح نقاط التلاقي: فالأخلاق اليهودية والمسيحية أيضاً تأمر بحفظ مال الآخرين الضائع وردّه إلى صاحبه وعدم التغاضي عنه، وهو قريب جداً من تعليم الإسلام بأن اللقطة أمانة تُردّ متى جاء صاحبها.",
-        "en": "One of the clearest meeting points: Jewish and Christian ethics also teach keeping a neighbour's lost property safe, returning it to its owner and not looking away — very close to Islam's teaching that a found item is a trust to be returned whenever its owner comes."
-      },
-      "differences": {
-        "ar": "الفرق في التفاصيل فقط: فالفقه الإسلامي يحدد مدة للتعريف (سنة عند الجمهور) وأحكاماً لما بعدها، بينما تكتفي الأخلاق المسيحية بالمبدأ العام؛ واليوم يسلّم المسيحيون والمسلمون في أمريكا مثل هذه المفقودات للشرطة غالباً.",
-        "en": "The difference is only in detail: Islamic law sets an announcement period (a year for the majority) and rules for what follows, while Christian ethics gives the general principle; today Christians and Muslims in the US alike usually hand such items to the police."
-      }
     }
   },
   {
@@ -278,16 +268,6 @@
     "newcomer_explainer": {
       "ar": "اليانصيب وبطاقات الكشط والمراهنات الرياضية من الميسر (القمار) الذي حرّمه القرآن (المائدة 90–91). والعلة التي ذكرها القرآن نفسه أنه يوقع العداوة والبغضاء ويصدّ عن ذكر الله وعن الصلاة، ويضيف العلماء أنه نقل للمال بلا عمل ولا مقابل عادل، فربح أحدهم خسارة غيره. ومن ربح منه شيئاً تخلّص منه بإعطائه للفقراء دون قصد الثواب. أما المسابقات المجانية التي لا يدفع فيها المشارك شيئاً فليست قماراً، بخلاف «الرهان المجاني» في تطبيقات المراهنات، فهو رهان على نتيجة مباراة داخل منصة قمار، ولذلك يتجنبه المسلمون.",
       "en": "Lotteries, scratch cards and sports betting are forms of maysir (gambling), which the Quran forbids (5:90–91). The Quran itself gives the reasons — gambling stirs up enmity and hatred and turns people away from remembering God and from prayer — and scholars add that it moves wealth without work or fair exchange, so one person's gain is another's loss. Anyone who wins must give the winnings away to the poor without seeking reward. A free sweepstakes that requires no payment is not gambling, unlike a promotional \"free bet\" in a betting app, which is still a wager on a game inside a gambling platform, so Muslims avoid it."
-    },
-    "common_ground": {
-      "summary": {
-        "ar": "تحذّر الأخلاق المسيحية من الطمع ومحبة المال، وتقدّر الكسب بالعمل الشريف، ولهذه المعاني تحذّر كنائس كثيرة من القمار.",
-        "en": "Christian ethics warns against greed and the love of money and values wealth earned by honest work, and many churches discourage gambling for these reasons."
-      },
-      "differences": {
-        "ar": "تتنوع المواقف المسيحية: فالكنيسة الميثودية المتحدة مثلاً ترى القمار مضراً بالمجتمع وتدعو إلى الامتناع عنه بما فيه اليانصيب العام، بينما يقرر التعليم الكاثوليكي أن ألعاب الحظ ليست ظلماً في ذاتها ما لم تحرم الإنسان مما يحتاجه هو وغيره؛ أما الإسلام فيحرّمها مطلقاً.",
-        "en": "Christian views vary: the United Methodist Church, for example, regards gambling as harmful to society and urges abstaining from it, including public lotteries, while Catholic teaching holds that games of chance are not unjust in themselves unless they deprive someone of what he and others need; Islam forbids them outright."
-      }
     }
   },
   {
@@ -480,16 +460,6 @@
     "newcomer_explainer": {
       "ar": "يعدّ الإسلام الصدق في التجارة جزءاً من الدين: فكتمان عيب السلعة محرّم باتفاق الفقهاء ويعطي المشتري حق الردّ، وقد قال النبي ﷺ إن البيّعين إن صدقا وبيّنا بورك لهما في بيعهما (البخاري 2079). والكذب في وصف السلعة أو سعرها، وكتابة التقييمات الكاذبة، محرّمة لأنها غش وقول زور. والغبن اليسير الذي يتسامح فيه الناس معفو عنه، أما الفاحش ففي إثباته حق الفسخ خلاف، ويحرم إذا صاحبه تغرير. والإكرامية إحسان مستحب، فإن أُعلنت في الفاتورة صارت جزءاً من الثمن.",
       "en": "Islam treats honest trade as part of faith: concealing a defect is forbidden by agreement of the jurists and gives the buyer a right to return the item, and the Prophet ﷺ said that if buyer and seller are truthful and disclose, their deal is blessed (Bukhari 2079). Lying about an item or its price, and posting fake reviews, are forbidden as deception and false statement. A small price difference that people normally tolerate is excused, while gross overcharging is debated as grounds for cancellation and is forbidden when it involves deception. A tip is a recommended kindness, and if it is disclosed as a charge on the bill it becomes part of the price."
-    },
-    "common_ground": {
-      "summary": {
-        "ar": "تلاقٍ قوي: فالأخلاق اليهودية والمسيحية أيضاً تحرّم الغش في البيع والشراء والتطفيف في الموازين وشهادة الزور، وهذا يشمل التقييمات الكاذبة كما يشملها التعليم الإسلامي.",
-        "en": "Strong common ground: Jewish and Christian ethics also forbid cheating in buying and selling, dishonest measures and false testimony, which covers fake reviews just as Islamic teaching does."
-      },
-      "differences": {
-        "ar": "لا فرق يُذكر في المبدأ؛ ويضيف الفقه الإسلامي قواعد تفصيلية كخيار العيب الذي يعطي المشتري حق الرد.",
-        "en": "No meaningful difference in principle; Islamic law adds detailed rules such as the buyer's option to return an item for a hidden defect."
-      }
     }
   }
 ]

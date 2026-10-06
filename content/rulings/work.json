@@ -166,16 +166,6 @@
     "newcomer_explainer": {
       "ar": "لا يحرّم الإسلام شرب الخمر فقط، بل يحرّم كذلك تقديمها وبيعها وحملها لمن يشربها، فقد لعن النبي ﷺ في الخمر عشرة منهم ساقيها وحاملها (الترمذي 1295)، وهذا قول الجمهور، وخالف أبو حنيفة في حملها بأجرة. والحكمة التي يذكرها العلماء أن من أعان على الضرر شارك فيه، وأن كسب المسلم ينبغي أن يكون من عمل حلال. وبيع الخنزير داخل في الحكم نفسه (البخاري 2236). أما العمل غير المباشر كبرمجة تطبيق لمصنع جعة ففيه خلاف بين المعاصرين، فقد يعتذر صديق مسلم عن وظيفة أو مناوبة بينما يقبلها آخر مع التحفظ.",
       "en": "Islam forbids not only drinking alcohol but also serving, selling or carrying it for people to drink: the Prophet ﷺ cursed ten parties involved in wine, including its server and its carrier (Tirmidhi 1295). This is the majority view; Abu Hanifa differed on carrying it for a fee. The reasoning scholars give is that whoever helps bring about a harm shares in it, and that a Muslim's earnings should come from lawful work; selling pork falls under the same rule (Bukhari 2236). Indirect work, such as building software for a brewery, is debated among contemporary scholars, so one Muslim friend may decline such a job or shift while another accepts it with reservations."
-    },
-    "common_ground": {
-      "summary": {
-        "ar": "تعلّم الأخلاق المسيحية أيضاً أن يراعي الإنسان أثر عمله في غيره ولا يعينه على ما يضره، ولذلك يتفهم كثير من المسيحيين زميلاً يعتذر عن عمل بدافع الضمير.",
-        "en": "Christian ethics also teaches caring about how one's actions affect others and not helping them toward harm, so many Christians readily understand a coworker who steps back from a task out of conscience."
-      },
-      "differences": {
-        "ar": "تبيح أغلب التقاليد المسيحية الشرب المعتدل ولا ترى إثماً في تقديم الخمر أو لحم الخنزير، والخمر تُستعمل في سرّ العشاء الرباني، مع أن بعض الطوائف تدعو إلى الامتناع التام. أما الإسلام فيمتد تحريمه إلى سلسلة التقديم والبيع كلها لا إلى السُّكر وحده.",
-        "en": "Most Christian traditions permit moderate drinking and see no sin in serving alcohol or pork, and wine is used in Holy Communion, though some denominations encourage total abstinence. Islam's prohibition extends to the whole chain of serving and selling, not only to drunkenness."
-      }
     }
   },
   {
@@ -329,16 +319,6 @@
     "newcomer_explainer": {
       "ar": "الادخار للمستقبل أمر حسن في الإسلام، ويجيز كثير من العلماء المعاصرين، ومنهم مفتو AMJA، الاشتراك في خطة 401(k) حفاظاً على مساهمة صاحب العمل، بشرط اختيار استثمارات مباحة. فصناديق السندات والودائع بفائدة ممنوعة لأن الفائدة ربا، أما أسهم الشركات التي نشاطها الأساسي مباح فجائزة في الأصل، لأن السهم ملكية لجزء من تجارة حقيقية يشارك صاحبه في ربحها وخسارتها. ويختلف العلماء في الشركات المباحة النشاط التي تتعامل أحياناً بالفائدة: فمنعها مجمع الفقه الإسلامي الدولي، وأجازها آخرون بضوابط مع تطهير الجزء المختلط. والقاعدة الهادية: «دع ما يريبك إلى ما لا يريبك» (الترمذي 2518).",
       "en": "Saving for the future is a good thing in Islam, and many contemporary scholars, including AMJA muftis, allow joining a 401(k) to keep the employer match, as long as the money goes into lawful investments. Bond and interest-bearing funds are excluded because interest is riba, while shares in companies whose core business is lawful are permitted in principle, since a share is ownership of part of a real business with its profit and loss. Scholars differ about lawful companies that sometimes deal in interest: the International Islamic Fiqh Academy forbids them, while others allow them within limits with purification of the tainted portion. The guiding principle is \"leave what makes you doubt for what does not\" (Tirmidhi 2518)."
-    },
-    "common_ground": {
-      "summary": {
-        "ar": "الاستثمار وفق القيم مألوف لكثير من المسيحيين أيضاً: فكنائس وصناديق مسيحية كثيرة تستبعد قطاعات كالقمار والخمور والتبغ، وقد عدّ التقليد المسيحي الربا قروناً خطأً أخلاقياً.",
-        "en": "Values-based investing is familiar to many Christians too: many churches and Christian funds screen out industries such as gambling, alcohol or tobacco, and for centuries Christian tradition treated usury as a moral wrong."
-      },
-      "differences": {
-        "ar": "يرى أغلب المسيحيين اليوم السندات والمدخرات ذات الفائدة مشروعة، فالحدّ الذي يرسمه الإسلام عند صناديق الفائدة لا نظير له غالباً في الممارسة المسيحية المعاصرة.",
-        "en": "Most Christians today regard bonds and interest-bearing savings as legitimate, so the line Islam draws at interest-bearing funds usually has no counterpart in contemporary Christian practice."
-      }
     }
   },
   {
@@ -493,7 +473,7 @@
       {
         "body": "الشيخ عبد العزيز بن باز (المفتي العام للسعودية سابقاً)",
         "decision_ref": "فتوى «حكم الهدايا للعمال والموظفين»، binbaz.org.sa رقم 23949",
-        "position_ar": "هدايا الموظف من المراجعين أو العملاء محرمة، إلا إذا كان بينه وبين المهدي معرفة وهدايا سابقة لقرابة أو مجاورة، وهي من الغلول. أما ما يعطيه ولي الأمر (جهة العمل) فلا بأس به.",
+        "position_ar": "هدايا الموظف من المراجعين أو العملاء محرمة، إلا إذا كان بينه وبين صاحب الهدية معرفة وهدايا سابقة لقرابة أو مجاورة، وهي من الغلول. أما ما يعطيه ولي الأمر (جهة العمل) فلا بأس به.",
         "position_en": "Gifts to an employee from clients are prohibited and are ghulul, unless there was a prior relationship and prior gifts due to kinship or neighborliness. What the employer itself gives is fine.",
         "source_url": "https://binbaz.org.sa/fatwas/23949/حكم-الهدايا-للعمال-والموظفين"
       }
@@ -538,16 +518,6 @@
     "newcomer_explainer": {
       "ar": "الوظيفة في الإسلام أمانة. فحين بعث النبي ﷺ ابن اللتبية لجمع الصدقات وعاد يقول «هذا لكم، وهذا أُهدي لي»، أنكر عليه وقال: «فهلّا جلس في بيت أبيه أو بيت أمه، فينظر يُهدى له أم لا» (البخاري 2597)؛ فالهدية التي تأتي بسبب الوظيفة لجهة العمل إلا إذا أذنت. وتسجيل ساعات لم تُعمل كذب وأكل للمال بالباطل، واستعمال موارد الشركة مقيّد بإذنها الصريح أو العرفي. والمقصد حفظ الأمانة، وسدّ باب الرشوة المتنكرة في صورة هدية، وتطييب الكسب.",
       "en": "In Islam a job is an amanah, a trust. When the Prophet ﷺ sent Ibn al-Lutbiyya to collect alms and he came back saying \"this has been given to me as a present\", the Prophet ﷺ asked why he had not stayed in his father's or mother's house to see whether he would be given presents or not (Bukhari 2597); so gifts that come because of your position belong to the employer unless it allows them. Logging hours not worked is lying and taking wealth without right, and company resources may be used only as the company permits, explicitly or by custom. The aim is to protect trust, close the door to bribery dressed up as gifts, and keep one's earnings clean."
-    },
-    "common_ground": {
-      "summary": {
-        "ar": "الأمانة في العمل أرض مشتركة واسعة: فالأخلاق المسيحية أيضاً تدين الرشوة لأنها تفسد الحكم، وتقدّر الأمانة في الأمور الصغيرة والكبيرة.",
-        "en": "Honesty at work is wide common ground: Christian ethics also condemns bribery because it corrupts judgment, and values faithfulness in small and great matters alike."
-      },
-      "differences": {
-        "ar": "لا فرق جوهري في المبدأ. وإنما فصّل الفقه الإسلامي، استناداً إلى حديث ابن اللتبية، أن ما يُهدى للموظف بسبب منصبه يعود لجهة العمل، بينما يتبع المسيحيون عادة المبادئ الأخلاقية العامة وسياسة جهة العمل.",
-        "en": "There is no real difference in principle. Islamic law, based on the hadith of Ibn al-Lutbiyya, spells out that a gift received because of one's post belongs to the employer, while Christians usually follow general ethical principles together with their employer's policy."
-      }
     }
   }
 ]

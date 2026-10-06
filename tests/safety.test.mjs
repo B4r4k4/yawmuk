@@ -193,28 +193,21 @@ describe('Ruling card renderer (src/engine/ui/rulingCard.js) never invents relig
     assert.ok(statusOf('scholar_reviewed').classList.contains('ok'));
   });
 
-  test('optional newcomer_explainer / common_ground: hidden when absent, rendered when present, never quotes scripture', () => {
+  test('optional newcomer_explainer: hidden when absent, rendered when present; no common-ground section is ever rendered', () => {
     for (const lang of ['ar', 'en']) {
       setLang(lang);
       const bare = structuredClone(rulings[0]);
-      delete bare.newcomer_explainer; delete bare.common_ground;
+      delete bare.newcomer_explainer;
       const c0 = render(bare, bare.id);
       assert.equal(c0.byClass('rc-plain').length, 0);
-      assert.equal(c0.byClass('rc-common').length, 0);
-      const empty = render({ ...bare, common_ground: { summary: { ar: '', en: '' }, differences: { ar: '', en: '' } } }, bare.id);
-      assert.equal(empty.byClass('rc-common').length, 0, 'empty common_ground must be hidden');
       const full = render({
         ...bare,
         newcomer_explainer: { ar: 'شرح مبسط', en: 'plain words' },
-        // a stray legacy `bible` array in the data must be ignored by the renderer
-        common_ground: { summary: { ar: 'تلاق', en: 'shared' }, bible: [{ ref_en: 'LEGACY REF', text_en: 'LEGACY TEXT', text_ar: 'نص قديم' }], differences: { ar: 'فرق', en: 'differ' } }
+        // stray legacy common_ground data must be ignored by the renderer
+        common_ground: { summary: { ar: 'تلاق', en: 'shared' }, differences: { ar: 'فرق', en: 'differ' } }
       }, bare.id);
       assert.ok(text(full.byClass('rc-plain')[0]).includes(lang === 'ar' ? 'شرح مبسط' : 'plain words'));
-      const cg = full.byClass('rc-common')[0];
-      assert.ok(text(cg).includes(lang === 'ar' ? 'تلاق' : 'shared'));
-      assert.ok(text(cg).includes(lang === 'ar' ? 'فرق' : 'differ'));
-      assert.ok(!/LEGACY|نص قديم/.test(text(cg)), 'legacy bible entries are never rendered');
-      assert.equal(cg.byTag('blockquote').length + cg.byTag('figure').length + cg.byTag('a').length, 0, 'common ground has no quotations or source links');
+      assert.equal(full.byClass('rc-common').length, 0, 'common ground is never rendered');
       assert.equal(full.byClass('ayah').length, bare.quran.length);
     }
   });

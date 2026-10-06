@@ -6,10 +6,8 @@ const listeners = new Set();
 export const STRINGS = {
   gameTitle: { ar: 'يومك', en: 'Yawmuk' },
   tagline: { ar: 'يوم مع آدم وأصدقائه المسلمين — تعرّف على الإسلام من مواقف الحياة اليومية', en: "A day with Adam and his Muslim friends — discover Islam through everyday life" },
-  // ---- learner framing (Adam is a Christian learning about Islam) — overridable from ui_strings.json
+  // ---- learner framing (Adam is learning about Islam) — overridable from ui_strings.json
   plainWords: { ar: 'بكلمات بسيطة', en: 'In plain words' },
-  commonGround: { ar: 'نقاط تلاقٍ مع المسيحية', en: 'Common ground with Christianity' },
-  differences: { ar: 'وأين يختلف الطرحان', en: 'Where the two traditions differ' },
   adamLearned: { ar: 'ما تعلّمه آدم اليوم', en: 'What Adam learned today' },
   nextTopic: { ar: 'موضوع مقترح لتتابع التعلّم', en: 'A suggested next topic' },
   nextTopicAllDone: { ar: 'استكشفت كل مواقف اليوم. يمكنك إعادة أي موقف وتجربة خيار آخر.', en: "You've explored every situation of the day. Replay any of them and try a different choice." },
@@ -101,8 +99,8 @@ export const STRINGS = {
   // intro / disclaimer
   introTitle: { ar: 'قبل أن تبدأ', en: 'Before you begin' },
   introBody: {
-    ar: 'ستعيش يوماً كاملاً مع آدم، شاب مسيحي من Columbus, Ohio يحب أن يتعرّف على الإسلام من أصدقائه وزملائه وجيرانه المسلمين. في كل محطة موقف يومي حقيقي: تختار ماذا يسأل آدم أو كيف يتصرف، ثم ترى بطاقة تشرح ماذا يقول الإسلام ولماذا، موثقة بالقرآن والسنة وأقوال المذاهب الأربعة.',
-    en: 'You will spend a full day with Adam, a young Christian from Columbus, Ohio who is curious about Islam and learns from his Muslim friends, coworkers and neighbors. At each stop there is a real everyday situation: you choose what Adam asks or does, then see a card explaining what Islam says and why, documented from the Quran, the Sunnah and the four schools of law.'
+    ar: 'ستعيش يوماً كاملاً مع آدم، شاب من Columbus, Ohio يحب أن يتعرّف على الإسلام من أصدقائه وزملائه وجيرانه المسلمين. في كل محطة موقف يومي حقيقي: تختار ماذا يسأل آدم أو كيف يتصرف، ثم ترى بطاقة تشرح ماذا يقول الإسلام ولماذا، موثقة بالقرآن والسنة وأقوال المذاهب الأربعة.',
+    en: 'You will spend a full day with Adam, a young man from Columbus, Ohio who is curious about Islam and learns from his Muslim friends, coworkers and neighbors. At each stop there is a real everyday situation: you choose what Adam asks or does, then see a card explaining what Islam says and why, documented from the Quran, the Sunnah and the four schools of law.'
   },
   disclaimerTitle: { ar: 'تنبيه مهم', en: 'Important notice' },
   disclaimerBody: {
@@ -207,8 +205,6 @@ const UI_MAP = {
   aboutTitle: 'about.title', aboutBody: 'about.body',
   // learner framing — several candidate key names are accepted (first present wins)
   plainWords: ['ruling_card.newcomer_explainer', 'ruling_card.plain_words', 'ruling_card.in_plain_words'],
-  commonGround: ['ruling_card.common_ground', 'ruling_card.common_ground_title'],
-  differences: ['ruling_card.common_ground_differences', 'ruling_card.differences'],
   adamLearned: ['end.summary_title', 'end.learned', 'end.adam_learned'],
   nextTopic: ['end.next_topic_title', 'end.next_topic', 'end.suggested_topic'],
   nextTopicAllDone: ['end.next_topic_all_done', 'end.all_done'],

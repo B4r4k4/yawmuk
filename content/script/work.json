@@ -272,12 +272,12 @@
         {
           "id": "b",
           "label": {
-            "ar": "«آه، إذاً دينكم يمنعكم من قبول الهدايا من المسيحيين؟»",
-            "en": "'Oh, so your religion doesn't let you accept gifts from Christians?'"
+            "ar": "«آه، إذاً دينكم يمنعكم من قبول الهدايا من غير المسلمين؟»",
+            "en": "'Oh, so your religion doesn't let you accept gifts from non-Muslims?'"
           },
           "quality": "wrong",
           "consequence": {
-            "ar": "ضحك سمير: «بالعكس! ما زلت أشرب قهوتي في الكوب الذي أهديتني إياه حين وُلد ابني. المشكلة في هدية المنصب، لا في دين المهدي». الافتراض قلب الصورة تماماً.",
+            "ar": "ضحك سمير: «بالعكس! ما زلت أشرب قهوتي في الكوب الذي أهديتني إياه حين وُلد ابني. المشكلة في هدية المنصب، لا في دين صاحب الهدية».الافتراض قلب الصورة تماماً.",
             "en": "Samir laughed: 'The opposite! I still drink my coffee from the mug you gave me when my son was born. The issue is gifts tied to a position, not the giver's religion.' The assumption flipped the whole picture."
           },
           "points": 0
@@ -290,8 +290,8 @@
           },
           "quality": "best",
           "consequence": {
-            "ar": "شكر ديف الاثنين: «هذا بالضبط سبب وجودكما في اللجنة». وفي الطريق قال سمير: «نعم، الأمانة في العمل جزء من الدين عندنا». فقال آدم: «أمي تقول شيئاً قريباً من هذا من الكنيسة». سجّل آدم 37 ساعة كما هي.",
-            "en": "Dave thanked them both: 'This is exactly why you two are on that committee.' On the way back Samir said, 'Yeah — honesty at work is part of the faith for us.' Adam said, 'My mom says something pretty close from church.' He logged 37 hours, just as they were."
+            "ar": "شكر ديف الاثنين: «هذا بالضبط سبب وجودكما في اللجنة». وفي الطريق قال سمير: «نعم، الأمانة في العمل جزء من الدين عندنا». فقال آدم: «أمي تقول شيئاً قريباً من هذا دائماً». سجّل آدم 37 ساعة كما هي.",
+            "en": "Dave thanked them both: 'This is exactly why you two are on that committee.' On the way back Samir said, 'Yeah — honesty at work is part of the faith for us.' Adam said, 'My mom always says something pretty close to that.' He logged 37 hours, just as they were."
           },
           "points": 10
         }

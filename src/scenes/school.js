@@ -3,7 +3,7 @@
 //   • exam classroom 114 (left, x -10..-2, z -9..-2)  → hotspot `exam_desk`  (Kareem; Tyler seated in front)
 //   • Financial Aid office (right, x -1..3, z 2..6)   → hotspot `aid_office` (Omar in scrubs; Ms. Rodriguez behind)
 //   • library corner + EMPTY glass study room (left end, x 2..10, z -8..-2) → hotspot `study_room` (Noor)
-// Premise (2026-10-05): Adam is a Christian learning about Islam from his Muslim friends.
+// Premise: Adam is learning about Islam from his Muslim friends.
 // Exit: glass doors to the parking lot at the corridor's east end.
 //
 // Procedural geometry only. Almost every static box goes through per-material InstancedMesh
