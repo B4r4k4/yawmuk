@@ -105,6 +105,11 @@ export function createSceneManager(world, mats, opts = {}) {
     // one integrated environment: under the global golden-hour look every interior gets the town's sky dome (same
     // shared uniforms), so the sky above the walls and through the windows is the same sky as outdoors
     if (LIGHTING === 'golden' && !res.backdrop && res.lights !== 'night') root.add(createSkyDome({ quality: world.quality }));
+    // same season as the town (golden autumn): no falling snow; the snowy yard reads as lawn
+    if (LIGHTING === 'golden') root.traverse((o) => {
+      if (/snowfall$/i.test(o.name)) o.visible = false;
+      else if (/:snow$/i.test(o.name) && o.material?.color) { o.material = o.material.clone(); o.material.color.set('#6f9a4e'); }
+    });
     world.scene.add(root);
     root.updateMatrixWorld(true);
 
@@ -301,7 +306,8 @@ export function createSceneManager(world, mats, opts = {}) {
     // ---- lights
     // global look (config.LIGHTING): every scene gets the golden-hour preset unless it explicitly asks for night
     const asked = ['day', 'evening', 'night', 'golden'].includes(res.lights) ? res.lights : null;
-    const forced = LIGHTING && asked !== 'night' ? LIGHTING : null;
+    // one synchronized day: every place shares the town's golden-hour look (no separate night scene)
+    const forced = LIGHTING || null;
     const lights = forced || asked || lightsForTime(script?.time_of_day);
     // environment: { hdri: 'studio' | catalog id | path, intensity, background:false, blur } (optional)
     await trackStep(world.applyLights(lights, res.environment && typeof res.environment === 'object' ? res.environment : null), 'lighting');
