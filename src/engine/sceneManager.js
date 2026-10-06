@@ -7,6 +7,8 @@ import { preloadCharacters } from './characters.js';
 import { beginSession, trackStep, purge, loadCatalog, getCatalog } from './assets.js';
 import { events } from './events.js';
 import { getLang, tr } from './i18n.js';
+import { ALL_LOCATIONS, LOCATION_TITLES, LIGHTING } from './config.js';
+import { normalizeDoors, normalizeFeatureSpots } from './hub.js';
 
 const DEBUG = new URLSearchParams(location.search).get('debug') === '1';
 
@@ -18,7 +20,9 @@ const vec3 = (a, d = [0, 0, 0]) => {
   return [Number(a[0]) || 0, Number(a[1]) || 0, Number(a[2]) || 0];
 };
 
-export function createSceneManager(world, mats) {
+/** opts.hasFeature(name): only feature spots whose module exists get a marker (missing modules stay invisible). */
+export function createSceneManager(world, mats, opts = {}) {
+  const hasFeature = typeof opts.hasFeature === 'function' ? opts.hasFeature : () => true;
   let active = null;
 
   function makeCtx(location, script) {
@@ -86,6 +90,11 @@ export function createSceneManager(world, mats) {
     root.name = `root:${location}`;
     if (res.group?.isObject3D) root.add(res.group); else warn('build() returned no THREE.Group in `group`; using ctx.group');
     if (res.group !== ctx.group && ctx.group.children.length) root.add(ctx.group);
+    // far-field scenery (sky dome, hills, the suburb around the hub): lives in the root so it is disposed with the
+    // scene, but is never part of the player bounds or the camera occluders (those only look at the scene group)
+    for (const b of res.backdrop ? [res.backdrop].flat() : []) {
+      if (b?.isObject3D) { b.traverse((o) => { o.userData.noCameraCollide = true; }); root.add(b); } else warn('backdrop entries must be THREE.Object3D');
+    }
     world.scene.add(root);
     root.updateMatrixWorld(true);
 
@@ -187,16 +196,54 @@ export function createSceneManager(world, mats) {
         m.add(lbl);
       }
     }
+    // exit: `exit: null` means "no exit" (the walkable hub uses doors instead)
     let exit = null;
     if (res.exit?.position) {
       exit = { position: vec3(res.exit.position), radius: Number(res.exit.radius) || 1.5 };
-    } else {
+    } else if (res.exit !== null) {
       warn('no exit provided — auto-placing behind spawn');
       exit = { position: [spawn.position[0], 0, spawn.position[2] + 2.5], radius: 1.5 };
     }
-    exit.marker = makeMarker('#6fe3c1', 'exit');
-    exit.marker.position.set(exit.position[0], 0, exit.position[2]);
-    root.add(exit.marker);
+    if (exit) {
+      exit.kind = 'exit';
+      exit.marker = makeMarker('#6fe3c1', 'exit');
+      exit.marker.position.set(exit.position[0], 0, exit.position[2]);
+      root.add(exit.marker);
+    }
+
+    // ---- doors (hub scene -> another location) and feature spots (open a src/features/<name> panel)
+    const doors = normalizeDoors(res.doors, ALL_LOCATIONS, warn);
+    for (const d of doors) {
+      d.marker = makeMarker('#6fe3c1', 'exit');
+      d.marker.position.set(d.position[0], 0, d.position[2]);
+      d.marker.userData.gemY = 3.0;
+      const lbl = makeLabel(d.label || LOCATION_TITLES[d.location] || d.location, { size: 0.34 });
+      lbl.position.set(0, 3.55, 0);
+      d.marker.add(lbl);
+      root.add(d.marker);
+    }
+    // static `featureSpots` on the default export (contract) and/or on the build result; the same spot listed in both counts once
+    const spotDefs = [...(Array.isArray(def.featureSpots) ? def.featureSpots : []), ...(Array.isArray(res.featureSpots) && res.featureSpots !== def.featureSpots ? res.featureSpots : [])];
+    const spotKeys = new Set();
+    const spots = normalizeFeatureSpots(spotDefs, warn).filter((sp) => {
+      const key = `${sp.feature}@${sp.position.map((v) => v.toFixed(2)).join(',')}`;
+      if (spotKeys.has(key)) return false;
+      spotKeys.add(key);
+      if (hasFeature(sp.feature)) return true;
+      console.info(`[scene:${location}] feature "${sp.feature}" has no module yet — spot hidden`);
+      return false;
+    });
+    for (const sp of spots) {
+      sp.marker = makeMarker('#b9a2ff', 'hotspot');
+      sp.marker.position.set(sp.position[0], 0, sp.position[2]);
+      sp.marker.userData.gemY = Math.max(1.9, (sp.position[1] || 0) + 1.1);
+      if (sp.label) {
+        const lbl = makeLabel(sp.label, { size: 0.24 });
+        lbl.position.set(0, sp.marker.userData.gemY + 0.4, 0);
+        sp.marker.add(lbl);
+      }
+      root.add(sp.marker);
+    }
 
     // ---- bounds (player clamp): scene bbox, excluding markers/labels
     const bb = new THREE.Box3();
@@ -231,11 +278,14 @@ export function createSceneManager(world, mats) {
     }
 
     // ---- lights
-    const lights = ['day', 'evening', 'night'].includes(res.lights) ? res.lights : lightsForTime(script?.time_of_day);
+    // global look (config.LIGHTING): every scene gets the golden-hour preset unless it explicitly asks for night
+    const asked = ['day', 'evening', 'night', 'golden'].includes(res.lights) ? res.lights : null;
+    const forced = LIGHTING && asked !== 'night' ? LIGHTING : null;
+    const lights = forced || asked || lightsForTime(script?.time_of_day);
     // environment: { hdri: 'studio' | catalog id | path, intensity, background:false, blur } (optional)
     await trackStep(world.applyLights(lights, res.environment && typeof res.environment === 'object' ? res.environment : null), 'lighting');
-    // optional per-scene overrides of the preset sky colour / fog
-    try {
+    // optional per-scene overrides of the preset sky colour / fog (ignored while a global look is forced)
+    if (!forced) try {
       if (typeof res.sky === 'string') world.scene.background = new THREE.Color(res.sky);
       if (res.fog && typeof res.fog === 'object') {
         if (res.fog.color) world.scene.fog.color.set(res.fog.color);
@@ -250,7 +300,7 @@ export function createSceneManager(world, mats) {
         const helper = new THREE.Box3Helper(new THREE.Box3(new THREE.Vector3(...c.min), new THREE.Vector3(...c.max)), 0xff00ff);
         root.add(helper);
       }
-      for (const hs of [...hotspots, exit]) {
+      for (const hs of [...hotspots, ...(exit ? [exit] : []), ...doors, ...spots]) {
         const ring = new THREE.Mesh(new THREE.RingGeometry(hs.radius - 0.03, hs.radius, 48), new THREE.MeshBasicMaterial({ color: 0x00ffff, side: THREE.DoubleSide }));
         ring.rotation.x = -Math.PI / 2; ring.position.set(hs.position[0], 0.05, hs.position[2]);
         root.add(ring);
@@ -259,7 +309,7 @@ export function createSceneManager(world, mats) {
     }
 
     active = {
-      location, def, ctx, res, root, colliders, occluders, spawn, hotspots, exit, npcs: npcObjects, bounds, lights,
+      location, def, ctx, res, root, colliders, occluders, spawn, hotspots, exit, doors, spots, npcs: npcObjects, bounds, lights,
       isPlaceholder: usedPlaceholder,
       talkingTo: null,
       /** Move every NPC that has stations to the station of its first unfinished hotspot. Returns ids that moved. */
@@ -287,7 +337,9 @@ export function createSceneManager(world, mats) {
       },
       update(dt, t, near) {
         for (const hs of hotspots) hs.marker?.tick(t, near === hs);
-        exit.marker.tick(t, near === exit);
+        exit?.marker.tick(t, near === exit);
+        for (const d of doors) d.marker.tick(t, near === d);
+        for (const sp of spots) sp.marker.tick(t, near === sp);
         for (const fig of Object.values(npcObjects)) {
           if (fig.userData.character) continue; // skinned characters are updated by updateCharacters()
           if (fig.userData.animate) animateFigure(fig, t, 0, fig.userData.phase);

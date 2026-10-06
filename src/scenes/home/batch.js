@@ -34,20 +34,21 @@ export function createBatcher(THREE) {
       },
       pop() { if (stack.length > 1) stack.pop(); return api; },
 
-      /** add any BufferGeometry (consumed + disposed) with transform & colour. uvScale [su, sv]. */
+      /** add any BufferGeometry (consumed + disposed) with transform & colour. uvScale [su, sv].
+       *  If the geometry carries its own `color` attribute, each vertex colour is multiplied by `color`. */
       geo(g, color, x = 0, y = 0, z = 0, ry = 0, rx = 0, rz = 0, sx = 1, sy = 1, sz = 1, uvScale) {
         const gg = g.index ? g.toNonIndexed() : g;
         compose(local, x, y, z, ry, rx, rz, sx, sy, sz);
         world.multiplyMatrices(top(), local);
         nrm.getNormalMatrix(world);
         c.set(color);
-        const pa = gg.attributes.position, na = gg.attributes.normal, ua = gg.attributes.uv;
+        const pa = gg.attributes.position, na = gg.attributes.normal, ua = gg.attributes.uv, ca = gg.attributes.color;
         const su = uvScale ? uvScale[0] : 1, sv = uvScale ? uvScale[1] : 1;
         for (let i = 0; i < pa.count; i++) {
           v.fromBufferAttribute(pa, i).applyMatrix4(world);
           P.push(v.x, v.y, v.z);
           if (na) { v.fromBufferAttribute(na, i).applyMatrix3(nrm).normalize(); N.push(v.x, v.y, v.z); } else N.push(0, 1, 0);
-          C.push(c.r, c.g, c.b);
+          if (ca) C.push(c.r * ca.getX(i), c.g * ca.getY(i), c.b * ca.getZ(i)); else C.push(c.r, c.g, c.b);
           if (ua) U.push(ua.getX(i) * su, ua.getY(i) * sv); else U.push(0, 0);
         }
         if (gg !== g) gg.dispose();

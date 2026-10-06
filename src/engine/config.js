@@ -8,8 +8,26 @@ export const LOCATION_TITLES = {
   school: { ar: 'الكلية', en: 'College' },
   street: { ar: 'الشارع', en: 'Street' },
   public_events: { ar: 'مناسبات عامة', en: 'Public events' },
-  private_events: { ar: 'مناسبات خاصة', en: 'Private events' }
+  private_events: { ar: 'مناسبات خاصة', en: 'Private events' },
+  // places without situations (the walkable hub and free-to-visit buildings)
+  town: { ar: 'الحيّ', en: 'The neighbourhood' },
+  mosque: { ar: 'المسجد', en: 'Mosque' },
+  bank: { ar: 'البنك الإسلامي', en: 'Islamic bank' }
 };
+
+// The walkable hub and the buildings that carry no situations (no script, never part of the journey order).
+// LOCATIONS above stays the 6 journey stops (planner order, catalog, tests); PLACES are reachable from the hub.
+export const HUB = 'town';
+
+// Global look (key art: public/brand/imagery/keyart-town-golden-hour.jpg). 'golden' = every scene uses the
+// golden-hour light preset and ignores its own sky/fog colours; only a scene that explicitly asks for 'night'
+// (the winter-night street) keeps it. The town adds the golden sky backdrop. Set to null to restore the
+// per-scene presets (day/evening/night by the script's time of day) and the old flat sky.
+export const LIGHTING = 'golden';
+export const PLACES = [HUB, 'mosque', 'bank'];
+/** Every scene the player can be in: the 6 journey stops + the hub + free places. */
+export const ALL_LOCATIONS = [...LOCATIONS, ...PLACES];
+export const isPlace = (loc) => PLACES.includes(loc);
 
 // Fixed situation catalog from docs/TEAM_BRIEF.md (ids never change).
 export const CATALOG = [

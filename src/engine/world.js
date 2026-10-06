@@ -5,21 +5,27 @@
 //            pixel ratio ≤ 1.5, simple environment
 //   medium — integrated GPUs: half-resolution N8AO, bloom, SMAA, shadow map 2048, pixel ratio ≤ 1.5
 //   high   — discrete GPUs: full N8AO, bloom, SMAA, vignette, shadow map 2048 (PCF soft), pixel ratio ≤ 2
+//   medium/high also get the "miniature" tilt-shift blur and a warm split-tone grade (golden-hour key art).
 import * as THREE from 'three';
 import { RoomEnvironment } from 'three/examples/jsm/environments/RoomEnvironment.js';
 import {
   EffectComposer, RenderPass, EffectPass, CopyPass, BloomEffect, SMAAEffect, SMAAPreset, VignetteEffect,
-  ToneMappingEffect, ToneMappingMode, HueSaturationEffect, BrightnessContrastEffect
+  ToneMappingEffect, ToneMappingMode, HueSaturationEffect, BrightnessContrastEffect, TiltShiftEffect, KernelSize,
+  Effect, BlendFunction
 } from 'postprocessing';
 import { N8AOPostPass } from 'n8ao';
 import { loadEnvironment } from './assets.js';
 import { events } from './events.js';
+import { GOLDEN } from './goldenSky.js';
 
 // Sky/fog colours, sun and image-based lighting per preset. `hdri` = catalog id of the environment map
 // (public/assets/env/hdri); `env` = its intensity. Scenes can override the HDRI with `environment` in build().
 export const LIGHT_PRESETS = {
   day: { bg: '#bfe0f2', fog: '#cfe6f2', fogNear: 35, fogFar: 110, hemiSky: '#e8f3ff', hemiGround: '#7a6a55', hemi: 0.25, sun: '#fff2dc', sunI: 2.4, sunDir: [0.55, 1, 0.35], exposure: 0.92, hdri: 'hdri_snow_day', env: 0.5 },
   evening: { bg: '#e9a873', fog: '#d99a72', fogNear: 28, fogFar: 95, hemiSky: '#ffd3a8', hemiGround: '#4b3a4a', hemi: 0.25, sun: '#ff9a5a', sunI: 2.0, sunDir: [0.9, 0.42, 0.25], exposure: 0.95, hdri: 'hdri_suburb_dusk', env: 0.5 },
+  // golden hour (the key art): low warm sun from one side -> long shadows, peach haze, olive bounce light.
+  // Default for every scene via config.LIGHTING; shadowHalf widens the shadow frustum for the long shadows.
+  golden: { bg: GOLDEN.horizon, fog: GOLDEN.horizon, fogNear: 42, fogFar: 160, hemiSky: '#ffcf9a', hemiGround: '#4c5a2a', hemi: 0.3, sun: '#ffb26b', sunI: 3.5, sunDir: GOLDEN.sunDir, exposure: 0.92, hdri: 'hdri_suburb_dusk', env: 0.42, shadowHalf: 20 },
   night: { bg: '#0e1630', fog: '#121b36', fogNear: 20, fogFar: 75, hemiSky: '#5a6c9e', hemiGround: '#151824', hemi: 0.3, sun: '#a9bcff', sunI: 0.8, sunDir: [-0.4, 1, 0.3], exposure: 1.1, hdri: 'hdri_city_night', env: 0.55 }
 };
 /** Named environments scenes may request with `environment: { hdri: 'studio' }` (or any catalog id/path). */
@@ -31,8 +37,23 @@ export const OVERLAY_LAYER = 1;
 export const QUALITY_TIERS = {
   low: { post: false, ao: false, bloom: false, shadow: 1024, pixelRatio: 1.25, smaa: false, lightCharacters: true },
   medium: { post: true, ao: 'half', bloom: true, shadow: 2048, pixelRatio: 1.5, smaa: true },
-  high: { post: true, ao: 'full', bloom: true, shadow: 2048, pixelRatio: 2, smaa: true, vignette: true }
+  high: { post: true, ao: 'full', bloom: true, shadow: 2048, pixelRatio: 2, smaa: true, vignette: true, tiltShift: 'medium' }
 };
+QUALITY_TIERS.medium.tiltShift = 'small';
+
+/** Warm split-tone grade (after tone mapping): cool-violet shadows, honey highlights — no LUT file needed. */
+class WarmGradeEffect extends Effect {
+  constructor({ amount = 1 } = {}) {
+    super('WarmGradeEffect', `
+uniform float amount;
+void mainImage(const in vec4 inputColor, const in vec2 uv, out vec4 outputColor) {
+  vec3 c = inputColor.rgb;
+  float l = dot(c, vec3(0.2126, 0.7152, 0.0722));
+  vec3 tint = mix(vec3(0.95, 0.94, 1.05), vec3(1.06, 1.0, 0.9), smoothstep(0.08, 0.7, l));
+  outputColor = vec4(mix(c, c * tint, amount), inputColor.a);
+}`, { blendFunction: BlendFunction.NORMAL, uniforms: new Map([['amount', new THREE.Uniform(amount)]]) });
+  }
+}
 const QKEY = 'yawmuk.quality';
 
 function detectTier(renderer, isMobile) {
@@ -76,8 +97,13 @@ export function createWorld(canvas) {
   sun.castShadow = true;
   sun.shadow.bias = -0.0003;
   sun.shadow.normalBias = 0.025;
-  const SH = 16; // shadow frustum half-size (m), follows the player
-  Object.assign(sun.shadow.camera, { left: -SH, right: SH, top: SH, bottom: -SH, near: 0.5, far: 80 });
+  let SH = 16; // shadow frustum half-size (m), follows the player (presets may widen it: golden's long shadows)
+  const setShadowHalf = (h) => {
+    SH = h;
+    Object.assign(sun.shadow.camera, { left: -SH, right: SH, top: SH, bottom: -SH, near: 0.5, far: 90 });
+    sun.shadow.camera.updateProjectionMatrix();
+  };
+  setShadowHalf(16);
   scene.add(sun, sun.target);
 
   // ---------------------------------------------------------------- environment (IBL)
@@ -116,6 +142,7 @@ export function createWorld(canvas) {
     hemi.color.set(p.hemiSky); hemi.groundColor.set(p.hemiGround); hemi.intensity = p.hemi;
     sun.color.set(p.sun); sun.intensity = p.sunI;
     sunDir = new THREE.Vector3(...p.sunDir).normalize();
+    if ((p.shadowHalf || 16) !== SH) setShadowHalf(p.shadowHalf || 16);
     renderer.toneMappingExposure = p.exposure;
     if (toneFx) toneFx.exposure = p.exposure;
     const e = env && typeof env === 'object' ? env : {};
@@ -129,7 +156,7 @@ export function createWorld(canvas) {
     const t = texel();
     tmp.set(Math.round(focus.x / t) * t, 0, Math.round(focus.z / t) * t);
     sun.target.position.copy(tmp);
-    sun.position.copy(tmp).addScaledVector(sunDir, 40);
+    sun.position.copy(tmp).addScaledVector(sunDir, 45);
     sun.target.updateMatrixWorld();
   }
 
@@ -153,12 +180,16 @@ export function createWorld(canvas) {
       composer.addPass(aoPass);
     }
     const fx = [];
-    if (Q.bloom) { bloomFx = new BloomEffect({ luminanceThreshold: 0.92, luminanceSmoothing: 0.2, intensity: 0.55, mipmapBlur: true, radius: 0.6 }); fx.push(bloomFx); }
+    // tilt-shift first: it mixes in a blurred copy of the effect pass input, so effects added after it (bloom)
+    // still apply everywhere. Sharp band = the player's slice of the screen, blur grows to the top and bottom.
+    if (Q.tiltShift) fx.push(new TiltShiftEffect({ offset: -0.08, focusArea: 0.72, feather: 0.4, kernelSize: Q.tiltShift === 'small' ? KernelSize.VERY_SMALL : KernelSize.SMALL, resolutionScale: 0.5 }));
+    if (Q.bloom) { bloomFx = new BloomEffect({ luminanceThreshold: 0.86, luminanceSmoothing: 0.25, intensity: 0.8, mipmapBlur: true, radius: 0.65 }); fx.push(bloomFx); }
     toneFx = new ToneMappingEffect({ mode: ToneMappingMode.ACES_FILMIC });
     toneFx.exposure = preset.exposure;
     fx.push(toneFx);
-    fx.push(new HueSaturationEffect({ saturation: 0.06 }));
-    fx.push(new BrightnessContrastEffect({ contrast: 0.04 }));
+    fx.push(new WarmGradeEffect());
+    fx.push(new HueSaturationEffect({ saturation: 0.16 }));
+    fx.push(new BrightnessContrastEffect({ contrast: 0.1 }));
     if (Q.vignette) fx.push(new VignetteEffect({ offset: 0.32, darkness: 0.38 }));
     if (Q.smaa) fx.push(new SMAAEffect({ preset: SMAAPreset.MEDIUM }));
     // keep the scene depth in the buffer the overlay draws into: RenderPass -> (AO) -> effects must swap an even number of times
