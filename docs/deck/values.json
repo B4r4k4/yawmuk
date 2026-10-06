@@ -1,0 +1,25 @@
+{
+  "_help": "Fill before export. Empty = shown as «قيد القياس» (text) or «—» (KPI). Never type a number you did not measure. --auto fills TESTS_* / SOURCES_* / RESULTS_DATE.",
+  "tokens": {
+    "LIVE_URL": "",
+    "VIDEO_URL": "",
+    "EVAL_PASS": "",
+    "EVAL_COMPARISON": "",
+    "STUDY_N": "",
+    "STUDY_GAIN": "",
+    "STUDY_RESULTS": "",
+    "COST_MEASURED": "",
+    "TESTS_PASS": "",
+    "TESTS_TOTAL": "",
+    "SOURCES_VERIFIED": "",
+    "SOURCES_TOTAL": "",
+    "RESULTS_DATE": ""
+  },
+  "tokens_override": {},
+  "screenshots": {
+    "SCREENSHOT_TOWN": "",
+    "SCREENSHOT_QURAN": "",
+    "SCREENSHOT_DASHBOARD": "",
+    "SCREENSHOT_PRAYER": ""
+  }
+}

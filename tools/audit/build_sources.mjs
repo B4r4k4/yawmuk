@@ -23,7 +23,7 @@ const DIR = path.join(ROOT, 'content', 'rulings');
 const OUT = path.join(ROOT, 'content', 'sources.json');
 const CACHE = path.join(HERE, '.cache');
 const CHECKED_AT = '2026-10-06';
-const QURAN_EDITION = 'Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur\'an Printing Complex, as served by quranenc.com; English: Saheeh International, King Fahd Complex-reviewed edition (quranenc.com translation key "english_saheeh"), footnote markers omitted.';
+const QURAN_EDITION = 'Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur\'an Printing Complex, as served by quranenc.com; English: Saheeh International, issued by Noor International Center, as hosted by QuranEnc (quranenc.com translation key "english_saheeh"), footnote markers omitted.';
 
 let verify = [];
 try { verify = JSON.parse(execFileSync(process.execPath, [path.join(HERE, 'verify.mjs'), '--json'], { encoding: 'utf8', maxBuffer: 1 << 26 })); }
@@ -59,7 +59,7 @@ for (const f of fs.readdirSync(DIR).filter(f => f.endsWith('.json')).sort()) {
       const ok = res.length && res.every(v => v.level === 'PASS');
       add(`quran:${k}`, {
         type: 'quran',
-        citation: `القرآن الكريم، سورة ${q.surah_name_ar} (${q.surah})، الآية ${q.ayah} — نص مصحف المدينة النبوية (مجمع الملك فهد لطباعة المصحف الشريف)؛ الترجمة: Saheeh International (quranenc.com، مجمع الملك فهد)`,
+        citation: `القرآن الكريم، سورة ${q.surah_name_ar} (${q.surah})، الآية ${q.ayah} — نص مصحف المدينة النبوية (مجمع الملك فهد لطباعة المصحف الشريف)؛ الترجمة: صحيح إنترناشيونال — مركز نور الدولي (عبر موسوعة القرآن الكريم quranenc.com)`,
         url: q.source_url, verified: !!ok, review_status: status(ok),
         text: { ar: q.text_ar, en: q.translation_en },
         location: `${q.surah}:${q.ayah}`,

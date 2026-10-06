@@ -12,17 +12,23 @@ import { openAskPanel } from './ui/askPanel.js';
 import { planJourney, defaultPlan } from './planner.js';
 import { pickChecks } from './aiCore.js';
 import { runSituation, revisitMenu, showRulingOnly } from './ui/situation.js';
-import { getScript, nextLocation, allSituations, contentIssues, usingFixtures, setLocationOrder, firstLocation } from './content.js';
+import { getScript, allSituations, contentIssues, usingFixtures, setLocationOrder, locationOrder } from './content.js';
 import { loadProgress, progress, setLocation, isDone, totalScore, resetProgress, setLangPref, setFlag, setPlan, getPlan, setPre } from './progress.js';
-import { LOCATIONS, LOCATION_TITLES } from './config.js';
-import { setLang, getLang, tr, t } from './i18n.js';
+import { LOCATIONS, LOCATION_TITLES, HUB, ALL_LOCATIONS, isPlace } from './config.js';
+import { setLang, getLang, tr, t, onLangChange } from './i18n.js';
+import { createFeatureRegistry, doorSpawn, nextDestination } from './hub.js';
+import { createWaypoint } from './waypoint.js';
+import { h } from './dom.js';
+import './ui/world.css';
 import { events } from './events.js';
 import { updateCharacters, preloadCharacters, liveCharacterCount, setCharacterDefaults } from './characters.js';
 import { loadCatalog } from './assets.js';
 
 const params = new URLSearchParams(location.search);
 const DEBUG = params.get('debug') === '1';
-const ALLOW_EARLY_EXIT = params.get('freeexit') === '1'; // testing aid: leave a location before finishing it
+// Feature panels (src/features/<name>/index.js, written by feature owners): discovered at build time, loaded lazily.
+// A missing module simply is not in the map (its scene spots stay hidden; opening it shows a short toast).
+const features = createFeatureRegistry(import.meta.glob('../features/*/index.js'));
 
 export async function startGame() {
   // the loading UI subscribes to window.yawmuk.events as early as possible
@@ -44,13 +50,79 @@ export async function startGame() {
   const mats = createMats();
   const input = createInput(canvas, ui);
   const player = createPlayer(world, input);
-  const scenes = createSceneManager(world, mats);
+  const scenes = createSceneManager(world, mats, { hasFeature: (n) => features.has(n) });
+  const waypoint = createWaypoint(world.scene);
+  let featureOpen = null; // name of the feature panel currently open
   let mode = 'boot'; // boot | attract | play | ui | loading
   let menu = null;
   let near = null; // hotspot object or exit currently in range
   const TOTAL = allSituations().length;
 
   const hud = createHud(ui, { onMenu: () => openMenu(), onAsk: () => openAsk() });
+  // speak a dialogue choice ("one", "the second", a label word); does nothing without browser speech recognition
+  import('../features/voice/index.js').then((m) => m.installChoiceVoice?.()).catch(() => {});
+
+  // ---- persistent world layer: prayer-times slot + floating "Ask the guide" button
+  const prayerSlot = h('div', { id: 'yk-hud-prayer', 'aria-live': 'off' });
+  const fabText = h('span', { class: 'yk-world-fab-text' }, t('guideFab'));
+  const fab = h('button', { type: 'button', class: 'yk-world-fab', 'aria-label': t('guideFab'), onclick: () => openGuide() },
+    h('span', { class: 'yk-world-fab-icon', 'aria-hidden': 'true' }, '🎙'), fabText);
+  const worldLayer = h('div', { class: 'yk-world-layer hidden' }, prayerSlot, fab);
+  ui.append(worldLayer);
+  // the prayer widget's own button opens its panel through openFeature so player input pauses while it is open
+  prayerSlot.addEventListener('click', (e) => {
+    if (!e.target.closest?.('.yk-prayer-hud-main')) return;
+    e.stopPropagation(); e.preventDefault();
+    openFeature('prayer');
+  }, true);
+  onLangChange(() => { fabText.textContent = t('guideFab'); fab.setAttribute('aria-label', t('guideFab')); });
+  startPrayerHud();
+
+  /** Mount the prayer-times HUD from src/features/prayer (if that module exists). Re-mounts on language change. */
+  async function startPrayerHud() {
+    let handle = null;
+    const mount = async () => {
+      const mod = await features.load('prayer');
+      if (!mod || typeof mod.startPrayerHud !== 'function') return;
+      try { handle = await mod.startPrayerHud({ lang: getLang(), container: prayerSlot }); } catch (e) { console.error('[prayer] HUD failed', e); }
+    };
+    await mount();
+    onLangChange(async () => {
+      try {
+        if (handle && typeof handle.setLang === 'function') return handle.setLang(getLang());
+        const stop = typeof handle === 'function' ? handle : handle?.stop || handle?.destroy || handle?.close;
+        if (typeof stop === 'function') { stop.call(handle); prayerSlot.replaceChildren(); await mount(); }
+      } catch (e) { console.error('[prayer] language switch failed', e); }
+    });
+  }
+
+  /** Open a feature panel (src/features/<name>/index.js -> open({ lang, onClose })). Player input pauses while open. */
+  async function openFeature(name, extra = {}) {
+    if (mode !== 'play' || featureOpen) return false;
+    setMode('ui');
+    featureOpen = name;
+    const mod = await features.load(name);
+    if (!mod || typeof mod.open !== 'function') {
+      featureOpen = null;
+      toast(t('featureMissing'), 2600);
+      if (mode === 'ui') setMode('play');
+      return false;
+    }
+    let closed = false;
+    const onClose = () => {
+      if (closed) return; closed = true;
+      featureOpen = null;
+      if (mode === 'ui') setMode('play');
+      canvas.focus?.();
+    };
+    try { mod.open({ lang: getLang(), onClose, location: scenes.active?.location || null, ...extra }); } catch (e) { console.error(`[feature:${name}] open() threw`, e); toast(t('featureMissing'), 2600); onClose(); }
+    return true;
+  }
+  /** The guide (voice + text) when its module exists; the reviewed-passages Ask panel otherwise. */
+  async function openGuide() {
+    const mod = features.has('guide') ? await features.load('guide') : null;
+    return typeof mod?.open === 'function' ? openFeature('guide') : openAsk();
+  }
 
   /** Per-location "Ask" panel (pre-authored questions + constrained AI answers from reviewed passages). */
   async function openAsk() {
@@ -72,10 +144,14 @@ export async function startGame() {
   input.state.onInteract = () => { if (mode === 'play') interact(); };
 
   const doneCount = () => allSituations().filter((s) => isDone(s.key)).length;
+  /** The day's planned next destination (first stop of the journey order that still has unfinished situations). */
+  const plannedNext = () => nextDestination(locationOrder(), locationComplete);
   function refreshHud() {
     const loc = scenes.active?.location;
     const s = loc ? getScript(loc) : null;
-    hud.set({ title: s?.title || LOCATION_TITLES[loc], time: s?.time_of_day || '', score: totalScore(), done: doneCount(), total: TOTAL, plan: getPlan()?.source || 'default' });
+    const next = loc === HUB ? plannedNext() : null;
+    hud.set({ title: s?.title || LOCATION_TITLES[loc], time: s?.time_of_day || '', score: totalScore(), done: doneCount(), total: TOTAL, plan: getPlan()?.source || 'default', next: next ? (getScript(next)?.title || LOCATION_TITLES[next]) : null });
+    hud.setAskVisible(!(isPlace(loc) && features.has('guide')));
   }
 
   function setMode(m) {
@@ -83,24 +159,33 @@ export async function startGame() {
     const playing = m === 'play';
     input.setEnabled(playing);
     hud.show(playing || m === 'ui');
+    worldLayer.classList.toggle('hidden', !playing);
     if (!playing) { hud.setPrompt(null); input.setInteractVisible(false); }
   }
 
   const fade = (on) => new Promise((r) => { fadeEl.classList.toggle('on', on); setTimeout(r, on ? 380 : 50); });
 
   // ------------------------------------------------------------ locations
-  async function enterLocation(loc, { intro = true } = {}) {
-    if (!LOCATIONS.includes(loc)) loc = LOCATIONS[0];
+  /**
+   * Load a location (journey stop, the hub or a free place). `from` = the location the player just left: arriving in
+   * the hub puts Adam at that building's door. Places (hub, mosque, bank) never show the stop intro card.
+   */
+  async function enterLocation(loc, { intro = true, from = null } = {}) {
+    if (!ALL_LOCATIONS.includes(loc)) loc = HUB;
     setMode('loading');
     near = null;
     await fade(true);
     const script = getScript(loc);
     const warns = [];
-    const active = await scenes.load(loc, script, (m) => warns.push(m));
+    // the hub loaded behind the start screen is reused as-is (no second load)
+    const reuse = loc === HUB && scenes.active?.location === HUB && !scenes.active.isPlaceholder;
+    const active = reuse ? scenes.active : await scenes.load(loc, script, (m) => warns.push(m));
     player.setColliders(active.colliders, active.bounds);
     player.setCameraOccluders(active.occluders);
     player.setLook(active.res.playerLook && typeof active.res.playerLook === 'object' ? active.res.playerLook : null);
-    player.teleport(active.spawn.position, active.spawn.yaw);
+    const sp = (from && doorSpawn(active.doors, from)) || active.spawn;
+    player.teleport(sp.position, sp.yaw);
+    active.completeOnEnter = !isPlace(loc) && locationComplete(loc);
     active.placeStationNpcs((hid) => { const ss = (script?.situations || []).filter((s) => s.hotspot === hid); return ss.length > 0 && ss.every((s) => isDone(s.key)); });
     setLocation(loc);
     refreshHud();
@@ -113,8 +198,14 @@ export async function startGame() {
     }
     document.body.classList.add('ready');
     await fade(false);
-    if (intro) { setMode('ui'); await locationIntro(loc); }
+    if (intro && !isPlace(loc)) { setMode('ui'); await locationIntro(loc); }
     setMode('play');
+    if (loc === HUB) {
+      const next = plannedNext();
+      if (!progress().townHintSeen) { toast(t(document.body.classList.contains('touch') ? 'townHintTouch' : 'townHint'), 4200); setFlag('townHintSeen', true); }
+      if (next) toast(`${t('nextStop')}: ${tr(getScript(next)?.title || LOCATION_TITLES[next])}`, 3600);
+      else if (allSituations().length) toast(t('dayDone'), 3600);
+    }
   }
 
   // ------------------------------------------------------------ interaction
@@ -123,6 +214,8 @@ export async function startGame() {
   async function interact() {
     const a = scenes.active; if (!a || !near) return;
     if (near === a.exit) return tryExit();
+    if (near.kind === 'door') return enterLocation(near.location, { from: a.location });
+    if (near.kind === 'spot') return openFeature(near.feature);
     const sits = sitsAt(near.id);
     if (!sits.length) return;
     const script = getScript(a.location);
@@ -204,28 +297,33 @@ export async function startGame() {
       const all = sitsAt(hs.id);
       hs.marker.setColor(all.length && all.every((s) => isDone(s.key)) ? '#7ddc8a' : '#ffd34d');
     }
-    a.exit.marker.setColor(locationComplete(a.location) || ALLOW_EARLY_EXIT ? '#6fe3c1' : '#7d8b8c');
+    a.exit?.marker.setColor('#6fe3c1'); // the exit always leads back to the neighbourhood
+    // hub doors: gold = planned next stop, green = all situations there done, teal = open
+    const next = plannedNext();
+    for (const d of a.doors || []) d.marker.setColor(d.location === next ? '#ffd34d' : !isPlace(d.location) && locationComplete(d.location) ? '#7ddc8a' : '#6fe3c1');
+    const target = a.location === HUB && next ? (a.doors || []).find((d) => d.location === next) : null;
+    waypoint.set(target ? target.position : null);
   }
 
+  /** Every interior's exit leads back to the neighbourhood, at that building's door. */
   async function tryExit() {
-    const loc = scenes.active.location;
-    const next = nextLocation(loc);
+    const a = scenes.active;
+    const loc = a.location;
+    if (isPlace(loc)) return enterLocation(HUB, { from: loc });
     const s = getScript(loc);
     const left = (s?.situations || []).filter((x) => !isDone(x.key));
-    if (left.length && !ALLOW_EARLY_EXIT) {
-      // exit opens only after every situation here is done (docs/hotspots.md); the menu still allows jumping.
-      toast(t('exitLocked'), 2600);
-      return;
-    }
     setMode('ui');
     if (left.length) {
+      // leaving early is allowed (the hub is free to explore); remind what is left here first
       const r = await exitConfirm(loc);
       if (r !== 'go') return setMode('play');
+    } else if (!a.completeOnEnter) {
+      // finished here during this visit: closing card, then the planned next stop (or the end of the day)
+      const r = await outroScreen(loc, plannedNext());
+      if (r !== 'go') return setMode('play');
     }
-    const r = await outroScreen(loc, next);
-    if (r !== 'go') return setMode('play');
-    if (next) await enterLocation(next);
-    else await showSummary();
+    await enterLocation(HUB, { from: loc });
+    if (!progress().finished && allSituations().every((x) => isDone(x.key))) await showSummary();
   }
 
   async function showSummary() {
@@ -233,20 +331,20 @@ export async function startGame() {
     // only a completed day counts as finished; the menu can open this screen mid-game as "progress so far"
     if (allSituations().every((s) => isDone(s.key))) setFlag('finished', true);
     const r = await summaryScreen();
-    if (r === 'again') { const plan = getPlan(); resetProgress(); applyPlan(plan); await enterLocation(firstLocation()); }
-    else if (typeof r === 'string' && r.startsWith('goto:')) await enterLocation(r.slice(5));
+    if (r === 'again') { const plan = getPlan(); resetProgress(); applyPlan(plan); await enterLocation(HUB, { from: 'home' }); }
+    else if (typeof r === 'string' && r.startsWith('goto:')) await enterLocation(r.slice(5), { from: scenes.active?.location });
     else setMode('play');
   }
 
   function openMenu() {
-    if (menu && document.contains(menu.el)) return;
+    if ((menu && document.contains(menu.el)) || featureOpen) return;
     setMode('ui');
     menu = menuScreen({
       onClose: () => { menu = null; if (mode === 'ui') setMode('play'); },
-      onJump: (loc) => enterLocation(loc),
+      onJump: (loc) => enterLocation(loc, { from: scenes.active?.location, intro: loc !== HUB }),
       onLang: () => { setLang(getLang() === 'ar' ? 'en' : 'ar'); setLangPref(getLang()); refreshHud(); near = null; },
       onSummary: () => showSummary(),
-      onRestart: () => { const plan = getPlan(); resetProgress(); applyPlan(plan); enterLocation(firstLocation()); }
+      onRestart: () => { const plan = getPlan(); resetProgress(); applyPlan(plan); enterLocation(HUB, { from: 'home' }); }
     });
   }
 
@@ -263,15 +361,24 @@ export async function startGame() {
           const d = Math.hypot(player.pos.x - hs.position[0], player.pos.z - hs.position[2]);
           if (d < hs.radius && d < bestD) { best = hs; bestD = d; }
         }
-        const de = Math.hypot(player.pos.x - a.exit.position[0], player.pos.z - a.exit.position[2]);
-        if (de < a.exit.radius && de < bestD) best = a.exit;
+        for (const x of [a.exit, ...(a.doors || []), ...(a.spots || [])]) {
+          if (!x) continue;
+          const d = Math.hypot(player.pos.x - x.position[0], player.pos.z - x.position[2]);
+          if (d < x.radius && d < bestD) { best = x; bestD = d; }
+        }
       }
       if (best !== near) {
         near = best;
         if (!near) { hud.setPrompt(null); input.setInteractVisible(false); }
         else {
           let label;
-          if (near === a.exit) label = !locationComplete(a.location) && !ALLOW_EARLY_EXIT ? t('exitLocked') : nextLocation(a.location) ? `${t('exitDoor')}: ${tr(getScript(nextLocation(a.location))?.title)}` : t('finishDay');
+          if (near === a.exit) label = t('backToTown');
+          else if (near.kind === 'door') {
+            const title = tr(near.label || getScript(near.location)?.title || LOCATION_TITLES[near.location]);
+            const ss = isPlace(near.location) ? [] : getScript(near.location)?.situations || [];
+            const dn = ss.filter((x) => isDone(x.key)).length;
+            label = `${t('enterPlace')}: ${title}${ss.length ? ` · ${dn}/${ss.length}` : ''}${near.location === plannedNext() ? ' ★' : ''}`;
+          } else if (near.kind === 'spot') label = tr(near.label) || t('interact');
           else {
             const s = sitsAt(near.id);
             const sit = s.find((x) => !isDone(x.key)) || s[0];
@@ -288,6 +395,7 @@ export async function startGame() {
       world.camera.lookAt(a.spawn.position[0], 1.2, a.spawn.position[2]);
     }
     if (a) { a.update(dt, time, near); world.followShadow(mode === 'attract' ? new THREE.Vector3(...a.spawn.position) : player.pos); }
+    if (mode === 'play') waypoint.update(player.pos, time);
     if (a && mode === 'play') ambientNpcs(a);
   });
   // skinned characters (NPCs + Adam) advance after the scene's own update so its poses apply the same frame
@@ -313,9 +421,14 @@ export async function startGame() {
     setQuality: (q) => world.setQuality(q),
     get quality() { return world.quality; },
     perf: () => ({ ...world.stats, quality: world.quality, calls: world.renderer.info.render.calls, tris: world.renderer.info.render.triangles, characters: liveCharacterCount(), textures: world.renderer.info.memory.textures, geometries: world.renderer.info.memory.geometries }),
-    goto: (loc) => enterLocation(loc, { intro: false }),
+    goto: (loc, from = null) => enterLocation(loc, { intro: false, from }),
+    /** Open a feature panel by name (src/features/<name>); yawmuk.features lists the modules found at build time. */
+    openFeature: (name, extra = {}) => openFeature(name, extra && typeof extra === 'object' ? extra : {}),
+    features: features.names(),
     teleport: (hotspotId) => {
-      const a = scenes.active; const hs = a?.hotspots.find((x) => x.id === hotspotId) || (hotspotId === 'exit' ? a?.exit : null);
+      const a = scenes.active;
+      const hs = a?.hotspots.find((x) => x.id === hotspotId) || (hotspotId === 'exit' ? a?.exit : null)
+        || a?.doors?.find((d) => d.id === hotspotId || d.location === hotspotId) || a?.spots?.find((s) => s.id === hotspotId || s.feature === hotspotId);
       if (hs) player.teleport([hs.position[0], 0, hs.position[2] + 0.01], player.yaw);
       return !!hs;
     },
@@ -325,6 +438,7 @@ export async function startGame() {
     resume: () => setMode('play'),
     get mode() { return mode; },
     get near() { return near?.id || (near ? 'exit' : null); },
+    get waypoint() { return waypoint.target; },
     stats: () => scenes.active && countStats(scenes.active.root),
     contentIssues, usingFixtures
   };
@@ -332,18 +446,19 @@ export async function startGame() {
   Object.defineProperty(window.yawmuk, 'mode', { get: () => mode, configurable: true });
   Object.defineProperty(window.yawmuk, 'near', { get: () => near?.id || (near ? 'exit' : null), configurable: true });
   Object.defineProperty(window.yawmuk, 'quality', { get: () => world.quality, configurable: true });
+  Object.defineProperty(window.yawmuk, 'waypoint', { get: () => waypoint.target, configurable: true });
 
   // ------------------------------------------------------------ boot sequence
   const jump = params.get('scene');
-  if (jump && LOCATIONS.includes(jump)) {
+  if (jump && ALL_LOCATIONS.includes(jump)) {
     if (!params.get('lang') && !progress().lang) setLang('ar');
     setFlag('introSeen', true);
     await enterLocation(jump, { intro: params.get('nointro') !== '1' });
     return api;
   }
-  // attract mode: show the current/first location behind the start screen
-  const bootLoc = progress().location && LOCATIONS.includes(progress().location) ? progress().location : firstLocation();
-  const active = await scenes.load(bootLoc, getScript(bootLoc), () => {});
+  // attract mode: the neighbourhood behind the start screen (also where a new day starts)
+  const bootLoc = progress().location && ALL_LOCATIONS.includes(progress().location) ? progress().location : HUB;
+  const active = await scenes.load(HUB, null, () => {});
   player.setColliders(active.colliders, active.bounds);
   player.teleport(active.spawn.position, active.spawn.yaw);
   setMode('attract');
@@ -362,7 +477,7 @@ export async function startGame() {
     const bySit = Object.fromEntries(allSituations().map((s) => [s.ruling_id, s]));
     const pre = await preCheckScreen(pickChecks(plan.journey.map((j) => j.id), bySit, 3)).catch(() => null);
     setPre(pre);
-    await enterLocation(firstLocation());
+    await enterLocation(HUB, { from: 'home' }); // Adam steps out of his front door
   } else {
     if (!progress().introSeen) { await introScreen(); setFlag('introSeen', true); }
     await enterLocation(bootLoc);

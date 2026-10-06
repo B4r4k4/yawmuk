@@ -25,7 +25,8 @@ export const SCRIPTURE_PATTERNS = [
   [/\b\d{1,3}:\d{1,3}\b/, 'surah:ayah reference'],
   [/\b(surah|sura|ayah|ayat|verse)\s*\d+/i, 'verse reference'],
   [/(سورة|الآية|آية)\s+\S*\s*\d+/, 'Arabic verse reference'],
-  [/(رواه|أخرجه)\s+(البخاري|مسلم|أبو\s+داود|الترمذي|النسائي|ابن\s+ماجه|أحمد)/, 'hadith attribution']
+  [/(رواه|أخرجه)\s+(البخاري|مسلم|أبو\s+داود|الترمذي|النسائي|ابن\s+ماجه|أحمد)/, 'hadith attribution'],
+  [/\bnarrated\b|\bsahih\s+(muslim|bukhari|al-bukhari)\b|(^|\s)(رواه|أخرجه|يروى|روي)(\s|$)/i, 'narration claim']
 ];
 
 const HARAKAT = /[ً-ْٰ]/g;
@@ -141,15 +142,42 @@ export function isValidOrder(order, locations = LOCATIONS) {
 }
 
 // ------------------------------------------------------------------ ask panel: personal-fatwa pre-filter
-const FATWA_PATTERNS = [
-  /هل\s+يجوز\s+لي/, /حالتي/, /وضعي/, /ظروفي/, /زوجتي|زوجي/, /هل\s+(علي|عليّ|يجب\s+علي)/, /هل\s+(أستطيع|يمكنني|أقدر)/,
-  /\bmy\s+(wife|husband|case|situation|family|son|daughter|mother|father|parents|boss|loan|mortgage|job|debt|marriage)\b/i,
-  /\bshould\s+i\b/i, /\bcan\s+i\b/i, /\bmay\s+i\b/i, /\bam\s+i\s+allowed\b/i, /\bdo\s+i\s+have\s+to\b/i, /\bmust\s+i\b/i,
-  /\bis\s+it\s+(ok|okay|halal|haram|allowed|permissible|fine)\s+for\s+me\b/i, /\bin\s+my\s+case\b/i
+// Level D (reference package p.2): a question about the asker's own case is referred, never answered as a ruling.
+// Arabic patterns run on a normalised copy (no harakat/tatweel, unified alef/ya) so «أنا» = «انا», «لي» = «لى».
+const FATWA_PATTERNS_AR = [
+  /هل\s+يجوز\s+لي/, /يجوز\s+لي/, /هل\s+يحل\s+لي/, /هل\s+يحق\s+لي/, /حالتي/, /وضعي/, /ظروفي/, /مشكلتي/,
+  /(^|\s)(و|ف)?(زوجتي|زوجي|امي|ابي(?!\s+(بكر|هريره|هريرة|طالب|ذر|سفيان|داود|حنيفه|حنيفة|موسي|ايوب|سعيد|الدرداء|عبيده|عبيدة|لهب|جهل))|والدي|والدتي|ابني|ابنتي|اخي|اختي|مديري|خطيبتي|خطيبي)(\s|$|[،؟?.!])/,
+  // the asker's own acts and belongings: «صلاتي»، «قرضي»، «عندي…»، «حلفت…»، «ماذا علي»
+  /(^|\s)(و|ف|ب|ل)?(صلاتي|صيامي|زكاتي|راتبي|قرضي|عقدي|بيتي|زواجي|طلاقي|حجي|وضويي|وضوءي|وضوئي)(\s|$|[،؟?.!])/,
+  /(^|\s)(عندي|لدي)(\s|$|[،؟?.!])/,
+  /(^|\s)(حلفت|طلقت|صليت|اشتريت|اخذت|اقترضت|وقعت|نذرت|افطرت)(\s|$)/,
+  /ماذا\s+علي(\s|$|[؟?])/,
+  /هل\s+(علي|يجب\s+علي|يلزمني)/, /هل\s+(استطيع|يمكنني|اقدر|اقدر\s+ان)/,
+  /(^|\s)(انا|نحن|احنا)\s+(في|ف|مقيم|مقيمه|اعيش|نعيش|اعمل|نعمل|ادرس|طالب|طالبه|متزوج|متزوجه)(\s|$)/,
+  /(^|\s)(اعيش|نعيش|اعمل|نعمل|اسكن|نسكن)\s+في(\s|$)/,
+  /(اريد|اود|انوي|نريد|ننوي)\s+(ان|أن)\s+[^؟?]*(ما\s+رايكم|ما\s+رايك|هل\s+يجوز|فهل|ما\s+الحكم|هل\s+هذا)/,
+  /ماذا\s+(افعل|نفعل)/
 ];
+const FATWA_PATTERNS_EN = [
+  /\bmy\s+(wife|husband|case|situation|family|son|daughter|mother|mom|father|dad|parents|brother|sister|boss|manager|fianc[eé]e?|loan|mortgage|job|debt|marriage|employer)\b/i,
+  /\bshould\s+i\b/i, /\bcan\s+i\b/i, /\bmay\s+i\b/i, /\b(am\s+i|are\s+we)\s+allowed\b/i, /\bdo\s+(i|we)\s+have\s+to\b/i, /\bmust\s+(i|we)\b/i,
+  /\bis\s+it\s+(ok|okay|halal|haram|allowed|permissible|fine|permitted|sinful)\s+for\s+(me|us)\b/i, /\bin\s+my\s+case\b/i,
+  /\b(i|we)\s+(live|work|study|reside)\s+in\b/i, /\b([Ii]\s+am|[Ii]'m|[Ww]e\s+are|[Ww]e're)\s+in\s+(the\s+)?[A-Z]/, /\b(i'm|i\s+am|we're|we\s+are)\s+(living|working|studying|based|staying)\b/i,
+  // "is it okay to take THIS mortgage?" — a deictic object makes it the asker's own case; "is it halal to eat shrimp?" stays general.
+  /\bis\s+it\s+(ok|okay|halal|haram|allowed|permissible|fine|permitted)\s+(for\s+(me|us)\s+)?to\s+\w+(\s+\w+)?\s+(this|that|these|those|my|our)\b/i,
+  /\bwhat\s+should\s+(i|we)\s+do\b/i,
+  /\bam\s+i\b/i, /\bwhere\s+(i|we)\s+(live|work|study)\b/i,
+  /\b(i|we)\s+(took|bought|signed|borrowed|missed|swore|divorced|owe)\b/i,
+  /\b(i|we)\s+(have|got|had)\s+(a|an|some|this|that)?\s*(loan|mortgage|debt|credit\s+card|student\s+loan|contract|job\s+offer|offer)\b/i,
+  /\bmy\s+(prayer|prayers|fast|fasting|wudu|zakat|salary|income|savings|contract|account|house|car|business|brother|sister)\b/i,
+  // "Mortgage in Texas with no alternative — halal?": a named place + "no alternative / no choice" is a personal case
+  /\b(no|without)\s+(other\s+)?(alternative|choice|option)s?\b/i, /\b(i|we)\s+(want|plan|intend|need)\s+to\b[^?]*\b(allowed|halal|haram|permissible|ok|okay|what\s+do\s+you\s+think)\b/i
+];
+const normAr = (s) => s.replace(/[ً-ْٰـ]/g, '').replace(/[أإآ]/g, 'ا').replace(/ى/g, 'ي');
 export function isPersonalFatwa(q) {
   const s = String(q ?? '');
-  return FATWA_PATTERNS.some((re) => re.test(s));
+  const ar = normAr(s);
+  return FATWA_PATTERNS_AR.some((re) => re.test(ar)) || FATWA_PATTERNS_EN.some((re) => re.test(s));
 }
 export const ASK_MAX = 300;
 

@@ -2,6 +2,35 @@
   "version": 1,
   "items": [
     {
+      "id": "qa.basics.tawhid",
+      "case_id": 7,
+      "location": "home",
+      "asker": {
+        "ar": "آدم",
+        "en": "Adam"
+      },
+      "level": "A",
+      "question": {
+        "ar": "ابدأ بالأساس: ما الفكرة الأولى في الإسلام التي تُبنى عليها كل الأحكام؟",
+        "en": "Start with the basics: what is the first idea in Islam that every ruling builds on?"
+      },
+      "answer": {
+        "ar": "قبل أي حكم في البيت أو العمل يأتي الأصل: أن الله واحد، لا شريك له، وهو وحده الذي يُعبد. ويسمّي المسلمون هذا «التوحيد»، ويعرّفه معجم الجمهرة بأنه إفراد الله بالربوبية والألوهية والأسماء والصفات. وسورة الإخلاص تلخّصه (الإخلاص 112:1-4)، وكذلك قوله تعالى إن إلهكم إله واحد (البقرة 2:163). وكل ما ستراه في يوم آدم، من الصلاة إلى المعاملات، فرعٌ عن هذا الأصل.",
+        "en": "Before any ruling at home or at work comes the root: God is One, with no partner, and He alone is worshipped. Muslims call this Tawhid; the Jamhara dictionary defines it as singling out Allah in His lordship, His right to worship, and His names and attributes. Surah al-Ikhlas sums it up (112:1-4), as does the verse saying your God is one God (2:163). Everything in Adam's day, from prayer to money, branches from this root."
+      },
+      "source_ids": [
+        "quran:112:1",
+        "quran:112:2",
+        "quran:112:3",
+        "quran:112:4",
+        "quran:2:163",
+        "other:jamhara-tawhid"
+      ],
+      "refer": false,
+      "refer_text": null,
+      "related_ruling": null
+    },
+    {
       "id": "qa.transparency.home",
       "case_id": 0,
       "location": "home",
@@ -147,14 +176,15 @@
         "en": "Why do Muslims worship the Kaaba, that black cube in Mecca?"
       },
       "answer": {
-        "ar": "سؤال جيد، والخلط فيه شائع. المسلمون لا يعبدون الكعبة؛ العبادة في الإسلام لله وحده (الذاريات 51:56). الكعبة هي «القبلة»: الاتجاه الذي يتوجه إليه المسلمون جميعاً في صلاتهم أينما كانوا (البقرة 2:150). والقرآن يأمر بعبادة «ربّ هذا البيت» لا البيت نفسه (قريش 106:3). وقال عمر بن الخطاب عن الحجر الأسود إنه حجر لا يضر ولا ينفع (صحيح البخاري 1597).",
-        "en": "Good question, and a common mix-up. Muslims don't worship the Kaaba; in Islam, worship is for Allah alone (51:56). The Kaaba is the qibla: the direction all Muslims face when they pray, wherever they are (2:150). The Quran asks people to worship 'the Lord of this House', not the House itself (106:3). The caliph Umar even said of the Black Stone that it is a stone that can neither harm nor benefit (Sahih al-Bukhari 1597)."
+        "ar": "سؤال جيد، والخلط فيه شائع. المسلمون لا يعبدون الكعبة؛ العبادة في الإسلام لله وحده (الذاريات 51:56). الكعبة هي «القبلة»: الاتجاه الذي يتوجه إليه المسلمون جميعاً في صلاتهم أينما كانوا (البقرة 2:150). والقرآن يأمر بعبادة «ربّ هذا البيت» لا البيت نفسه (قريش 106:3). وقال عمر بن الخطاب عن الحجر الأسود إنه حجر لا يضر ولا ينفع (صحيح البخاري 1597) (بينات، المسألة 9).",
+        "en": "Good question, and a common mix-up. Muslims don't worship the Kaaba; in Islam, worship is for Allah alone (51:56). The Kaaba is the qibla: the direction all Muslims face when they pray, wherever they are (2:150). The Quran asks people to worship 'the Lord of this House', not the House itself (106:3). The caliph Umar even said of the Black Stone that it is a stone that can neither harm nor benefit (Sahih al-Bukhari 1597) (Bayyinat, Q9)."
       },
       "source_ids": [
         "quran:51:56",
         "quran:2:150",
         "quran:106:3",
-        "hadith:صحيح-البخاري:1597"
+        "hadith:صحيح-البخاري:1597",
+        "other:bayyinat-q9"
       ],
       "refer": false,
       "refer_text": null,
@@ -174,13 +204,14 @@
         "en": "In a documentary I saw people circling the Kaaba and kissing a stone. Isn't that worshipping an object?"
       },
       "answer": {
-        "ar": "قد تبدو كذلك من الخارج، فالسؤال مفهوم. الطواف حول الكعبة والصلاة نحوها عبادتان يُقصد بهما الله وحده، اتباعاً لما فعله النبي ﷺ؛ المبنى ليس هو المعبود. وقد بُني البيت على أصل «لا تشرك بي شيئاً» (الحج 22:26). وقال عمر بن الخطاب صراحة إن الحجر الأسود لا يضر ولا ينفع، وإنه قبّله فقط لأنه رأى النبي ﷺ يقبّله (صحيح البخاري 1597).",
-        "en": "It can look that way from outside, so it's a fair question. Circling the Kaaba and praying toward it are acts of worship directed to Allah alone, following what the Prophet ﷺ did; the building is not what is worshipped. The House was founded on the principle 'do not associate anything with Me' (22:26). Umar said plainly that the Black Stone can neither harm nor benefit, and that he kissed it only because he had seen the Prophet ﷺ do so (Sahih al-Bukhari 1597)."
+        "ar": "قد تبدو كذلك من الخارج، فالسؤال مفهوم. الطواف حول الكعبة والصلاة نحوها عبادتان يُقصد بهما الله وحده، اتباعاً لما فعله النبي ﷺ؛ المبنى ليس هو المعبود. وقد بُني البيت على أصل «لا تشرك بي شيئاً» (الحج 22:26). وقال عمر بن الخطاب صراحة إن الحجر الأسود لا يضر ولا ينفع، وإنه قبّله فقط لأنه رأى النبي ﷺ يقبّله (صحيح البخاري 1597) (بينات، المسألة 9).",
+        "en": "It can look that way from outside, so it's a fair question. Circling the Kaaba and praying toward it are acts of worship directed to Allah alone, following what the Prophet ﷺ did; the building is not what is worshipped. The House was founded on the principle 'do not associate anything with Me' (22:26). Umar said plainly that the Black Stone can neither harm nor benefit, and that he kissed it only because he had seen the Prophet ﷺ do so (Sahih al-Bukhari 1597) (Bayyinat, Q9)."
       },
       "source_ids": [
         "quran:22:26",
         "quran:106:3",
-        "hadith:صحيح-البخاري:1597"
+        "hadith:صحيح-البخاري:1597",
+        "other:bayyinat-q9"
       ],
       "refer": false,
       "refer_text": null,
@@ -200,14 +231,15 @@
         "en": "Honest question: did Muhammad write the Quran himself?"
       },
       "answer": {
-        "ar": "يؤمن المسلمون أن القرآن كلام الله، أوحاه إلى النبي محمد ﷺ فبلّغه ولم يؤلفه. هذه مسألة إيمان، والقرآن نفسه يذكر أسباباً للتأمل: أن النبي لم يكن يقرأ كتاباً ولا يخطه قبله (العنكبوت 29:48)، ويدعو إلى تدبّره والبحث فيه عن اختلاف (النساء 4:82)، ويتحدى من يشك أن يأتي بسورة مثله (البقرة 2:23؛ الإسراء 17:88). هذا ما يعتقده المسلمون ولماذا، ولك أن تقرأ وتكوّن رأيك.",
-        "en": "Muslims believe the Quran is the word of Allah, revealed to the Prophet Muhammad ﷺ, who conveyed it but did not author it. That is a matter of faith, and the Quran itself offers reasons to reflect: it says he did not read or write any scripture before it (29:48), invites readers to look for contradictions in it (4:82), and challenges anyone in doubt to produce a single chapter like it (2:23; 17:88). That's what Muslims hold and why; you're free to read and form your own view."
+        "ar": "يؤمن المسلمون أن القرآن كلام الله، أوحاه إلى النبي محمد ﷺ فبلّغه ولم يؤلفه. هذه مسألة إيمان، والقرآن نفسه يذكر أسباباً للتأمل: أن النبي لم يكن يقرأ كتاباً ولا يخطه قبله (العنكبوت 29:48)، ويدعو إلى تدبّره والبحث فيه عن اختلاف (النساء 4:82)، ويتحدى من يشك أن يأتي بسورة مثله (البقرة 2:23؛ الإسراء 17:88). هذا ما يعتقده المسلمون ولماذا، ولك أن تقرأ وتكوّن رأيك (بينات، المسألة 27).",
+        "en": "Muslims believe the Quran is the word of Allah, revealed to the Prophet Muhammad ﷺ, who conveyed it but did not author it. That is a matter of faith, and the Quran itself offers reasons to reflect: it says he did not read or write any scripture before it (29:48), invites readers to look for contradictions in it (4:82), and challenges anyone in doubt to produce a single chapter like it (2:23; 17:88). That's what Muslims hold and why; you're free to read and form your own view (Bayyinat, Q27)."
       },
       "source_ids": [
         "quran:29:48",
         "quran:4:82",
         "quran:2:23",
-        "quran:17:88"
+        "quran:17:88",
+        "other:bayyinat-q27"
       ],
       "refer": false,
       "refer_text": null,
@@ -227,13 +259,14 @@
         "en": "Isn't the Quran just Muhammad's own ideas written down?"
       },
       "answer": {
-        "ar": "من وجهة نظر المسلمين: لا. هم يعتقدون أن القرآن نزل من الله على «عبده» محمد ﷺ (البقرة 2:23). ولن نذكر هنا ادعاءات تاريخية لا نملك لها مصدراً موثّقاً؛ نكتفي بما يقوله القرآن عن نفسه: لو كان من عند غير الله لوجدوا فيه اختلافاً كثيراً (النساء 4:82)، وإن الإنس والجن لا يأتون بمثله (الإسراء 17:88). السؤال نفسه مشروع، ويناقشه المؤرخون والقراء كذلك.",
-        "en": "From the Muslim point of view, no. Muslims believe the Quran was sent down by Allah upon 'Our Servant', Muhammad ﷺ (2:23). We won't add historical claims we can't back with a verified source; we'll stick to what the Quran says about itself: had it come from anyone other than Allah, people would find much contradiction in it (4:82), and humans and jinn together could not produce its like (17:88). The question itself is a fair one, and historians and readers discuss it too."
+        "ar": "من وجهة نظر المسلمين: لا. هم يعتقدون أن القرآن نزل من الله على «عبده» محمد ﷺ (البقرة 2:23). ولن نذكر هنا ادعاءات تاريخية لا نملك لها مصدراً موثّقاً؛ نكتفي بما يقوله القرآن عن نفسه: لو كان من عند غير الله لوجدوا فيه اختلافاً كثيراً (النساء 4:82)، وإن الإنس والجن لا يأتون بمثله (الإسراء 17:88). السؤال نفسه مشروع، ويناقشه المؤرخون والقراء كذلك (بينات، المسألة 27).",
+        "en": "From the Muslim point of view, no. Muslims believe the Quran was sent down by Allah upon 'Our Servant', Muhammad ﷺ (2:23). We won't add historical claims we can't back with a verified source; we'll stick to what the Quran says about itself: had it come from anyone other than Allah, people would find much contradiction in it (4:82), and humans and jinn together could not produce its like (17:88). The question itself is a fair one, and historians and readers discuss it too (Bayyinat, Q27)."
       },
       "source_ids": [
         "quran:2:23",
         "quran:4:82",
-        "quran:17:88"
+        "quran:17:88",
+        "other:bayyinat-q27"
       ],
       "refer": false,
       "refer_text": null,
@@ -253,14 +286,15 @@
         "en": "I read that Islam spread by the sword. Is that fair?"
       },
       "answer": {
-        "ar": "يفيد هنا أن نفصل بين أمرين. التاريخ: الدول الإسلامية الأولى خاضت حروباً وحكمت أراضي جديدة. والإيمان: فتح الأرض ليس إكراهاً على العقيدة؛ فالقرآن يقرر «لا إكراه في الدين» (البقرة 2:256)، ويسأل: أفأنت تُكره الناس حتى يكونوا مؤمنين؟ (يونس 10:99). وكثيرون عاشوا قروناً تحت حكم المسلمين على دينهم، وإندونيسيا، أكبر بلد مسلم سكاناً، أسلمت دون جيش (IslamHouse). وكل حدث تاريخي يُحكم عليه بأدلته.",
-        "en": "It helps to separate two things. History: early Muslim states fought wars and ruled new lands. Belief: ruling land is not forcing faith. The Quran states there is no compulsion in religion (2:256) and asks whether anyone could compel people to believe (10:99); scholars stress that faith cannot be compelled (IslamQA 178756). Many people kept their own faith for centuries under Muslim rule, and Indonesia, the largest Muslim population today, embraced Islam without any Muslim army (IslamHouse). Each historical event should be judged on its own evidence."
+        "ar": "يفيد هنا أن نفصل بين أمرين. التاريخ: الدول الإسلامية الأولى خاضت حروباً وحكمت أراضي جديدة. والإيمان: فتح الأرض ليس إكراهاً على العقيدة؛ فالقرآن يقرر «لا إكراه في الدين» (البقرة 2:256)، ويسأل: أفأنت تُكره الناس حتى يكونوا مؤمنين؟ (يونس 10:99). وكثيرون عاشوا قروناً تحت حكم المسلمين على دينهم، وإندونيسيا، أكبر بلد مسلم سكاناً، أسلمت دون جيش (IslamHouse). وكل حدث تاريخي يُحكم عليه بأدلته (بينات، المسألة 229).",
+        "en": "It helps to separate two things. History: early Muslim states fought wars and ruled new lands. Belief: ruling land is not forcing faith. The Quran states there is no compulsion in religion (2:256) and asks whether anyone could compel people to believe (10:99); scholars stress that faith cannot be compelled (IslamQA 178756). Many people kept their own faith for centuries under Muslim rule, and Indonesia, the largest Muslim population today, embraced Islam without any Muslim army (IslamHouse). Each historical event should be judged on its own evidence (Bayyinat, Q229)."
       },
       "source_ids": [
         "quran:2:256",
         "quran:10:99",
         "other:islamqa-178756",
-        "other:islamhouse-429880"
+        "other:islamhouse-429880",
+        "other:bayyinat-q229"
       ],
       "refer": false,
       "refer_text": null,
@@ -280,14 +314,15 @@
         "en": "Come on, wasn't Islam basically spread by conquest?"
       },
       "answer": {
-        "ar": "الصورة أوسع من كلمة واحدة. القرآن أذن بقتال من يقاتل، مع النهي عن الاعتداء (البقرة 2:190)، وفرّق بين الحرب والعقيدة: «لا إكراه في الدين» (البقرة 2:256)؛ ويبيّن العلماء أن الحكم السياسي شيء وإجبار القلب على الإيمان شيء آخر (IslamQA 178756). ومن الشواهد أن المسلمين حكموا الهند قروناً وبقي أكثر أهلها على أديانهم، وأن الإسلام وصل جنوب شرق آسيا بالتجار (IslamHouse). لا «بالسيف وحده» دقيق، ولا «بلا أي حرب».",
-        "en": "The picture is wider than one word. The Quran permits fighting those who fight you while forbidding transgression (2:190), and it separates war from belief: there is no compulsion in religion (2:256). Scholars explain that political rule is one thing and forcing a heart to believe is another (IslamQA 178756). For example, Muslims ruled much of India for centuries while most people there kept their own faiths, and Islam reached Southeast Asia through traders (IslamHouse). Neither 'only by the sword' nor 'never any war' is accurate."
+        "ar": "الصورة أوسع من كلمة واحدة. القرآن أذن بقتال من يقاتل، مع النهي عن الاعتداء (البقرة 2:190)، وفرّق بين الحرب والعقيدة: «لا إكراه في الدين» (البقرة 2:256)؛ ويبيّن العلماء أن الحكم السياسي شيء وإجبار القلب على الإيمان شيء آخر (IslamQA 178756). ومن الشواهد أن المسلمين حكموا الهند قروناً وبقي أكثر أهلها على أديانهم، وأن الإسلام وصل جنوب شرق آسيا بالتجار (IslamHouse). لا «بالسيف وحده» دقيق، ولا «بلا أي حرب» (بينات، المسألة 229).",
+        "en": "The picture is wider than one word. The Quran permits fighting those who fight you while forbidding transgression (2:190), and it separates war from belief: there is no compulsion in religion (2:256). Scholars explain that political rule is one thing and forcing a heart to believe is another (IslamQA 178756). For example, Muslims ruled much of India for centuries while most people there kept their own faiths, and Islam reached Southeast Asia through traders (IslamHouse). Neither 'only by the sword' nor 'never any war' is accurate (Bayyinat, Q229)."
       },
       "source_ids": [
         "quran:2:190",
         "quran:2:256",
         "other:islamqa-178756",
-        "other:islamhouse-429880"
+        "other:islamhouse-429880",
+        "other:bayyinat-q229"
       ],
       "refer": false,
       "refer_text": null,
@@ -313,7 +348,8 @@
       "source_ids": [
         "other:islamqa-128658",
         "hadith:صحيح-البخاري:7352",
-        "other:islamqa-70491"
+        "other:islamqa-70491",
+        "other:bayyinat-q239"
       ],
       "refer": false,
       "refer_text": null,
@@ -333,13 +369,14 @@
         "en": "At Yusuf's wedding some guests said music is fine and others said no. How can both be Muslim views?"
       },
       "answer": {
-        "ar": "الرأيان صدرا عن علماء مؤهلين قرؤوا المصادر نفسها. في تفاصيل مثل موسيقى العرس تحتمل الأدلة أكثر من قراءة، فوصل علماء أمناء إلى نتائج مختلفة باجتهادهم، ويتبع كل مسلم من يثق بعلمه دون إنكار على الآخر (IslamQA 70491). وهذا غير التناقض: ما ثبت بنص قاطع، كفرض الصلاة (البقرة 2:43)، لا يدخل في هذا النوع من الخلاف. ويأمر القرآن بردّ ما يُتنازع فيه إلى الله والرسول (النساء 4:59).",
-        "en": "Both views come from qualified scholars reading the same sources. On details like wedding music, the evidence can be read more than one way, so honest scholars reached different conclusions through ijtihad, and each Muslim follows the scholar they trust without condemning the other (IslamQA 70491). That isn't contradiction: matters settled by a clear, decisive text, like the duty of prayer (2:43), are not open to this kind of difference. The Quran tells believers to refer their disputes back to Allah and the Messenger (4:59)."
+        "ar": "الرأيان صدرا عن علماء مؤهلين قرؤوا المصادر نفسها. في تفاصيل مثل موسيقى العرس تحتمل الأدلة أكثر من قراءة، فوصل علماء أمناء إلى نتائج مختلفة باجتهادهم، ويتبع كل مسلم من يثق بعلمه دون إنكار على الآخر (IslamQA 70491). وهذا غير التناقض: ما ثبت بنص قاطع، كفرض الصلاة (البقرة 2:43)، لا يدخل في هذا النوع من الخلاف. ويأمر القرآن بردّ ما يُتنازع فيه إلى الله والرسول (النساء 4:59) (بينات، المسألة 239).",
+        "en": "Both views come from qualified scholars reading the same sources. On details like wedding music, the evidence can be read more than one way, so honest scholars reached different conclusions through ijtihad, and each Muslim follows the scholar they trust without condemning the other (IslamQA 70491). That isn't contradiction: matters settled by a clear, decisive text, like the duty of prayer (2:43), are not open to this kind of difference. The Quran tells believers to refer their disputes back to Allah and the Messenger (4:59) (Bayyinat, Q239)."
       },
       "source_ids": [
         "other:islamqa-70491",
         "quran:2:43",
-        "quran:4:59"
+        "quran:4:59",
+        "other:bayyinat-q239"
       ],
       "refer": false,
       "refer_text": null,
@@ -525,7 +562,8 @@
         "quran:112:2",
         "quran:112:3",
         "quran:112:4",
-        "quran:2:163"
+        "quran:2:163",
+        "other:jamhara-tawhid"
       ],
       "refer": false,
       "refer_text": null,
@@ -550,7 +588,8 @@
       },
       "source_ids": [
         "quran:2:163",
-        "quran:51:56"
+        "quran:51:56",
+        "other:jamhara-tawhid"
       ],
       "refer": false,
       "refer_text": null,
@@ -570,8 +609,8 @@
         "en": "For our team's glossary, how should we translate 'Tawhid'? Just 'monotheism'?"
       },
       "answer": {
-        "ar": "ننصح بإبقاء المصطلح العربي مع شرح قصير: Tawhid / Oneness of God، ثم سطر يبيّن أنه الإيمان بأن الله واحد لا شريك له، وأنه وحده المعبود. الاستبدال بكلمة واحدة مثل monotheism يُفقد جزءاً من المعنى، لأن التوحيد يشمل الإيمان بأن الله واحد، وإفراده وحده بالعبادة (الإخلاص 112:1-4؛ البقرة 2:163؛ طه 20:14).",
-        "en": "We recommend keeping the Arabic term with a short explanation: Tawhid / Oneness of God, then one line saying it is the belief that Allah is One, without partner, and that He alone is worshipped. Swapping in one word like 'monotheism' loses part of the meaning, because Tawhid covers both believing God is One and directing all worship to Him alone (112:1-4; 2:163; 20:14)."
+        "en": "The Jamhara dictionary of Islamic terms gives 'Monotheism' with the transliteration 'Tawheed', defined as singling out Allah in His lordship, His sole right to worship, and His names and attributes. Because the one English word can suggest mere numerical oneness, we suggest the term plus a gloss: 'Tawhid (monotheism: the Oneness of God, worshipping Him alone)' (112:1-4; 2:163; 20:14).",
+        "ar": "يعطي معجم الجمهرة للمصطلحات الشرعية المقابل Monotheism مع النقحرة Tawheed، ويعرّفه بإفراد الله بالربوبية والألوهية والأسماء والصفات. ولأن الكلمة الإنجليزية وحدها قد توحي بمجرد الوحدانية العددية، نقترح المصطلح مع شرح موجز: «Tawhid (monotheism: the Oneness of God, worshipping Him alone)» (الإخلاص 112:1-4؛ البقرة 2:163؛ طه 20:14)."
       },
       "source_ids": [
         "quran:112:1",
@@ -579,7 +618,8 @@
         "quran:112:3",
         "quran:112:4",
         "quran:2:163",
-        "quran:20:14"
+        "quran:20:14",
+        "other:jamhara-tawhid"
       ],
       "refer": false,
       "refer_text": null,
@@ -599,15 +639,16 @@
         "en": "In my English essay, do I write 'Tawhid' or just translate it as 'God's unity'?"
       },
       "answer": {
-        "ar": "اكتب الاثنين في أول مرة: «Tawhid (Oneness of God)»، ثم استخدم Tawhid بعد ذلك. بهذا يحتفظ القارئ بالمصطلح الأصلي ويفهم معناه. وإن احتجت سطر شرح، فاذكر أنه الإيمان بأن الله واحد لا شريك له ولا مثيل، وأنه وحده يستحق العبادة (الإخلاص 112:1-4؛ طه 20:14). الترجمة الحرفية وحدها قد توحي بمعنى فلسفي أضيق.",
-        "en": "Use both the first time: 'Tawhid (Oneness of God)', then just 'Tawhid' after that. The reader keeps the original term and understands it. If you need a one-line gloss, say it is the belief that God is One, with no partner and nothing like Him, and that He alone deserves worship (112:1-4; 20:14). A literal translation on its own can suggest a narrower, purely philosophical idea."
+        "en": "The Jamhara dictionary of Islamic terms gives 'Monotheism' (Tawheed) as the English equivalent. In an essay, write 'Tawhid (monotheism, the Oneness of God)' the first time, then 'Tawhid'. If you need one line, say it is the belief that God is One, with no partner and nothing like Him, and that He alone deserves worship (112:1-4; 20:14). The word 'God' alone would lose the meaning.",
+        "ar": "يعطي معجم الجمهرة للمصطلحات الشرعية المقابل الإنجليزي Monotheism (Tawheed). في المقال اكتب أول مرة «Tawhid (monotheism, the Oneness of God)» ثم Tawhid بعد ذلك. وإن احتجت سطر شرح، فاذكر أنه الإيمان بأن الله واحد لا شريك له ولا مثيل، وأنه وحده يستحق العبادة (الإخلاص 112:1-4؛ طه 20:14). وكلمة God وحدها تُفقد المعنى."
       },
       "source_ids": [
         "quran:112:1",
         "quran:112:2",
         "quran:112:3",
         "quran:112:4",
-        "quran:20:14"
+        "quran:20:14",
+        "other:jamhara-tawhid"
       ],
       "refer": false,
       "refer_text": null,
@@ -662,7 +703,11 @@
       ],
       "refer": false,
       "refer_text": null,
-      "related_ruling": "home.mortgage"
+      "related_ruling": "home.mortgage",
+      "keywords": {
+        "ar": "لماذا يمنع دينكم الفائدة الربا تخلف اقتصادي",
+        "en": "why does your religion ban interest backward economics"
+      }
     },
     {
       "id": "qa.hostile.gambling",
@@ -705,14 +750,15 @@
         "en": "Noor doesn't shake hands with men, but another Muslim student does. Do all Muslims agree on this?"
       },
       "answer": {
-        "ar": "لا، والصدق يقتضي قول ذلك. في الإسلام نوعان من المسائل: مسائل قطعية بنص واضح يتفق عليها المسلمون، كفرض الصلاة (البقرة 2:43)؛ ومسائل اجتهادية اختلف فيها العلماء المؤهلون. والمصافحة بين الرجل والمرأة الأجنبية من الثانية: منعتها المذاهب الأربعة مع استثناءات، وأجازها بعض المعاصرين بشروط. يتبع كل شخص من يثق بعلمه، ولا يُنكَر عليه (IslamQA 70491).",
-        "en": "No, and it's honest to say so. Islam has two kinds of questions: definitive ones settled by clear texts that Muslims agree on, like the duty of prayer (2:43); and matters of ijtihad where qualified scholars differ. Handshaking between unrelated men and women is the second kind: the four classical schools disallowed it with some exceptions, while some contemporary scholars allowed it under conditions. Each person follows the scholar they trust, without being condemned for it (IslamQA 70491)."
+        "ar": "لا، والصدق يقتضي قول ذلك. في الإسلام نوعان من المسائل: مسائل قطعية بنص واضح يتفق عليها المسلمون، كفرض الصلاة (البقرة 2:43)؛ ومسائل اجتهادية اختلف فيها العلماء المؤهلون. والمصافحة بين الرجل والمرأة الأجنبية من الثانية: منعتها المذاهب الأربعة مع استثناءات، وأجازها بعض المعاصرين بشروط. يتبع كل شخص من يثق بعلمه، ولا يُنكَر عليه (IslamQA 70491) (بينات، المسألة 239).",
+        "en": "No, and it's honest to say so. Islam has two kinds of questions: definitive ones settled by clear texts that Muslims agree on, like the duty of prayer (2:43); and matters of ijtihad where qualified scholars differ. Handshaking between unrelated men and women is the second kind: the four classical schools disallowed it with some exceptions, while some contemporary scholars allowed it under conditions. Each person follows the scholar they trust, without being condemned for it (IslamQA 70491) (Bayyinat, Q239)."
       },
       "source_ids": [
         "quran:2:43",
         "other:islamqa-70491",
         "madhhab:hanafi:school.mixed_social",
-        "contemporary:د-يوسف-القرضاوي-رئيس-المجلس-ال:فتاوى-معاصرة-ج2-ملخصها-منقول-في-fiqh-isl"
+        "contemporary:د-يوسف-القرضاوي-رئيس-المجلس-ال:فتاوى-معاصرة-ج2-ملخصها-منقول-في-fiqh-isl",
+        "other:bayyinat-q239"
       ],
       "refer": false,
       "refer_text": null,
@@ -732,14 +778,15 @@
         "en": "Are all Muslims against mortgages?"
       },
       "answer": {
-        "ar": "هنا جزءان مختلفان. تحريم الربا (الفائدة) ثابت بنص القرآن ومتفق عليه (البقرة 2:275 و2:278)، فلا خلاف في الأصل. أما التطبيق على شراء بيت في أمريكا فاجتهادي: جمهور العلماء وجهات مثل مجمع فقهاء الشريعة بأمريكا يرون اللجوء إلى التمويل الإسلامي، بينما أجاز المجلس الأوروبي للإفتاء القرض بشروط صارمة عند الحاجة وعدم البديل. فلا يصح القول إن الجميع متفقون على كل التفاصيل.",
-        "en": "There are two different layers here. The ban on interest (riba) is set by clear Quran texts and agreed upon (2:275; 2:278), so the principle isn't disputed. Applying it to buying a home in the US is a matter of ijtihad: most scholars, and bodies like AMJA, point to Islamic home financing, while the European Council for Fatwa allowed a conventional mortgage under strict conditions when there's real need and no alternative. So it would be wrong to claim everyone agrees on every detail."
+        "ar": "هنا جزءان مختلفان. تحريم الربا (الفائدة) ثابت بنص القرآن ومتفق عليه (البقرة 2:275 و2:278)، فلا خلاف في الأصل. أما التطبيق على شراء بيت في أمريكا فاجتهادي: جمهور العلماء وجهات مثل مجمع فقهاء الشريعة بأمريكا يرون اللجوء إلى التمويل الإسلامي، بينما أجاز المجلس الأوروبي للإفتاء القرض بشروط صارمة عند الحاجة وعدم البديل. فلا يصح القول إن الجميع متفقون على كل التفاصيل (بينات، المسألة 239).",
+        "en": "There are two different layers here. The ban on interest (riba) is set by clear Quran texts and agreed upon (2:275; 2:278), so the principle isn't disputed. Applying it to buying a home in the US is a matter of ijtihad: most scholars, and bodies like AMJA, point to Islamic home financing, while the European Council for Fatwa allowed a conventional mortgage under strict conditions when there's real need and no alternative. So it would be wrong to claim everyone agrees on every detail (Bayyinat, Q239)."
       },
       "source_ids": [
         "quran:2:275",
         "quran:2:278",
         "contemporary:مجمع-فقهاء-الشريعة-بأمريكا-AMJ:قرار-لجنة-الفتوى-الدائمة-بشأن-شركات-التم",
-        "contemporary:المجلس-الأوروبي-للإفتاء-والبحو:الدورة-العادية-الرابعة-دبلن-18-22-رجب-14"
+        "contemporary:المجلس-الأوروبي-للإفتاء-والبحو:الدورة-العادية-الرابعة-دبلن-18-22-رجب-14",
+        "other:bayyinat-q239"
       ],
       "refer": false,
       "refer_text": null,
@@ -759,13 +806,14 @@
         "en": "Samir never drinks. Do all Muslims agree on that, or is he just strict?"
       },
       "answer": {
-        "ar": "هذه من المسائل القطعية: تحريم الخمر ثابت بنص القرآن (المائدة 5:90-91)، فليس سمير متشدداً، بل يتبع حكماً متفقاً عليه. قد يختلف المسلمون في التزامهم الشخصي، لكن هذا لا يغيّر الحكم. أما التفاصيل الأبعد، مثل العمل في مطعم يقدّم الخمر أو برمجة تطبيق لشركة خمور، ففيها اجتهاد واختلاف بين العلماء، وهي مشروحة في بطاقة الحكم.",
-        "en": "This one is definitive: the ban on alcohol is set by a clear Quran text (5:90-91), so Samir isn't being extra strict; he's following an agreed ruling. Individual Muslims may differ in how they practise, but that doesn't change the ruling. Further-out details, like working in a restaurant that serves alcohol or coding an app for a brewery, do involve ijtihad and scholarly difference, explained on the ruling card."
+        "ar": "هذه من المسائل القطعية: تحريم الخمر ثابت بنص القرآن (المائدة 5:90-91)، فليس سمير متشدداً، بل يتبع حكماً متفقاً عليه. قد يختلف المسلمون في التزامهم الشخصي، لكن هذا لا يغيّر الحكم. أما التفاصيل الأبعد، مثل العمل في مطعم يقدّم الخمر أو برمجة تطبيق لشركة خمور، ففيها اجتهاد واختلاف بين العلماء، وهي مشروحة في بطاقة الحكم (بينات، المسألة 239).",
+        "en": "This one is definitive: the ban on alcohol is set by a clear Quran text (5:90-91), so Samir isn't being extra strict; he's following an agreed ruling. Individual Muslims may differ in how they practise, but that doesn't change the ruling. Further-out details, like working in a restaurant that serves alcohol or coding an app for a brewery, do involve ijtihad and scholarly difference, explained on the ruling card (Bayyinat, Q239)."
       },
       "source_ids": [
         "quran:5:90",
         "quran:5:91",
-        "other:islamqa-70491"
+        "other:islamqa-70491",
+        "other:bayyinat-q239"
       ],
       "refer": false,
       "refer_text": null,

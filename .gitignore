@@ -18,3 +18,7 @@ docs/phase-3/e2e-failure-*.jpg
 .env.*
 !.env.example
 .netlify/
+
+# runtime data (questions, study records) — never commit
+/data/*
+!/data/.gitignore

@@ -1,19 +1,31 @@
 #!/usr/bin/env node
-// Production server for Google Cloud Run: serves the Vite build (dist/) and mounts the three Netlify-style
-// functions at their original paths (/.netlify/functions/{plan,ask,metrics}), so the browser code is unchanged.
+// Production server for Google Cloud Run: serves the Vite build (dist/) and auto-mounts EVERY Netlify-style
+// function in netlify/functions/*.mjs at its original path (/.netlify/functions/<name>), so the browser code is
+// unchanged and new functions need no edit here. /experts serves the scholar dashboard (dist/experts.html).
 // The handlers are Web-standard (Request) => Response; this file only adapts Node's http objects to them.
 //   npm run build && node server.mjs      (PORT defaults to 8080, as Cloud Run expects)
 import http from 'node:http';
 import fs from 'node:fs';
 import path from 'node:path';
 import { Readable } from 'node:stream';
-import { fileURLToPath } from 'node:url';
-import plan from './netlify/functions/plan.mjs';
-import ask from './netlify/functions/ask.mjs';
-import metrics from './netlify/functions/metrics.mjs';
+import { fileURLToPath, pathToFileURL } from 'node:url';
 
-const FUNCTIONS = { plan, ask, metrics };
-const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), 'dist');
+const HERE = path.dirname(fileURLToPath(import.meta.url));
+const ROOT = path.join(HERE, 'dist');
+const FN_DIR = path.join(HERE, 'netlify', 'functions');
+
+/** name -> handler for every netlify/functions/<name>.mjs with a default export (a broken file is skipped, not fatal). */
+export async function loadFunctions(dir = FN_DIR) {
+  const out = {};
+  for (const f of fs.readdirSync(dir).filter((x) => /^[\w-]+\.mjs$/.test(x)).sort()) {
+    try {
+      const mod = await import(pathToFileURL(path.join(dir, f)).href);
+      if (typeof mod.default === 'function') out[f.slice(0, -4)] = mod.default;
+    } catch (e) { console.error(`function ${f} failed to load:`, e.message); }
+  }
+  return out;
+}
+const FUNCTIONS = await loadFunctions();
 const PORT = Number(process.env.PORT) || 8080;
 const MAX_BODY = 16 * 1024;
 
@@ -34,13 +46,22 @@ async function runFunction(handler, req, res) {
     if (size > MAX_BODY) { res.writeHead(413, { 'content-type': 'application/json' }).end('{"error":"too_large"}'); return; }
     chunks.push(chunk);
   }
+  // x-yk-client: rate-limit key for the functions (never stored). Overwrites anything the client sent.
+  const xff = String(req.headers['x-forwarded-for'] || '').split(',').map((x) => x.trim()).filter(Boolean);
+  const client = xff[xff.length - 1] || req.socket.remoteAddress || 'anon'; // Cloud Run's front end appends the real client last
+  const headers = Object.entries(req.headers).filter(([k]) => k !== 'x-yk-client')
+    .flatMap(([k, v]) => (Array.isArray(v) ? v.map((x) => [k, x]) : [[k, v]]));
+  headers.push(['x-yk-client', client]);
   const request = new Request(new URL(req.url, `http://${req.headers.host || 'localhost'}`), {
     method: req.method,
-    headers: Object.entries(req.headers).flatMap(([k, v]) => (Array.isArray(v) ? v.map((x) => [k, x]) : [[k, v]])),
+    headers,
     body: ['GET', 'HEAD'].includes(req.method) ? undefined : Buffer.concat(chunks)
   });
   const response = await handler(request);
-  res.writeHead(response.status, Object.fromEntries(response.headers));
+  const out = Object.fromEntries(response.headers);
+  const cookies = response.headers.getSetCookie?.() || [];
+  if (cookies.length) out['set-cookie'] = cookies;
+  res.writeHead(response.status, out);
   if (response.body) Readable.fromWeb(response.body).pipe(res); else res.end();
 }
 
@@ -59,15 +80,30 @@ function serveStatic(req, res) {
   fs.createReadStream(file).pipe(res);
 }
 
+// Scholar dashboard: no caching, no framing, no referrer (the queue holds questions from the public).
+function serveExperts(res) {
+  const file = path.join(ROOT, 'experts.html');
+  if (!fs.existsSync(file)) { res.writeHead(404, { 'content-type': 'text/plain' }).end('dashboard not built (npm run build)'); return; }
+  res.writeHead(200, {
+    'content-type': 'text/html; charset=utf-8', 'cache-control': 'no-store', 'x-frame-options': 'DENY',
+    'referrer-policy': 'no-referrer', 'x-content-type-options': 'nosniff', 'x-robots-tag': 'noindex, nofollow'
+  });
+  fs.createReadStream(file).pipe(res);
+}
+
 http.createServer(async (req, res) => {
   try {
-    const fn = /^\/\.netlify\/functions\/(\w+)\/?$/.exec(new URL(req.url, 'http://x').pathname)?.[1];
+    const pathname = new URL(req.url, 'http://x').pathname;
+    const fn = /^\/\.netlify\/functions\/([\w-]+)\/?$/.exec(pathname)?.[1];
     if (fn) {
       if (!Object.hasOwn(FUNCTIONS, fn)) { res.writeHead(404, { 'content-type': 'application/json', 'cache-control': 'no-store' }).end('{"error":"not_found"}'); return; }
       await runFunction(FUNCTIONS[fn], req, res);
       return;
     }
     if (req.method !== 'GET' && req.method !== 'HEAD') { res.writeHead(405).end(); return; }
+    if (pathname === '/experts/' || pathname === '/experts/index.html') { res.writeHead(301, { location: '/experts' }).end(); return; }
+    if (pathname === '/experts' || pathname === '/experts.html') { serveExperts(res); return; }
+    if (pathname === '/results' || pathname === '/results/') { req.url = '/results.html'; serveStatic(req, res); return; }
     serveStatic(req, res);
   } catch (e) {
     console.error(e);

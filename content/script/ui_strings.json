@@ -3,6 +3,8 @@
   "game_subtitle": {"ar": "أسبوع مع جيران وأصدقاء مسلمين في أمريكا: تعرّف على الإسلام من مواقف الحياة اليومية", "en": "A week with Muslim neighbors and friends in America: get to know Islam through everyday life"},
 
   "start": {
+    "basics": {"ar": "ابدأ بالأساس: التوحيد", "en": "Start with the basics: Tawhid"},
+    "basics_item": "qa.basics.tawhid",
     "play": {"ar": "ابدأ اليوم", "en": "Start the Day"},
     "continue": {"ar": "متابعة", "en": "Continue"},
     "how_to_play": {"ar": "طريقة اللعب", "en": "How to Play"},
@@ -90,6 +92,18 @@
     "question": {"ar": "المسألة", "en": "The question"},
     "newcomer_explainer": {"ar": "ببساطة", "en": "In plain words"},
     "verdict": {"ar": "الحكم الإجمالي", "en": "Overall ruling"},
+    "verdict_level_c": {"ar": "قول جمهور العلماء", "en": "Majority scholarly view"},
+    "content_level": {"ar": "مستوى المحتوى", "en": "Content level"},
+    "content_levels": {
+      "A": {"ar": "أ: معلومة أصلية مستقرة", "en": "A: stable core information"},
+      "B": {"ar": "ب: شرح واستدلال", "en": "B: explanation & reasoning"},
+      "C": {"ar": "ج: مسألة خلافية أو حساسة", "en": "C: disputed or sensitive"},
+      "D": {"ar": "د: حالة شخصية — لا فتوى", "en": "D: personal case — no fatwa"}
+    },
+    "source_tiers": {
+      "approved_package": {"ar": "من مراجع الحزمة العلمية المعتمدة", "en": "From the challenge's approved reference package"},
+      "secondary": {"ar": "مرجع مساند (خارج قائمة الحزمة)", "en": "Supporting reference (outside the package list)"}
+    },
     "summary": {"ar": "الخلاصة", "en": "Summary"},
     "quran": {"ar": "من القرآن الكريم", "en": "From the Qur'an"},
     "hadith": {"ar": "من السنة النبوية", "en": "From the Prophet's teachings (Hadith)"},

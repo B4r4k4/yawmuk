@@ -53,6 +53,16 @@ export const STRINGS = {
   correct: { ar: 'إجابة صحيحة! +5', en: 'Correct! +5' },
   exitLocked: { ar: 'أكمل مواقف هذا المكان أولاً', en: "Finish this location's situations first" },
   exitReady: { ar: 'الطريق مفتوح — اتجه إلى الباب', en: "You're all set — head for the exit" },
+  // integrated neighbourhood (hub)
+  backToTown: { ar: 'العودة إلى الحيّ', en: 'Back to the neighbourhood' },
+  enterPlace: { ar: 'ادخل', en: 'Enter' },
+  nextStop: { ar: 'وجهتك التالية', en: 'Next stop' },
+  dayDone: { ar: 'أكملت مواقف اليوم — تجوّل بحرية', en: "You've finished the day's situations — explore freely" },
+  townHint: { ar: 'امشِ إلى الباب المضيء واضغط E للدخول', en: 'Walk to a glowing door and press E to go in' },
+  townHintTouch: { ar: 'امشِ إلى الباب المضيء واضغط زر الدخول', en: 'Walk to a glowing door and tap the button to go in' },
+  guideFab: { ar: 'اسأل المرشد', en: 'Ask the guide' },
+  featureMissing: { ar: 'هذه الميزة غير متاحة حالياً', en: 'This feature is not available right now' },
+  placesTitle: { ar: 'أماكن في الحيّ', en: 'Places in the neighbourhood' },
   disc_general: { ar: 'هذه معلومة عامة؛ لحالتك الخاصة اسأل عالماً موثوقاً.', en: 'This is general information; for your specific situation, ask a trusted scholar.' },
   disc_fiction: { ar: 'القصة والشخصيات في هذه اللعبة تخييلية.', en: 'The story and characters in this game are fictional.' },
   disc_ai: { ar: 'الأحكام أُعدّت بمساعدة الذكاء الاصطناعي وتحتاج إلى مراجعة أهل العلم.', en: 'The rulings were prepared with AI help and need review by qualified scholars.' },
@@ -218,6 +228,8 @@ const UI_MAP = {
   summaryPoints: ['end.summary_points'],
   nextTopics: ['end.next_topics'],
   reviewRulings: ['end.review_rulings'],
+  startBasics: ['start.basics'],
+  verdictLevelC: ['ruling_card.verdict_level_c'],
   scholarNote: ['end.scholar_note', 'end.ask_scholar']
 };
 

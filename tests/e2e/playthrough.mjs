@@ -100,8 +100,8 @@ function makeRunner(page, cfg, log) {
     });
     if (!hit) {
       await sleep(250); // let smooth layout/transition settle and retry the hit test once
-      const again = await el.evaluate((n) => { const r = n.getBoundingClientRect(); const top = document.elementFromPoint(r.left + r.width / 2, r.top + r.height / 2); return !!top && (top === n || n.contains(top)); });
-      if (!again) throw new Fail(`${selector}[${index}] is covered by another element; refusing to click blindly`);
+      const again = await el.evaluate((n) => { const r = n.getBoundingClientRect(); const top = document.elementFromPoint(r.left + r.width / 2, r.top + r.height / 2); return !!top && (top === n || n.contains(top)) ? true : `${top?.tagName}.${String(top?.className || '').slice(0, 80)}`; });
+      if (again !== true) throw new Fail(`${selector}[${index}] is covered by another element (${again}); refusing to click blindly`);
     }
     if (cfg.mobile) await el.tap(); else await el.click();
   }
@@ -316,7 +316,9 @@ async function runConfig(browser, baseUrl, cfg) {
   page.on('console', (m) => {
     const txt = m.text();
     if (m.type() === 'error') {
-      if (/fonts\.(googleapis|gstatic)\.com/.test(txt) || (/Failed to load resource/.test(txt) && /net::ERR_(INTERNET_DISCONNECTED|NAME_NOT_RESOLVED|CONNECTION)/.test(txt))) warnings.push(`offline font: ${txt}`);
+      // the static e2e host has no serverless functions: their 404s are expected (the game falls back to reviewed content)
+      if (/Failed to load resource/.test(txt) && /\/\.netlify\/functions\//.test(m.location()?.url || '')) warnings.push(`no functions on static host: ${m.location()?.url}`);
+      else if (/fonts\.(googleapis|gstatic)\.com/.test(txt) || (/Failed to load resource/.test(txt) && /net::ERR_(INTERNET_DISCONNECTED|NAME_NOT_RESOLVED|CONNECTION)/.test(txt))) warnings.push(`offline font: ${txt}`);
       else errors.push(txt);
     } else if (m.type() === 'warn' || m.type() === 'warning') warnings.push(txt);
   });
@@ -577,12 +579,26 @@ async function runConfig(browser, baseUrl, cfg) {
     await press(`${OPEN} .loc-intro .row.end.wrap .btn.primary`);
   }
 
-  async function exitLockedTest(loc) {
+  // The exit is always open (one connected town): leaving early lists the unfinished situations and asks first.
+  async function exitConfirmTest(loc) {
     await goAndInteract(loc, 'exit');
-    await waitFn(() => [...document.querySelectorAll('.toast')].length > 0, 5000).catch(() => {});
-    const toast = await evalp(() => [...document.querySelectorAll('.toast')].map((t) => t.textContent).join(' | '));
-    check(/أكمل|Finish/.test(toast), `${loc}: exit not locked before finishing (toast: "${toast}")`);
-    check(await evalp(() => window.yawmuk.mode === 'play'), `${loc}: locked exit changed mode`);
+    await waitSel(`${OPEN} .small .row.end.wrap .btn.primary`, 10000);
+    const left = await evalp(() => document.querySelectorAll('.overlay:not(.leaving) .small .rc-list li').length);
+    check(left === SCRIPTS[loc].situations.length, `${loc}: early-exit confirm lists ${left} unfinished situations, expected ${SCRIPTS[loc].situations.length}`);
+    await press(`${OPEN} .small .row.end.wrap .btn.primary`); // stay
+    await waitPlay(loc);
+    check(await evalp((l) => window.yawmuk.scenes.active?.location === l, loc), `${loc}: "stay" left the location`);
+  }
+
+  // Walk-in from the town hub: stand at the building's door and press E (desktop) / Interact (touch).
+  async function enterFromTown(loc) {
+    await waitFn(() => window.yawmuk && window.yawmuk.mode === 'play' && window.yawmuk.scenes.active?.location === 'town', 60000);
+    await sleep(200);
+    const ok = await evalp((l) => window.yawmuk.teleport(l), loc);
+    check(ok, `town: no door for ${loc}`);
+    await waitFn((l) => window.yawmuk.near === `door:${l}` && window.yawmuk.mode === 'play', 10000, loc).catch(() => { throw new Fail(`town: standing at the ${loc} door did not put it in range (near=${loc})`); });
+    if (cfg.mobile) await press('.interact-btn.show');
+    else { await evalp(() => document.activeElement?.blur?.()); await page.keyboard.press('KeyE'); }
   }
 
   try {
@@ -608,11 +624,13 @@ async function runConfig(browser, baseUrl, cfg) {
     await press(`${OPEN} .precheck .row.end .btn.ghost`);
     check(await evalp(() => document.body.classList.contains('touch')) === cfg.mobile, `touch class = ${!cfg.mobile} (expected ${cfg.mobile})`);
 
+    let jumped = false;
     for (let li = 0; li < LOCATIONS.length; li++) {
       const loc = LOCATIONS[li];
       const script = SCRIPTS[loc];
+      if (!jumped && (await evalp(() => window.yawmuk?.scenes.active?.location)) !== loc) await enterFromTown(loc);
       await onLocationEntered(loc, li);
-      if (li === 0) await exitLockedTest(loc);
+      if (li === 0) await exitConfirmTest(loc);
       // mobile-en plays work in reverse order: Samir must jump to a later station when it is triggered first
       const playOrder = cfg.name === 'mobile-en' && loc === 'work' ? [...script.situations].reverse() : script.situations;
       for (let i = 0; i < playOrder.length; i++) {
@@ -638,14 +656,13 @@ async function runConfig(browser, baseUrl, cfg) {
         await press(`${OPEN} .menu .stack .btn.primary`); // resume
         await waitPlay(loc);
       }
-      let jumped = false;
+      jumped = false;
       if (li === 1 && cfg.name === 'desktop-en') jumped = await midGameSummary(loc, LOCATIONS[li + 1]);
       if (!jumped) await exitTo(loc, LOCATIONS[li + 1]);
 
       if (li === 0) {
         // ---------- resume after reload (localStorage)
-        await waitFn(() => window.yawmuk?.scenes.active?.location === 'work', 60000);
-        await waitSel(`${OPEN} .loc-intro`, 60000);
+        await waitFn(() => window.yawmuk?.scenes.active?.location === 'town' && window.yawmuk.mode === 'play', 60000);
         await page.reload({ waitUntil: 'load' });
         await waitSel(`${OPEN} .start .stack .btn.primary`, 60000);
         const btns = await evalp(() => document.querySelectorAll('.start .stack .btn').length);
@@ -653,9 +670,9 @@ async function runConfig(browser, baseUrl, cfg) {
         check(await evalp((l) => document.documentElement.lang === l, cfg.lang), 'language preference not restored after reload');
         await shot('resume-start-screen');
         await press(`${OPEN} .start .stack .btn.primary`); // Continue
-        await waitFn(() => window.yawmuk?.scenes.active?.location === 'work', 60000).catch(() => {});
+        await waitFn(() => window.yawmuk?.scenes.active?.location === 'town', 60000).catch(() => {});
         const resumedLoc = await evalp(() => window.yawmuk?.scenes.active?.location);
-        check(resumedLoc === 'work', `resume went to ${resumedLoc}, expected work`);
+        check(resumedLoc === 'town', `resume went to ${resumedLoc}, expected the town (where home's exit leads)`);
         const doneAfter = await evalp(() => Object.values(window.yawmuk.progress().situations).filter((s) => s.done).length);
         check(doneAfter === SCRIPTS.home.situations.length, `resume restored ${doneAfter} done situations`);
         log('  ✓ resume from localStorage');
@@ -730,7 +747,7 @@ async function runConfig(browser, baseUrl, cfg) {
     check(JSON.stringify(Object.keys(store.local)) === JSON.stringify(['yawmuk.progress.v1']), `privacy: unexpected localStorage keys ${Object.keys(store.local)}`);
     check(!store.session.length && !store.cookie && !store.idb.length, `privacy: sessionStorage/cookies/IndexedDB used (${store.session} | ${store.cookie} | ${store.idb})`);
     const prog = JSON.parse(store.local['yawmuk.progress.v1']);
-    const allowedTop = ['v', 'lang', 'location', 'situations', 'visited', 'finished', 'introSeen', 'plan', 'pre']; // plan = journey order/source (no personal data), pre = pre-check correctness
+    const allowedTop = ['v', 'lang', 'location', 'situations', 'visited', 'finished', 'introSeen', 'townHintSeen', 'plan', 'pre']; // plan = journey order/source (no personal data), pre = pre-check correctness, townHintSeen = UI hint shown once
     check(Object.keys(prog).every((k) => allowedTop.includes(k)), `privacy: unexpected progress fields ${Object.keys(prog).filter((k) => !allowedTop.includes(k))}`);
     check(Object.values(prog.situations).every((r) => Object.keys(r).every((k) => ['tried', 'best', 'done', 'check', 'last'].includes(k))), 'privacy: unexpected per-situation fields');
     check(Object.keys(prog.situations).every((k) => RULINGS[k]), 'privacy: progress keys are not situation ids');

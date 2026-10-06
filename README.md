@@ -2,53 +2,74 @@
 
 # «يومك» — Yawmuk
 
-**لعبة ثلاثية الأبعاد في المتصفح تعرّف بأحكام الإسلام في المعاملات اليومية من خلال أسبوع عادي في حياة «آدم» في أمريكا، مع أدلة موثّقة ومراجعة آلية للنصوص وإحالة دائمة إلى العالم.**
+**عالم ثلاثي الأبعاد في المتصفح، فيه حيّ واحد متصل يمشي فيه اللاعب من البيت إلى العمل والمدرسة والمسجد والبنك. يرى كيف يتعامل المسلمون مع مواقف الحياة اليومية، ويقرأ أحكامها بأدلة موثّقة، ويسأل مرشداً بالصوت أو بالكتابة. المرشد لا يجيب إلا من مصادر مراجَعة، وما لا يجوز له أن يجيب عنه يُحال إلى لوحة يجيب فيها أهل العلم.**
 
 | | |
 |---|---|
-| 🎮 **التجربة المباشرة · Live demo** | `<LIVE_URL_TBD>` |
-| 🎬 **الفيديو (دقيقتان) · Video** | `<VIDEO_URL_TBD>` |
-| 📑 **العرض التقديمي · Deck (PDF)** | `<DECK_TBD>` |
+| 🎮 **التجربة المباشرة · Live demo** | {{LIVE_URL}} |
+| 🎬 **الفيديو (أقل من دقيقتين) · Video** | {{VIDEO_URL}} |
+| 📑 **العرض التقديمي · Deck (PDF)** | {{DECK_URL}} |
 | 💻 **المستودع · Repo** | https://github.com/B4r4k4/yawmuk |
-| 🧭 **المسار · Track** | **03 — التجارب التفاعلية (Interactive experiences)** |
+| 🧭 **المسار · Track** | **03: التجارب التفاعلية (Interactive experiences)** |
 
-> ⚠️ **حالة المراجعة:** الأحكام الثمانية عشر **مسودات أعدّها الذكاء الاصطناعي وراجعها آلياً**، وهي **بانتظار مراجعة عالم بشري**؛ لم يراجعها أي عالم بعد. نصوص الآيات والأحاديث طوبقت آلياً حرفاً بحرف مع مصادرها (انظر [سجل المصادر](docs/SOURCES.md))، أما الإحالات المذهبية والمعاصرة فلم تُطابَق كلها على المطبوع. اللعبة أداة تعليمية **وليست فتوى**. وللمسلم في حالته الخاصة: اسأل عالماً موثوقاً أو إمام مسجدك.
+> ⚠️ **حالة المراجعة:** الأحكام الثمانية عشر **مسودات أعدّها الذكاء الاصطناعي ودقّقها آلياً، وهي بانتظار مراجعة عالم بشري؛ لم يراجعها أي عالم بعد**. نصوص الآيات والأحاديث طوبقت آلياً حرفاً بحرف مع مصادرها (انظر [سجل المصادر](docs/SOURCES.md)). أما الإحالات المذهبية والمعاصرة فلم تُطابَق كلها على المطبوع. اللعبة أداة تعليمية **وليست فتوى**. ومن كانت له مسألة في حالته الخاصة فليسأل عالماً موثوقاً أو إمام مسجده. ولا تظهر على البطاقة عبارة «راجعه: …» إلا إذا سجّل عالم مراجعته فعلاً في لوحة المراجعة.
 
 </div>
 
-> ⚠️ **Review status:** all 18 rulings are **AI-prepared drafts that passed automated checks; they are pending scholarly review and have not been reviewed by a human scholar.** Every Quran and hadith text was machine-matched letter by letter against its source ([source log](docs/SOURCES.md)). Madhhab and contemporary references are attributed but most were not matched page by page against printed editions. The game is an educational tool, **not a fatwa**. A Muslim with a question about their own situation should ask a trusted scholar or their local imam.
+> ⚠️ **Review status:** the 18 rulings are **AI-prepared drafts that passed automated checks. They are pending scholarly review and have not been reviewed by a human scholar yet.** Every Quran and hadith text was machine-matched letter by letter against its source ([source log](docs/SOURCES.md)). Madhhab and contemporary references are attributed, but most have not been checked page by page against printed editions. The game is an educational tool, **not a fatwa**. A Muslim with a question about their own situation should ask a trusted scholar or their local imam. A card shows «Reviewed by …» only when a scholar has actually recorded a review in the dashboard.
 
-**Yawmuk («يومك», "your day")** is a browser 3D game that explains what Islam says about everyday dealings (money, food, work, study, celebrations) through an ordinary week in Columbus, Ohio. It runs on desktop and phone, in Arabic (RTL) and English, with no install and no account.
+**Yawmuk («يومك», "your day")** is a browser 3D world, an ordinary day in Columbus, Ohio, where **Adam**, a newcomer curious about Islam, learns how his Muslim neighbours, coworkers and friends handle everyday situations: money, food, work, study, celebrations, prayer. It runs on desktop and phone, in Arabic (RTL) and English, with no install and no account.
 
 ---
 
+## For judges: verify in 3 minutes · للمحكّمين: تحقّق في 3 دقائق
+
+Use **Chrome or Edge** on desktop: voice input relies on the Web Speech API, and other browsers fall back to text. Replace `{{LIVE_URL}}` below with the live link.
+
+| # | Open | Do | What you should see |
+|---|---|---|---|
+| 1 | `{{LIVE_URL}}/?scene=town&nointro=1` | Walk with **WASD** or the joystick. Doors are labelled. Press **E** near a door or a sign. | One connected neighbourhood with doors to home, work, school, street, events, **mosque** and **bank**, and a live **prayer-times** widget in the HUD. |
+| 2 | `{{LIVE_URL}}/?scene=mosque&nointro=1` | Press **E** at «المصحف المرتل والترجمة / Recited Quran & translation». Play an ayah. Then try the **adhkar** stand and the **prayer times** board. | KFGQPC Hafs text with a translation of meanings (quranenc.com) and per-ayah recitation (everyayah.com); adhkar with counters, each with its book, number, grade and dorar.net record; computed prayer times with the adhan at prayer time. |
+| 3 | `{{LIVE_URL}}/?scene=bank&nointro=1` | Press **E** at the «Islamic finance advisor» desk. | Contract cards (murabaha, ijara, diminishing musharaka…), each position attributed to a named body and linked; a zakat calculator; a loan vs murabaha vs musharaka comparison. Disputed (level C) items are marked as such. |
+| 4 | `{{LIVE_URL}}/?scene=home&nointro=1` | Talk to Omar, pick a choice, open the **ruling card**. | The verdict in plain words; verbatim Quran (with link) and hadith (number, grade, link); the four madhhabs side by side; "when to ask a scholar". |
+| 5 | Any scene → **«؟ Ask»** in the HUD (or the Guide desk in town) | Press 🎤 and ask aloud *"Why do Muslims avoid interest?"*, then type *"My wife and I want to take a mortgage in Ohio, is it okay for us?"* | First: an answer drawn **only** from reviewed passages, with the passages it used shown. Second: **no AI answer**, but a fixed referral and an «Ask a scholar» button. |
+| 6 | «Ask a scholar» (town or mosque) | Submit a question. Keep the ticket code. | A ticket, and the question waiting in the scholars' queue. |
+| 7 | `{{LIVE_URL}}/experts` | Log in with the **passcode given in the submission form**. It is never published here. | The scholar dashboard: the question from step 6 with an automatic level (أ/ب/ج/د) and related cards; answer it with sources; optionally publish it. Back in the game, the ticket shows the scholar's answer. |
+| 8 | `{{LIVE_URL}}/?study=1` then `{{LIVE_URL}}/results.html` | Consent, pre-test, play, post-test. | `/results.html` shows only **real** live aggregates. Below 5 participants per arm it says "insufficient data". |
+
+Offline check, no keys needed: `npm ci && npm test && npm run build`. The game still works without an AI provider: the planner falls back to a deterministic route, and the guide answers with the reviewed passages verbatim or abstains.
+
+## What's new for the final round · ما أضيف في المرحلة النهائية
+
+1. **One walkable town** (`src/scenes/town.js`, `src/engine/hub.js`). Every location opens from the same neighbourhood, and the player walks out of the house to school, the mosque or the bank.
+2. **Mosque** (`src/scenes/mosque.js`), with:
+   - **live prayer times + adhan** (`src/features/prayer/`, [adhan-js](https://github.com/batoulapps/adhan-js), computed on the device);
+   - **recited Quran with translation of meanings** (`src/features/quran/`): KFGQPC Hafs text via api.quran.com, cross-checked against quranenc.com, translation from quranenc.com, audio from everyayah.com, with 4 surahs bundled for offline use. See [QURAN_SOURCES.md](docs/QURAN_SOURCES.md);
+   - **morning & evening adhkar** (`src/features/adhkar/`): text from Hisn al-Muslim; every hadith checked against the six books and dorar.net. See [ADHKAR_SOURCES.md](docs/ADHKAR_SOURCES.md).
+3. **Islamic bank advisor + zakat calculator** (`src/scenes/bank.js`, `src/features/bank/`). It writes no new verdicts: every position is attributed and linked. See [BANK_SOURCES.md](docs/BANK_SOURCES.md).
+4. **«Ask Omar» guide with voice and text** (`src/features/guide/`, `src/features/voice/`). It works across the whole game and answers only from reviewed passages. Personal-fatwa questions and prompt-injection attempts are caught **before** the model is called. If nothing reviewed covers a question, it abstains and refers.
+5. **Scholar dashboard, the human review loop** (`/experts`, `netlify/functions/questions.mjs`, `experts.mjs`). Players send what the guide cannot answer. Scholars answer with sources and can publish an answer, which then becomes a reviewed passage the guide can use. They can also record reviews of the 18 ruling cards. See [EXPERTS.md](docs/EXPERTS.md).
+6. **Opt-in micro-study with live results**: pre/post understanding test, AI-personalised vs fixed route, `/results.html`. See [STUDY_PROTOCOL.md](docs/STUDY_PROTOCOL.md).
+7. **Evaluation against the reference package.** Content levels أ/ب/ج/د are enforced in code and tests. Every source is tiered as *approved package* or *secondary* (`tools/eval/source_tiers.mjs`). A religious Q&A eval runs in `tests/religious_qa.test.mjs` and `tests/levels.test.mjs`. Write-up: [EVAL.md](docs/EVAL.md).
+8. **New brand identity**, built as a sibling of the «Madar» identity: tokens, logo, contrast tests. See [BRAND.md](docs/BRAND.md).
+9. **Cloud Run deployment** (`server.mjs`, `Dockerfile`) with Firestore storage and secrets in Secret Manager. See [DEPLOY.md](docs/DEPLOY.md) and [OPERATIONS.md](docs/OPERATIONS.md).
+
 ## Problem · المشكلة
 
-- People meeting Islam for the first time, and many Muslims in the West, run into everyday questions (a mortgage, a 401(k), a work party with alcohol, a lost wallet, a raffle) that most Islamic content answers either as **long text fatwas** or as **short, unsourced social-media clips**.
-- Generic AI chatbots answer fast but **invent hadiths, flatten scholarly disagreement and never say "ask a scholar"**.
-- Existing apps are mostly Q&A lists: nothing lets a learner *experience* the situation, see how Muslims actually handle it, and then read the evidence.
+- People meeting Islam for the first time, and many Muslims in the West, run into everyday questions: a mortgage, a 401(k), a work party with alcohol, a lost wallet, a raffle. Most Islamic content answers them either with **long text fatwas** or with **short, unsourced social-media clips**.
+- Generic AI chatbots answer fast, but they can **invent hadiths, flatten scholarly disagreement and never say "ask a scholar"**.
+- Existing apps are mostly Q&A lists. None lets a learner *experience* the situation, see how Muslims actually handle it, and then read the evidence.
 
 ## Solution · الحل
 
-An interactive 3D story. The player is **Adam Reed**, a 28-year-old software engineer learning about Islam through his Muslim neighbours, coworkers and friends (his guide is his neighbour Omar). At each stop a friend does something that raises a question; the player chooses how Adam asks and responds, then a **ruling card** shows:
-
+An interactive 3D day. At each stop a Muslim friend does something that raises a question. The player chooses how Adam asks and responds, and a **ruling card** then shows:
 - the verdict and an **"In plain words"** explanation for a newcomer;
-- the evidence: **Quran** (verbatim, verified), **hadith** (verbatim, with number, grade and link), the **four madhhabs** side by side, and **contemporary fiqh councils** (IIFA, MWL, AMJA, FCNA, ECFR);
+- the evidence: **Quran** (verbatim, verified), **hadith** (verbatim, with number, grade and link), the **four madhhabs** side by side, and **contemporary fiqh councils**;
 - practical guidance, halal alternatives and **when to ask a scholar**.
 
-The score rewards curious, respectful questions and penalises stereotypes or pressure. The end screen shows what Adam learned, a suggested next topic and an invitation to a local mosque open house. **No pressure, no question about the player's beliefs, nothing about them stored.**
+Around the situations, the town has a **mosque** (prayer times, adhan, recited Quran with translation, adhkar), a **bank** (Islamic finance and zakat), a **guide** you can speak to, and a door to **real scholars**. The score rewards curious, respectful questions. The game never asks about the player's beliefs and stores nothing about them.
 
-## How it works — five stations of a session · آلية العمل في خمس محطات
-
-| # | Station | What happens |
-|---|---|---|
-| 1 | **Plan the journey** · خطة الرحلة | The player says (in a few taps or a short sentence) what they are curious about. The **AI journey planner** returns an ordered route through the 18 situations as validated JSON; with no API key, or if validation fails, a deterministic planner builds the route from the same catalogue. `?arm=fixed` forces the fixed route (for measurement). |
-| 2 | **Live the situation** · عِش الموقف | Walk the 3D scene (WASD / joystick), meet the animated character, read the dialogue (fiction only: no scripture in the script files). |
-| 3 | **Choose** · اختر | Pick how Adam responds; choices are shuffled; immediate feedback on the consequence. |
-| 4 | **Read the ruling card** · بطاقة الحكم | Verdict, plain words, Quran, hadith, madhhabs, councils, guidance, "ask a scholar when…". The optional **"Ask about this situation"** panel answers only from this ruling's verified sources, or abstains and refers. |
-| 5 | **Check & continue** · تحقق وتابع | A check question (+5), then the next station; at the end: what Adam learned, the next topic and a mosque referral. Progress is saved locally so the player can resume. |
-
-### The six locations and 18 situations · المواقع الستة والمواقف الثمانية عشر
+### Locations: 18 situations + two places · المواقع: 18 موقفاً ومكانان
 
 | Location · الموقع | Situations · المواقف |
 |---|---|
@@ -58,192 +79,202 @@ The score rewards curious, respectful questions and penalises stereotypes or pre
 | 🌃 Street · الشارع | Lost wallet (luqata) · Lottery, scratch cards, sports betting · Hidden defects, tips, fake reviews |
 | 🎉 Office holiday party · حفلة الشركة | Holiday greetings · A table where alcohol is served · Charity raffle |
 | 💍 Neighbours & a wedding · الجيران والعرس | A Muslim friend's wedding · Death of a non-Muslim neighbour · Gifts & a child's birthday party |
+| 🕌 Mosque · المسجد | Prayer times & adhan · Recited Quran with translation of meanings · Morning/evening adhkar · Ask a scholar |
+| 🏦 Bank · البنك | Contract cards · Zakat on savings · House-finance comparison |
 
-### Controls · التحكم
-
-- **Desktop:** WASD / arrows to move, Shift to run, drag to orbit, wheel to zoom, **E** to interact, Esc for the menu.
-- **Phone:** virtual joystick, drag to look, the **Interact** button.
-- "Try another choice" replays a situation; the "Understanding" score keeps your best. The exit opens once a location is done.
+**Controls:** WASD/arrows to move, Shift to run, drag to orbit, **E** to interact, Esc for the menu. On a phone: joystick, drag to look, and the **Interact** button.
 
 ## Screenshots · لقطات
 
 | Start (AR) | Dialogue & choices (EN) | Ruling card (AR) |
 |---|---|---|
 | ![Start screen, Arabic](docs/phase-4/screenshots/ui/after/desktop-ar/02-start.jpg) | ![Choices, English](docs/phase-4/screenshots/ui/after/desktop-en/10-choices.jpg) | ![Ruling card top, Arabic](docs/phase-4/screenshots/ui/after/desktop-ar/12-ruling-top.jpg) |
-| **Quran evidence (EN)** | **Four madhhabs (AR)** | **End screen (EN)** |
-| ![Quran evidence](docs/phase-4/screenshots/ui/after/desktop-en/13-ruling-quran.jpg) | ![Madhhabs](docs/phase-4/screenshots/ui/after/desktop-ar/15-ruling-madhahib.jpg) | ![End screen](docs/phase-4/screenshots/ui/after/desktop-en/23-end-top.jpg) |
-| **Home scene** | **Animated characters** | **Phone (390×844, AR)** |
-| ![Home scene](docs/phase-4/screenshots/engine/home-after-overview.jpg) | ![Character line-up](docs/phase-4/screenshots/engine/characters-lineup.jpg) | <img src="docs/phase-4/screenshots/ui/after/mobile-ar/12-ruling-top.jpg" width="200" alt="Phone ruling card"> |
+| **Quran evidence (EN)** | **Four madhhabs (AR)** | **Phone (390×844, AR)** |
+| ![Quran evidence](docs/phase-4/screenshots/ui/after/desktop-en/13-ruling-quran.jpg) | ![Madhhabs](docs/phase-4/screenshots/ui/after/desktop-ar/15-ruling-madhahib.jpg) | <img src="docs/phase-4/screenshots/ui/after/mobile-ar/12-ruling-top.jpg" width="200" alt="Phone ruling card"> |
 
-More: [`docs/phase-4/screenshots/`](docs/phase-4/screenshots/) (UI before/after, every scene) and [`docs/phase-3/screenshots/`](docs/phase-3/screenshots/) (automated playthrough).
+More in [`docs/phase-4/screenshots/`](docs/phase-4/screenshots/). These screenshots predate the town, mosque and bank, which are shown in the video.
+
+## Architecture · البنية
+
+```mermaid
+flowchart LR
+  subgraph Browser["Browser (Vite + three.js, no secrets)"]
+    Town["Town hub<br/>home · work · school · street · events · mosque · bank"]
+    Card["Ruling cards<br/>content/rulings (verbatim, verified)"]
+    Guide["«Ask Omar» guide + Ask panel<br/>BM25 over reviewed passages<br/>personal / injection pre-filter"]
+    Voice["Web Speech API<br/>speech-to-text / text-to-speech"]
+    Prayer["Prayer times<br/>adhan-js (local) + adhan audio"]
+    Quran["Quran panel"]
+    Adhkar["Adhkar<br/>content/adhkar (dorar-verified)"]
+    Bank["Bank advisor + zakat calc<br/>content/bank"]
+    Study["Opt-in study"]
+    Validate["aiCore validators<br/>ids ⊆ sent · no scripture · no links"]
+  end
+  subgraph Run["Google Cloud Run · server.mjs (serves dist/ + mounts functions)"]
+    F_plan["plan"]; F_ask["ask"]; F_guide["guide"]
+    F_q["questions"]; F_exp["experts"]; F_study["study"]; F_m["metrics"]
+    Store[("store.mjs<br/>Firestore · or JSON files")]
+    Dash["/experts<br/>scholar dashboard"]
+    Results["/results.html"]
+  end
+  LLM["Gemini 3 Flash on Vertex AI<br/>(fallback Gemini 2.5 Flash)"]
+  Ext["api.quran.com · quranenc.com · everyayah.com"]
+  Voice --> Guide
+  Town --> Card & Guide & Prayer & Quran & Adhkar & Bank & Study
+  Guide -->|retrieved passages only| F_guide & F_ask
+  Town -->|day context| F_plan
+  F_plan & F_ask & F_guide -->|structured JSON| LLM
+  F_plan & F_ask & F_guide --> Validate
+  Guide -->|refer| F_q --> Store
+  Dash --> F_exp --> Store
+  F_exp -. AI pre-triage, labelled .-> LLM
+  Study --> F_study --> Store
+  F_m --> Store
+  Results --> F_study
+  Quran --> Ext
+```
+
+<details><summary>File map</summary>
+
+```
+index.html, src/main.js          boot; experts.html + src/experts/ = scholar dashboard (2nd Vite page)
+src/engine/                      engine: game flow, hub/town, scenes, player, assets, aiCore (validators), planner, ui/
+src/scenes/                      town, home, work, school, street, public_events, private_events, mosque, bank
+src/features/<name>/             self-contained panels: guide, voice, prayer, quran, adhkar, bank, experts, study
+content/rulings, content/script  rulings (the only place religious rulings live) / story (no scripture)
+content/quran, adhkar, bank      fetched Quran bundle, verified adhkar, attributed bank cards
+content/sources.json             unified source log -> docs/SOURCES.md
+netlify/functions/*.mjs          plan, ask, guide, questions, experts, study, metrics (Web-standard handlers)
+netlify/lib/                     claude.mjs (Claude), vertex.mjs (Gemini fallback), store.mjs (Firestore/JSON)
+server.mjs, Dockerfile           Cloud Run server: static + auto-mounted functions + /experts
+tools/audit, tools/eval          citation re-verification, link check, source tiers
+tests/                           node:test suites (+ e2e playthrough)
+```
+</details>
 
 ## The role of AI · دور الذكاء الاصطناعي
 
-Full write-up: **[docs/AI.md](docs/AI.md)**. In short:
+Full write-up: **[docs/AI.md](docs/AI.md)**. The AI **arranges and explains reviewed material. It never writes religious text and never rules on a personal case.**
 
-1. **AI journey planner** (`src/engine/planner.js` → Netlify Function in `netlify/functions/` → Claude). The function sends the learner's stated interest plus the fixed situation catalogue; Claude must return **structured JSON** (situation ids + one-line reasons). The response is **validated** (known ids only, no duplicates, length limits, no free religious text). Invalid output, a timeout or a missing `ANTHROPIC_API_KEY` → a **deterministic fallback** planner. The key never reaches the browser.
-2. **Constrained "Ask" panel.** Retrieval is limited to the current ruling and its entries in the source log. The model may only cite ids it was given; every citation is checked against `content/sources.json` before display. When nothing retrieved covers the question, or the question is personal / high-stakes, it **abstains and refers to a scholar**. No Quran or hadith text is ever generated: quotations come only from the verified JSON.
-3. **AI in building the content** (offline, before release): research agents drafted the rulings, an independent audit agent re-fetched and matched every ayah and hadith, and the tests in `tests/` act as the evaluation suite (abstention, attribution, no fabricated hadith). See [Content & sourcing methodology](#content--sourcing-methodology--منهجية-المحتوى-والتوثيق).
+1. **Journey planner** (`plan`). The model receives the situation catalogue plus the player's chosen day type and topics, and returns a structured JSON route. It is validated twice, on the server and in the browser. If it is invalid, times out or there is no provider, a deterministic planner is used.
+2. **«Ask Omar» guide and the per-card Ask panel** (`guide`, `ask`). Retrieval runs first in the browser, over reviewed passages only (Q&A bank, card summaries and guidance, published scholar answers). The model must answer from those passages and cite their ids, and every id is checked. Scripture-like text, verse references and links all cause an abstention. **Personal-fatwa questions and injection attempts never reach the model**: they get a fixed, pre-written referral to a scholar.
+3. **Voice.** Speech-to-text and text-to-speech use the browser's Web Speech API, on-device where the browser supports it. A voice transcript follows exactly the same path and filters as typed text. The game never records, uploads or stores audio.
+4. **Scholar triage** (`experts`). The AI only *suggests* a content level for the human scholar, and the suggestion is labelled «اقتراح آلي يحتاج مراجعة» ("automatic suggestion, needs review"). It never answers players.
+5. **Provider.** The live deployment runs **Gemini 3 Flash (`gemini-3-flash-preview`) on Google Cloud Vertex AI**, with automatic retry on **Gemini 2.5 Flash** if the preview model times out or errors; authentication is the Cloud Run service account (no API key anywhere). The same code can use Claude (`@anthropic-ai/sdk`) when `ANTHROPIC_API_KEY` is set. Both use the same contract and validators. See [DEPLOY.md](docs/DEPLOY.md#llm-provider).
+6. **Building the content (offline, before release).** Research agents drafted the rulings. An independent audit agent re-fetched every ayah and hadith and matched them letter by letter. The tests are the evaluation suite.
 
-## Content reliability · موثوقية المحتوى
+**Why not a general chatbot?** A general chatbot generates religious text from its weights. In Yawmuk, the model only ever sees reviewed passages, may cite only ids it was given, and is overruled by deterministic filters on the cases that matter most: personal fatwa, out-of-scope questions and injection. A human scholar sits behind it. The critical cases are in [QA_BANK.md](docs/QA_BANK.md) and are checked by `tests/ai.test.mjs`, `tests/religious_qa.test.mjs` and `tests/levels.test.mjs`.
 
-How to verify any claim yourself: [docs/SOURCES.md](docs/SOURCES.md) ("How to verify" + every source with its link and status). Question bank used to test the AI panel, including the critical safety cases: [docs/QA_BANK.md](docs/QA_BANK.md).
+## Reliability & scientific safety · الموثوقية والسلامة العلمية
 
-Every piece of religious content is classified using the **four content levels of the challenge's scientific reference package** (`content_level` on each ruling, `level` on each Q&A item), and the game handles each the way the package requires:
+| Document | What it proves |
+|---|---|
+| [SOURCES.md](docs/SOURCES.md) | Every source, with link, verification status and tier. `content/sources.json` currently holds 246 records: 128 verified, and all are tiered approved-package or secondary. |
+| [EVAL.md](docs/EVAL.md) | The evaluation suite against the reference package: content levels, abstain/refer cases, source tiers. |
+| [QA_BANK.md](docs/QA_BANK.md) | Question bank with the critical safety cases. |
+| [QURAN_SOURCES.md](docs/QURAN_SOURCES.md) | Quran text and translation endpoints, why each counts as approved, and the offline bundle. |
+| [ADHKAR_SOURCES.md](docs/ADHKAR_SOURCES.md) | Hisn al-Muslim text, six-book and dorar.net verification of every hadith. |
+| [BANK_SOURCES.md](docs/BANK_SOURCES.md) | Attribution of every finance position; level ج items marked disputed. |
+| [EXPERTS.md](docs/EXPERTS.md) | The human review loop: API, auth, privacy, storage. |
+| [STUDY_PROTOCOL.md](docs/STUDY_PROTOCOL.md) | How benefit is measured; no fabricated data. |
+| [BRAND.md](docs/BRAND.md) | Visual identity, tokens, accessibility contrast. |
 
-| Level | Scope (per the package) | How the game handles it |
+**Content levels from the challenge's scientific reference package** are applied to every ruling (`content_level`) and every Q&A item (`level`):
+
+| Level | Scope | How Yawmuk handles it |
 |---|---|---|
-| **A — Stable foundational information** | Quran, authentic hadith, pillars of Islam and iman, basic seerah, ethics and values | Direct answer with its source: ayat quoted verbatim from the King Fahd Complex text via QuranEnc (`english_saheeh` translation), hadith with collection/number, grade and grader (dorar.net / HadeethEnc). Never paraphrased or generated. |
-| **B — Explanation and reasoning** | Explaining concepts, maqasid, general questions and common misconceptions | Answer from the reviewed material with the reference shown; no categorical wording where scholars may differ. Our own reasoning is rendered separately as «شرح توضيحي — ليس نصاً شرعياً». |
-| **C — Scholarly disagreement / high sensitivity** | Fiqh khilaf, detailed creed questions, contested history | Restricted answer: the verdict is `disputed`/`depends` or carries an explicit scope ("majority view"); the four madhhab positions are shown side by side with attribution; consensus is only claimed with a cited source; references not yet matched show «المرجع قيد التحقق». |
-| **D — Fatwa or personal case** | A ruling on an individual's own situation, contracts, family disputes, legal/medical matters | **No independent ruling**: general information only plus referral (`refer_to_scholar_when` on every card; the Ask panel pre-filters personal questions and refers to a scholar / local imam). |
+| **أ · A**: stable foundational information | Quran, authentic hadith, pillars, ethics | Direct answer with its source. Ayat come verbatim from the KFGQPC text via QuranEnc; hadith with collection, number, grade and grader. Never paraphrased or generated. |
+| **ب · B**: explanation and reasoning | concepts, maqasid, misconceptions | Answered from reviewed material with the reference. Our own reasoning appears separately, labelled «شرح توضيحي — ليس نصاً شرعياً» ("explanatory note, not a religious text"). |
+| **ج · C**: disagreement / high sensitivity | fiqh khilaf | Restricted. The verdict is `disputed`/`depends` or carries an explicit scope (e.g. "majority view"), with madhhab positions side by side and attributed. No confidence badge is shown. |
+| **د · D**: fatwa or personal case | the player's own situation | **No ruling.** The player gets general information and a referral. The guide pre-filters these questions and sends them to the scholar dashboard. |
 
-The AI never answers outside the reviewed material: if no source covers a question it abstains and refers.
-
-Verification tooling: `npm run audit` re-fetches every ayah and six-book hadith and checks every link; `npm test` enforces the rules above (no scripture in the script files, no unverified hadith, `refer_to_scholar_when` on every ruling, no claim of scholar review).
+Tooling: `npm run audit` re-fetches every ayah and six-book hadith and checks every link. `npm test` enforces the rules: no scripture in script files, no unverified hadith, `refer_to_scholar_when` on every ruling, no claim of scholar review without a real record, and level ج wording.
 
 ## Privacy · الخصوصية
 
-- **No account, no sign-in, no server-side profile.** The game never asks about the player's religion or beliefs and stores nothing about them.
-- `localStorage` only: `yawmuk.progress.v1` (situation ids done, points, best choice) and `yawmuk.quality` (graphics preset). No cookies, no session storage, no IndexedDB.
-- What the player types for the journey planner or the Ask panel is sent to the Netlify Function only for that request and is not logged or stored by the app.
-- **Optional, anonymous metrics** (completion, check-question answers, planner arm) are sent only after the player explicitly consents; no identifiers and no free text.
-- External requests: Google Fonts, and the Netlify Function when AI is used.
+- **No player accounts, no sign-in, no profile.** The game never asks about religion or belief.
+- Browser `localStorage` holds only game progress (`yawmuk.progress.v1`), the graphics preset (`yawmuk.quality`), prayer location/method settings (`yk-prayer-settings`), adhkar counters (`yk-adhkar-progress`), the player's own scholar-question ticket codes (`yawmuk.experts.tickets.v1`) and, for study participants, their random study code (`yk-study`).
+- Questions typed into the guide (Omar) and the Ask panel are sent, with the reviewed passages, to an AI model (in the live deployment: Google Gemini on Vertex AI; the code can also use Claude by Anthropic if a server operator sets `ANTHROPIC_API_KEY`) for that request only, and are never logged by the game.
+- Questions sent to scholars store the question text and the optional nickname, but no email, phone or IP; the scholars' dashboard may send the question to the same AI model to pre-sort it. The player can delete a question with the ticket code.
+- Study and metrics data are opt-in and anonymous, published as aggregates only, and the participant can withdraw.
+- Voice uses the browser's own speech engine. The game itself never records, uploads or stores audio. Where the browser offers on-device recognition, the game asks for it. Otherwise the browser's speech service handles the audio (in Chrome that is Google's service), and the UI says so.
 
 ## Setup & run · التشغيل
 
 Requires **Node.js 22+**.
 
 ```bash
-npm ci                 # install exact locked dependencies
-npm run dev            # http://localhost:5173  (?scene=home&nointro=1&lang=en&debug=1 to jump in; ?arm=fixed for the fixed route)
-npm test               # unit, content-contract and safety tests (node:test, no browser)
-npm run audit          # re-verify every Quran/hadith text against its source + check every link (needs network)
-npm run build          # -> dist/ (static, base './')
-npm run serve:dist     # serve dist/ at http://127.0.0.1:4173
-npm run test:e2e       # headless Chrome playthrough of all 18 situations, AR+EN, desktop+phone
+npm ci                 # exact locked dependencies
+npm run dev            # http://localhost:5173/?scene=town&nointro=1  (AI functions are not served by Vite)
+npm test               # unit, content-contract, safety, AI-validator, feature and eval suites (node:test, no browser)
+npm run build          # -> dist/ (game + experts dashboard)
+node server.mjs        # production server on :8080 = Cloud Run locally (dist/ + functions + /experts)
+npm run audit          # re-verify every Quran/hadith text against its source + check every link (network)
+npm run test:e2e       # headless Chrome playthrough of the 18 situations
 npm run sources        # regenerate docs/SOURCES.md from content/sources.json
 ```
 
-The game works fully without an API key (deterministic planner, Ask panel shows the card's sources and the referral). To try the AI features locally: `ANTHROPIC_API_KEY=... npx netlify dev`.
+Full local loop with the scholar dashboard, Cloud Run deploy and the Netlify alternative: **[docs/DEPLOY.md](docs/DEPLOY.md)**. Running cost, fallbacks, roles and the adoption plan: **[docs/OPERATIONS.md](docs/OPERATIONS.md)**. No secrets are committed. The keys exist only in Secret Manager (Cloud Run) or the host's environment.
 
-### Deploy to Netlify · النشر
+## Built during the challenge (Oct 4–6, 2026) · ما بُني خلال التحدي
 
-1. Netlify → **Add new site → Import an existing project** → GitHub → `B4r4k4/yawmuk`.
-2. Build settings come from `netlify.toml`: build command `npm run build`, publish directory `dist`, functions directory `netlify/functions`.
-3. **Site configuration → Environment variables:** `ANTHROPIC_API_KEY` = your key (scoped to Functions) and `NODE_VERSION` = `22`.
-4. Deploy, then open the site and check: start screen, one full situation, the ruling card, the Ask panel (and its abstain case), the end screen.
+There is **no prior codebase**: the repository and all of its code, content and asset integration were created in the challenge window. The git history shows the timeline, with one caveat stated plainly:
 
-No secrets are committed: the key exists only in Netlify's environment.
+- **The first commit (`be85b1f`, 2026-10-05 21:40 +03) adds 392 files at once.** Phases 1–3 were built that day in a local working tree by the team and its AI agents (research → script → engine → 6 scenes → audit → tests), and nothing was committed until the phase-3 QA passed. The work before that commit has timestamped evidence: [`docs/audit/verify_output_2026-10-05.txt`](docs/audit/verify_output_2026-10-05.txt) (citation audit run 2026-10-05 16:48 UTC: 187/187 checks pass) and the phase reports [`reports/phase-1.pdf`](reports/phase-1.pdf), [`reports/phase-2.pdf`](reports/phase-2.pdf) and [`reports/phase-3.pdf`](reports/phase-3.pdf), whose sources are in [`reports/src/`](reports/src/).
 
-### What the tests cover
-
-| Suite | File | What it checks |
+| When (+03) | Commit(s) | What |
 |---|---|---|
-| Content contract | `tests/content.test.mjs` | The 18 ids match the catalogue in `docs/TEAM_BRIEF.md` and the engine; every ruling and script field exists in both languages (including `newcomer_explainer`); script and UI text stay on Islam only; README links resolve; one `best` choice per situation; one correct check answer; the location chain ends. |
-| Safety | `tests/safety.test.mjs` | Every ayah has surah/ayah, verbatim text, translation and a source link, and is verified in the source log; every hadith has collection, number, narrator, grade and source; **no unverified hadith**; every ruling has `refer_to_scholar_when`; `review_status` never claims scholar review; **no script file contains Quran or hadith text**; the ruling card **abstains** ("text not provided") rather than inventing, renders citations verbatim, and never renders unsafe links. |
-| Citation audit | `tests/audit.test.mjs` | Runs `tools/audit/verify.mjs` (letter-by-letter re-check of every ayah and six-book hadith); skipped with a message when offline with no cache. |
-| End to end | `tests/e2e/playthrough.mjs` | Plays the whole week 4 times (AR/EN × desktop/phone) in headless Chrome: reachability of every hotspot, dialogue, choices, ruling card vs JSON, check question, resume after reload, end screen, RTL overflow and privacy (only the keys above in storage). |
-
-## Architecture · البنية
-
-```
-index.html, src/main.js           boot
-src/engine/                       game engine (Three.js r170, Vite 6) — see src/engine/README.md
-  game.js                         flow: start → plan → intro → 6 locations → summary; window.yawmuk debug API
-  planner.js                      journey planner client: calls the Netlify Function, validates, deterministic fallback
-  sceneManager.js, sceneRegistry.js  scene contract, markers/NPCs, camera occluders, disposal
-  assets.js                       async glTF (meshopt) / PBR / HDRI loading + public/assets/catalog.json
-  characters.js, accessories.js   animated Quaternius characters; hijab, kufi, beard, clothing generated at runtime
-  events.js                       engine event bus
-  player.js, input.js, world.js   third-person player, keyboard/mouse/touch, renderer, HDRI + post-processing
-  content.js, progress.js         content loaded at build time; localStorage progress
-  ui/                             dialogue, ruling card (textContent only), screens, HUD, loader, credits
-src/scenes/<location>.js          six scenes (procedural architecture + curated assets)
-netlify/functions/                serverless AI endpoint (Claude); holds the API key server-side
-content/rulings/<location>.json   the rulings: the ONLY place religious content lives
-content/script/<location>.json    the story: dialogue, choices, check questions (no Quran/hadith text)
-content/sources.json              unified source log → docs/SOURCES.md
-public/assets/                    curated CC0/CC-BY glTF props, HDRIs, PBR textures, animated characters (+ LICENSES.md)
-tools/audit/                      citation checker, link checker, source-log builders
-tools/assets/, tools/characters/  asset fetch/measure/catalogue; character fetch + merge + meshopt build
-tools/serve.mjs                   zero-dependency static server for dist/
-tests/                            node:test suites + e2e playthrough
-docs/                             team brief, AI, sources, QA bank, assets, research, audits, deck outline, video script
-reports/phase-N.pdf               phase reports
-```
-
-Principles enforced in code and tests:
-1. **Story and ruling are separate.** Dialogue is fiction; rulings and evidence come only from `content/rulings/` and are rendered without changing a word.
-2. **No fabrication.** Quran and hadith are quoted only verbatim from a verified source; otherwise the field stays empty, the card says "not provided" and the reason goes to `notes_for_reviewer`.
-3. **No pressure:** the game never pushes, ranks or tracks belief.
-4. **Disagreement shown honestly:** the four madhhabs side by side, plus contemporary councils.
-5. **Referral:** every ruling says when to ask a scholar; the end screen points to a local mosque.
-6. **Arabic RTL and English** throughout.
-
-## Content & sourcing methodology · منهجية المحتوى والتوثيق
-
-1. **Research agents** wrote each ruling from primary sources: the Quran (Uthmani text, Saheeh International translation), hadith (sunnah.com, dorar.net, with number and grade), the relied-upon books of each madhhab or the Kuwaiti Fiqh Encyclopedia, and contemporary council resolutions. Notes: `docs/research/`.
-2. **An independent audit agent** ([`docs/audit/phase1_audit.md`](docs/audit/phase1_audit.md)) re-fetched every ayah and every six-book hadith and compared them **letter by letter, with harakat**; hadiths outside the six books were matched by hand and logged in `tools/audit/manual_verifications.json`.
-3. **The source log** ([`docs/SOURCES.md`](docs/SOURCES.md)) lists every source with its status. At the time of writing: 212 sources, 92 verified (all Quran and hadith texts plus 7 contemporary resolutions) and 120 that still need a human (madhhab page references and most fatwas).
-4. **The scriptwriter** never writes scripture; situations point to a `ruling_id`, and the tests enforce this.
-5. **Review status:** `ai_verified` (14 rulings) = passed automated checks with no substantive error found; `ai_draft` (4: food ingredients, alcohol/pork job, wedding, gifts/birthday) = open questions for a scholar. Both show in the game as **"pending scholar review"**. Only a human scholar may change this.
-
-## Sources, tools & licences · سجل المصادر والأدوات والتراخيص
-
-**Code licence:** [MIT](LICENSE) — © 2026 Yawmuk team (Lemonada). **Content** (`content/`, docs and reports): CC BY-NC-SA 4.0. Quran and hadith texts remain under their publishers' terms. Details and third-party notes: [`LICENSE`](LICENSE).
-
-| Kind | Item | Version | Licence |
-|---|---|---|---|
-| Runtime | three | 0.170.0 | MIT |
-| Runtime | postprocessing | 6.39.5 | Zlib |
-| Runtime | n8ao | 2.0.1 | ISC |
-| Runtime (function) | @anthropic-ai/sdk | 0.131.0 | MIT |
-| Dev | vite | 6.4.3 | MIT |
-| Dev | puppeteer-core (e2e) | 25.12.0 | Apache-2.0 |
-| Dev | @gltf-transform/core, extensions, functions | 4.5.1 | MIT |
-| Dev | meshoptimizer | 1.3.0 | MIT |
-| Fonts | Amiri, Amiri Quran, IBM Plex Sans Arabic, Reem Kufi (Google Fonts) | — | SIL OFL 1.1 |
-| 3D assets | 253 catalogued assets: 242 CC0 1.0 (Kenney, Poly Haven HDRIs and PBR textures, poly.pizza authors) + **11 CC-BY 3.0** models | — | [`public/assets/LICENSES.md`](public/assets/LICENSES.md), [`docs/ASSETS.md`](docs/ASSETS.md) |
-| Characters | Quaternius Ultimate Modular Men/Women (6 source models, 6 clips) | — | CC0 1.0, [`public/assets/characters/LICENSES.md`](public/assets/characters/LICENSES.md) |
-| Religious sources | quran.com, Tanzil, QuranEnc (Saheeh International), sunnah.com, dorar.net, hadith-api, madhhab books, IIFA/MWL/AMJA/FCNA/ECFR | — | cited per entry in [`docs/SOURCES.md`](docs/SOURCES.md) |
-| AI (runtime) | Claude (Anthropic API) via Netlify Function | — | API terms; key server-side only |
-| AI (building) | Claude Code agents (Claude Opus): supervisor, fiqh researchers, scriptwriter, scene builders, auditor, QA, docs | — | — |
-
-All CC-BY models are credited in the in-game **Credits** screen (start screen and menu), which is generated at build time from `public/assets/LICENSES.md`.
-
-**Baseline / prior work: none.** The repository was created on 2026-10-05 (first commit `be85b1f`); all code, content and assets integration were done during the hackathon window.
+| Oct 5, 21:40 | `be85b1f` | Initial commit: engine, 6 scenes, 18 rulings with machine-verified citations, script, audit tools, tests, phases 1–3. |
+| Oct 5, 21:47 – 23:54 | `318e1b3` … `72c1acf` | Phase-3 report; pivot to the non-Muslim learner premise (Adam learns from Muslim friends); QA fixes; summary screen. |
+| Oct 6, 00:14 – 03:39 | `17f0aa2` … `7df460f` | Removal, by owner decision, of all non-Islamic scripture references, with a guard; reports regenerated. |
+| Oct 6, 14:44 – 15:56 | `7f65ae3` … `6b0c139` | CC0 3D asset library, UI redesign, animated characters, HDRI/post-processing. |
+| Oct 6, 16:28 | `26a3e28` | Compliance with the scientific reference package: content levels, explanatory-note labelling, consensus sources. |
+| Oct 6, 18:37 | `9b6804e` | Cloud Run server and container build. |
+| Oct 6, evening | final submission commit | Everything in «What's new» above: town, mosque, bank, voice guide, scholar dashboard, study, eval, brand. |
 
 ## Team · الفريق
 
-Team **Lemonada**, working with a team of AI agents coordinated by a supervisor agent under the contracts in [`docs/TEAM_BRIEF.md`](docs/TEAM_BRIEF.md):
+**Humans:**
+- **Abubakr Abusham** (Lemonada): project owner.
+- **Mohamed Al-Mubarak**
 
-| Agent | Output |
-|---|---|
-| Supervisor | brief, contracts, coordination |
-| Fiqh research (×3) | `content/rulings/*.json`, `docs/research/*` |
-| Scriptwriter | `content/script/*.json`, `docs/story_bible.md`, `docs/hotspots.md` |
-| Engine | `src/engine/**`, characters, assets pipeline, build |
-| Scene builders (×6) | `src/scenes/*.js` |
-| Independent sharia auditor | `tools/audit/*`, `content/sources.json`, `docs/audit/*` |
-| AI features | planner, Netlify Function, Ask panel, `docs/AI.md` |
-| Integration & QA | `tests/**`, `docs/QA_BANK.md`, `docs/phase-3/qa_report.md` |
-| Documentation | `reports/phase-*.pdf`, this README, deck outline, video script |
+**AI disclosure.** Most code and drafts were produced by **AI coding agents** (Claude Code, Claude Opus models) under human direction. A supervisor agent coordinated them through the contracts in [`docs/TEAM_BRIEF.md`](docs/TEAM_BRIEF.md): fiqh researchers, scriptwriter, engine and scene builders, an independent sharia-citation auditor, feature agents (mosque, Quran, adhkar, prayer, bank, voice, guide, scholar dashboard, study, brand), QA and documentation. Agents did not decide religious rulings by themselves. Every scripture text is fetched from a source and machine-verified, and the rulings remain **pending human scholarly review**, as stated at the top of this page.
 
-## Measurement plan · خطة القياس
+## Measurement · القياس
 
-| Metric | Target | How |
+| Metric (track 3) | Target | How |
 |---|---|---|
-| Journey completion | **≥ 70%** of players who start finish their route | opt-in anonymous event at start/end |
-| Next-step clarity | **≥ 75%** answer "yes, I know what to do / whom to ask" on the end screen | one-tap end-screen question |
-| Critical safety cases | **100%** abstain-and-refer on the critical cases in [docs/QA_BANK.md](docs/QA_BANK.md) | automated eval before every release |
-| Understanding gain | measurable pre/post gain | check question per situation + a 3-question pre/post quiz |
-| Personalised vs fixed | planner route vs `?arm=fixed` on completion and understanding | A/B by URL arm, compared on the same metrics |
+| Understanding gain | positive pre→post gain | Opt-in micro-study, 5 concept items copied from reviewed cards; live at `/results.html` ([protocol](docs/STUDY_PROTOCOL.md)) |
+| AI-personalised vs fixed route | compare gain and completion | Arms alternate by enrolment; intention-to-treat and realized arm both reported |
+| Journey completion | ≥ 70% | Anonymous opt-in events |
+| Next-step clarity | ≥ 75% "I know my next step / whom to ask" | Likert item at post-test |
+| Critical safety cases | 100% abstain/refer | Automated eval on every `npm test` |
+
+We report only real submissions. Below 5 completed participants per arm, the dashboard says "insufficient data", and we do not quote numbers until there are enough.
+
+## Sources, tools & licences · سجل المصادر والأدوات والتراخيص
+
+**Code licence:** [MIT](LICENSE), © 2026 Yawmuk team (Lemonada). **Content** (`content/`, docs and reports): CC BY-NC-SA 4.0. Quran and hadith texts remain under their publishers' terms. See [`LICENSE`](LICENSE).
+
+| Kind | Item | Licence |
+|---|---|---|
+| Runtime | three 0.170, postprocessing 6.39, n8ao 2.0 | MIT, Zlib, ISC |
+| Runtime | adhan (adhan-js) 4.4: prayer-time calculation | MIT |
+| Server | @anthropic-ai/sdk 0.131 (Claude); Vertex AI REST (Gemini fallback); Firestore REST | MIT; Google Cloud terms |
+| Dev | vite 6, puppeteer-core (e2e), @gltf-transform 4.5, meshoptimizer 1.3 | MIT / Apache-2.0 |
+| Fonts | Amiri, Amiri Quran, IBM Plex Sans Arabic, Reem Kufi (Google Fonts) | SIL OFL 1.1 |
+| 3D assets | Kenney, Poly Haven, poly.pizza authors (CC0 1.0) + 11 CC-BY 3.0 models; Quaternius characters (CC0) | [`public/assets/LICENSES.md`](public/assets/LICENSES.md), [`docs/ASSETS.md`](docs/ASSETS.md) |
+| Quran | api.quran.com (`text_qpc_hafs`), quranenc.com translations, everyayah.com audio | per [QURAN_SOURCES.md](docs/QURAN_SOURCES.md) |
+| Hadith / adhkar | Hisn al-Muslim API, hadith-api (sunnah.com text), dorar.net | per [ADHKAR_SOURCES.md](docs/ADHKAR_SOURCES.md), [SOURCES.md](docs/SOURCES.md) |
+| Adhan audio | «The Adhan – Muslim Call to Prayer – Aaqib Azeez» by Atcovi, [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:The_Adhan_-_Muslim_Call_to_Prayer_-_Aaqib_Azeez.mp3) (`public/audio/adhan/adhan.mp3`), credited in the prayer panel | CC BY-SA 4.0 |
+| AI (runtime) | Gemini 3 Flash / 2.5 Flash on Vertex AI (live); Claude supported | provider terms; keys server-side only |
+| AI (building) | Claude Code agents (Claude Opus) | n/a |
+
+CC-BY models are credited in the in-game **Credits** screen, which is generated from `public/assets/LICENSES.md`.
 
 ## Roadmap & continuity · خطة الاستمرار
 
-1. **Adoption by a da'wah / Islamic centre** that hosts the game, owns the content and uses it at open houses, new-Muslim classes and MSA events.
-2. **Scholar review workflow (first priority):** a qualified scholar reviews the 18 rulings (the 4 `ai_draft` first, using the prioritised list in the audit), checks madhhab references against printed editions and signs off; approved rulings get `review_status: "scholar_reviewed"` with name and date, and the safety tests whitelist them.
-3. **More situations** with the same pipeline (research → audit → script → scene → tests): healthcare, travel, inheritance basics, online business.
-4. **Ramadan week:** fasting at work, an iftar invitation, zakat al-fitr, Eid with the neighbours.
-5. **More languages** (Urdu, French, Spanish, Somali), audio narration, screen-reader flow for the 3D parts, a teacher mode.
+1. **Scholar review first.** The dashboard is ready. A qualified scholar reviews the 18 cards, starting with the 4 `ai_draft` ones; each review is stored with name and date and shown on the card.
+2. **Adoption by a mosque or da'wah centre** for open houses and new-Muslim classes. Plan and roles are in [OPERATIONS.md](docs/OPERATIONS.md).
+3. **More situations through the same pipeline** (research → audit → script → scene → tests): healthcare, travel, Ramadan week, online business.
+4. **More languages** (Urdu, French, Spanish, Somali), using approved KFGQPC/quranenc translations for each.

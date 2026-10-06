@@ -2,14 +2,14 @@
   {
     "id": "quran:2:275",
     "type": "quran",
-    "citation": "القرآن الكريم، سورة البقرة (2)، الآية 275 — نص مصحف المدينة النبوية (مجمع الملك فهد لطباعة المصحف الشريف)؛ الترجمة: Saheeh International (quranenc.com، مجمع الملك فهد)",
+    "citation": "القرآن الكريم، سورة البقرة (2)، الآية 275 — نص مصحف المدينة النبوية (مجمع الملك فهد لطباعة المصحف الشريف)؛ الترجمة: صحيح إنترناشيونال — مركز نور الدولي (عبر موسوعة القرآن الكريم quranenc.com)",
     "url": "https://quranenc.com/en/browse/english_saheeh/2#275",
     "text": {
       "ar": "ٱلَّذِينَ يَأۡكُلُونَ ٱلرِّبَوٰاْ لَا يَقُومُونَ إِلَّا كَمَا يَقُومُ ٱلَّذِي يَتَخَبَّطُهُ ٱلشَّيۡطَٰنُ مِنَ ٱلۡمَسِّۚ ذَٰلِكَ بِأَنَّهُمۡ قَالُوٓاْ إِنَّمَا ٱلۡبَيۡعُ مِثۡلُ ٱلرِّبَوٰاْۗ وَأَحَلَّ ٱللَّهُ ٱلۡبَيۡعَ وَحَرَّمَ ٱلرِّبَوٰاْۚ فَمَن جَآءَهُۥ مَوۡعِظَةٞ مِّن رَّبِّهِۦ فَٱنتَهَىٰ فَلَهُۥ مَا سَلَفَ وَأَمۡرُهُۥٓ إِلَى ٱللَّهِۖ وَمَنۡ عَادَ فَأُوْلَٰٓئِكَ أَصۡحَٰبُ ٱلنَّارِۖ هُمۡ فِيهَا خَٰلِدُونَ",
       "en": "Those who consume interest cannot stand [on the Day of Resurrection] except as one stands who is being beaten by Satan into insanity. That is because they say, \"Trade is [just] like interest.\" But Allāh has permitted trade and has forbidden interest. So whoever has received an admonition from his Lord and desists may have what is past, and his affair rests with Allāh. But whoever returns [to dealing in interest or usury] - those are the companions of the Fire; they will abide eternally therein."
     },
     "location": "2:275",
-    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, King Fahd Complex-reviewed edition (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
+    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, issued by Noor International Center, as hosted by QuranEnc (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
     "review_status": "machine_verified",
     "verified": true,
     "verified_how": "verify.mjs: text_ar re-fetched from quranenc.com API (King Fahd Complex) and matched exactly; letters cross-checked against Tanzil quran-uthmani (api.alquran.cloud); translation_en matched quranenc english_saheeh.",
@@ -22,19 +22,21 @@
       "qa.consensus.home",
       "qa.misquote.interest_doubled"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "Madinah Mushaf text (King Fahd Complex) via quranenc.com; English is the Saheeh International translation hosted there."
   },
   {
     "id": "quran:2:278",
     "type": "quran",
-    "citation": "القرآن الكريم، سورة البقرة (2)، الآية 278 — نص مصحف المدينة النبوية (مجمع الملك فهد لطباعة المصحف الشريف)؛ الترجمة: Saheeh International (quranenc.com، مجمع الملك فهد)",
+    "citation": "القرآن الكريم، سورة البقرة (2)، الآية 278 — نص مصحف المدينة النبوية (مجمع الملك فهد لطباعة المصحف الشريف)؛ الترجمة: صحيح إنترناشيونال — مركز نور الدولي (عبر موسوعة القرآن الكريم quranenc.com)",
     "url": "https://quranenc.com/en/browse/english_saheeh/2#278",
     "text": {
       "ar": "يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُواْ ٱتَّقُواْ ٱللَّهَ وَذَرُواْ مَا بَقِيَ مِنَ ٱلرِّبَوٰٓاْ إِن كُنتُم مُّؤۡمِنِينَ",
       "en": "O you who have believed, fear Allāh and give up what remains [due to you] of interest, if you should be believers."
     },
     "location": "2:278",
-    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, King Fahd Complex-reviewed edition (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
+    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, issued by Noor International Center, as hosted by QuranEnc (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
     "review_status": "machine_verified",
     "verified": true,
     "verified_how": "verify.mjs: text_ar re-fetched from quranenc.com API (King Fahd Complex) and matched exactly; letters cross-checked against Tanzil quran-uthmani (api.alquran.cloud); translation_en matched quranenc english_saheeh.",
@@ -47,19 +49,21 @@
       "qa.consensus.home",
       "qa.misquote.interest_doubled"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "Madinah Mushaf text (King Fahd Complex) via quranenc.com; English is the Saheeh International translation hosted there."
   },
   {
     "id": "quran:2:279",
     "type": "quran",
-    "citation": "القرآن الكريم، سورة البقرة (2)، الآية 279 — نص مصحف المدينة النبوية (مجمع الملك فهد لطباعة المصحف الشريف)؛ الترجمة: Saheeh International (quranenc.com، مجمع الملك فهد)",
+    "citation": "القرآن الكريم، سورة البقرة (2)، الآية 279 — نص مصحف المدينة النبوية (مجمع الملك فهد لطباعة المصحف الشريف)؛ الترجمة: صحيح إنترناشيونال — مركز نور الدولي (عبر موسوعة القرآن الكريم quranenc.com)",
     "url": "https://quranenc.com/en/browse/english_saheeh/2#279",
     "text": {
       "ar": "فَإِن لَّمۡ تَفۡعَلُواْ فَأۡذَنُواْ بِحَرۡبٖ مِّنَ ٱللَّهِ وَرَسُولِهِۦۖ وَإِن تُبۡتُمۡ فَلَكُمۡ رُءُوسُ أَمۡوَٰلِكُمۡ لَا تَظۡلِمُونَ وَلَا تُظۡلَمُونَ",
       "en": "And if you do not, then be informed of a war [against you] from Allāh and His Messenger. But if you repent, you may have your principal - [thus] you do no wrong, nor are you wronged."
     },
     "location": "2:279",
-    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, King Fahd Complex-reviewed edition (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
+    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, issued by Noor International Center, as hosted by QuranEnc (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
     "review_status": "machine_verified",
     "verified": true,
     "verified_how": "verify.mjs: text_ar re-fetched from quranenc.com API (King Fahd Complex) and matched exactly; letters cross-checked against Tanzil quran-uthmani (api.alquran.cloud); translation_en matched quranenc english_saheeh.",
@@ -68,7 +72,9 @@
       "home.credit_card",
       "school.student_loan"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "Madinah Mushaf text (King Fahd Complex) via quranenc.com; English is the Saheeh International translation hosted there."
   },
   {
     "id": "hadith:صحيح-مسلم:1598",
@@ -94,7 +100,9 @@
       "school.student_loan",
       "work.retirement_401k"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "From the two Sahihs (named by the package); grade shown as on dorar.net."
   },
   {
     "id": "madhhab:hanafi:home.mortgage",
@@ -113,7 +121,9 @@
     "used_in": [
       "home.mortgage"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "Classical madhhab book (acceptable per the package) but accessed via a secondary site; the original volume/page needs a human check."
   },
   {
     "id": "madhhab:maliki:home.mortgage",
@@ -132,7 +142,9 @@
     "used_in": [
       "home.mortgage"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "Package-named site: shamela.ws."
   },
   {
     "id": "madhhab:shafii:home.mortgage",
@@ -151,7 +163,9 @@
     "used_in": [
       "home.mortgage"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "Classical madhhab book (acceptable per the package) but accessed via a secondary site; the original volume/page needs a human check."
   },
   {
     "id": "madhhab:hanbali:home.mortgage",
@@ -170,7 +184,9 @@
     "used_in": [
       "home.mortgage"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "Classical madhhab book (acceptable per the package) but accessed via a secondary site; the original volume/page needs a human check."
   },
   {
     "id": "contemporary:مجمع-الفقه-الإسلامي-الدولي:القرار-10-10-2-الدورة-الثانية-جدة-ديسمبر",
@@ -189,7 +205,9 @@
     "used_in": [
       "home.mortgage"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "Official publication of a contemporary fiqh council or scholar; not one of the package-named references."
   },
   {
     "id": "contemporary:مجمع-الفقه-الإسلامي-الدولي:القرار-50-1-6-الدورة-السادسة-جدة-مارس-19",
@@ -208,7 +226,9 @@
     "used_in": [
       "home.mortgage"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "Official publication of a contemporary fiqh council or scholar; not one of the package-named references."
   },
   {
     "id": "contemporary:مجمع-الفقه-الإسلامي-الدولي:القراران-40-41-2-5-3-5-الدورة-الخامسة-ال",
@@ -227,7 +247,9 @@
     "used_in": [
       "home.mortgage"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "Official publication of a contemporary fiqh council or scholar; not one of the package-named references."
   },
   {
     "id": "contemporary:مجمع-فقهاء-الشريعة-بأمريكا-AMJ:قرار-لجنة-الفتوى-الدائمة-بشأن-شركات-التم",
@@ -247,7 +269,9 @@
       "home.mortgage",
       "qa.consensus.home"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "Official publication of a contemporary fiqh council or scholar; not one of the package-named references."
   },
   {
     "id": "contemporary:المجلس-الأوروبي-للإفتاء-والبحو:الدورة-العادية-الرابعة-دبلن-18-22-رجب-14",
@@ -267,7 +291,9 @@
       "home.mortgage",
       "qa.consensus.home"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "Official publication of a contemporary fiqh council or scholar; not one of the package-named references."
   },
   {
     "id": "contemporary:مؤتمر-فقهي-في-ديترويت-1999-بحس:المؤتمر-الفقهي-الدولي-الثاني-ديترويت-199",
@@ -286,38 +312,42 @@
     "used_in": [
       "home.mortgage"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "Official publication of a contemporary fiqh council or scholar; not one of the package-named references."
   },
   {
     "id": "quran:5:5",
     "type": "quran",
-    "citation": "القرآن الكريم، سورة المائدة (5)، الآية 5 — نص مصحف المدينة النبوية (مجمع الملك فهد لطباعة المصحف الشريف)؛ الترجمة: Saheeh International (quranenc.com، مجمع الملك فهد)",
+    "citation": "القرآن الكريم، سورة المائدة (5)، الآية 5 — نص مصحف المدينة النبوية (مجمع الملك فهد لطباعة المصحف الشريف)؛ الترجمة: صحيح إنترناشيونال — مركز نور الدولي (عبر موسوعة القرآن الكريم quranenc.com)",
     "url": "https://quranenc.com/en/browse/english_saheeh/5#5",
     "text": {
       "ar": "ٱلۡيَوۡمَ أُحِلَّ لَكُمُ ٱلطَّيِّبَٰتُۖ وَطَعَامُ ٱلَّذِينَ أُوتُواْ ٱلۡكِتَٰبَ حِلّٞ لَّكُمۡ وَطَعَامُكُمۡ حِلّٞ لَّهُمۡۖ وَٱلۡمُحۡصَنَٰتُ مِنَ ٱلۡمُؤۡمِنَٰتِ وَٱلۡمُحۡصَنَٰتُ مِنَ ٱلَّذِينَ أُوتُواْ ٱلۡكِتَٰبَ مِن قَبۡلِكُمۡ إِذَآ ءَاتَيۡتُمُوهُنَّ أُجُورَهُنَّ مُحۡصِنِينَ غَيۡرَ مُسَٰفِحِينَ وَلَا مُتَّخِذِيٓ أَخۡدَانٖۗ وَمَن يَكۡفُرۡ بِٱلۡإِيمَٰنِ فَقَدۡ حَبِطَ عَمَلُهُۥ وَهُوَ فِي ٱلۡأٓخِرَةِ مِنَ ٱلۡخَٰسِرِينَ",
       "en": "This day [all] good foods have been made lawful, and the food of those who were given the Scripture is lawful for you and your food is lawful for them. And [lawful in marriage are] chaste women from among the believers and chaste women from among those who were given the Scripture before you, when you have given them their due compensation, desiring chastity, not unlawful sexual intercourse or taking [secret] lovers. And whoever denies the faith - his work has become worthless, and he, in the Hereafter, will be among the losers."
     },
     "location": "5:5",
-    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, King Fahd Complex-reviewed edition (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
+    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, issued by Noor International Center, as hosted by QuranEnc (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
     "review_status": "machine_verified",
     "verified": true,
     "verified_how": "verify.mjs: text_ar re-fetched from quranenc.com API (King Fahd Complex) and matched exactly; letters cross-checked against Tanzil quran-uthmani (api.alquran.cloud); translation_en matched quranenc english_saheeh.",
     "used_in": [
       "home.food_ingredients"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "Madinah Mushaf text (King Fahd Complex) via quranenc.com; English is the Saheeh International translation hosted there."
   },
   {
     "id": "quran:5:3",
     "type": "quran",
-    "citation": "القرآن الكريم، سورة المائدة (5)، الآية 3 — نص مصحف المدينة النبوية (مجمع الملك فهد لطباعة المصحف الشريف)؛ الترجمة: Saheeh International (quranenc.com، مجمع الملك فهد)",
+    "citation": "القرآن الكريم، سورة المائدة (5)، الآية 3 — نص مصحف المدينة النبوية (مجمع الملك فهد لطباعة المصحف الشريف)؛ الترجمة: صحيح إنترناشيونال — مركز نور الدولي (عبر موسوعة القرآن الكريم quranenc.com)",
     "url": "https://quranenc.com/en/browse/english_saheeh/5#3",
     "text": {
       "ar": "حُرِّمَتۡ عَلَيۡكُمُ ٱلۡمَيۡتَةُ وَٱلدَّمُ وَلَحۡمُ ٱلۡخِنزِيرِ وَمَآ أُهِلَّ لِغَيۡرِ ٱللَّهِ بِهِۦ وَٱلۡمُنۡخَنِقَةُ وَٱلۡمَوۡقُوذَةُ وَٱلۡمُتَرَدِّيَةُ وَٱلنَّطِيحَةُ وَمَآ أَكَلَ ٱلسَّبُعُ إِلَّا مَا ذَكَّيۡتُمۡ وَمَا ذُبِحَ عَلَى ٱلنُّصُبِ وَأَن تَسۡتَقۡسِمُواْ بِٱلۡأَزۡلَٰمِۚ ذَٰلِكُمۡ فِسۡقٌۗ ٱلۡيَوۡمَ يَئِسَ ٱلَّذِينَ كَفَرُواْ مِن دِينِكُمۡ فَلَا تَخۡشَوۡهُمۡ وَٱخۡشَوۡنِۚ ٱلۡيَوۡمَ أَكۡمَلۡتُ لَكُمۡ دِينَكُمۡ وَأَتۡمَمۡتُ عَلَيۡكُمۡ نِعۡمَتِي وَرَضِيتُ لَكُمُ ٱلۡإِسۡلَٰمَ دِينٗاۚ فَمَنِ ٱضۡطُرَّ فِي مَخۡمَصَةٍ غَيۡرَ مُتَجَانِفٖ لِّإِثۡمٖ فَإِنَّ ٱللَّهَ غَفُورٞ رَّحِيمٞ",
       "en": "Prohibited to you are dead animals, blood, the flesh of swine, and that which has been dedicated to other than Allāh, and [those animals] killed by strangling or by a violent blow or by a head-long fall or by the goring of horns, and those from which a wild animal has eaten, except what you [are able to] slaughter [before its death], and those which are sacrificed on stone altars, and [prohibited is] that you seek decision through divining arrows. That is grave disobedience. This day those who disbelieve have despaired of [defeating] your religion; so fear them not, but fear Me. This day I have perfected for you your religion and completed My favor upon you and have approved for you Islām as religion. But whoever is forced by severe hunger with no inclination to sin - then indeed, Allāh is Forgiving and Merciful."
     },
     "location": "5:3",
-    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, King Fahd Complex-reviewed edition (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
+    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, issued by Noor International Center, as hosted by QuranEnc (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
     "review_status": "machine_verified",
     "verified": true,
     "verified_how": "verify.mjs: text_ar re-fetched from quranenc.com API (King Fahd Complex) and matched exactly; letters cross-checked against Tanzil quran-uthmani (api.alquran.cloud); translation_en matched quranenc english_saheeh.",
@@ -325,26 +355,30 @@
       "home.food_ingredients",
       "work.alcohol_pork_job"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "Madinah Mushaf text (King Fahd Complex) via quranenc.com; English is the Saheeh International translation hosted there."
   },
   {
     "id": "quran:6:121",
     "type": "quran",
-    "citation": "القرآن الكريم، سورة الأنعام (6)، الآية 121 — نص مصحف المدينة النبوية (مجمع الملك فهد لطباعة المصحف الشريف)؛ الترجمة: Saheeh International (quranenc.com، مجمع الملك فهد)",
+    "citation": "القرآن الكريم، سورة الأنعام (6)، الآية 121 — نص مصحف المدينة النبوية (مجمع الملك فهد لطباعة المصحف الشريف)؛ الترجمة: صحيح إنترناشيونال — مركز نور الدولي (عبر موسوعة القرآن الكريم quranenc.com)",
     "url": "https://quranenc.com/en/browse/english_saheeh/6#121",
     "text": {
       "ar": "وَلَا تَأۡكُلُواْ مِمَّا لَمۡ يُذۡكَرِ ٱسۡمُ ٱللَّهِ عَلَيۡهِ وَإِنَّهُۥ لَفِسۡقٞۗ وَإِنَّ ٱلشَّيَٰطِينَ لَيُوحُونَ إِلَىٰٓ أَوۡلِيَآئِهِمۡ لِيُجَٰدِلُوكُمۡۖ وَإِنۡ أَطَعۡتُمُوهُمۡ إِنَّكُمۡ لَمُشۡرِكُونَ",
       "en": "And do not eat of that upon which the name of Allāh has not been mentioned, for indeed, it is grave disobedience. And indeed do the devils inspire their allies [among men] to dispute with you. And if you were to obey them, indeed, you would be associators [of others with Him]."
     },
     "location": "6:121",
-    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, King Fahd Complex-reviewed edition (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
+    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, issued by Noor International Center, as hosted by QuranEnc (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
     "review_status": "machine_verified",
     "verified": true,
     "verified_how": "verify.mjs: text_ar re-fetched from quranenc.com API (King Fahd Complex) and matched exactly; letters cross-checked against Tanzil quran-uthmani (api.alquran.cloud); translation_en matched quranenc english_saheeh.",
     "used_in": [
       "home.food_ingredients"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "Madinah Mushaf text (King Fahd Complex) via quranenc.com; English is the Saheeh International translation hosted there."
   },
   {
     "id": "hadith:صحيح-البخاري:5507",
@@ -367,7 +401,9 @@
     "used_in": [
       "home.food_ingredients"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "From the two Sahihs (named by the package); grade shown as on dorar.net."
   },
   {
     "id": "hadith:سنن-أبي-داود:3681",
@@ -392,7 +428,9 @@
     "used_in": [
       "home.food_ingredients"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "Package-named site: dorar.net."
   },
   {
     "id": "hadith:صحيح-البخاري:52",
@@ -416,7 +454,9 @@
     "used_in": [
       "home.food_ingredients"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "From the two Sahihs (named by the package); grade shown as on dorar.net."
   },
   {
     "id": "madhhab:hanafi:home.food_ingredients",
@@ -435,7 +475,9 @@
     "used_in": [
       "home.food_ingredients"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "Package-named site: shamela.ws."
   },
   {
     "id": "madhhab:maliki:home.food_ingredients",
@@ -454,7 +496,9 @@
     "used_in": [
       "home.food_ingredients"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "Package-named site: shamela.ws."
   },
   {
     "id": "madhhab:shafii:home.food_ingredients",
@@ -473,7 +517,9 @@
     "used_in": [
       "home.food_ingredients"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "No package-named link."
   },
   {
     "id": "madhhab:hanbali:home.food_ingredients",
@@ -492,7 +538,9 @@
     "used_in": [
       "home.food_ingredients"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "No package-named link."
   },
   {
     "id": "contemporary:مجمع-الفقه-الإسلامي-الدولي:القرار-95-3-10-بشأن-الذبائح-الدورة-العاش",
@@ -511,7 +559,9 @@
     "used_in": [
       "home.food_ingredients"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "Official publication of a contemporary fiqh council or scholar; not one of the package-named references."
   },
   {
     "id": "contemporary:مجمع-فقهاء-الشريعة-بأمريكا-AMJ:قرارات-وتوصيات-المؤتمر-السنوي-التاسع-لمج",
@@ -530,7 +580,9 @@
     "used_in": [
       "home.food_ingredients"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "Official publication of a contemporary fiqh council or scholar; not one of the package-named references."
   },
   {
     "id": "contemporary:مجمع-الفقه-الإسلامي-الدولي-تبن:القرار-210-6-22-الدورة-الثانية-والعشرون-",
@@ -549,7 +601,9 @@
     "used_in": [
       "home.food_ingredients"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "Official publication of a contemporary fiqh council or scholar; not one of the package-named references."
   },
   {
     "id": "contemporary:مجلس-الإفتاء-الأردني:القرار-128-6-2009-بتاريخ-23-7-2009",
@@ -568,7 +622,9 @@
     "used_in": [
       "home.food_ingredients"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "Official publication of a contemporary fiqh council or scholar; not one of the package-named references."
   },
   {
     "id": "hadith:صحيح-البخاري:2287",
@@ -592,7 +648,9 @@
     "used_in": [
       "home.credit_card"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "From the two Sahihs (named by the package); grade shown as on dorar.net."
   },
   {
     "id": "madhhab:hanafi:home.credit_card",
@@ -611,7 +669,9 @@
     "used_in": [
       "home.credit_card"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "No package-named link."
   },
   {
     "id": "madhhab:maliki:home.credit_card",
@@ -630,7 +690,9 @@
     "used_in": [
       "home.credit_card"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "No package-named link."
   },
   {
     "id": "madhhab:shafii:home.credit_card",
@@ -649,7 +711,9 @@
     "used_in": [
       "home.credit_card"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "No package-named link."
   },
   {
     "id": "madhhab:hanbali:home.credit_card",
@@ -668,7 +732,9 @@
     "used_in": [
       "home.credit_card"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "No package-named link."
   },
   {
     "id": "contemporary:مجمع-الفقه-الإسلامي-الدولي:القرار-108-2-12-الدورة-الثانية-عشرة-الري",
@@ -687,7 +753,9 @@
     "used_in": [
       "home.credit_card"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "Official publication of a contemporary fiqh council or scholar; not one of the package-named references."
   },
   {
     "id": "contemporary:مجمع-الفقه-الإسلامي-الدولي:القرار-51-2-6-الدورة-السادسة-جدة-مارس-19",
@@ -706,7 +774,9 @@
     "used_in": [
       "home.credit_card"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "Official publication of a contemporary fiqh council or scholar; not one of the package-named references."
   },
   {
     "id": "contemporary:مجمع-فقهاء-الشريعة-بأمريكا-AMJ:الفتوى-80196-د-مائن-خالد-القضاة-Dr-Main-",
@@ -725,19 +795,21 @@
     "used_in": [
       "home.credit_card"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "Official publication of a contemporary fiqh council or scholar; not one of the package-named references."
   },
   {
     "id": "quran:4:4",
     "type": "quran",
-    "citation": "القرآن الكريم، سورة النساء (4)، الآية 4 — نص مصحف المدينة النبوية (مجمع الملك فهد لطباعة المصحف الشريف)؛ الترجمة: Saheeh International (quranenc.com، مجمع الملك فهد)",
+    "citation": "القرآن الكريم، سورة النساء (4)، الآية 4 — نص مصحف المدينة النبوية (مجمع الملك فهد لطباعة المصحف الشريف)؛ الترجمة: صحيح إنترناشيونال — مركز نور الدولي (عبر موسوعة القرآن الكريم quranenc.com)",
     "url": "https://quranenc.com/en/browse/english_saheeh/4#4",
     "text": {
       "ar": "وَءَاتُواْ ٱلنِّسَآءَ صَدُقَٰتِهِنَّ نِحۡلَةٗۚ فَإِن طِبۡنَ لَكُمۡ عَن شَيۡءٖ مِّنۡهُ نَفۡسٗا فَكُلُوهُ هَنِيٓـٔٗا مَّرِيٓـٔٗا",
       "en": "And give the women [upon marriage] their [bridal] gifts graciously. But if they give up willingly to you anything of it, then take it in satisfaction and ease."
     },
     "location": "4:4",
-    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, King Fahd Complex-reviewed edition (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
+    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, issued by Noor International Center, as hosted by QuranEnc (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
     "review_status": "machine_verified",
     "verified": true,
     "verified_how": "verify.mjs: text_ar re-fetched from quranenc.com API (King Fahd Complex) and matched exactly; letters cross-checked against Tanzil quran-uthmani (api.alquran.cloud); translation_en matched quranenc english_saheeh.",
@@ -747,7 +819,9 @@
       "qa.marriage.work",
       "qa.marriage.private_events"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "Madinah Mushaf text (King Fahd Complex) via quranenc.com; English is the Saheeh International translation hosted there."
   },
   {
     "id": "hadith:صحيح-البخاري:5167",
@@ -773,7 +847,9 @@
       "qa.marriage.home",
       "qa.marriage.private_events"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "From the two Sahihs (named by the package); grade shown as on dorar.net."
   },
   {
     "id": "hadith:صحيح-البخاري:5177",
@@ -796,7 +872,9 @@
     "used_in": [
       "private_events.wedding"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "From the two Sahihs (named by the package); grade shown as on dorar.net."
   },
   {
     "id": "hadith:جامع-الترمذي:1088",
@@ -820,7 +898,9 @@
     "used_in": [
       "private_events.wedding"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "Package-named site: dorar.net."
   },
   {
     "id": "hadith:صحيح-البخاري:5162",
@@ -844,7 +924,9 @@
       "private_events.wedding",
       "qa.hostile.gambling"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "From the two Sahihs (named by the package); grade shown as on dorar.net."
   },
   {
     "id": "hadith:صحيح-البخاري:5147",
@@ -868,7 +950,9 @@
     "used_in": [
       "private_events.wedding"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "From the two Sahihs (named by the package); grade shown as on dorar.net."
   },
   {
     "id": "hadith:صحيح-البخاري:5590",
@@ -892,7 +976,9 @@
     "used_in": [
       "private_events.wedding"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "From the two Sahihs (named by the package); grade shown as on dorar.net."
   },
   {
     "id": "hadith:سنن-أبي-داود:2130",
@@ -917,7 +1003,9 @@
     "used_in": [
       "private_events.wedding"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "Package-named site: dorar.net."
   },
   {
     "id": "madhhab:hanafi:private_events.wedding",
@@ -936,7 +1024,9 @@
     "used_in": [
       "private_events.wedding"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "No package-named link."
   },
   {
     "id": "madhhab:maliki:private_events.wedding",
@@ -955,7 +1045,9 @@
     "used_in": [
       "private_events.wedding"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "No package-named link."
   },
   {
     "id": "madhhab:shafii:private_events.wedding",
@@ -974,7 +1066,9 @@
     "used_in": [
       "private_events.wedding"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "No package-named link."
   },
   {
     "id": "madhhab:hanbali:private_events.wedding",
@@ -993,7 +1087,9 @@
     "used_in": [
       "private_events.wedding"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "No package-named link."
   },
   {
     "id": "contemporary:الموسوعة-الفقهية-الدرر-السنية:كتاب-النكاح-اللهو-في-الأعراس-المعازف-وال",
@@ -1012,7 +1108,9 @@
     "used_in": [
       "private_events.wedding"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "Package-named site: dorar.net."
   },
   {
     "id": "contemporary:دار-الإفتاء-المصرية:الفتوى-رقم-11981-الحكم-الشرعي-في-الموسيق",
@@ -1031,7 +1129,9 @@
     "used_in": [
       "private_events.wedding"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "Official publication of a contemporary fiqh council or scholar; not one of the package-named references."
   },
   {
     "id": "contemporary:AMJA-د-حاتم-الحاج:الفتوى-87035-2012-Playing-a-dhol-on-wedd",
@@ -1050,19 +1150,21 @@
     "used_in": [
       "private_events.wedding"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "Official publication of a contemporary fiqh council or scholar; not one of the package-named references."
   },
   {
     "id": "quran:60:8",
     "type": "quran",
-    "citation": "القرآن الكريم، سورة الممتحنة (60)، الآية 8 — نص مصحف المدينة النبوية (مجمع الملك فهد لطباعة المصحف الشريف)؛ الترجمة: Saheeh International (quranenc.com، مجمع الملك فهد)",
+    "citation": "القرآن الكريم، سورة الممتحنة (60)، الآية 8 — نص مصحف المدينة النبوية (مجمع الملك فهد لطباعة المصحف الشريف)؛ الترجمة: صحيح إنترناشيونال — مركز نور الدولي (عبر موسوعة القرآن الكريم quranenc.com)",
     "url": "https://quranenc.com/en/browse/english_saheeh/60#8",
     "text": {
       "ar": "لَّا يَنۡهَىٰكُمُ ٱللَّهُ عَنِ ٱلَّذِينَ لَمۡ يُقَٰتِلُوكُمۡ فِي ٱلدِّينِ وَلَمۡ يُخۡرِجُوكُم مِّن دِيَٰرِكُمۡ أَن تَبَرُّوهُمۡ وَتُقۡسِطُوٓاْ إِلَيۡهِمۡۚ إِنَّ ٱللَّهَ يُحِبُّ ٱلۡمُقۡسِطِينَ",
       "en": "Allāh does not forbid you from those who do not fight you because of religion and do not expel you from your homes - from being righteous toward them and acting justly toward them. Indeed, Allāh loves those who act justly."
     },
     "location": "60:8",
-    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, King Fahd Complex-reviewed edition (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
+    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, issued by Noor International Center, as hosted by QuranEnc (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
     "review_status": "machine_verified",
     "verified": true,
     "verified_how": "verify.mjs: text_ar re-fetched from quranenc.com API (King Fahd Complex) and matched exactly; letters cross-checked against Tanzil quran-uthmani (api.alquran.cloud); translation_en matched quranenc english_saheeh.",
@@ -1071,26 +1173,30 @@
       "private_events.gifts_birthday",
       "public_events.holiday_greetings"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "Madinah Mushaf text (King Fahd Complex) via quranenc.com; English is the Saheeh International translation hosted there."
   },
   {
     "id": "quran:9:113",
     "type": "quran",
-    "citation": "القرآن الكريم، سورة التوبة (9)، الآية 113 — نص مصحف المدينة النبوية (مجمع الملك فهد لطباعة المصحف الشريف)؛ الترجمة: Saheeh International (quranenc.com، مجمع الملك فهد)",
+    "citation": "القرآن الكريم، سورة التوبة (9)، الآية 113 — نص مصحف المدينة النبوية (مجمع الملك فهد لطباعة المصحف الشريف)؛ الترجمة: صحيح إنترناشيونال — مركز نور الدولي (عبر موسوعة القرآن الكريم quranenc.com)",
     "url": "https://quranenc.com/en/browse/english_saheeh/9#113",
     "text": {
       "ar": "مَا كَانَ لِلنَّبِيِّ وَٱلَّذِينَ ءَامَنُوٓاْ أَن يَسۡتَغۡفِرُواْ لِلۡمُشۡرِكِينَ وَلَوۡ كَانُوٓاْ أُوْلِي قُرۡبَىٰ مِنۢ بَعۡدِ مَا تَبَيَّنَ لَهُمۡ أَنَّهُمۡ أَصۡحَٰبُ ٱلۡجَحِيمِ",
       "en": "It is not for the Prophet and those who have believed to ask forgiveness for the polytheists, even if they were relatives, after it has become clear to them that they are companions of Hellfire."
     },
     "location": "9:113",
-    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, King Fahd Complex-reviewed edition (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
+    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, issued by Noor International Center, as hosted by QuranEnc (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
     "review_status": "machine_verified",
     "verified": true,
     "verified_how": "verify.mjs: text_ar re-fetched from quranenc.com API (King Fahd Complex) and matched exactly; letters cross-checked against Tanzil quran-uthmani (api.alquran.cloud); translation_en matched quranenc english_saheeh.",
     "used_in": [
       "private_events.neighbor_funeral"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "Madinah Mushaf text (King Fahd Complex) via quranenc.com; English is the Saheeh International translation hosted there."
   },
   {
     "id": "hadith:صحيح-البخاري:1356",
@@ -1113,7 +1219,9 @@
     "used_in": [
       "private_events.neighbor_funeral"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "From the two Sahihs (named by the package); grade shown as on dorar.net."
   },
   {
     "id": "hadith:صحيح-البخاري:1312",
@@ -1137,7 +1245,9 @@
     "used_in": [
       "private_events.neighbor_funeral"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "From the two Sahihs (named by the package); grade shown as on dorar.net."
   },
   {
     "id": "hadith:صحيح-مسلم:976",
@@ -1161,7 +1271,9 @@
     "used_in": [
       "private_events.neighbor_funeral"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "From the two Sahihs (named by the package); grade shown as on dorar.net."
   },
   {
     "id": "hadith:سنن-أبي-داود:3214",
@@ -1186,7 +1298,9 @@
     "used_in": [
       "private_events.neighbor_funeral"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "Package-named site: dorar.net."
   },
   {
     "id": "hadith:جامع-الترمذي:2739",
@@ -1210,7 +1324,9 @@
     "used_in": [
       "private_events.neighbor_funeral"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "Package-named site: dorar.net."
   },
   {
     "id": "madhhab:hanafi:private_events.neighbor_funeral",
@@ -1229,7 +1345,9 @@
     "used_in": [
       "private_events.neighbor_funeral"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "No package-named link."
   },
   {
     "id": "madhhab:maliki:private_events.neighbor_funeral",
@@ -1248,7 +1366,9 @@
     "used_in": [
       "private_events.neighbor_funeral"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "No package-named link."
   },
   {
     "id": "madhhab:shafii:private_events.neighbor_funeral",
@@ -1267,7 +1387,9 @@
     "used_in": [
       "private_events.neighbor_funeral"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "No package-named link."
   },
   {
     "id": "madhhab:hanbali:private_events.neighbor_funeral",
@@ -1286,7 +1408,9 @@
     "used_in": [
       "private_events.neighbor_funeral"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "Package-named site: dorar.net."
   },
   {
     "id": "contemporary:AMJA-د-مائن-خالد-القضاة:الفتوى-78565-2009-Can-a-Muslim-attend-a-",
@@ -1305,7 +1429,9 @@
     "used_in": [
       "private_events.neighbor_funeral"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "Official publication of a contemporary fiqh council or scholar; not one of the package-named references."
   },
   {
     "id": "contemporary:الشيخ-فيصل-مولوي-نائب-رئيس-الم:فتوى-Attending-the-funerals-of-non-Musli",
@@ -1324,7 +1450,9 @@
     "used_in": [
       "private_events.neighbor_funeral"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "Official publication of a contemporary fiqh council or scholar; not one of the package-named references."
   },
   {
     "id": "contemporary:اللجنة-الدائمة-للبحوث-العلمية-:فتاوى-اللجنة-الدائمة-المجموعة-الأولى-9-1",
@@ -1343,7 +1471,9 @@
     "used_in": [
       "private_events.neighbor_funeral"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "Package-named site: dorar.net."
   },
   {
     "id": "hadith:صحيح-البخاري:2616",
@@ -1365,7 +1495,9 @@
     "used_in": [
       "private_events.gifts_birthday"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "From the two Sahihs (named by the package); grade shown as on dorar.net."
   },
   {
     "id": "hadith:صحيح-البخاري:1481",
@@ -1389,7 +1521,9 @@
     "used_in": [
       "private_events.gifts_birthday"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "From the two Sahihs (named by the package); grade shown as on dorar.net."
   },
   {
     "id": "hadith:صحيح-البخاري:2617",
@@ -1412,7 +1546,9 @@
     "used_in": [
       "private_events.gifts_birthday"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "From the two Sahihs (named by the package); grade shown as on dorar.net."
   },
   {
     "id": "hadith:جامع-الترمذي:1577",
@@ -1436,7 +1572,9 @@
     "used_in": [
       "private_events.gifts_birthday"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "Package-named site: dorar.net."
   },
   {
     "id": "hadith:صحيح-البخاري:2585",
@@ -1459,7 +1597,9 @@
     "used_in": [
       "private_events.gifts_birthday"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "From the two Sahihs (named by the package); grade shown as on dorar.net."
   },
   {
     "id": "hadith:الأدب-المفرد-للبخاري:594",
@@ -1484,7 +1624,9 @@
     "used_in": [
       "private_events.gifts_birthday"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "Package-named site: dorar.net."
   },
   {
     "id": "madhhab:hanafi:private_events.gifts_birthday",
@@ -1503,7 +1645,9 @@
     "used_in": [
       "private_events.gifts_birthday"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "Classical madhhab book (acceptable per the package) but accessed via a secondary site; the original volume/page needs a human check."
   },
   {
     "id": "madhhab:maliki:private_events.gifts_birthday",
@@ -1522,7 +1666,9 @@
     "used_in": [
       "private_events.gifts_birthday"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "No package-named link."
   },
   {
     "id": "madhhab:shafii:private_events.gifts_birthday",
@@ -1541,7 +1687,9 @@
     "used_in": [
       "private_events.gifts_birthday"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "No package-named link."
   },
   {
     "id": "madhhab:hanbali:private_events.gifts_birthday",
@@ -1560,7 +1708,9 @@
     "used_in": [
       "private_events.gifts_birthday"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "No package-named link."
   },
   {
     "id": "contemporary:AMJA-د-صلاح-الصاوي:الفتوى-22801-2007-Celebrating-Birthdays",
@@ -1579,7 +1729,9 @@
     "used_in": [
       "private_events.gifts_birthday"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "Official publication of a contemporary fiqh council or scholar; not one of the package-named references."
   },
   {
     "id": "contemporary:د-مائن-خالد-القضاة-جواب-منشور-:Celebrating-birthdays-with-non-Muslim-fa",
@@ -1598,7 +1750,9 @@
     "used_in": [
       "private_events.gifts_birthday"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "Official publication of a contemporary fiqh council or scholar; not one of the package-named references."
   },
   {
     "id": "contemporary:Fiqh-Council-of-North-America-:فتوى-Muslims-celebrating-the-holidays-of",
@@ -1618,38 +1772,42 @@
       "private_events.gifts_birthday",
       "public_events.holiday_greetings"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "Official publication of a contemporary fiqh council or scholar; not one of the package-named references."
   },
   {
     "id": "quran:25:72",
     "type": "quran",
-    "citation": "القرآن الكريم، سورة الفرقان (25)، الآية 72 — نص مصحف المدينة النبوية (مجمع الملك فهد لطباعة المصحف الشريف)؛ الترجمة: Saheeh International (quranenc.com، مجمع الملك فهد)",
+    "citation": "القرآن الكريم، سورة الفرقان (25)، الآية 72 — نص مصحف المدينة النبوية (مجمع الملك فهد لطباعة المصحف الشريف)؛ الترجمة: صحيح إنترناشيونال — مركز نور الدولي (عبر موسوعة القرآن الكريم quranenc.com)",
     "url": "https://quranenc.com/en/browse/english_saheeh/25#72",
     "text": {
       "ar": "وَٱلَّذِينَ لَا يَشۡهَدُونَ ٱلزُّورَ وَإِذَا مَرُّواْ بِٱللَّغۡوِ مَرُّواْ كِرَامٗا",
       "en": "And [they are] those who do not testify to falsehood, and when they pass near ill speech, they pass by with dignity."
     },
     "location": "25:72",
-    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, King Fahd Complex-reviewed edition (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
+    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, issued by Noor International Center, as hosted by QuranEnc (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
     "review_status": "machine_verified",
     "verified": true,
     "verified_how": "verify.mjs: text_ar re-fetched from quranenc.com API (King Fahd Complex) and matched exactly; letters cross-checked against Tanzil quran-uthmani (api.alquran.cloud); translation_en matched quranenc english_saheeh.",
     "used_in": [
       "public_events.holiday_greetings"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "Madinah Mushaf text (King Fahd Complex) via quranenc.com; English is the Saheeh International translation hosted there."
   },
   {
     "id": "quran:4:86",
     "type": "quran",
-    "citation": "القرآن الكريم، سورة النساء (4)، الآية 86 — نص مصحف المدينة النبوية (مجمع الملك فهد لطباعة المصحف الشريف)؛ الترجمة: Saheeh International (quranenc.com، مجمع الملك فهد)",
+    "citation": "القرآن الكريم، سورة النساء (4)، الآية 86 — نص مصحف المدينة النبوية (مجمع الملك فهد لطباعة المصحف الشريف)؛ الترجمة: صحيح إنترناشيونال — مركز نور الدولي (عبر موسوعة القرآن الكريم quranenc.com)",
     "url": "https://quranenc.com/en/browse/english_saheeh/4#86",
     "text": {
       "ar": "وَإِذَا حُيِّيتُم بِتَحِيَّةٖ فَحَيُّواْ بِأَحۡسَنَ مِنۡهَآ أَوۡ رُدُّوهَآۗ إِنَّ ٱللَّهَ كَانَ عَلَىٰ كُلِّ شَيۡءٍ حَسِيبًا",
       "en": "And when you are greeted with a greeting, greet [in return] with one better than it or [at least] return it [in a like manner]. Indeed Allāh is ever, over all things, an Accountant."
     },
     "location": "4:86",
-    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, King Fahd Complex-reviewed edition (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
+    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, issued by Noor International Center, as hosted by QuranEnc (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
     "review_status": "machine_verified",
     "verified": true,
     "verified_how": "verify.mjs: text_ar re-fetched from quranenc.com API (King Fahd Complex) and matched exactly; letters cross-checked against Tanzil quran-uthmani (api.alquran.cloud); translation_en matched quranenc english_saheeh.",
@@ -1657,7 +1815,9 @@
       "public_events.holiday_greetings",
       "qa.term.salam"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "Madinah Mushaf text (King Fahd Complex) via quranenc.com; English is the Saheeh International translation hosted there."
   },
   {
     "id": "hadith:صحيح-البخاري:5978",
@@ -1681,7 +1841,9 @@
     "used_in": [
       "public_events.holiday_greetings"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "From the two Sahihs (named by the package); grade shown as on dorar.net."
   },
   {
     "id": "hadith:سنن-أبي-داود:1134",
@@ -1706,7 +1868,9 @@
     "used_in": [
       "public_events.holiday_greetings"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "Package-named site: dorar.net."
   },
   {
     "id": "hadith:صحيح-البخاري:952",
@@ -1730,7 +1894,9 @@
     "used_in": [
       "public_events.holiday_greetings"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "From the two Sahihs (named by the package); grade shown as on dorar.net."
   },
   {
     "id": "hadith:سنن-أبي-داود:4031",
@@ -1755,7 +1921,9 @@
     "used_in": [
       "public_events.holiday_greetings"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "Package-named site: dorar.net."
   },
   {
     "id": "madhhab:hanafi:public_events.holiday_greetings",
@@ -1774,7 +1942,9 @@
     "used_in": [
       "public_events.holiday_greetings"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "Classical madhhab book (acceptable per the package) but accessed via a secondary site; the original volume/page needs a human check."
   },
   {
     "id": "madhhab:maliki:public_events.holiday_greetings",
@@ -1793,7 +1963,9 @@
     "used_in": [
       "public_events.holiday_greetings"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "No package-named link."
   },
   {
     "id": "madhhab:shafii:public_events.holiday_greetings",
@@ -1812,7 +1984,9 @@
     "used_in": [
       "public_events.holiday_greetings"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "No package-named link."
   },
   {
     "id": "madhhab:hanbali:public_events.holiday_greetings",
@@ -1831,7 +2005,9 @@
     "used_in": [
       "public_events.holiday_greetings"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "No package-named link."
   },
   {
     "id": "contemporary:المجلس-الأوروبي-للإفتاء-والبحو:فتوى-المجلس-في-تهنئة-غير-المسلمين-بأعياد",
@@ -1850,7 +2026,9 @@
     "used_in": [
       "public_events.holiday_greetings"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "Official publication of a contemporary fiqh council or scholar; not one of the package-named references."
   },
   {
     "id": "contemporary:AMJA-مجمع-فقهاء-الشريعة-بأمريك:فتوى-22994-2006-وفتوى-76974-2008-د-مائن-",
@@ -1869,7 +2047,9 @@
     "used_in": [
       "public_events.holiday_greetings"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "Official publication of a contemporary fiqh council or scholar; not one of the package-named references."
   },
   {
     "id": "contemporary:AMJA-د-حاتم-الحاج-عضو-اللجنة-ا:جواب-في-قبول-هدايا-الكريسماس-من-الزملاء-",
@@ -1888,7 +2068,9 @@
     "used_in": [
       "public_events.holiday_greetings"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "Official publication of a contemporary fiqh council or scholar; not one of the package-named references."
   },
   {
     "id": "contemporary:الشيخ-أحمد-كتي-المعهد-الإسلامي:جواب-Is-it-permissible-for-American-Musl",
@@ -1907,7 +2089,9 @@
     "used_in": [
       "public_events.holiday_greetings"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "Official publication of a contemporary fiqh council or scholar; not one of the package-named references."
   },
   {
     "id": "contemporary:الشيخ-محمد-بن-صالح-العثيمين-فت:مجموع-فتاوى-ورسائل-العثيمين-3-44",
@@ -1926,19 +2110,21 @@
     "used_in": [
       "public_events.holiday_greetings"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "Official publication of a contemporary fiqh council or scholar; not one of the package-named references."
   },
   {
     "id": "quran:5:90",
     "type": "quran",
-    "citation": "القرآن الكريم، سورة المائدة (5)، الآية 90 — نص مصحف المدينة النبوية (مجمع الملك فهد لطباعة المصحف الشريف)؛ الترجمة: Saheeh International (quranenc.com، مجمع الملك فهد)",
+    "citation": "القرآن الكريم، سورة المائدة (5)، الآية 90 — نص مصحف المدينة النبوية (مجمع الملك فهد لطباعة المصحف الشريف)؛ الترجمة: صحيح إنترناشيونال — مركز نور الدولي (عبر موسوعة القرآن الكريم quranenc.com)",
     "url": "https://quranenc.com/en/browse/english_saheeh/5#90",
     "text": {
       "ar": "يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوٓاْ إِنَّمَا ٱلۡخَمۡرُ وَٱلۡمَيۡسِرُ وَٱلۡأَنصَابُ وَٱلۡأَزۡلَٰمُ رِجۡسٞ مِّنۡ عَمَلِ ٱلشَّيۡطَٰنِ فَٱجۡتَنِبُوهُ لَعَلَّكُمۡ تُفۡلِحُونَ",
       "en": "O you who have believed, indeed, intoxicants, gambling, [sacrificing on] stone alters [to other than Allāh], and divining arrows are but defilement from the work of Satan, so avoid it that you may be successful."
     },
     "location": "5:90",
-    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, King Fahd Complex-reviewed edition (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
+    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, issued by Noor International Center, as hosted by QuranEnc (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
     "review_status": "machine_verified",
     "verified": true,
     "verified_how": "verify.mjs: text_ar re-fetched from quranenc.com API (King Fahd Complex) and matched exactly; letters cross-checked against Tanzil quran-uthmani (api.alquran.cloud); translation_en matched quranenc english_saheeh.",
@@ -1952,26 +2138,30 @@
       "qa.consensus.work",
       "qa.misquote.drink_prayer"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "Madinah Mushaf text (King Fahd Complex) via quranenc.com; English is the Saheeh International translation hosted there."
   },
   {
     "id": "quran:4:140",
     "type": "quran",
-    "citation": "القرآن الكريم، سورة النساء (4)، الآية 140 — نص مصحف المدينة النبوية (مجمع الملك فهد لطباعة المصحف الشريف)؛ الترجمة: Saheeh International (quranenc.com، مجمع الملك فهد)",
+    "citation": "القرآن الكريم، سورة النساء (4)، الآية 140 — نص مصحف المدينة النبوية (مجمع الملك فهد لطباعة المصحف الشريف)؛ الترجمة: صحيح إنترناشيونال — مركز نور الدولي (عبر موسوعة القرآن الكريم quranenc.com)",
     "url": "https://quranenc.com/en/browse/english_saheeh/4#140",
     "text": {
       "ar": "وَقَدۡ نَزَّلَ عَلَيۡكُمۡ فِي ٱلۡكِتَٰبِ أَنۡ إِذَا سَمِعۡتُمۡ ءَايَٰتِ ٱللَّهِ يُكۡفَرُ بِهَا وَيُسۡتَهۡزَأُ بِهَا فَلَا تَقۡعُدُواْ مَعَهُمۡ حَتَّىٰ يَخُوضُواْ فِي حَدِيثٍ غَيۡرِهِۦٓ إِنَّكُمۡ إِذٗا مِّثۡلُهُمۡۗ إِنَّ ٱللَّهَ جَامِعُ ٱلۡمُنَٰفِقِينَ وَٱلۡكَٰفِرِينَ فِي جَهَنَّمَ جَمِيعًا",
       "en": "And it has already come down to you in the Book [i.e., the Qur’ān] that when you hear the verses of Allāh [recited], they are denied [by them] and ridiculed; so do not sit with them until they enter into another conversation. Indeed, you would then be like them. Indeed, Allāh will gather the hypocrites and disbelievers in Hell all together -"
     },
     "location": "4:140",
-    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, King Fahd Complex-reviewed edition (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
+    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, issued by Noor International Center, as hosted by QuranEnc (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
     "review_status": "machine_verified",
     "verified": true,
     "verified_how": "verify.mjs: text_ar re-fetched from quranenc.com API (King Fahd Complex) and matched exactly; letters cross-checked against Tanzil quran-uthmani (api.alquran.cloud); translation_en matched quranenc english_saheeh.",
     "used_in": [
       "public_events.alcohol_table"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "Madinah Mushaf text (King Fahd Complex) via quranenc.com; English is the Saheeh International translation hosted there."
   },
   {
     "id": "hadith:جامع-الترمذي:2801",
@@ -1995,7 +2185,9 @@
     "used_in": [
       "public_events.alcohol_table"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "Package-named site: dorar.net."
   },
   {
     "id": "madhhab:hanafi:public_events.alcohol_table",
@@ -2014,7 +2206,9 @@
     "used_in": [
       "public_events.alcohol_table"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "No package-named link."
   },
   {
     "id": "madhhab:maliki:public_events.alcohol_table",
@@ -2033,7 +2227,9 @@
     "used_in": [
       "public_events.alcohol_table"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "No package-named link."
   },
   {
     "id": "madhhab:shafii:public_events.alcohol_table",
@@ -2052,7 +2248,9 @@
     "used_in": [
       "public_events.alcohol_table"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "No package-named link."
   },
   {
     "id": "madhhab:hanbali:public_events.alcohol_table",
@@ -2071,7 +2269,9 @@
     "used_in": [
       "public_events.alcohol_table"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "No package-named link."
   },
   {
     "id": "contemporary:د-رفعت-فوزي-رئيس-قسم-الشريعة-ب:فتوى-Sharing-a-table-in-which-wine-is-se",
@@ -2090,7 +2290,9 @@
     "used_in": [
       "public_events.alcohol_table"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "Official publication of a contemporary fiqh council or scholar; not one of the package-named references."
   },
   {
     "id": "contemporary:مكتب-مفتي-الأقاليم-الاتحادية-م:إرشاد-الفتوى-رقم-224",
@@ -2109,7 +2311,9 @@
     "used_in": [
       "public_events.alcohol_table"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "Official publication of a contemporary fiqh council or scholar; not one of the package-named references."
   },
   {
     "id": "contemporary:الموسوعة-الفقهية-الدرر-السنية:كتاب-النكاح-الوليمة-حكم-الإجابة-إذا-كان-",
@@ -2128,19 +2332,21 @@
     "used_in": [
       "public_events.alcohol_table"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "Package-named site: dorar.net."
   },
   {
     "id": "quran:5:91",
     "type": "quran",
-    "citation": "القرآن الكريم، سورة المائدة (5)، الآية 91 — نص مصحف المدينة النبوية (مجمع الملك فهد لطباعة المصحف الشريف)؛ الترجمة: Saheeh International (quranenc.com، مجمع الملك فهد)",
+    "citation": "القرآن الكريم، سورة المائدة (5)، الآية 91 — نص مصحف المدينة النبوية (مجمع الملك فهد لطباعة المصحف الشريف)؛ الترجمة: صحيح إنترناشيونال — مركز نور الدولي (عبر موسوعة القرآن الكريم quranenc.com)",
     "url": "https://quranenc.com/en/browse/english_saheeh/5#91",
     "text": {
       "ar": "إِنَّمَا يُرِيدُ ٱلشَّيۡطَٰنُ أَن يُوقِعَ بَيۡنَكُمُ ٱلۡعَدَٰوَةَ وَٱلۡبَغۡضَآءَ فِي ٱلۡخَمۡرِ وَٱلۡمَيۡسِرِ وَيَصُدَّكُمۡ عَن ذِكۡرِ ٱللَّهِ وَعَنِ ٱلصَّلَوٰةِۖ فَهَلۡ أَنتُم مُّنتَهُونَ",
       "en": "Satan only wants to cause between you animosity and hatred through intoxicants and gambling and to avert you from the remembrance of Allāh and from prayer. So will you not desist?"
     },
     "location": "5:91",
-    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, King Fahd Complex-reviewed edition (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
+    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, issued by Noor International Center, as hosted by QuranEnc (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
     "review_status": "machine_verified",
     "verified": true,
     "verified_how": "verify.mjs: text_ar re-fetched from quranenc.com API (King Fahd Complex) and matched exactly; letters cross-checked against Tanzil quran-uthmani (api.alquran.cloud); translation_en matched quranenc english_saheeh.",
@@ -2151,7 +2357,9 @@
       "qa.hostile.gambling",
       "qa.consensus.work"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "Madinah Mushaf text (King Fahd Complex) via quranenc.com; English is the Saheeh International translation hosted there."
   },
   {
     "id": "hadith:صحيح-البخاري:4860",
@@ -2175,7 +2383,9 @@
       "public_events.raffle",
       "street.lottery"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "From the two Sahihs (named by the package); grade shown as on dorar.net."
   },
   {
     "id": "hadith:صحيح-مسلم:1513",
@@ -2198,7 +2408,9 @@
     "used_in": [
       "public_events.raffle"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "From the two Sahihs (named by the package); grade shown as on dorar.net."
   },
   {
     "id": "hadith:سنن-أبي-داود:3685",
@@ -2222,7 +2434,9 @@
     "used_in": [
       "public_events.raffle"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "Package-named site: dorar.net."
   },
   {
     "id": "madhhab:hanafi:public_events.raffle",
@@ -2241,7 +2455,9 @@
     "used_in": [
       "public_events.raffle"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "No package-named link."
   },
   {
     "id": "madhhab:maliki:public_events.raffle",
@@ -2260,7 +2476,9 @@
     "used_in": [
       "public_events.raffle"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "No package-named link."
   },
   {
     "id": "madhhab:shafii:public_events.raffle",
@@ -2279,7 +2497,9 @@
     "used_in": [
       "public_events.raffle"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "No package-named link."
   },
   {
     "id": "madhhab:hanbali:public_events.raffle",
@@ -2298,7 +2518,9 @@
     "used_in": [
       "public_events.raffle"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "No package-named link."
   },
   {
     "id": "contemporary:مجمع-الفقه-الإسلامي-الدولي:القرار-رقم-127-14-1-بشأن-بطاقات-المسابقا",
@@ -2317,7 +2539,9 @@
     "used_in": [
       "public_events.raffle"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "Official publication of a contemporary fiqh council or scholar; not one of the package-named references."
   },
   {
     "id": "contemporary:المفتي-محمد-بن-آدم-الكوثري-دار:Fundraising-by-selling-tickets-and-givin",
@@ -2336,19 +2560,21 @@
     "used_in": [
       "public_events.raffle"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "Official publication of a contemporary fiqh council or scholar; not one of the package-named references."
   },
   {
     "id": "quran:5:2",
     "type": "quran",
-    "citation": "القرآن الكريم، سورة المائدة (5)، الآية 2 — نص مصحف المدينة النبوية (مجمع الملك فهد لطباعة المصحف الشريف)؛ الترجمة: Saheeh International (quranenc.com، مجمع الملك فهد)",
+    "citation": "القرآن الكريم، سورة المائدة (5)، الآية 2 — نص مصحف المدينة النبوية (مجمع الملك فهد لطباعة المصحف الشريف)؛ الترجمة: صحيح إنترناشيونال — مركز نور الدولي (عبر موسوعة القرآن الكريم quranenc.com)",
     "url": "https://quranenc.com/en/browse/english_saheeh/5#2",
     "text": {
       "ar": "يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُواْ لَا تُحِلُّواْ شَعَٰٓئِرَ ٱللَّهِ وَلَا ٱلشَّهۡرَ ٱلۡحَرَامَ وَلَا ٱلۡهَدۡيَ وَلَا ٱلۡقَلَٰٓئِدَ وَلَآ ءَآمِّينَ ٱلۡبَيۡتَ ٱلۡحَرَامَ يَبۡتَغُونَ فَضۡلٗا مِّن رَّبِّهِمۡ وَرِضۡوَٰنٗاۚ وَإِذَا حَلَلۡتُمۡ فَٱصۡطَادُواْۚ وَلَا يَجۡرِمَنَّكُمۡ شَنَـَٔانُ قَوۡمٍ أَن صَدُّوكُمۡ عَنِ ٱلۡمَسۡجِدِ ٱلۡحَرَامِ أَن تَعۡتَدُواْۘ وَتَعَاوَنُواْ عَلَى ٱلۡبِرِّ وَٱلتَّقۡوَىٰۖ وَلَا تَعَاوَنُواْ عَلَى ٱلۡإِثۡمِ وَٱلۡعُدۡوَٰنِۚ وَٱتَّقُواْ ٱللَّهَۖ إِنَّ ٱللَّهَ شَدِيدُ ٱلۡعِقَابِ",
       "en": "O you who have believed, do not violate the rites of Allāh or [the sanctity of] the sacred month or [neglect the marking of] the sacrificial animals and garlanding [them] or [violate the safety of] those coming to the Sacred House seeking bounty from their Lord and [His] approval. But when you come out of iḥrām, then [you may] hunt. And do not let the hatred of a people for having obstructed you from al-Masjid al-Ḥarām lead you to transgress. And cooperate in righteousness and piety, but do not cooperate in sin and aggression. And fear Allāh; indeed, Allāh is severe in penalty."
     },
     "location": "5:2",
-    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, King Fahd Complex-reviewed edition (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
+    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, issued by Noor International Center, as hosted by QuranEnc (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
     "review_status": "machine_verified",
     "verified": true,
     "verified_how": "verify.mjs: text_ar re-fetched from quranenc.com API (King Fahd Complex) and matched exactly; letters cross-checked against Tanzil quran-uthmani (api.alquran.cloud); translation_en matched quranenc english_saheeh.",
@@ -2358,19 +2584,21 @@
       "work.alcohol_pork_job",
       "work.retirement_401k"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "Madinah Mushaf text (King Fahd Complex) via quranenc.com; English is the Saheeh International translation hosted there."
   },
   {
     "id": "quran:8:27",
     "type": "quran",
-    "citation": "القرآن الكريم، سورة الأنفال (8)، الآية 27 — نص مصحف المدينة النبوية (مجمع الملك فهد لطباعة المصحف الشريف)؛ الترجمة: Saheeh International (quranenc.com، مجمع الملك فهد)",
+    "citation": "القرآن الكريم، سورة الأنفال (8)، الآية 27 — نص مصحف المدينة النبوية (مجمع الملك فهد لطباعة المصحف الشريف)؛ الترجمة: صحيح إنترناشيونال — مركز نور الدولي (عبر موسوعة القرآن الكريم quranenc.com)",
     "url": "https://quranenc.com/en/browse/english_saheeh/8#27",
     "text": {
       "ar": "يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُواْ لَا تَخُونُواْ ٱللَّهَ وَٱلرَّسُولَ وَتَخُونُوٓاْ أَمَٰنَٰتِكُمۡ وَأَنتُمۡ تَعۡلَمُونَ",
       "en": "O you who have believed, do not betray Allāh and the Messenger or betray your trusts while you know [the consequence]."
     },
     "location": "8:27",
-    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, King Fahd Complex-reviewed edition (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
+    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, issued by Noor International Center, as hosted by QuranEnc (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
     "review_status": "machine_verified",
     "verified": true,
     "verified_how": "verify.mjs: text_ar re-fetched from quranenc.com API (King Fahd Complex) and matched exactly; letters cross-checked against Tanzil quran-uthmani (api.alquran.cloud); translation_en matched quranenc english_saheeh.",
@@ -2378,19 +2606,21 @@
       "school.cheating",
       "work.honesty_gifts"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "Madinah Mushaf text (King Fahd Complex) via quranenc.com; English is the Saheeh International translation hosted there."
   },
   {
     "id": "quran:4:58",
     "type": "quran",
-    "citation": "القرآن الكريم، سورة النساء (4)، الآية 58 — نص مصحف المدينة النبوية (مجمع الملك فهد لطباعة المصحف الشريف)؛ الترجمة: Saheeh International (quranenc.com، مجمع الملك فهد)",
+    "citation": "القرآن الكريم، سورة النساء (4)، الآية 58 — نص مصحف المدينة النبوية (مجمع الملك فهد لطباعة المصحف الشريف)؛ الترجمة: صحيح إنترناشيونال — مركز نور الدولي (عبر موسوعة القرآن الكريم quranenc.com)",
     "url": "https://quranenc.com/en/browse/english_saheeh/4#58",
     "text": {
       "ar": "۞ إِنَّ ٱللَّهَ يَأۡمُرُكُمۡ أَن تُؤَدُّواْ ٱلۡأَمَٰنَٰتِ إِلَىٰٓ أَهۡلِهَا وَإِذَا حَكَمۡتُم بَيۡنَ ٱلنَّاسِ أَن تَحۡكُمُواْ بِٱلۡعَدۡلِۚ إِنَّ ٱللَّهَ نِعِمَّا يَعِظُكُم بِهِۦٓۗ إِنَّ ٱللَّهَ كَانَ سَمِيعَۢا بَصِيرٗا",
       "en": "Indeed, Allāh commands you to render trusts to whom they are due and when you judge between people to judge with justice. Excellent is that which Allāh instructs you. Indeed, Allāh is ever Hearing and Seeing."
     },
     "location": "4:58",
-    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, King Fahd Complex-reviewed edition (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
+    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, issued by Noor International Center, as hosted by QuranEnc (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
     "review_status": "machine_verified",
     "verified": true,
     "verified_how": "verify.mjs: text_ar re-fetched from quranenc.com API (King Fahd Complex) and matched exactly; letters cross-checked against Tanzil quran-uthmani (api.alquran.cloud); translation_en matched quranenc english_saheeh.",
@@ -2399,7 +2629,9 @@
       "street.lost_wallet",
       "work.honesty_gifts"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "Madinah Mushaf text (King Fahd Complex) via quranenc.com; English is the Saheeh International translation hosted there."
   },
   {
     "id": "hadith:صحيح-مسلم:101",
@@ -2424,7 +2656,9 @@
       "school.cheating",
       "work.honesty_gifts"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "From the two Sahihs (named by the package); grade shown as on dorar.net."
   },
   {
     "id": "hadith:صحيح-مسلم:102",
@@ -2448,7 +2682,9 @@
       "school.cheating",
       "street.buying_selling"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "From the two Sahihs (named by the package); grade shown as on dorar.net."
   },
   {
     "id": "hadith:صحيح-البخاري:5219",
@@ -2471,7 +2707,9 @@
     "used_in": [
       "school.cheating"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "From the two Sahihs (named by the package); grade shown as on dorar.net."
   },
   {
     "id": "madhhab:hanafi:school.cheating",
@@ -2490,7 +2728,9 @@
     "used_in": [
       "school.cheating"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "Classical madhhab book (acceptable per the package) but accessed via a secondary site; the original volume/page needs a human check."
   },
   {
     "id": "madhhab:maliki:school.cheating",
@@ -2509,7 +2749,9 @@
     "used_in": [
       "school.cheating"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "Classical madhhab book (acceptable per the package) but accessed via a secondary site; the original volume/page needs a human check."
   },
   {
     "id": "madhhab:shafii:school.cheating",
@@ -2528,7 +2770,9 @@
     "used_in": [
       "school.cheating"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "Classical madhhab book (acceptable per the package) but accessed via a secondary site; the original volume/page needs a human check."
   },
   {
     "id": "madhhab:hanbali:school.cheating",
@@ -2547,7 +2791,9 @@
     "used_in": [
       "school.cheating"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "No package-named link."
   },
   {
     "id": "contemporary:الشيخ-عبد-العزيز-بن-باز-المفتي:فتوى-منشورة-بالموقع-الرسمي-رقم-18083-حكم",
@@ -2566,7 +2812,9 @@
     "used_in": [
       "school.cheating"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "Official publication of a contemporary fiqh council or scholar; not one of the package-named references."
   },
   {
     "id": "contemporary:دار-الإفتاء-المصرية:الفتوى-رقم-3964-بتاريخ-19-فبراير-2017-أ-",
@@ -2585,26 +2833,30 @@
     "used_in": [
       "school.cheating"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "Official publication of a contemporary fiqh council or scholar; not one of the package-named references."
   },
   {
     "id": "quran:6:119",
     "type": "quran",
-    "citation": "القرآن الكريم، سورة الأنعام (6)، الآية 119 — نص مصحف المدينة النبوية (مجمع الملك فهد لطباعة المصحف الشريف)؛ الترجمة: Saheeh International (quranenc.com، مجمع الملك فهد)",
+    "citation": "القرآن الكريم، سورة الأنعام (6)، الآية 119 — نص مصحف المدينة النبوية (مجمع الملك فهد لطباعة المصحف الشريف)؛ الترجمة: صحيح إنترناشيونال — مركز نور الدولي (عبر موسوعة القرآن الكريم quranenc.com)",
     "url": "https://quranenc.com/en/browse/english_saheeh/6#119",
     "text": {
       "ar": "وَمَا لَكُمۡ أَلَّا تَأۡكُلُواْ مِمَّا ذُكِرَ ٱسۡمُ ٱللَّهِ عَلَيۡهِ وَقَدۡ فَصَّلَ لَكُم مَّا حَرَّمَ عَلَيۡكُمۡ إِلَّا مَا ٱضۡطُرِرۡتُمۡ إِلَيۡهِۗ وَإِنَّ كَثِيرٗا لَّيُضِلُّونَ بِأَهۡوَآئِهِم بِغَيۡرِ عِلۡمٍۚ إِنَّ رَبَّكَ هُوَ أَعۡلَمُ بِٱلۡمُعۡتَدِينَ",
       "en": "And why should you not eat of that upon which the name of Allāh has been mentioned while He has explained in detail to you what He has forbidden you, excepting that to which you are compelled. And indeed do many lead [others] astray through their [own] inclinations without knowledge. Indeed, your Lord - He is most knowing of the transgressors."
     },
     "location": "6:119",
-    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, King Fahd Complex-reviewed edition (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
+    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, issued by Noor International Center, as hosted by QuranEnc (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
     "review_status": "machine_verified",
     "verified": true,
     "verified_how": "verify.mjs: text_ar re-fetched from quranenc.com API (King Fahd Complex) and matched exactly; letters cross-checked against Tanzil quran-uthmani (api.alquran.cloud); translation_en matched quranenc english_saheeh.",
     "used_in": [
       "school.student_loan"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "Madinah Mushaf text (King Fahd Complex) via quranenc.com; English is the Saheeh International translation hosted there."
   },
   {
     "id": "madhhab:hanafi:school.student_loan",
@@ -2623,7 +2875,9 @@
     "used_in": [
       "school.student_loan"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "No package-named link."
   },
   {
     "id": "madhhab:maliki:school.student_loan",
@@ -2642,7 +2896,9 @@
     "used_in": [
       "school.student_loan"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "Classical madhhab book (acceptable per the package) but accessed via a secondary site; the original volume/page needs a human check."
   },
   {
     "id": "madhhab:shafii:school.student_loan",
@@ -2661,7 +2917,9 @@
     "used_in": [
       "school.student_loan"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "Classical madhhab book (acceptable per the package) but accessed via a secondary site; the original volume/page needs a human check."
   },
   {
     "id": "madhhab:hanbali:school.student_loan",
@@ -2680,7 +2938,9 @@
     "used_in": [
       "school.student_loan"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "Classical madhhab book (acceptable per the package) but accessed via a secondary site; the original volume/page needs a human check."
   },
   {
     "id": "contemporary:مجمع-الفقه-الإسلامي-الدولي:القرار-رقم-10-10-2-الدورة-الثانية-جدة-22",
@@ -2699,7 +2959,9 @@
     "used_in": [
       "school.student_loan"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "Official publication of a contemporary fiqh council or scholar; not one of the package-named references."
   },
   {
     "id": "contemporary:مجمع-فقهاء-الشريعة-بأمريكا-AMJ:قرار-المؤتمر-السنوي-السادس-كندا-2009م-كم",
@@ -2718,7 +2980,9 @@
     "used_in": [
       "school.student_loan"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "Official publication of a contemporary fiqh council or scholar; not one of the package-named references."
   },
   {
     "id": "contemporary:مجمع-فقهاء-الشريعة-بأمريكا-AMJ:Summary-of-Student-Loans-in-the-United-S",
@@ -2737,7 +3001,9 @@
     "used_in": [
       "school.student_loan"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "Official publication of a contemporary fiqh council or scholar; not one of the package-named references."
   },
   {
     "id": "contemporary:المجلس-الأوروبي-للإفتاء-والبحو:القرار-4-18-الدورة-الثامنة-عشرة-باريس-27",
@@ -2756,26 +3022,30 @@
     "used_in": [
       "school.student_loan"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "Official publication of a contemporary fiqh council or scholar; not one of the package-named references."
   },
   {
     "id": "quran:24:30",
     "type": "quran",
-    "citation": "القرآن الكريم، سورة النور (24)، الآية 30 — نص مصحف المدينة النبوية (مجمع الملك فهد لطباعة المصحف الشريف)؛ الترجمة: Saheeh International (quranenc.com، مجمع الملك فهد)",
+    "citation": "القرآن الكريم، سورة النور (24)، الآية 30 — نص مصحف المدينة النبوية (مجمع الملك فهد لطباعة المصحف الشريف)؛ الترجمة: صحيح إنترناشيونال — مركز نور الدولي (عبر موسوعة القرآن الكريم quranenc.com)",
     "url": "https://quranenc.com/en/browse/english_saheeh/24#30",
     "text": {
       "ar": "قُل لِّلۡمُؤۡمِنِينَ يَغُضُّواْ مِنۡ أَبۡصَٰرِهِمۡ وَيَحۡفَظُواْ فُرُوجَهُمۡۚ ذَٰلِكَ أَزۡكَىٰ لَهُمۡۚ إِنَّ ٱللَّهَ خَبِيرُۢ بِمَا يَصۡنَعُونَ",
       "en": "Tell the believing men to reduce [some] of their vision and guard their private parts. That is purer for them. Indeed, Allāh is [fully] Aware of what they do."
     },
     "location": "24:30",
-    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, King Fahd Complex-reviewed edition (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
+    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, issued by Noor International Center, as hosted by QuranEnc (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
     "review_status": "machine_verified",
     "verified": true,
     "verified_how": "verify.mjs: text_ar re-fetched from quranenc.com API (King Fahd Complex) and matched exactly; letters cross-checked against Tanzil quran-uthmani (api.alquran.cloud); translation_en matched quranenc english_saheeh.",
     "used_in": [
       "school.mixed_social"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "Madinah Mushaf text (King Fahd Complex) via quranenc.com; English is the Saheeh International translation hosted there."
   },
   {
     "id": "hadith:صحيح-البخاري:5233",
@@ -2799,7 +3069,9 @@
     "used_in": [
       "school.mixed_social"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "From the two Sahihs (named by the package); grade shown as on dorar.net."
   },
   {
     "id": "hadith:صحيح-البخاري:5234",
@@ -2823,7 +3095,9 @@
     "used_in": [
       "school.mixed_social"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "From the two Sahihs (named by the package); grade shown as on dorar.net."
   },
   {
     "id": "hadith:سنن-النسائي:4181",
@@ -2848,7 +3122,9 @@
     "used_in": [
       "school.mixed_social"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "Package-named site: dorar.net."
   },
   {
     "id": "hadith:صحيح-البخاري:4891",
@@ -2872,7 +3148,9 @@
     "used_in": [
       "school.mixed_social"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "From the two Sahihs (named by the package); grade shown as on dorar.net."
   },
   {
     "id": "madhhab:hanafi:school.mixed_social",
@@ -2892,7 +3170,9 @@
       "school.mixed_social",
       "qa.consensus.school"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "No package-named link."
   },
   {
     "id": "madhhab:maliki:school.mixed_social",
@@ -2911,7 +3191,9 @@
     "used_in": [
       "school.mixed_social"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "No package-named link."
   },
   {
     "id": "madhhab:shafii:school.mixed_social",
@@ -2930,7 +3212,9 @@
     "used_in": [
       "school.mixed_social"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "No package-named link."
   },
   {
     "id": "madhhab:hanbali:school.mixed_social",
@@ -2949,7 +3233,9 @@
     "used_in": [
       "school.mixed_social"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "No package-named link."
   },
   {
     "id": "contemporary:مجمع-فقهاء-الشريعة-بأمريكا-AMJ:الفتوى-رقم-3253-قسم-الفتوى-22-7-2007",
@@ -2968,7 +3254,9 @@
     "used_in": [
       "school.mixed_social"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "Official publication of a contemporary fiqh council or scholar; not one of the package-named references."
   },
   {
     "id": "contemporary:د-يوسف-القرضاوي-رئيس-المجلس-ال:فتاوى-معاصرة-ج2-ملخصها-منقول-في-fiqh-isl",
@@ -2988,7 +3276,9 @@
       "school.mixed_social",
       "qa.consensus.school"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "Official publication of a contemporary fiqh council or scholar; not one of the package-named references."
   },
   {
     "id": "contemporary:أ-د-عبد-الفتاح-إدريس-أستاذ-الف:فتوى-منشورة-في-fiqh-islamonline-net",
@@ -3007,7 +3297,9 @@
     "used_in": [
       "school.mixed_social"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "Official publication of a contemporary fiqh council or scholar; not one of the package-named references."
   },
   {
     "id": "hadith:صحيح-البخاري:2372",
@@ -3031,7 +3323,9 @@
     "used_in": [
       "street.lost_wallet"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "From the two Sahihs (named by the package); grade shown as on dorar.net."
   },
   {
     "id": "hadith:صحيح-مسلم:1722",
@@ -3054,7 +3348,9 @@
     "used_in": [
       "street.lost_wallet"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "From the two Sahihs (named by the package); grade shown as on dorar.net."
   },
   {
     "id": "hadith:صحيح-البخاري:1349",
@@ -3078,7 +3374,9 @@
     "used_in": [
       "street.lost_wallet"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "From the two Sahihs (named by the package); grade shown as on dorar.net."
   },
   {
     "id": "madhhab:hanafi:street.lost_wallet",
@@ -3097,7 +3395,9 @@
     "used_in": [
       "street.lost_wallet"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "Classical madhhab book (acceptable per the package) but accessed via a secondary site; the original volume/page needs a human check."
   },
   {
     "id": "madhhab:maliki:street.lost_wallet",
@@ -3116,7 +3416,9 @@
     "used_in": [
       "street.lost_wallet"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "Classical madhhab book (acceptable per the package) but accessed via a secondary site; the original volume/page needs a human check."
   },
   {
     "id": "madhhab:shafii:street.lost_wallet",
@@ -3135,7 +3437,9 @@
     "used_in": [
       "street.lost_wallet"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "Classical madhhab book (acceptable per the package) but accessed via a secondary site; the original volume/page needs a human check."
   },
   {
     "id": "madhhab:hanbali:street.lost_wallet",
@@ -3154,19 +3458,21 @@
     "used_in": [
       "street.lost_wallet"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "Classical madhhab book (acceptable per the package) but accessed via a secondary site; the original volume/page needs a human check."
   },
   {
     "id": "quran:2:219",
     "type": "quran",
-    "citation": "القرآن الكريم، سورة البقرة (2)، الآية 219 — نص مصحف المدينة النبوية (مجمع الملك فهد لطباعة المصحف الشريف)؛ الترجمة: Saheeh International (quranenc.com، مجمع الملك فهد)",
+    "citation": "القرآن الكريم، سورة البقرة (2)، الآية 219 — نص مصحف المدينة النبوية (مجمع الملك فهد لطباعة المصحف الشريف)؛ الترجمة: صحيح إنترناشيونال — مركز نور الدولي (عبر موسوعة القرآن الكريم quranenc.com)",
     "url": "https://quranenc.com/en/browse/english_saheeh/2#219",
     "text": {
       "ar": "۞ يَسۡـَٔلُونَكَ عَنِ ٱلۡخَمۡرِ وَٱلۡمَيۡسِرِۖ قُلۡ فِيهِمَآ إِثۡمٞ كَبِيرٞ وَمَنَٰفِعُ لِلنَّاسِ وَإِثۡمُهُمَآ أَكۡبَرُ مِن نَّفۡعِهِمَاۗ وَيَسۡـَٔلُونَكَ مَاذَا يُنفِقُونَۖ قُلِ ٱلۡعَفۡوَۗ كَذَٰلِكَ يُبَيِّنُ ٱللَّهُ لَكُمُ ٱلۡأٓيَٰتِ لَعَلَّكُمۡ تَتَفَكَّرُونَ",
       "en": "They ask you about wine and gambling. Say, \"In them is great sin and [yet, some] benefit for people. But their sin is greater than their benefit.\" And they ask you what they should spend. Say, \"The excess [beyond needs].\" Thus Allāh makes clear to you the verses [of revelation] that you might give thought"
     },
     "location": "2:219",
-    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, King Fahd Complex-reviewed edition (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
+    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, issued by Noor International Center, as hosted by QuranEnc (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
     "review_status": "machine_verified",
     "verified": true,
     "verified_how": "verify.mjs: text_ar re-fetched from quranenc.com API (King Fahd Complex) and matched exactly; letters cross-checked against Tanzil quran-uthmani (api.alquran.cloud); translation_en matched quranenc english_saheeh.",
@@ -3176,19 +3482,21 @@
       "qa.hostile.gambling",
       "qa.misquote.drink_prayer"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "Madinah Mushaf text (King Fahd Complex) via quranenc.com; English is the Saheeh International translation hosted there."
   },
   {
     "id": "quran:4:29",
     "type": "quran",
-    "citation": "القرآن الكريم، سورة النساء (4)، الآية 29 — نص مصحف المدينة النبوية (مجمع الملك فهد لطباعة المصحف الشريف)؛ الترجمة: Saheeh International (quranenc.com، مجمع الملك فهد)",
+    "citation": "القرآن الكريم، سورة النساء (4)، الآية 29 — نص مصحف المدينة النبوية (مجمع الملك فهد لطباعة المصحف الشريف)؛ الترجمة: صحيح إنترناشيونال — مركز نور الدولي (عبر موسوعة القرآن الكريم quranenc.com)",
     "url": "https://quranenc.com/en/browse/english_saheeh/4#29",
     "text": {
       "ar": "يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُواْ لَا تَأۡكُلُوٓاْ أَمۡوَٰلَكُم بَيۡنَكُم بِٱلۡبَٰطِلِ إِلَّآ أَن تَكُونَ تِجَٰرَةً عَن تَرَاضٖ مِّنكُمۡۚ وَلَا تَقۡتُلُوٓاْ أَنفُسَكُمۡۚ إِنَّ ٱللَّهَ كَانَ بِكُمۡ رَحِيمٗا",
       "en": "O you who have believed, do not consume one another's wealth unjustly but only [in lawful] business by mutual consent. And do not kill yourselves [or one another]. Indeed, Allāh is to you ever Merciful."
     },
     "location": "4:29",
-    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, King Fahd Complex-reviewed edition (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
+    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, issued by Noor International Center, as hosted by QuranEnc (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
     "review_status": "machine_verified",
     "verified": true,
     "verified_how": "verify.mjs: text_ar re-fetched from quranenc.com API (King Fahd Complex) and matched exactly; letters cross-checked against Tanzil quran-uthmani (api.alquran.cloud); translation_en matched quranenc english_saheeh.",
@@ -3196,7 +3504,9 @@
       "street.lottery",
       "street.buying_selling"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "Madinah Mushaf text (King Fahd Complex) via quranenc.com; English is the Saheeh International translation hosted there."
   },
   {
     "id": "madhhab:hanafi:street.lottery",
@@ -3215,7 +3525,9 @@
     "used_in": [
       "street.lottery"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "No package-named link."
   },
   {
     "id": "madhhab:maliki:street.lottery",
@@ -3234,7 +3546,9 @@
     "used_in": [
       "street.lottery"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "No package-named link."
   },
   {
     "id": "madhhab:shafii:street.lottery",
@@ -3253,7 +3567,9 @@
     "used_in": [
       "street.lottery"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "No package-named link."
   },
   {
     "id": "madhhab:hanbali:street.lottery",
@@ -3272,7 +3588,9 @@
     "used_in": [
       "street.lottery"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "No package-named link."
   },
   {
     "id": "contemporary:مجمع-الفقه-الإسلامي-الدولي:القرار-رقم-127-1-14-الدورة-الرابعة-عشرة-",
@@ -3291,7 +3609,9 @@
     "used_in": [
       "street.lottery"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "Official publication of a contemporary fiqh council or scholar; not one of the package-named references."
   },
   {
     "id": "contemporary:مجمع-فقهاء-الشريعة-بأمريكا-AMJ:الفتوى-رقم-1645-د-حاتم-الحاج-2006",
@@ -3310,19 +3630,21 @@
     "used_in": [
       "street.lottery"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "Official publication of a contemporary fiqh council or scholar; not one of the package-named references."
   },
   {
     "id": "quran:83:1",
     "type": "quran",
-    "citation": "القرآن الكريم، سورة المطففين (83)، الآية 1 — نص مصحف المدينة النبوية (مجمع الملك فهد لطباعة المصحف الشريف)؛ الترجمة: Saheeh International (quranenc.com، مجمع الملك فهد)",
+    "citation": "القرآن الكريم، سورة المطففين (83)، الآية 1 — نص مصحف المدينة النبوية (مجمع الملك فهد لطباعة المصحف الشريف)؛ الترجمة: صحيح إنترناشيونال — مركز نور الدولي (عبر موسوعة القرآن الكريم quranenc.com)",
     "url": "https://quranenc.com/en/browse/english_saheeh/83#1",
     "text": {
       "ar": "وَيۡلٞ لِّلۡمُطَفِّفِينَ",
       "en": "Woe to those who give less [than due],"
     },
     "location": "83:1",
-    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, King Fahd Complex-reviewed edition (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
+    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, issued by Noor International Center, as hosted by QuranEnc (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
     "review_status": "machine_verified",
     "verified": true,
     "verified_how": "verify.mjs: text_ar re-fetched from quranenc.com API (King Fahd Complex) and matched exactly; letters cross-checked against Tanzil quran-uthmani (api.alquran.cloud); translation_en matched quranenc english_saheeh.",
@@ -3330,19 +3652,21 @@
       "street.buying_selling",
       "work.honesty_gifts"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "Madinah Mushaf text (King Fahd Complex) via quranenc.com; English is the Saheeh International translation hosted there."
   },
   {
     "id": "quran:83:2",
     "type": "quran",
-    "citation": "القرآن الكريم، سورة المطففين (83)، الآية 2 — نص مصحف المدينة النبوية (مجمع الملك فهد لطباعة المصحف الشريف)؛ الترجمة: Saheeh International (quranenc.com، مجمع الملك فهد)",
+    "citation": "القرآن الكريم، سورة المطففين (83)، الآية 2 — نص مصحف المدينة النبوية (مجمع الملك فهد لطباعة المصحف الشريف)؛ الترجمة: صحيح إنترناشيونال — مركز نور الدولي (عبر موسوعة القرآن الكريم quranenc.com)",
     "url": "https://quranenc.com/en/browse/english_saheeh/83#2",
     "text": {
       "ar": "ٱلَّذِينَ إِذَا ٱكۡتَالُواْ عَلَى ٱلنَّاسِ يَسۡتَوۡفُونَ",
       "en": "Who, when they take a measure from people, take in full."
     },
     "location": "83:2",
-    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, King Fahd Complex-reviewed edition (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
+    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, issued by Noor International Center, as hosted by QuranEnc (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
     "review_status": "machine_verified",
     "verified": true,
     "verified_how": "verify.mjs: text_ar re-fetched from quranenc.com API (King Fahd Complex) and matched exactly; letters cross-checked against Tanzil quran-uthmani (api.alquran.cloud); translation_en matched quranenc english_saheeh.",
@@ -3350,19 +3674,21 @@
       "street.buying_selling",
       "work.honesty_gifts"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "Madinah Mushaf text (King Fahd Complex) via quranenc.com; English is the Saheeh International translation hosted there."
   },
   {
     "id": "quran:83:3",
     "type": "quran",
-    "citation": "القرآن الكريم، سورة المطففين (83)، الآية 3 — نص مصحف المدينة النبوية (مجمع الملك فهد لطباعة المصحف الشريف)؛ الترجمة: Saheeh International (quranenc.com، مجمع الملك فهد)",
+    "citation": "القرآن الكريم، سورة المطففين (83)، الآية 3 — نص مصحف المدينة النبوية (مجمع الملك فهد لطباعة المصحف الشريف)؛ الترجمة: صحيح إنترناشيونال — مركز نور الدولي (عبر موسوعة القرآن الكريم quranenc.com)",
     "url": "https://quranenc.com/en/browse/english_saheeh/83#3",
     "text": {
       "ar": "وَإِذَا كَالُوهُمۡ أَو وَّزَنُوهُمۡ يُخۡسِرُونَ",
       "en": "But if they give by measure or by weight to them, they cause loss."
     },
     "location": "83:3",
-    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, King Fahd Complex-reviewed edition (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
+    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, issued by Noor International Center, as hosted by QuranEnc (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
     "review_status": "machine_verified",
     "verified": true,
     "verified_how": "verify.mjs: text_ar re-fetched from quranenc.com API (King Fahd Complex) and matched exactly; letters cross-checked against Tanzil quran-uthmani (api.alquran.cloud); translation_en matched quranenc english_saheeh.",
@@ -3370,26 +3696,30 @@
       "street.buying_selling",
       "work.honesty_gifts"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "Madinah Mushaf text (King Fahd Complex) via quranenc.com; English is the Saheeh International translation hosted there."
   },
   {
     "id": "quran:22:30",
     "type": "quran",
-    "citation": "القرآن الكريم، سورة الحج (22)، الآية 30 — نص مصحف المدينة النبوية (مجمع الملك فهد لطباعة المصحف الشريف)؛ الترجمة: Saheeh International (quranenc.com، مجمع الملك فهد)",
+    "citation": "القرآن الكريم، سورة الحج (22)، الآية 30 — نص مصحف المدينة النبوية (مجمع الملك فهد لطباعة المصحف الشريف)؛ الترجمة: صحيح إنترناشيونال — مركز نور الدولي (عبر موسوعة القرآن الكريم quranenc.com)",
     "url": "https://quranenc.com/en/browse/english_saheeh/22#30",
     "text": {
       "ar": "ذَٰلِكَۖ وَمَن يُعَظِّمۡ حُرُمَٰتِ ٱللَّهِ فَهُوَ خَيۡرٞ لَّهُۥ عِندَ رَبِّهِۦۗ وَأُحِلَّتۡ لَكُمُ ٱلۡأَنۡعَٰمُ إِلَّا مَا يُتۡلَىٰ عَلَيۡكُمۡۖ فَٱجۡتَنِبُواْ ٱلرِّجۡسَ مِنَ ٱلۡأَوۡثَٰنِ وَٱجۡتَنِبُواْ قَوۡلَ ٱلزُّورِ",
       "en": "That [has been commanded], and whoever honors the sacred ordinances of Allāh - it is best for him in the sight of his Lord. And permitted to you are the grazing livestock, except what is recited to you. So avoid the uncleanliness of idols and avoid false statement,"
     },
     "location": "22:30",
-    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, King Fahd Complex-reviewed edition (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
+    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, issued by Noor International Center, as hosted by QuranEnc (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
     "review_status": "machine_verified",
     "verified": true,
     "verified_how": "verify.mjs: text_ar re-fetched from quranenc.com API (King Fahd Complex) and matched exactly; letters cross-checked against Tanzil quran-uthmani (api.alquran.cloud); translation_en matched quranenc english_saheeh.",
     "used_in": [
       "street.buying_selling"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "Madinah Mushaf text (King Fahd Complex) via quranenc.com; English is the Saheeh International translation hosted there."
   },
   {
     "id": "hadith:صحيح-البخاري:2079",
@@ -3412,7 +3742,9 @@
     "used_in": [
       "street.buying_selling"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "From the two Sahihs (named by the package); grade shown as on dorar.net."
   },
   {
     "id": "hadith:سنن-ابن-ماجه:2246",
@@ -3437,7 +3769,9 @@
     "used_in": [
       "street.buying_selling"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "Package-named site: dorar.net."
   },
   {
     "id": "hadith:صحيح-البخاري:2654",
@@ -3460,7 +3794,9 @@
     "used_in": [
       "street.buying_selling"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "From the two Sahihs (named by the package); grade shown as on dorar.net."
   },
   {
     "id": "hadith:صحيح-البخاري:2076",
@@ -3483,7 +3819,9 @@
     "used_in": [
       "street.buying_selling"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "From the two Sahihs (named by the package); grade shown as on dorar.net."
   },
   {
     "id": "madhhab:hanafi:street.buying_selling",
@@ -3502,7 +3840,9 @@
     "used_in": [
       "street.buying_selling"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "No package-named link."
   },
   {
     "id": "madhhab:maliki:street.buying_selling",
@@ -3521,7 +3861,9 @@
     "used_in": [
       "street.buying_selling"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "No package-named link."
   },
   {
     "id": "madhhab:shafii:street.buying_selling",
@@ -3540,7 +3882,9 @@
     "used_in": [
       "street.buying_selling"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "No package-named link."
   },
   {
     "id": "madhhab:hanbali:street.buying_selling",
@@ -3559,7 +3903,9 @@
     "used_in": [
       "street.buying_selling"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "No package-named link."
   },
   {
     "id": "contemporary:دار-الإفتاء-المصرية:الفتوى-رقم-8298-بتاريخ-8-مارس-2024-أ-د-ش",
@@ -3578,7 +3924,9 @@
     "used_in": [
       "street.buying_selling"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "Official publication of a contemporary fiqh council or scholar; not one of the package-named references."
   },
   {
     "id": "contemporary:المفتي-إسماعيل-باسا-TheMufti-c:Giving-Tips-at-Restaurants-24-أكتوبر-201",
@@ -3597,7 +3945,9 @@
     "used_in": [
       "street.buying_selling"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "Official publication of a contemporary fiqh council or scholar; not one of the package-named references."
   },
   {
     "id": "hadith:سنن-أبي-داود:3674",
@@ -3621,7 +3971,9 @@
     "used_in": [
       "work.alcohol_pork_job"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "Package-named site: dorar.net."
   },
   {
     "id": "hadith:جامع-الترمذي:1295",
@@ -3645,7 +3997,9 @@
     "used_in": [
       "work.alcohol_pork_job"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "Package-named site: dorar.net."
   },
   {
     "id": "hadith:صحيح-البخاري:2236",
@@ -3668,7 +4022,9 @@
     "used_in": [
       "work.alcohol_pork_job"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "From the two Sahihs (named by the package); grade shown as on dorar.net."
   },
   {
     "id": "hadith:سنن-أبي-داود:3488",
@@ -3692,7 +4048,9 @@
     "used_in": [
       "work.alcohol_pork_job"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "Package-named site: dorar.net."
   },
   {
     "id": "madhhab:hanafi:work.alcohol_pork_job",
@@ -3711,7 +4069,9 @@
     "used_in": [
       "work.alcohol_pork_job"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "Not a package-named site (ar.wikisource.org)."
   },
   {
     "id": "madhhab:maliki:work.alcohol_pork_job",
@@ -3730,7 +4090,9 @@
     "used_in": [
       "work.alcohol_pork_job"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "No package-named link."
   },
   {
     "id": "madhhab:shafii:work.alcohol_pork_job",
@@ -3749,7 +4111,9 @@
     "used_in": [
       "work.alcohol_pork_job"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "No package-named link."
   },
   {
     "id": "madhhab:hanbali:work.alcohol_pork_job",
@@ -3768,7 +4132,9 @@
     "used_in": [
       "work.alcohol_pork_job"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "No package-named link."
   },
   {
     "id": "contemporary:دائرة-الإفتاء-العام-الأردنية:الفتوى-2037-بتاريخ-7-5-2012",
@@ -3787,7 +4153,9 @@
     "used_in": [
       "work.alcohol_pork_job"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "Official publication of a contemporary fiqh council or scholar; not one of the package-named references."
   },
   {
     "id": "contemporary:SeekersGuidance-فتوى-حنفية-جهة:الأستاذ-سلمان-يونس-بمراجعة-الشيخ-فراز-رب",
@@ -3806,7 +4174,9 @@
     "used_in": [
       "work.alcohol_pork_job"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "Official publication of a contemporary fiqh council or scholar; not one of the package-named references."
   },
   {
     "id": "contemporary:مجمع-فقهاء-الشريعة-بأمريكا-AMJ:قرارات-المؤتمر-السنوي-في-الأطعمة-والأدوي",
@@ -3825,7 +4195,9 @@
     "used_in": [
       "work.alcohol_pork_job"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "Official publication of a contemporary fiqh council or scholar; not one of the package-named references."
   },
   {
     "id": "hadith:جامع-الترمذي:2518",
@@ -3850,7 +4222,9 @@
     "used_in": [
       "work.retirement_401k"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "Package-named site: dorar.net."
   },
   {
     "id": "madhhab:hanafi:work.retirement_401k",
@@ -3869,7 +4243,9 @@
     "used_in": [
       "work.retirement_401k"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "No package-named link."
   },
   {
     "id": "madhhab:maliki:work.retirement_401k",
@@ -3888,7 +4264,9 @@
     "used_in": [
       "work.retirement_401k"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "No package-named link."
   },
   {
     "id": "madhhab:shafii:work.retirement_401k",
@@ -3907,7 +4285,9 @@
     "used_in": [
       "work.retirement_401k"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "No package-named link."
   },
   {
     "id": "madhhab:hanbali:work.retirement_401k",
@@ -3926,7 +4306,9 @@
     "used_in": [
       "work.retirement_401k"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "No package-named link."
   },
   {
     "id": "contemporary:مجمع-الفقه-الإسلامي-الدولي:القرار-63-1-7-الدورة-السابعة-جدة-مايو-19",
@@ -3945,7 +4327,9 @@
     "used_in": [
       "work.retirement_401k"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "Official publication of a contemporary fiqh council or scholar; not one of the package-named references."
   },
   {
     "id": "contemporary:مجمع-فقهاء-الشريعة-بأمريكا-AMJ:الفتويان-1871-11-08-2006-و1774-11-07-200",
@@ -3964,7 +4348,9 @@
     "used_in": [
       "work.retirement_401k"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "Official publication of a contemporary fiqh council or scholar; not one of the package-named references."
   },
   {
     "id": "contemporary:هيئة-المحاسبة-والمراجعة-للمؤسس:المعيار-الشرعي-رقم-21-الأوراق-المالية-ال",
@@ -3983,45 +4369,51 @@
     "used_in": [
       "work.retirement_401k"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "Official publication of a contemporary fiqh council or scholar; not one of the package-named references."
   },
   {
     "id": "quran:2:188",
     "type": "quran",
-    "citation": "القرآن الكريم، سورة البقرة (2)، الآية 188 — نص مصحف المدينة النبوية (مجمع الملك فهد لطباعة المصحف الشريف)؛ الترجمة: Saheeh International (quranenc.com، مجمع الملك فهد)",
+    "citation": "القرآن الكريم، سورة البقرة (2)، الآية 188 — نص مصحف المدينة النبوية (مجمع الملك فهد لطباعة المصحف الشريف)؛ الترجمة: صحيح إنترناشيونال — مركز نور الدولي (عبر موسوعة القرآن الكريم quranenc.com)",
     "url": "https://quranenc.com/en/browse/english_saheeh/2#188",
     "text": {
       "ar": "وَلَا تَأۡكُلُوٓاْ أَمۡوَٰلَكُم بَيۡنَكُم بِٱلۡبَٰطِلِ وَتُدۡلُواْ بِهَآ إِلَى ٱلۡحُكَّامِ لِتَأۡكُلُواْ فَرِيقٗا مِّنۡ أَمۡوَٰلِ ٱلنَّاسِ بِٱلۡإِثۡمِ وَأَنتُمۡ تَعۡلَمُونَ",
       "en": "And do not consume one another's wealth unjustly or send it [in bribery] to the rulers in order that [they might aid] you [to] consume a portion of the wealth of the people in sin, while you know [it is unlawful]."
     },
     "location": "2:188",
-    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, King Fahd Complex-reviewed edition (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
+    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, issued by Noor International Center, as hosted by QuranEnc (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
     "review_status": "machine_verified",
     "verified": true,
     "verified_how": "verify.mjs: text_ar re-fetched from quranenc.com API (King Fahd Complex) and matched exactly; letters cross-checked against Tanzil quran-uthmani (api.alquran.cloud); translation_en matched quranenc english_saheeh.",
     "used_in": [
       "work.honesty_gifts"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "Madinah Mushaf text (King Fahd Complex) via quranenc.com; English is the Saheeh International translation hosted there."
   },
   {
     "id": "quran:3:161",
     "type": "quran",
-    "citation": "القرآن الكريم، سورة آل عمران (3)، الآية 161 — نص مصحف المدينة النبوية (مجمع الملك فهد لطباعة المصحف الشريف)؛ الترجمة: Saheeh International (quranenc.com، مجمع الملك فهد)",
+    "citation": "القرآن الكريم، سورة آل عمران (3)، الآية 161 — نص مصحف المدينة النبوية (مجمع الملك فهد لطباعة المصحف الشريف)؛ الترجمة: صحيح إنترناشيونال — مركز نور الدولي (عبر موسوعة القرآن الكريم quranenc.com)",
     "url": "https://quranenc.com/en/browse/english_saheeh/3#161",
     "text": {
       "ar": "وَمَا كَانَ لِنَبِيٍّ أَن يَغُلَّۚ وَمَن يَغۡلُلۡ يَأۡتِ بِمَا غَلَّ يَوۡمَ ٱلۡقِيَٰمَةِۚ ثُمَّ تُوَفَّىٰ كُلُّ نَفۡسٖ مَّا كَسَبَتۡ وَهُمۡ لَا يُظۡلَمُونَ",
       "en": "It is not [attributable] to any prophet that he would act unfaithfully [in regard to war booty]. And whoever betrays, [taking unlawfully], will come with what he took on the Day of Resurrection. Then will every soul be [fully] compensated for what it earned, and they will not be wronged."
     },
     "location": "3:161",
-    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, King Fahd Complex-reviewed edition (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
+    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, issued by Noor International Center, as hosted by QuranEnc (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
     "review_status": "machine_verified",
     "verified": true,
     "verified_how": "verify.mjs: text_ar re-fetched from quranenc.com API (King Fahd Complex) and matched exactly; letters cross-checked against Tanzil quran-uthmani (api.alquran.cloud); translation_en matched quranenc english_saheeh.",
     "used_in": [
       "work.honesty_gifts"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "Madinah Mushaf text (King Fahd Complex) via quranenc.com; English is the Saheeh International translation hosted there."
   },
   {
     "id": "hadith:صحيح-البخاري:2597",
@@ -4043,7 +4435,9 @@
     "used_in": [
       "work.honesty_gifts"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "From the two Sahihs (named by the package); grade shown as on dorar.net."
   },
   {
     "id": "hadith:صحيح-مسلم:1833",
@@ -4066,7 +4460,9 @@
     "used_in": [
       "work.honesty_gifts"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "From the two Sahihs (named by the package); grade shown as on dorar.net."
   },
   {
     "id": "hadith:سنن-أبي-داود:2943",
@@ -4091,7 +4487,9 @@
     "used_in": [
       "work.honesty_gifts"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "Package-named site: dorar.net."
   },
   {
     "id": "hadith:صحيح-البخاري:33",
@@ -4114,7 +4512,9 @@
     "used_in": [
       "work.honesty_gifts"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "From the two Sahihs (named by the package); grade shown as on dorar.net."
   },
   {
     "id": "madhhab:hanafi:work.honesty_gifts",
@@ -4133,7 +4533,9 @@
     "used_in": [
       "work.honesty_gifts"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "Package-named site: dorar.net."
   },
   {
     "id": "madhhab:maliki:work.honesty_gifts",
@@ -4152,7 +4554,9 @@
     "used_in": [
       "work.honesty_gifts"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "Package-named site: dorar.net."
   },
   {
     "id": "madhhab:shafii:work.honesty_gifts",
@@ -4171,7 +4575,9 @@
     "used_in": [
       "work.honesty_gifts"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "Package-named site: dorar.net."
   },
   {
     "id": "madhhab:hanbali:work.honesty_gifts",
@@ -4190,7 +4596,9 @@
     "used_in": [
       "work.honesty_gifts"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "Package-named site: dorar.net."
   },
   {
     "id": "contemporary:الشيخ-عبد-العزيز-بن-باز-المفتي:فتوى-حكم-الهدايا-للعمال-والموظفين-binbaz",
@@ -4209,7 +4617,9 @@
     "used_in": [
       "work.honesty_gifts"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "Official publication of a contemporary fiqh council or scholar; not one of the package-named references."
   },
   {
     "id": "hadith:صحيح-البخاري:1597",
@@ -4230,7 +4640,9 @@
       "qa.kaaba.home",
       "qa.kaaba.school"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "From the two Sahihs (named by the package); grade shown as on dorar.net."
   },
   {
     "id": "hadith:صحيح-البخاري:7352",
@@ -4250,7 +4662,9 @@
     "used_in": [
       "qa.khilaf.school"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "From the two Sahihs (named by the package); grade shown as on dorar.net."
   },
   {
     "id": "hadith:صحيح-البخاري:756",
@@ -4270,7 +4684,9 @@
     "used_in": [
       "qa.term.alhamdulillah"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "From the two Sahihs (named by the package); grade shown as on dorar.net."
   },
   {
     "id": "other:islamhouse-429880",
@@ -4290,7 +4706,9 @@
       "qa.sword.street",
       "qa.sword.public_events"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "Not a package-named site (islamhouse.com)."
   },
   {
     "id": "other:islamqa-128658",
@@ -4309,7 +4727,9 @@
     "used_in": [
       "qa.khilaf.school"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "Not a package-named site (islamqa.info)."
   },
   {
     "id": "other:islamqa-178756",
@@ -4329,7 +4749,9 @@
       "qa.sword.street",
       "qa.sword.public_events"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "Not a package-named site (islamqa.info)."
   },
   {
     "id": "other:islamqa-70491",
@@ -4351,19 +4773,21 @@
       "qa.consensus.school",
       "qa.consensus.work"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "Not a package-named site (islamqa.info)."
   },
   {
     "id": "quran:106:3",
     "type": "quran",
-    "citation": "القرآن الكريم، سورة قريش (106)، الآية 3 — رسم عثماني؛ الترجمة: Saheeh International (quranenc.com، مجمع الملك فهد)",
+    "citation": "القرآن الكريم، سورة قريش (106)، الآية 3 — رسم عثماني؛ الترجمة: صحيح إنترناشيونال — مركز نور الدولي (عبر موسوعة القرآن الكريم quranenc.com)",
     "url": "https://quranenc.com/en/browse/english_saheeh/106#3",
     "text": {
       "ar": "فَلۡيَعۡبُدُواْ رَبَّ هَٰذَا ٱلۡبَيۡتِ",
       "en": "Let them worship the Lord of this House,"
     },
     "location": "106:3",
-    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, King Fahd Complex-reviewed edition (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
+    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, issued by Noor International Center, as hosted by QuranEnc (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
     "review_status": "machine_verified",
     "verified": true,
     "verified_how": "verify.mjs (registry): matches quranenc.com (King Fahd Complex). Earlier note: Fetched verbatim on 2026-10-06 from https://quranenc.com/api/v1/translation/aya/english_saheeh/106/3 (arabic_text + english_saheeh translation, King Fahd Complex); not typed from memory. Added for the Q&A bank.",
@@ -4371,161 +4795,181 @@
       "qa.kaaba.home",
       "qa.kaaba.school"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "Madinah Mushaf text (King Fahd Complex) via quranenc.com; English is the Saheeh International translation hosted there."
   },
   {
     "id": "quran:10:99",
     "type": "quran",
-    "citation": "القرآن الكريم، سورة يونس (10)، الآية 99 — رسم عثماني؛ الترجمة: Saheeh International (quranenc.com، مجمع الملك فهد)",
+    "citation": "القرآن الكريم، سورة يونس (10)، الآية 99 — رسم عثماني؛ الترجمة: صحيح إنترناشيونال — مركز نور الدولي (عبر موسوعة القرآن الكريم quranenc.com)",
     "url": "https://quranenc.com/en/browse/english_saheeh/10#99",
     "text": {
       "ar": "وَلَوۡ شَآءَ رَبُّكَ لَأٓمَنَ مَن فِي ٱلۡأَرۡضِ كُلُّهُمۡ جَمِيعًاۚ أَفَأَنتَ تُكۡرِهُ ٱلنَّاسَ حَتَّىٰ يَكُونُواْ مُؤۡمِنِينَ",
       "en": "And had your Lord willed, those on earth would have believed - all of them entirely. Then, [O Muḥammad], would you compel the people in order that they become believers?"
     },
     "location": "10:99",
-    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, King Fahd Complex-reviewed edition (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
+    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, issued by Noor International Center, as hosted by QuranEnc (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
     "review_status": "machine_verified",
     "verified": true,
     "verified_how": "verify.mjs (registry): matches quranenc.com (King Fahd Complex). Earlier note: Fetched verbatim on 2026-10-06 from https://quranenc.com/api/v1/translation/aya/english_saheeh/10/99 (arabic_text + english_saheeh translation, King Fahd Complex); not typed from memory. Added for the Q&A bank.",
     "used_in": [
       "qa.sword.street"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "Madinah Mushaf text (King Fahd Complex) via quranenc.com; English is the Saheeh International translation hosted there."
   },
   {
     "id": "quran:112:1",
     "type": "quran",
-    "citation": "القرآن الكريم، سورة الإخلاص (112)، الآية 1 — رسم عثماني؛ الترجمة: Saheeh International (quranenc.com، مجمع الملك فهد)",
+    "citation": "القرآن الكريم، سورة الإخلاص (112)، الآية 1 — رسم عثماني؛ الترجمة: صحيح إنترناشيونال — مركز نور الدولي (عبر موسوعة القرآن الكريم quranenc.com)",
     "url": "https://quranenc.com/en/browse/english_saheeh/112#1",
     "text": {
       "ar": "قُلۡ هُوَ ٱللَّهُ أَحَدٌ",
       "en": "Say, \"He is Allāh, [who is] One,"
     },
     "location": "112:1",
-    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, King Fahd Complex-reviewed edition (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
+    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, issued by Noor International Center, as hosted by QuranEnc (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
     "review_status": "machine_verified",
     "verified": true,
     "verified_how": "verify.mjs (registry): matches quranenc.com (King Fahd Complex). Earlier note: Fetched verbatim on 2026-10-06 from https://quranenc.com/api/v1/translation/aya/english_saheeh/112/1 (arabic_text + english_saheeh translation, King Fahd Complex); not typed from memory. Added for the Q&A bank.",
     "used_in": [
+      "qa.basics.tawhid",
       "qa.tawhid_plain.home",
       "qa.tawhid_translate.work",
       "qa.tawhid_translate.school",
       "qa.term.allah"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "Madinah Mushaf text (King Fahd Complex) via quranenc.com; English is the Saheeh International translation hosted there."
   },
   {
     "id": "quran:112:2",
     "type": "quran",
-    "citation": "القرآن الكريم، سورة الإخلاص (112)، الآية 2 — رسم عثماني؛ الترجمة: Saheeh International (quranenc.com، مجمع الملك فهد)",
+    "citation": "القرآن الكريم، سورة الإخلاص (112)، الآية 2 — رسم عثماني؛ الترجمة: صحيح إنترناشيونال — مركز نور الدولي (عبر موسوعة القرآن الكريم quranenc.com)",
     "url": "https://quranenc.com/en/browse/english_saheeh/112#2",
     "text": {
       "ar": "ٱللَّهُ ٱلصَّمَدُ",
       "en": "Allāh, the Eternal Refuge."
     },
     "location": "112:2",
-    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, King Fahd Complex-reviewed edition (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
+    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, issued by Noor International Center, as hosted by QuranEnc (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
     "review_status": "machine_verified",
     "verified": true,
     "verified_how": "verify.mjs (registry): matches quranenc.com (King Fahd Complex). Earlier note: Fetched verbatim on 2026-10-06 from https://quranenc.com/api/v1/translation/aya/english_saheeh/112/2 (arabic_text + english_saheeh translation, King Fahd Complex); not typed from memory. Added for the Q&A bank.",
     "used_in": [
+      "qa.basics.tawhid",
       "qa.tawhid_plain.home",
       "qa.tawhid_translate.work",
       "qa.tawhid_translate.school"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "Madinah Mushaf text (King Fahd Complex) via quranenc.com; English is the Saheeh International translation hosted there."
   },
   {
     "id": "quran:112:3",
     "type": "quran",
-    "citation": "القرآن الكريم، سورة الإخلاص (112)، الآية 3 — رسم عثماني؛ الترجمة: Saheeh International (quranenc.com، مجمع الملك فهد)",
+    "citation": "القرآن الكريم، سورة الإخلاص (112)، الآية 3 — رسم عثماني؛ الترجمة: صحيح إنترناشيونال — مركز نور الدولي (عبر موسوعة القرآن الكريم quranenc.com)",
     "url": "https://quranenc.com/en/browse/english_saheeh/112#3",
     "text": {
       "ar": "لَمۡ يَلِدۡ وَلَمۡ يُولَدۡ",
       "en": "He neither begets nor is born,"
     },
     "location": "112:3",
-    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, King Fahd Complex-reviewed edition (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
+    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, issued by Noor International Center, as hosted by QuranEnc (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
     "review_status": "machine_verified",
     "verified": true,
     "verified_how": "verify.mjs (registry): matches quranenc.com (King Fahd Complex). Earlier note: Fetched verbatim on 2026-10-06 from https://quranenc.com/api/v1/translation/aya/english_saheeh/112/3 (arabic_text + english_saheeh translation, King Fahd Complex); not typed from memory. Added for the Q&A bank.",
     "used_in": [
+      "qa.basics.tawhid",
       "qa.tawhid_plain.home",
       "qa.tawhid_translate.work",
       "qa.tawhid_translate.school"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "Madinah Mushaf text (King Fahd Complex) via quranenc.com; English is the Saheeh International translation hosted there."
   },
   {
     "id": "quran:112:4",
     "type": "quran",
-    "citation": "القرآن الكريم، سورة الإخلاص (112)، الآية 4 — رسم عثماني؛ الترجمة: Saheeh International (quranenc.com، مجمع الملك فهد)",
+    "citation": "القرآن الكريم، سورة الإخلاص (112)، الآية 4 — رسم عثماني؛ الترجمة: صحيح إنترناشيونال — مركز نور الدولي (عبر موسوعة القرآن الكريم quranenc.com)",
     "url": "https://quranenc.com/en/browse/english_saheeh/112#4",
     "text": {
       "ar": "وَلَمۡ يَكُن لَّهُۥ كُفُوًا أَحَدُۢ",
       "en": "Nor is there to Him any equivalent.\""
     },
     "location": "112:4",
-    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, King Fahd Complex-reviewed edition (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
+    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, issued by Noor International Center, as hosted by QuranEnc (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
     "review_status": "machine_verified",
     "verified": true,
     "verified_how": "verify.mjs (registry): matches quranenc.com (King Fahd Complex). Earlier note: Fetched verbatim on 2026-10-06 from https://quranenc.com/api/v1/translation/aya/english_saheeh/112/4 (arabic_text + english_saheeh translation, King Fahd Complex); not typed from memory. Added for the Q&A bank.",
     "used_in": [
+      "qa.basics.tawhid",
       "qa.tawhid_plain.home",
       "qa.tawhid_translate.work",
       "qa.tawhid_translate.school"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "Madinah Mushaf text (King Fahd Complex) via quranenc.com; English is the Saheeh International translation hosted there."
   },
   {
     "id": "quran:13:11",
     "type": "quran",
-    "citation": "القرآن الكريم، سورة الرعد (13)، الآية 11 — رسم عثماني؛ الترجمة: Saheeh International (quranenc.com، مجمع الملك فهد)",
+    "citation": "القرآن الكريم، سورة الرعد (13)، الآية 11 — رسم عثماني؛ الترجمة: صحيح إنترناشيونال — مركز نور الدولي (عبر موسوعة القرآن الكريم quranenc.com)",
     "url": "https://quranenc.com/en/browse/english_saheeh/13#11",
     "text": {
       "ar": "لَهُۥ مُعَقِّبَٰتٞ مِّنۢ بَيۡنِ يَدَيۡهِ وَمِنۡ خَلۡفِهِۦ يَحۡفَظُونَهُۥ مِنۡ أَمۡرِ ٱللَّهِۗ إِنَّ ٱللَّهَ لَا يُغَيِّرُ مَا بِقَوۡمٍ حَتَّىٰ يُغَيِّرُواْ مَا بِأَنفُسِهِمۡۗ وَإِذَآ أَرَادَ ٱللَّهُ بِقَوۡمٖ سُوٓءٗا فَلَا مَرَدَّ لَهُۥۚ وَمَا لَهُم مِّن دُونِهِۦ مِن وَالٍ",
       "en": "For him [i.e., each one] are successive [angels] before and behind him who protect him by the decree of Allāh. Indeed, Allāh will not change the condition of a people until they change what is in themselves. And when Allāh intends for a people ill, there is no repelling it. And there is not for them besides Him any patron."
     },
     "location": "13:11",
-    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, King Fahd Complex-reviewed edition (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
+    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, issued by Noor International Center, as hosted by QuranEnc (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
     "review_status": "machine_verified",
     "verified": true,
     "verified_how": "verify.mjs (registry): matches quranenc.com (King Fahd Complex). Earlier note: Fetched verbatim on 2026-10-06 from https://quranenc.com/api/v1/translation/aya/english_saheeh/13/11 (arabic_text + english_saheeh translation, King Fahd Complex); not typed from memory. Added for the Q&A bank.",
     "used_in": [
       "qa.misquote.help_themselves"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "Madinah Mushaf text (King Fahd Complex) via quranenc.com; English is the Saheeh International translation hosted there."
   },
   {
     "id": "quran:17:23",
     "type": "quran",
-    "citation": "القرآن الكريم، سورة الإسراء (17)، الآية 23 — رسم عثماني؛ الترجمة: Saheeh International (quranenc.com، مجمع الملك فهد)",
+    "citation": "القرآن الكريم، سورة الإسراء (17)، الآية 23 — رسم عثماني؛ الترجمة: صحيح إنترناشيونال — مركز نور الدولي (عبر موسوعة القرآن الكريم quranenc.com)",
     "url": "https://quranenc.com/en/browse/english_saheeh/17#23",
     "text": {
       "ar": "۞ وَقَضَىٰ رَبُّكَ أَلَّا تَعۡبُدُوٓاْ إِلَّآ إِيَّاهُ وَبِٱلۡوَٰلِدَيۡنِ إِحۡسَٰنًاۚ إِمَّا يَبۡلُغَنَّ عِندَكَ ٱلۡكِبَرَ أَحَدُهُمَآ أَوۡ كِلَاهُمَا فَلَا تَقُل لَّهُمَآ أُفّٖ وَلَا تَنۡهَرۡهُمَا وَقُل لَّهُمَا قَوۡلٗا كَرِيمٗا",
       "en": "And your Lord has decreed that you worship not except Him, and to parents, good treatment. Whether one or both of them reach old age [while] with you, say not to them [so much as], \"uff,\" and do not repel them but speak to them a noble word."
     },
     "location": "17:23",
-    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, King Fahd Complex-reviewed edition (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
+    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, issued by Noor International Center, as hosted by QuranEnc (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
     "review_status": "machine_verified",
     "verified": true,
     "verified_how": "verify.mjs (registry): matches quranenc.com (King Fahd Complex). Earlier note: Fetched verbatim on 2026-10-06 from https://quranenc.com/api/v1/translation/aya/english_saheeh/17/23 (arabic_text + english_saheeh translation, King Fahd Complex); not typed from memory. Added for the Q&A bank.",
     "used_in": [
       "qa.misquote.mothers"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "Madinah Mushaf text (King Fahd Complex) via quranenc.com; English is the Saheeh International translation hosted there."
   },
   {
     "id": "quran:17:88",
     "type": "quran",
-    "citation": "القرآن الكريم، سورة الإسراء (17)، الآية 88 — رسم عثماني؛ الترجمة: Saheeh International (quranenc.com، مجمع الملك فهد)",
+    "citation": "القرآن الكريم، سورة الإسراء (17)، الآية 88 — رسم عثماني؛ الترجمة: صحيح إنترناشيونال — مركز نور الدولي (عبر موسوعة القرآن الكريم quranenc.com)",
     "url": "https://quranenc.com/en/browse/english_saheeh/17#88",
     "text": {
       "ar": "قُل لَّئِنِ ٱجۡتَمَعَتِ ٱلۡإِنسُ وَٱلۡجِنُّ عَلَىٰٓ أَن يَأۡتُواْ بِمِثۡلِ هَٰذَا ٱلۡقُرۡءَانِ لَا يَأۡتُونَ بِمِثۡلِهِۦ وَلَوۡ كَانَ بَعۡضُهُمۡ لِبَعۡضٖ ظَهِيرٗا",
       "en": "Say, \"If mankind and the jinn gathered in order to produce the like of this Qur’ān, they could not produce the like of it, even if they were to each other assistants.\""
     },
     "location": "17:88",
-    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, King Fahd Complex-reviewed edition (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
+    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, issued by Noor International Center, as hosted by QuranEnc (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
     "review_status": "machine_verified",
     "verified": true,
     "verified_how": "verify.mjs (registry): matches quranenc.com (King Fahd Complex). Earlier note: Fetched verbatim on 2026-10-06 from https://quranenc.com/api/v1/translation/aya/english_saheeh/17/88 (arabic_text + english_saheeh translation, King Fahd Complex); not typed from memory. Added for the Q&A bank.",
@@ -4533,19 +4977,21 @@
       "qa.quran_author.work",
       "qa.quran_author.school"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "Madinah Mushaf text (King Fahd Complex) via quranenc.com; English is the Saheeh International translation hosted there."
   },
   {
     "id": "quran:18:23",
     "type": "quran",
-    "citation": "القرآن الكريم، سورة الكهف (18)، الآية 23 — رسم عثماني؛ الترجمة: Saheeh International (quranenc.com، مجمع الملك فهد)",
+    "citation": "القرآن الكريم، سورة الكهف (18)، الآية 23 — رسم عثماني؛ الترجمة: صحيح إنترناشيونال — مركز نور الدولي (عبر موسوعة القرآن الكريم quranenc.com)",
     "url": "https://quranenc.com/en/browse/english_saheeh/18#23",
     "text": {
       "ar": "وَلَا تَقُولَنَّ لِشَاْيۡءٍ إِنِّي فَاعِلٞ ذَٰلِكَ غَدًا",
       "en": "And never say of anything, \"Indeed, I will do that tomorrow,\""
     },
     "location": "18:23",
-    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, King Fahd Complex-reviewed edition (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
+    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, issued by Noor International Center, as hosted by QuranEnc (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
     "review_status": "machine_verified",
     "verified": true,
     "verified_how": "verify.mjs (registry): matches quranenc.com (King Fahd Complex). Earlier note: Fetched verbatim on 2026-10-06 from https://quranenc.com/api/v1/translation/aya/english_saheeh/18/23 (arabic_text + english_saheeh translation, King Fahd Complex); not typed from memory. Added for the Q&A bank.",
@@ -4553,19 +4999,21 @@
       "qa.misquote.inshallah_maybe",
       "qa.term.inshallah"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "Madinah Mushaf text (King Fahd Complex) via quranenc.com; English is the Saheeh International translation hosted there."
   },
   {
     "id": "quran:18:24",
     "type": "quran",
-    "citation": "القرآن الكريم، سورة الكهف (18)، الآية 24 — رسم عثماني؛ الترجمة: Saheeh International (quranenc.com، مجمع الملك فهد)",
+    "citation": "القرآن الكريم، سورة الكهف (18)، الآية 24 — رسم عثماني؛ الترجمة: صحيح إنترناشيونال — مركز نور الدولي (عبر موسوعة القرآن الكريم quranenc.com)",
     "url": "https://quranenc.com/en/browse/english_saheeh/18#24",
     "text": {
       "ar": "إِلَّآ أَن يَشَآءَ ٱللَّهُۚ وَٱذۡكُر رَّبَّكَ إِذَا نَسِيتَ وَقُلۡ عَسَىٰٓ أَن يَهۡدِيَنِ رَبِّي لِأَقۡرَبَ مِنۡ هَٰذَا رَشَدٗا",
       "en": "Except [when adding], \"If Allāh wills.\" And remember your Lord when you forget [it] and say, \"Perhaps my Lord will guide me to what is nearer than this to right conduct.\""
     },
     "location": "18:24",
-    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, King Fahd Complex-reviewed edition (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
+    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, issued by Noor International Center, as hosted by QuranEnc (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
     "review_status": "machine_verified",
     "verified": true,
     "verified_how": "verify.mjs (registry): matches quranenc.com (King Fahd Complex). Earlier note: Fetched verbatim on 2026-10-06 from https://quranenc.com/api/v1/translation/aya/english_saheeh/18/24 (arabic_text + english_saheeh translation, King Fahd Complex); not typed from memory. Added for the Q&A bank.",
@@ -4573,19 +5021,21 @@
       "qa.misquote.inshallah_maybe",
       "qa.term.inshallah"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "Madinah Mushaf text (King Fahd Complex) via quranenc.com; English is the Saheeh International translation hosted there."
   },
   {
     "id": "quran:1:2",
     "type": "quran",
-    "citation": "القرآن الكريم، سورة الفاتحة (1)، الآية 2 — رسم عثماني؛ الترجمة: Saheeh International (quranenc.com، مجمع الملك فهد)",
+    "citation": "القرآن الكريم، سورة الفاتحة (1)، الآية 2 — رسم عثماني؛ الترجمة: صحيح إنترناشيونال — مركز نور الدولي (عبر موسوعة القرآن الكريم quranenc.com)",
     "url": "https://quranenc.com/en/browse/english_saheeh/1#2",
     "text": {
       "ar": "ٱلۡحَمۡدُ لِلَّهِ رَبِّ ٱلۡعَٰلَمِينَ",
       "en": "[All] praise is [due] to Allāh, Lord of the worlds -"
     },
     "location": "1:2",
-    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, King Fahd Complex-reviewed edition (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
+    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, issued by Noor International Center, as hosted by QuranEnc (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
     "review_status": "machine_verified",
     "verified": true,
     "verified_how": "verify.mjs (registry): matches quranenc.com (King Fahd Complex). Earlier note: Fetched verbatim on 2026-10-06 from https://quranenc.com/api/v1/translation/aya/english_saheeh/1/2 (arabic_text + english_saheeh translation, King Fahd Complex); not typed from memory. Added for the Q&A bank.",
@@ -4593,19 +5043,21 @@
       "qa.term.allah",
       "qa.term.alhamdulillah"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "Madinah Mushaf text (King Fahd Complex) via quranenc.com; English is the Saheeh International translation hosted there."
   },
   {
     "id": "quran:20:14",
     "type": "quran",
-    "citation": "القرآن الكريم، سورة طه (20)، الآية 14 — رسم عثماني؛ الترجمة: Saheeh International (quranenc.com، مجمع الملك فهد)",
+    "citation": "القرآن الكريم، سورة طه (20)، الآية 14 — رسم عثماني؛ الترجمة: صحيح إنترناشيونال — مركز نور الدولي (عبر موسوعة القرآن الكريم quranenc.com)",
     "url": "https://quranenc.com/en/browse/english_saheeh/20#14",
     "text": {
       "ar": "إِنَّنِيٓ أَنَا ٱللَّهُ لَآ إِلَٰهَ إِلَّآ أَنَا۠ فَٱعۡبُدۡنِي وَأَقِمِ ٱلصَّلَوٰةَ لِذِكۡرِيٓ",
       "en": "Indeed, I am Allāh. There is no deity except Me, so worship Me and establish prayer for My remembrance."
     },
     "location": "20:14",
-    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, King Fahd Complex-reviewed edition (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
+    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, issued by Noor International Center, as hosted by QuranEnc (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
     "review_status": "machine_verified",
     "verified": true,
     "verified_how": "verify.mjs (registry): matches quranenc.com (King Fahd Complex). Earlier note: Fetched verbatim on 2026-10-06 from https://quranenc.com/api/v1/translation/aya/english_saheeh/20/14 (arabic_text + english_saheeh translation, King Fahd Complex); not typed from memory. Added for the Q&A bank.",
@@ -4614,97 +5066,108 @@
       "qa.tawhid_translate.school",
       "qa.term.allah"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "Madinah Mushaf text (King Fahd Complex) via quranenc.com; English is the Saheeh International translation hosted there."
   },
   {
     "id": "quran:22:26",
     "type": "quran",
-    "citation": "القرآن الكريم، سورة الحج (22)، الآية 26 — رسم عثماني؛ الترجمة: Saheeh International (quranenc.com، مجمع الملك فهد)",
+    "citation": "القرآن الكريم، سورة الحج (22)، الآية 26 — رسم عثماني؛ الترجمة: صحيح إنترناشيونال — مركز نور الدولي (عبر موسوعة القرآن الكريم quranenc.com)",
     "url": "https://quranenc.com/en/browse/english_saheeh/22#26",
     "text": {
       "ar": "وَإِذۡ بَوَّأۡنَا لِإِبۡرَٰهِيمَ مَكَانَ ٱلۡبَيۡتِ أَن لَّا تُشۡرِكۡ بِي شَيۡـٔٗا وَطَهِّرۡ بَيۡتِيَ لِلطَّآئِفِينَ وَٱلۡقَآئِمِينَ وَٱلرُّكَّعِ ٱلسُّجُودِ",
       "en": "And [mention, O Muḥammad], when We designated for Abraham the site of the House, [saying], \"Do not associate anything with Me and purify My House for those who perform ṭawāf and those who stand [in prayer] and those who bow and prostrate."
     },
     "location": "22:26",
-    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, King Fahd Complex-reviewed edition (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
+    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, issued by Noor International Center, as hosted by QuranEnc (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
     "review_status": "machine_verified",
     "verified": true,
     "verified_how": "verify.mjs (registry): matches quranenc.com (King Fahd Complex). Earlier note: Fetched verbatim on 2026-10-06 from https://quranenc.com/api/v1/translation/aya/english_saheeh/22/26 (arabic_text + english_saheeh translation, King Fahd Complex); not typed from memory. Added for the Q&A bank.",
     "used_in": [
       "qa.kaaba.school"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "Madinah Mushaf text (King Fahd Complex) via quranenc.com; English is the Saheeh International translation hosted there."
   },
   {
     "id": "quran:29:48",
     "type": "quran",
-    "citation": "القرآن الكريم، سورة العنكبوت (29)، الآية 48 — رسم عثماني؛ الترجمة: Saheeh International (quranenc.com، مجمع الملك فهد)",
+    "citation": "القرآن الكريم، سورة العنكبوت (29)، الآية 48 — رسم عثماني؛ الترجمة: صحيح إنترناشيونال — مركز نور الدولي (عبر موسوعة القرآن الكريم quranenc.com)",
     "url": "https://quranenc.com/en/browse/english_saheeh/29#48",
     "text": {
       "ar": "وَمَا كُنتَ تَتۡلُواْ مِن قَبۡلِهِۦ مِن كِتَٰبٖ وَلَا تَخُطُّهُۥ بِيَمِينِكَۖ إِذٗا لَّٱرۡتَابَ ٱلۡمُبۡطِلُونَ",
       "en": "And you did not recite before it any scripture, nor did you inscribe one with your right hand. Then [i.e., otherwise] the falsifiers would have had [cause for] doubt."
     },
     "location": "29:48",
-    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, King Fahd Complex-reviewed edition (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
+    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, issued by Noor International Center, as hosted by QuranEnc (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
     "review_status": "machine_verified",
     "verified": true,
     "verified_how": "verify.mjs (registry): matches quranenc.com (King Fahd Complex). Earlier note: Fetched verbatim on 2026-10-06 from https://quranenc.com/api/v1/translation/aya/english_saheeh/29/48 (arabic_text + english_saheeh translation, King Fahd Complex); not typed from memory. Added for the Q&A bank.",
     "used_in": [
       "qa.quran_author.work"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "Madinah Mushaf text (King Fahd Complex) via quranenc.com; English is the Saheeh International translation hosted there."
   },
   {
     "id": "quran:2:150",
     "type": "quran",
-    "citation": "القرآن الكريم، سورة البقرة (2)، الآية 150 — رسم عثماني؛ الترجمة: Saheeh International (quranenc.com، مجمع الملك فهد)",
+    "citation": "القرآن الكريم، سورة البقرة (2)، الآية 150 — رسم عثماني؛ الترجمة: صحيح إنترناشيونال — مركز نور الدولي (عبر موسوعة القرآن الكريم quranenc.com)",
     "url": "https://quranenc.com/en/browse/english_saheeh/2#150",
     "text": {
       "ar": "وَمِنۡ حَيۡثُ خَرَجۡتَ فَوَلِّ وَجۡهَكَ شَطۡرَ ٱلۡمَسۡجِدِ ٱلۡحَرَامِۚ وَحَيۡثُ مَا كُنتُمۡ فَوَلُّواْ وُجُوهَكُمۡ شَطۡرَهُۥ لِئَلَّا يَكُونَ لِلنَّاسِ عَلَيۡكُمۡ حُجَّةٌ إِلَّا ٱلَّذِينَ ظَلَمُواْ مِنۡهُمۡ فَلَا تَخۡشَوۡهُمۡ وَٱخۡشَوۡنِي وَلِأُتِمَّ نِعۡمَتِي عَلَيۡكُمۡ وَلَعَلَّكُمۡ تَهۡتَدُونَ",
       "en": "And from wherever you go out [for prayer], turn your face toward al-Masjid al-Ḥarām. And wherever you [believers] may be, turn your faces toward it in order that the people will not have any argument against you, except for those of them who commit wrong; so fear them not but fear Me. And [it is] so I may complete My favor upon you and that you may be guided,"
     },
     "location": "2:150",
-    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, King Fahd Complex-reviewed edition (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
+    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, issued by Noor International Center, as hosted by QuranEnc (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
     "review_status": "machine_verified",
     "verified": true,
     "verified_how": "verify.mjs (registry): matches quranenc.com (King Fahd Complex). Earlier note: Fetched verbatim on 2026-10-06 from https://quranenc.com/api/v1/translation/aya/english_saheeh/2/150 (arabic_text + english_saheeh translation, King Fahd Complex); not typed from memory. Added for the Q&A bank.",
     "used_in": [
       "qa.kaaba.home"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "Madinah Mushaf text (King Fahd Complex) via quranenc.com; English is the Saheeh International translation hosted there."
   },
   {
     "id": "quran:2:163",
     "type": "quran",
-    "citation": "القرآن الكريم، سورة البقرة (2)، الآية 163 — رسم عثماني؛ الترجمة: Saheeh International (quranenc.com، مجمع الملك فهد)",
+    "citation": "القرآن الكريم، سورة البقرة (2)، الآية 163 — رسم عثماني؛ الترجمة: صحيح إنترناشيونال — مركز نور الدولي (عبر موسوعة القرآن الكريم quranenc.com)",
     "url": "https://quranenc.com/en/browse/english_saheeh/2#163",
     "text": {
       "ar": "وَإِلَٰهُكُمۡ إِلَٰهٞ وَٰحِدٞۖ لَّآ إِلَٰهَ إِلَّا هُوَ ٱلرَّحۡمَٰنُ ٱلرَّحِيمُ",
       "en": "And your god is one God. There is no deity [worthy of worship] except Him, the Entirely Merciful, the Especially Merciful."
     },
     "location": "2:163",
-    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, King Fahd Complex-reviewed edition (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
+    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, issued by Noor International Center, as hosted by QuranEnc (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
     "review_status": "machine_verified",
     "verified": true,
     "verified_how": "verify.mjs (registry): matches quranenc.com (King Fahd Complex). Earlier note: Fetched verbatim on 2026-10-06 from https://quranenc.com/api/v1/translation/aya/english_saheeh/2/163 (arabic_text + english_saheeh translation, King Fahd Complex); not typed from memory. Added for the Q&A bank.",
     "used_in": [
+      "qa.basics.tawhid",
       "qa.tawhid_plain.home",
       "qa.tawhid_plain.street",
       "qa.tawhid_translate.work"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "Madinah Mushaf text (King Fahd Complex) via quranenc.com; English is the Saheeh International translation hosted there."
   },
   {
     "id": "quran:2:190",
     "type": "quran",
-    "citation": "القرآن الكريم، سورة البقرة (2)، الآية 190 — رسم عثماني؛ الترجمة: Saheeh International (quranenc.com، مجمع الملك فهد)",
+    "citation": "القرآن الكريم، سورة البقرة (2)، الآية 190 — رسم عثماني؛ الترجمة: صحيح إنترناشيونال — مركز نور الدولي (عبر موسوعة القرآن الكريم quranenc.com)",
     "url": "https://quranenc.com/en/browse/english_saheeh/2#190",
     "text": {
       "ar": "وَقَٰتِلُواْ فِي سَبِيلِ ٱللَّهِ ٱلَّذِينَ يُقَٰتِلُونَكُمۡ وَلَا تَعۡتَدُوٓاْۚ إِنَّ ٱللَّهَ لَا يُحِبُّ ٱلۡمُعۡتَدِينَ",
       "en": "Fight in the way of Allāh those who fight against you but do not transgress. Indeed, Allāh does not like transgressors."
     },
     "location": "2:190",
-    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, King Fahd Complex-reviewed edition (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
+    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, issued by Noor International Center, as hosted by QuranEnc (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
     "review_status": "machine_verified",
     "verified": true,
     "verified_how": "verify.mjs (registry): matches quranenc.com (King Fahd Complex). Earlier note: Fetched verbatim on 2026-10-06 from https://quranenc.com/api/v1/translation/aya/english_saheeh/2/190 (arabic_text + english_saheeh translation, King Fahd Complex); not typed from memory. Added for the Q&A bank.",
@@ -4712,57 +5175,63 @@
       "qa.sword.public_events",
       "qa.misquote.kill_them"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "Madinah Mushaf text (King Fahd Complex) via quranenc.com; English is the Saheeh International translation hosted there."
   },
   {
     "id": "quran:2:191",
     "type": "quran",
-    "citation": "القرآن الكريم، سورة البقرة (2)، الآية 191 — رسم عثماني؛ الترجمة: Saheeh International (quranenc.com، مجمع الملك فهد)",
+    "citation": "القرآن الكريم، سورة البقرة (2)، الآية 191 — رسم عثماني؛ الترجمة: صحيح إنترناشيونال — مركز نور الدولي (عبر موسوعة القرآن الكريم quranenc.com)",
     "url": "https://quranenc.com/en/browse/english_saheeh/2#191",
     "text": {
       "ar": "وَٱقۡتُلُوهُمۡ حَيۡثُ ثَقِفۡتُمُوهُمۡ وَأَخۡرِجُوهُم مِّنۡ حَيۡثُ أَخۡرَجُوكُمۡۚ وَٱلۡفِتۡنَةُ أَشَدُّ مِنَ ٱلۡقَتۡلِۚ وَلَا تُقَٰتِلُوهُمۡ عِندَ ٱلۡمَسۡجِدِ ٱلۡحَرَامِ حَتَّىٰ يُقَٰتِلُوكُمۡ فِيهِۖ فَإِن قَٰتَلُوكُمۡ فَٱقۡتُلُوهُمۡۗ كَذَٰلِكَ جَزَآءُ ٱلۡكَٰفِرِينَ",
       "en": "And kill them [in battle] wherever you overtake them and expel them from wherever they have expelled you, and fitnah is worse than killing. And do not fight them at al-Masjid al-Ḥarām until they fight you there. But if they fight you, then kill them. Such is the recompense of the disbelievers."
     },
     "location": "2:191",
-    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, King Fahd Complex-reviewed edition (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
+    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, issued by Noor International Center, as hosted by QuranEnc (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
     "review_status": "machine_verified",
     "verified": true,
     "verified_how": "verify.mjs (registry): matches quranenc.com (King Fahd Complex). Earlier note: Fetched verbatim on 2026-10-06 from https://quranenc.com/api/v1/translation/aya/english_saheeh/2/191 (arabic_text + english_saheeh translation, King Fahd Complex); not typed from memory. Added for the Q&A bank.",
     "used_in": [
       "qa.misquote.kill_them"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "Madinah Mushaf text (King Fahd Complex) via quranenc.com; English is the Saheeh International translation hosted there."
   },
   {
     "id": "quran:2:192",
     "type": "quran",
-    "citation": "القرآن الكريم، سورة البقرة (2)، الآية 192 — رسم عثماني؛ الترجمة: Saheeh International (quranenc.com، مجمع الملك فهد)",
+    "citation": "القرآن الكريم، سورة البقرة (2)، الآية 192 — رسم عثماني؛ الترجمة: صحيح إنترناشيونال — مركز نور الدولي (عبر موسوعة القرآن الكريم quranenc.com)",
     "url": "https://quranenc.com/en/browse/english_saheeh/2#192",
     "text": {
       "ar": "فَإِنِ ٱنتَهَوۡاْ فَإِنَّ ٱللَّهَ غَفُورٞ رَّحِيمٞ",
       "en": "And if they cease, then indeed, Allāh is Forgiving and Merciful."
     },
     "location": "2:192",
-    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, King Fahd Complex-reviewed edition (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
+    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, issued by Noor International Center, as hosted by QuranEnc (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
     "review_status": "machine_verified",
     "verified": true,
     "verified_how": "verify.mjs (registry): matches quranenc.com (King Fahd Complex). Earlier note: Fetched verbatim on 2026-10-06 from https://quranenc.com/api/v1/translation/aya/english_saheeh/2/192 (arabic_text + english_saheeh translation, King Fahd Complex); not typed from memory. Added for the Q&A bank.",
     "used_in": [
       "qa.misquote.kill_them"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "Madinah Mushaf text (King Fahd Complex) via quranenc.com; English is the Saheeh International translation hosted there."
   },
   {
     "id": "quran:2:23",
     "type": "quran",
-    "citation": "القرآن الكريم، سورة البقرة (2)، الآية 23 — رسم عثماني؛ الترجمة: Saheeh International (quranenc.com، مجمع الملك فهد)",
+    "citation": "القرآن الكريم، سورة البقرة (2)، الآية 23 — رسم عثماني؛ الترجمة: صحيح إنترناشيونال — مركز نور الدولي (عبر موسوعة القرآن الكريم quranenc.com)",
     "url": "https://quranenc.com/en/browse/english_saheeh/2#23",
     "text": {
       "ar": "وَإِن كُنتُمۡ فِي رَيۡبٖ مِّمَّا نَزَّلۡنَا عَلَىٰ عَبۡدِنَا فَأۡتُواْ بِسُورَةٖ مِّن مِّثۡلِهِۦ وَٱدۡعُواْ شُهَدَآءَكُم مِّن دُونِ ٱللَّهِ إِن كُنتُمۡ صَٰدِقِينَ",
       "en": "And if you are in doubt about what We have sent down [i.e., the Qur’ān] upon Our Servant [i.e., Prophet Muḥammad (ﷺ)], then produce a sūrah the like thereof and call upon your witnesses [i.e., supporters] other than Allāh, if you should be truthful."
     },
     "location": "2:23",
-    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, King Fahd Complex-reviewed edition (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
+    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, issued by Noor International Center, as hosted by QuranEnc (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
     "review_status": "machine_verified",
     "verified": true,
     "verified_how": "verify.mjs (registry): matches quranenc.com (King Fahd Complex). Earlier note: Fetched verbatim on 2026-10-06 from https://quranenc.com/api/v1/translation/aya/english_saheeh/2/23 (arabic_text + english_saheeh translation, King Fahd Complex); not typed from memory. Added for the Q&A bank.",
@@ -4770,19 +5239,21 @@
       "qa.quran_author.work",
       "qa.quran_author.school"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "Madinah Mushaf text (King Fahd Complex) via quranenc.com; English is the Saheeh International translation hosted there."
   },
   {
     "id": "quran:2:256",
     "type": "quran",
-    "citation": "القرآن الكريم، سورة البقرة (2)، الآية 256 — رسم عثماني؛ الترجمة: Saheeh International (quranenc.com، مجمع الملك فهد)",
+    "citation": "القرآن الكريم، سورة البقرة (2)، الآية 256 — رسم عثماني؛ الترجمة: صحيح إنترناشيونال — مركز نور الدولي (عبر موسوعة القرآن الكريم quranenc.com)",
     "url": "https://quranenc.com/en/browse/english_saheeh/2#256",
     "text": {
       "ar": "لَآ إِكۡرَاهَ فِي ٱلدِّينِۖ قَد تَّبَيَّنَ ٱلرُّشۡدُ مِنَ ٱلۡغَيِّۚ فَمَن يَكۡفُرۡ بِٱلطَّٰغُوتِ وَيُؤۡمِنۢ بِٱللَّهِ فَقَدِ ٱسۡتَمۡسَكَ بِٱلۡعُرۡوَةِ ٱلۡوُثۡقَىٰ لَا ٱنفِصَامَ لَهَاۗ وَٱللَّهُ سَمِيعٌ عَلِيمٌ",
       "en": "There shall be no compulsion in [acceptance of] the religion. The right course has become distinct from the wrong. So whoever disbelieves in ṭāghūt and believes in Allāh has grasped the most trustworthy handhold with no break in it. And Allāh is Hearing and Knowing."
     },
     "location": "2:256",
-    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, King Fahd Complex-reviewed edition (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
+    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, issued by Noor International Center, as hosted by QuranEnc (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
     "review_status": "machine_verified",
     "verified": true,
     "verified_how": "verify.mjs (registry): matches quranenc.com (King Fahd Complex). Earlier note: Fetched verbatim on 2026-10-06 from https://quranenc.com/api/v1/translation/aya/english_saheeh/2/256 (arabic_text + english_saheeh translation, King Fahd Complex); not typed from memory. Added for the Q&A bank.",
@@ -4791,19 +5262,21 @@
       "qa.sword.public_events",
       "qa.misquote.kill_them"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "Madinah Mushaf text (King Fahd Complex) via quranenc.com; English is the Saheeh International translation hosted there."
   },
   {
     "id": "quran:2:43",
     "type": "quran",
-    "citation": "القرآن الكريم، سورة البقرة (2)، الآية 43 — رسم عثماني؛ الترجمة: Saheeh International (quranenc.com، مجمع الملك فهد)",
+    "citation": "القرآن الكريم، سورة البقرة (2)، الآية 43 — رسم عثماني؛ الترجمة: صحيح إنترناشيونال — مركز نور الدولي (عبر موسوعة القرآن الكريم quranenc.com)",
     "url": "https://quranenc.com/en/browse/english_saheeh/2#43",
     "text": {
       "ar": "وَأَقِيمُواْ ٱلصَّلَوٰةَ وَءَاتُواْ ٱلزَّكَوٰةَ وَٱرۡكَعُواْ مَعَ ٱلرَّٰكِعِينَ",
       "en": "And establish prayer and give zakāh and bow with those who bow [in worship and obedience]."
     },
     "location": "2:43",
-    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, King Fahd Complex-reviewed edition (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
+    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, issued by Noor International Center, as hosted by QuranEnc (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
     "review_status": "machine_verified",
     "verified": true,
     "verified_how": "verify.mjs (registry): matches quranenc.com (King Fahd Complex). Earlier note: Fetched verbatim on 2026-10-06 from https://quranenc.com/api/v1/translation/aya/english_saheeh/2/43 (arabic_text + english_saheeh translation, King Fahd Complex); not typed from memory. Added for the Q&A bank.",
@@ -4811,76 +5284,84 @@
       "qa.khilaf.private_events",
       "qa.consensus.school"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "Madinah Mushaf text (King Fahd Complex) via quranenc.com; English is the Saheeh International translation hosted there."
   },
   {
     "id": "quran:3:130",
     "type": "quran",
-    "citation": "القرآن الكريم، سورة آل عمران (3)، الآية 130 — رسم عثماني؛ الترجمة: Saheeh International (quranenc.com، مجمع الملك فهد)",
+    "citation": "القرآن الكريم، سورة آل عمران (3)، الآية 130 — رسم عثماني؛ الترجمة: صحيح إنترناشيونال — مركز نور الدولي (عبر موسوعة القرآن الكريم quranenc.com)",
     "url": "https://quranenc.com/en/browse/english_saheeh/3#130",
     "text": {
       "ar": "يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُواْ لَا تَأۡكُلُواْ ٱلرِّبَوٰٓاْ أَضۡعَٰفٗا مُّضَٰعَفَةٗۖ وَٱتَّقُواْ ٱللَّهَ لَعَلَّكُمۡ تُفۡلِحُونَ",
       "en": "O you who have believed, do not consume usury, doubled and multiplied, but fear Allāh that you may be successful."
     },
     "location": "3:130",
-    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, King Fahd Complex-reviewed edition (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
+    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, issued by Noor International Center, as hosted by QuranEnc (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
     "review_status": "machine_verified",
     "verified": true,
     "verified_how": "verify.mjs (registry): matches quranenc.com (King Fahd Complex). Earlier note: Fetched verbatim on 2026-10-06 from https://quranenc.com/api/v1/translation/aya/english_saheeh/3/130 (arabic_text + english_saheeh translation, King Fahd Complex); not typed from memory. Added for the Q&A bank.",
     "used_in": [
       "qa.misquote.interest_doubled"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "Madinah Mushaf text (King Fahd Complex) via quranenc.com; English is the Saheeh International translation hosted there."
   },
   {
     "id": "quran:4:43",
     "type": "quran",
-    "citation": "القرآن الكريم، سورة النساء (4)، الآية 43 — رسم عثماني؛ الترجمة: Saheeh International (quranenc.com، مجمع الملك فهد)",
+    "citation": "القرآن الكريم، سورة النساء (4)، الآية 43 — رسم عثماني؛ الترجمة: صحيح إنترناشيونال — مركز نور الدولي (عبر موسوعة القرآن الكريم quranenc.com)",
     "url": "https://quranenc.com/en/browse/english_saheeh/4#43",
     "text": {
       "ar": "يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُواْ لَا تَقۡرَبُواْ ٱلصَّلَوٰةَ وَأَنتُمۡ سُكَٰرَىٰ حَتَّىٰ تَعۡلَمُواْ مَا تَقُولُونَ وَلَا جُنُبًا إِلَّا عَابِرِي سَبِيلٍ حَتَّىٰ تَغۡتَسِلُواْۚ وَإِن كُنتُم مَّرۡضَىٰٓ أَوۡ عَلَىٰ سَفَرٍ أَوۡ جَآءَ أَحَدٞ مِّنكُم مِّنَ ٱلۡغَآئِطِ أَوۡ لَٰمَسۡتُمُ ٱلنِّسَآءَ فَلَمۡ تَجِدُواْ مَآءٗ فَتَيَمَّمُواْ صَعِيدٗا طَيِّبٗا فَٱمۡسَحُواْ بِوُجُوهِكُمۡ وَأَيۡدِيكُمۡۗ إِنَّ ٱللَّهَ كَانَ عَفُوًّا غَفُورًا",
       "en": "O you who have believed, do not approach prayer while you are intoxicated until you know what you are saying or in a state of janābah, except those passing through [a place of prayer], until you have washed [your whole body]. And if you are ill or on a journey or one of you comes from the place of relieving himself or you have contacted women [i.e., had sexual intercourse] and find no water, then seek clean earth and wipe over your faces and your hands [with it]. Indeed, Allāh is ever Pardoning and Forgiving."
     },
     "location": "4:43",
-    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, King Fahd Complex-reviewed edition (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
+    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, issued by Noor International Center, as hosted by QuranEnc (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
     "review_status": "machine_verified",
     "verified": true,
     "verified_how": "verify.mjs (registry): matches quranenc.com (King Fahd Complex). Earlier note: Fetched verbatim on 2026-10-06 from https://quranenc.com/api/v1/translation/aya/english_saheeh/4/43 (arabic_text + english_saheeh translation, King Fahd Complex); not typed from memory. Added for the Q&A bank.",
     "used_in": [
       "qa.misquote.drink_prayer"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "Madinah Mushaf text (King Fahd Complex) via quranenc.com; English is the Saheeh International translation hosted there."
   },
   {
     "id": "quran:4:59",
     "type": "quran",
-    "citation": "القرآن الكريم، سورة النساء (4)، الآية 59 — رسم عثماني؛ الترجمة: Saheeh International (quranenc.com، مجمع الملك فهد)",
+    "citation": "القرآن الكريم، سورة النساء (4)، الآية 59 — رسم عثماني؛ الترجمة: صحيح إنترناشيونال — مركز نور الدولي (عبر موسوعة القرآن الكريم quranenc.com)",
     "url": "https://quranenc.com/en/browse/english_saheeh/4#59",
     "text": {
       "ar": "يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوٓاْ أَطِيعُواْ ٱللَّهَ وَأَطِيعُواْ ٱلرَّسُولَ وَأُوْلِي ٱلۡأَمۡرِ مِنكُمۡۖ فَإِن تَنَٰزَعۡتُمۡ فِي شَيۡءٖ فَرُدُّوهُ إِلَى ٱللَّهِ وَٱلرَّسُولِ إِن كُنتُمۡ تُؤۡمِنُونَ بِٱللَّهِ وَٱلۡيَوۡمِ ٱلۡأٓخِرِۚ ذَٰلِكَ خَيۡرٞ وَأَحۡسَنُ تَأۡوِيلًا",
       "en": "O you who have believed, obey Allāh and obey the Messenger and those in authority among you. And if you disagree over anything, refer it to Allāh and the Messenger, if you should believe in Allāh and the Last Day. That is the best [way] and best in result."
     },
     "location": "4:59",
-    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, King Fahd Complex-reviewed edition (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
+    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, issued by Noor International Center, as hosted by QuranEnc (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
     "review_status": "machine_verified",
     "verified": true,
     "verified_how": "verify.mjs (registry): matches quranenc.com (King Fahd Complex). Earlier note: Fetched verbatim on 2026-10-06 from https://quranenc.com/api/v1/translation/aya/english_saheeh/4/59 (arabic_text + english_saheeh translation, King Fahd Complex); not typed from memory. Added for the Q&A bank.",
     "used_in": [
       "qa.khilaf.private_events"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "Madinah Mushaf text (King Fahd Complex) via quranenc.com; English is the Saheeh International translation hosted there."
   },
   {
     "id": "quran:4:82",
     "type": "quran",
-    "citation": "القرآن الكريم، سورة النساء (4)، الآية 82 — رسم عثماني؛ الترجمة: Saheeh International (quranenc.com، مجمع الملك فهد)",
+    "citation": "القرآن الكريم، سورة النساء (4)، الآية 82 — رسم عثماني؛ الترجمة: صحيح إنترناشيونال — مركز نور الدولي (عبر موسوعة القرآن الكريم quranenc.com)",
     "url": "https://quranenc.com/en/browse/english_saheeh/4#82",
     "text": {
       "ar": "أَفَلَا يَتَدَبَّرُونَ ٱلۡقُرۡءَانَۚ وَلَوۡ كَانَ مِنۡ عِندِ غَيۡرِ ٱللَّهِ لَوَجَدُواْ فِيهِ ٱخۡتِلَٰفٗا كَثِيرٗا",
       "en": "Then do they not reflect upon the Qur’ān? If it had been from [any] other than Allāh, they would have found within it much contradiction."
     },
     "location": "4:82",
-    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, King Fahd Complex-reviewed edition (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
+    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, issued by Noor International Center, as hosted by QuranEnc (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
     "review_status": "machine_verified",
     "verified": true,
     "verified_how": "verify.mjs (registry): matches quranenc.com (King Fahd Complex). Earlier note: Fetched verbatim on 2026-10-06 from https://quranenc.com/api/v1/translation/aya/english_saheeh/4/82 (arabic_text + english_saheeh translation, King Fahd Complex); not typed from memory. Added for the Q&A bank.",
@@ -4888,19 +5369,21 @@
       "qa.quran_author.work",
       "qa.quran_author.school"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "Madinah Mushaf text (King Fahd Complex) via quranenc.com; English is the Saheeh International translation hosted there."
   },
   {
     "id": "quran:51:56",
     "type": "quran",
-    "citation": "القرآن الكريم، سورة الذاريات (51)، الآية 56 — رسم عثماني؛ الترجمة: Saheeh International (quranenc.com، مجمع الملك فهد)",
+    "citation": "القرآن الكريم، سورة الذاريات (51)، الآية 56 — رسم عثماني؛ الترجمة: صحيح إنترناشيونال — مركز نور الدولي (عبر موسوعة القرآن الكريم quranenc.com)",
     "url": "https://quranenc.com/en/browse/english_saheeh/51#56",
     "text": {
       "ar": "وَمَا خَلَقۡتُ ٱلۡجِنَّ وَٱلۡإِنسَ إِلَّا لِيَعۡبُدُونِ",
       "en": "And I did not create the jinn and mankind except to worship Me."
     },
     "location": "51:56",
-    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, King Fahd Complex-reviewed edition (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
+    "edition": "Arabic: Madinah Mushaf (Hafs) Uthmani text of the King Fahd Glorious Qur'an Printing Complex, as served by quranenc.com; English: Saheeh International, issued by Noor International Center, as hosted by QuranEnc (quranenc.com translation key \"english_saheeh\"), footnote markers omitted.",
     "review_status": "machine_verified",
     "verified": true,
     "verified_how": "verify.mjs (registry): matches quranenc.com (King Fahd Complex). Earlier note: Fetched verbatim on 2026-10-06 from https://quranenc.com/api/v1/translation/aya/english_saheeh/51/56 (arabic_text + english_saheeh translation, King Fahd Complex); not typed from memory. Added for the Q&A bank.",
@@ -4908,6 +5391,145 @@
       "qa.kaaba.home",
       "qa.tawhid_plain.street"
     ],
-    "checked_at": "2026-10-06"
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "Madinah Mushaf text (King Fahd Complex) via quranenc.com; English is the Saheeh International translation hosted there."
+  },
+  {
+    "id": "contemporary:اللجنة-الدائمة-للبحوث-العلمية-:فتوى-في-حكم-مشاركة-غير-المسلمين-أعيادهم-",
+    "type": "contemporary",
+    "citation": "اللجنة الدائمة للبحوث العلمية والإفتاء (السعودية) — فتوى في حكم مشاركة غير المسلمين أعيادهم (ترجمة إنجليزية منشورة في IslamHouse؛ رقم الفتوى غير مذكور في الصفحة المنشورة)",
+    "url": "https://islamhouse.com/en/fatwa/409853",
+    "text": {
+      "ar": "لا يجوز للمسلم مشاركة غير المسلمين في أعيادهم وإظهار الفرح والسرور بها، واستدلت بآية التعاون على البر والتقوى (المائدة 2).",
+      "en": "It is not permissible for a Muslim to join non-Muslims in their festivals and to express joy and happiness on these occasions; the Committee cites the verse on cooperating in righteousness and not in sin (5:2)."
+    },
+    "location": "فتوى في حكم مشاركة غير المسلمين أعيادهم (ترجمة إنجليزية منشورة في IslamHouse؛ رقم الفتوى غير مذكور في الصفحة المنشورة)",
+    "edition": "English translation published on IslamHouse.com (secondary host), as fetched on checked_at.",
+    "review_status": "pending_human",
+    "verified": false,
+    "verified_how": "Auditor fetched https://islamhouse.com/en/fatwa/409853 on 2026-10-06: it names the Standing Committee for Scientific Research and Ifta as the issuing body and states that it is not permissible to join non-Muslims in their festivals and express joy on these occasions (cites 5:2). No fatwa number or volume/page is given on the page, so the original Arabic in Fatawa al-Lajnah al-Da'imah still needs to be located by a human.",
+    "used_in": [
+      "public_events.holiday_greetings"
+    ],
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "Official publication of a contemporary fiqh council or scholar; not one of the package-named references."
+  },
+  {
+    "id": "other:bayyinat-q9",
+    "type": "other",
+    "citation": "بينات: أسئلة وأجوبة عن الإسلام (مركز أصول) — المسألة 9: «لماذا يعبُدُ المسلِمون الكعبةَ، والحجَرَ الأسوَدَ؟» — ص 65-67 من ملف PDF (dawa.center/file/7937)",
+    "url": "https://dawa.center/file/7937",
+    "text": {
+      "ar": "لماذا يعبُدُ المسلِمون الكعبةَ، والحجَرَ الأسوَدَ؟",
+      "en": "Why do Muslims worship the Kaaba and the Black Stone?"
+    },
+    "location": "المسألة 9، ص 65-67 من ملف PDF",
+    "edition": "بينات: أسئلة وأجوبة عن الإسلام — مركز أصول (جمعية الدعوة والإرشاد وتوعية الجاليات بالربوة، الرياض)؛ ملف PDF من 1259 صفحة منشور في المستودع الدعوي الرقمي dawa.center/file/7937، كما نُزّل في checked_at. أرقام الصفحات هي صفحات ملف PDF.",
+    "review_status": "machine_verified",
+    "verified": true,
+    "verified_how": "Auditor downloaded the Bayyinat PDF from dawa.center on 2026-10-06, extracted its text and read question 9 (PDF p. 65-67): its short answer states that Muslims facing the Kaaba in prayer is not worship of it, that Muslims worship Allah alone and direct no act of worship to the Black Stone or any created thing, and that Allah made the Kaaba the direction of prayer; it links the House to Ibrahim and Tawhid.",
+    "used_in": [
+      "qa.kaaba.home",
+      "qa.kaaba.school"
+    ],
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "Package-named site: dawa.center."
+  },
+  {
+    "id": "other:bayyinat-q27",
+    "type": "other",
+    "citation": "بينات: أسئلة وأجوبة عن الإسلام (مركز أصول) — المسألة 27: «ادِّعاءُ أن القرآنَ مصدرُهُ البشَرُ» — ص 136-137 من ملف PDF (dawa.center/file/7937)",
+    "url": "https://dawa.center/file/7937",
+    "text": {
+      "ar": "ادِّعاءُ أن القرآنَ مصدرُهُ البشَرُ",
+      "en": "The claim that the Quran has a human source"
+    },
+    "location": "المسألة 27، ص 136-137 من ملف PDF",
+    "edition": "بينات: أسئلة وأجوبة عن الإسلام — مركز أصول (جمعية الدعوة والإرشاد وتوعية الجاليات بالربوة، الرياض)؛ ملف PDF من 1259 صفحة منشور في المستودع الدعوي الرقمي dawa.center/file/7937، كما نُزّل في checked_at. أرقام الصفحات هي صفحات ملف PDF.",
+    "review_status": "machine_verified",
+    "verified": true,
+    "verified_how": "Auditor downloaded the Bayyinat PDF from dawa.center on 2026-10-06, extracted its text and read question 27 (PDF p. 136-137): its short answer gives reasons the Quran cannot be of human origin: its opponents among the Prophet's contemporaries could not produce its like, verses that gently correct the Prophet himself, and the absence of contradiction together with the unanswered challenge to produce a single surah like it.",
+    "used_in": [
+      "qa.quran_author.work",
+      "qa.quran_author.school"
+    ],
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "Package-named site: dawa.center."
+  },
+  {
+    "id": "other:bayyinat-q229",
+    "type": "other",
+    "citation": "بينات: أسئلة وأجوبة عن الإسلام (مركز أصول) — المسألة 229: «هل انتشَرَ الإسلامُ بالسيف؟» — ص 1075-1076 من ملف PDF (dawa.center/file/7937)",
+    "url": "https://dawa.center/file/7937",
+    "text": {
+      "ar": "هل انتشَرَ الإسلامُ بالسيف؟",
+      "en": "Did Islam spread by the sword?"
+    },
+    "location": "المسألة 229، ص 1075-1076 من ملف PDF",
+    "edition": "بينات: أسئلة وأجوبة عن الإسلام — مركز أصول (جمعية الدعوة والإرشاد وتوعية الجاليات بالربوة، الرياض)؛ ملف PDF من 1259 صفحة منشور في المستودع الدعوي الرقمي dawa.center/file/7937، كما نُزّل في checked_at. أرقام الصفحات هي صفحات ملف PDF.",
+    "review_status": "machine_verified",
+    "verified": true,
+    "verified_how": "Auditor downloaded the Bayyinat PDF from dawa.center on 2026-10-06, extracted its text and read question 229 (PDF p. 1075-1076): its short answer states that Islam did not spread by the sword but by preaching and argument; where conquest had an effect, it was through Muslims settling in and dealing with local people, who came to know the religion. The detailed answer lists factors of the spread (clarity of the creed, upright and wise callers, good speech) and gives a historical overview.",
+    "used_in": [
+      "qa.sword.street",
+      "qa.sword.public_events"
+    ],
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "Package-named site: dawa.center."
+  },
+  {
+    "id": "other:bayyinat-q239",
+    "type": "other",
+    "citation": "بينات: أسئلة وأجوبة عن الإسلام (مركز أصول) — المسألة 239: «هل يَلزَمُ اتِّباعُ النصِّ، مع وجودِ الخلاف؟» — ص 1125-1127 من ملف PDF (dawa.center/file/7937)",
+    "url": "https://dawa.center/file/7937",
+    "text": {
+      "ar": "هل يَلزَمُ اتِّباعُ النصِّ، مع وجودِ الخلاف؟",
+      "en": "Must a clear text be followed when scholars differ?"
+    },
+    "location": "المسألة 239، ص 1125-1127 من ملف PDF",
+    "edition": "بينات: أسئلة وأجوبة عن الإسلام — مركز أصول (جمعية الدعوة والإرشاد وتوعية الجاليات بالربوة، الرياض)؛ ملف PDF من 1259 صفحة منشور في المستودع الدعوي الرقمي dawa.center/file/7937، كما نُزّل في checked_at. أرقام الصفحات هي صفحات ملف PDF.",
+    "review_status": "machine_verified",
+    "verified": true,
+    "verified_how": "Auditor downloaded the Bayyinat PDF from dawa.center on 2026-10-06, extracted its text and read question 239 (PDF p. 1125-1127): its short answer states that scholarly difference arose later and has causes, among them a text being unknown to, or not having reached, a scholar; that some difference is valid and some is not (a view contradicting consensus or a clear text is not valid difference); and that the existence of difference does not justify chasing concessions.",
+    "used_in": [
+      "qa.khilaf.school",
+      "qa.khilaf.private_events",
+      "qa.consensus.school",
+      "qa.consensus.home",
+      "qa.consensus.work"
+    ],
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "Package-named site: dawa.center."
+  },
+  {
+    "id": "other:jamhara-tawhid",
+    "type": "other",
+    "citation": "الجمهرة — معجم المصطلحات الشرعية (islamic-content.com)، مدخل «التوحيد» (Monotheism)، المصطلح رقم 3529",
+    "url": "https://islamic-content.com/dictionary/word/3529/en",
+    "text": {
+      "ar": "إفراد الله تعالى بكل ما يختص به من الربوبية والألوهية والأسماء والصفات، والبراءة من الشرك وأهله.",
+      "en": "Singling Allah out in everything exclusive to Him; His Lordship, His right to be worshiped alone, and His names and attributes; and dissociating oneself from polytheism and its people."
+    },
+    "location": "https://islamic-content.com/dictionary/word/3529 (العربية) — https://islamic-content.com/dictionary/word/3529/en (English)",
+    "edition": "Jamhara online dictionary of Islamic terms (named by the reference package for translation and terminology), as fetched on checked_at.",
+    "review_status": "machine_verified",
+    "verified": true,
+    "verified_how": "Auditor fetched both pages on 2026-10-06: the English entry gives the equivalent \"Monotheism\" with the transliteration \"Tawheed\", the technical meaning quoted in text.en, and the three parts (Uluhiyyah, Rububiyyah, Asmaa was-Sifaat); the Arabic entry gives the technical meaning quoted in text.ar.",
+    "used_in": [
+      "qa.basics.tawhid",
+      "qa.tawhid_plain.home",
+      "qa.tawhid_plain.street",
+      "qa.tawhid_translate.work",
+      "qa.tawhid_translate.school"
+    ],
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "Package-named site: islamic-content.com."
   }
 ]

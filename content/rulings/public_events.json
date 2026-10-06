@@ -12,12 +12,16 @@
     },
     "verdict": "disputed",
     "content_level": "C",
+    "verdict_scope": {
+      "ar": "قول جمهور العلماء: المنع من التهنئة بالأعياد الدينية الخاصة بغير المسلمين ومن مشاركتهم فيها؛ وهو قول فقهاء المذاهب الأربعة، وحكى ابن القيم الاتفاق على تحريم التهنئة بها (أحكام أهل الذمة 1/441)، وبه أفتى الشيخ ابن عثيمين (مجموع الفتاوى 3/44)، وأفتت اللجنة الدائمة للإفتاء بالسعودية بعدم جواز مشاركتهم أعيادهم وإظهار الفرح بها. وأجاز المجلس الأوروبي للإفتاء وبعض المعاصرين التهنئة بألفاظ عامة لا تتضمن إقراراً بعقيدة، وهو قول الأقل، مع منعهم المشاركة في الاحتفال.",
+      "en": "Majority scholarly view: greeting non-Muslims on their religious festivals, and joining those festivals, is not permitted. This is the position of the jurists of the four schools; Ibn al-Qayyim reported agreement on the prohibition of such greetings (Ahkam Ahl al-Dhimma 1/441); Shaykh Ibn Uthaymeen ruled so (Majmu' al-Fatawa 3/44); and Saudi Arabia's Standing Committee for Scientific Research and Ifta ruled that joining their festivals and expressing joy at them is not permissible. The European Council for Fatwa and some contemporary scholars allowed a general greeting that affirms no belief; that is the minority view, and they too prohibit joining the celebration."
+    },
     "consensus_sources": [
       "ابن القيم، أحكام أهل الذمة (1/441) — حكايته الاتفاق على تحريم التهنئة بالشعائر المختصة بغير المسلمين وعلى منع حضور أعيادهم (قولٌ منسوب إلى ابن القيم، لا إجماعٌ نحكيه نحن)"
     ],
     "summary": {
-      "ar": "المشاركة في الشعائر الدينية لأعياد غير المسلمين ممنوعة عند المذاهب الأربعة، أما التهنئة اللفظية بالعيد الديني فمنعها ابن القيم وكثير من المتقدمين والمعاصرين، وأجازها بضوابط المجلسُ الأوروبي للإفتاء وآخرون من باب البر (الممتحنة 8). وعيد الشكر مختلَف فيه بين من يراه مناسبة وطنية عرفية يجوز حضور عشائها بلا طقوس، ومن يراه عيداً ذا أصل ديني لا يُحتفل به (فتاوى AMJA)، وقبول الهدية من الزميل جائز ما لم تكن شعاراً دينياً أو محرّمة.",
-      "en": "The four schools hold that joining the religious rituals of other faiths' holidays is impermissible, while verbally greeting them on a religious holiday was prohibited by Ibn al-Qayyim and many classical and contemporary scholars and allowed with conditions by the European Council for Fatwa and others as an act of kindness (60:8). Thanksgiving is disputed: some treat it as a civic custom whose family dinner may be attended without rituals, others (AMJA fatwas) consider it religiously rooted and not to be celebrated; accepting a coworker's gift is permissible unless it is a religious symbol or something prohibited."
+      "ar": "قول جمهور العلماء، ومنهم فقهاء المذاهب الأربعة، المنع من مشاركة غير المسلمين في شعائر أعيادهم الدينية ومن التهنئة بها؛ وحكى ابن القيم الاتفاق على تحريم التهنئة بالشعائر المختصة بهم، وبالمنع أفتى الشيخ ابن عثيمين، وأفتت اللجنة الدائمة للإفتاء بالسعودية بعدم جواز مشاركتهم أعيادهم. وأجاز المجلس الأوروبي للإفتاء وبعض المعاصرين التهنئة بألفاظ عامة لمن تربطه بهم صلة، وهو قول الأقل، مع منعهم المشاركة في الاحتفال. وعيد الشكر مختلَف فيه: يراه بعضهم مناسبة عرفية يجوز حضور عشائها بلا طقوس، ويراه آخرون عيداً ذا أصل ديني لا يُحتفل به (فتاوى AMJA). وقبول هدية الزميل جائز ما لم تكن شعاراً دينياً أو شيئاً محرّماً.",
+      "en": "The majority of scholars, including the jurists of the four schools, hold that joining the religious rites of other faiths' festivals, and greeting people on those festivals, is not permitted. Ibn al-Qayyim reported agreement on prohibiting greetings for rites specific to them; Shaykh Ibn Uthaymeen ruled likewise, and Saudi Arabia's Standing Committee ruled that joining their festivals is not permissible. The European Council for Fatwa and some contemporary scholars allowed a general greeting for those with close ties; that is the minority view, and they too prohibit joining the celebration. Thanksgiving is disputed: some treat it as a civic custom whose family dinner may be attended without rituals, others (AMJA fatwas) consider it religiously rooted and not to be celebrated. Accepting a coworker's gift is permissible unless it is a religious symbol or something prohibited."
     },
     "quran": [
       {
@@ -130,6 +134,20 @@
     },
     "contemporary": [
       {
+        "body": "اللجنة الدائمة للبحوث العلمية والإفتاء (السعودية)",
+        "decision_ref": "فتوى في حكم مشاركة غير المسلمين أعيادهم (ترجمة إنجليزية منشورة في IslamHouse؛ رقم الفتوى غير مذكور في الصفحة المنشورة)",
+        "position_ar": "لا يجوز للمسلم مشاركة غير المسلمين في أعيادهم وإظهار الفرح والسرور بها، واستدلت بآية التعاون على البر والتقوى (المائدة 2).",
+        "position_en": "It is not permissible for a Muslim to join non-Muslims in their festivals and to express joy and happiness on these occasions; the Committee cites the verse on cooperating in righteousness and not in sin (5:2).",
+        "source_url": "https://islamhouse.com/en/fatwa/409853"
+      },
+      {
+        "body": "الشيخ محمد بن صالح العثيمين (فتوى فردية)",
+        "decision_ref": "مجموع فتاوى ورسائل العثيمين (3/44)",
+        "position_ar": "تهنئة الكفار بعيد الكريسماس أو غيره من أعيادهم الدينية حرام، وإجابة دعوتهم بهذه المناسبة حرام، ولا يُجابون إذا هنؤونا بها.",
+        "position_en": "Congratulating non-Muslims on Christmas or their other religious festivals is forbidden, as is accepting their invitations for the occasion.",
+        "source_url": "https://islamqa.info/ar/answers/947 ; https://www.alukah.net/sharia/0/140636/"
+      },
+      {
         "body": "المجلس الأوروبي للإفتاء والبحوث",
         "decision_ref": "فتوى المجلس في تهنئة غير المسلمين بأعيادهم (لم نتحقق من رقم الدورة)",
         "position_ar": "لا بأس بتهنئة غير المسلمين بأعيادهم لمن بينه وبينهم صلة قرابة أو جوار أو زمالة، بألفاظ لا تتضمن إقراراً بعقيدة مخالفة ولا شعاراً دينياً كالصليب؛ مع التأكيد على أنه «لا تجوز مشاركتهم في احتفالاتهم بأعيادهم». وخالف من الأعضاء د. محمد فؤاد البرازي.",
@@ -141,7 +159,7 @@
         "decision_ref": "فتوى «Muslims celebrating the holidays of other religions» + مقال «An Islamic Thanksgiving»",
         "position_ar": "لا يجوز للمسلمين الاحتفال بأعياد الأديان الأخرى ولا وضع شجرة الميلاد، لكن يجوز تمنّي «أعياد سعيدة» للأصدقاء والجيران والأقارب، وقبول هداياهم بشكر ومكافأتهم في أعياد المسلمين. ويرى أن عيد الشكر ليس عيداً لدين بعينه وأن معنى الشكر فيه موافق للإسلام.",
         "position_en": "Muslims may not celebrate other religions' holidays or put up Christmas trees, but may wish \"happy holidays\" to friends, neighbors and relatives, accept their gifts graciously and reciprocate on Islamic holidays. He views Thanksgiving as not belonging to any particular religion and its gratitude theme as consonant with Islam.",
-        "source_url": "https://fiqh.islamonline.net/en/muslims-celebrating-the-holidays-of-other-religions/ ; https://thepeninsulaqatar.com/article/23/11/2012/an-islamic-thanksgiving"
+        "source_url": "https://fiqh.islamonline.net/en/muslims-celebrating-the-holidays-of-other-religions/"
       },
       {
         "body": "AMJA — مجمع فقهاء الشريعة بأمريكا",
@@ -163,13 +181,6 @@
         "position_ar": "لا مانع من عيد الشكر ما دام عادةً لا صلة لها بالشعائر الدينية؛ فيجوز للمسلم المشاركة في الوجبة مع اجتناب أي طقوس دينية والمحرّمات من طعام وشراب.",
         "position_en": "No objection to Thanksgiving as long as it is a custom unconnected to religious rituals; a Muslim may share the meal while avoiding any rituals and prohibited food and drink.",
         "source_url": "https://aboutislam.net/counseling/ask-the-scholar/muslim-and-non-muslim-relations/is-it-permissible-for-american-muslims-to-celebrate-thanksgiving/"
-      },
-      {
-        "body": "الشيخ محمد بن صالح العثيمين (فتوى فردية)",
-        "decision_ref": "مجموع فتاوى ورسائل العثيمين (3/44)",
-        "position_ar": "تهنئة الكفار بعيد الكريسماس أو غيره من أعيادهم الدينية حرام، وإجابة دعوتهم بهذه المناسبة حرام، ولا يُجابون إذا هنؤونا بها.",
-        "position_en": "Congratulating non-Muslims on Christmas or their other religious festivals is forbidden, as is accepting their invitations for the occasion.",
-        "source_url": "https://islamqa.info/ar/answers/947 ; https://www.alukah.net/sharia/0/140636/"
       }
     ],
     "practical_guidance": {
@@ -226,8 +237,8 @@
     "verdict": "haram",
     "content_level": "C",
     "verdict_scope": {
-      "ar": "يخص هذا الحكم الجلوس على المائدة التي يُشرب عليها الخمر. أما حضور مناسبة العمل نفسها مع تجنّب تلك المائدة أو المغادرة عند بدء الشرب ففيه خلاف بين المعاصرين: أجازه بعضهم ومنعه آخرون.",
-      "en": "This ruling covers sitting at the table where wine is being drunk. Attending the work event itself while avoiding that table, or leaving when the drinking starts, is disputed among contemporary scholars: some allow it, others do not."
+      "ar": "قول جمهور العلماء ونصوص المذاهب الأربعة في الوليمة التي فيها منكر: لا يجلس المسلم على المائدة التي يُشرب عليها الخمر. أما حضور مناسبة العمل نفسها مع تجنّب تلك المائدة أو المغادرة عند بدء الشرب ففيه خلاف بين المعاصرين: أجازه بعضهم ومنعه آخرون، ولا نرجّح بينهما.",
+      "en": "Majority scholarly view, reflected in the texts of the four schools on a gathering that contains a wrong: a Muslim does not sit at the table where wine is being drunk. Attending the work event itself while avoiding that table, or leaving when the drinking starts, is disputed among contemporary scholars: some allow it, others do not, and we do not choose between them."
     },
     "summary": {
       "ar": "لا يجوز الجلوس على مائدة يُشرب عليها الخمر لحديث «فلا يقعد على مائدة يُدار عليها بالخمر» (حسّنه الترمذي والألباني، مع كلام في إسناده) ولآية النساء 140، وعلى هذا نصوص المذاهب الأربعة في الوليمة التي فيها منكر. أما حضور مناسبة العمل نفسها مع اختيار طاولة خالية من الخمر أو المغادرة عند بدء الشرب فمخرج أجازه بعض المعاصرين، ومنع آخرون حضور المناسبة أصلاً.",

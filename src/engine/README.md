@@ -26,7 +26,7 @@ npm run build                                 # must stay error-free
 | `quality=low\|medium\|high` | Force a render quality tier (see §7). It is remembered in localStorage. |
 | `debug=1` | Draw every collider as a magenta box and every hotspot or exit radius as a cyan ring. Scene warnings appear as toasts, and the console logs mesh and triangle counts. A model that fails to load shows as a magenta cube. |
 | `fixtures=1` | Ignore `content/` and use the engine test fixtures. |
-| `freeexit=1` | The exit works before all situations are done (for testing). |
+| `scene=town` | Start in the neighbourhood hub (also `scene=mosque`, `scene=bank`). |
 
 Debug helpers are available in the browser console as `window.yawmuk`:
 
@@ -340,3 +340,24 @@ tools/characters/           fetch.mjs + build.mjs (asset pipeline), lab.html (ch
 ```
 
 Situation flow: setup and dialogue (bottom sheet) -> choices (**shuffled each time**) -> consequence and points -> **ruling card** -> check question (+5 if correct) -> done, with "Try another choice". Score keeps the **best** points per situation.
+
+
+## 13. The neighbourhood hub, doors and feature spots (2026-10-06)
+
+- **One walkable world.** `src/scenes/town.js` is the hub. The player starts there (new day: at Adam's front door) and walks
+  to a glowing door; E/Interact enters that building's scene. Every interior's exit returns to the hub **at that building's
+  door** (`enterLocation(HUB, { from })`). Leaving a location early is allowed (a reminder lists what is left); finishing it
+  shows the outro once, then the hub. When all 18 situations are done the summary opens over the hub.
+- **Config.** `LOCATIONS` stays the 6 journey stops (planner order, catalog, tests). `PLACES = ['town','mosque','bank']`
+  are scenes without situations; `ALL_LOCATIONS = [...LOCATIONS, ...PLACES]`; `LOCATION_TITLES` covers all of them.
+- **Doors** (hub scenes only): return `doors: [{ location, position, radius?, label?, spawn: { position, yaw } }]` and
+  `exit: null`. The engine draws a teal door marker + label (gold = the planned next stop, green = all situations done).
+- **Waypoint.** In the hub a gold chevron at Adam's feet points to the planned next stop (first stop of the journey order
+  with unfinished situations); the HUD shows "Next stop: …".
+- **Feature spots.** A scene's default export may declare `featureSpots: [{ feature: '<name>', pos: [x,y,z], label: {ar,en} }]`
+  (also accepted on the build result). The engine draws a violet marker; E opens
+  `src/features/<name>/index.js` → `open({ lang, onClose, location })` and pauses player input until `onClose()`.
+  Modules are discovered with `import.meta.glob` at build time; a spot whose module does not exist is hidden, and a
+  failing import shows a short toast. Console: `yawmuk.features`, `yawmuk.openFeature('quran')`, `yawmuk.teleport('door:school' | 'school' | 'prayer')`.
+- **Persistent HUD slots.** `#yk-hud-prayer` (top corner) mounts `features/prayer` `startPrayerHud({ lang, container })`;
+  the floating "Ask the guide" button opens feature `guide` (falls back to the Ask panel if that module is missing).

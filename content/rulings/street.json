@@ -12,6 +12,10 @@
     },
     "verdict": "wajib",
     "content_level": "B",
+    "verdict_scope": {
+      "ar": "الواجب بعد الالتقاط: حفظ اللقطة وتعريفها (الإعلان عنها) وردّها إلى صاحبها، ويحرم أخذها بنية التملك. أما حكم الالتقاط نفسه فيختلف بحسب الحال والمذهب: يُندب أو يجب إن خيف ضياعها، ويحرم على من لا يأمن نفسه عليها، ورأى الإمام أحمد أن الأفضل تركها.",
+      "en": "What is obligatory once it has been picked up: keeping it safe, announcing it (ta'rif) and returning it to its owner; taking it with intent to keep it is prohibited. The ruling on picking it up in the first place varies by situation and school: recommended, or obligatory if it would otherwise be lost; prohibited for one who does not trust himself with it; and Imam Ahmad held that leaving it is preferable."
+    },
     "summary": {
       "ar": "من وجد محفظة وأمِن نفسه عليها وجب عليه حفظها وتعريفها وردّها إلى صاحبها، ويحرم أخذها بنية التملك أو استعمال شيء منها. فإن كان فيها ما يدل على صاحبها كالهوية والبطاقات فالواجب إيصالها إليه مباشرة أو عبر الشرطة دون انتظار حولٍ كامل. وما لا يُعرف صاحبه يُعرَّف سنة عند جمهور الفقهاء، ثم يجوز تملكه أو التصدق به مع ضمانه لصاحبه إن ظهر، على تفصيل بين المذاهب.",
       "en": "Whoever finds a wallet and trusts himself with it must safeguard it, announce it and return it to its owner; taking it with intent to keep it, or using anything in it, is prohibited. If it contains identifying items such as an ID or cards, the duty is to get it to the owner directly or through the police, without waiting a full year. If the owner is unknown, the majority require announcing it for a year, after which the finder may keep it or give it in charity while remaining liable to the owner if he appears, with differences among the schools."

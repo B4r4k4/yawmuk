@@ -1,6 +1,7 @@
 // Server-only helper for the Netlify functions: one structured-output call to the Claude Messages API.
 // The API key is read from the environment (ANTHROPIC_API_KEY) on the server; it never reaches the browser bundle.
 import Anthropic from '@anthropic-ai/sdk';
+import { vertexEnabled, vertexStructuredCall } from './vertex.mjs';
 
 export const MODEL = process.env.YAWMUK_MODEL || 'claude-sonnet-5-5';
 const MAX_BODY = 16 * 1024;
@@ -30,6 +31,8 @@ export async function readBody(req) {
  * retries once without it. Resolves { data } or { error }.
  */
 export async function structuredCall({ system, user, schema, maxTokens = 1500, timeout = 8000 }) {
+  // Provider switch: Gemini on Vertex AI (Cloud Run service account, no key) or Claude (ANTHROPIC_API_KEY).
+  if (vertexEnabled()) return vertexStructuredCall({ system, user, schema, maxTokens, timeout: Math.max(timeout, 9000) });
   const c = getClient();
   if (!c) return { error: 'no_key' };
   const params = {

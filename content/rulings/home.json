@@ -13,8 +13,8 @@
     "verdict": "haram",
     "content_level": "C",
     "verdict_scope": {
-      "ar": "هذا قول الجمهور (المذاهب الأربعة ومجمع الفقه الإسلامي الدولي ومجمع فقهاء الشريعة بأمريكا). وفي المسألة قول آخر للمجلس الأوروبي للإفتاء يجيزه للحاجة بشروط مشددة.",
-      "en": "This is the majority view (the four schools, the International Islamic Fiqh Academy and AMJA). A minority view, from the European Council for Fatwa, permits it in need under strict conditions."
+      "ar": "قول جمهور العلماء: القرض العقاري بفائدة من الربا المحرم؛ وهو قول المذاهب الأربعة، ومجمع الفقه الإسلامي الدولي (القرار 50 (1/6)، جدة 1990)، ومجمع فقهاء الشريعة بأمريكا (هيوستن 2014). وأجازه المجلس الأوروبي للإفتاء (الدورة الرابعة، دبلن 1999) استثناءً لمسكن الحاجة بشروط مشددة، وهو قول الأقل. نعرض الأقوال ولا نرجّح بينها لحالة بعينها.",
+      "en": "Majority scholarly view: an interest-bearing mortgage is prohibited riba. This is the view of the four schools, the International Islamic Fiqh Academy (Resolution 50 (1/6), Jeddah 1990) and AMJA (Houston 2014). The European Council for Fatwa (4th session, Dublin 1999) allowed it as an exception for a needed family home under strict conditions; that is the minority view. We present the views and do not decide between them for any individual case."
     },
     "consensus_sources": [
       "الموسوعة الفقهية (الدرر السنية)، كتاب الربا، حكم الربا: https://dorar.net/feqhia/7595 — نقل الإجماع على تحريم الربا عن ابن تيمية (مجموع الفتاوى 29/418) والزيلعي (تبيين الحقائق 4/85) والشوكاني (نيل الأوطار 5/225) والصنعاني (سبل السلام 3/36)"
@@ -168,7 +168,7 @@
       "ar": "إن كنت تفكر في الأخذ بقول الحاجة بسبب ظرف خاص (أسرة كبيرة، أو لا تجد بديلاً في ولايتك، أو تواجه إخلاءً)، أو عند المفاضلة بين عقود الشركات الإسلامية، أو إن كان عليك قرض ربوي قائم.",
       "en": "If you are considering the need-based exception because of special circumstances (large family, no alternative in your state, facing eviction), when comparing Islamic providers' contracts, or if you already hold an interest mortgage."
     },
-    "confidence": "high",
+    "confidence": "medium",
     "review_status": "ai_verified",
     "notes_for_reviewer": "ثقة عالية في أصل الحكم (تحريم القرض بفائدة) وفي نصوص الأدلة. تحتاج مراجعة: (1) الإحالات المذهبية للحنفية والشافعية والحنابلة منقولة بأرقام أجزاء وصفحات من مواقع فتوى (askimam، islamqa) ولم تُطابق على طبعة محددة. (2) المرجع المالكي من موسوعة عامة مصرية وليس من كتاب مالكي معتمد. (3) نسبة فتوى ديترويت 1999 إلى Fiqh Council of North America لم يُتحقق منها رسمياً، فوُضعت بوصف «مؤتمر فقهي». (4) تصنيف AMJA للشركات من 2014 وقد يكون تغيّر. (5) لم نجد نصاً عربياً رسمياً لقرار المجمع 50 (1/6) فصيغ الموقف العربي بالمعنى من النص الإنجليزي الرسمي. (6) الإجارة المنتهية بالتمليك: لم يُتحقق من رقم قرار المجمع فيها فلم يُذكر. نصوص الآيات من Tanzil (رسم عثماني) عبر api.alquran.cloud مع ترجمة Sahih International. نص الحديث منقول آلياً من hadith-api (مصدر sunnah.com) وتُحقق من الرقم 1598 بالبحث، لأن sunnah.com يمنع الجلب المباشر (403).\n\n[تدقيق المرحلة 1 — 2026-10-05] تحققتُ مباشرة من قرار AMJA (هيوستن 15-17 سبتمبر 2014): التصنيف مطابق (Guidance: يجوز للحاجة؛ Devon Bank بعقديه وUIF: للحاجة الشديدة؛ LARIBA وIjara Loan: لا يجوز؛ Ameen Housing: جائز بعد تعديل يناير 2015)، وأُضيفت شركتان صنّفهما القرار جائزتين (Mubarak Mortgage، Neeyah). أرقام قرارات المجمع 10 (10/2)، 50 (1/6)، 40-41 (2/5، 3/5)، 136 (2/15) صحيحة. ملاحظات الباحث بشأن المراجع المذهبية الثانوية (islamqa/askimam) ما تزال قائمة لكنها لا تمس الحكم المجمع عليه. نجحت الفحوص الآلية.",
     "newcomer_explainer": {
@@ -189,6 +189,10 @@
     },
     "verdict": "depends",
     "content_level": "C",
+    "verdict_scope": {
+      "ar": "يختلف الحكم بحسب المكوّن: الأصل حِلّ اللحم المذكّى ذكاة شرعية، أما لحوم المسالخ الأمريكية والجيلاتين والكحول المستعمل مذيباً ففيها خلاف بين المجامع المعاصرة (مجمع الفقه الإسلامي الدولي القراران 95 و210، ومجمع فقهاء الشريعة بأمريكا). نعرض الأقوال المنسوبة إلى أصحابها ولا نرجّح بينها.",
+      "en": "Depends on the ingredient: properly slaughtered meat is permissible in principle, while US slaughterhouse meat, gelatin and alcohol used as a solvent are disputed among contemporary councils (International Islamic Fiqh Academy resolutions 95 and 210; AMJA). We present each view with its source and do not choose between them."
+    },
     "summary": {
       "ar": "ذبائح أهل الكتاب حلال بنص القرآن إذا ذُبحت ذبحاً شرعياً، لكن المجامع اختلفت في لحم المسالخ الأمريكية بسبب الصعق وطريقة الذبح: شدّد AMJA في البقر والغنم وتسامح في الدواجن. والجيلاتين الخنزيري محل خلاف مبني على الاستحالة، والأحوط اجتنابه. والكحول المستعمل مذيباً للنكهات في الصناعة معفو عنه عند كثير من المعاصرين، أما إضافة الخمر للطعام قصداً فممنوعة.",
       "en": "Meat slaughtered by People of the Book is halal by the Quran if properly slaughtered, but fiqh bodies differ on US slaughterhouse meat because of stunning and method: AMJA is strict on beef and lamb and lenient on poultry. Pork gelatin is disputed, depending on whether transformation (istihala) occurs, and avoiding it is safer. Alcohol used industrially as a solvent for flavors is excused by many contemporary scholars, but deliberately adding alcohol to food is not allowed."
@@ -370,6 +374,10 @@
     },
     "verdict": "disputed",
     "content_level": "C",
+    "verdict_scope": {
+      "ar": "دفع الفائدة ربا محرم (انظر مصادر نقل الإجماع). أما توقيع عقد بطاقة فيه شرط فائدة مع العزم على السداد في فترة السماح فمسألة خلافية: منعه مجمع الفقه الإسلامي الدولي (القرار 108 (2/12)، الرياض 2000)، وأجازه مجمع فقهاء الشريعة بأمريكا (AMJA، الفتوى 80196) للحاجة بشرط السداد الكامل دائماً.",
+      "en": "Paying interest is prohibited riba (see the sources reporting consensus). Signing a card agreement that contains an interest clause while intending always to pay within the grace period is disputed: the International Islamic Fiqh Academy prohibited it (Resolution 108 (2/12), Riyadh 2000), while AMJA (fatwa 80196) allowed it out of need, on condition of always paying the full balance."
+    },
     "consensus_sources": [
       "الموسوعة الفقهية (الدرر السنية)، كتاب الربا، حكم الربا: https://dorar.net/feqhia/7595 — نقل الإجماع على تحريم الربا عن ابن تيمية (مجموع الفتاوى 29/418) والزيلعي (تبيين الحقائق 4/85) والشوكاني (نيل الأوطار 5/225) والصنعاني (سبل السلام 3/36)",
       "المغني لابن قدامة، كتاب القرض: نقلُ ابن المنذر الإجماعَ على أن الزيادة المشروطة في القرض ربا (المرجع قيد التحقق من الجزء والصفحة)"

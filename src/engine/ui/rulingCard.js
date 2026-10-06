@@ -22,7 +22,11 @@ const CARD_STRINGS = {
   explanatory: { ar: 'شرح توضيحي — ليس نصاً شرعياً', en: 'Explanatory note — not a scriptural text' },
   consensusSources: { ar: 'مصادر نقل الإجماع', en: 'Sources reporting consensus' },
   refPending: { ar: 'المرجع قيد التحقق', en: 'Reference pending verification' },
-  aiPrepared: { ar: 'أعدّه الذكاء الاصطناعي — لم يراجعه عالم', en: 'AI-prepared, not scholar-reviewed' }
+  aiPrepared: { ar: 'أعدّه الذكاء الاصطناعي — لم يراجعه عالم', en: 'AI-prepared, not scholar-reviewed' },
+  verdictLevelC: { ar: 'قول جمهور العلماء', en: 'Majority scholarly view' },
+  verdictDisputed: { ar: 'مسألة خلافية', en: 'Scholars differ' },
+  verdictDepends: { ar: 'يختلف بحسب الحال', en: 'Depends on the case' },
+  reviewedBy: { ar: 'راجعه', en: 'Reviewed by' }
 };
 for (const [k, v] of Object.entries(CARD_STRINGS)) if (!(k in STRINGS)) STRINGS[k] = v;
 const LEVELS = ['A', 'B', 'C', 'D'];
@@ -87,12 +91,38 @@ export function verdictBadge(verdict) {
 }
 
 /** Big verdict seal for the card header: icon in an 8-point star + "Overall ruling" label + verdict. */
-function verdictSeal(verdict) {
+function verdictSeal(verdict, label = t('verdictLabel')) {
   const key = VERDICTS[verdict] ? verdict : 'unknown';
   const v = VERDICTS[key];
   return h('div', { class: 'rc-seal', style: { '--c': v.color }, 'data-verdict': verdict || 'unknown' },
     h('span', { class: 'seal-star', 'aria-hidden': 'true' }, h('span', { class: 'seal-icon' }, VERDICT_ICON[key] || '•')),
-    h('span', { class: 'seal-text' }, h('span', { class: 'seal-label' }, t('verdictLabel')), verdictBadge(verdict)));
+    h('span', { class: 'seal-text' }, h('span', { class: 'seal-label' }, label), verdictBadge(verdict)));
+}
+
+// Scholar sign-offs recorded in the experts dashboard (GET experts?view=reviews -> { reviews: { [rulingId]: { reviewer, title } } }).
+// Fetched once per page; any failure (dev server, offline, Node tests) simply shows nothing.
+let reviewsPromise = null;
+export function scholarReviews() {
+  if (!reviewsPromise) {
+    const ok = typeof fetch === 'function' && typeof location !== 'undefined' && /^https?:$/.test(location.protocol);
+    reviewsPromise = ok
+      ? fetch('/.netlify/functions/experts?view=reviews', { headers: { accept: 'application/json' } })
+        .then((r) => (r.ok ? r.json() : null)).then((j) => (j && typeof j.reviews === 'object' ? j.reviews : {})).catch(() => ({}))
+      : Promise.resolve({});
+  }
+  return reviewsPromise;
+}
+
+/** "Reviewed by: <name> — <title>" slot; filled only when a scholar review exists for this ruling. */
+function reviewedBySlot(rulingId) {
+  const slot = h('span', { class: 'badge reviewed-by', hidden: true });
+  scholarReviews().then((all) => {
+    const rv = all?.[rulingId];
+    if (!rv?.reviewer) return;
+    slot.textContent = `${t('reviewedBy')}: ${String(rv.reviewer).slice(0, 80)}${rv.title ? ` — ${String(rv.title).slice(0, 80)}` : ''}`;
+    slot.hidden = false;
+  }).catch(() => {});
+  return slot;
 }
 
 /** { reviewed, label } for a review_status. Only an explicit HUMAN/scholar review counts as reviewed. */
@@ -202,7 +232,9 @@ export function renderRulingCard(ruling, rulingId) {
   const alts = tr(r.halal_alternatives);
   const { reviewed } = statusInfo(r.review_status);
   // "High confidence" is only ever shown next to an explicit "AI-prepared, not scholar-reviewed" badge.
-  const conf = r.confidence ? h('span', { class: 'badge conf' }, `${t('confidence')}: ${t(`conf_${r.confidence}`)}`) : null;
+  // Level C (disputed) never shows a confidence badge: the card attributes the view, it does not weigh it.
+  const levelC = r.content_level === 'C';
+  const conf = r.confidence && !levelC ? h('span', { class: 'badge conf' }, `${t('confidence')}: ${t(`conf_${r.confidence}`)}`) : null;
   const aiBadge = r.confidence === 'high' && !reviewed ? h('span', { class: 'badge ai-prepared' }, t('aiPrepared')) : null;
   const scope = tr(r.verdict_scope);
   const notes = tr(r.explanatory_notes);
@@ -212,8 +244,10 @@ export function renderRulingCard(ruling, rulingId) {
       h('p', { class: 'eyebrow' }, t('ruling')),
       h('h2', { class: 'rc-title' }, tr(r.title) || r.id),
       h('div', { class: 'rc-head-row' },
-        verdictSeal(r.verdict),
-        h('div', { class: 'badges' }, statusBadge(r.review_status), levelBadge(r.content_level), conf, aiBadge,
+        // Level C: "majority view" only when the card states a definite verdict; a disputed / case-dependent verdict
+        // is labelled as such, never credited to a majority no source names.
+        verdictSeal(r.verdict, !levelC ? t('verdictLabel') : r.verdict === 'disputed' ? t('verdictDisputed') : r.verdict === 'depends' ? t('verdictDepends') : t('verdictLevelC')),
+        h('div', { class: 'badges' }, statusBadge(r.review_status), reviewedBySlot(r.id), levelBadge(r.content_level), conf, aiBadge,
           r._fixture ? h('span', { class: 'badge fixture' }, t('fixtureBadge')) : null)),
       nonEmpty(scope) ? h('p', { class: 'rc-scope' }, h('strong', {}, `${t('verdictScope')}: `), scope) : null),
     plainWordsBlock(r),

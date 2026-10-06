@@ -1,0 +1,246 @@
+[
+  {
+    "step": "start",
+    "basicsBtn": true,
+    "basicsOpened": true,
+    "studyLink": true,
+    "errors": []
+  },
+  {
+    "step": "scene:town",
+    "play": true,
+    "canvas": true,
+    "location": "town",
+    "calls": 83,
+    "tris": 55820,
+    "pngBytes": 248001,
+    "errors": []
+  },
+  {
+    "step": "scene:home",
+    "play": true,
+    "canvas": true,
+    "location": "home",
+    "calls": 99,
+    "tris": 66588,
+    "pngBytes": 461237,
+    "errors": []
+  },
+  {
+    "step": "scene:work",
+    "play": true,
+    "canvas": true,
+    "location": "work",
+    "calls": 63,
+    "tris": 64564,
+    "pngBytes": 422021,
+    "errors": []
+  },
+  {
+    "step": "scene:school",
+    "play": true,
+    "canvas": true,
+    "location": "school",
+    "calls": 195,
+    "tris": 86258,
+    "pngBytes": 611288,
+    "errors": []
+  },
+  {
+    "step": "scene:street",
+    "play": true,
+    "canvas": true,
+    "location": "street",
+    "calls": 107,
+    "tris": 56906,
+    "pngBytes": 816046,
+    "errors": []
+  },
+  {
+    "step": "scene:public_events",
+    "play": true,
+    "canvas": true,
+    "location": "public_events",
+    "calls": 132,
+    "tris": 223958,
+    "pngBytes": 803205,
+    "errors": []
+  },
+  {
+    "step": "scene:private_events",
+    "play": true,
+    "canvas": true,
+    "location": "private_events",
+    "calls": 94,
+    "tris": 137228,
+    "pngBytes": 463971,
+    "errors": []
+  },
+  {
+    "step": "scene:mosque",
+    "play": true,
+    "canvas": true,
+    "location": "mosque",
+    "calls": 61,
+    "tris": 38066,
+    "pngBytes": 333834,
+    "errors": []
+  },
+  {
+    "step": "scene:bank",
+    "play": true,
+    "canvas": true,
+    "location": "bank",
+    "calls": 52,
+    "tris": 84066,
+    "pngBytes": 330417,
+    "errors": []
+  },
+  {
+    "step": "feature:quran:desktop",
+    "play": true,
+    "opened": true,
+    "mode": "ui",
+    "panel": true,
+    "overflow": false,
+    "modeAfterEsc": "play",
+    "errors": []
+  },
+  {
+    "step": "feature:adhkar:desktop",
+    "play": true,
+    "opened": true,
+    "mode": "ui",
+    "panel": true,
+    "overflow": false,
+    "modeAfterEsc": "play",
+    "errors": []
+  },
+  {
+    "step": "feature:prayer:desktop",
+    "play": true,
+    "opened": true,
+    "mode": "ui",
+    "panel": true,
+    "overflow": false,
+    "modeAfterEsc": "play",
+    "errors": []
+  },
+  {
+    "step": "feature:bank:desktop",
+    "play": true,
+    "opened": true,
+    "mode": "ui",
+    "panel": true,
+    "overflow": false,
+    "modeAfterEsc": "play",
+    "errors": []
+  },
+  {
+    "step": "feature:guide:desktop",
+    "play": true,
+    "opened": true,
+    "mode": "ui",
+    "panel": true,
+    "overflow": false,
+    "modeAfterEsc": "play",
+    "errors": []
+  },
+  {
+    "step": "feature:experts:desktop",
+    "play": true,
+    "opened": true,
+    "mode": "ui",
+    "panel": true,
+    "overflow": false,
+    "modeAfterEsc": "play",
+    "errors": []
+  },
+  {
+    "step": "feature:quran:phone",
+    "play": true,
+    "opened": true,
+    "mode": "ui",
+    "panel": true,
+    "overflow": false,
+    "modeAfterEsc": "play",
+    "errors": []
+  },
+  {
+    "step": "feature:adhkar:phone",
+    "play": true,
+    "opened": true,
+    "mode": "ui",
+    "panel": true,
+    "overflow": false,
+    "modeAfterEsc": "play",
+    "errors": []
+  },
+  {
+    "step": "feature:prayer:phone",
+    "play": true,
+    "opened": true,
+    "mode": "ui",
+    "panel": true,
+    "overflow": false,
+    "modeAfterEsc": "play",
+    "errors": []
+  },
+  {
+    "step": "feature:bank:phone",
+    "play": true,
+    "opened": true,
+    "mode": "ui",
+    "panel": true,
+    "overflow": false,
+    "modeAfterEsc": "play",
+    "errors": []
+  },
+  {
+    "step": "feature:guide:phone",
+    "play": true,
+    "opened": true,
+    "mode": "ui",
+    "panel": true,
+    "overflow": false,
+    "modeAfterEsc": "play",
+    "errors": []
+  },
+  {
+    "step": "feature:experts:phone",
+    "play": true,
+    "opened": true,
+    "mode": "ui",
+    "panel": true,
+    "overflow": false,
+    "modeAfterEsc": "play",
+    "errors": []
+  },
+  {
+    "step": "phone:mosque",
+    "play": true,
+    "errors": []
+  },
+  {
+    "step": "/experts:desktop",
+    "status": 200,
+    "errors": []
+  },
+  {
+    "step": "/experts:phone",
+    "status": 200,
+    "errors": []
+  },
+  {
+    "step": "/results:desktop",
+    "status": 200,
+    "errors": [
+      "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    ]
+  },
+  {
+    "step": "/results:phone",
+    "status": 200,
+    "errors": []
+  }
+]

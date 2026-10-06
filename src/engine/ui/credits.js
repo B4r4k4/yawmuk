@@ -1,7 +1,7 @@
 // Credits / حقوق: built at build time from public/assets/LICENSES.md (+ public/assets/characters/LICENSES.md when present).
 // CC-BY lines are shown verbatim (asset names and authors stay in English); CC0 sources get a general thanks.
 import { h, safeUrl } from '../dom.js';
-import { t } from '../i18n.js';
+import { t, getLang } from '../i18n.js';
 import { openModal, setContent, btn } from './overlay.js';
 import './strings.js';
 
@@ -55,6 +55,12 @@ export function creditsScreen() {
       d.characters.length ? h('section', { class: 'credits-sec' }, h('h3', {}, t('creditsCharacters')), h('ul', { class: 'credits-list' }, d.characters.map(lineEl))) : null,
       h('section', { class: 'credits-sec' }, h('h3', {}, t('creditsCc0Title')), h('p', {}, t('creditsCc0'))),
       h('section', { class: 'credits-sec' }, h('h3', {}, t('creditsFontsTitle')), h('p', {}, t('creditsFonts'))),
+      h('section', { class: 'credits-sec' }, h('h3', {}, getLang() === 'ar' ? 'الأذان والمصحف والأذكار ومواقيت الصلاة' : 'Adhan · Quran · Adhkar · Prayer times'), h('ul', { class: 'credits-list' }, [
+        "Adhan audio: 'The Adhan - Muslim Call to Prayer - Aaqib Azeez' by Atcovi, Wikimedia Commons, CC BY-SA 4.0 https://commons.wikimedia.org/wiki/File:The_Adhan_-_Muslim_Call_to_Prayer_-_Aaqib_Azeez.mp3",
+        'Prayer times: adhan-js (MIT) https://github.com/batoulapps/adhan-js',
+        'Quran text (King Fahd Complex Hafs): https://api.quran.com · translations and Tafsir al-Muyassar: https://quranenc.com · recitations: https://everyayah.com',
+        'Adhkar: Hisn al-Muslim https://hisnmuslim.com · hadith grades checked on https://dorar.net'
+      ].map(lineEl))),
       h('div', { class: 'row end' }, btn(t('close'), () => m.close(), 'primary', { 'data-autofocus': true }))
     ]);
   });

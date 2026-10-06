@@ -7,6 +7,8 @@ The game uses AI in exactly two narrow places, and both are optional:
 
 The AI never writes religious text, never cites sources on its own, and never gives a fatwa. Everything it returns is validated twice (server + browser). If anything fails, the game uses deterministic, pre-authored behaviour, so the demo works with no key, no network and no Netlify.
 
+> **Live deployment (6 Oct 2026):** the public site runs **Gemini 3 Flash (`gemini-3-flash-preview`) on Google Cloud Vertex AI**, retried once on **Gemini 2.5 Flash** on timeout/error (`netlify/lib/vertex.mjs`). Auth is the Cloud Run service account `yawmuk-runtime` (role `aiplatform.user` only), so no API key exists anywhere. Same prompts, JSON schemas and validators as below; the Claude path remains supported when `ANTHROPIC_API_KEY` is set. Verified live on the production URL: grounded answer with source id, "give me a hadith" → no fabrication, personal case → referral, off-topic → abstain, prompt injection → ignored.
+
 ## Architecture
 
 ```
@@ -32,7 +34,7 @@ The AI never writes religious text, never cites sources on its own, and never gi
  Ruling card / HUD "Ask" ─ askPanel.js
       ├─ chips → pre-authored answer (questions.json) + resolved sources.json citations + referral
       └─ free text (≤300 chars, never stored)
-           ├─ personal-fatwa pre-filter (هل يجوز لي | حالتي | my wife… | should I | can I …) → fixed referral, no model
+           ├─ personal-fatwa pre-filter (هل يجوز لي | أنا في … | نحن في … | زوجي/أمي … | أريد أن … ما رأيكم | I live/work in … | is it okay to take this … | my husband/boss … | should I) → fixed referral, no model
            ├─ BM25 retrieval over reviewed passages (Q&A + summary + practical guidance +
            │   when-to-ask-a-scholar + plain-words text)          none → abstain + referral
            └─ POST /.netlify/functions/ask {lang, question, passages[{id,text}]} ─► ask.mjs
@@ -56,6 +58,13 @@ Files: `src/engine/aiCore.js` (all validators, pure, shared by browser/functions
 | `metrics` | Not a model call. Only `{arm, completed, pre, post, clarity}`, and only after opt-in. | Ids, belief, free text, user agent. |
 
 Model: `YAWMUK_MODEL` (default `claude-sonnet-5-5`), via the official `@anthropic-ai/sdk` on the server, with structured outputs (`output_config.format` JSON schema; situation ids and passage ids are `enum`s), `effort: low` for latency, server-side refusal fallback (`fallbacks: "default"`; retried without it if the platform rejects that parameter). A refusal, `max_tokens` stop, API error or invalid JSON → the function returns an error → the browser falls back.
+
+## Reliability and scientific safety (reference package)
+
+- **Level D never reaches the model.** `isPersonalFatwa` (`src/engine/aiCore.js`) catches questions about the asker's own case in Arabic (normalised: «أنا في …»، «نحن في …»، «هل يجوز لي»، «زوجي/زوجتي/أمي/ابني …»، «أريد أن … ما رأيكم»، «ماذا أفعل») and English ("I live/work/am in …", "is it okay/halal to <verb> this/my …", "my husband/wife/father/boss …", "should I", "can I"). General questions ("What is riba?", "Is it halal to eat shrimp?", «ما حكم الربا؟») pass. Positive and negative cases are in `tests/reliability.test.mjs`.
+- **No automated tarjih on level C (ج).** Every contested ruling carries a bilingual `verdict_scope` that names who holds each view (e.g. International Islamic Fiqh Academy Resolution 50 (1/6); AAOIFI Shari'ah Standard 21; AMJA fatwa numbers) and labels the minority view as such; level-C rulings never carry `confidence: "high"`. The models are told to present differences as the passages do and never pick a side.
+- **Source tiers.** Each record in `content/sources.json` is tagged `approved_package` (sites the package names: dorar.net, quranpedia.net, shamela.ws, dawa.center/بينات, islamic-content.com/الجمهرة, the King Fahd Complex Mushaf text via quranenc.com, hadith of the two Sahihs) or `secondary`, by `node tools/eval/source_tiers.mjs`. Objection-type answers (Kaaba, authorship of the Quran, spread by the sword, why scholars differ) cite بينات by question number and PDF page; term translation cites the Jamhara dictionary entry.
+- **Eval of the package's 12 test cases.** `tests/eval/package_cases.json` + `node tools/eval/run_package_eval.mjs [--base <url> --n 3]`. Offline mode (no model) checks routing, retrieval grounding and the deterministic guards; online mode sends each case in Arabic and English N times to `/guide` and `/ask` and checks refer / abstain / no fabricated hadith / used_ids. Results: [`docs/EVAL.md`](EVAL.md) (online results are marked pending until run against the deployed URL).
 
 ## Validation rules
 
@@ -110,3 +119,17 @@ Deploy: `netlify.toml` (build `npm run build`, publish `dist`, functions `netlif
 | ask (per free-text question) | ~1,800 | ~600 | ~$0.010 |
 
 1,000 players × (1 plan + 3 questions) ≈ **$45**. Chips, pre-authored answers, the personal-fatwa referral and every fallback cost nothing. There is no rate limiting yet; for a public launch add Netlify rate limiting or a per-IP quota on the two functions.
+
+## Fixed routes that never call the model (guide and Ask)
+
+Before any model call, `src/features/guide/guideCore.js` (`routeQuestion`) and the server pre-routes (`netlify/functions/guide.mjs` `preRoute`, `ask.mjs`) send these to fixed, pre-written replies:
+
+| Route | Trigger | Reply |
+|---|---|---|
+| `personal` | the asker's own case (`isPersonalFatwa` in `src/engine/aiCore.js`: «عندي…», «صلاتي…», «حلفت…», "where I live", "Am I…", "my prayer/contract…") | referral + "send to scholars"; related reviewed cards only when they clearly match (coverage ≥ 0.5) |
+| `judge` | asking to declare a named person or group a disbeliever, innovator, hypocrite… (`judgesPeople`); ordinary fiqh questions that mention a group are not caught | "not something I do; ask qualified scholars" |
+| `injection` | override / role-play attempts (`looksLikeInjection`) | scope reply |
+| `evidence` | "give me / write me a hadith or verse that proves…" (`asksForEvidence`) | "I don't produce verses or hadith on request; verified evidence is on the ruling cards" + matching cards |
+
+With no API key the functions return **HTTP 200 `{ "error": "no_key", "unavailable": true }`** (not 503), and the browser shows the reviewed passages verbatim, followed by the "general information, not a fatwa" line and the "send to scholars" button. Regression tests: `tests/safety-guards.test.mjs`; the package eval (`docs/EVAL.md`) runs the same guards.
+

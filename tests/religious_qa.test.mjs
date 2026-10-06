@@ -13,7 +13,7 @@ const rulingIds = new Set(loadRulings().map((x) => x.ruling.id));
 
 const LEVELS = ['A', 'B', 'C', 'D'];
 const KEYS = ['id', 'case_id', 'location', 'asker', 'level', 'question', 'answer', 'source_ids', 'refer', 'refer_text', 'related_ruling'];
-const OPTIONAL = ['correction'];
+const OPTIONAL = ['correction', 'keywords']; // keywords: retrieval-only phrasings, never shown
 const MAX_WORDS = 90;
 const MAX_QUOTE = 70; // longest quoted span (chars) allowed inside an answer; full ayah/hadith text lives only in sources
 
@@ -203,7 +203,7 @@ describe('questions.json: every claim is sourced and resolves', () => {
     const bad = [];
     for (const s of sources) for (const u of s.used_in || []) if (u.startsWith('qa.') && !qaIds.has(u)) bad.push(`${s.id}: ${u}`);
     assert.deepEqual(bad, []);
-    for (const s of sources.filter((x) => (x.used_in || []).some((u) => u.startsWith('qa.')) && x.type === 'other')) assert.match(s.url, /^https:\/\/(www\.)?(islamqa\.info|binbaz\.org\.sa|islamhouse\.com|byenah\.com|dorar\.net|hadeethenc\.com)\//, `${s.id}: not a package-approved reference`);
+    for (const s of sources.filter((x) => (x.used_in || []).some((u) => u.startsWith('qa.')) && x.type === 'other')) assert.match(s.url, /^https:\/\/(www\.)?(islamqa\.info|binbaz\.org\.sa|islamhouse\.com|byenah\.com|dorar\.net|hadeethenc\.com|dawa\.center|islamic-content\.com)\//, `${s.id}: not an allowed reference host (each record's tier is in sources.json)`);
   });
 });
 

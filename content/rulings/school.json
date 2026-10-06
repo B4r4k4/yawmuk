@@ -366,9 +366,13 @@
     },
     "verdict": "depends",
     "content_level": "C",
+    "verdict_scope": {
+      "ar": "قول جمهور العلماء: تحرم الخلوة بالأجنبية، وتحرم مصافحة المرأة الأجنبية الشابة؛ وهو قول المذاهب الأربعة ومجمع فقهاء الشريعة بأمريكا (AMJA، الفتوى 3253). وأجازها بعض المعاصرين عند انتفاء الشهوة وأمن الفتنة، وهو قول الأقل. أما الدراسة في مجموعة مختلطة في مكان عام فجائزة بآدابها.",
+      "en": "Majority scholarly view: being alone with a non-mahram woman is prohibited, and shaking hands with a young non-mahram woman is prohibited; this is the view of the four schools and of AMJA (fatwa 3253). Some contemporary scholars allowed the handshake when there is no desire and no risk of temptation; that is the minority view. Studying in a mixed group in a public place is permissible with its etiquette."
+    },
     "summary": {
-      "ar": "الدراسة في مجموعة مختلطة في مكان عام جائزة مع غض البصر وجدية الحديث، أما الخلوة بأجنبية فمحرمة عند المذاهب الأربعة. ومصافحة المرأة الأجنبية الشابة محرمة عند المذاهب الأربعة، واستثنى الحنفية والحنابلة العجوز التي لا تُشتهى مع أمن الفتنة، وأجازها بعض المعاصرين كالقرضاوي عند انتفاء الشهوة وأمن الفتنة مع أن الأحوط تركها. والأولى الاعتذار بلطف وبيان أن الامتناع احترامٌ لا إهانة.",
-      "en": "Studying in a mixed group in a public place is permissible with lowered gaze and serious conversation, while being alone (khalwa) with an unrelated woman is prohibited in the four schools. Shaking hands with a young unrelated woman is prohibited in all four schools; the Hanafis and Hanbalis exempt an elderly woman when there is no desire, and some contemporaries such as al-Qaradawi permitted it without desire and temptation, though avoiding it is more cautious. The best course is to decline kindly and explain that it is out of respect, not rejection."
+      "ar": "الدراسة في مجموعة مختلطة في مكان عام جائزة مع غض البصر وجدية الحديث، أما الخلوة بأجنبية فمحرمة عند المذاهب الأربعة. ومصافحة المرأة الأجنبية الشابة محرمة عند المذاهب الأربعة، واستثنى الحنفية والحنابلة العجوز التي لا تُشتهى مع أمن الفتنة، وأجازها بعض المعاصرين عند انتفاء الشهوة وأمن الفتنة، وهو قول الأقل. والأولى الاعتذار بلطف وبيان أن الامتناع احترامٌ لا إهانة.",
+      "en": "Studying in a mixed group in a public place is permissible with lowered gaze and serious conversation, while being alone (khalwa) with an unrelated woman is prohibited in the four schools. Shaking hands with a young unrelated woman is prohibited in all four schools; the Hanafis and Hanbalis exempt an elderly woman when there is no desire, and some contemporary scholars permitted it without desire and temptation, which is the minority view. The best course is to decline kindly and explain that it is out of respect, not rejection."
     },
     "quran": [
       {
@@ -470,17 +474,17 @@
         "source_url": "https://www.amjaonline.org/fatwa/en/3253/shaking-hands"
       },
       {
-        "body": "د. يوسف القرضاوي (رئيس المجلس الأوروبي للإفتاء سابقاً) — فتوى شخصية",
-        "decision_ref": "فتاوى معاصرة، ج2 (ملخصها منقول في fiqh.islamonline.net)",
-        "position_ar": "تجوز المصافحة عند عدم الشهوة وأمن الفتنة، فإن خيفت الفتنة أو وُجدت الشهوة حرمت بلا شك؛ وينبغي الاقتصار على موضع الحاجة، والأفضل للمتدين ألا يبدأ بالمصافحة «ولكن إذا صوفح صافح»، والمسألة اجتهادية فلا يُنكر على من أخذ بها.",
-        "position_en": "Handshaking is permitted when there is no desire and no fear of temptation, and is clearly prohibited otherwise; it should be limited to need, and the religious person should preferably not initiate it, \"but if a hand is extended, he may shake it.\" It is a matter of ijtihad, so one who follows it should not be censured.",
-        "source_url": "https://fiqh.islamonline.net/مصافحة-الأجنبيات/"
-      },
-      {
         "body": "أ.د. عبد الفتاح إدريس (أستاذ الفقه المقارن بجامعة الأزهر)",
         "decision_ref": "فتوى منشورة في fiqh.islamonline.net",
         "position_ar": "تحرم مصافحة الأجنبية ولو كانت عجوزاً، لعموم النصوص وسداً للذريعة، ويرى أن حديث «كان يصافح العجائز» غير ثابت.",
         "position_en": "Shaking hands with any unrelated woman, even elderly, is prohibited due to the general texts and blocking the means; he holds that the report \"he used to shake hands with elderly women\" is not authentic.",
+        "source_url": "https://fiqh.islamonline.net/مصافحة-الأجنبيات/"
+      },
+      {
+        "body": "د. يوسف القرضاوي (رئيس المجلس الأوروبي للإفتاء سابقاً) — فتوى شخصية",
+        "decision_ref": "فتاوى معاصرة، ج2 (ملخصها منقول في fiqh.islamonline.net)",
+        "position_ar": "تجوز المصافحة عند عدم الشهوة وأمن الفتنة، فإن خيفت الفتنة أو وُجدت الشهوة حرمت بلا شك؛ وينبغي الاقتصار على موضع الحاجة، والأفضل للمتدين ألا يبدأ بالمصافحة «ولكن إذا صوفح صافح»، والمسألة اجتهادية فلا يُنكر على من أخذ بها.",
+        "position_en": "Handshaking is permitted when there is no desire and no fear of temptation, and is clearly prohibited otherwise; it should be limited to need, and the religious person should preferably not initiate it, \"but if a hand is extended, he may shake it.\" It is a matter of ijtihad, so one who follows it should not be censured.",
         "source_url": "https://fiqh.islamonline.net/مصافحة-الأجنبيات/"
       }
     ],

@@ -1,6 +1,6 @@
 {
-  "date": "2026-10-06T13:27:56.719Z",
-  "gl": "d3d11",
+  "date": "2026-10-06T16:57:28.368Z",
+  "gl": "default",
   "maxScore": 270,
   "total": 18,
   "results": [
@@ -9,7 +9,8 @@
       "pass": true,
       "failures": [],
       "warnings": [
-        "THREE.WebGLProgram: Program Info Log: (85,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(85,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+        "no functions on static host: http://127.0.0.1:49790/.netlify/functions/experts?view=reviews",
+        "no functions on static host: http://127.0.0.1:49790/.netlify/functions/experts?view=reviews"
       ],
       "rulingsChecked": 36,
       "stations": [
@@ -79,15 +80,15 @@
             "meshes": 79,
             "tris": 40580
           },
-          "drawCalls": 157,
-          "frameTris": 94034,
-          "geometries": 88,
-          "textures": 25,
+          "drawCalls": 202,
+          "frameTris": 94800,
+          "geometries": 94,
+          "textures": 60,
           "colliders": 34,
           "occluders": 10,
           "lights": "day",
           "frameMs": 16.7,
-          "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 620 (0x00005917) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+          "gpu": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4, Unspecified Version)"
         },
         "work": {
           "pointLights": 0,
@@ -101,15 +102,15 @@
             "meshes": 75,
             "tris": 40148
           },
-          "drawCalls": 161,
-          "frameTris": 104037,
-          "geometries": 71,
-          "textures": 63,
+          "drawCalls": 160,
+          "frameTris": 104036,
+          "geometries": 77,
+          "textures": 60,
           "colliders": 43,
           "occluders": 14,
           "lights": "day",
-          "frameMs": 32.2,
-          "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 620 (0x00005917) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+          "frameMs": 16.7,
+          "gpu": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4, Unspecified Version)"
         },
         "school": {
           "pointLights": 3,
@@ -123,81 +124,81 @@
             "meshes": 161,
             "tris": 51782
           },
-          "drawCalls": 300,
-          "frameTris": 135618,
-          "geometries": 107,
-          "textures": 53,
+          "drawCalls": 354,
+          "frameTris": 136806,
+          "geometries": 110,
+          "textures": 90,
           "colliders": 63,
           "occluders": 32,
           "lights": "evening",
-          "frameMs": 16.6,
-          "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 620 (0x00005917) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+          "frameMs": 16.7,
+          "gpu": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4, Unspecified Version)"
         },
         "street": {
           "pointLights": 3,
           "shadowLights": 0,
           "placeholder": false,
           "auto": [],
-          "meshes": 57,
+          "meshes": 83,
           "instanced": 7,
           "trisDrawn": 36226,
           "statsApi": {
-            "meshes": 57,
+            "meshes": 83,
             "tris": 34370
           },
-          "drawCalls": 107,
-          "frameTris": 56906,
-          "geometries": 120,
-          "textures": 51,
+          "drawCalls": 200,
+          "frameTris": 76026,
+          "geometries": 126,
+          "textures": 94,
           "colliders": 45,
           "occluders": 43,
           "lights": "night",
-          "frameMs": 17.8,
-          "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 620 (0x00005917) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+          "frameMs": 16.7,
+          "gpu": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4, Unspecified Version)"
         },
         "public_events": {
           "pointLights": 3,
           "shadowLights": 0,
           "placeholder": false,
           "auto": [],
-          "meshes": 85,
+          "meshes": 102,
           "instanced": 36,
           "trisDrawn": 130400,
           "statsApi": {
-            "meshes": 85,
+            "meshes": 102,
             "tris": 100742
           },
-          "drawCalls": 132,
-          "frameTris": 223958,
-          "geometries": 148,
-          "textures": 47,
+          "drawCalls": 211,
+          "frameTris": 242518,
+          "geometries": 153,
+          "textures": 95,
           "colliders": 72,
           "occluders": 34,
           "lights": "evening",
-          "frameMs": 16.6,
-          "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 620 (0x00005917) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+          "frameMs": 16.7,
+          "gpu": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4, Unspecified Version)"
         },
         "private_events": {
           "pointLights": 2,
           "shadowLights": 0,
           "placeholder": false,
           "auto": [],
-          "meshes": 58,
+          "meshes": 96,
           "instanced": 18,
           "trisDrawn": 116494,
           "statsApi": {
-            "meshes": 58,
+            "meshes": 96,
             "tris": 91254
           },
-          "drawCalls": 94,
-          "frameTris": 137228,
-          "geometries": 118,
-          "textures": 54,
+          "drawCalls": 192,
+          "frameTris": 181712,
+          "geometries": 121,
+          "textures": 109,
           "colliders": 72,
           "occluders": 27,
           "lights": "day",
           "frameMs": 16.7,
-          "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 620 (0x00005917) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+          "gpu": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4, Unspecified Version)"
         }
       },
       "reach": {
@@ -527,13 +528,16 @@
         }
       },
       "camera": {},
-      "seconds": 95
+      "seconds": 58
     },
     {
       "config": "desktop-en",
       "pass": true,
       "failures": [],
-      "warnings": [],
+      "warnings": [
+        "no functions on static host: http://127.0.0.1:49790/.netlify/functions/experts?view=reviews",
+        "no functions on static host: http://127.0.0.1:49790/.netlify/functions/experts?view=reviews"
+      ],
       "rulingsChecked": 18,
       "stations": [
         "work on entry: samir @ coffee_machine",
@@ -602,15 +606,15 @@
             "meshes": 79,
             "tris": 40580
           },
-          "drawCalls": 201,
-          "frameTris": 94729,
-          "geometries": 89,
-          "textures": 61,
+          "drawCalls": 202,
+          "frameTris": 94800,
+          "geometries": 94,
+          "textures": 60,
           "colliders": 34,
           "occluders": 10,
           "lights": "day",
-          "frameMs": 32.8,
-          "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 620 (0x00005917) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+          "frameMs": 16.7,
+          "gpu": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4, Unspecified Version)"
         },
         "work": {
           "pointLights": 0,
@@ -624,15 +628,15 @@
             "meshes": 75,
             "tris": 40148
           },
-          "drawCalls": 161,
-          "frameTris": 104037,
-          "geometries": 71,
-          "textures": 63,
+          "drawCalls": 160,
+          "frameTris": 104036,
+          "geometries": 77,
+          "textures": 60,
           "colliders": 43,
           "occluders": 14,
           "lights": "day",
-          "frameMs": 26.6,
-          "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 620 (0x00005917) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+          "frameMs": 16.7,
+          "gpu": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4, Unspecified Version)"
         },
         "school": {
           "pointLights": 3,
@@ -646,81 +650,81 @@
             "meshes": 161,
             "tris": 51782
           },
-          "drawCalls": 355,
-          "frameTris": 136807,
-          "geometries": 104,
-          "textures": 87,
+          "drawCalls": 354,
+          "frameTris": 136806,
+          "geometries": 110,
+          "textures": 84,
           "colliders": 63,
           "occluders": 32,
           "lights": "evening",
-          "frameMs": 56.6,
-          "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 620 (0x00005917) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+          "frameMs": 16.7,
+          "gpu": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4, Unspecified Version)"
         },
         "street": {
           "pointLights": 3,
           "shadowLights": 0,
           "placeholder": false,
           "auto": [],
-          "meshes": 57,
+          "meshes": 83,
           "instanced": 7,
           "trisDrawn": 36226,
           "statsApi": {
-            "meshes": 57,
+            "meshes": 83,
             "tris": 34370
           },
-          "drawCalls": 107,
-          "frameTris": 56906,
-          "geometries": 120,
-          "textures": 51,
+          "drawCalls": 200,
+          "frameTris": 76026,
+          "geometries": 126,
+          "textures": 89,
           "colliders": 45,
           "occluders": 43,
           "lights": "night",
-          "frameMs": 28.3,
-          "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 620 (0x00005917) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+          "frameMs": 16.7,
+          "gpu": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4, Unspecified Version)"
         },
         "public_events": {
           "pointLights": 3,
           "shadowLights": 0,
           "placeholder": false,
           "auto": [],
-          "meshes": 85,
+          "meshes": 102,
           "instanced": 36,
           "trisDrawn": 130400,
           "statsApi": {
-            "meshes": 85,
+            "meshes": 102,
             "tris": 100742
           },
-          "drawCalls": 132,
-          "frameTris": 223958,
-          "geometries": 148,
-          "textures": 47,
+          "drawCalls": 211,
+          "frameTris": 242518,
+          "geometries": 153,
+          "textures": 90,
           "colliders": 72,
           "occluders": 34,
           "lights": "evening",
-          "frameMs": 23.3,
-          "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 620 (0x00005917) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+          "frameMs": 16.7,
+          "gpu": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4, Unspecified Version)"
         },
         "private_events": {
           "pointLights": 2,
           "shadowLights": 0,
           "placeholder": false,
           "auto": [],
-          "meshes": 58,
+          "meshes": 96,
           "instanced": 18,
           "trisDrawn": 116494,
           "statsApi": {
-            "meshes": 58,
+            "meshes": 96,
             "tris": 91254
           },
-          "drawCalls": 94,
-          "frameTris": 137228,
-          "geometries": 118,
-          "textures": 54,
+          "drawCalls": 192,
+          "frameTris": 181712,
+          "geometries": 121,
+          "textures": 104,
           "colliders": 72,
           "occluders": 27,
           "lights": "day",
-          "frameMs": 25.5,
-          "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 620 (0x00005917) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+          "frameMs": 16.7,
+          "gpu": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4, Unspecified Version)"
         }
       },
       "reach": {
@@ -1050,13 +1054,16 @@
         }
       },
       "camera": {},
-      "seconds": 79
+      "seconds": 52
     },
     {
       "config": "mobile-ar",
       "pass": true,
       "failures": [],
-      "warnings": [],
+      "warnings": [
+        "no functions on static host: http://127.0.0.1:49790/.netlify/functions/experts?view=reviews",
+        "no functions on static host: http://127.0.0.1:49790/.netlify/functions/experts?view=reviews"
+      ],
       "rulingsChecked": 18,
       "stations": [
         "work on entry: samir @ coffee_machine",
@@ -1125,15 +1132,15 @@
             "meshes": 52,
             "tris": 40580
           },
-          "drawCalls": 84,
-          "frameTris": 58936,
-          "geometries": 71,
-          "textures": 20,
+          "drawCalls": 83,
+          "frameTris": 58900,
+          "geometries": 72,
+          "textures": 18,
           "colliders": 34,
           "occluders": 10,
           "lights": "day",
-          "frameMs": 26.1,
-          "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 620 (0x00005917) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+          "frameMs": 16.7,
+          "gpu": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4, Unspecified Version)"
         },
         "work": {
           "pointLights": 0,
@@ -1149,13 +1156,13 @@
           },
           "drawCalls": 42,
           "frameTris": 38176,
-          "geometries": 44,
-          "textures": 12,
+          "geometries": 45,
+          "textures": 11,
           "colliders": 43,
           "occluders": 14,
           "lights": "day",
-          "frameMs": 16.6,
-          "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 620 (0x00005917) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+          "frameMs": 16.7,
+          "gpu": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4, Unspecified Version)"
         },
         "school": {
           "pointLights": 3,
@@ -1171,13 +1178,13 @@
           },
           "drawCalls": 168,
           "frameTris": 72444,
-          "geometries": 75,
-          "textures": 39,
+          "geometries": 81,
+          "textures": 42,
           "colliders": 63,
           "occluders": 32,
           "lights": "evening",
-          "frameMs": 17.8,
-          "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 620 (0x00005917) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+          "frameMs": 16.7,
+          "gpu": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4, Unspecified Version)"
         },
         "street": {
           "pointLights": 3,
@@ -1193,13 +1200,13 @@
           },
           "drawCalls": 90,
           "frameTris": 49914,
-          "geometries": 90,
-          "textures": 37,
+          "geometries": 95,
+          "textures": 45,
           "colliders": 45,
           "occluders": 43,
           "lights": "night",
-          "frameMs": 18.9,
-          "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 620 (0x00005917) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+          "frameMs": 16.7,
+          "gpu": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4, Unspecified Version)"
         },
         "public_events": {
           "pointLights": 3,
@@ -1215,13 +1222,13 @@
           },
           "drawCalls": 89,
           "frameTris": 159410,
-          "geometries": 104,
-          "textures": 33,
+          "geometries": 110,
+          "textures": 46,
           "colliders": 72,
           "occluders": 34,
           "lights": "evening",
-          "frameMs": 17.2,
-          "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 620 (0x00005917) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+          "frameMs": 16.7,
+          "gpu": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4, Unspecified Version)"
         },
         "private_events": {
           "pointLights": 2,
@@ -1237,13 +1244,13 @@
           },
           "drawCalls": 88,
           "frameTris": 127026,
-          "geometries": 96,
-          "textures": 47,
+          "geometries": 102,
+          "textures": 64,
           "colliders": 72,
           "occluders": 27,
           "lights": "day",
-          "frameMs": 17.8,
-          "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 620 (0x00005917) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+          "frameMs": 16.7,
+          "gpu": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4, Unspecified Version)"
         }
       },
       "reach": {
@@ -1573,13 +1580,16 @@
         }
       },
       "camera": {},
-      "seconds": 122
+      "seconds": 66
     },
     {
       "config": "mobile-en",
       "pass": true,
       "failures": [],
-      "warnings": [],
+      "warnings": [
+        "no functions on static host: http://127.0.0.1:49790/.netlify/functions/experts?view=reviews",
+        "no functions on static host: http://127.0.0.1:49790/.netlify/functions/experts?view=reviews"
+      ],
       "rulingsChecked": 18,
       "stations": [
         "work on entry: samir @ coffee_machine",
@@ -1650,13 +1660,13 @@
           },
           "drawCalls": 84,
           "frameTris": 58936,
-          "geometries": 71,
-          "textures": 20,
+          "geometries": 72,
+          "textures": 18,
           "colliders": 34,
           "occluders": 10,
           "lights": "day",
-          "frameMs": 16.6,
-          "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 620 (0x00005917) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+          "frameMs": 16.7,
+          "gpu": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4, Unspecified Version)"
         },
         "work": {
           "pointLights": 0,
@@ -1672,13 +1682,13 @@
           },
           "drawCalls": 42,
           "frameTris": 38176,
-          "geometries": 44,
-          "textures": 12,
+          "geometries": 45,
+          "textures": 11,
           "colliders": 43,
           "occluders": 14,
           "lights": "day",
           "frameMs": 16.7,
-          "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 620 (0x00005917) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+          "gpu": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4, Unspecified Version)"
         },
         "school": {
           "pointLights": 3,
@@ -1694,13 +1704,13 @@
           },
           "drawCalls": 168,
           "frameTris": 72444,
-          "geometries": 75,
-          "textures": 39,
+          "geometries": 81,
+          "textures": 42,
           "colliders": 63,
           "occluders": 32,
           "lights": "evening",
           "frameMs": 16.7,
-          "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 620 (0x00005917) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+          "gpu": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4, Unspecified Version)"
         },
         "street": {
           "pointLights": 3,
@@ -1716,13 +1726,13 @@
           },
           "drawCalls": 90,
           "frameTris": 49914,
-          "geometries": 90,
-          "textures": 37,
+          "geometries": 95,
+          "textures": 45,
           "colliders": 45,
           "occluders": 43,
           "lights": "night",
-          "frameMs": 16.6,
-          "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 620 (0x00005917) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+          "frameMs": 16.7,
+          "gpu": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4, Unspecified Version)"
         },
         "public_events": {
           "pointLights": 3,
@@ -1738,13 +1748,13 @@
           },
           "drawCalls": 89,
           "frameTris": 159410,
-          "geometries": 104,
-          "textures": 33,
+          "geometries": 110,
+          "textures": 46,
           "colliders": 72,
           "occluders": 34,
           "lights": "evening",
           "frameMs": 16.7,
-          "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 620 (0x00005917) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+          "gpu": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4, Unspecified Version)"
         },
         "private_events": {
           "pointLights": 2,
@@ -1760,13 +1770,13 @@
           },
           "drawCalls": 88,
           "frameTris": 127026,
-          "geometries": 96,
-          "textures": 47,
+          "geometries": 102,
+          "textures": 64,
           "colliders": 72,
           "occluders": 27,
           "lights": "day",
-          "frameMs": 16.6,
-          "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 620 (0x00005917) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+          "frameMs": 16.7,
+          "gpu": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4, Unspecified Version)"
         }
       },
       "reach": {
@@ -2096,7 +2106,7 @@
         }
       },
       "camera": {},
-      "seconds": 70
+      "seconds": 67
     }
   ]
 }

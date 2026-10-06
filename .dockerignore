@@ -11,3 +11,4 @@ scratch
 tools/audit/.cache
 *.log
 .DS_Store
+data

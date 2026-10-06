@@ -1,7 +1,7 @@
 // Full-screen and modal screens: start, intro/disclaimer, location intro/outro, exit confirm, menu, summary.
 import { h, link } from '../dom.js';
 import { t, tr, getLang, setLang, STRINGS } from '../i18n.js';
-import { LOCATIONS, LOCATION_TITLES, CATALOG, CHECK_BONUS, THEMES, TOPICS, DAY_TYPES } from '../config.js';
+import { LOCATIONS, LOCATION_TITLES, CATALOG, CHECK_BONUS, THEMES, TOPICS, DAY_TYPES, PLACES } from '../config.js';
 import { getScript, getRuling, allSituations, uiStrings, locationOrder } from '../content.js';
 import { progress, isDone, totalScore, hasSave, sitRecord, getPlan, getPre } from '../progress.js';
 import { applyAiUi } from './aiStrings.js';
@@ -64,6 +64,13 @@ export function startScreen() {
               hasSave() ? btn(t('continue'), () => { m.close(); resolve({ lang: getLang(), mode: 'continue' }); }, 'primary big', { 'data-autofocus': true }) : null,
               btn(t('newGame'), () => { m.close(); resolve({ lang: getLang(), mode: 'new', context: chosen() }); }, hasSave() ? 'ghost big' : 'primary big', hasSave() ? {} : { 'data-autofocus': true })),
             contextPicker(ctx, () => { m.close(); resolve({ lang: getLang(), mode: 'new', context: null }); })), 2),
+          h('div', { class: 'start-extras' },
+            // the scientific package asks for the root before the branches: tawhid first, then everyday rulings
+            h('button', { type: 'button', class: 'btn ghost start-basics', onclick: () => {
+              const id = (uiStrings && uiStrings.start && uiStrings.start.basics_item) || 'qa.basics.tawhid';
+              import('./askPanel.js').then((mod) => mod.openAskPanel({ itemId: id })).catch((e) => console.error('[start] basics', e));
+            } }, STRINGS.startBasics ? t('startBasics') : (getLang() === 'ar' ? 'ابدأ بالأساس: التوحيد' : 'Start with the basics: Tawhid')),
+            h('a', { class: 'start-study-link', href: '?study=1' }, getLang() === 'ar' ? 'شارك في تجربة قصيرة (٥ دقائق)' : 'Join a 5-minute study')),
           h('p', { class: 'fine' }, statusBadge('ai_draft')),
           h('button', { type: 'button', class: 'credits-link', onclick: () => creditsScreen() }, t('creditsTitle')))
       ]);
@@ -164,6 +171,9 @@ export function menuScreen(handlers) {
         btn(t('language'), () => { handlers.onLang(); render(); }, 'ghost', { lang: getLang() === 'ar' ? 'en' : 'ar' })),
       h('h3', {}, t('locations')),
       h('ul', { class: 'loc-list' }, rows),
+      h('h3', {}, t('placesTitle')),
+      h('ul', { class: 'loc-list' }, PLACES.map((loc) => h('li', {},
+        btn(h('span', { class: 'loc-row' }, h('span', {}, tr(LOCATION_TITLES[loc]))), () => { m.close(); handlers.onJump(loc); }, `loc-btn${progress().location === loc ? ' current' : ''}`)))),
       h('div', { class: 'stack' },
         btn(allSituations().every((s) => isDone(s.key)) ? t('summaryTitle') : t('progressTitle'), () => { m.close(); handlers.onSummary(); }, 'ghost'),
         btn(t('creditsTitle'), () => creditsScreen(), 'ghost credits-btn'),

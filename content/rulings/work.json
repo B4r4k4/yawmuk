@@ -12,6 +12,10 @@
     },
     "verdict": "depends",
     "content_level": "C",
+    "verdict_scope": {
+      "ar": "تقديم الخمر وسقيها وبيعها وحملها لمن يشربها محرم بالنص عند الجمهور. أما العمل غير المباشر (كبرمجة تطبيق لمصنع جعة) فداخل في مسألة «الإعانة على المعصية» وفيه خلاف معاصر؛ والحكم فيه يتوقف على تفاصيل العمل، فلا نرجّح فيه لحالة بعينها.",
+      "en": "Serving, pouring, selling or carrying alcohol for someone who will drink it is prohibited by the texts according to the majority. Indirect work (such as coding an app for a brewery) falls under \"aiding wrongdoing\", on which contemporary scholars differ; the answer depends on the details of the job, so we do not decide it for an individual case."
+    },
     "summary": {
       "ar": "تقديم الخمر وسقيها وبيعها وحملها لمن يشربها محرم بالنص، فالنبي ﷺ لعن ساقيها وحاملها وبائعها وآكل ثمنها، وهذا قول الجمهور، وخالف أبو حنيفة في الحمل بأجرة لأن المعصية تقع بفعل فاعل مختار. أما العمل غير المباشر كبرمجة تطبيق لمصنع جعة فداخل في مسألة «الإعانة على المعصية»، وفيه خلاف معاصر بين من يمنعه ومن يجيز التسبب البعيد مع الكراهة. والأسلم تركه إن وُجد بديل.",
       "en": "Serving, pouring, selling, or carrying alcohol for someone to drink is prohibited by text: the Prophet ﷺ cursed its server, carrier, seller and the one who consumes its price. This is the majority view; Abu Hanifa differed on paid carrying, since the sin happens through another person's free choice. Indirect work, such as building an app for a brewery, falls under \"assisting in sin\", on which contemporary scholars differ: some prohibit it, others allow remote causation with dislike. The safer course is to avoid it if an alternative exists."
@@ -200,6 +204,10 @@
     },
     "verdict": "depends",
     "content_level": "C",
+    "verdict_scope": {
+      "ar": "الاشتراك في 401(k) جائز عند كثير من المعاصرين، ومنهم مفتو مجمع فقهاء الشريعة بأمريكا (الفتويان 1871 و1774)، بشرط اختيار استثمارات مباحة؛ والسندات والودائع بفائدة محرمة. وفي أسهم الشركات المباحة النشاط التي تتعامل بالربا أحياناً خلاف: الأصل عند مجمع الفقه الإسلامي الدولي حرمتها (القرار 63 (1/7))، وأجازها بضوابط نسبية مع التطهير معيار AAOIFI الشرعي رقم 21.",
+      "en": "Joining a 401(k) is permissible according to many contemporary scholars, including AMJA's muftis (fatwas 1871 and 1774), provided permissible investments are chosen; interest-bearing bonds and deposits are prohibited. Shares in companies with permissible core business that sometimes deal in interest are disputed: the International Islamic Fiqh Academy's default is prohibition (Resolution 63 (1/7)), while AAOIFI Shari'ah Standard No. 21 allows them within ratio limits, with purification."
+    },
     "consensus_sources": [
       "الموسوعة الفقهية (الدرر السنية)، كتاب الربا، حكم الربا: https://dorar.net/feqhia/7595 — نقل الإجماع على تحريم الربا عن ابن تيمية (مجموع الفتاوى 29/418) والزيلعي (تبيين الحقائق 4/85) والشوكاني (نيل الأوطار 5/225) والصنعاني (سبل السلام 3/36)"
     ],

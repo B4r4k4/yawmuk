@@ -12,6 +12,10 @@
     },
     "verdict": "depends",
     "content_level": "C",
+    "verdict_scope": {
+      "ar": "المهر حق واجب للزوجة، والوليمة سنة مؤكدة عند الجمهور، والدف مشروع في إعلان النكاح. أما المعازف سوى الدف فقول المذاهب الأربعة تحريمها، وأجازها بشروط ابن حزم وبعض المتأخرين ودار الإفتاء المصرية (الفتوى 11981)، وهو قول الأقل.",
+      "en": "The mahr is the bride's due, the wedding feast is a confirmed Sunnah according to the majority, and the daff is permitted to announce a marriage. Other musical instruments are prohibited according to the four schools; Ibn Hazm, some later scholars and Egypt's Dar al-Ifta (fatwa 11981) allowed them with conditions, which is the minority view."
+    },
     "summary": {
       "ar": "المهر حق واجب للزوجة، والوليمة سنة مؤكدة عند الجمهور، وإجابة دعوة وليمة العرس واجبة عند الجمهور ما لم يكن فيها منكر لا يُقدر على تغييره. وإعلان النكاح بالدف والغناء المباح مشروع بالحديث الحسن «فصل ما بين الحلال والحرام الدف والصوت»، أما المعازف الأخرى فمحرّمة عند المذاهب الأربعة، وأجازها بشروط ابن حزم وبعض المتأخرين ودار الإفتاء المصرية.",
       "en": "The mahr is the bride's obligatory right, the walima is an emphasized sunnah per the majority, and accepting a wedding-feast invitation is obligatory per the majority unless it contains wrongdoing one cannot change. Announcing the marriage with the daff and permissible singing is established by the hasan hadith \"what distinguishes the lawful from the unlawful is the daff and the voice\", while other instruments are prohibited in the four schools and permitted under conditions by Ibn Hazm, some later scholars and Egypt's Dar al-Ifta."
@@ -422,6 +426,10 @@
     },
     "verdict": "depends",
     "content_level": "C",
+    "verdict_scope": {
+      "ar": "قبول هدية غير المسلم جائز في الأصل ما لم تكن مما يحرم الانتفاع به. أما حضور حفل عيد الميلاد فمسألة خلافية بين المعاصرين: منعه مجمع فقهاء الشريعة بأمريكا (AMJA، الفتوى 22801)، وأجازه آخرون بوصفه عادة اجتماعية لا عبادة. نعرض القولين ولا نرجّح بينهما.",
+      "en": "Accepting a non-Muslim's gift is permissible in principle unless it is something prohibited to use. Attending a birthday party is disputed among contemporary scholars: AMJA (fatwa 22801) prohibited it, while others allowed it as a social custom rather than worship. We present both views without choosing between them."
+    },
     "summary": {
       "ar": "قبول هدية غير المسلم جائز، فقد قبل النبي ﷺ هدايا أكيدر دومة وملك أيلة واليهودية، وورد النهي عن «زبد المشركين» في حديث جمع بينه العلماء بالنسخ أو بالتفريق بحسب المصلحة. أما ما يحرم الانتفاع به كالخمر فلا يُقبل ولا يُهدى لغيره، ويُعتذر عنه بلطف. وحضور حفل عيد ميلاد طفل الجار مختلف فيه: أجازه بعض المعاصرين باعتباره عادة اجتماعية لا عبادة، ومنعه آخرون كفتوى AMJA 22801.",
       "en": "Accepting a non-Muslim's gift is permissible: the Prophet ﷺ accepted gifts from Ukaydir of Duma, the king of Ayla and a Jewish woman, while a hadith forbidding \"gifts of polytheists\" is reconciled by scholars as abrogated or as depending on interest. Anything whose use is prohibited, like wine, is not accepted or passed on, and is declined gently. Attending a neighbor's child's birthday party is disputed: some contemporary scholars allow it as a social custom rather than worship, others forbid it, e.g. AMJA fatwa 22801."

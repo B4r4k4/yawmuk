@@ -4,6 +4,7 @@
 // question, must answer only from them, and must abstain or refer otherwise. The answer is validated here and
 // again in the browser. Nothing is stored or logged (the question is never written to the logs).
 import { validateAnswer, isPersonalFatwa, ASK_MAX } from '../../src/engine/aiCore.js';
+import { looksLikeInjection, judgesPeople, asksForEvidence } from '../../src/features/guide/guideCore.js';
 import { structuredCall, readBody, json } from '../lib/claude.mjs';
 
 const SYSTEM = `You answer a newcomer's question inside «Yawmuk», an educational game about how Muslims in the USA handle everyday situations.
@@ -14,7 +15,8 @@ Rules:
 3. If the question asks about the player's own personal case, or asks for a fatwa or a personal ruling, set "refer" to true and only say that a trusted scholar or local imam should answer it.
 4. If the passages do not contain enough to answer, set "abstain" to true and leave "answer" empty.
 5. "used_ids" must list the ids of the passages you relied on, and only ids from the passages.
-6. Write the answer in the requested language, in 1 to 4 short, plain, respectful sentences (at most 600 characters). It is general information, not a fatwa.`;
+6. If the player asks for a verse, hadith or other evidence that is not in the passages, say plainly that no matching evidence was found in the reviewed sources available here, then give only what the passages say.
+7. Write the answer in the requested language, in 1 to 4 short, plain, respectful sentences (at most 600 characters). It is general information, not a fatwa.`;
 
 export default async (req) => {
   const body = await readBody(req);
@@ -28,6 +30,8 @@ export default async (req) => {
   const refuse = { answer: null, used_ids: [], refer: true, abstain: true };
   if (!question || !passages.length) return json(refuse);
   if (isPersonalFatwa(question)) return json(refuse); // personal case -> fixed referral, the model is not called
+  // judging people/groups, steering attempts and "give me a hadith that proves…" never reach the model
+  if (judgesPeople(question) || looksLikeInjection(question) || asksForEvidence(question)) return json(refuse);
 
   const ids = passages.map((p) => p.id);
   const schema = {
@@ -43,7 +47,8 @@ export default async (req) => {
   };
   const user = `PASSAGES:\n${passages.map((p) => `<passage id="${p.id}">\n${p.text.replace(/<\/?passage[^>]*>/gi, '')}\n</passage>`).join('\n')}\n\nREQUESTED LANGUAGE: ${lang === 'ar' ? 'Arabic' : 'English'}\n\nQUESTION:\n<question>${question.replace(/<\/?question>/gi, '')}</question>`;
   const r = await structuredCall({ system: SYSTEM, user, schema, maxTokens: 1500, timeout: 9000 });
-  if (r.error) return json({ error: r.error }, r.error === 'no_key' ? 503 : 502);
+  if (r.error === 'no_key') return json({ error: 'no_key', unavailable: true }); // 200: the browser falls back quietly
+  if (r.error) return json({ error: r.error }, 502);
 
   const v = validateAnswer(r.data, ids, lang);
   if (v.abstain) return json({ ...refuse, refer: true });
