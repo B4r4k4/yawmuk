@@ -26,7 +26,7 @@ describe('judge documentation', () => {
   test('README links are filled (or still show the integrator marker), never stale placeholders', () => {
     for (const [m, label] of [['{{LIVE_URL}}', 'Live demo'], ['{{VIDEO_URL}}', 'Video'], ['{{DECK_URL}}', 'Deck']]) {
       const row = README.split('\n').find((l) => l.includes(label)) || '';
-      assert.ok(row.includes(m) || /https:\/\/\S+/.test(row), `${label}: marker or a real https link`);
+      assert.ok(row.includes(m) || /https:\/\/\S+/.test(row) || /submission form/.test(row), `${label}: marker, a real https link, or 'attached to the submission form'`);
     }
     assert.doesNotMatch(README, /_TBD>|<LIVE_URL|<VIDEO_URL|<DECK_TBD/);
   });

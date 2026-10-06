@@ -8,8 +8,8 @@
 |---|---|
 | 🎮 **التجربة المباشرة · Live demo** | https://yawmuk.world (احتياطي · backup: https://yawmuk-851682870274.us-central1.run.app) |
 | 🏠 **صفحة التعريف · Landing page** | https://yawmuk.world/landing |
-| 🎬 **الفيديو (أقل من دقيقتين) · Video** | {{VIDEO_URL}} |
-| 📑 **العرض التقديمي · Deck (PDF)** | {{DECK_URL}} |
+| 🎬 **الفيديو (أقل من دقيقتين) · Video** | مرفق في نموذج التسليم · attached to the submission form |
+| 📑 **العرض التقديمي · Deck (PDF)** | https://github.com/B4r4k4/yawmuk/blob/main/docs/deck/Yawmuk_Final_Deck.pdf |
 | 💻 **المستودع · Repo** | https://github.com/B4r4k4/yawmuk |
 | 🧭 **المسار · Track** | **03: التجارب التفاعلية (Interactive experiences)** |
 

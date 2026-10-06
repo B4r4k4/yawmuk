@@ -2,7 +2,7 @@
   "_help": "Fill before export. Empty = shown as «قيد القياس» (text) or «—» (KPI). Never type a number you did not measure. --auto fills TESTS_* / SOURCES_* / RESULTS_DATE.",
   "tokens": {
     "LIVE_URL": "https://yawmuk.world",
-    "VIDEO_URL": "",
+    "VIDEO_URL": "الفيديو: في نموذج التسليم",
     "EVAL_PASS": "98%",
     "EVAL_COMPARISON": "النموذج نفسه بلا تصميم «يومك»: 42/72 إجابة تنسب نصاً شرعياً بلا سجل قابل للتحقق، و0/72 تستشهد بمصدر معتمد؛ «يومك»: 0 اختلاق و0 فتوى شخصية",
     "STUDY_N": "",
