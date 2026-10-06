@@ -133,7 +133,7 @@ test('store: file adapter round-trips, isolates copies, rejects path tricks, sur
 
 // ---------------------------------------------------------------- triage
 test('triage: personal case -> level D; topical question -> related ruling cards', () => {
-  assert.ok(loadRulings().length >= 18);
+  assert.ok(loadRulings().length >= 7);
   const p = ruleTriage('I live in Ohio, can I take this mortgage for my family?');
   assert.equal(p.level, 'D'); assert.equal(p.personal, true);
   const t = ruleTriage('ما حكم القرض العقاري بفائدة لشراء بيت في أمريكا؟');

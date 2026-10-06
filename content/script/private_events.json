@@ -1,315 +1,140 @@
 {
   "location": "private_events",
   "title": {
-    "ar": "السبت — الجيران والعرس",
-    "en": "Saturday — Neighbors and a Wedding"
+    "ar": "السبت — بيت الجيران",
+    "en": "Saturday — The Neighbours' Home"
   },
   "time_of_day": "10:00",
   "intro": {
-    "ar": "شارع آدم السكني المغلق صباح السبت: بيوت خشبية بشرفات، أشجار عارية، وثلج قديم على الحواف. على باب بيت آل هاريس إكليل أبيض — والتر رحل يوم الخميس. في الجهة المقابلة بالونات خضراء على سياج آل غارسيا: ليو يتم السابعة. وفي آخر الشارع، قاعة المجتمع تتزين لعرس يوسف ومريم الليلة.",
-    "en": "Adam's cul-de-sac on Saturday morning: wooden houses with porches, bare trees, old snow along the edges. A white wreath hangs on the Harris door — Walter passed away Thursday. Across the street, green balloons on the Garcias' fence: Leo turns seven. And at the end of the street, the community hall is getting ready for Yusuf and Mariam's wedding tonight."
+    "ar": "صباحُ السبت في حيّ السلام. الشارع السكنيّ هادئ، وعلى الحواف بقايا ثلج. في أحد بيوت الجيران يعيش العمّ صالح وابنته سَلْمى. واليوم يطرق آدم بابهم لأمرٍ مهمّ.",
+    "en": "Saturday morning in Al-Salam neighbourhood. The residential street is quiet, with old snow along the edges. In one of the neighbours' homes live Uncle Saleh and his daughter Salma. Today Adam knocks on their door for something important."
   },
   "situations": [
     {
-      "ruling_id": "private_events.neighbor_funeral",
+      "ruling_id": "private_events.proposal",
       "hotspot": "harris_porch",
       "npc": {
         "id": "omar",
         "name": {
-          "ar": "عمر",
-          "en": "Omar"
+          "ar": "العمّ صالح",
+          "en": "Uncle Saleh"
         },
         "role": {
-          "ar": "جار آدم وصديقه المسلم",
-          "en": "Adam's neighbor and Muslim friend"
+          "ar": "والد سَلْمى وجار آدم",
+          "en": "Salma's father and Adam's neighbour"
         }
       },
       "setup": {
-        "ar": "آدم وعمر وهودان يصعدون درج شرفة مارغريت. هودان تحمل صينية «سمبوسة» ودجاج بالأرز، وعمر يحمل المجرفة: ممرها تحت الثلج منذ الخميس. مارغريت، بشال رمادي، تبكي وتبتسم حين تراهم.",
-        "en": "Adam, Omar, and Hodan climb Margaret's porch steps. Hodan's carrying a tray of sambusas and chicken and rice; Omar's got the shovel — her driveway's been snowed in since Thursday. Margaret, wrapped in a gray shawl, cries and smiles when she sees them."
+        "ar": "أمسِ قال آدم لجارته سَلْمى إنه يريد الزواج منها. أجابته بهدوء: إن كنتَ جادًّا فكلِّمْ أبي. وأضافت بوضوح: أنا لا أتزوّج إلا مسلمًا. اليوم يقف آدم عند باب أبيها، ومعه علبة صغيرة فيها خاتم، وضعها على الطاولة قرب الباب.",
+        "en": "Yesterday Adam told his neighbour Salma that he wished to marry her. She answered calmly: if you are serious, speak to my father. Then she added clearly: I will only marry a Muslim. Today Adam stands at her father's door. He has brought a small box with a ring, and set it on the table by the door."
       },
       "dialogue": [
         {
           "speaker": "omar",
-          "ar": "سيدة هاريس، نحن حزينون جداً. والتر كان أطيب جار عرفناه — أول من رحّب بنا حين انتقلنا. سأجرف الممر كل صباح، ولا تطبخي شيئاً هذا الأسبوع.",
-          "en": "Mrs. Harris, we're so sorry. Walter was the kindest neighbor we've ever had — the first to welcome us when we moved in. I'll shovel the driveway every morning, and don't you cook a thing this week."
-        },
-        {
-          "speaker": "narrator",
-          "ar": "مارغريت تمسك يد هودان: «التأبين يوم الثلاثاء. لا أعرف إن كان مسموحاً لكم أن تأتوا... لكن وجودكم سيعني لي الكثير». ثم تدخل لتضع الطعام.",
-          "en": "Margaret squeezes Hodan's hand: 'The memorial's Tuesday. I don't know if you're allowed to come... but it would mean so much to have you.' Then she goes inside to put the food away."
-        },
-        {
-          "speaker": "narrator",
-          "ar": "يبقى آدم وعمر على الشرفة، والبخار يخرج من أنفاسهما في البرد.",
-          "en": "Adam and Omar stay out on the porch, their breath fogging in the cold."
-        }
-      ],
-      "choices": [
-        {
-          "id": "a",
-          "label": {
-            "ar": "«كلامك أسعدها كثيراً. هل يمكنني أن أسأل: كيف ينظر الإسلام إلى مواساة جار غير مسلم؟ وهل ستأتي الثلاثاء؟»",
-            "en": "'What you said meant a lot to her. Can I ask — how does Islam see comforting a non-Muslim neighbor? And will you come Tuesday?'"
-          },
-          "quality": "best",
-          "consequence": {
-            "ar": "قال عمر: «الإحسان إلى الجار ومساعدته في أوقاته الصعبة من صميم ديننا، مسلماً كان أو غير مسلم. أما عبارات التعزية وحضور التأبين فللعلماء فيها تفصيل وخلاف، فسأسأل الإمام حمزة. وإن حضرت فسأكون بجانب مارغريت وعائلتها باحترام، دون أن أشارك في الصلوات والطقوس الدينية». قال آدم: «سأجلس بجانبك». يوم الثلاثاء، أمسكت مارغريت يد عمر عند الباب طويلاً.",
-            "en": "Omar said, 'Being good to your neighbor and helping them through hard times is at the heart of our faith — Muslim or not. On condolence wording and attending the memorial, scholars go into detail and differ, so I'll ask Imam Hamza. If I go, I'll be there for Margaret and her family respectfully, without joining the prayers and religious rites.' Adam said, 'I'll sit with you.' On Tuesday, Margaret held Omar's hand at the door for a long time."
-          },
-          "points": 10
-        },
-        {
-          "id": "b",
-          "label": {
-            "ar": "لا أفتح الموضوع، وأساعده في جرف الثلج.",
-            "en": "Don't bring it up, and help him shovel."
-          },
-          "quality": "acceptable",
-          "consequence": {
-            "ar": "جرف الصديقان الممر في نصف ساعة، ومارغريت تشكرهما من النافذة. عمل طيب، لكن سؤال مارغريت بقي بلا جواب، ولم يعرف آدم كيف يرى صديقه هذا الموقف.",
-            "en": "The two cleared the driveway in half an hour, Margaret waving thanks from the window. A kind thing to do — but Margaret's question went unanswered, and Adam never learned how his friend saw it."
-          },
-          "points": 5
-        },
-        {
-          "id": "c",
-          "label": {
-            "ar": "«لا تقلق، سأخبرها أن المسلمين لا يُسمح لهم بحضور جنازات غير المسلمين، حتى لا تنتظرك».",
-            "en": "'Don't worry, I'll tell her Muslims aren't allowed at non-Muslim funerals, so she won't expect you.'"
-          },
-          "quality": "wrong",
-          "consequence": {
-            "ar": "رفع عمر حاجبيه: «انتظر — لم أقل ذلك! دعني أتكلم عن نفسي». كاد آدم أن ينقل لمارغريت صورة خاطئة عن جارها الذي يحبها. التحدث باسم صديق عن دينه دون أن تسأله يضعه في موقف لم يختره.",
-            "en": "Omar raised his eyebrows: 'Wait — I never said that! Let me speak for myself.' Adam almost gave Margaret the wrong idea about a neighbor who cares about her. Speaking for a friend's faith without asking puts him in a spot he didn't choose."
-          },
-          "points": 0
-        }
-      ],
-      "check_question": {
-        "q": {
-          "ar": "ما الذي يتفق عليه علماء المسلمين في التعامل مع جار غير مسلم فقد قريباً له؟",
-          "en": "What do Muslim scholars agree on regarding a non-Muslim neighbor who's lost a loved one?"
-        },
-        "options": [
-          {
-            "ar": "الإحسان إليه ومساعدته عملياً من حق الجوار، وتفاصيل التعزية وحضور الجنازة فيها خلاف يُسأل عنه عالم",
-            "en": "Kindness and practical help are part of neighborliness; the details of condolences and attending the funeral are debated, so a scholar is asked",
-            "correct": true
-          },
-          {
-            "ar": "لا علاقة للمسلم بأحزان جيرانه غير المسلمين",
-            "en": "A Muslim has nothing to do with non-Muslim neighbors' grief",
-            "correct": false
-          },
-          {
-            "ar": "يجب على المسلم المشاركة في كل طقوس الجنازة الدينية",
-            "en": "A Muslim must join every religious funeral rite",
-            "correct": false
-          }
-        ]
-      }
-    },
-    {
-      "ruling_id": "private_events.gifts_birthday",
-      "hotspot": "garcia_yard",
-      "npc": {
-        "id": "maria",
-        "name": {
-          "ar": "ماريا غارسيا",
-          "en": "Maria Garcia"
-        },
-        "role": {
-          "ar": "الجارة المقابلة، أم ليو",
-          "en": "Neighbor across the street, Leo's mom"
-        }
-      },
-      "setup": {
-        "ar": "ظهراً، فناء آل غارسيا: قلعة نطاطة على شكل ديناصور، كعكة خضراء، وأطفال يركضون. إدريس ابن عمر مدعو. على الطاولة: بيتزا بالببروني، كيس حلوى جيلاتينية، وسلة شكر أنيقة لعائلة عمر لأنه جرف ممرها طوال الشتاء — فيها شوكولاتة ووشاح... وزجاجة نبيذ.",
-        "en": "Noon in the Garcias' yard: a dinosaur bounce house, a green cake, kids running everywhere. Omar's son Idris is invited. On the table: pepperoni pizza, a bag of gummy candy, and a pretty thank-you basket for Omar's family, since he's shoveled her driveway all winter — chocolates, a scarf... and a bottle of wine."
-      },
-      "dialogue": [
-        {
-          "speaker": "maria",
-          "ar": "آدم، تعال بسرعة! عائلة عمر ستصل بعد عشر دقائق. هل سيحضرون عيد ميلاد أصلاً؟ وهل يقبلون هدية من عائلة كاثوليكية؟ لا أريد أن أخطئ.",
-          "en": "Adam, quick! Omar's family will be here in ten minutes. Do they even do birthday parties? And will they accept a gift from a Catholic family? I don't want to mess this up."
-        },
-        {
-          "speaker": "maria",
-          "ar": "والسلة... النبيذ من وادي نابا، اخترته بعناية.",
-          "en": "And the basket... I picked that wine from Napa really carefully."
-        },
-        {
-          "speaker": "narrator",
-          "ar": "ليو يركض نحوهما بقبعة ديناصور: «هل سيأتي إدريس؟ وعدني أن نلعب في القلعة!».",
-          "en": "Leo runs over in a dinosaur hat: 'Is Idris coming? He promised we'd play in the castle!'"
-        }
-      ],
-      "choices": [
-        {
-          "id": "a",
-          "label": {
-            "ar": "«المسلمون لا يحتفلون بأعياد الميلاد ولا يقبلون هدايا من غير المسلمين. الأفضل ألا تعطيهم شيئاً».",
-            "en": "'Muslims don't do birthdays or take gifts from non-Muslims. Better not to give them anything.'"
-          },
-          "quality": "wrong",
-          "consequence": {
-            "ar": "خبأت ماريا السلة حزينة. بعد ساعة جاءت هودان بهدية لليو — ديناصور محشو — وشكرت ماريا على الدعوة. صحيح أن بعض العائلات المسلمة لا تحضر حفلات أعياد الميلاد لأن العلماء اختلفوا فيها، لكن عائلة عمر جاءت، والهدية من الجار مرحَّب بها عند المسلمين. التعميم أفقد ماريا فرصة أن تشكر جارها.",
-            "en": "Maria sadly tucked the basket away. An hour later Hodan arrived with a gift for Leo — a stuffed dinosaur — and thanked Maria for the invite. It's true some Muslim families skip birthday parties, since scholars differ on them, but Omar's family came — and gifts from neighbors are welcome among Muslims. The generalization cost Maria her chance to thank her neighbor."
-          },
-          "points": 0
-        },
-        {
-          "id": "b",
-          "label": {
-            "ar": "«فقط بدّلي النبيذ بشوكولاتة إضافية».",
-            "en": "'Just swap the wine for extra chocolate.'"
-          },
-          "quality": "acceptable",
-          "consequence": {
-            "ar": "نصيحة صحيحة، وفرحت هودان بالسلة. لكن إدريس وقف حائراً أمام البيتزا بالببروني، وأكل الكعكة فقط. نصف الصورة لم يكفِ.",
-            "en": "Good advice, and Hodan loved the basket. But Idris stood confused in front of the pepperoni pizza and only had cake. Half the picture wasn't quite enough."
-          },
-          "points": 5
-        },
-        {
-          "id": "c",
-          "label": {
-            "ar": "«عمر وافق على الحضور — المسلمون يختلفون في حفلات أعياد الميلاد، وعائلته تحضر — وسيحبون الهدية! لكنهم لا يتناولون الخمر ولا لحم الخنزير، ويتحققون من الجيلاتين. لنستبدل النبيذ ونجهّز لإدريس بيتزا بالجبن — والأفضل: اسألي هودان مباشرة، ستقدّر ذلك».",
-            "en": "'Omar said they're coming — Muslims differ on birthday parties, and his family does come — and they'll love the gift! But they don't have alcohol or pork, and they check gelatin. Let's swap the wine and get Idris a cheese pizza — and honestly, just ask Hodan, she'll appreciate it.'"
-          },
-          "quality": "best",
-          "consequence": {
-            "ar": "استبدلت ماريا النبيذ بعلبة قهوة، وطلبت بيتزا بالجبن. حين وصلت هودان سألتها ماريا عن الحلوى، فضحكت هودان: «سؤالك أجمل هدية!». قبلت السلة بفرح، وفي العيد القادم أحضرت لآل غارسيا صينية حلوى صومالية.",
-            "en": "Maria swapped the wine for a bag of coffee and ordered a cheese pizza. When Hodan arrived, Maria asked her about the candy, and Hodan laughed: 'You asking is the best gift!' She accepted the basket happily — and next Eid she brought the Garcias a tray of Somali sweets."
-          },
-          "points": 10
-        }
-      ],
-      "check_question": {
-        "q": {
-          "ar": "ما الأصل في قبول المسلم هدية من جاره غير المسلم؟",
-          "en": "What's the general principle on a Muslim accepting a gift from a non-Muslim neighbor?"
-        },
-        "options": [
-          {
-            "ar": "يرفض كل هدايا غير المسلمين",
-            "en": "Refuse all gifts from non-Muslims",
-            "correct": false
-          },
-          {
-            "ar": "يقبل الهدية المباحة بشكر ويقدّر المودة، ويعتذر بلطف عما لا يتناوله كالخمر ولحم الخنزير",
-            "en": "Accept permissible gifts with thanks and appreciate the kindness, and politely decline things he doesn't consume, like alcohol or pork",
-            "correct": true
-          },
-          {
-            "ar": "يقبل كل شيء ويستعمله حتى لا يجرح أحداً",
-            "en": "Accept and use everything so no one's hurt",
-            "correct": false
-          }
-        ]
-      }
-    },
-    {
-      "ruling_id": "private_events.wedding",
-      "hotspot": "wedding_hall",
-      "npc": {
-        "id": "yusuf",
-        "name": {
-          "ar": "يوسف",
-          "en": "Yusuf"
-        },
-        "role": {
-          "ar": "صديق عمر، العريس",
-          "en": "Omar's friend, the groom"
-        }
-      },
-      "setup": {
-        "ar": "المساء، قاعة المجتمع في آخر الشارع. حضر آدم وسارة عقد النكاح عصراً في المسجد — جلسا في الخلف والإمام حمزة يرحب بهما. الآن وليمة العرس: أضواء بيضاء، طعام بنغالي وعربي، جيك وإميلي يجربان البرياني. أبناء عمومة يوسف استأجروا «دي جي» يجهّز ساحة رقص مختلطة بعد العشاء، وسمع آدم أن بعضهم ينوي إخراج زجاجات في الموقف لاحقاً.",
-        "en": "Evening, the community hall at the end of the street. Adam and Sarah attended the nikah at the mosque this afternoon — sitting in the back, welcomed by Imam Hamza. Now it's the walima: white lights, Bengali and Arab food, Jake and Emily trying biryani. Yusuf's cousins hired a DJ who's setting up a mixed dance floor for after dinner, and Adam heard some of them plan to bring bottles out in the parking lot later."
-      },
-      "dialogue": [
-        {
-          "speaker": "yusuf",
-          "ar": "آدم! أنا متزوج! هل تعرف أين ذهب ثمن الدراجة؟ إلى المهر! مريم طلبت أن أحفظ سورة وأشتري لها دراجة جديدة.",
-          "en": "Adam! I'm married! Know where your bike money went? Into the mahr! Mariam asked me to memorize a surah and buy her a new bike."
+          "ar": "أهلًا بك يا آدم، تفضّل. أخبرتني سَلْمى بما قلتَه لها. أشكرك لأنك جئتَ إلى الباب بوضوحٍ واحترام.",
+          "en": "Welcome, Adam, please come in. Salma told me what you said to her. Thank you for coming to the door openly and respectfully."
         },
         {
           "speaker": "adam",
-          "ar": "المهر؟ مثل مهر العروس الذي يدفعه أهلها؟",
-          "en": "Mahr? Like a dowry her family pays?"
+          "ar": "كنتُ متوتّرًا يا عمّ صالح. لماذا أرسلتني إليك؟ أليس القرار قرارها؟",
+          "en": "I was nervous, Uncle Saleh. Why did she send me to you? Isn't it her decision?"
         },
         {
-          "speaker": "yusuf",
-          "ar": "العكس! العريس هو من يقدّمه للعروس، وهو حقها وحدها. والعقد في المسجد هو الزواج نفسه، وهذه الوليمة لنعلن الزواج ونفرح مع الناس.",
-          "en": "The opposite! The groom gives it to the bride, and it's hers alone. The contract at the mosque is the marriage itself, and this feast is to announce it and celebrate with everyone."
+          "speaker": "omar",
+          "ar": "رأيُها أساسٌ لا نتجاوزه. لكنّ الوَلِيّ يقف معها: يسأل عن الخاطب، ويحفظ حقوقها، ويحمل معها المسؤولية.",
+          "en": "Her choice is essential, and we never go around it. But the wali stands beside her. He asks about the suitor, protects her rights, and shares the responsibility with her."
+        },
+        {
+          "speaker": "adam",
+          "ar": "وماذا قصدتْ حين قالت إنها لا تتزوّج إلا مسلمًا؟",
+          "en": "And what did she mean when she said she will only marry a Muslim?"
+        },
+        {
+          "speaker": "omar",
+          "ar": "علماءُ المسلمين مُجمِعون على أنّ المسلمة لا تتزوّج إلا مسلمًا. فالبيت يقوم على إيمانٍ مشترك، يُربّي عليه الوالدان أبناءهما.",
+          "en": "Muslim scholars agree that a Muslim woman marries only a Muslim man. A home rests on a shared faith, and both parents raise their children on it."
+        },
+        {
+          "speaker": "omar",
+          "ar": "وليس هذا حُكمًا عليك يا بُنيّ، فأنت جارٌ كريم. لكنّ الإسلام قناعةُ قلب، لا ورقةٌ تُوقَّع من أجل زواج.",
+          "en": "This is not a judgement on you, son. You are a good neighbour. But Islam is a conviction of the heart, not a paper signed for a wedding."
         },
         {
           "speaker": "narrator",
-          "ar": "بعد العشاء يبدأ الـ«دي جي» باختبار مكبرات الصوت. عمر وهودان يقتربان لتوديع يوسف قبل بدء الرقص.",
-          "en": "After dinner the DJ starts testing the speakers. Omar and Hodan come over to say goodbye to Yusuf before the dancing starts."
+          "ar": "ينظر آدم إلى علبة الخاتم على الطاولة الصغيرة. يبتسم العمّ صالح ابتسامةً هادئة.",
+          "en": "Adam glances at the ring box on the small table. Uncle Saleh gives a calm smile."
+        },
+        {
+          "speaker": "omar",
+          "ar": "الخاتم هديّةٌ لطيفة. أمّا المَهْر فواجب: مالٌ يقدّمه الزوج لزوجته، وهو حقّها وحدها، لا يأخذه أبوها ولا غيره.",
+          "en": "The ring is a kind gift. The mahr, though, is required. It is wealth the husband gives his wife, and it is hers alone, not her father's or anyone else's."
+        },
+        {
+          "speaker": "omar",
+          "ar": "ثم يأتي العَقْد. عند جمهور العلماء يعقده الوَلِيّ بحضور شاهِدَيْن، ويُعلَن الزواج ولا يُخفى.",
+          "en": "Then comes the contract. Most scholars hold that the wali concludes it before two witnesses, and the marriage is announced, never hidden."
         }
       ],
       "choices": [
         {
           "id": "a",
           "label": {
-            "ar": "ألوّح لعمر مودعاً، وأبقى أستمتع بالحفلة دون أن أسأله لماذا خرج مبكراً.",
-            "en": "Wave goodbye to Omar and stay to enjoy the party, without asking why he's leaving early."
+            "ar": "أشكره بأدب، وأستأذن لأفكّر وحدي.",
+            "en": "Thank him politely and excuse yourself to think it over alone."
           },
           "quality": "acceptable",
           "consequence": {
-            "ar": "قضى آدم وقتاً لطيفاً مع جيك وإميلي، وهذا شأنه. لكنه في الطريق إلى البيت تساءل: لماذا غادر عمر وهودان قبل الرقص؟ فاتته فرصة أن يفهم ما الذي يفرّق عندهم بين الفرح بالزواج وبين ما يتجنبونه فيه.",
-            "en": "Adam had a great time with Jake and Emily — his call to make. But walking home he wondered: why did Omar and Hodan leave before the dancing? He missed the chance to understand what, for them, separates celebrating a marriage from the parts they avoid."
+            "ar": "ودّعه العمّ صالح بلطف، وقال إنّ بيتهم مفتوحٌ له جارًا في كل حال. مشى آدم إلى بيته يفكّر. كان موقفه مهذّبًا، لكنه لم يسأل عن معنى المَهْر والعقد، ولا عن سبب أهمية الإيمان المشترك.",
+            "en": "Uncle Saleh saw him off kindly and said their home is open to him as a neighbour, whatever happens. Adam walked home thinking. He was polite, but he never asked what the mahr and the contract mean, or why shared faith matters so much."
           },
           "points": 5
         },
         {
           "id": "b",
           "label": {
-            "ar": "أهنئ يوسف وأسأله عن عادات العرس، وحين يودّعه عمر قبل الرقص أفهم دون إحراج وأخرج معه لأمشي إلى البيت.",
-            "en": "Congratulate Yusuf and ask about the wedding traditions, and when Omar says goodbye before the dancing, get it without making it awkward — and walk home with him."
+            "ar": "شكرًا لصراحتك يا عمّ صالح. لن أدّعي إيمانًا لا أحمله. هل تساعدني أن أفهم الإسلام بنفسي، دون استعجال؟",
+            "en": "Thank you for being honest, Uncle Saleh. I won't claim a faith I don't hold. Will you help me understand Islam for myself, without rushing?"
           },
           "quality": "best",
           "consequence": {
-            "ar": "في الطريق شرح عمر: «الوليمة والإعلان والفرح كلها من ديننا، أما الرقص المختلط والخمر فنحن نتجنبهما، فنغادر قبلها بهدوء دون أن نحرج أحداً». قال آدم: «لم يلاحظ أحد أنكما خرجتما مبكراً — إلا أنا». ضحك عمر: «وهذا يكفي».",
-            "en": "On the walk Omar explained: 'The feast, announcing the marriage, celebrating — that's all part of our tradition. Mixed dancing and alcohol we avoid, so we slip out quietly before, without making anyone feel bad.' Adam said, 'Nobody even noticed you left early — except me.' Omar laughed: 'That's enough.'"
+            "ar": "أشرق وجه العمّ صالح وقال: هذا جوابُ رجلٍ صادق. ثم دعاه إلى درسٍ تعريفيّ في المسجد. قال: ادرسْ لنفسك أوّلًا، لا من أجل أحد. فإن اقتنعتَ فالباب مفتوح، والقرار بعد ذلك لسَلْمى. خرج آدم وفي قلبه سؤالٌ صادق.",
+            "en": "Uncle Saleh's face brightened. That is the answer of an honest man, he said, and invited Adam to an introductory class at the mosque. Study for yourself first, not for anyone else. If you become convinced, the door is open, and then the choice is Salma's. Adam left with an honest question in his heart."
           },
           "points": 10
         },
         {
           "id": "c",
           "label": {
-            "ar": "أحضر زجاجة شمبانيا من السيارة هدية للعروسين: «لنرفع نخب الزوجين!»",
-            "en": "Grab a bottle of champagne from the car as a gift for the couple: 'Let's toast the bride and groom!'"
+            "ar": "لا مشكلة، سأقول إنني مسلم من أجل الأوراق فقط، ثم نتزوّج.",
+            "en": "No problem. I'll just say I'm Muslim for the paperwork, and then we can marry."
           },
           "quality": "wrong",
           "consequence": {
-            "ar": "تجمّد يوسف لحظة، ثم قال بلطف: «شكراً يا صديقي... لكننا لا نشرب. نخب بعصير المانجو؟». ضحك الجميع وأنقذ الموقف، لكن آدم تمنى لو سأل قبل أن يشتري.",
-            "en": "Yusuf froze for a second, then said kindly, 'Thanks, man... but we don't drink. Mango juice toast?' Everyone laughed and the moment was saved, but Adam wished he'd asked before buying."
+            "ar": "هزّ العمّ صالح رأسه بهدوء وقال: لا يا بُنيّ، لا أريدك أن تقول ما لا تؤمن به، ولا أريد لابنتي بيتًا يبدأ بشيءٍ غير صادق. فالإيمان عند المسلمين قناعةٌ يختارها الإنسان بحرّية، لا إجراءٌ يُكمَل من أجل زواج.",
+            "en": "Uncle Saleh gently shook his head. No, son. I don't want you to say what you don't believe, and I don't want my daughter's home to begin with something untrue. For Muslims, faith is a conviction freely chosen, not a step completed for a wedding."
           },
           "points": 0
         }
       ],
       "check_question": {
         "q": {
-          "ar": "ما الأركان التي يتفق المسلمون على أهميتها في الزواج؟",
-          "en": "Which parts of a wedding do Muslims agree are important?"
+          "ar": "أيُّ عبارةٍ صحيحة عن الزواج في الإسلام؟",
+          "en": "Which statement about marriage in Islam is correct?"
         },
         "options": [
           {
-            "ar": "حجم القاعة وعدد الضيوف",
-            "en": "The size of the hall and the guest count",
+            "ar": "المَهْر مالٌ يدفعه أهل العروس إلى العريس",
+            "en": "The mahr is money the bride's family pays to the groom",
             "correct": false
           },
           {
-            "ar": "عقد صحيح، ومهر يقدّمه العريس للعروس، وإعلان الزواج، ووليمة",
-            "en": "A valid contract, a mahr the groom gives the bride, announcing the marriage, and a feast",
+            "ar": "المسلمة لا تتزوّج إلا مسلمًا بإجماع العلماء، والمَهْر حقٌّ لها وحدها",
+            "en": "By scholarly consensus a Muslim woman marries only a Muslim man, and the mahr belongs to her alone",
             "correct": true
           },
           {
-            "ar": "مهر تدفعه أسرة العروس للعريس",
-            "en": "A dowry the bride's family pays the groom",
+            "ar": "الوَلِيّ يأخذ المَهْر لنفسه مقابل موافقته",
+            "en": "The wali keeps the mahr for himself in return for his consent",
             "correct": false
           }
         ]
@@ -317,8 +142,8 @@
     }
   ],
   "outro": {
-    "ar": "قرب منتصف الليل يصل آدم إلى بيته في الشارع الهادئ. ضوء شرفة مارغريت مضاء، والبالونات الخضراء ما زالت على سياج ليو، وصوت العرس يخفت خلفه. تسأله سارة: «كيف كان أسبوعك؟». يبتسم: «فهمت أصدقائي أكثر... وعمر دعانا إلى يوم المسجد المفتوح الأحد القادم. ربما نذهب — فقط لنرى». تقول سارة: «ونأخذ الحلوى». لا يشبه أحدهما الآخر في كل شيء، لكنهم جيران وأصدقاء، وهذا يكفي ليكون اليوم جميلاً.",
-    "en": "Close to midnight, Adam reaches home on the quiet street. Margaret's porch light is on, Leo's green balloons still hang on the fence, and the wedding fades behind him. Sarah asks, 'How was your week?' He smiles: 'I understand my friends a lot better... and Omar invited us to the mosque open house next Sunday. Maybe we'll go — just to see.' Sarah says, 'And we'll bring dessert.' They aren't alike in everything — but they're neighbors and friends, and that's enough to make it a good day."
+    "ar": "في المساء يعود آدم إلى بيته في الشارع الهادئ، وعلبة الخاتم في جيبه. يتذكّر كلمات العمّ صالح: المَهْر حقّ للمرأة، والعقد أمانة، والإيمان قناعة لا مجاملة. لم يتغيّر كل شيء في يوم واحد، لكنه صار يفهم جيرانه أكثر.",
+    "en": "In the evening Adam walks home along the quiet street, the ring box in his pocket. He remembers Uncle Saleh's words: the mahr is the woman's right, the contract is a trust, and faith is a conviction, not a courtesy. Not everything changed in one day, but he understands his neighbours better now."
   },
   "next_location": null
 }

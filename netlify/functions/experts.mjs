@@ -29,13 +29,15 @@ const triageLimit = limiter({ max: 60, windowMs: 60 * 60_000 });
 
 // ---------------------------------------------------------------- rulings (read-only, from content/rulings)
 const RULINGS_DIR = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../../content/rulings');
+const LIBRARY_DIR = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../../content/library');
 let rulings = null;
 export function loadRulings() {
   if (rulings) return rulings;
   rulings = [];
   try {
-    for (const f of fs.readdirSync(RULINGS_DIR).filter((x) => x.endsWith('.json')).sort()) {
-      const data = JSON.parse(fs.readFileSync(path.join(RULINGS_DIR, f), 'utf8').replace(/^﻿/, ''));
+    // situation rulings + the guide's reference library (reviewed rulings that are no longer played as situations)
+    for (const [dir, f] of [RULINGS_DIR, LIBRARY_DIR].filter((d) => fs.existsSync(d)).flatMap((d) => fs.readdirSync(d).filter((x) => x.endsWith('.json')).sort().map((x) => [d, x]))) {
+      const data = JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8').replace(/^﻿/, ''));
       for (const r of Array.isArray(data) ? data : [data]) {
         if (r?.id) rulings.push({ id: r.id, location: r.location, title: r.title || {}, question: r.question || {}, verdict: r.verdict, level: r.content_level, review_status: r.review_status, confidence: r.confidence, notes_for_reviewer: r.notes_for_reviewer || null, summary: r.summary || {}, explainer: r.newcomer_explainer || {} });
       }

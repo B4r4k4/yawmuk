@@ -282,9 +282,19 @@ export function charMaterial(hex, rough = 0.85, opts = {}) {
 }
 
 // ------------------------------------------------------------------ assembly
+// skinIndex is always copied into a fresh Uint16 attribute: the WebGPU backend swaps a rendered
+// non-normalized Uint16/Uint8 attribute's .array for a Uint32Array in place, so sharing the template's
+// skinIndex would let a previously rendered prim break later mergeGeometries() calls (mixed array types).
+// position/normal/skinWeight are Float32 (never rewritten by the backend) and stay shared.
+function u16SkinIndex(attr) {
+  const n = attr.count, s = attr.itemSize, out = new Uint16Array(n * s);
+  for (let i = 0; i < n; i++) for (let k = 0; k < s; k++) out[i * s + k] = attr.getComponent(i, k);
+  return new THREE.BufferAttribute(out, s);
+}
+
 function stripGeo(g) {
   const o = new THREE.BufferGeometry();
-  for (const a of ['position', 'normal', 'skinIndex', 'skinWeight']) o.setAttribute(a, g.attributes[a]);
+  for (const a of ['position', 'normal', 'skinIndex', 'skinWeight']) o.setAttribute(a, a === 'skinIndex' ? u16SkinIndex(g.attributes[a]) : g.attributes[a]);
   if (g.index) o.setIndex(g.index);
   else o.setIndex(Array.from({ length: g.attributes.position.count }, (_, i) => i));
   return o;

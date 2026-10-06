@@ -3,7 +3,7 @@ import { test, describe } from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
-import { ROOT, LOCATIONS, loadRulings, loadScripts, briefCatalog, readJson, nonEmptyStr, bilingual } from './helpers/content.mjs';
+import { ROOT, LOCATIONS, loadRulings, loadSituationRulings, loadScripts, briefCatalog, readJson, nonEmptyStr, bilingual } from './helpers/content.mjs';
 import { CATALOG, LOCATIONS as ENGINE_LOCATIONS } from '../src/engine/config.js';
 
 const VERDICTS = ['haram', 'halal', 'makruh', 'mubah', 'mustahab', 'wajib', 'disputed', 'depends'];
@@ -17,9 +17,9 @@ const scripts = loadScripts();
 const catalog = briefCatalog();
 
 describe('catalog', () => {
-  test('TEAM_BRIEF lists exactly 18 situation ids', () => {
-    assert.equal(catalog.length, 18);
-    assert.equal(new Set(catalog).size, 18);
+  test('TEAM_BRIEF lists exactly 7 situation ids', () => {
+    assert.equal(catalog.length, 7);
+    assert.equal(new Set(catalog).size, 7);
   });
   test('engine CATALOG and LOCATIONS match TEAM_BRIEF', () => {
     assert.deepEqual(CATALOG.map((c) => c.id), catalog);
@@ -35,8 +35,9 @@ describe('rulings: contract', () => {
     for (const f of files) assert.ok(Array.isArray(readJson(`content/rulings/${f}`)), `${f} must be an array`);
   });
 
-  test('ruling ids are unique and exactly match the 18-item catalog', () => {
-    const ids = rulings.map(({ ruling }) => ruling.id);
+  test('ruling ids are unique and exactly match the 7-item catalog', () => {
+    assert.equal(new Set(rulings.map(({ ruling }) => ruling.id)).size, rulings.length, 'duplicate ids across situations + library');
+    const ids = loadSituationRulings().map(({ ruling }) => ruling.id);
     assert.equal(new Set(ids).size, ids.length, 'duplicate ruling ids');
     assert.deepEqual([...ids].sort(), [...catalog].sort());
   });
@@ -90,9 +91,9 @@ describe('scripts: contract', () => {
     assert.equal(scripts.private_events.next_location, null);
   });
 
-  test('the 18 catalog situations are each played exactly once across all scripts', () => {
+  test('the 7 catalog situations are each played exactly once across all scripts', () => {
     const ids = LOCATIONS.flatMap((l) => scripts[l].situations.map((s) => s.ruling_id));
-    assert.equal(ids.length, 18);
+    assert.equal(ids.length, 7);
     assert.deepEqual([...ids].sort(), [...catalog].sort());
   });
 
@@ -105,7 +106,7 @@ describe('scripts: contract', () => {
       assert.ok(bilingual(s.intro), 'intro');
       assert.ok(bilingual(s.outro), 'outro');
       assert.match(s.time_of_day, /^([01]\d|2[0-3]):[0-5]\d$/, 'time_of_day HH:MM');
-      assert.ok(Array.isArray(s.situations) && s.situations.length === 3, '3 situations per location');
+      assert.ok(Array.isArray(s.situations) && s.situations.length === catalog.filter((id) => id.startsWith(`${loc}.`)).length && s.situations.length > 0, 'the catalog situations of this location (at least one)');
     });
 
     // hotspot ids must exist in docs/hotspots.md (section of this location) and in the scene source

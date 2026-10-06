@@ -1,4 +1,4 @@
-// «يومك» — WORK scene: open-plan office of Buckeye Freight Tech (Columbus, OH), Monday 10:00.
+// «يومك» — WORK scene: open-plan office of Salam Freight Tech (حيّ السلام), Monday 10:00.
 // Procedural Three.js only. Most static geometry is batched into a handful of InstancedMeshes
 // (per-instance colour), so the whole office is ~40 draw calls. See docs/hotspots.md §2.
 //
@@ -345,7 +345,7 @@ export default {
     // company sign (label sprite, depth-tested so it sits on the wall)
     let sign = null;
     if (typeof ctx.makeLabel === 'function') {
-      sign = ctx.makeLabel({ ar: 'Buckeye Freight Tech', en: 'Buckeye Freight Tech' }, { size: 0.3, background: false, color: '#f3f6f6', depthTest: true });
+      sign = ctx.makeLabel({ ar: 'Salam Freight Tech', en: 'Salam Freight Tech' }, { size: 0.3, background: false, color: '#f3f6f6', depthTest: true });
       sign.position.set(0.4, 2.62, -5.9); group.add(sign);
       const q = ctx.makeLabel({ ar: 'غرفة هادئة', en: 'Quiet Room' }, { size: 0.15, background: 'rgba(31,79,89,0.9)', depthTest: true });
       q.position.set(-4.2, 2.45, -5.85); group.add(q);
@@ -409,6 +409,14 @@ export default {
       box(MATTE, gx, 0.75, gz, 0.2, 0.1, 0.2, '#111214', gr);
       box(GLOSS, gx, 0.75, gz, 0.205, 0.103, 0.03, '#dfe3e8', gr);
       box(GLOSS, gx, 0.75, gz, 0.03, 0.103, 0.205, '#dfe3e8', gr); }
+    // lucky-charm necklace (situation work.amulet): thin gold chain (torus, lying flat) + blue bead (sphere)
+    { const ax = ADX + 0.06, az = ADZ + 0.3;
+      const chain = new THREE.Mesh(track(new THREE.TorusGeometry(0.065, 0.004, 6, 28)), track(new THREE.MeshStandardMaterial({ color: '#c9a24a', metalness: 0.8, roughness: 0.3 })));
+      chain.rotation.x = Math.PI / 2; chain.position.set(ax, 0.755, az); group.add(chain);
+      const bead = new THREE.Mesh(track(new THREE.SphereGeometry(0.019, 14, 10)), track(new THREE.MeshStandardMaterial({ color: '#1f5fbf', metalness: 0.1, roughness: 0.25 })));
+      bead.position.set(ax, 0.77, az + 0.068); group.add(bead);
+      box(MATTE, ax + 0.13, 0.75, az - 0.02, 0.07, 0.004, 0.07, '#ffe680', 0.3);  // Jake's sticky note
+    }
 
     // ================================================================ HR GLASS OFFICE (x 5..9, z -6..-2.8)
     const HZ = -2.8;
@@ -426,7 +434,7 @@ export default {
     box(MATTE, 8.3, 1.0, HZ + 0.005, 1.4, 0.08, 0.02, '#5f8a86');
     box(MATTE, 5.005, 1.0, -4.4, 0.02, 0.08, 3.2, '#5f8a86');
     C(4.95, 5.05, -6, HZ, 2.9); C(5, 6.2, HZ - 0.05, HZ + 0.05, 2.9); C(7.6, 9, HZ - 0.05, HZ + 0.05, 2.9);
-    // Linda's desk (hotspot hr_desk)
+    // Maryam's desk (hotspot hr_desk)
     const HX = 6.5, HDZ = -4.0;
     box(MATTE, HX, 0.71, HDZ, 1.5, 0.04, 0.72, '#f4f4f2');
     box(GLOSS, HX - 0.71, 0, HDZ, 0.04, 0.71, 0.66, '#d9dcdf'); box(GLOSS, HX + 0.71, 0, HDZ, 0.04, 0.71, 0.66, '#d9dcdf');
@@ -446,7 +454,14 @@ export default {
     box(MATTE, HX - 0.28, 0.75, HDZ - 0.26, 0.15, 0.19, 0.015, '#3a3a3a', Math.PI - 0.3, -0.15);
     box(GLOSS, 8.55, 0, -5.55, 0.5, 0.72, 0.55, '#b9bfc5'); C(8.3, 8.85, -5.85, -5.25, 0.8);  // filing cabinet
     for (let i = 0; i < 2; i++) box(GLOSS, 8.55, 0.2 + i * 0.32, -5.27, 0.16, 0.02, 0.02, '#5c6670');
-    chair(5.85, -5.0, Math.PI + 0.5);                                 // Linda's chair (pushed aside)
+    // folded turquoise headscarf on Maryam's desk (situation work.hijab): two folded layers + a soft rounded fold
+    { const sx = HX + 0.22, sz = HDZ + 0.18;
+      box(MATTE, sx, 0.75, sz, 0.26, 0.022, 0.2, '#2a9d8f', 0.12);
+      box(MATTE, sx + 0.005, 0.772, sz - 0.005, 0.23, 0.02, 0.17, '#38b2a3', 0.08);
+      const fold = new THREE.Mesh(track(new THREE.SphereGeometry(0.1, 16, 10)), track(new THREE.MeshStandardMaterial({ color: '#3fbfae', roughness: 0.9 })));
+      fold.scale.set(1.1, 0.18, 0.8); fold.position.set(sx + 0.005, 0.795, sz - 0.005); fold.rotation.y = 0.08; group.add(fold);
+    }
+    chair(5.85, -5.0, Math.PI + 0.5);                                 // Maryam's chair (pushed aside)
     chair(5.55, -3.3, -0.25); C(5.3, 5.8, -3.55, -3.05, 1.0);         // visitor chair
     // framed poster on HR back wall
     box(MATTE, 7.4, 1.3, -5.985, 1.0, 0.7, 0.02, '#2b2f33');
@@ -586,8 +601,9 @@ export default {
         look: { skin: '#f1c27d', shirt: '#a83232', pants: '#3b4a5e', hair: '#c9a45c', beard: '#c9a45c', build: 1.15, height: 1.84 } },
       { id: 'bg_mike', position: [-7.6, 0, 3.4], yaw: yawTo([-7.6, 3.4], [-9, 5]), showName: false,
         look: { skin: '#e8b98a', shirt: '#f2f2f2', suit: '#1f2d4d', tie: '#7fb3e0', pants: '#1f2d4d', hair: '#5a3d2b', height: 1.8 } },
-      { id: 'linda', position: [6.55, 0, -4.85], yaw: yawTo([6.55, -4.85], [6.9, -2.8]),
-        look: { skin: '#e0b98f', shirt: '#f1e9e0', suit: '#7a2236', tie: '#f1e9e0', pants: '#2b2b33', hair: '#141414', height: 1.66 } },
+      // Maryam (Muslim HR colleague, hijab) — situation work.hijab; same spot the former 'linda' NPC used
+      { id: 'maryam', position: [6.55, 0, -4.85], yaw: yawTo([6.55, -4.85], [6.9, -2.8]),
+        look: { skin: '#e0b98f', shirt: '#f1e9e0', suit: '#7a2236', tie: '#f1e9e0', hijab: true, hijabColor: '#3d4f73', pants: '#2b2b33', dress: '#2b2b33', height: 1.66 } },
       seated('bg_coworker1', { skin: '#5a3a22', shirt: '#d4a017', pants: '#2f3542', hair: '#1a1410', height: 1.66 }, 1.3, ROWS[1] + 0.78, false),
       seated('bg_coworker2', { skin: '#f0c8a0', shirt: '#3f7a4a', pants: '#3a3f47', hair: '#7a5232', height: 1.78 }, 3.6, ROWS[1] + 0.78, true)
     ];

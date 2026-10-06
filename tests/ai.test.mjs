@@ -19,15 +19,15 @@ const WHY = { ar: 'يناسب اهتمامك بالمال', en: 'Fits your inter
 describe('journey plan validator', () => {
   test('drops ids not in the catalog and duplicates; keeps valid items in order', () => {
     const v = validatePlan({ journey: [
-      { situation_id: 'home.mortgage', why: WHY },
+      { situation_id: 'home.purity_mosque', why: WHY },
       { situation_id: 'home.made_up', why: WHY },
-      { situation_id: 'home.mortgage', why: WHY },
+      { situation_id: 'home.purity_mosque', why: WHY },
       { situation_id: 'street.lottery', why: WHY },
       { situation_id: 42, why: WHY }
-    ], followup: 'work.retirement_401k' }, { catalogIds: IDS });
+    ], followup: 'work.amulet' }, { catalogIds: IDS });
     assert.equal(v.ok, true);
-    assert.deepEqual(v.journey.map((j) => j.id), ['home.mortgage', 'street.lottery']);
-    assert.equal(v.followup, 'work.retirement_401k');
+    assert.deepEqual(v.journey.map((j) => j.id), ['home.purity_mosque', 'street.lottery']);
+    assert.equal(v.followup, 'work.amulet');
     assert.deepEqual(v.dropped.map((d) => d.reason), ['unknown id', 'duplicate', 'unknown id']);
   });
 
@@ -39,7 +39,7 @@ describe('journey plan validator', () => {
   });
 
   test('unknown followup is dropped (plan still ok)', () => {
-    const v = validatePlan({ journey: [{ situation_id: 'school.cheating', why: WHY }], followup: 'x.y' }, { catalogIds: IDS });
+    const v = validatePlan({ journey: [{ situation_id: 'work.hijab', why: WHY }], followup: 'x.y' }, { catalogIds: IDS });
     assert.equal(v.ok, true);
     assert.equal(v.followup, null);
   });
@@ -63,20 +63,20 @@ describe('journey plan validator', () => {
     ];
     for (const why of bad) assert.equal(validWhy(why), false, JSON.stringify(why));
     assert.equal(validWhy(WHY), true);
-    const v = validatePlan({ journey: [{ situation_id: 'home.mortgage', why: bad[0] }, { situation_id: 'home.credit_card', why: WHY }] }, { catalogIds: IDS });
-    assert.deepEqual(v.journey.map((j) => j.id), ['home.credit_card']);
+    const v = validatePlan({ journey: [{ situation_id: 'home.purity_mosque', why: bad[0] }, { situation_id: 'street.lottery', why: WHY }] }, { catalogIds: IDS });
+    assert.deepEqual(v.journey.map((j) => j.id), ['street.lottery']);
     assert.equal(v.dropped[0].reason, 'invalid why');
   });
 
   test('every situation must have citations resolving to content/sources.json', () => {
     const ok = makeCitationChecker(rulings, sources);
     for (const id of IDS) assert.equal(ok(id), true, `${id} citations do not resolve`);
-    const fake = { ...rulings, 'home.mortgage': { ...rulings['home.mortgage'], quran: [{ surah: 2, ayah: '999' }] } };
+    const fake = { ...rulings, 'home.purity_mosque': { ...rulings['home.purity_mosque'], quran: [{ surah: 2, ayah: '999' }] } };
     const ok2 = makeCitationChecker(fake, sources);
-    assert.equal(ok2('home.mortgage'), false);
+    assert.equal(ok2('home.purity_mosque'), false);
     assert.equal(ok2('nope.nope'), false);
-    const v = validatePlan({ journey: [{ situation_id: 'home.mortgage', why: WHY }, { situation_id: 'home.credit_card', why: WHY }] }, { catalogIds: IDS, citationsOk: ok2 });
-    assert.deepEqual(v.journey.map((j) => j.id), ['home.credit_card']);
+    const v = validatePlan({ journey: [{ situation_id: 'home.purity_mosque', why: WHY }, { situation_id: 'street.lottery', why: WHY }] }, { catalogIds: IDS, citationsOk: ok2 });
+    assert.deepEqual(v.journey.map((j) => j.id), ['street.lottery']);
   });
 });
 
@@ -118,7 +118,7 @@ describe('fallback planner (deterministic)', () => {
   });
 
   test('orderLocations keeps all 6 locations reachable', () => {
-    const o = orderLocations(['street.lottery', 'home.mortgage', 'street.lost_wallet']);
+    const o = orderLocations(['street.lottery', 'home.purity_mosque', 'private_events.proposal']);
     assert.deepEqual(o.slice(0, 2), ['street', 'home']);
     assert.equal(isValidOrder(o), true);
     assert.equal(isValidOrder(['home']), false);
@@ -149,11 +149,11 @@ describe('ask panel: retrieval + answer validator', () => {
   const passages = [
     { id: 'q:1', text: 'Why do Muslims avoid interest on loans? Because interest (riba) is prohibited and finance is based on trade or partnership.' },
     { id: 'q:2', text: 'Can Muslims attend a neighbor funeral? Showing condolence and kindness to neighbors is encouraged.' },
-    { id: 'r:home.food_ingredients:plain', text: 'Muslims check food ingredients such as gelatin and alcohol in flavorings.' }
+    { id: 'r:school.pork:plain', text: 'Muslims check food ingredients such as gelatin and alcohol in flavorings.' }
   ];
   test('retrieval ranks the relevant passage first and returns nothing for unrelated queries', () => {
     assert.equal(retrieve('why avoid interest loans', passages)[0].id, 'q:1');
-    assert.equal(retrieve('gelatin ingredients', passages)[0].id, 'r:home.food_ingredients:plain');
+    assert.equal(retrieve('gelatin ingredients', passages)[0].id, 'r:school.pork:plain');
     assert.deepEqual(retrieve('zzzz qqqq', passages), []);
     assert.ok(tokenize('الفائدة والقروض').includes('فائده'));
   });

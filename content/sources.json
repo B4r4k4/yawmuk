@@ -353,7 +353,8 @@
     "verified_how": "verify.mjs: text_ar re-fetched from quranenc.com API (King Fahd Complex) and matched exactly; letters cross-checked against Tanzil quran-uthmani (api.alquran.cloud); translation_en matched quranenc english_saheeh.",
     "used_in": [
       "home.food_ingredients",
-      "work.alcohol_pork_job"
+      "work.alcohol_pork_job",
+      "school.pork"
     ],
     "checked_at": "2026-10-06",
     "tier": "approved_package",
@@ -452,7 +453,8 @@
     "verified": true,
     "verified_how": "verify.mjs: grade «صحيح» | matches bukhari #52 (diacritized). Text source: fawazahmed0/hadith-api (same Arabic text as sunnah.com, which blocks automated access with 403).",
     "used_in": [
-      "home.food_ingredients"
+      "home.food_ingredients",
+      "school.pork"
     ],
     "checked_at": "2026-10-06",
     "tier": "approved_package",
@@ -578,7 +580,8 @@
     "verified": true,
     "verified_how": "Auditor extracted the PDF text: 9th annual AMJA conference on foods/medicines; beef/lamb ban, poultry concession, gelatin and alcohol clauses match.",
     "used_in": [
-      "home.food_ingredients"
+      "home.food_ingredients",
+      "school.pork"
     ],
     "checked_at": "2026-10-06",
     "tier": "secondary",
@@ -599,7 +602,8 @@
     "verified": true,
     "verified_how": "Auditor read iifa-aifi.org/en/33099: Resolution 210 (6/22), Kuwait, 22-25 March 2015; wine-food ban, solvent-alcohol permission and gelatin deferral match.",
     "used_in": [
-      "home.food_ingredients"
+      "home.food_ingredients",
+      "school.pork"
     ],
     "checked_at": "2026-10-06",
     "tier": "secondary",
@@ -620,7 +624,8 @@
     "verified": false,
     "verified_how": "Not read in full by the auditor; summary taken from the researcher. Link check: https://www.aliftaa.jo/decision-en/314/Resolution-No128-Gelatin-Extracted-from-Pork-Bone-or-Skin-or-from-Impure-Substances-is-Impure → OK.",
     "used_in": [
-      "home.food_ingredients"
+      "home.food_ingredients",
+      "school.pork"
     ],
     "checked_at": "2026-10-06",
     "tier": "secondary",
@@ -4020,7 +4025,8 @@
     "verified": true,
     "verified_how": "verify.mjs: grade «صحيح» | HadeethEnc #4556: صحيح — متفق عليه (word overlap 100%) | matches bukhari #2236 (diacritized). Text source: fawazahmed0/hadith-api (same Arabic text as sunnah.com, which blocks automated access with 403).",
     "used_in": [
-      "work.alcohol_pork_job"
+      "work.alcohol_pork_job",
+      "school.pork"
     ],
     "checked_at": "2026-10-06",
     "tier": "approved_package",
@@ -5531,5 +5537,562 @@
     "checked_at": "2026-10-06",
     "tier": "approved_package",
     "tier_note": "Package-named site: islamic-content.com."
+  },
+  {
+    "id": "madhhab:hanafi:home.purity_mosque",
+    "type": "madhhab",
+    "citation": "hanafi — إسلام سؤال وجواب، رأي الجمهور في طهارة البدن والثوب والمكان: https://islamqa.info/en/answers/611327؛ الموسوعة الفقهية (الدرر السنية)، الطهارة من النجس: https://dorar.net/feqhia/826؛ الطهارة من الحدث: https://dorar.net/feqhia/824",
+    "url": "https://islamqa.info/en/answers/611327",
+    "text": {
+      "ar": "الطهارة من الحدث شرطٌ لصحة الصلاة. وطهارة البدن والثوب والمكان من النجاسة شرطٌ كذلك، وهو قول الجمهور.",
+      "en": "Purity from ritual impurity is a condition of a valid prayer. Cleanliness of the body, clothes and place from impurity is also a condition, which is the majority view."
+    },
+    "location": "إسلام سؤال وجواب، رأي الجمهور في طهارة البدن والثوب والمكان: https://islamqa.info/en/answers/611327؛ الموسوعة الفقهية (الدرر السنية)، الطهارة من النجس: https://dorar.net/feqhia/826؛ الطهارة من الحدث: https://dorar.net/feqhia/824",
+    "edition": "Summarized from the secondary sources in the reference string; NOT matched against a classical madhhab text.",
+    "review_status": "pending_human",
+    "verified": false,
+    "verified_how": "Majority/Maliki attribution confirmed on islamqa 611327 (fetched 2026-10-06); not checked against the school's own books. Requires a human scholar.",
+    "used_in": [
+      "home.purity_mosque"
+    ],
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "Madhhab position via a secondary site; original books need a human check."
+  },
+  {
+    "id": "madhhab:maliki:home.purity_mosque",
+    "type": "madhhab",
+    "citation": "maliki — إسلام سؤال وجواب، قول المالكية في الصلاة مع النجاسة: https://islamqa.info/en/answers/611327؛ الموسوعة الفقهية (الدرر السنية)، الطهارة من النجس: https://dorar.net/feqhia/826",
+    "url": "https://islamqa.info/en/answers/611327",
+    "text": {
+      "ar": "الطهارة من الحدث شرطٌ لصحة الصلاة. أما إزالة النجاسة فلهم فيها قولان مشهوران: واجبةٌ مع العلم والقدرة، أو سنّة، ومن أقوالهم أنها شرط. فمن صلّى بها عامداً قادراً أعاد أبداً، ومن صلّى ناسياً أو عاجزاً أعاد في الوقت فقط.",
+      "en": "Purity from ritual impurity is a condition of a valid prayer. On removing physical impurity they have two well-known views: obligatory when one knows and is able, or sunnah; another of their views makes it a condition. Whoever prays with it deliberately while able repeats the prayer at any time; whoever forgot or was unable repeats it only within its time."
+    },
+    "location": "إسلام سؤال وجواب، قول المالكية في الصلاة مع النجاسة: https://islamqa.info/en/answers/611327؛ الموسوعة الفقهية (الدرر السنية)، الطهارة من النجس: https://dorar.net/feqhia/826",
+    "edition": "Summarized from the secondary sources in the reference string; NOT matched against a classical madhhab text.",
+    "review_status": "pending_human",
+    "verified": false,
+    "verified_how": "Majority/Maliki attribution confirmed on islamqa 611327 (fetched 2026-10-06); not checked against the school's own books. Requires a human scholar.",
+    "used_in": [
+      "home.purity_mosque"
+    ],
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "Madhhab position via a secondary site; original books need a human check."
+  },
+  {
+    "id": "madhhab:shafii:home.purity_mosque",
+    "type": "madhhab",
+    "citation": "shafii — إسلام سؤال وجواب، رأي الجمهور في طهارة البدن والثوب والمكان: https://islamqa.info/en/answers/611327؛ الموسوعة الفقهية (الدرر السنية)، الطهارة من النجس: https://dorar.net/feqhia/826؛ الطهارة من الحدث: https://dorar.net/feqhia/824",
+    "url": "https://islamqa.info/en/answers/611327",
+    "text": {
+      "ar": "الطهارة من الحدث شرطٌ لصحة الصلاة. وطهارة البدن والثوب والمكان من النجاسة شرطٌ كذلك، وهو قول الجمهور.",
+      "en": "Purity from ritual impurity is a condition of a valid prayer. Cleanliness of the body, clothes and place from impurity is also a condition, which is the majority view."
+    },
+    "location": "إسلام سؤال وجواب، رأي الجمهور في طهارة البدن والثوب والمكان: https://islamqa.info/en/answers/611327؛ الموسوعة الفقهية (الدرر السنية)، الطهارة من النجس: https://dorar.net/feqhia/826؛ الطهارة من الحدث: https://dorar.net/feqhia/824",
+    "edition": "Summarized from the secondary sources in the reference string; NOT matched against a classical madhhab text.",
+    "review_status": "pending_human",
+    "verified": false,
+    "verified_how": "Majority/Maliki attribution confirmed on islamqa 611327 (fetched 2026-10-06); not checked against the school's own books. Requires a human scholar.",
+    "used_in": [
+      "home.purity_mosque"
+    ],
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "Madhhab position via a secondary site; original books need a human check."
+  },
+  {
+    "id": "madhhab:hanbali:home.purity_mosque",
+    "type": "madhhab",
+    "citation": "hanbali — إسلام سؤال وجواب، رأي الجمهور في طهارة البدن والثوب والمكان: https://islamqa.info/en/answers/611327؛ الموسوعة الفقهية (الدرر السنية)، الطهارة من النجس: https://dorar.net/feqhia/826؛ الطهارة من الحدث: https://dorar.net/feqhia/824",
+    "url": "https://islamqa.info/en/answers/611327",
+    "text": {
+      "ar": "الطهارة من الحدث شرطٌ لصحة الصلاة. وطهارة البدن والثوب والمكان من النجاسة شرطٌ كذلك، وهو قول الجمهور.",
+      "en": "Purity from ritual impurity is a condition of a valid prayer. Cleanliness of the body, clothes and place from impurity is also a condition, which is the majority view."
+    },
+    "location": "إسلام سؤال وجواب، رأي الجمهور في طهارة البدن والثوب والمكان: https://islamqa.info/en/answers/611327؛ الموسوعة الفقهية (الدرر السنية)، الطهارة من النجس: https://dorar.net/feqhia/826؛ الطهارة من الحدث: https://dorar.net/feqhia/824",
+    "edition": "Summarized from the secondary sources in the reference string; NOT matched against a classical madhhab text.",
+    "review_status": "pending_human",
+    "verified": false,
+    "verified_how": "Majority/Maliki attribution confirmed on islamqa 611327 (fetched 2026-10-06); not checked against the school's own books. Requires a human scholar.",
+    "used_in": [
+      "home.purity_mosque"
+    ],
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "Madhhab position via a secondary site; original books need a human check."
+  },
+  {
+    "id": "contemporary:الموسوعة-الفقهية-الدرر-السنية:كتاب-الصلاة-شروط-الصلاة-المطلب-الأول-الط",
+    "type": "contemporary",
+    "citation": "الموسوعة الفقهية (الدرر السنية) — كتاب الصلاة، شروط الصلاة، المطلب الأول: الطهارة من الحدث",
+    "url": "https://dorar.net/feqhia/824",
+    "text": {
+      "ar": "نقلت الموسوعة عن ابن المنذر إجماع أهل العلم على أن الصلاة لا تجزئ إلا بطهارة لمن قدر عليها.",
+      "en": "The encyclopedia reports, from Ibn al-Mundhir, the scholars' consensus that prayer is not valid without purity for one able to attain it."
+    },
+    "location": "كتاب الصلاة، شروط الصلاة، المطلب الأول: الطهارة من الحدث",
+    "edition": "Official online publication (see url); not fetched in full.",
+    "review_status": "pending_human",
+    "verified": false,
+    "verified_how": "Direct fetch returned HTTP 403 (2026-10-06); wording seen only in a search-engine excerpt of the page. Needs a human to open the page and match.",
+    "used_in": [
+      "home.purity_mosque"
+    ],
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "Contemporary fatwa site / encyclopedia; not one of the package-named references."
+  },
+  {
+    "id": "contemporary:الموسوعة-الفقهية-الدرر-السنية:كتاب-الصلاة-شروط-الصلاة-المطلب-الثاني-ال",
+    "type": "contemporary",
+    "citation": "الموسوعة الفقهية (الدرر السنية) — كتاب الصلاة، شروط الصلاة، المطلب الثاني: الطهارة من النجس",
+    "url": "https://dorar.net/feqhia/826",
+    "text": {
+      "ar": "طهارة البدن والثوب والمكان من النجس شرطٌ في صحة الصلاة عند الحنفية والشافعية والحنابلة، وهو قولٌ للمالكية.",
+      "en": "Purity of body, clothing and place from impurity is a condition of a valid prayer for the Hanafis, Shafi'is and Hanbalis, and is one Maliki view."
+    },
+    "location": "كتاب الصلاة، شروط الصلاة، المطلب الثاني: الطهارة من النجس",
+    "edition": "Official online publication (see url); not fetched in full.",
+    "review_status": "pending_human",
+    "verified": false,
+    "verified_how": "Direct fetch returned HTTP 403 (2026-10-06); wording seen only in a search-engine excerpt of the page. Needs a human to open the page and match.",
+    "used_in": [
+      "home.purity_mosque"
+    ],
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "Contemporary fatwa site / encyclopedia; not one of the package-named references."
+  },
+  {
+    "id": "contemporary:إسلام-سؤال-وجواب-islamqa-info:الجواب-107701-شروط-صحة-الصلاة",
+    "type": "contemporary",
+    "citation": "إسلام سؤال وجواب (islamqa.info) — الجواب 107701: شروط صحة الصلاة",
+    "url": "https://islamqa.info/en/answers/107701",
+    "text": {
+      "ar": "من شروط صحة الصلاة الطهارة من الحدث، وإزالة النجاسة عن البدن والثوب والمكان. ومن صلّى محدثاً فصلاته باطلة بإجماع العلماء.",
+      "en": "Conditions of a valid prayer include purity from ritual impurity and removing physical impurity from body, clothing and place. Praying in a state of ritual impurity is invalid by scholarly consensus."
+    },
+    "location": "الجواب 107701: شروط صحة الصلاة",
+    "edition": "Web page (see url), as fetched on checked_at",
+    "review_status": "machine_verified",
+    "verified": true,
+    "verified_how": "Fetched 2026-10-06: lists hadath and najas (body, clothing, place) as separate conditions and states 'If a person prays when he is in a state of ritual impurity, then his prayer is invalid according to scholarly consensus'.",
+    "used_in": [
+      "home.purity_mosque"
+    ],
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "Contemporary fatwa site / encyclopedia; not one of the package-named references."
+  },
+  {
+    "id": "contemporary:اللجنة-الدائمة-للبحوث-العلمية-:فتوى-منقولة-في-إسلام-سؤال-وجواب-السؤال-6",
+    "type": "contemporary",
+    "citation": "اللجنة الدائمة للبحوث العلمية والإفتاء (السعودية) — فتوى منقولة في إسلام سؤال وجواب، السؤال 69793: الصلاة بالنعال في مسجد مفروش",
+    "url": "https://islamqa.info/en/answers/69793",
+    "text": {
+      "ar": "الصلاة في النعلين الطاهرتين جائزة، لكن المساجد اليوم مفروشةٌ بالسجاد، فالأولى خلعهما عند دخولها، حفظاً للفرش من الأوساخ ولئلا يتأذى المصلّون.",
+      "en": "Praying in clean shoes is permissible, but mosques today are carpeted, so it is better to take shoes off on entering, to keep the carpets free of dirt and avoid putting other worshippers off."
+    },
+    "location": "فتوى منقولة في إسلام سؤال وجواب، السؤال 69793: الصلاة بالنعال في مسجد مفروش",
+    "edition": "Web page (see url), as fetched on checked_at",
+    "review_status": "machine_verified",
+    "verified": true,
+    "verified_how": "Fetched 2026-10-06: Standing Committee — 'it is better to take the shoes off, so as to avoid making the carpets dirty or putting other Muslims off'; Ibn Baz — mustahabb to pray in clean shoes, but with carpets it is better to take them off; exception for those who find removal hard (military boots).",
+    "used_in": [
+      "home.purity_mosque"
+    ],
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "Contemporary fatwa site / encyclopedia; not one of the package-named references."
+  },
+  {
+    "id": "contemporary:الشيخ-عبد-العزيز-بن-باز:كلامه-المنقول-في-إسلام-سؤال-وجواب-السؤال",
+    "type": "contemporary",
+    "citation": "الشيخ عبد العزيز بن باز — كلامه المنقول في إسلام سؤال وجواب، السؤال 69793",
+    "url": "https://islamqa.info/en/answers/69793",
+    "text": {
+      "ar": "تُستحب الصلاة في النعلين إذا كانتا طاهرتين، لكن مع وجود الفرش في المساجد فالأولى خلعهما. ومن شقّ عليه خلعهما، كالعسكري في حذائه، صلّى فيهما إن كانتا طاهرتين.",
+      "en": "Praying in clean shoes is recommended, but where mosques are carpeted it is better to take them off. Someone for whom removing them is difficult, such as a soldier in boots, may pray in them if they are clean."
+    },
+    "location": "كلامه المنقول في إسلام سؤال وجواب، السؤال 69793",
+    "edition": "Web page (see url), as fetched on checked_at",
+    "review_status": "machine_verified",
+    "verified": true,
+    "verified_how": "Fetched 2026-10-06: Standing Committee — 'it is better to take the shoes off, so as to avoid making the carpets dirty or putting other Muslims off'; Ibn Baz — mustahabb to pray in clean shoes, but with carpets it is better to take them off; exception for those who find removal hard (military boots).",
+    "used_in": [
+      "home.purity_mosque"
+    ],
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "Contemporary fatwa site / encyclopedia; not one of the package-named references."
+  },
+  {
+    "id": "contemporary:الموسوعة-الفقهية-الدرر-السنية:كتاب-النكاح-نكاح-المسلمة-من-الكافر",
+    "type": "contemporary",
+    "citation": "الموسوعة الفقهية — الدرر السنية: نكاح المسلمة من الكافر",
+    "url": "https://dorar.net/feqhia/4274",
+    "text": {
+      "ar": "يحرم تزويج المسلمة من الكافر ولو كان كتابيًّا، ونقل الإجماع على ذلك الشافعي وابن المنذر والبغوي وابن قدامة والقرطبي وابن تيمية.",
+      "en": "Marrying a Muslim woman to a non-Muslim man, even a Christian or Jew, is prohibited; consensus is reported by al-Shafi'i, Ibn al-Mundhir, al-Baghawi, Ibn Qudama, al-Qurtubi and Ibn Taymiyya."
+    },
+    "location": "الموسوعة الفقهية، كتاب النكاح — نكاح المسلمة من الكافر",
+    "edition": "dorar.net online Fiqh Encyclopedia page (not matched against a printed edition).",
+    "review_status": "machine_verified",
+    "verified": true,
+    "verified_how": "Fetched 2026-10-06 via the r.jina.ai reader proxy (direct fetch is Cloudflare-blocked); the cited statement matched the page text.",
+    "used_in": [
+      "private_events.proposal"
+    ],
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "Package-named site: dorar.net."
+  },
+  {
+    "id": "contemporary:الموسوعة-الفقهية-الدرر-السنية:كتاب-النكاح-حكم-الصداق",
+    "type": "contemporary",
+    "citation": "الموسوعة الفقهية — الدرر السنية: حكم الصداق",
+    "url": "https://dorar.net/feqhia/4301",
+    "text": {
+      "ar": "الصداق (المَهْر) واجبٌ للمرأة.",
+      "en": "The sadaq (mahr) is obligatory for the woman."
+    },
+    "location": "الموسوعة الفقهية، كتاب النكاح — حكم الصداق",
+    "edition": "dorar.net online Fiqh Encyclopedia page (not matched against a printed edition).",
+    "review_status": "machine_verified",
+    "verified": true,
+    "verified_how": "Fetched 2026-10-06 via the r.jina.ai reader proxy (direct fetch is Cloudflare-blocked); the cited statement matched the page text.",
+    "used_in": [
+      "private_events.proposal"
+    ],
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "Package-named site: dorar.net."
+  },
+  {
+    "id": "contemporary:الموسوعة-الفقهية-الدرر-السنية:كتاب-النكاح-حكم-الولي-في-النكاح-حكم-النك",
+    "type": "contemporary",
+    "citation": "الموسوعة الفقهية — الدرر السنية: حكم الولي في النكاح",
+    "url": "https://dorar.net/feqhia/4098",
+    "text": {
+      "ar": "لا يصحّ النكاح بلا وليّ عند الجمهور: المالكية والشافعية والحنابلة؛ والوليّ ركن عند المالكية والشافعية وشرط صحة عند الحنابلة.",
+      "en": "A marriage without a wali is invalid per the majority: Malikis, Shafi'is and Hanbalis; the wali is a pillar for the Malikis and Shafi'is and a validity condition for the Hanbalis."
+    },
+    "location": "الموسوعة الفقهية، كتاب النكاح — حكم الولي في النكاح",
+    "edition": "dorar.net online Fiqh Encyclopedia page (not matched against a printed edition).",
+    "review_status": "machine_verified",
+    "verified": true,
+    "verified_how": "Fetched 2026-10-06 via the r.jina.ai reader proxy (direct fetch is Cloudflare-blocked); the cited statement matched the page text. The page does not state the Hanafi view; see the Dar al-Ifta 4545 entry.",
+    "used_in": [
+      "private_events.proposal"
+    ],
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "Package-named site: dorar.net."
+  },
+  {
+    "id": "contemporary:دار-الإفتاء-المصرية:الفتوى-رقم-4545-A-woman-marrying-without",
+    "type": "contemporary",
+    "citation": "دار الإفتاء المصرية — الفتوى رقم 4545: A woman marrying without wali",
+    "url": "https://www.dar-alifta.org/en/fatwa/details/4545/a-woman-marrying-without-wali",
+    "text": {
+      "ar": "ذهب الإمام أبو حنيفة إلى أنه لا يلزم البالغة العاقلة وَلِيّ، فلها أن تعقد زواجها بكرًا كانت أو ثيّبًا، والعقد صحيح إن كان على كفاءة وبمهر المثل.",
+      "en": "Imam Abu Hanifa held that a sane, adult woman is not required to have a guardian, so she may conduct her own marriage contract, previously married or not; the marriage is valid if based on kafa'a and the wife receives mahr al-mithl."
+    },
+    "location": "dar-alifta.org/en/fatwa/details/4545",
+    "edition": "Dar al-Ifta al-Misriyyah official website (English fatwa page).",
+    "review_status": "machine_verified",
+    "verified": true,
+    "verified_how": "WebFetch 2026-10-06: the fatwa page states Abu Hanifa's view and the kafa'a / mahr al-mithl conditions as quoted.",
+    "used_in": [
+      "private_events.proposal"
+    ],
+    "checked_at": "2026-10-06",
+    "tier": "secondary",
+    "tier_note": "Official publication of a contemporary fiqh council or scholar; not one of the package-named references."
+  },
+  {
+    "id": "madhhab:hanafi:school.pork",
+    "type": "madhhab",
+    "citation": "hanafi — في الاستحالة: الموسوعة الفقهية (الدرر السنية) https://dorar.net/feqhia/189",
+    "url": "https://dorar.net/feqhia/189",
+    "text": {
+      "ar": "لحم الخنزير وسائر أجزائه محرّم نجس. والنجاسة تطهر عندهم بالاستحالة (كالخنزير إذا صار ملحاً)، فإن تحوّلت مادة المشتقّ إلى مادة أخرى تحوّلاً تاماً تغيّر حكمها.",
+      "en": "Pork and every part of the pig are prohibited and impure. In this school impurity is purified by transformation (e.g., a pig turned into salt), so if a derivative is fully transformed into a different substance, its ruling changes."
+    },
+    "location": "في الاستحالة: الموسوعة الفقهية (الدرر السنية) https://dorar.net/feqhia/189",
+    "edition": "Volume/page as given in the reference string; NOT matched against a named printed edition (see verified_how).",
+    "review_status": "pending_human",
+    "verified": false,
+    "verified_how": "Adapted for school.pork from madhhab:hanafi:home.food_ingredients (istihala part of the same reference); not separately re-read.",
+    "used_in": [
+      "school.pork"
+    ],
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "Package-named site: dorar.net."
+  },
+  {
+    "id": "madhhab:maliki:school.pork",
+    "type": "madhhab",
+    "citation": "maliki — الموسوعة الفقهية (الدرر السنية)، الاستحالة",
+    "url": "https://dorar.net/feqhia/189",
+    "text": {
+      "ar": "لحم الخنزير وسائر أجزائه محرّم الأكل. والنجاسة تطهر بالاستحالة عند المالكية، فيتغيّر حكم المشتقّ إذا تحوّل تحوّلاً تاماً.",
+      "en": "Eating pork or any part of the pig is prohibited. Malikis hold that impurity is purified by transformation, so a fully transformed derivative takes a different ruling."
+    },
+    "location": "الموسوعة الفقهية (الدرر السنية)، الاستحالة",
+    "edition": "Volume/page as given in the reference string; NOT matched against a named printed edition (see verified_how).",
+    "review_status": "pending_human",
+    "verified": false,
+    "verified_how": "Adapted for school.pork from madhhab:maliki:home.food_ingredients (istihala part of the same reference); not separately re-read.",
+    "used_in": [
+      "school.pork"
+    ],
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "Package-named site: dorar.net."
+  },
+  {
+    "id": "madhhab:shafii:school.pork",
+    "type": "madhhab",
+    "citation": "shafii — الموسوعة الفقهية (الدرر السنية)، الاستحالة",
+    "url": "https://dorar.net/feqhia/189",
+    "text": {
+      "ar": "لحم الخنزير وسائر أجزائه محرّم نجس. ولا تطهر النجاسة بالاستحالة إلا في صور محدودة كتخلل الخمر بنفسها، فمشتقات الخنزير تبقى على التحريم.",
+      "en": "Pork and every part of the pig are prohibited and impure. Impurity is not purified by transformation except in limited cases such as wine turning to vinegar by itself, so pig derivatives remain prohibited."
+    },
+    "location": "الموسوعة الفقهية (الدرر السنية)، الاستحالة",
+    "edition": "Volume/page as given in the reference string; NOT matched against a named printed edition (see verified_how).",
+    "review_status": "pending_human",
+    "verified": false,
+    "verified_how": "Adapted for school.pork from madhhab:shafii:home.food_ingredients (istihala part of the same reference); not separately re-read.",
+    "used_in": [
+      "school.pork"
+    ],
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "Package-named site: dorar.net."
+  },
+  {
+    "id": "madhhab:hanbali:school.pork",
+    "type": "madhhab",
+    "citation": "hanbali — الموسوعة الفقهية (الدرر السنية)، الاستحالة",
+    "url": "https://dorar.net/feqhia/189",
+    "text": {
+      "ar": "لحم الخنزير وسائر أجزائه محرّم نجس. والمعتمد أن النجاسة لا تطهر بالاستحالة إلا الخمر إذا تخللت بنفسها، فمشتقات الخنزير تبقى على التحريم.",
+      "en": "Pork and every part of the pig are prohibited and impure. The relied-upon view is that impurity is not purified by transformation except wine turning to vinegar by itself, so pig derivatives remain prohibited."
+    },
+    "location": "الموسوعة الفقهية (الدرر السنية)، الاستحالة",
+    "edition": "Volume/page as given in the reference string; NOT matched against a named printed edition (see verified_how).",
+    "review_status": "pending_human",
+    "verified": false,
+    "verified_how": "Adapted for school.pork from madhhab:hanbali:home.food_ingredients (istihala part of the same reference); not separately re-read.",
+    "used_in": [
+      "school.pork"
+    ],
+    "checked_at": "2026-10-06",
+    "tier": "approved_package",
+    "tier_note": "Package-named site: dorar.net."
+  },
+  {
+    "id": "madhhab:hanafi:work.amulet",
+    "type": "madhhab",
+    "citation": "hanafi — الإسلام سؤال وجواب، فتوى 10543 «أحكام التمائم وتعليقها» (حكاية اتفاق العلماء على تحريم التمائم من غير القرآن، والخلاف فيما كان من القرآن): https://islamqa.info/ar/10543",
+    "url": "https://islamqa.info/ar/10543",
+    "text": {
+      "ar": "يحرم تعليق التميمة التي ليست من القرآن وذكر الله، باتفاق العلماء. وفي تعليق ما كُتب فيه قرآن خلاف مشهور.",
+      "en": "Hanging a non-Quranic amulet is forbidden by scholarly agreement. Hanging Quranic text is a well-known point of disagreement."
+    },
+    "location": "الإسلام سؤال وجواب، فتوى 10543 «أحكام التمائم وتعليقها» (حكاية اتفاق العلماء على تحريم التمائم من غير القرآن، والخلاف فيما كان من القرآن): https://islamqa.info/ar/10543",
+    "edition": "Volume/page as given in the reference string; NOT matched against a named printed edition (see verified_how).",
+    "review_status": "pending_human",
+    "verified": false,
+    "verified_how": "School position summarised from the cited contemporary source's report of scholarly agreement; NOT matched against the school's own books. Requires a human scholar.",
+    "used_in": [
+      "work.amulet"
+    ],
+    "tier": "secondary",
+    "tier_note": "Not a package-named site (islamqa.info)."
+  },
+  {
+    "id": "madhhab:maliki:work.amulet",
+    "type": "madhhab",
+    "citation": "maliki — الإسلام سؤال وجواب، فتوى 10543 «أحكام التمائم وتعليقها» (حكاية اتفاق العلماء على تحريم التمائم من غير القرآن، والخلاف فيما كان من القرآن): https://islamqa.info/ar/10543",
+    "url": "https://islamqa.info/ar/10543",
+    "text": {
+      "ar": "يحرم تعليق التميمة التي ليست من القرآن، باتفاق العلماء. وفي تعليق ما كُتب فيه قرآن خلاف مشهور.",
+      "en": "Hanging a non-Quranic amulet is forbidden by scholarly agreement. Hanging Quranic text is a well-known point of disagreement."
+    },
+    "location": "الإسلام سؤال وجواب، فتوى 10543 «أحكام التمائم وتعليقها» (حكاية اتفاق العلماء على تحريم التمائم من غير القرآن، والخلاف فيما كان من القرآن): https://islamqa.info/ar/10543",
+    "edition": "Volume/page as given in the reference string; NOT matched against a named printed edition (see verified_how).",
+    "review_status": "pending_human",
+    "verified": false,
+    "verified_how": "School position summarised from the cited contemporary source's report of scholarly agreement; NOT matched against the school's own books. Requires a human scholar.",
+    "used_in": [
+      "work.amulet"
+    ],
+    "tier": "secondary",
+    "tier_note": "Not a package-named site (islamqa.info)."
+  },
+  {
+    "id": "madhhab:shafii:work.amulet",
+    "type": "madhhab",
+    "citation": "shafii — الإسلام سؤال وجواب، فتوى 10543 «أحكام التمائم وتعليقها» (حكاية اتفاق العلماء على تحريم التمائم من غير القرآن، والخلاف فيما كان من القرآن): https://islamqa.info/ar/10543",
+    "url": "https://islamqa.info/ar/10543",
+    "text": {
+      "ar": "يحرم تعليق التميمة التي ليست من القرآن، باتفاق العلماء. وفي تعليق ما كُتب فيه قرآن خلاف مشهور.",
+      "en": "Hanging a non-Quranic amulet is forbidden by scholarly agreement. Hanging Quranic text is a well-known point of disagreement."
+    },
+    "location": "الإسلام سؤال وجواب، فتوى 10543 «أحكام التمائم وتعليقها» (حكاية اتفاق العلماء على تحريم التمائم من غير القرآن، والخلاف فيما كان من القرآن): https://islamqa.info/ar/10543",
+    "edition": "Volume/page as given in the reference string; NOT matched against a named printed edition (see verified_how).",
+    "review_status": "pending_human",
+    "verified": false,
+    "verified_how": "School position summarised from the cited contemporary source's report of scholarly agreement; NOT matched against the school's own books. Requires a human scholar.",
+    "used_in": [
+      "work.amulet"
+    ],
+    "tier": "secondary",
+    "tier_note": "Not a package-named site (islamqa.info)."
+  },
+  {
+    "id": "madhhab:hanbali:work.amulet",
+    "type": "madhhab",
+    "citation": "hanbali — الإسلام سؤال وجواب، فتوى 10543 «أحكام التمائم وتعليقها» (حكاية اتفاق العلماء على تحريم التمائم من غير القرآن، والخلاف فيما كان من القرآن): https://islamqa.info/ar/10543",
+    "url": "https://islamqa.info/ar/10543",
+    "text": {
+      "ar": "يحرم تعليق التميمة التي ليست من القرآن، باتفاق العلماء. وفي تعليق ما كُتب فيه قرآن روايتان مشهورتان بين المنع والجواز، ويرجّح كثير من المعاصرين المنع.",
+      "en": "Hanging a non-Quranic amulet is forbidden by scholarly agreement. On Quranic text there are two well-known views, prohibition and permission; many contemporary scholars prefer prohibition."
+    },
+    "location": "الإسلام سؤال وجواب، فتوى 10543 «أحكام التمائم وتعليقها» (حكاية اتفاق العلماء على تحريم التمائم من غير القرآن، والخلاف فيما كان من القرآن): https://islamqa.info/ar/10543",
+    "edition": "Volume/page as given in the reference string; NOT matched against a named printed edition (see verified_how).",
+    "review_status": "pending_human",
+    "verified": false,
+    "verified_how": "School position summarised from the cited contemporary source's report of scholarly agreement; NOT matched against the school's own books. Requires a human scholar.",
+    "used_in": [
+      "work.amulet"
+    ],
+    "tier": "secondary",
+    "tier_note": "Not a package-named site (islamqa.info)."
+  },
+  {
+    "id": "contemporary:الإسلام-سؤال-وجواب-islamqa-inf:فتوى-رقم-10543-أحكام-التمائم-وتعليقها-وه",
+    "type": "contemporary",
+    "citation": "الإسلام سؤال وجواب (islamqa.info) — فتوى رقم 10543: «أحكام التمائم وتعليقها وهل تدفع التميمة العين والحسد»",
+    "url": "https://islamqa.info/ar/10543",
+    "text": {
+      "ar": "اتفق العلماء على تحريم لبس التمائم إذا كانت من غير القرآن، وهي من الشرك. واختلفوا فيما كان من القرآن، والقول بالنهي أرجح لعموم الأحاديث ولسدّ الذريعة.",
+      "en": "Scholars agree that wearing non-Quranic amulets is forbidden, and that it is a form of shirk. They differ on Quranic ones; the fatwa prefers prohibition because of the general texts and to close the door to misuse."
+    },
+    "location": "فتوى رقم 10543: «أحكام التمائم وتعليقها وهل تدفع التميمة العين والحسد»",
+    "edition": "Official online publication of the issuing body (see url).",
+    "review_status": "pending_human",
+    "verified": false,
+    "verified_how": "Fetched 2026-10-06 (WebFetch): page confirms «اتفق العلماء على تحريم لبس التمائم إذا كانت من غير القرآن» and «والقول بالنهي أرجح لعموم الأحاديث ولسدِّ الذريعة». Not yet reviewed by a human.",
+    "used_in": [
+      "work.amulet"
+    ],
+    "tier": "secondary",
+    "tier_note": "Official publication of a contemporary fiqh council or scholar; not one of the package-named references."
+  },
+  {
+    "id": "madhhab:hanafi:work.hijab",
+    "type": "madhhab",
+    "citation": "hanafi — دار الإفتاء المصرية، فتوى 8832 «حكم الحجاب في الإسلام» (الوجوب بإجماع العلماء «على اختلاف مذاهبهم الفقهية»): https://dar-alifta.org/ar/fatwa/details/22525",
+    "url": "https://dar-alifta.org/ar/fatwa/details/22525",
+    "text": {
+      "ar": "يجب على المرأة البالغة ستر جسدها وشعرها أمام الأجانب. والوجه والكفان ليسا من العورة عندهم في الأصل.",
+      "en": "An adult woman must cover her body and hair before unrelated men. In principle the face and hands are not part of the awra in this school."
+    },
+    "location": "دار الإفتاء المصرية، فتوى 8832 «حكم الحجاب في الإسلام» (الوجوب بإجماع العلماء «على اختلاف مذاهبهم الفقهية»): https://dar-alifta.org/ar/fatwa/details/22525",
+    "edition": "Volume/page as given in the reference string; NOT matched against a named printed edition (see verified_how).",
+    "review_status": "pending_human",
+    "verified": false,
+    "verified_how": "School position summarised from the cited contemporary source's report of scholarly agreement; NOT matched against the school's own books. Requires a human scholar.",
+    "used_in": [
+      "work.hijab"
+    ],
+    "tier": "secondary",
+    "tier_note": "Not a package-named site (dar-alifta.org)."
+  },
+  {
+    "id": "madhhab:maliki:work.hijab",
+    "type": "madhhab",
+    "citation": "maliki — دار الإفتاء المصرية، فتوى 8832 «حكم الحجاب في الإسلام» (الوجوب بإجماع العلماء «على اختلاف مذاهبهم الفقهية»): https://dar-alifta.org/ar/fatwa/details/22525",
+    "url": "https://dar-alifta.org/ar/fatwa/details/22525",
+    "text": {
+      "ar": "يجب على المرأة البالغة ستر جسدها وشعرها أمام الأجانب. والوجه والكفان ليسا من العورة عندهم.",
+      "en": "An adult woman must cover her body and hair before unrelated men. The face and hands are not part of the awra in this school."
+    },
+    "location": "دار الإفتاء المصرية، فتوى 8832 «حكم الحجاب في الإسلام» (الوجوب بإجماع العلماء «على اختلاف مذاهبهم الفقهية»): https://dar-alifta.org/ar/fatwa/details/22525",
+    "edition": "Volume/page as given in the reference string; NOT matched against a named printed edition (see verified_how).",
+    "review_status": "pending_human",
+    "verified": false,
+    "verified_how": "School position summarised from the cited contemporary source's report of scholarly agreement; NOT matched against the school's own books. Requires a human scholar.",
+    "used_in": [
+      "work.hijab"
+    ],
+    "tier": "secondary",
+    "tier_note": "Not a package-named site (dar-alifta.org)."
+  },
+  {
+    "id": "madhhab:shafii:work.hijab",
+    "type": "madhhab",
+    "citation": "shafii — دار الإفتاء المصرية، فتوى 8832 «حكم الحجاب في الإسلام» (الوجوب بإجماع العلماء «على اختلاف مذاهبهم الفقهية»): https://dar-alifta.org/ar/fatwa/details/22525",
+    "url": "https://dar-alifta.org/ar/fatwa/details/22525",
+    "text": {
+      "ar": "يجب على المرأة البالغة ستر جسدها وشعرها أمام الأجانب. وفي الوجه والكفين تفصيل وخلاف داخل المذهب.",
+      "en": "An adult woman must cover her body and hair before unrelated men. On the face and hands there is detail and internal disagreement in the school."
+    },
+    "location": "دار الإفتاء المصرية، فتوى 8832 «حكم الحجاب في الإسلام» (الوجوب بإجماع العلماء «على اختلاف مذاهبهم الفقهية»): https://dar-alifta.org/ar/fatwa/details/22525",
+    "edition": "Volume/page as given in the reference string; NOT matched against a named printed edition (see verified_how).",
+    "review_status": "pending_human",
+    "verified": false,
+    "verified_how": "School position summarised from the cited contemporary source's report of scholarly agreement; NOT matched against the school's own books. Requires a human scholar.",
+    "used_in": [
+      "work.hijab"
+    ],
+    "tier": "secondary",
+    "tier_note": "Not a package-named site (dar-alifta.org)."
+  },
+  {
+    "id": "madhhab:hanbali:work.hijab",
+    "type": "madhhab",
+    "citation": "hanbali — دار الإفتاء المصرية، فتوى 8832 «حكم الحجاب في الإسلام» (الوجوب بإجماع العلماء «على اختلاف مذاهبهم الفقهية»): https://dar-alifta.org/ar/fatwa/details/22525",
+    "url": "https://dar-alifta.org/ar/fatwa/details/22525",
+    "text": {
+      "ar": "يجب على المرأة البالغة ستر جسدها وشعرها أمام الأجانب. وفي الوجه والكفين خلاف داخل المذهب.",
+      "en": "An adult woman must cover her body and hair before unrelated men. On the face and hands there is internal disagreement in the school."
+    },
+    "location": "دار الإفتاء المصرية، فتوى 8832 «حكم الحجاب في الإسلام» (الوجوب بإجماع العلماء «على اختلاف مذاهبهم الفقهية»): https://dar-alifta.org/ar/fatwa/details/22525",
+    "edition": "Volume/page as given in the reference string; NOT matched against a named printed edition (see verified_how).",
+    "review_status": "pending_human",
+    "verified": false,
+    "verified_how": "School position summarised from the cited contemporary source's report of scholarly agreement; NOT matched against the school's own books. Requires a human scholar.",
+    "used_in": [
+      "work.hijab"
+    ],
+    "tier": "secondary",
+    "tier_note": "Not a package-named site (dar-alifta.org)."
+  },
+  {
+    "id": "contemporary:دار-الإفتاء-المصرية-د-نظير-محم:فتوى-رقم-8832-حكم-الحجاب-في-الإسلام-16-ن",
+    "type": "contemporary",
+    "citation": "دار الإفتاء المصرية — د. نظير محمد عياد، مفتي الجمهورية — فتوى رقم 8832 «حكم الحجاب في الإسلام»، 16 نوفمبر 2025",
+    "url": "https://dar-alifta.org/ar/fatwa/details/22525",
+    "text": {
+      "ar": "حجاب المرأة المسلمة البالغة، ومنه ستر الشعر، واجب شرعاً على كل من بلغت سن التكليف بإجماع علماء المسلمين، ويجب عليها ستر جسدها ما عدا الوجه والكفين.",
+      "en": "The hijab of an adult Muslim woman, including covering the hair, is a religious obligation on everyone who reaches the age of accountability, by consensus of Muslim scholars; she must cover her body except the face and hands."
+    },
+    "location": "فتوى رقم 8832 «حكم الحجاب في الإسلام»، 16 نوفمبر 2025",
+    "edition": "Official online publication of the issuing body (see url).",
+    "review_status": "pending_human",
+    "verified": false,
+    "verified_how": "Fetched 2026-10-06 (WebFetch): page confirms «حجاب المرأة المسلمة البالغة واجبٌ شرعًا», «بإجماع علماء المسلمين», «ما عدا الوجهَ والكفين», mufti Dr. Nazir Muhammad Ayad, fatwa 8832. Not yet reviewed by a human.",
+    "used_in": [
+      "work.hijab"
+    ],
+    "tier": "secondary",
+    "tier_note": "Official publication of a contemporary fiqh council or scholar; not one of the package-named references."
   }
 ]

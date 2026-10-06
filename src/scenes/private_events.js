@@ -170,7 +170,7 @@ export default {
     const wreathGeo = own(new THREE.TorusGeometry(0.27, 0.07, 6, 18), 'geos');
     const wreath = new THREE.Mesh(wreathGeo, mats.color('#f3f1ea', { roughness: 0.9 }));
     wreath.position.set(-8.4, 1.55, 6); wreath.rotation.y = Math.PI / 2; wreath.castShadow = true;
-    group.add(wreath);
+    // (funeral wreath removed: the porch now hosts the marriage-proposal situation)
     for (let i = 0; i < 10; i++) {
       const a2 = (i / 10) * Math.PI * 2;
       csph.add(-8.36, 1.55 + Math.sin(a2) * 0.27, 6 + Math.cos(a2) * 0.27, 0.06, 0.06, 0.06, { c: i % 2 ? '#f7f5ee' : '#e9edf0' });
@@ -197,6 +197,17 @@ export default {
     cbox.add(-7.7, PORCH_Y + 0.6, 4.35, 0.62, 0.05, 0.62, { c: '#6b4a2f' });
     cbox.add(-7.7, PORCH_Y + 0.65, 4.35, 0.44, 0.09, 0.32, { c: '#c9ced3' });
     cslab.add(-7.7, PORCH_Y + 0.76, 4.35, 0.42, 0.05, 0.3, { c: '#dde1e5', rx: 0.04 });
+    // proposal prop (private_events.proposal): a ring in a small open box on a tall side table by the porch steps
+    cbox.add(-6.05, 0, 4.85, 0.06, 0.98, 0.06, { c: '#5e3d22' });                                     // table leg
+    cbox.add(-6.05, 0, 4.85, 0.34, 0.03, 0.34, { c: '#5e3d22' });                                     // foot
+    cbox.add(-6.05, 0.98, 4.85, 0.46, 0.04, 0.46, { c: '#6b4a2f' });                                  // top (y 1.02)
+    cbox.add(-6.05, 1.02, 4.85, 0.11, 0.055, 0.11, { c: '#7a1f2b' });                                 // ring box base
+    cslab.add(-6.1, 1.1, 4.85, 0.012, 0.1, 0.11, { c: '#7a1f2b', rz: 0.35 });                       // lid, tipped open
+    cbox.add(-6.05, 1.072, 4.85, 0.09, 0.006, 0.09, { c: '#f2ede4' });                                // satin insert
+    const ringProp = new THREE.Mesh(own(new THREE.TorusGeometry(0.024, 0.006, 8, 20), 'geos'), mats.color('#d4af37', { roughness: 0.25, metalness: 0.9 }));
+    ringProp.position.set(-6.03, 1.1, 4.85); ringProp.rotation.y = Math.PI / 2; ringProp.castShadow = true;
+    group.add(ringProp);
+    col(-6.3, -5.8, 4.6, 5.1, 0, 1.1);
     // sympathy bouquets: white & soft yellow blooms in plain vases
     const bouquet = (x, y, z, seed) => {
       const rr = ctx.rand(seed);
@@ -208,7 +219,7 @@ export default {
         csph.add(x + Math.cos(a2) * rad, y + 0.4 + rr() * 0.1, z + Math.sin(a2) * rad, 0.065, 0.06, 0.065, { c });
       }
     };
-    bouquet(-6.05, 0, 4.85, 11); bouquet(-6.2, 0, 8.35, 12);
+    // sympathy bouquets removed with the funeral situation (the ring table stands at -6.05, 4.85)
     bouquet(-7.0, PORCH_Y, 3.85, 13); bouquet(-7.0, PORCH_Y, 8.15, 14); bouquet(-8.15, PORCH_Y, 5.15, 15);
 
     // ------------------------------------------------------------------ zone 2: Garcia yard (Leo's birthday)
@@ -535,7 +546,7 @@ export default {
 
     // ------------------------------------------------------------------ hotspots / spawn / exit
     const hotspots = [
-      { id: 'harris_porch', position: [-5.45, 0, 6.0], radius: 1.8, label: { ar: 'شرفة آل هاريس', en: 'Harris porch' } },
+      { id: 'harris_porch', position: [-5.45, 0, 6.0], radius: 1.8, label: { ar: 'بيت العمّ صالح', en: "Uncle Saleh's home" } },
       { id: 'garcia_yard', position: [6.55, 0, 1.15], radius: 1.8, label: { ar: 'فناء آل غارسيا', en: 'Garcia yard' } },
       { id: 'wedding_hall', position: [0, 0, -14.9], radius: 1.9, label: { ar: 'قاعة الزفاف', en: 'Wedding hall' } }
     ];

@@ -380,10 +380,10 @@ async function runConfig(browser, baseUrl, cfg) {
       const ri = window.yawmuk.world.renderer.info;
       let pointLights = 0, shadowLights = 0;
       a.root.traverse((o) => { if (o.isPointLight || o.isSpotLight) pointLights++; if (o.isLight && o.castShadow) shadowLights++; });
-      return { pointLights, shadowLights, placeholder: a.isPlaceholder, auto: a.hotspots.filter((h) => h.auto).map((h) => h.id), meshes, instanced: inst, trisDrawn: Math.round(tris + instTris), statsApi: window.yawmuk.stats(), drawCalls: ri.render.calls, frameTris: ri.render.triangles, geometries: ri.memory.geometries, textures: ri.memory.textures, colliders: a.colliders.length, occluders: a.occluders.length, lights: a.lights };
+      return { pointLights, shadowLights, placeholder: a.isPlaceholder, auto: a.hotspots.filter((h) => h.auto).map((h) => h.id), meshes, instanced: inst, trisDrawn: Math.round(tris + instTris), statsApi: window.yawmuk.stats(), drawCalls: ri.render.drawCalls ?? ri.render.calls, frameTris: ri.render.triangles, geometries: ri.memory.geometries, textures: ri.memory.textures, colliders: a.colliders.length, occluders: a.occluders.length, lights: a.lights };
     });
     info.frameMs = await evalp(() => new Promise((res) => { const ts = []; const f = (t) => { ts.push(t); if (ts.length < 31) requestAnimationFrame(f); else res(+((ts.at(-1) - ts[0]) / 30).toFixed(1)); }; requestAnimationFrame(f); }));
-    info.gpu = await evalp(() => { try { const gl = window.yawmuk.world.renderer.getContext(); const e = gl.getExtension('WEBGL_debug_renderer_info'); return e ? gl.getParameter(e.UNMASKED_RENDERER_WEBGL) : gl.getParameter(gl.RENDERER); } catch { return '?'; } });
+    info.gpu = await evalp(() => { try { if (window.yawmuk.world.backend === 'webgpu') return 'webgpu'; const gl = window.yawmuk.world.renderer.getContext(); const e = gl.getExtension('WEBGL_debug_renderer_info'); return e ? gl.getParameter(e.UNMASKED_RENDERER_WEBGL) : gl.getParameter(gl.RENDERER); } catch { return '?'; } });
     perf[loc] = info;
     check(!info.placeholder, `${loc}: placeholder scene loaded instead of the real one`);
     check(info.pointLights <= 3 && info.shadowLights === 0, `${loc}: ${info.pointLights} point/spot lights and ${info.shadowLights} shadow-casting scene lights (budget: <= 3, none casting shadows)`);

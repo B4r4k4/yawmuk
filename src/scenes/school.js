@@ -570,6 +570,13 @@ export default {
     // two laptops on the open study table (yaw 0 → screen faces a sitter on the +z side)
     lapLid(3.6, -3.85, 0);
     lapLid(4.4, -4.15, Math.PI);
+    // situation prop (school.pork): Tyler's sandwich on a paper plate on the open study table (table top y 0.76)
+    mesh(new THREE.CylinderGeometry(0.12, 0.11, 0.012, 20), M.white, 4.25, 0.766, -3.76);
+    const breadM = mat('#d9a25e'), hamM = mat('#e59a9a'), lettuceM = mat('#7fb24a');
+    C(breadM, 4.25, 0.788, -3.76, 0.17, 0.03, 0.11, 0.35);   // bottom slice
+    C(lettuceM, 4.25, 0.807, -3.76, 0.18, 0.008, 0.12, 0.35);
+    C(hamM, 4.25, 0.817, -3.76, 0.175, 0.014, 0.115, 0.35);
+    C(breadM, 4.25, 0.839, -3.76, 0.17, 0.03, 0.11, 0.35);   // top slice
     C(M.dark, 7.1, 1.4, GZ0 + 0.1, 1.1, 0.65, 0.04);
     plane(emis(tvTex, 0.7), 1.02, 0.58, 7.1, 1.4, GZ0 + 0.125);
     B(M.metal, 7.07, 0, GZ0 + 0.06, 7.13, 1.1, GZ0 + 0.12);

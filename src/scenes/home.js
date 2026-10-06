@@ -248,20 +248,13 @@ export default {
     solid(FX0, FZ0, FX1, FZ1);
     solid(FX0, FZ1, -5.5, -3.0);
 
-    // items on the counter next to the fridge (Carol's Wednesday menu): red Jell-O box, red-wine bottle,
-    // small vanilla bottle, and supermarket beef wrapped in plastic
-    B.satin.fbox('#d42a35', 0.12, 0.08, 0.04, -5.02, 0.9, -4.3, 0.25);                     // Jell-O box (standing)
-    B.satin.fbox('#f4f1e8', 0.07, 0.02, 0.041, -5.02, 0.93, -4.3, 0.25);                   // label band
-    B.satin.fcyl('#3a0d14', 0.038, 0.038, 0.22, -4.86, 0.9, -4.36, 10);                     // wine bottle body
-    B.satin.cyl('#3a0d14', 0.014, 0.038, 0.06, -4.86, 1.15, -4.36, 10);                     // shoulder
-    B.satin.fcyl('#3a0d14', 0.014, 0.014, 0.08, -4.86, 1.18, -4.36, 8);                     // neck
-    B.satin.fcyl('#7a1424', 0.016, 0.016, 0.03, -4.86, 1.25, -4.36, 8);                     // capsule
-    B.satin.fcyl('#e9dfc8', 0.039, 0.039, 0.07, -4.86, 0.97, -4.36, 10);                    // label
-    B.satin.fcyl('#5a2f17', 0.024, 0.026, 0.11, -4.73, 0.9, -4.25, 8);                      // vanilla
-    B.satin.fcyl(C.black, 0.015, 0.015, 0.03, -4.73, 1.01, -4.25, 8);
-    B.satin.fbox('#f4f4f0', 0.26, 0.02, 0.18, -4.86, 0.9, -4.04, 0.1);                     // foam tray
-    B.satin.fbox('#e58a95', 0.22, 0.045, 0.14, -4.86, 0.92, -4.04, 0.1);                   // beef, pink
-    B.glass.box('#ffffff', 0.27, 0.075, 0.19, -4.86, 0.9375, -4.04, 0.1);                  // cling wrap
+    // wudu at the kitchen sink (situation home.purity_mosque, hotspot `fridge`): the tap is running —
+    // a thin transparent water stream from the spout into the basin, a small ripple disc in the basin,
+    // and a folded towel waiting on the counter beside the sink.
+    B.glass.fcyl('#9fd3ff', 0.012, 0.014, 0.28, -4.1, 0.906, -4.25, 8);                   // running water
+    B.glass.cyl('#9fd3ff', 0.07, 0.07, 0.004, -4.1, 0.91, -4.25, 14);                      // splash ripple
+    B.matte.fbox('#2f8f83', 0.3, 0.035, 0.2, -3.55, 0.9, -4.18, 0.15);                     // folded towel
+    B.matte.fbox('#e9f2ef', 0.3, 0.006, 0.2, -3.55, 0.918, -4.18, 0.15);                   // towel stripe
 
     // ================================================================== DINING (table 1.6 x 0.9 at (0,-1.5))
     const TX = 0, TZ = -1.5, TY = 0.76;
@@ -600,7 +593,9 @@ export default {
     lampLight.position.set(2.4, 1.35, 0.0);
     group.add(pendant, windowFill, lampLight);
 
-    // ------------------------------------------------------------------ snowfall (one Points draw)
+    // ------------------------------------------------------------------ snowfall (one instanced draw)
+    // An InstancedMesh of tiny octahedra rather than THREE.Points: WebGPURenderer draws Points as 1-px dots
+    // (PointsMaterial.size is ignored), so sized flakes need real geometry. Same look on both renderers.
     const FLAKES = 380;
     const snowPos = new Float32Array(FLAKES * 3), snowSpd = new Float32Array(FLAKES), snowX = new Float32Array(FLAKES);
     for (let i = 0; i < FLAKES; i++) {
@@ -609,11 +604,16 @@ export default {
       snowPos[i * 3] = snowX[i] = x; snowPos[i * 3 + 1] = rr() * 6; snowPos[i * 3 + 2] = z;
       snowSpd[i] = 0.35 + rr() * 0.45;
     }
-    const snowGeo = own(new THREE.BufferGeometry());
-    snowGeo.setAttribute('position', new THREE.BufferAttribute(snowPos, 3));
-    snowGeo.computeBoundingSphere();
-    const snowMat = own(new THREE.PointsMaterial({ color: '#ffffff', size: 0.07, transparent: true, opacity: 0.9, depthWrite: false }));
-    const snow = new THREE.Points(snowGeo, snowMat);
+    const snowGeo = own(new THREE.OctahedronGeometry(0.02, 0)); // ≈ the old 0.07 attenuated point size
+    const snowMat = own(new THREE.MeshBasicMaterial({ color: '#ffffff', transparent: true, opacity: 0.9, depthWrite: false, toneMapped: false }));
+    const snow = new THREE.InstancedMesh(snowGeo, snowMat, FLAKES);
+    snow.instanceMatrix.setUsage(THREE.DynamicDrawUsage);
+    const flakeM = new THREE.Matrix4();
+    const placeFlakes = () => {
+      for (let i = 0; i < FLAKES; i++) snow.setMatrixAt(i, flakeM.makeTranslation(snowPos[i * 3], snowPos[i * 3 + 1], snowPos[i * 3 + 2]));
+      snow.instanceMatrix.needsUpdate = true;
+    };
+    placeFlakes();
     snow.name = 'home:snowfall';
     snow.frustumCulled = false;
     group.add(snow);
@@ -642,7 +642,7 @@ export default {
     const benLook = { skin: '#f3d3b5', shirt: '#8a8f98', pants: '#2f3542', hair: '#8b6b3d', shoes: '#f0f0f0', height: 1.8, build: 0.9 };
     // Sarah (background): Adam's wife, seated at the west end of the table looking at her laptop
     const sarahLook = { skin: '#f1cfae', shirt: '#9c3d54', pants: '#2f3542', shoes: '#5a4a3c', hair: '#8a4b2a', height: 1.66 };
-    const omarPos = [1.0, 0, -2.3], benPos = [-1.2, 0, 3.4];
+    const omarPos = [-3.6, 0, -3.4], benPos = [-1.2, 0, 3.4];
 
     if (typeof ctx.makeNPC === 'function') {
       const om = ctx.makeNPC(omarLook);
@@ -657,7 +657,7 @@ export default {
         prop(new THREE.CylinderGeometry(0.04, 0.036, 0.1, 10), propMats.mug, po.armR, 0, -0.68, -0.05);
         posed.push({ part: po.armR, x: 0.9 });
       }
-      npcs.push({ id: 'omar', position: omarPos, yaw: yawTo([omarPos[0], omarPos[2]], [0.3, 0.4]), object: om });
+      npcs.push({ id: 'omar', position: omarPos, yaw: yawTo([omarPos[0], omarPos[2]], [-5.0, -3.3]), object: om });
 
       const ca = ctx.makeNPC(carolLook);
       const pc = ca.userData.parts;
@@ -704,7 +704,7 @@ export default {
       }
       npcs.push({ id: 'bg_sarah', position: [-1.1, -0.38, -1.5], yaw: -PI / 2, object: sa, animate: false, collide: false, showName: false });
     } else {
-      npcs.push({ id: 'omar', position: omarPos, yaw: yawTo([omarPos[0], omarPos[2]], [0.3, 0.4]), look: omarLook });
+      npcs.push({ id: 'omar', position: omarPos, yaw: yawTo([omarPos[0], omarPos[2]], [-5.0, -3.3]), look: omarLook });
       npcs.push({ id: 'carol', position: [-4.4, 0, -3.0], yaw: 2.35, look: carolLook });
       npcs.push({ id: 'ben', position: benPos, yaw: yawTo([benPos[0], benPos[2]], [0.3, 2.4]), look: benLook });
       npcs.push({ id: 'bg_sarah', position: [-1.1, 0, -2.0], yaw: yawTo([-1.1, -2.0], [0.12, -1.42]), look: sarahLook, collide: false });
@@ -718,7 +718,7 @@ export default {
       colliders,
       hotspots: [
         { id: 'laptop', position: [LX, 0.85, LZ], radius: 1.8, label: { ar: 'اللابتوب', en: 'Laptop' } },
-        { id: 'fridge', position: [-5.0, 1.0, -3.3], radius: 1.9, label: { ar: 'الثلاجة', en: 'Fridge' } },
+        { id: 'fridge', position: [-5.0, 1.0, -3.3], radius: 1.9, label: { ar: 'حوض المطبخ', en: 'Kitchen sink' } },
         { id: 'mail_table', position: [-2.0, 0.9, 3.95], radius: 1.7, label: { ar: 'طاولة البريد', en: 'Mail table' } }
       ],
       npcs,
@@ -745,7 +745,7 @@ export default {
           snowPos[i * 3 + 1] = y;
           snowPos[i * 3] = snowX[i] + Math.sin(t * 0.7 + i) * 0.15;
         }
-        snowGeo.attributes.position.needsUpdate = true;
+        placeFlakes();
         // hold props up (after the engine's idle animation reset the arms)
         for (const p of posed) p.part.rotation.x = p.x + Math.sin(t * 1.3) * 0.03;
       },

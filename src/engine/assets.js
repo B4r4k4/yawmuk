@@ -5,7 +5,7 @@
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader.js';
-import { RGBELoader } from 'three/examples/jsm/loaders/RGBELoader.js';
+import { HDRLoader } from 'three/examples/jsm/loaders/HDRLoader.js';
 import { MeshoptDecoder } from 'three/examples/jsm/libs/meshopt_decoder.module.js';
 import { clone as skeletonClone } from 'three/examples/jsm/utils/SkeletonUtils.js';
 import { events } from './events.js';
@@ -241,18 +241,20 @@ export async function loadTexture(name, opts = {}) {
 
 // ------------------------------------------------------------------ HDR environments
 /**
- * loadEnvironment(renderer, idOrPath) -> Promise<Texture> (PMREM, cached, kept across scenes).
+ * loadEnvironment(renderer, idOrPath) -> Promise<Texture> (equirectangular HDR, cached, kept across scenes).
  * id: catalog hdri id, or a name resolved as assets/env/hdri/hdri_<name>.hdr (or <name>.hdr), or a path.
+ * The texture is returned with EquirectangularReflectionMapping and is NOT pre-filtered here: assigned to
+ * `scene.environment` (or a material's envMap) it is PMREM-processed on first use by the renderer itself
+ * (WebGPURenderer's node system on both the WebGPU and WebGL2 backends; WebGLRenderer's cube-UV cache too),
+ * so this needs no initialised renderer. `renderer` is kept for API compatibility and is unused.
  */
 export function loadEnvironment(renderer, idOrPath) {
   const e = catalog.entries[idOrPath] || catalog.entries[`hdri_${idOrPath}`];
   const p = entryPath(e) || (/[./]/.test(idOrPath) ? idOrPath : `assets/env/hdri/${idOrPath.startsWith('hdri_') ? idOrPath : `hdri_${idOrPath}`}.hdr`);
   const url = assetUrl(p);
-  return cached(url, 'env', () => track(new RGBELoader().loadAsync(url), 'environment').then((hdr) => {
-    const pm = new THREE.PMREMGenerator(renderer);
-    const env = pm.fromEquirectangular(hdr).texture;
-    hdr.dispose(); pm.dispose();
-    env.userData.shared = true;
-    return env;
+  return cached(url, 'env', () => track(new HDRLoader().loadAsync(url), 'environment').then((hdr) => {
+    hdr.mapping = THREE.EquirectangularReflectionMapping;
+    hdr.userData.shared = true;
+    return hdr;
   }), true);
 }

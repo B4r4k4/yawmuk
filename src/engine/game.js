@@ -1,5 +1,5 @@
 // Game controller: boot, screens, location sequence, exploration loop, situations, summary.
-import * as THREE from 'three';
+import * as THREE from 'three/webgpu'; // node materials for scenes (shares one core with 'three')
 import { createWorld } from './world.js';
 import { createMats } from './mats.js';
 import { createInput } from './input.js';
@@ -44,7 +44,7 @@ export async function startGame() {
 
   // low tier: characters are one merged mesh and NPCs cast no shadows (applies to characters built afterwards)
   events.on('quality:apply', (q) => setCharacterDefaults({ single: !!q.lightCharacters, shadows: !q.lightCharacters }));
-  const world = createWorld(canvas);
+  const world = await createWorld(canvas); // async: WebGPURenderer.init() (WebGPU or WebGL2 fallback)
   setCharacterDefaults({ single: world.quality === 'low', shadows: world.quality !== 'low' });
   loadCatalog(); preloadCharacters(); // start downloads right away (the scene manager awaits them)
   const mats = createMats();
@@ -163,7 +163,17 @@ export async function startGame() {
     if (!playing) { hud.setPrompt(null); input.setInteractVisible(false); }
   }
 
-  const fade = (on) => new Promise((r) => { fadeEl.classList.toggle('on', on); setTimeout(r, on ? 380 : 50); });
+  // door transition: a short warm fade (~0.3 s in, ~0.3 s out) while the next scene builds; the loading veil (bar)
+  // only shows when the build takes longer than 1.5 s
+  let slowTimer = 0;
+  const fade = (on) => new Promise((r) => {
+    clearTimeout(slowTimer);
+    fadeEl.classList.add('door');
+    fadeEl.classList.toggle('on', on);
+    if (on) slowTimer = setTimeout(() => fadeEl.classList.add('busy'), 1500);
+    else fadeEl.classList.remove('busy');
+    setTimeout(r, on ? 300 : 50);
+  });
 
   // ------------------------------------------------------------ locations
   /**
@@ -420,7 +430,7 @@ export async function startGame() {
     /** Render quality: yawmuk.setQuality('low'|'medium'|'high'); yawmuk.quality */
     setQuality: (q) => world.setQuality(q),
     get quality() { return world.quality; },
-    perf: () => ({ ...world.stats, quality: world.quality, calls: world.renderer.info.render.calls, tris: world.renderer.info.render.triangles, characters: liveCharacterCount(), textures: world.renderer.info.memory.textures, geometries: world.renderer.info.memory.geometries }),
+    perf: () => ({ ...world.stats, quality: world.quality, calls: world.renderer.info.render.drawCalls ?? world.renderer.info.render.calls, backend: world.backend, tris: world.renderer.info.render.triangles, characters: liveCharacterCount(), textures: world.renderer.info.memory.textures, geometries: world.renderer.info.memory.geometries }),
     goto: (loc, from = null) => enterLocation(loc, { intro: false, from }),
     /** Open a feature panel by name (src/features/<name>); yawmuk.features lists the modules found at build time. */
     openFeature: (name, extra = {}) => openFeature(name, extra && typeof extra === 'object' ? extra : {}),

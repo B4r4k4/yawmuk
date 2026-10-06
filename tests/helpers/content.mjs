@@ -12,14 +12,22 @@ export function readJson(rel) {
 }
 
 /** { file, ruling } for every ruling in content/rulings/*.json */
-export function loadRulings() {
+function readRulingDir(dir) {
   const out = [];
-  for (const f of fs.readdirSync(path.join(ROOT, 'content/rulings')).filter((x) => x.endsWith('.json')).sort()) {
-    const data = readJson(`content/rulings/${f}`);
+  if (!fs.existsSync(path.join(ROOT, dir))) return out;
+  for (const f of fs.readdirSync(path.join(ROOT, dir)).filter((x) => x.endsWith('.json')).sort()) {
+    const data = readJson(`${dir}/${f}`);
     for (const r of Array.isArray(data) ? data : [data]) out.push({ file: f, ruling: r });
   }
   return out;
 }
+
+/** Rulings played as situations (content/rulings). */
+export function loadSituationRulings() { return readRulingDir('content/rulings'); }
+
+/** Every reviewed ruling the app ships: situation rulings + the guide's reference library (content/library).
+ * All content/safety/level audits run on both. */
+export function loadRulings() { return [...loadSituationRulings(), ...readRulingDir('content/library')]; }
 
 /** location -> script JSON */
 export function loadScripts() {

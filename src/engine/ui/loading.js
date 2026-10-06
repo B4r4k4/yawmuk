@@ -45,7 +45,8 @@ function onProgress(d) {
   const p = d && d.total > 0 ? d.loaded / d.total : 0;
   if (!gone) setBar($('loader-bar'), p, d?.label, $('loader-label'));
   const fade = $('fade');
-  if (fade && fade.classList.contains('on')) { fade.classList.add('busy'); setBar($('veil-bar'), p, null, null); }
+  // the veil (bar) only appears once the door transition has lasted > 1.5 s (game.js adds .busy); keep its bar current
+  if (fade && fade.classList.contains('on')) { if (!fade.classList.contains('door')) fade.classList.add('busy'); setBar($('veil-bar'), p, null, null); }
 }
 
 function onDone() {

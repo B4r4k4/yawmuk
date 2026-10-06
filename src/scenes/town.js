@@ -7,8 +7,10 @@
 // autumn), cypresses by the mosque, black lanterns, flower beds, a playground at the college, warm windows.
 // The sky, hills, sea and the suburb beyond the hedges are a separate `backdrop` (never part of the walkable bounds).
 import { createBatcher } from './home/batch.js';
-import { createGoldenSky, rng } from '../engine/goldenSky.js';
+import { createGoldenSky, rng, GOLDEN } from '../engine/goldenSky.js';
+import { groundMaterial, wallMaterial, applyLeafSurface } from '../engine/tslSurfaces.js';
 import { LIGHTING } from '../engine/config.js';
+import { positionView, screenCoordinate, floor, dot, vec2, sin, fract, bool } from 'three/tsl';
 
 const PI = Math.PI;
 const FACE = 8;          // |z| of the building facades (north row at -8, south row at +8)
@@ -69,22 +71,27 @@ export default {
     const owned = [];
     const own = (x) => { owned.push(x); return x; };
     const M = {
-      vc: own(new THREE.MeshStandardMaterial({ vertexColors: true, roughness: 0.82 })),
-      flat: own(new THREE.MeshStandardMaterial({ vertexColors: true, roughness: 0.95 })),
+      vc: own(wallMaterial(THREE, { roughness: 0.82 })),          // + plaster weathering, grime band, ground AO (TSL)
+      flat: own(groundMaterial(THREE, { roughness: 0.95 })),      // + lawn patches, asphalt grain, paving joints (TSL)
       glass: own(new THREE.MeshStandardMaterial({ vertexColors: true, roughness: 0.15, metalness: 0.35 })),
       // warm windows / door lintels (slightly HDR so bloom lifts them a little)
       glow: own(new THREE.MeshBasicMaterial({ vertexColors: true, toneMapped: false, color: new THREE.Color(1.2, 1.12, 1.0) })),
       // lanterns and bulbs: clearly HDR so the bloom catches them
       lamp: own(new THREE.MeshBasicMaterial({ vertexColors: true, toneMapped: false, color: new THREE.Color(2.6, 2.1, 1.6) })),
       // tree canopies: dithered fade within ~4 m of the camera so leaves never block the follow camera
-      leaf: own(new THREE.MeshStandardMaterial({ vertexColors: true, roughness: 0.86 }))
+      // (TSL node material; plain MeshStandardMaterial without the fade when ctx.THREE has no node materials, e.g. headless tests)
+      leaf: own(new (THREE.MeshStandardNodeMaterial ?? THREE.MeshStandardMaterial)({ vertexColors: true, roughness: 0.86 }))
     };
-    M.leaf.onBeforeCompile = (sh) => {
-      sh.fragmentShader = sh.fragmentShader.replace('#include <clipping_planes_fragment>', `#include <clipping_planes_fragment>
-  float camFade = clamp((length(vViewPosition) - 1.5) / 2.5, 0.0, 1.0);
-  if (camFade < 1.0 && fract(sin(dot(floor(gl_FragCoord.xy), vec2(12.9898, 78.233))) * 43758.5453) > camFade) discard;`);
-    };
-    M.leaf.customProgramCacheKey = () => 'town-leaf-fade';
+    if (M.leaf.isNodeMaterial) {
+      // camFade: 0 at <=1.5 m from the camera, 1 at >=4 m; screen-space hash dither keeps the fragment when hash <= camFade
+      // (hash < 1, so camFade = 1 never discards). Shadows stay solid (the old depth material had no fade either).
+      const camFade = positionView.length().sub(1.5).div(2.5).clamp(0, 1);
+      const dither = fract(sin(dot(floor(screenCoordinate.xy), vec2(12.9898, 78.233))).mul(43758.5453));
+      M.leaf.maskNode = dither.lessThanEqual(camFade);
+      M.leaf.maskShadowNode = bool(true);
+      // per-tree colour jitter, leaf-clump dapples and a warm sun-side glow (golden hour)
+      applyLeafSurface(M.leaf, { sunDir: golden ? GOLDEN.sunDir : [0.55, 1, 0.35], glow: golden ? 0.4 : 0.12 });
+    }
     const B = { vc: makeBatch('town-solid'), flat: makeBatch('town-ground'), glass: makeBatch('town-glass'), glow: makeBatch('town-glow'), lamp: makeBatch('town-lamp'), leaf: makeBatch('town-leaf') };
     const colliders = [];
     const col = (x0, z0, x1, z1, y1 = 3) => colliders.push({ min: [Math.min(x0, x1), 0, Math.min(z0, z1)], max: [Math.max(x0, x1), y1, Math.max(z0, z1)] });

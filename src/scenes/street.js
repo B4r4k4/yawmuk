@@ -1,6 +1,6 @@
-// «يومك» — Street at night (Monday 21:00), Columbus OH.
-// Bus stop (Omar with the lost wallet), Tariq's mart counter (lottery billboard outside), e-bike sale with Yusuf,
-// Omar's car = exit.
+// «يومك» — Street at night (21:00), حيّ السلام.
+// One situation: street.lottery at Tariq's mart counter (lottery ticket + promo die on the counter, lottery billboard
+// outside). Omar waits at the bus stop bench (his car = exit); Yusuf and the e-bike remain as ambient set dressing.
 // Procedural geometry only. Static props are merged per material bucket (see street/batcher.js);
 // repeated props (lamps, trees, snow piles, light pools) are InstancedMeshes.
 import { createBatcher } from './street/batcher.js';
@@ -138,7 +138,7 @@ export default {
     B.box('vc', '#6e4428', 0.2, 1.0, 2.85, -1.6, 0, -8.18);
     B.box('vc', '#6e4428', 0.2, 1.0, 2.85, 1.6, 0, -8.18);
     B.box('gloss', '#c8a24a', 3.0, 0.06, 0.04, 0, 0.5, -6.74); // brass trim
-    // register + card-payment terminal (Tariq sells no lottery: no ticket machine, no scratch-offs)
+    // register + card-payment terminal (Tariq sells no lottery: no ticket machine; the ticket below is a rep's sample)
     B.box('gloss', '#23262b', 0.42, 0.22, 0.36, 0.7, 1.05, -7.2);
     B.box('glow', '#7fe0a0', 0.3, 0.14, 0.02, 0.7, 1.29, -7.05, 0, -0.3);
     B.box('gloss', '#2a2d33', 0.1, 0.05, 0.16, 0.15, 1.05, -6.95, 0.2, -0.35);
@@ -152,6 +152,25 @@ export default {
     B.cyl('gloss', '#2a2d31', 0.03, 0.03, 0.06, 1.2, 1.34, -7.1, 8);
     B.cyl('gloss', '#b9bec4', 0.018, 0.018, 0.16, 1.07, 1.2, -7.0, 6, 0.9, 0.6);
     for (const [x, z] of [[1.38, -6.92], [1.42, -7.12]]) B.cyl('vc', '#efe6d4', 0.035, 0.028, 0.09, x, 1.095, z, 8);
+    // street.lottery prop: the sample lottery ticket + promo die a lottery company rep left on the counter
+    // (Tariq turned the offer down and is returning them). Counter top surface is y 1.05; clear of the rack
+    // (x <= -0.275), the card terminal (x ~0.15) and the register (x >= 0.49).
+    B.box('vc', '#f3d34a', 0.17, 0.004, 0.09, -0.12, 1.05, -6.9, 0.35);            // ticket card
+    B.box('vc', '#c0322a', 0.15, 0.002, 0.022, -0.115, 1.054, -6.9, 0.35);          // red banner strip
+    B.box('gloss', '#b9bec4', 0.07, 0.002, 0.04, -0.15, 1.054, -6.875, 0.35);       // scratch panel
+    B.box('vc', '#f3d34a', 0.17, 0.004, 0.09, -0.04, 1.05, -6.94, -0.2);            // second ticket, fanned
+    {
+      const DX = 0.36, DZ = -6.86, S = 0.06, top = 1.05 + S;                         // promo die (axis-aligned)
+      B.box('vc', '#f4f2ec', S, S, S, DX, 1.05, DZ);
+      const pip = (x, y, z, w, h, d) => B.box('vc', '#1c1c1f', w, h, d, x, y, z);
+      for (const [px, pz] of [[-0.016, -0.016], [0.016, 0.016], [0, 0], [-0.016, 0.016], [0.016, -0.016]]) {
+        pip(DX + px, top, DZ + pz, 0.011, 0.002, 0.011);                              // five on top
+      }
+      for (const [px, py] of [[-0.016, 0.016], [0, 0], [0.016, -0.016]]) {
+        pip(DX + px, 1.05 + S / 2 + py - 0.0055, DZ + S / 2, 0.011, 0.011, 0.002);    // three facing the player
+      }
+      for (const py of [-0.012, 0.012]) pip(DX + S / 2, 1.05 + S / 2 + py - 0.0055, DZ, 0.002, 0.011, 0.011); // two on the side
+    }
     // snacks behind the counter, tea shelf above it
     B.box('vc', '#2c2f35', 3.0, 2.2, 0.35, 0, 0, -9.73);
     add(plane(2.9, 1.5), M.products, 0, 1.05, -9.54);

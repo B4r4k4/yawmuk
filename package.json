@@ -18,9 +18,7 @@
   "dependencies": {
     "@anthropic-ai/sdk": "^0.131.0",
     "adhan": "^4.4.6",
-    "n8ao": "^2.0.1",
-    "postprocessing": "^6.39.5",
-    "three": "^0.170.0"
+    "three": "^0.186.1"
   },
   "devDependencies": {
     "@gltf-transform/core": "^4.5.1",

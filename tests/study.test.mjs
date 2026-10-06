@@ -49,8 +49,8 @@ describe('study instrument', () => {
     assert.equal(scoreAnswers(all), 5);
     assert.equal(scoreAnswers(Object.fromEntries(ITEMS.map((i) => [i.id, -1]))), 0);
     assert.deepEqual(cleanAnswers({ ...all, extra: 1 }), all);
-    assert.equal(cleanAnswers({ ...all, riba: 9 }), null);
-    assert.equal(cleanAnswers({ riba: 1 }), null);
+    assert.equal(cleanAnswers({ ...all, maysir: 9 }), null);
+    assert.equal(cleanAnswers({ maysir: 1 }), null);
     assert.equal(cleanAnswers([1, 2]), null);
   });
 });

@@ -137,12 +137,12 @@ export default {
 | `room({ w, d, h, x, z, floor, wall, ceiling, thick, doors })` | `→ { floor, walls }` | Floor + 4 colliding walls. `doors: [{ side: 'n'\|'s'\|'e'\|'w', at: 0, width: 1.4, height: 2.2 }]` (n = −Z, s = +Z, e = +X, w = −X; `at` = offset from the wall centre). |
 | `addCollider(target)` | `→ {min,max}` | `Object3D` (world AABB), `THREE.Box3`, `{min,max}` or `(minArr, maxArr)`. |
 | `addModelColliders(obj, mode)` | `→ collider(s)` | What `place(..., {collider})` uses, for models you loaded yourself. |
-| `makeLabel(text, opts?)` | `→ Sprite` | `text` is a string or `{ar,en}`; re-renders on language change. `opts: { size=0.32, color, background (css \| false), depthTest=true }`. Labels are drawn after tone mapping (crisp colours) and are still hidden behind walls. |
+| `makeLabel(text, opts?)` | `→ Sprite` | `text` is a string or `{ar,en}`; re-renders on language change. `opts: { size=0.32, color, background (css \| false), depthTest=true }`. Label materials skip tone mapping (`toneMapped: false`, crisp colours) and are still hidden behind walls. |
 | `rand(seed)` | `→ () => [0,1)` | Deterministic PRNG for scattering decor. |
 | `yawTo([x,z], [x,z])` | `→ yaw` | The yaw that makes something at A face B. |
 | `script` | the location script JSON | Includes `situations[].hotspot`, `npc`, `time_of_day` and so on. |
 | `location`, `lang`, `tr(obj)`, `debug`, `isMobile`, `quality` | | `quality` is the render tier (`'low'\|'medium'\|'high'`): drop decorative detail on `'low'`. |
-| `renderer` | `THREE.WebGLRenderer` | Read-only use (e.g. `capabilities.maxAnisotropy`). |
+| `renderer` | `THREE.WebGPURenderer` (WebGPU or WebGL2 backend) | Read-only use (e.g. `getMaxAnisotropy()`). |
 | `colliders` | array | Raw access to the collider list. |
 
 **`opts` shared by `box`, `cyl`, `sphere`, `ground` and `wall`:** `{ collide: bool, cast: true, receive: true, rotY: radians, parent: Object3D, name }`.

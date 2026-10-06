@@ -1,75 +1,156 @@
 // Golden-hour backdrop (key art: public/brand/imagery/keyart-town-golden-hour.jpg).
-// A sky dome (gradient + sun disc + painterly clouds, one ShaderMaterial) and the far field: three rings of hazy
+// A sky dome (gradient + sun disc + painterly clouds, one TSL MeshBasicNodeMaterial) and the far field: three rings of hazy
 // hills, a small city skyline and a sea strip with a sun glint (one vertex-coloured mesh + one sea mesh).
 // 3 draw calls in total; nothing here reads the DOM, so scenes can build it headless (tests run in Node).
 // The visual sun sits on the horizon down `sunAz` while the light (GOLDEN.sunDir) stays ~20° up so shadows are
 // long but still land on the ground; the two azimuths are allowed to differ (the art does the same).
-import * as THREE from 'three';
+import * as THREE from 'three/webgpu';
+import {
+  Fn, If, uniform, vec3, vec4, float, mix, smoothstep, pow, max, dot, clamp, fract, floor, normalize,
+  positionLocal, cameraPosition, cameraProjectionMatrix, cameraViewMatrix
+} from 'three/tsl';
 
 /** Shared golden-hour constants (world.js builds the `golden` light preset from these). */
 export const GOLDEN = {
   sunDir: [0.79, 0.36, 0.5],     // towards the sun light (elevation ~21°, from +X/+Z: lights the north-row facades)
   sunAz: 0.14,                   // azimuth (rad, from +X towards +Z) of the visible sun disc: down the avenue's east end
   sunEl: 0.035,                  // elevation (rad) of the visible disc: resting on the horizon
-  horizon: '#e98d4e',            // = fog colour, so fogged ground melts into the sky
-  low: '#f0a663',
-  mid: '#f1c491',
-  zenith: '#8daccb',
-  sun: '#ffb050',
-  cloudLit: '#ffae68',
-  cloudShade: '#a5696c',
-  haze: '#e98d4e'
+  horizon: '#e57a32',            // = fog colour, so fogged ground melts into the sky (deep amber, as in the key art)
+  low: '#f08d3c',
+  mid: '#f2a670',
+  zenith: '#6c9bd6',
+  sun: '#ffa030',
+  cloudLit: '#ffa04c',
+  cloudShade: '#b46a66',
+  haze: '#e57a32',               // far-field haze = horizon = fog (hills/sea melt into the sky)
+  glow: [0.7, 1.2, 3.0],         // sun glow strengths: wide low side-glow, halo (pow 30), core (pow 400)
+  cloud: [0.38, 0.58, 0.96, 1.0],// cloud coverage smoothstep lo/hi (lower = denser), opacity, sun-side under-light
+  disc: [0.99955, 0.99968]       // sun disc: cos-angle smoothstep edges (lower = bigger disc)
 };
 
-const VERT = /* glsl */`
-varying vec3 vDir;
-void main() {
-  vDir = position;
-  gl_Position = projectionMatrix * viewMatrix * vec4(position + cameraPosition, 1.0);
-}`;
+// ---- sky dome shader (TSL; WebGPURenderer on WebGPU or its WebGL2 backend). 1:1 port of the old GLSL.
+// Value noise: hash -> trilinear noise -> 4-octave fbm. setLayout() emits each as a real shader function instead
+// of inlining 2 x 4 x 8 hash expressions into one giant graph.
+const skyHash = /*@__PURE__*/ Fn(([p0]) => {
+  const p = fract(p0.mul(0.3183099).add(0.1)).mul(17.0).toVar();
+  return fract(p.x.mul(p.y).mul(p.z).mul(p.x.add(p.y).add(p.z)));
+}).setLayout({ name: 'goldenSkyHash', type: 'float', inputs: [{ name: 'p', type: 'vec3' }] });
 
-const FRAG = /* glsl */`
-uniform vec3 uZenith, uMid, uLow, uHorizon, uSun, uCloudLit, uCloudShade;
-uniform vec3 uSunDir;
-varying vec3 vDir;
-float hash(vec3 p) { p = fract(p * 0.3183099 + 0.1); p *= 17.0; return fract(p.x * p.y * p.z * (p.x + p.y + p.z)); }
-float noise(vec3 x) {
-  vec3 i = floor(x), f = fract(x); f = f * f * (3.0 - 2.0 * f);
-  return mix(mix(mix(hash(i), hash(i + vec3(1, 0, 0)), f.x), mix(hash(i + vec3(0, 1, 0)), hash(i + vec3(1, 1, 0)), f.x), f.y),
-             mix(mix(hash(i + vec3(0, 0, 1)), hash(i + vec3(1, 0, 1)), f.x), mix(hash(i + vec3(0, 1, 1)), hash(i + vec3(1, 1, 1)), f.x), f.y), f.z);
+const skyNoise = /*@__PURE__*/ Fn(([x]) => {
+  const i = floor(x).toVar();
+  const f = fract(x).toVar();
+  const u = f.mul(f).mul(float(3.0).sub(f.mul(2.0))).toVar();
+  const h = (a, b, c) => skyHash(i.add(vec3(a, b, c)));
+  return mix(
+    mix(mix(h(0, 0, 0), h(1, 0, 0), u.x), mix(h(0, 1, 0), h(1, 1, 0), u.x), u.y),
+    mix(mix(h(0, 0, 1), h(1, 0, 1), u.x), mix(h(0, 1, 1), h(1, 1, 1), u.x), u.y),
+    u.z
+  );
+}).setLayout({ name: 'goldenSkyNoise', type: 'float', inputs: [{ name: 'x', type: 'vec3' }] });
+
+const skyFbm = /*@__PURE__*/ Fn(([p0]) => {
+  const p = vec3(p0).toVar();
+  const s = float(0.0).toVar();
+  let a = 0.5;
+  for (let k = 0; k < 4; k++) {           // unrolled at graph-build time
+    s.addAssign(skyNoise(p).mul(a));
+    if (k < 3) p.assign(p.mul(2.07).add(vec3(1.7, 9.2, 3.1)));
+    a *= 0.5;
+  }
+  return s;
+}).setLayout({ name: 'goldenSkyFbm', type: 'float', inputs: [{ name: 'p', type: 'vec3' }] });
+
+/** Colour graph of the dome. `U` holds the uniform nodes (.value = THREE.Color / THREE.Vector3, updatable live). */
+function skyColorNode(U) {
+  return Fn(() => {
+    const d = normalize(positionLocal).toVar();                  // = old vDir (the dome's model matrix is identity)
+    const e = d.y;
+    const h = max(e, 0.0).toVar();
+    const s = normalize(U.uSunDir);
+    const sd = dot(d, s).toVar();
+    const cs = max(sd, 0.0).toVar();
+    // vertical gradient: deep orange horizon -> peach -> pale cream -> soft blue zenith
+    const col = mix(U.uHorizon, U.uLow, smoothstep(0.0, 0.09, h)).toVar();
+    col.assign(mix(col, U.uMid, smoothstep(0.07, 0.3, h)));
+    col.assign(mix(col, U.uZenith, smoothstep(0.22, 0.85, h)));
+    // warm glow around the sun, strongest low on the horizon
+    const side = pow(cs, 3.0).toVar();
+    col.addAssign(U.uSun.mul(
+      side.mul(U.uGlow.x).mul(float(1.0).sub(smoothstep(0.0, 0.45, h)))
+        .add(pow(cs, 30.0).mul(U.uGlow.y))
+        .add(pow(cs, 400.0).mul(U.uGlow.z))
+    ));
+    // painterly cloud streaks (horizontally stretched fbm), lit warm from below / from the sun side.
+    // Only evaluated inside the cloud band (0.03 < e < 0.5): the rest of the dome skips the 8 noise lookups.
+    const band = smoothstep(0.03, 0.08, e).mul(float(1.0).sub(smoothstep(0.26, 0.5, e))).toVar();
+    const cov = float(0.0).toVar();
+    If(band.greaterThan(0.0), () => {
+      const q = vec3(d.x.mul(2.6), e.mul(19.0), d.z.mul(2.6)).toVar();
+      const n = skyFbm(q).toVar();
+      const nUp = skyFbm(q.add(vec3(0.0, 0.55, 0.0)));
+      cov.assign(smoothstep(U.uCloud.x, U.uCloud.y, n).mul(band));
+      const under = clamp(n.sub(nUp).mul(3.0).add(0.45), 0.0, 1.0).toVar();   // denser above than below -> lit underside
+      const cloud = mix(U.uCloudShade, U.uCloudLit, clamp(under.mul(0.7).add(side.mul(0.6)), 0.0, 1.0)).toVar();
+      cloud.addAssign(U.uSun.mul(pow(cs, 8.0)).mul(U.uCloud.w).mul(under));
+      col.assign(mix(col, cloud, cov.mul(U.uCloud.z)));
+    });
+    // the sun disc (HDR so bloom catches it), slightly behind the lowest cloud wisps
+    const disc = smoothstep(U.uDisc.x, U.uDisc.y, sd);
+    col.assign(mix(col, U.uSun.mul(7.0).add(vec3(1.5, 1.2, 0.6)), disc.mul(float(1.0).sub(cov.mul(0.6)))));
+    // below the horizon: the haze colour (= fog colour)
+    col.assign(mix(col, U.uHorizon, float(1.0).sub(smoothstep(-0.03, 0.0, e))));
+    return vec4(col, 1.0);
+  })();
 }
-float fbm(vec3 p) { float a = 0.5, s = 0.0; for (int i = 0; i < 4; i++) { s += a * noise(p); p = p * 2.07 + vec3(1.7, 9.2, 3.1); a *= 0.5; } return s; }
-void main() {
-  vec3 d = normalize(vDir);
-  float e = d.y, h = max(e, 0.0);
-  vec3 s = normalize(uSunDir);
-  float cs = max(dot(d, s), 0.0);
-  // vertical gradient: deep orange horizon -> peach -> pale cream -> soft blue zenith
-  vec3 col = mix(uHorizon, uLow, smoothstep(0.0, 0.09, h));
-  col = mix(col, uMid, smoothstep(0.07, 0.3, h));
-  col = mix(col, uZenith, smoothstep(0.22, 0.85, h));
-  // warm glow around the sun, strongest low on the horizon
-  float side = pow(cs, 3.0);
-  col += uSun * (0.35 * side * (1.0 - smoothstep(0.0, 0.45, h)) + 0.7 * pow(cs, 30.0) + 2.5 * pow(cs, 400.0));
-  // painterly cloud streaks (horizontally stretched fbm), lit warm from below / from the sun side
-  vec3 q = vec3(d.x * 2.6, e * 19.0, d.z * 2.6);
-  float n = fbm(q);
-  float nUp = fbm(q + vec3(0.0, 0.55, 0.0));
-  float band = smoothstep(0.03, 0.08, e) * (1.0 - smoothstep(0.26, 0.5, e));
-  float cov = smoothstep(0.5, 0.7, n) * band;
-  float under = clamp((n - nUp) * 3.0 + 0.45, 0.0, 1.0);     // denser above than below -> lit underside
-  vec3 cloud = mix(uCloudShade, uCloudLit, clamp(under * 0.7 + side * 0.6, 0.0, 1.0));
-  cloud += uSun * pow(cs, 8.0) * 0.6 * under;
-  col = mix(col, cloud, cov * 0.92);
-  // the sun disc (HDR so bloom catches it), slightly behind the lowest cloud wisps
-  float disc = smoothstep(0.99955, 0.99968, dot(d, s));
-  col = mix(col, uSun * 7.0 + vec3(1.5, 1.2, 0.6), disc * (1.0 - cov * 0.6));
-  // below the horizon: the haze colour (= fog colour)
-  col = mix(col, uHorizon, 1.0 - smoothstep(-0.03, 0.0, e));
-  gl_FragColor = vec4(col, 1.0);
-  #include <tonemapping_fragment>
-  #include <colorspace_fragment>
-}`;
+
+/** Direction of the visible sun disc (on the horizon, down `sunAz`). */
+const sunVisDir = () => new THREE.Vector3(Math.cos(GOLDEN.sunAz) * Math.cos(GOLDEN.sunEl), Math.sin(GOLDEN.sunEl), Math.sin(GOLDEN.sunAz) * Math.cos(GOLDEN.sunEl));
+
+/** Fresh set of sky uniform nodes from GOLDEN (`.value` = THREE.Color / Vector2-4, updatable live). */
+export function createSkyUniforms() {
+  const C = (hex) => new THREE.Color(hex);
+  return {
+    uZenith: uniform(C(GOLDEN.zenith)), uMid: uniform(C(GOLDEN.mid)), uLow: uniform(C(GOLDEN.low)), uHorizon: uniform(C(GOLDEN.horizon)),
+    uSun: uniform(C(GOLDEN.sun)), uCloudLit: uniform(C(GOLDEN.cloudLit)), uCloudShade: uniform(C(GOLDEN.cloudShade)),
+    uSunDir: uniform(sunVisDir()),
+    uGlow: uniform(new THREE.Vector3(...GOLDEN.glow)), uCloud: uniform(new THREE.Vector4(...GOLDEN.cloud)), uDisc: uniform(new THREE.Vector2(...GOLDEN.disc))
+  };
+}
+
+/** The ONE set of sky uniforms shared by every dome (outdoor backdrop + interior domes): change a `.value` once, every sky follows. */
+export const SKY_UNIFORMS = createSkyUniforms();
+
+/**
+ * Just the golden sky dome (no hills/skyline/sea): 1 draw call, follows the camera, drawn first and behind
+ * everything (depthTest/depthWrite off, renderOrder -1000, never frustum-culled), independent of the camera's
+ * near/far (pinned just inside the far plane). For interiors: add it to the scene so windows/openings show the
+ * same sky as outdoors. Call as createSkyDome(opts) or createSkyDome(THREE, opts) (the THREE arg is ignored;
+ * this module uses 'three/webgpu'). opts: { quality: 'high'|'low', uniforms (default SKY_UNIFORMS), name }.
+ * Returns a THREE.Mesh; `mesh.userData.uniforms` = the uniform nodes, `mesh.userData.dispose()` frees it.
+ */
+export function createSkyDome(a, b) {
+  const { quality = 'high', uniforms = SKY_UNIFORMS, name = 'golden:dome' } = (a && a.Mesh ? b : a) || {};
+  const U = uniforms;
+  const domeMat = new THREE.MeshBasicNodeMaterial({ name: 'goldenSky', side: THREE.BackSide, depthWrite: false, depthTest: false, fog: false });
+  // follows the camera (old VERT: projectionMatrix * viewMatrix * vec4(position + cameraPosition, 1.0)); z is then
+  // pinned to 0.9999 w so the dome is never clipped by a short interior far plane (depth is irrelevant: no depth test)
+  const clip = cameraProjectionMatrix.mul(cameraViewMatrix).mul(vec4(positionLocal.add(cameraPosition), 1.0)).toVar();
+  domeMat.vertexNode = vec4(clip.x, clip.y, clip.w.mul(0.9999), clip.w);
+  // colorNode (not fragmentNode) keeps the renderer's output/MRT hooks; tone mapping + sRGB happen in the output pass
+  domeMat.colorNode = skyColorNode(U);
+  domeMat.userData.uniforms = U;
+  const low = quality === 'low';
+  const dome = new THREE.Mesh(new THREE.SphereGeometry(200, low ? 32 : 48, low ? 16 : 24), domeMat);
+  dome.name = name;
+  dome.frustumCulled = false;
+  dome.renderOrder = -1000;
+  dome.matrixAutoUpdate = false;
+  dome.castShadow = false; dome.receiveShadow = false;
+  dome.userData.noCameraCollide = true;
+  dome.userData.uniforms = U;
+  dome.userData.dispose = () => { dome.geometry.dispose(); domeMat.dispose(); };
+  return dome;
+}
 
 /** Deterministic PRNG (mulberry32). */
 export function rng(seed = 1) {
@@ -84,33 +165,21 @@ const angDist = (a, b) => Math.abs(Math.atan2(Math.sin(a - b), Math.cos(a - b)))
 
 /**
  * Build the golden-hour backdrop. Returns a THREE.Group (add it to the scene root, NOT to the scene's bounds
- * group). opts: { quality, seaWidth (rad half-angle of the sea sector), seed }. `group.userData.seaSector`
+ * group). opts: { quality, seaHalf (rad half-angle of the sea sector), seaInner, seed, farField (false = dome only),
+ * uniforms (default SKY_UNIFORMS) }. `group.userData.seaSector`
  * describes where the sea is, so scenes can keep that view open: { az, half, inner }.
  */
-export function createGoldenSky({ quality = 'high', seaHalf = 0.62, seaInner = 64, seed = 11 } = {}) {
+export function createGoldenSky({ quality = 'high', seaHalf = 0.62, seaInner = 64, seed = 11, farField = true, uniforms = SKY_UNIFORMS } = {}) {
   const C = (hex) => new THREE.Color(hex);
   const group = new THREE.Group();
   group.name = 'backdrop:golden';
   const sunAz = GOLDEN.sunAz;
-  const sunVis = new THREE.Vector3(Math.cos(sunAz) * Math.cos(GOLDEN.sunEl), Math.sin(GOLDEN.sunEl), Math.sin(sunAz) * Math.cos(GOLDEN.sunEl));
 
   // ---------------------------------------------------------------- sky dome (drawn first, behind everything)
-  const domeMat = new THREE.ShaderMaterial({
-    name: 'goldenSky',
-    vertexShader: VERT, fragmentShader: FRAG,
-    uniforms: {
-      uZenith: { value: C(GOLDEN.zenith) }, uMid: { value: C(GOLDEN.mid) }, uLow: { value: C(GOLDEN.low) }, uHorizon: { value: C(GOLDEN.horizon) },
-      uSun: { value: C(GOLDEN.sun) }, uCloudLit: { value: C(GOLDEN.cloudLit) }, uCloudShade: { value: C(GOLDEN.cloudShade) },
-      uSunDir: { value: sunVis.clone() }
-    },
-    side: THREE.BackSide, depthWrite: false, depthTest: false, fog: false
-  });
-  const dome = new THREE.Mesh(new THREE.SphereGeometry(200, 48, 24), domeMat);
-  dome.name = 'golden:dome';
-  dome.frustumCulled = false;
-  dome.renderOrder = -1000;
-  dome.matrixAutoUpdate = false;
-  group.add(dome);
+  group.add(createSkyDome({ quality, uniforms }));
+  group.userData.seaSector = { az: sunAz, half: seaHalf, inner: seaInner };
+  group.userData.dispose = () => group.traverse((o) => { if (o.isMesh) { o.geometry.dispose(); o.material.dispose(); } });
+  if (!farField) return group;
 
   // ---------------------------------------------------------------- far field: hills + skyline (fog:false, haze baked in)
   const R = rng(seed);
@@ -215,7 +284,5 @@ export function createGoldenSky({ quality = 'high', seaHalf = 0.62, seaInner = 6
   group.add(sea);
 
   group.traverse((o) => { if (o.isMesh) { o.userData.noCameraCollide = true; o.castShadow = false; o.receiveShadow = false; o.updateMatrix(); } });
-  group.userData.seaSector = { az: sunAz, half: seaHalf, inner: seaInner };
-  group.userData.dispose = () => group.traverse((o) => { if (o.isMesh) { o.geometry.dispose(); o.material.dispose(); } });
   return group;
 }

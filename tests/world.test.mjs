@@ -13,8 +13,8 @@ test('config: journey stops unchanged, hub + places registered separately', () =
   assert.deepEqual(ALL_LOCATIONS, [...LOCATIONS, ...PLACES]);
   for (const loc of ALL_LOCATIONS) assert.ok(LOCATION_TITLES[loc]?.ar && LOCATION_TITLES[loc]?.en, `title for ${loc}`);
   assert.ok(isPlace('mosque') && isPlace('bank') && isPlace('town') && !isPlace('home'));
-  // no situation belongs to a place; the 18-situation catalog is untouched
-  assert.equal(CATALOG.length, 18);
+  // no situation belongs to a place; the 7-situation catalog is untouched
+  assert.equal(CATALOG.length, 7);
   assert.ok(CATALOG.every((c) => LOCATIONS.includes(c.location)));
 });
 

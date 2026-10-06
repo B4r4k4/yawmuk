@@ -6,315 +6,115 @@
   },
   "time_of_day": "07:00",
   "intro": {
-    "ar": "صباح بارد في كولومبس، أوهايو. رائحة القهوة والخبز المحمّص تملأ المطبخ، والثلج الخفيف يغطي الحديقة الصغيرة. آدم ريد يستعد ليوم طويل: عمل، ثم محاضرة مسائية. أمه كارول تقضي الشتاء معهم، وأخوه بن نائم على الكنبة كالعادة. ويطرق الباب جارهم عمر، يحمل المجرفة التي استعارها.",
-    "en": "A cold morning in Columbus, Ohio. The kitchen smells like coffee and toast, and a light snow covers the little yard. Adam Reed is gearing up for a long day: work, then night class. His mom Carol is staying for the winter, and his brother Ben is crashed on the couch as usual. Then there's a knock — their neighbor Omar, bringing back the snow shovel he borrowed."
+    "ar": "صباحٌ باردٌ في حيّ السلام. رائحة القهوة تملأ المطبخ، وآدم يستعد ليومٍ طويل. يطرق الباب جاره وصديقه عُمَر. المسجد على بُعد خطوات، وهو يدعو آدم أن يرافقه ويرى المسجد من الداخل قبل العمل.",
+    "en": "A cold morning in Al-Salam neighbourhood. The kitchen smells of coffee, and Adam is getting ready for a long day. His neighbour and friend Omar knocks at the door. The mosque is a short walk away, and Omar invites Adam to come along and see it from the inside before work."
   },
   "situations": [
     {
-      "ruling_id": "home.mortgage",
-      "hotspot": "laptop",
+      "ruling_id": "home.purity_mosque",
+      "hotspot": "fridge",
       "npc": {
         "id": "omar",
         "name": {
-          "ar": "عمر",
+          "ar": "عُمَر",
           "en": "Omar"
         },
         "role": {
           "ar": "جار آدم وصديقه المسلم",
-          "en": "Adam's neighbor and Muslim friend"
+          "en": "Adam's neighbour and Muslim friend"
         }
       },
       "setup": {
-        "ar": "على طاولة الطعام لابتوب سارة مفتوح على بيت صغير بثلاث غرف، وبجانبه «موافقة مبدئية على قرض عقاري بفائدة 6.4%». عمر يشرب القهوة التي صبّتها له كارول وينظر إلى الشاشة مبتسماً.",
-        "en": "Sarah's laptop sits open on the dining table: a little three-bedroom house, and next to it, 'Pre-approved: 30-year mortgage at 6.4% APR.' Omar sips the coffee Carol poured him and smiles at the screen."
+        "ar": "يقف عُمَر عند حوض المطبخ وقد شمّر كُمَّيْه. سيتوضّأ قبل أن يمشيا معاً إلى المسجد القريب. الماء يجري من الصنبور، ومنشفةٌ صغيرة تنتظر على الرخامة.",
+        "en": "Omar stands at the kitchen sink with his sleeves rolled up. He will do wudu before they walk to the nearby mosque together. Water runs from the tap, and a small towel waits on the counter."
       },
       "dialogue": [
         {
           "speaker": "omar",
-          "ar": "ما شاء الله، بيت جميل! أنا وهودان نبحث أيضاً، لكننا أبطأ منكم.",
-          "en": "Wow, nice place! Hodan and I are house hunting too, but we're slower than you guys."
+          "ar": "عن إذنك يا آدم، سأتوضّأ هنا قبل أن نخرج. الوُضُوء شرطٌ لصحة الصلاة، فلا تصحّ صلاتي بدونه.",
+          "en": "Mind if I use your sink, Adam? I need to do wudu before we go. My prayer isn't valid without it."
+        },
+        {
+          "speaker": "narrator",
+          "ar": "يغسل عُمَر كفّيه، ثم يتمضمض، ويغسل وجهه وذراعيه إلى المِرْفَقَيْن، ويمسح رأسه، ثم يغسل قدميه.",
+          "en": "Omar washes his hands, rinses his mouth, washes his face and his arms up to the elbows, wipes over his head, then washes his feet."
         },
         {
           "speaker": "adam",
-          "ar": "أبطأ؟ الفائدة الآن معقولة، والبنك وافق في يوم واحد.",
-          "en": "Slower? Rates are decent right now, and the bank approved us in a day."
+          "ar": "وجهك نظيفٌ أصلاً! هل هذا مجرّد غسيل، أم شيءٌ أكبر من ذلك؟",
+          "en": "Your face is already clean! Is this just washing, or something more?"
         },
         {
           "speaker": "omar",
-          "ar": "نحن لا نأخذ قرضاً بفائدة — في ديننا الفائدة على الدَّين ممنوعة، أخذاً وإعطاءً. فنتعامل مع شركة تمويل إسلامي: تشتري البيت معنا ونشتري حصتها تدريجياً وندفع لها إيجاراً عن الجزء الذي تملكه.",
-          "en": "We don't take interest-based loans — in our faith, interest on debt is off-limits, paying it or charging it. So we're going with an Islamic financing company: they buy the house with us, we buy out their share bit by bit, and pay rent on the part they own."
+          "ar": "الاثنان معاً. نظافةٌ للجسد، واستعدادٌ للوقوف بين يدي الله. وعند باب المسجد سترى خطوةً أخرى.",
+          "en": "Both. It cleans the body, and it prepares me to stand before God. At the mosque door, you'll see one more step."
         },
         {
           "speaker": "narrator",
-          "ar": "سارة ترفع حاجبيها باهتمام. آدم يفكر: أليس هذا مجرد قرض باسم آخر؟",
-          "en": "Sarah raises her eyebrows, curious. Adam's thinking: isn't that just a loan with a different name?"
+          "ar": "بعد دقائق يصلان إلى باب المسجد. رفوفٌ خشبية مليئة بالأحذية، وفي الداخل سجادٌ نظيف يسجد عليه المصلّون. يخلع عُمَر حذاءه.",
+          "en": "Minutes later they reach the mosque door. Wooden racks are full of shoes, and inside is a clean carpet where people touch their foreheads to the ground. Omar slips off his shoes."
         }
       ],
       "choices": [
         {
           "id": "a",
           "label": {
-            "ar": "«بصراحة يا عمر، هذه فائدة بثوب آخر. أنت تدفع أكثر من أجل لافتة».",
-            "en": "'Honestly, Omar, that's just interest in a costume. You're paying extra for a label.'"
-          },
-          "quality": "wrong",
-          "consequence": {
-            "ar": "ابتسم عمر بأدب، لكن الكلام انطفأ. لاحقاً قالت سارة: «لم تسأله حتى كيف يعمل». بطاقة الحكم تشرح لماذا يرى العلماء فرقاً حقيقياً بين القرض بفائدة وبين البيع أو الشراكة والإيجار.",
-            "en": "Omar smiled politely, but the conversation fizzled. Later Sarah said, 'You didn't even ask how it works.' The ruling card explains why scholars see a real difference between an interest loan and a sale, or a partnership with rent."
-          },
-          "points": 0
-        },
-        {
-          "id": "b",
-          "label": {
-            "ar": "«مثير! ما الفرق الحقيقي بين هذا والقرض؟ ومن يتحمل الخسارة إن انخفض سعر البيت؟»",
-            "en": "'Interesting! What's the actual difference from a loan? And who takes the hit if the house loses value?'"
+            "ar": "أخلع حذائي وأضعه في الرف، وأسأل عُمَر: لماذا كل هذا الحرص على النظافة؟",
+            "en": "I take off my shoes, put them on the rack, and ask Omar: why all this care about cleanliness?"
           },
           "quality": "best",
           "consequence": {
-            "ar": "شرح عمر بحماس: في الشراكة الشركة مالكة فعلاً وتتحمل مخاطر الملكية، وليست مُقرضاً يربح من الدَّين نفسه. قال: «التفاصيل الدقيقة يشرحها الإمام حمزة أفضل مني». سارة طلبت اسم الشركة لتقارن العرض بنفسها.",
-            "en": "Omar lit up: in a partnership the company actually owns part of the house and carries ownership risk — it's not a lender profiting from the debt itself. 'Imam Hamza explains the fine print better than me,' he said. Sarah asked for the company's name to compare quotes herself."
-          },
-          "points": 10
-        },
-        {
-          "id": "c",
-          "label": {
-            "ar": "«جميل، بالتوفيق لكما». وأعود إلى صور البيت.",
-            "en": "'Cool, good luck to you guys.' And go back to the house photos."
-          },
-          "quality": "acceptable",
-          "consequence": {
-            "ar": "لم يُحرَج أحد، وعمر شرب قهوته وغادر مبتسماً. لكن آدم بقي لا يعرف ما الذي يجعل صديقه يختار الطريق الأصعب.",
-            "en": "Nobody felt awkward, and Omar finished his coffee and left smiling. But Adam still didn't know why his friend would pick the harder road."
-          },
-          "points": 5
-        }
-      ],
-      "check_question": {
-        "q": {
-          "ar": "لماذا يتجنب كثير من المسلمين القرض العقاري التقليدي؟",
-          "en": "Why do many Muslims avoid a conventional mortgage?"
-        },
-        "options": [
-          {
-            "ar": "لأن الإسلام يمنع تملّك البيوت بالدَّين",
-            "en": "Because Islam forbids buying homes with any financing",
-            "correct": false
-          },
-          {
-            "ar": "لأن الإسلام يحرّم الفائدة (الربا) على الدَّين، فيبحثون عن صيغ قائمة على البيع أو الشراكة أو الإيجار",
-            "en": "Because Islam prohibits interest (riba) on debt, so they look for models based on sale, partnership, or lease",
-            "correct": true
-          },
-          {
-            "ar": "لأن البنوك الأمريكية لا تقرض المسلمين",
-            "en": "Because US banks don't lend to Muslims",
-            "correct": false
-          }
-        ]
-      }
-    },
-    {
-      "ruling_id": "home.food_ingredients",
-      "hotspot": "fridge",
-      "npc": {
-        "id": "carol",
-        "name": {
-          "ar": "كارول",
-          "en": "Carol"
-        },
-        "role": {
-          "ar": "أم آدم",
-          "en": "Adam's mom"
-        }
-      },
-      "setup": {
-        "ar": "بعد خروج عمر، كارول تقف أمام الثلاجة المفتوحة بنظارة القراءة، تكتب قائمة عشاء الأربعاء: عائلة عمر مدعوة. على الكاونتر: لحم بقري من السوبرماركت، علبة «جيلو» لسلطة الفواكه، زجاجة «خلاصة فانيليا»، وزجاجة نبيذ أحمر لصلصة اللحم.",
-        "en": "After Omar leaves, Carol stands at the open fridge in her reading glasses, writing the menu for Wednesday: Omar's family is coming for dinner. On the counter: supermarket beef, a box of Jell-O for her fruit salad, a bottle of vanilla extract, and a bottle of red wine for the pot-roast sauce."
-      },
-      "dialogue": [
-        {
-          "speaker": "carol",
-          "ar": "آدم، أريد أن يكون كل شيء مناسباً لهم. أعرف أنهم لا يأكلون لحم الخنزير... هل هناك شيء آخر؟",
-          "en": "Adam, I want everything to be right for them. I know they don't eat pork... is there anything else?"
-        },
-        {
-          "speaker": "adam",
-          "ar": "سمعت عمر يقول مرة إنهم يقرؤون المكونات كثيراً.",
-          "en": "I heard Omar say once that they read ingredient labels a lot."
-        },
-        {
-          "speaker": "carol",
-          "ar": "الجيلو مكتوب فيه «جيلاتين»... والنبيذ سيتبخر في الطبخ على أي حال، صحيح؟",
-          "en": "The Jell-O says 'gelatin'... and the wine cooks off anyway, right?"
-        }
-      ],
-      "choices": [
-        {
-          "id": "a",
-          "label": {
-            "ar": "«لنطبخ كل شيء نباتياً بلا حلوى، هكذا نضمن ألا نخطئ».",
-            "en": "'Let's just make everything vegetarian and skip dessert — that way we can't get it wrong.'"
-          },
-          "quality": "acceptable",
-          "consequence": {
-            "ar": "كان العشاء لذيذاً وآمناً، وشكرتها هودان بحرارة. لكن عمر قال ضاحكاً: «كان يمكنكم أن تسألوني، نحن نأكل اللحم!». نية طيبة، وإن فاتها أن تعرف ما يأكله المسلمون فعلاً.",
-            "en": "Dinner was tasty and safe, and Hodan thanked Carol warmly. But Omar laughed: 'You could've asked — we do eat meat!' Kind intentions, though she missed learning what Muslims actually eat."
-          },
-          "points": 5
-        },
-        {
-          "id": "b",
-          "label": {
-            "ar": "«لا تقلقي يا أمي، كميات صغيرة. لن يلاحظوا، ولا داعي لأن نخبرهم».",
-            "en": "'Don't worry, Mom, it's tiny amounts. They won't notice, and we don't need to mention it.'"
-          },
-          "quality": "wrong",
-          "consequence": {
-            "ar": "قبل العشاء سألت هودان بلطف عن الحلوى، فاضطرت كارول أن تعترف بالجيلاتين. لم يأكلوا منها، وشعر الجميع بالحرج. إخفاء المكوّن عن ضيف يتجنبه يضعه في موقف صعب، والأسهل كان أن نسأل.",
-            "en": "Before dinner Hodan politely asked about the dessert, and Carol had to admit the gelatin. They skipped it, and everyone felt awkward. Hiding an ingredient from a guest who avoids it puts them in a tough spot — it would've been easier to just ask."
-          },
-          "points": 0
-        },
-        {
-          "id": "c",
-          "label": {
-            "ar": "«لنسأل عمر مباشرة». أرسل له رسالة عن اللحم والجيلاتين والنبيذ والفانيليا.",
-            "en": "'Let's just ask Omar.' I text him about the meat, the gelatin, the wine, and the vanilla."
-          },
-          "quality": "best",
-          "consequence": {
-            "ar": "ردّ عمر خلال دقيقة: «أنتم لطفاء جداً! لا نبيذ في الطبخ، والجيلاتين غالباً من الخنزير فلنتجنبه. اللحم: هناك ملحمة حلال في شارع Morse، أو اطبخوا دجاجاً وأنا أحضر اللحم. والفانيليا — العلماء عندنا اختلفوا فيها، لا تقلقي». فرحت كارول: «الآن أعرف ما أفعل!».",
-            "en": "Omar replied within a minute: 'You guys are so kind! No wine in the cooking, and gelatin's usually pork so let's skip it. For meat, there's a halal butcher on Morse Road — or I can bring the meat. The vanilla? Our scholars differ on that one, don't stress.' Carol beamed: 'Now I know what to do!'"
-          },
-          "points": 10
-        }
-      ],
-      "check_question": {
-        "q": {
-          "ar": "ما الذي يتفق المسلمون على تجنبه في الطعام والشراب؟",
-          "en": "What do Muslims agree on avoiding in food and drink?"
-        },
-        "options": [
-          {
-            "ar": "لحم الخنزير، والخمر",
-            "en": "Pork and alcoholic drinks",
-            "correct": true
-          },
-          {
-            "ar": "كل اللحوم",
-            "en": "All meat",
-            "correct": false
-          },
-          {
-            "ar": "كل طعام يطبخه غير مسلم",
-            "en": "Any food cooked by a non-Muslim",
-            "correct": false
-          }
-        ]
-      }
-    },
-    {
-      "ruling_id": "home.credit_card",
-      "hotspot": "mail_table",
-      "npc": {
-        "id": "ben",
-        "name": {
-          "ar": "بن",
-          "en": "Ben"
-        },
-        "role": {
-          "ar": "أخو آدم الأصغر",
-          "en": "Adam's younger brother"
-        }
-      },
-      "setup": {
-        "ar": "على طاولة البريد عند الباب: إعلان من متجر إلكترونيات «بطاقة المتجر: 0% فائدة لمدة 12 شهراً!». بن، بشعر أشعث، يلوّح بهاتفه وعليه تطبيق «اشترِ الآن وادفع لاحقاً».",
-        "en": "On the mail table by the door: an electronics-store flyer — 'Store Card: 0% interest for 12 months!' Ben, hair a mess, waves his phone with a buy-now-pay-later app open."
-      },
-      "dialogue": [
-        {
-          "speaker": "ben",
-          "ar": "آدم، أنا وزيد — زميلي في السكن — وجدنا هذا العرض للهاتف الجديد. صفر فائدة! لكن زيد رفض فوراً. قال شيئاً عن «الفائدة وغرامات التأخير». أين الفائدة؟ إنها صفر!",
-          "en": "Adam, me and Zaid — my roommate — found this deal on the new phone. Zero interest! But Zaid turned it down on the spot. Said something about 'interest and late fees.' What interest? It's zero!"
-        },
-        {
-          "speaker": "adam",
-          "ar": "زيد مسلم، صحيح؟",
-          "en": "Zaid's Muslim, right?"
-        },
-        {
-          "speaker": "ben",
-          "ar": "نعم. قال إنه سيدّخر ويشتري ببطاقة الخصم. غريب، أليس كذلك؟",
-          "en": "Yeah. He said he'll save up and pay with his debit card. Kind of weird, right?"
-        },
-        {
-          "speaker": "narrator",
-          "ar": "في الأسطر الصغيرة: «إن لم يُسدَّد المبلغ كاملاً خلال 12 شهراً تُحسب الفائدة بأثر رجعي، وتُفرض غرامة تأخير».",
-          "en": "The fine print: 'If not paid in full within 12 months, interest is charged back to day one, plus late fees.'"
-        }
-      ],
-      "choices": [
-        {
-          "id": "a",
-          "label": {
-            "ar": "«أظن أن المسلمين يتجنبون دفع الفائدة، وانظر: العقد نفسه فيه فائدة بأثر رجعي وغرامة. اسأله عن السبب — وبصراحة، فكرته في الادخار ذكية لك أيضاً».",
-            "en": "'I think Muslims avoid paying interest — and look, the contract itself has back-dated interest and late fees. Ask him why. Honestly, his save-first idea is smart for you too.'"
-          },
-          "quality": "best",
-          "consequence": {
-            "ar": "سأل بن زيداً في المساء. شرح زيد أن الفائدة ممنوعة في الإسلام، وأن كثيراً من المسلمين يتجنبون توقيع عقد فيه شرط فائدة أو غرامة، وأن بعضهم يستعمل بطاقة ائتمان مع السداد الكامل دائماً لأن العلماء اختلفوا في ذلك. قرر بن أن يدّخر معه للهاتف.",
-            "en": "Ben asked Zaid that evening. Zaid explained that interest is prohibited in Islam, that many Muslims avoid signing contracts with interest or late-fee clauses, and that some use a credit card while always paying in full, since scholars differ on that. Ben decided to save up with him."
+            "ar": "ابتسم عُمَر وقال: على هذا السجاد نضع جباهنا، فنحفظه نظيفاً. وأوضح أن الصلاة في حذاءٍ نظيف ليست ممنوعةً في ذاتها، لكن خلعه هنا أدبٌ يحفظ السجاد ويحترم المصلّين. فهم آدم أن طهارة الجسد عند المسلمين خطوةٌ أولى نحو الصلاة.",
+            "en": "Omar smiled and said, we put our foreheads on this carpet, so we keep it clean. He explained that praying in clean shoes isn't forbidden in itself, but taking them off here keeps the carpet clean and respects other worshippers. Adam understood that for Muslims, a clean body is the first step toward prayer."
           },
           "points": 10
         },
         {
           "id": "b",
           "label": {
-            "ar": "«المسلمون لا يُسمح لهم بالتعامل مع البنوك أصلاً، لذلك رفض».",
-            "en": "'Muslims aren't allowed to use banks at all, that's why.'"
+            "ar": "أنتظر عُمَر عند الباب بأدب، دون أن أسأل شيئاً.",
+            "en": "I wait politely for Omar by the door, without asking anything."
           },
-          "quality": "wrong",
+          "quality": "acceptable",
           "consequence": {
-            "ar": "ردد بن الكلام أمام زيد، فضحك زيد: «لي حساب بنكي منذ كنت في الخامسة عشرة! المشكلة في الفائدة، لا في البنك». صورة نمطية صغيرة، لكنها تنتشر بسرعة.",
-            "en": "Ben repeated it to Zaid, who laughed: 'I've had a bank account since I was fifteen! The issue is interest, not banks.' A small stereotype — but they spread fast."
+            "ar": "احترم آدم المكان، وخرج عُمَر بعد دقائق شاكراً صبره. لكن آدم بقي لا يعرف لماذا غسل صديقه أطرافه، ولماذا خلع الجميع أحذيتهم.",
+            "en": "Adam respected the place, and Omar came out a few minutes later, thankful for his patience. But Adam still didn't know why his friend washed his limbs, or why everyone took off their shoes."
           },
-          "points": 0
+          "points": 5
         },
         {
           "id": "c",
           "label": {
-            "ar": "«هذا شأنه. أنت فقط لا تتأخر في الدفع».",
-            "en": "'That's his thing. You just don't pay late.'"
+            "ar": "أدخل بحذائي لألقي نظرةً سريعة، فالأرض تبدو نظيفة.",
+            "en": "I step in with my shoes on for a quick look. The floor looks clean anyway."
           },
-          "quality": "acceptable",
+          "quality": "wrong",
           "consequence": {
-            "ar": "نصيحة معقولة لبن، لكنه لم يعرف لماذا رفض زيد العرض، وبقي يظنها «غرابة». فرصة صغيرة للفهم فاتت.",
-            "en": "Reasonable advice for Ben, but he never found out why Zaid said no and kept thinking it was just 'weird.' A small chance to understand slipped by."
+            "ar": "أشار رجلٌ مسنّ بلطف إلى رف الأحذية، فاعتذر آدم وخلع حذاءه. شرح عُمَر أن المصلّين يسجدون على هذا السجاد، فيحرصون ألا يصل إليه غبار الطريق. لم ينزعج أحد، لكن السؤال قبل الدخول كان أيسر.",
+            "en": "An older man gently pointed to the shoe rack, so Adam apologized and took his shoes off. Omar explained that people put their foreheads on this carpet, so they keep street dust off it. Nobody was upset, but asking first would have been easier."
           },
-          "points": 5
+          "points": 0
         }
       ],
       "check_question": {
         "q": {
-          "ar": "ما الذي يجعل المسلم يتردد في عروض «0% لمدة 12 شهراً»؟",
-          "en": "What makes a Muslim hesitant about '0% for 12 months' deals?"
+          "ar": "ما علاقة الوُضُوء بالصلاة عند المسلمين؟",
+          "en": "How is wudu related to prayer for Muslims?"
         },
         "options": [
           {
-            "ar": "أن الإسلام يحرّم شراء الهواتف بالتقسيط",
-            "en": "Islam forbids buying phones in installments",
+            "ar": "عادةٌ ثقافية لا علاقة لها بالصلاة",
+            "en": "It's a cultural habit with no link to prayer",
             "correct": false
           },
           {
-            "ar": "أن العقد قد يتضمن فائدة أو غرامة تأخير، والفائدة محرمة في الإسلام",
-            "en": "The contract may include interest or late penalties, and interest is prohibited in Islam",
+            "ar": "الوُضُوء شرطٌ لصحة الصلاة، فلا تصحّ الصلاة بدونه",
+            "en": "Wudu is a condition of prayer: without it, the prayer isn't valid",
             "correct": true
           },
           {
-            "ar": "أن المسلمين لا يستعملون البنوك",
-            "en": "Muslims don't use banks",
+            "ar": "خلع الحذاء عند باب المسجد يُغني عن الوُضُوء",
+            "en": "Taking off your shoes at the mosque door replaces wudu",
             "correct": false
           }
         ]
@@ -322,8 +122,8 @@
     }
   ],
   "outro": {
-    "ar": "يلبس آدم جاكيته، وتقبّله أمه: «انتبه للطريق»، وتذكّره سارة: «اسأل عمر عن اسم شركة التمويل!». من النافذة يرى عمر يجرف الثلج عن ممر جارتهم المسنة مارغريت. السيارة باردة، والطريق إلى العمل مزدحم كالعادة.",
-    "en": "Adam zips his jacket. His mom kisses his cheek — 'Drive safe' — and Sarah calls, 'Ask Omar for that financing company's name!' Through the window he sees Omar shoveling old Mrs. Margaret's driveway. The car's freezing, and the commute's jammed as usual."
+    "ar": "يعود آدم من المسجد، وفي ذهنه رفوف الأحذية والسجاد النظيف. تقبّله أمه وتقول: انتبه للطريق. السيارة باردة، والطريق إلى العمل مزدحمٌ كالعادة.",
+    "en": "Adam walks back from the mosque, still picturing the shoe racks and the clean carpet. His mom kisses his cheek and says, drive safe. The car is freezing, and the commute is jammed as usual."
   },
   "next_location": "work"
 }

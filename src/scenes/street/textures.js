@@ -127,7 +127,7 @@ export function createTextures(THREE, rand) {
     g.fillStyle = '#ffe680'; g.font = '800 46px "Segoe UI", Arial, sans-serif';
     g.fillText('JACKPOT', w / 2, 62);
     g.fillStyle = '#ffffff'; g.font = '900 64px "Segoe UI", Arial, sans-serif';
-    g.fillText('$900 MILLION', w / 2, 128);
+    g.fillText('TRY YOUR LUCK', w / 2, 128);
   });
 
   T.price = tex(256, 160, (g, w, h) => {

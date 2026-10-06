@@ -6,6 +6,8 @@ import { fixtureScripts, fixtureRulings } from './__fixtures__/fixtures.js';
 import { isValidOrder } from './aiCore.js';
 
 const rawRulings = import.meta.glob('../../content/rulings/*.json', { eager: true, query: '?raw', import: 'default' });
+// Reviewed rulings that are no longer played as situations: kept as the guide's reference library (cards + passages).
+const rawLibrary = import.meta.glob('../../content/library/*.json', { eager: true, query: '?raw', import: 'default' });
 const rawScripts = import.meta.glob('../../content/script/*.json', { eager: true, query: '?raw', import: 'default' });
 // Optional data for the AI features (a missing file => empty list, never a build error).
 const rawSources = import.meta.glob('../../content/sources.json', { eager: true, query: '?raw', import: 'default' });
@@ -26,13 +28,13 @@ const forceFixtures = params.get('fixtures') === '1';
 // ---------- rulings ----------
 const rulings = {};
 if (!forceFixtures) {
-  for (const [path, raw] of Object.entries(rawRulings)) {
+  for (const [path, raw] of [...Object.entries(rawLibrary), ...Object.entries(rawRulings)]) { // situation rulings win
     const data = parse(path, raw);
     if (!data) continue;
     const list = Array.isArray(data) ? data : Array.isArray(data.rulings) ? data.rulings : [data];
     for (const r of list) {
       if (!r || typeof r.id !== 'string') { issue(`${path}: ruling without string "id" skipped`); continue; }
-      if (rulings[r.id]) issue(`${path}: duplicate ruling id ${r.id} (later one wins)`);
+      if (rulings[r.id] && !rulings[r.id].library_only) issue(`${path}: duplicate ruling id ${r.id} (later one wins)`);
       rulings[r.id] = r;
     }
   }

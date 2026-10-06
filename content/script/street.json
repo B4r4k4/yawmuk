@@ -6,110 +6,10 @@
   },
   "time_of_day": "21:00",
   "intro": {
-    "ar": "ليل شتوي هادئ. أضواء محطة الوقود الحمراء تنعكس على الرصيف المبلل، ومحطة الحافلات تحت عمود إنارة أصفر. آدم نزل من الحافلة قبل بيته بشارعين. عمر ينتظره كما وعد، لكنه يبدو منشغلاً بشيء في يده.",
-    "en": "A quiet winter night. The gas station's red lights reflect off the wet sidewalk, and the bus stop sits under a yellow streetlamp. Adam got off the bus two blocks from home. Omar's waiting like he promised — but he seems busy with something in his hands."
+    "ar": "ليلٌ شتويٌّ هادئ في حيّ السلام. أضواءُ محطةِ الوقودِ الحمراءُ تنعكسُ على الرصيفِ المبلَّل. نزلَ آدم من الحافلةِ قربَ المحطة، وعُمَرُ ينتظرُه عند المقعدِ ليُوصِلَه إلى البيت. لكنّ آدم يريدُ أولاً كوبَ شايٍ ساخناً من متجرِ طارق.",
+    "en": "A quiet winter night in the Al-Salam neighborhood. The gas station's red lights shimmer on the wet sidewalk. Adam steps off the bus near the station, and Omar waits at the bench to drive him home. But first, Adam wants a hot tea from Tariq's store."
   },
   "situations": [
-    {
-      "ruling_id": "street.lost_wallet",
-      "hotspot": "bus_bench",
-      "npc": {
-        "id": "omar",
-        "name": {
-          "ar": "عمر",
-          "en": "Omar"
-        },
-        "role": {
-          "ar": "جار آدم وصديقه المسلم",
-          "en": "Adam's neighbor and Muslim friend"
-        }
-      },
-      "setup": {
-        "ar": "عمر يقف عند مقعد محطة الحافلات، في يده محفظة جلدية بنية وجدها على المقعد: 340 دولاراً نقداً، رخصة قيادة باسم «ستيفن كارتر» بعنوان في الحي المجاور، وبطاقتان بنكيتان. على بعد أمتار، سيارة شرطة متوقفة والضابط دانيالز بجانبها.",
-        "en": "Omar's standing by the bus stop bench holding a brown leather wallet he found on it: $340 cash, a driver's license for 'Steven Carter' with an address in the next neighborhood, and two bank cards. A few yards away, a police cruiser is parked with Officer Daniels beside it."
-      },
-      "dialogue": [
-        {
-          "speaker": "omar",
-          "ar": "وجدتها قبل دقيقتين. لا أحد هنا، والكاميرا مكسورة منذ أشهر.",
-          "en": "Found it two minutes ago. Nobody's around, and that camera's been broken for months."
-        },
-        {
-          "speaker": "adam",
-          "ar": "340 دولاراً... هذا نصف قسط فصلك القادم يا رجل.",
-          "en": "Three-forty... that's half your next tuition installment, man."
-        },
-        {
-          "speaker": "omar",
-          "ar": "هذا مال غيري. في ديني، من وجد شيئاً ضائعاً له قيمة فهو أمانة عنده: يحفظه ويجتهد في إيصاله لصاحبه.",
-          "en": "It's somebody else's money. In my faith, if you find something valuable that's lost, it's a trust you're holding: you keep it safe and do your best to get it back to its owner."
-        }
-      ],
-      "choices": [
-        {
-          "id": "a",
-          "label": {
-            "ar": "«قرارك يا صاحبي». وأنتظره في السيارة.",
-            "en": "'Your call, man.' And wait in the car."
-          },
-          "quality": "acceptable",
-          "consequence": {
-            "ar": "سلّم عمر المحفظة للضابط وحده، وعاد مبتسماً. لم يخطئ آدم في شيء، لكنه لم يعرف لماذا كان قرار صديقه سريعاً وواضحاً إلى هذا الحد.",
-            "en": "Omar handed the wallet to the officer by himself and came back smiling. Adam did nothing wrong, but he never found out why his friend's decision was so quick and clear."
-          },
-          "points": 5
-        },
-        {
-          "id": "b",
-          "label": {
-            "ar": "«لنسلّمها للضابط دانيالز معاً». ثم أسأله: «وماذا لو لم يظهر صاحبها أبداً؟ ماذا يقول دينك؟»",
-            "en": "'Let's give it to Officer Daniels together.' Then ask: 'What if the owner never shows up? What does your faith say then?'"
-          },
-          "quality": "best",
-          "consequence": {
-            "ar": "سلّماها للضابط وطلبا رقم البلاغ. في السيارة شرح عمر: يُعرَّف بالشيء الضائع مدة، والتفاصيل بعدها اختلف فيها العلماء — «والآن الشرطة تقوم بهذا عني». بعد يومين اتصل ستيفن، رجل في الستين: «كان فيها إيجار حفيدتي». أراد مكافأة عمر، فقال: «ادعُ لي فقط».",
-            "en": "They handed it over and got a report number. In the car Omar explained: you announce a found item for a period of time, and scholars differ on the details after that — 'right now the police are doing that part for me.' Two days later Steven, a man in his sixties, called: 'That was my granddaughter's rent.' He wanted to reward Omar, who said, 'Just pray for me.'"
-          },
-          "points": 10
-        },
-        {
-          "id": "c",
-          "label": {
-            "ar": "«من وجد شيئاً فهو له. لا أحد رآك، وأنت تحتاج المال للكلية».",
-            "en": "'Finders keepers. Nobody saw, and you need it for school.'"
-          },
-          "quality": "wrong",
-          "consequence": {
-            "ar": "نظر إليه عمر بهدوء: «الله رآني، وهذا يكفيني». ثم مشى وحده إلى الضابط. شعر آدم بأنه حاول، دون أن يقصد، أن يضع صديقه في امتحان لا يحتاجه.",
-            "en": "Omar looked at him calmly: 'God saw me, and that's enough for me.' Then he walked over to the officer on his own. Adam felt he'd put his friend to a test he didn't need — without meaning to."
-          },
-          "points": 0
-        }
-      ],
-      "check_question": {
-        "q": {
-          "ar": "ما الواجب على المسلم إن وجد مالاً ضائعاً له قيمة؟",
-          "en": "What must a Muslim do on finding valuable lost property?"
-        },
-        "options": [
-          {
-            "ar": "أن يحتفظ به إن لم يره أحد",
-            "en": "Keep it if nobody saw",
-            "correct": false
-          },
-          {
-            "ar": "أن يحفظه ويجتهد في إيصاله لصاحبه أو التعريف به عبر جهة موثوقة",
-            "en": "Keep it safe and make a real effort to return it or announce it through a reliable channel",
-            "correct": true
-          },
-          {
-            "ar": "أن يتصدق به فوراً",
-            "en": "Give it to charity right away",
-            "correct": false
-          }
-        ]
-      }
-    },
     {
       "ruling_id": "street.lottery",
       "hotspot": "gas_station_counter",
@@ -125,68 +25,78 @@
         }
       },
       "setup": {
-        "ar": "داخل المتجر الدافئ. لوحة على الطريق تعلن: «جائزة باوربول الكبرى: 900 مليون دولار!». آدم يقف عند الكاونتر، وعلى هاتفه إعلان تطبيق مراهنات: «راهن على مباراة الليلة — أول رهان مجاني!». خلف الكاونتر طارق، صاحب المحطة، يرتب علب الشاي.",
-        "en": "Inside the warm store. A billboard down the road screams: 'POWERBALL JACKPOT: $900 MILLION!' Adam's at the counter, and a betting-app ad pops up on his phone: 'Bet on tonight's game — first bet's on us!' Behind the counter, Tariq, the owner, is stocking boxes of tea."
+        "ar": "داخلَ متجرِ طارقٍ الدافئ. على الطريقِ لوحةٌ مضيئةٌ تُعلِنُ جائزةَ يَانَصِيبٍ ضخمة. على طاولةِ البيعِ تذكرةٌ ملوَّنةٌ، ونَرْدٌ دعائيٌّ كُتِبَ عليه: جرِّبْ حظَّك. تركَهما مندوبُ شركةِ اليَانَصِيبِ عصراً، بعد أن رفضَ طارقٌ عرضَه.",
+        "en": "Inside Tariq's warm store. Down the road, a glowing billboard announces a huge lottery jackpot. On the counter sit a colorful ticket and a promo die that reads: Try your luck. A lottery company rep left them this afternoon, after Tariq turned down his offer."
       },
       "dialogue": [
         {
           "speaker": "adam",
-          "ar": "مساء الخير يا طارق! تذكرة باوربول واحدة من فضلك، على سبيل الحظ.",
-          "en": "Evening, Tariq! One Powerball ticket, please — just for luck."
+          "ar": "مساءُ الخيرِ يا طارق! هل تبيعُ هذه التذكرة؟ الجائزةُ الليلةَ عشرةُ ملايين.",
+          "en": "Evening, Tariq! Are you selling this ticket? Tonight's jackpot is ten million."
         },
         {
           "speaker": "tariq",
-          "ar": "آسف يا صديقي، لا أبيع اليانصيب هنا. ولا الخمر أيضاً.",
-          "en": "Sorry, my friend, I don't sell lottery here. Or alcohol, either."
+          "ar": "لا يا صديقي. تركَها المندوبُ هنا، وسأُعيدُها إليه غداً. أنا لا أبيعُ اليَانَصِيب.",
+          "en": "No, my friend. The rep left it here, and I'm returning it tomorrow. I don't sell lottery tickets."
         },
         {
           "speaker": "adam",
-          "ar": "حقاً؟ كل المحطات تبيعه. وهذا التطبيق يعطيني رهاناً مجانياً.",
-          "en": "Really? Every gas station sells them. And this app's giving me a free bet."
+          "ar": "تذكرةٌ واحدةٌ فقط! أقساطُ السيارةِ تُتعِبُني، وربما تتغيّرُ حياتي في ليلةٍ واحدة.",
+          "en": "Just one ticket! The car payments are wearing me down. Maybe my life changes in a single night."
         },
         {
           "speaker": "tariq",
-          "ar": "أعرف أنه يجلب ربحاً. لكن القمار ممنوع في ديني — أن تدفع مالاً على أمل أن تربح أكثر منه أو تخسره بالحظ. فلا أبيعه ولا أربح منه.",
-          "en": "I know it's good money. But gambling's forbidden in my faith — paying money hoping luck makes it more, or losing it. So I don't sell it or profit from it."
+          "ar": "في الإسلام، هذا من المَيْسِر، أي القِمَار: تدفعُ مالاً على أملِ ربحٍ يتوقّفُ على الحظِّ وحدَه.",
+          "en": "In Islam, this is maysir, which means gambling: you pay money hoping for a win that depends on luck alone."
+        },
+        {
+          "speaker": "tariq",
+          "ar": "آلافُ الناسِ يدفعون، ويربحُ واحدٌ فقط. ورأيتُ أُسَراً أثقلَتْها الديونُ وهي تطاردُ هذا الأمل.",
+          "en": "Thousands of people pay, and only one wins. I've seen families sink into debt chasing that hope."
+        },
+        {
+          "speaker": "tariq",
+          "ar": "هذا المتجرُ بنيتُه بالعملِ سنةً بعد سنة، لا بضربةِ حظّ.",
+          "en": "I built this store with work, year after year, not with a lucky break."
         }
       ],
       "choices": [
         {
           "id": "a",
           "label": {
-            "ar": "«مثير للاهتمام! وماذا عن الرهان المجاني في التطبيق؟ لن أدفع شيئاً».",
-            "en": "'Interesting! What about the free bet in the app, though? I'm not paying anything.'"
+            "ar": "أُعيدُ التذكرةَ إلى مكانِها وأقول: «معك حقّ، لن أشتريَها». ثم أسألُه: «فكيف أُسدِّدُ ديوني أسرع؟»",
+            "en": "Put the ticket back and say: 'You're right, I won't buy it.' Then ask: 'So how do I pay off my debts faster?'"
           },
           "quality": "best",
           "consequence": {
-            "ar": "شرح طارق: «السحب المجاني فعلاً — بلا شراء ولا دفع — مختلف ولا يُعد قماراً. لكن الرهان المجاني يحتاج تسجيلاً في منصة قمار ببطاقتك البنكية، وهو طُعم ليجرّك إلى الإيداع». فتح آدم التطبيق فرأى فعلاً: «أودع 50 واحصل على 50!». ضحك وحذف الإعلان، واشترى شاياً.",
-            "en": "Tariq explained: 'A truly free drawing — no purchase, no payment — is different and isn't gambling. But that free bet means signing up on a gambling platform with your bank card; it's bait to get you depositing.' Adam opened the app and there it was: 'Deposit $50, get $50!' He laughed, closed it, and bought a tea."
+            "ar": "ابتسمَ طارقٌ وصبَّ له كوبَ شاي. قال: «ضَعْ ثمنَ التذكرةِ جانباً كلَّ أسبوع، وابحثْ عن عملٍ إضافيٍّ صغير». ثم شرح: الإسلامُ يحمي الأُسرةَ من الخسارةِ المفاجئة، ويُعلي الكسبَ بالعملِ والتجارةِ العادلة. خرجَ آدم وفي يدِه شاي، وفي رأسِه خطّة.",
+            "en": "Tariq smiled and poured him a cup of tea. 'Set the ticket money aside every week, and look for a small side job.' Then he explained: Islam shields families from sudden ruin, and honors earning through work and fair trade. Adam left with a tea in his hand and a plan in his head."
           },
           "points": 10
         },
         {
           "id": "b",
           "label": {
-            "ar": "«يا رجل، هذا قرار تجاري سيئ. الدين يجب ألا يتدخل في البزنس».",
-            "en": "'Man, that's just bad business. Religion shouldn't mess with business.'"
+            "ar": "«يا رجل، الدِّينُ لا علاقةَ له بالتِّجارة. سأشتريها من الكُشْكِ المجاور».",
+            "en": "'Come on, religion has nothing to do with business. I'll buy one at the kiosk next door.'"
           },
           "quality": "wrong",
           "consequence": {
-            "ar": "ابتسم طارق: «بالنسبة لي، البزنس جزء من الدين لا العكس». سكت آدم محرجاً. رجل يتنازل عن ربح من أجل قناعته يستحق السؤال، لا الحكم.",
-            "en": "Tariq smiled: 'For me, business is part of faith, not the other way around.' Adam went quiet, embarrassed. A man giving up profit for his convictions deserves a question, not a verdict."
+            "ar": "ابتسمَ طارقٌ بهدوء: «عندي، التِّجارةُ جزءٌ من الدِّين». اشترى آدم التذكرة، وفي الصباحِ لم تربح، كأكثرِ التذاكر. وتذكَّرَ أنّ رجلاً يتركُ ربحاً من أجلِ قناعتِه يستحقُّ سؤالاً، لا حُكماً.",
+            "en": "Tariq smiled calmly: 'For me, business is part of faith.' Adam bought the ticket, and by morning it hadn't won, like most tickets. He remembered that a man who gives up profit for his convictions deserves a question, not a verdict."
           },
           "points": 0
         },
         {
           "id": "c",
           "label": {
-            "ar": "«لا بأس، سأشتريها من المحطة المجاورة». وأخرج.",
-            "en": "'No worries, I'll grab one at the next station.' And leave."
+            "ar": "«حسناً، ربما ليس الليلة». أشتري شاياً وأخرج.",
+            "en": "'Fine, maybe not tonight.' Buy a tea and leave."
           },
           "quality": "acceptable",
           "consequence": {
-            "ar": "لم يُحرج أحد، والقرار في النهاية قرار آدم. لكنه لم يعرف لماذا يرفض رجل أعمال ربحاً سهلاً يبيعه كل جيرانه.",
-            "en": "No awkwardness, and in the end it's Adam's own call. But he never found out why a businessman turns down easy money all his competitors take."
+            "ar": "لم يشترِ آدم التذكرة، وهذا قرارٌ حكيم. لكنه لم يسألْ لماذا يرفضُ طارقٌ ربحاً سهلاً، فبقيتْ فكرةُ الثراءِ السريعِ تلمعُ في رأسِه.",
+            "en": "Adam didn't buy the ticket, and that was a wise call. But he never asked why Tariq turns down easy money, so the dream of quick wealth kept glittering in his head."
           },
           "points": 5
         }
@@ -214,111 +124,11 @@
           }
         ]
       }
-    },
-    {
-      "ruling_id": "street.buying_selling",
-      "hotspot": "ebike",
-      "npc": {
-        "id": "yusuf",
-        "name": {
-          "ar": "يوسف",
-          "en": "Yusuf"
-        },
-        "role": {
-          "ar": "صديق عمر، يبيع دراجته",
-          "en": "Omar's friend, selling his e-bike"
-        }
-      },
-      "setup": {
-        "ar": "في موقف المحطة المضاء، يوسف — صديق عمر الذي يتزوج يوم السبت — أوقف دراجته الكهربائية اللامعة. الإعلان يقول 600 دولار، وآدم يحمل المبلغ نقداً. قبل أن يجربها آدم، يرفع يوسف يده.",
-        "en": "In the well-lit station lot, Yusuf — Omar's friend who's getting married Saturday — parks his shiny e-bike. The listing says $600, and Adam has the cash on him. Before Adam can even test it, Yusuf raises a hand."
-      },
-      "dialogue": [
-        {
-          "speaker": "yusuf",
-          "ar": "قبل أي شيء: البطارية تحمل نصف الشحن فقط الآن. بطارية جديدة تكلف نحو 200. لذلك سعرها 420، لا 600.",
-          "en": "Before anything: the battery only holds about half a charge now. A new one runs around $200. So she's $420, not $600."
-        },
-        {
-          "speaker": "adam",
-          "ar": "لكنني لم أسأل عن البطارية... ولم أكن سألاحظ في تجربة قصيرة.",
-          "en": "But I didn't even ask about the battery... and I wouldn't have noticed on a quick test ride."
-        },
-        {
-          "speaker": "yusuf",
-          "ar": "لهذا بالضبط أخبرتك. في ديني، البائع الذي يعرف عيباً يجب أن يذكره، سأل المشتري أم لم يسأل. أريد مالاً أرتاح له.",
-          "en": "That's exactly why I told you. In my faith, a seller who knows about a defect has to mention it, whether the buyer asks or not. I want money I can feel good about."
-        }
-      ],
-      "choices": [
-        {
-          "id": "a",
-          "label": {
-            "ar": "«ممتاز، 420 إذاً». أدفع وأذهب.",
-            "en": "'Great, $420 it is.' Pay and go."
-          },
-          "quality": "acceptable",
-          "consequence": {
-            "ar": "صفقة عادلة لكليهما. لكن آدم مضى دون أن يفهم لماذا يتنازل بائع عن 180 دولاراً لم يطلبها منه أحد.",
-            "en": "A fair deal for both. But Adam rode off without understanding why a seller would give up $180 nobody asked him to."
-          },
-          "points": 5
-        },
-        {
-          "id": "b",
-          "label": {
-            "ar": "«أنت رجل أمين! دعني أكتب لك تقييمات بخمس نجوم من حسابي وحساب زوجتي وأخي لنرفع ملفك».",
-            "en": "'You're a stand-up guy! Let me leave you five-star reviews from my account, my wife's, and my brother's to boost your profile.'"
-          },
-          "quality": "wrong",
-          "consequence": {
-            "ar": "ضحك يوسف وهز رأسه: «شكراً، لكن تقييمات من أناس لم يشتروا مني؟ هذا خداع أيضاً، ولو كان لصالحي». أدرك آدم أن الأمانة عند يوسف ليست في البيع فقط، بل في كل كلمة تُنشر.",
-            "en": "Yusuf laughed and shook his head: 'Thanks, but reviews from people who didn't buy anything? That's deception too, even if it helps me.' Adam realized Yusuf's honesty wasn't just about the sale — it covered every word posted."
-          },
-          "points": 0
-        },
-        {
-          "id": "c",
-          "label": {
-            "ar": "«شكراً على الصراحة — هذا نادر». أدفع 420، وأكتب تقييماً صادقاً واحداً، وأسأله: «هل هذا شيء يتعلمه كل التجار المسلمين؟»",
-            "en": "'Thanks for being upfront — that's rare.' Pay $420, leave one honest review, and ask: 'Is this something all Muslim sellers learn?'"
-          },
-          "quality": "best",
-          "consequence": {
-            "ar": "قال يوسف: «يفترض ذلك! الغش في البيع ممنوع، وإخفاء العيب نوع منه، والصدق يجلب البركة. ولا يعني هذا أن كل مسلم يطبقه كما يجب — نحن بشر». كتب آدم تقييماً صادقاً، ودعاه يوسف إلى عرسه السبت.",
-            "en": "Yusuf said, 'It's supposed to be! Cheating in a sale is forbidden, hiding a defect is a form of it, and honesty brings blessing. Doesn't mean every Muslim lives up to it — we're human.' Adam left an honest review, and Yusuf invited him to the wedding Saturday."
-          },
-          "points": 10
-        }
-      ],
-      "check_question": {
-        "q": {
-          "ar": "ماذا يجب على البائع المسلم إن كان يعرف عيباً في السلعة؟",
-          "en": "What must a Muslim seller do if he knows the item has a defect?"
-        },
-        "options": [
-          {
-            "ar": "يذكر العيب للمشتري ولو لم يسأل",
-            "en": "Disclose it to the buyer even if they don't ask",
-            "correct": true
-          },
-          {
-            "ar": "يذكره فقط إن سأل المشتري",
-            "en": "Mention it only if the buyer asks",
-            "correct": false
-          },
-          {
-            "ar": "لا شيء ما دام السعر مناسباً",
-            "en": "Nothing, as long as the price is fair",
-            "correct": false
-          }
-        ]
-      }
     }
   ],
   "outro": {
-    "ar": "يضع آدم الدراجة في صندوق سيارة عمر، والتدفئة تعمل أخيراً. «يوم طويل يا صاحبي». «طويل... وتعلمت فيه أكثر مما توقعت». في البيت، أمه نائمة أمام التلفاز، وسارة تركت له طبق عشاء دافئاً. الجمعة حفل الشركة، والسبت يوم الجيران والعرس.",
-    "en": "Adam loads the bike into Omar's trunk, and the heater finally kicks in. 'Long day, man.' 'Long... and I learned more than I expected.' At home his mom's asleep in front of the TV, and Sarah left him a warm plate of dinner. Friday's the company party; Saturday's for neighbors and a wedding."
+    "ar": "في سيارةِ عُمَر، تعملُ التدفئةُ أخيراً. «يومٌ طويلٌ يا صاحبي». «طويل… وتعلّمتُ فيه أكثرَ ممّا توقّعت». في البيت ينتظرُه طبقُ عشاءٍ دافئ. وبعد أيامٍ حفلُ الشركة، ثم زيارةٌ لبيتِ الجيران.",
+    "en": "In Omar's car, the heater finally kicks in. 'Long day, man.' 'Long... and I learned more than I expected.' At home, a warm plate of dinner is waiting. Soon comes the company party, then a visit to the neighbors' home."
   },
   "next_location": "public_events"
 }

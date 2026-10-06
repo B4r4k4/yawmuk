@@ -370,6 +370,7 @@ function glasses(ctx) {
   }
   const bridge = new THREE.CylinderGeometry(0.0022, 0.0022, Math.max(0.008, 2 * ex - 0.048), 5).rotateZ(Math.PI / 2).translate(hi.center.x, y + 0.006, z);
   parts.push(bridge);
+  // fresh, never-rendered primitives: position/normal are always Float32, so the merge sees consistent array types
   const geos = parts.map((p) => { const q = p.index ? p.toNonIndexed() : p; for (const k of Object.keys(q.attributes)) if (k !== 'position' && k !== 'normal') q.deleteAttribute(k); return q; });
   const merged = mergeGeometries(geos, false);
   return [{ name: 'glasses', geometry: rigid(merged, iHead), rough: 0.35 }];

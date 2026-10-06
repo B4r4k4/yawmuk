@@ -1,32 +1,31 @@
 // The micro-study's 5-item concept test. Copied VERBATIM from the reviewed `check_question` of five situations in
 // content/script/*.json — no new religious text is written here. Each item cites its ruling_id; `correct` is the index
 // of the option flagged correct in the source. tests/study.test.mjs fails if any item drifts from its source.
-// Concepts: riba (interest), maysir (gambling), luqata (lost property), honesty (cheating), when to ask a scholar.
-// A tawhid item was considered, but the game has no reviewed tawhid card, so none is invented.
+// Concepts (the 7-situation catalog): tawhid (amulets), maysir (gambling), tahara (purity), food (pork), marriage (wali/mahr).
 // Every item also offers "I don't know" (value -1, scored incorrect) to reduce guessing.
 // Pure module (no DOM, no CSS): imported by the browser UI and by netlify/functions/study.mjs for server-side scoring.
 
 export const ITEMS = 
 [
   {
-    "id": "riba",
-    "ruling_id": "home.credit_card",
+    "id": "tawhid",
+    "ruling_id": "work.amulet",
     "q": {
-      "ar": "ما الذي يجعل المسلم يتردد في عروض «0% لمدة 12 شهراً»؟",
-      "en": "What makes a Muslim hesitant about '0% for 12 months' deals?"
+      "ar": "لماذا رفض سمير تَمِيمَة الحظ؟",
+      "en": "Why did Samir turn down the lucky charm?"
     },
     "options": [
       {
-        "ar": "أن الإسلام يحرّم شراء الهواتف بالتقسيط",
-        "en": "Islam forbids buying phones in installments"
+        "ar": "لأنه لا يحب الإكسسوارات",
+        "en": "Because he doesn't like accessories"
       },
       {
-        "ar": "أن العقد قد يتضمن فائدة أو غرامة تأخير، والفائدة محرمة في الإسلام",
-        "en": "The contract may include interest or late penalties, and interest is prohibited in Islam"
+        "ar": "لأن المسلم يؤمن أن النفع والضرر بيد الله وحده، فيجتهد ثم يتوكَّل عليه",
+        "en": "Because a Muslim believes benefit and harm are in God's hands alone, so he works hard and relies on Him"
       },
       {
-        "ar": "أن المسلمين لا يستعملون البنوك",
-        "en": "Muslims don't use banks"
+        "ar": "لأنه لا يريد الترقية",
+        "en": "Because he doesn't want the promotion"
       }
     ],
     "correct": 1
@@ -55,73 +54,73 @@ export const ITEMS =
     "correct": 0
   },
   {
-    "id": "luqata",
-    "ruling_id": "street.lost_wallet",
+    "id": "tahara",
+    "ruling_id": "home.purity_mosque",
     "q": {
-      "ar": "ما الواجب على المسلم إن وجد مالاً ضائعاً له قيمة؟",
-      "en": "What must a Muslim do on finding valuable lost property?"
+      "ar": "ما علاقة الوُضُوء بالصلاة عند المسلمين؟",
+      "en": "How is wudu related to prayer for Muslims?"
     },
     "options": [
       {
-        "ar": "أن يحتفظ به إن لم يره أحد",
-        "en": "Keep it if nobody saw"
+        "ar": "عادةٌ ثقافية لا علاقة لها بالصلاة",
+        "en": "It's a cultural habit with no link to prayer"
       },
       {
-        "ar": "أن يحفظه ويجتهد في إيصاله لصاحبه أو التعريف به عبر جهة موثوقة",
-        "en": "Keep it safe and make a real effort to return it or announce it through a reliable channel"
+        "ar": "الوُضُوء شرطٌ لصحة الصلاة، فلا تصحّ الصلاة بدونه",
+        "en": "Wudu is a condition of prayer: without it, the prayer isn't valid"
       },
       {
-        "ar": "أن يتصدق به فوراً",
-        "en": "Give it to charity right away"
+        "ar": "خلع الحذاء عند باب المسجد يُغني عن الوُضُوء",
+        "en": "Taking off your shoes at the mosque door replaces wudu"
       }
     ],
     "correct": 1
   },
   {
-    "id": "honesty",
-    "ruling_id": "school.cheating",
+    "id": "food",
+    "ruling_id": "school.pork",
     "q": {
-      "ar": "لماذا يرفض المسلم الملتزم الغش حتى في اختبار صغير؟",
-      "en": "Why does a practicing Muslim refuse to cheat even on a small quiz?"
+      "ar": "لماذا رفضت نور شطيرة الخِنْزِير مع أنها مجانية وشهيّة؟",
+      "en": "Why did Noor turn down the ham sandwich, even though it was free and tasty?"
     },
     "options": [
       {
-        "ar": "لأن الإسلام يحرّم الغش والخداع مهما صغر، ويحرّم الإعانة عليه",
-        "en": "Because Islam prohibits cheating and deception however small, and helping others do it"
+        "ar": "لأنها لا تحبّ طعم اللحم",
+        "en": "Because she doesn't like the taste of meat"
       },
       {
-        "ar": "لأنه يخاف من الأستاذة فقط",
-        "en": "Only because he's afraid of the professor"
+        "ar": "لأن أكل الخِنْزِير محرّمٌ في الإسلام، والمسلم يتركه طاعةً لله حتى حين يكون متاحاً",
+        "en": "Because eating pork is prohibited in Islam, and a Muslim leaves it to obey God even when it's right there"
       },
       {
-        "ar": "لأن الدراسة في الكليات الأمريكية ممنوعة أصلاً",
-        "en": "Because studying at American colleges is forbidden anyway"
+        "ar": "لأن المسلمين لا يأكلون مع غير المسلمين",
+        "en": "Because Muslims don't eat with non-Muslims"
       }
     ],
-    "correct": 0
+    "correct": 1
   },
   {
-    "id": "ask_scholar",
-    "ruling_id": "private_events.neighbor_funeral",
+    "id": "marriage",
+    "ruling_id": "private_events.proposal",
     "q": {
-      "ar": "ما الذي يتفق عليه علماء المسلمين في التعامل مع جار غير مسلم فقد قريباً له؟",
-      "en": "What do Muslim scholars agree on regarding a non-Muslim neighbor who's lost a loved one?"
+      "ar": "أيُّ عبارةٍ صحيحة عن الزواج في الإسلام؟",
+      "en": "Which statement about marriage in Islam is correct?"
     },
     "options": [
       {
-        "ar": "الإحسان إليه ومساعدته عملياً من حق الجوار، وتفاصيل التعزية وحضور الجنازة فيها خلاف يُسأل عنه عالم",
-        "en": "Kindness and practical help are part of neighborliness; the details of condolences and attending the funeral are debated, so a scholar is asked"
+        "ar": "المَهْر مالٌ يدفعه أهل العروس إلى العريس",
+        "en": "The mahr is money the bride's family pays to the groom"
       },
       {
-        "ar": "لا علاقة للمسلم بأحزان جيرانه غير المسلمين",
-        "en": "A Muslim has nothing to do with non-Muslim neighbors' grief"
+        "ar": "المسلمة لا تتزوّج إلا مسلمًا بإجماع العلماء، والمَهْر حقٌّ لها وحدها",
+        "en": "By scholarly consensus a Muslim woman marries only a Muslim man, and the mahr belongs to her alone"
       },
       {
-        "ar": "يجب على المسلم المشاركة في كل طقوس الجنازة الدينية",
-        "en": "A Muslim must join every religious funeral rite"
+        "ar": "الوَلِيّ يأخذ المَهْر لنفسه مقابل موافقته",
+        "en": "The wali keeps the mahr for himself in return for his consent"
       }
     ],
-    "correct": 0
+    "correct": 1
   }
 ];
 

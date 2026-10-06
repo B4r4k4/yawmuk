@@ -29,26 +29,15 @@ export const PLACES = [HUB, 'mosque', 'bank'];
 export const ALL_LOCATIONS = [...LOCATIONS, ...PLACES];
 export const isPlace = (loc) => PLACES.includes(loc);
 
-// Fixed situation catalog from docs/TEAM_BRIEF.md (ids never change).
+// Situation catalog from docs/TEAM_BRIEF.md: the 7 situations chosen by the team lead (2026-10-06).
 export const CATALOG = [
-  ['home.mortgage', 'شراء بيت: القرض العقاري والتمويل الإسلامي', 'Buying a home: mortgage vs. Islamic finance'],
-  ['home.food_ingredients', 'طعام البيت: اللحوم والجيلاتين والكحول في المنكّهات', 'Home food: meat, gelatin, alcohol in flavorings'],
-  ['home.credit_card', 'بطاقة الائتمان و«اشترِ الآن وادفع لاحقاً»', 'Credit cards & Buy-Now-Pay-Later'],
-  ['work.alcohol_pork_job', 'وظيفة في مطعم: تقديم الخمر أو الخنزير', 'Restaurant job: serving alcohol or pork'],
-  ['work.retirement_401k', 'خطة التقاعد 401(k)', '401(k) retirement plan'],
-  ['work.honesty_gifts', 'الأمانة في العمل وهدايا الموردين', 'Honesty at work & vendor gifts'],
-  ['school.cheating', 'الغش في الامتحان والواجبات', 'Cheating on exams & assignments'],
-  ['school.student_loan', 'القرض الطلابي بفائدة وبدائله', 'Interest-based student loans & alternatives'],
-  ['school.mixed_social', 'الاختلاط والمصافحة في الدراسة', 'Mixed study groups & handshakes'],
-  ['street.lost_wallet', 'اللقطة: محفظة مفقودة', 'Lost & found: a wallet on the street'],
-  ['street.lottery', 'اليانصيب والمراهنات', 'Lottery, scratch cards & sports betting'],
-  ['street.buying_selling', 'البيع والشراء: العيب والغبن والإكرامية', 'Buying & selling: defects, fraud, tips'],
-  ['public_events.holiday_greetings', 'التهنئة بالكريسماس وعيد الشكر', 'Christmas & Thanksgiving greetings'],
-  ['public_events.alcohol_table', 'مائدة يُدار عليها الخمر', 'A table where alcohol is served'],
-  ['public_events.raffle', 'السحب الخيري (raffle)', 'Charity raffles'],
-  ['private_events.wedding', 'زواج صديق مسلم', "A Muslim friend's wedding"],
-  ['private_events.neighbor_funeral', 'وفاة جار غير مسلم', 'Death of a non-Muslim neighbor'],
-  ['private_events.gifts_birthday', 'الهدايا وأعياد الميلاد', 'Gifts & birthday parties']
+  ['home.purity_mosque', 'الطهارة والمسجد: الوضوء وخلع الحذاء', 'Purity and the mosque: wudu and shoes'],
+  ['work.amulet', 'العقيدة: رفض تميمة الحظ والتوكل على الله', 'Belief: declining a lucky charm, trusting God'],
+  ['work.hijab', 'الحجاب: الاحترام والتكريم في العمل', 'Hijab: respect and dignity at work'],
+  ['school.pork', 'أكل الخنزير: الامتناع طاعةً لله', 'Pork: abstaining in obedience to God'],
+  ['street.lottery', 'القمار واليانصيب: حفظ المجتمع', 'Gambling and the lottery: protecting society'],
+  ['public_events.alcohol_table', 'شرب الخمر: نخب الحفل وحفظ العقل', 'Alcohol: the party toast and protecting the mind'],
+  ['private_events.proposal', 'إجراءات الزواج: الخطبة والولي والمهر', 'Marriage: the proposal, the guardian and the mahr']
 ].map(([id, ar, en]) => ({ id, location: id.split('.')[0], title: { ar, en } }));
 
 export const VERDICTS = {
@@ -74,11 +63,10 @@ export const STORAGE_KEY = 'yawmuk.progress.v1';
 
 // Topic categories used by the end screen to suggest a next topic (themes cut across locations).
 export const THEMES = {
-  // nextTopic = index into ui_strings end.next_topics (0 Ramadan, 1 prayers, 2 Jesus & Mary, 3 Zakat)
-  money: { nextTopic: 3, ar: 'المال والتمويل', en: 'Money & finance', ids: ['home.mortgage', 'home.credit_card', 'work.retirement_401k', 'school.student_loan', 'street.lottery', 'public_events.raffle'] },
-  food: { nextTopic: 0, ar: 'الطعام والشراب', en: 'Food & drink', ids: ['home.food_ingredients', 'work.alcohol_pork_job', 'public_events.alcohol_table'] },
-  honesty: { nextTopic: 1, ar: 'الأمانة والصدق', en: 'Honesty & trust', ids: ['work.honesty_gifts', 'school.cheating', 'street.lost_wallet', 'street.buying_selling'] },
-  social: { nextTopic: 2, ar: 'العلاقات والمناسبات', en: 'Relationships & occasions', ids: ['school.mixed_social', 'public_events.holiday_greetings', 'private_events.wedding', 'private_events.neighbor_funeral', 'private_events.gifts_birthday'] }
+  money: { nextTopic: 3, ar: 'المال والمجتمع', en: 'Money & society', ids: ['street.lottery'] },
+  food: { nextTopic: 0, ar: 'الطعام والشراب', en: 'Food & drink', ids: ['school.pork', 'public_events.alcohol_table'] },
+  honesty: { nextTopic: 1, ar: 'العقيدة والعبادة', en: 'Belief & worship', ids: ['work.amulet', 'home.purity_mosque'] },
+  social: { nextTopic: 2, ar: 'الأسرة والكرامة', en: 'Family & dignity', ids: ['work.hijab', 'private_events.proposal'] }
 };
 
 // ---------------------------------------------------------------- context picker (start screen; optional, never asks belief)
@@ -86,9 +74,9 @@ export const THEMES = {
 export const TOPICS = {
   money: { ar: 'المال', en: 'Money', ids: THEMES.money.ids },
   food: { ar: 'الطعام', en: 'Food', ids: THEMES.food.ids },
-  work: { ar: 'العمل والأمانة', en: 'Work & honesty', ids: [...THEMES.honesty.ids, 'work.alcohol_pork_job', 'work.retirement_401k'] },
+  work: { ar: 'العمل', en: 'At work', ids: ['work.amulet', 'work.hijab'] },
   social: { ar: 'العلاقات', en: 'Relationships', ids: THEMES.social.ids },
-  celebrations: { ar: 'المناسبات', en: 'Celebrations', ids: ['public_events.holiday_greetings', 'private_events.wedding', 'private_events.gifts_birthday', 'public_events.raffle', 'public_events.alcohol_table'] }
+  celebrations: { ar: 'المناسبات', en: 'Celebrations', ids: ['public_events.alcohol_table', 'private_events.proposal'] }
 };
 // Day types: the locations such a day naturally starts with (a light ordering hint only).
 export const DAY_TYPES = {

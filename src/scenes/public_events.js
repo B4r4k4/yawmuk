@@ -2,6 +2,7 @@
 // Procedural low-poly geometry only. Repeated props use InstancedMesh; string/tree lights twinkle through a
 // shader uniform (no per-frame allocations). Walls are inward-facing planes with LOW (1.1 m) colliders, so the
 // player is blocked but the third-person camera can back "through" a wall and still see the hall (dollhouse view).
+import { uniform, instanceIndex, vertexStage, materialColor, float, fract, sin, vec4 } from 'three/tsl';
 import { carpetTex, wallTex, ceilingTex, curtainTex, windowTex, doorTex, bannerTex, tvTex } from './public_events/textures.js';
 
 const W = 22, D = 16, H = 5;               // hall: x -11..11, z -8..8, ceiling 5 m
@@ -111,25 +112,15 @@ export default {
     const exitMat = new THREE.MeshStandardMaterial({ color: '#2ecc71', emissive: '#27e07a', emissiveIntensity: 1.5 });
     for (const m of [glassMat, amberMat, flameMat, glowMat, exitMat]) disposables.push(m);
 
-    // twinkle material: instance colour × per-instance sine driven by a single time uniform
-    const uTime = { value: 0 };
-    const twinkleMat = new THREE.MeshBasicMaterial({ color: '#ffffff', toneMapped: false });
-    twinkleMat.onBeforeCompile = (sh) => {
-      sh.uniforms.uTime = uTime;
-      sh.vertexShader = sh.vertexShader
-        .replace('#include <common>', '#include <common>\nuniform float uTime;\nvarying float vTw;')
-        .replace('#include <begin_vertex>', `#include <begin_vertex>
-#ifdef USE_INSTANCING
-  float ph = instanceMatrix[3].x * 3.1 + instanceMatrix[3].z * 1.7 + instanceMatrix[3].y * 5.3;
-  vTw = 0.6 + 0.4 * sin(uTime * (1.4 + fract(ph) * 2.2) + ph * 4.0);
-#else
-  vTw = 1.0;
-#endif`);
-      sh.fragmentShader = sh.fragmentShader
-        .replace('#include <common>', '#include <common>\nvarying float vTw;')
-        .replace('#include <opaque_fragment>', '#include <opaque_fragment>\ngl_FragColor.rgb *= vTw;');
-    };
-    twinkleMat.customProgramCacheKey = () => 'yawmuk-twinkle';
+    // twinkle material: instance colour × per-instance sine driven by a single time uniform (TSL; the per-bulb phase is
+    // a hash of instanceIndex). Without node materials (headless tests) the bulbs simply stay lit.
+    const uTime = uniform(0);
+    const twinkleMat = new (THREE.MeshBasicNodeMaterial ?? THREE.MeshBasicMaterial)({ color: '#ffffff', toneMapped: false });
+    if (twinkleMat.isNodeMaterial) {
+      const ph = fract(sin(float(instanceIndex).mul(12.9898)).mul(43758.5453)).mul(6.283);
+      const tw = vertexStage(sin(uTime.mul(fract(ph).mul(2.2).add(1.4)).add(ph.mul(4.0))).mul(0.4).add(0.6));
+      twinkleMat.colorNode = vec4(materialColor.rgb.mul(tw), materialColor.a);
+    }
     disposables.push(twinkleMat);
 
     // ------------------------------------------------------------------ shell: floor, ceiling, walls
@@ -566,6 +557,24 @@ export default {
         for (const o of list) { group.remove(o); o.geometry.dispose(); }
         group.add(merged);
       }
+    }
+
+    // [Content: the toast] the declined toast glass — a tall transparent flute of champagne on the cloth edge of
+    // Jake's table, on Samir's side (dinner_table hotspot), beside the slot-0 plate. Added after the merge pass
+    // so it stays its own mesh; taller than the instanced place glasses (0.15 m) so it reads as "the" glass.
+    {
+      const toastGlassMat = own(new THREE.MeshStandardMaterial({ color: '#eaf6fa', transparent: true, opacity: 0.4, roughness: 0.04, metalness: 0.15, depthWrite: false, side: THREE.DoubleSide }));
+      const toastWineMat = own(new THREE.MeshStandardMaterial({ color: '#f2dc8c', transparent: true, opacity: 0.72, roughness: 0.1 }));
+      const a = 56 * DEG, top = 0.765;
+      const gx = jakeTable.c[0] + Math.cos(a) * 0.58, gz = jakeTable.c[1] + Math.sin(a) * 0.58;
+      const o = { cast: false, receive: false };
+      cylAt(0.042, 0.045, 0.008, toastGlassMat, gx, top, gz, { ...o, seg: 20 }); // foot
+      cylAt(0.006, 0.007, 0.09, toastGlassMat, gx, top + 0.008, gz, { ...o, seg: 8 }); // stem
+      const bowl = new THREE.Mesh(own(new THREE.CylinderGeometry(0.04, 0.022, 0.15, 20, 1, true)), toastGlassMat);
+      bowl.position.set(gx, top + 0.098 + 0.075, gz);
+      bowl.renderOrder = 2;
+      add(bowl, o);
+      cylAt(0.034, 0.022, 0.105, toastWineMat, gx, top + 0.1, gz, { ...o, seg: 16 }); // champagne
     }
 
     let flick = 0;

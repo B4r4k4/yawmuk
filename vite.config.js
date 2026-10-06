@@ -11,7 +11,7 @@ export default defineConfig({
     chunkSizeWarningLimit: 1200,
     rollupOptions: {
       input: { main: resolve(import.meta.dirname, 'index.html'), experts: resolve(import.meta.dirname, 'experts.html') },
-      output: { manualChunks: { three: ['three'], post: ['postprocessing', 'n8ao'] } }
+      output: { manualChunks: { three: ['three', 'three/webgpu', 'three/tsl'] } }
     }
   }
 });

@@ -13,13 +13,13 @@
 | 💻 **المستودع · Repo** | https://github.com/B4r4k4/yawmuk |
 | 🧭 **المسار · Track** | **03: التجارب التفاعلية (Interactive experiences)** |
 
-> ⚠️ **حالة المراجعة:** الأحكام الثمانية عشر **مسودات أعدّها الذكاء الاصطناعي ودقّقها آلياً، وهي بانتظار مراجعة عالم بشري؛ لم يراجعها أي عالم بعد**. نصوص الآيات والأحاديث طوبقت آلياً حرفاً بحرف مع مصادرها (انظر [سجل المصادر](docs/SOURCES.md)). أما الإحالات المذهبية والمعاصرة فلم تُطابَق كلها على المطبوع. اللعبة أداة تعليمية **وليست فتوى**. ومن كانت له مسألة في حالته الخاصة فليسأل عالماً موثوقاً أو إمام مسجده. ولا تظهر على البطاقة عبارة «راجعه: …» إلا إذا سجّل عالم مراجعته فعلاً في لوحة المراجعة.
+> ⚠️ **حالة المراجعة:** المواقف السبعة في الرحلة: **خمسة منها مسودات جديدة أعدّها الذكاء الاصطناعي في 6 أكتوبر (`ai_draft`)، واثنان (القمار واليانصيب، وشرب الخمر) من الأحكام السابقة التي اجتازت التدقيق الآلي؛ ولم يراجع أيّاً منها عالم بشري بعد، فكلها بانتظار مراجعة عالم**. والأحكام الستة عشر السابقة باقية مكتبةً مرجعية يستند إليها المرشد. نصوص الآيات والأحاديث طوبقت آلياً حرفاً بحرف مع مصادرها (انظر [سجل المصادر](docs/SOURCES.md)). أما الإحالات المذهبية والمعاصرة فلم تُطابَق كلها على المطبوع. اللعبة أداة تعليمية **وليست فتوى**. ومن كانت له مسألة في حالته الخاصة فليسأل عالماً موثوقاً أو إمام مسجده. ولا تظهر على البطاقة عبارة «راجعه: …» إلا إذا سجّل عالم مراجعته فعلاً في لوحة المراجعة.
 
 </div>
 
-> ⚠️ **Review status:** the 18 rulings are **AI-prepared drafts that passed automated checks. They are pending scholarly review and have not been reviewed by a human scholar yet.** Every Quran and hadith text was machine-matched letter by letter against its source ([source log](docs/SOURCES.md)). Madhhab and contemporary references are attributed, but most have not been checked page by page against printed editions. The game is an educational tool, **not a fatwa**. A Muslim with a question about their own situation should ask a trusted scholar or their local imam. A card shows «Reviewed by …» only when a scholar has actually recorded a review in the dashboard.
+> ⚠️ **Review status:** of the 7 situations on the journey, **5 are new AI-prepared drafts written on 6 Oct (`ai_draft`) and 2 (gambling & the lottery, alcohol) are earlier rulings that passed automated checks. None has been reviewed by a human scholar yet; all are pending scholarly review.** The 16 earlier rulings remain as a reference library the guide answers from. The video and the deck were recorded with the previous 18-situation version, kept at tag [`submission-safe-2026-10-06`](https://github.com/B4r4k4/yawmuk/tree/submission-safe-2026-10-06). Every Quran and hadith text was machine-matched letter by letter against its source ([source log](docs/SOURCES.md)). Madhhab and contemporary references are attributed, but most have not been checked page by page against printed editions. The game is an educational tool, **not a fatwa**. A Muslim with a question about their own situation should ask a trusted scholar or their local imam. A card shows «Reviewed by …» only when a scholar has actually recorded a review in the dashboard.
 
-**Yawmuk («يومك», "your day")** is a browser 3D world, an ordinary day in Columbus, Ohio, where **Adam**, a newcomer curious about Islam, learns how his Muslim neighbours, coworkers and friends handle everyday situations: money, food, work, study, celebrations, prayer. It runs on desktop and phone, in Arabic (RTL) and English, with no install and no account.
+**Yawmuk («يومك», "your day")** is a browser 3D world, an ordinary day in a neighbourhood («حيّ السلام», Al-Salam), where **Adam**, a newcomer curious about Islam, learns how his Muslim neighbours, coworkers and friends handle everyday situations: money, food, work, study, celebrations, prayer. It runs on desktop and phone, in Arabic (RTL) and English, with no install and no account.
 
 ---
 
@@ -49,7 +49,7 @@ Offline check, no keys needed: `npm ci && npm test && npm run build`. The game s
    - **morning & evening adhkar** (`src/features/adhkar/`): text from Hisn al-Muslim; every hadith checked against the six books and dorar.net. See [ADHKAR_SOURCES.md](docs/ADHKAR_SOURCES.md).
 3. **Islamic bank advisor + zakat calculator** (`src/scenes/bank.js`, `src/features/bank/`). It writes no new verdicts: every position is attributed and linked. See [BANK_SOURCES.md](docs/BANK_SOURCES.md).
 4. **«Ask Omar» guide with voice and text** (`src/features/guide/`, `src/features/voice/`). It works across the whole game and answers only from reviewed passages. Personal-fatwa questions and prompt-injection attempts are caught **before** the model is called. If nothing reviewed covers a question, it abstains and refers.
-5. **Scholar dashboard, the human review loop** (`/experts`, `netlify/functions/questions.mjs`, `experts.mjs`). Players send what the guide cannot answer. Scholars answer with sources and can publish an answer, which then becomes a reviewed passage the guide can use. They can also record reviews of the 18 ruling cards. See [EXPERTS.md](docs/EXPERTS.md).
+5. **Scholar dashboard, the human review loop** (`/experts`, `netlify/functions/questions.mjs`, `experts.mjs`). Players send what the guide cannot answer. Scholars answer with sources and can publish an answer, which then becomes a reviewed passage the guide can use. They can also record reviews of the ruling cards (the 7 situations and the 16 library rulings). See [EXPERTS.md](docs/EXPERTS.md).
 6. **Opt-in micro-study with live results**: pre/post understanding test, AI-personalised vs fixed route, `/results.html`. See [STUDY_PROTOCOL.md](docs/STUDY_PROTOCOL.md).
 7. **Evaluation against the reference package.** Content levels أ/ب/ج/د are enforced in code and tests. Every source is tiered as *approved package* or *secondary* (`tools/eval/source_tiers.mjs`). A religious Q&A eval runs in `tests/religious_qa.test.mjs` and `tests/levels.test.mjs`. Write-up: [EVAL.md](docs/EVAL.md).
 8. **New brand identity**, built as a sibling of the «Madar» identity: tokens, logo, contrast tests. See [BRAND.md](docs/BRAND.md).
@@ -70,18 +70,20 @@ An interactive 3D day. At each stop a Muslim friend does something that raises a
 
 Around the situations, the town has a **mosque** (prayer times, adhan, recited Quran with translation, adhkar), a **bank** (Islamic finance and zakat), a **guide** you can speak to, and a door to **real scholars**. The score rewards curious, respectful questions. The game never asks about the player's beliefs and stores nothing about them.
 
-### Locations: 18 situations + two places · المواقع: 18 موقفاً ومكانان
+### Locations: 7 situations + two places · المواقع: 7 مواقف ومكانان
 
 | Location · الموقع | Situations · المواقف |
 |---|---|
-| 🏠 Home · البيت | Mortgage vs Islamic financing · Supermarket meat, gelatin, alcohol in flavourings · Credit cards & BNPL |
-| 💼 Work · العمل | Serving alcohol/pork at a side job · 401(k) & employer match · Vendor gifts, timesheets, company resources |
-| 🎓 College · الكلية | Cheating & AI-written assignments · Interest-bearing student loan · Mixed study groups & handshakes |
-| 🌃 Street · الشارع | Lost wallet (luqata) · Lottery, scratch cards, sports betting · Hidden defects, tips, fake reviews |
-| 🎉 Office holiday party · حفلة الشركة | Holiday greetings · A table where alcohol is served · Charity raffle |
-| 💍 Neighbours & a wedding · الجيران والعرس | A Muslim friend's wedding · Death of a non-Muslim neighbour · Gifts & a child's birthday party |
+| 🏠 Home · البيت | Purity and the mosque: wudu and shoes · الطهارة والمسجد: الوضوء وخلع الحذاء |
+| 💼 Work · العمل | Belief: declining a lucky charm, trusting God · العقيدة: رفض تميمة الحظ والتوكل على الله<br>Hijab: respect and dignity at work · الحجاب: الاحترام والتكريم في العمل |
+| 🎓 College · الكلية | Pork: abstaining in obedience to God · أكل الخنزير: الامتناع طاعةً لله |
+| 🌃 Street · الشارع | Gambling and the lottery: protecting society · القمار واليانصيب: حفظ المجتمع |
+| 🎉 Event hall · قاعة المناسبات | Alcohol: the party toast and protecting the mind · شرب الخمر: نخب الحفل وحفظ العقل |
+| 💍 Neighbours · بيت الجيران | Marriage: the proposal, the guardian and the mahr · إجراءات الزواج: الخطبة والولي والمهر |
 | 🕌 Mosque · المسجد | Prayer times & adhan · Recited Quran with translation of meanings · Morning/evening adhkar · Ask a scholar |
 | 🏦 Bank · البنك | Contract cards · Zakat on savings · House-finance comparison |
+
+The 16 earlier rulings (mortgage, credit cards, student loans, 401(k), lost wallet, wedding, condolences, holiday greetings…) stay in `content/library/` as reference passages: the guide answers from them and can open their cards, but they are no longer on the journey.
 
 **Controls:** WASD/arrows to move, Shift to run, drag to orbit, **E** to interact, Esc for the menu. On a phone: joystick, drag to look, and the **Interact** button.
 
@@ -172,7 +174,7 @@ Full write-up: **[docs/AI.md](docs/AI.md)**. The AI **arranges and explains revi
 
 | Document | What it proves |
 |---|---|
-| [SOURCES.md](docs/SOURCES.md) | Every source, with link, verification status and tier. `content/sources.json` currently holds 246 records: 128 verified, and all are tiered approved-package or secondary. |
+| [SOURCES.md](docs/SOURCES.md) | Every source, with link, verification status and tier. `content/sources.json` currently holds 273 records: 135 verified, and all are tiered approved-package or secondary. |
 | [EVAL.md](docs/EVAL.md) | The evaluation suite against the reference package: content levels, abstain/refer cases, source tiers. |
 | [QA_BANK.md](docs/QA_BANK.md) | Question bank with the critical safety cases. |
 | [QURAN_SOURCES.md](docs/QURAN_SOURCES.md) | Quran text and translation endpoints, why each counts as approved, and the offline bundle. |
@@ -213,7 +215,7 @@ npm test               # unit, content-contract, safety, AI-validator, feature a
 npm run build          # -> dist/ (game + experts dashboard)
 node server.mjs        # production server on :8080 = Cloud Run locally (dist/ + functions + /experts)
 npm run audit          # re-verify every Quran/hadith text against its source + check every link (network)
-npm run test:e2e       # headless Chrome playthrough of the 18 situations
+npm run test:e2e       # headless Chrome playthrough of the situations
 npm run sources        # regenerate docs/SOURCES.md from content/sources.json
 ```
 
@@ -277,7 +279,7 @@ CC-BY models are credited in the in-game **Credits** screen, which is generated 
 
 ## Roadmap & continuity · خطة الاستمرار
 
-1. **Scholar review first.** The dashboard is ready. A qualified scholar reviews the 18 cards, starting with the 4 `ai_draft` ones; each review is stored with name and date and shown on the card.
+1. **Scholar review first.** The dashboard is ready. A qualified scholar reviews the 7 situation cards, starting with the 5 `ai_draft` ones, then the 16 library cards; each review is stored with name and date and shown on the card.
 2. **Adoption by a mosque or da'wah centre** for open houses and new-Muslim classes. Plan and roles are in [OPERATIONS.md](docs/OPERATIONS.md).
 3. **More situations through the same pipeline** (research → audit → script → scene → tests): healthcare, travel, Ramadan week, online business.
 4. **More languages** (Urdu, French, Spanish, Somali), using approved KFGQPC/quranenc translations for each.

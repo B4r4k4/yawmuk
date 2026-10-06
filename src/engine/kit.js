@@ -37,8 +37,10 @@ function drawLabel(sprite) {
   tex.colorSpace = THREE.SRGBColorSpace;
   tex.anisotropy = 4;
   sprite.material.map = tex;
-  sprite.material.needsUpdate = true;
-  if (old) old.dispose();
+  // Only the first map changes the shader; later swaps (language change, fonts loaded) just rebind the texture,
+  // so don't force every label's (node) material to rebuild.
+  if (!old) sprite.material.needsUpdate = true;
+  else old.dispose();
   const worldH = opts.size || 0.32;
   sprite.scale.set(worldH * (c.width / hgt), worldH, 1);
 }
@@ -51,10 +53,11 @@ if (document.fonts?.ready) document.fonts.ready.then(() => liveLabels.forEach(dr
  * text: string | {ar, en}. opts: { size=0.32 (world height in m), color, background (css color | false), depthTest=true (false = visible through walls) }
  */
 export function makeLabel(text, opts = {}) {
-  const mat = new THREE.SpriteMaterial({ transparent: true, depthTest: opts.depthTest ?? true, depthWrite: false });
+  // toneMapped:false keeps the label colours crisp (exactly the canvas colours) now that labels are drawn in the
+  // main scene pass (default layer 0) instead of the old post-tone-mapping overlay pass.
+  const mat = new THREE.SpriteMaterial({ transparent: true, depthTest: opts.depthTest ?? true, depthWrite: false, toneMapped: false });
   const sprite = new THREE.Sprite(mat);
   sprite.renderOrder = 10;
-  sprite.layers.set(1); // OVERLAY_LAYER (world.js): drawn after tone mapping so labels stay crisp
   sprite.userData.label = { text, opts };
   sprite.userData.isLabel = true;
   drawLabel(sprite);

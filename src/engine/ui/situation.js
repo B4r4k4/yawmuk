@@ -1,6 +1,6 @@
 // Situation flow: setup + dialogue -> choices -> consequence(+points) -> ruling card -> check question -> done.
 import { h } from '../dom.js';
-import { t, tr } from '../i18n.js';
+import { t, tr, getLang } from '../i18n.js';
 import { QUALITY } from '../config.js';
 import { getRuling } from '../content.js';
 import { recordChoice, recordCheck, markDone, sitRecord } from '../progress.js';
@@ -8,7 +8,8 @@ import { openModal, setContent, btn, tilt, prefersReducedMotion } from './overla
 import { renderRulingCard, statusBadge } from './rulingCard.js';
 import './strings.js';
 import './aiStrings.js';
-import { speakButton, stopSpeaking } from '../tts.js';
+import { speakButton, stopSpeaking, unlockAudio } from '../tts.js';
+import { listen, stopListening, speak, voiceInputSupported, voiceOutputSupported } from '../../features/voice/index.js';
 import { openAskPanel } from './askPanel.js';
 
 function speakerName(speaker, sit, script) {
@@ -103,6 +104,147 @@ function rulingCardWithTts(ruling, rulingId) {
   return card;
 }
 
+
+// ---------------- «Talk to <NPC>»: live voice / typed conversation with the situation's character
+// listen -> POST /.netlify/functions/npc -> reply bubble + spoken (tts.js) -> listen again. When the player's words
+// clearly express one of the choices, the server returns its id and that choice button is tapped (same as a tap),
+// so the scripted consequence and the reviewed ruling card follow.
+export const NPC_ENDPOINT = '/.netlify/functions/npc';
+const TALK_STR = {
+  talk: { ar: (n) => `تحدّث مع ${n}`, en: (n) => `Talk to ${n}`, es: (n) => `Habla con ${n}`, zh: (n) => `和${n}交谈`, hi: (n) => `${n} से बात करें` },
+  stop: { ar: 'إنهاء المحادثة', en: 'End conversation', es: 'Terminar la conversación', zh: '结束对话', hi: 'बातचीत समाप्त करें' },
+  listening: { ar: 'أستمع… تكلّم', en: 'Listening… speak', es: 'Escuchando… habla', zh: '正在聆听…请说话', hi: 'सुन रहे हैं… बोलिए' },
+  thinking: { ar: (n) => `${n} يفكّر…`, en: (n) => `${n} is thinking…`, es: (n) => `${n} está pensando…`, zh: (n) => `${n}正在思考…`, hi: (n) => `${n} सोच रहे हैं…` },
+  speaking: { ar: (n) => `${n} يتحدّث…`, en: (n) => `${n} is speaking…`, es: (n) => `${n} está hablando…`, zh: (n) => `${n}正在说话…`, hi: (n) => `${n} बोल रहे हैं…` },
+  placeholder: { ar: 'اكتب ما تقوله…', en: 'Type what you say…', es: 'Escribe lo que dices…', zh: '输入你想说的话…', hi: 'जो कहना है लिखें…' },
+  send: { ar: 'إرسال', en: 'Send', es: 'Enviar', zh: '发送', hi: 'भेजें' },
+  you: { ar: 'آدم', en: 'Adam', es: 'Adam', zh: '亚当', hi: 'आदम' },
+  failed: { ar: 'تعذّر الرد الآن. اختر من الخيارات.', en: "Couldn't reply right now. Pick one of the options.", es: 'No se pudo responder ahora. Elige una opción.', zh: '暂时无法回复。请选择一个选项。', hi: 'अभी जवाब नहीं मिल सका। कोई विकल्प चुनें।' },
+  note: { ar: 'محادثة بالذكاء الاصطناعي داخل الموقف فقط؛ الحكم في «بطاقة الحكم».', en: 'AI role-play inside this scene only; the ruling is on the ruling card.', es: 'Juego de rol con IA solo dentro de esta escena; el dictamen está en la tarjeta.', zh: '仅限本场景的AI角色扮演；裁决见裁决卡。', hi: 'केवल इस दृश्य में AI रोल-प्ले; हुक्म कार्ड पर है।' }
+};
+const ts = (k, lang, ...a) => { const v = TALK_STR[k]?.[lang] ?? TALK_STR[k]?.en; return typeof v === 'function' ? v(...a) : v; };
+let npcUnavailable = false; // the first { unavailable } hides the talk button for the rest of the session
+const TALK_TEXT_MAX = 300;
+
+/** Payload for the npc function (caps mirror npc.mjs so a long scene never exceeds the 16 KB body limit). */
+export function npcPayload(sit, choices, lang, history, text) {
+  const cut = (s, n) => String(s || '').slice(0, n);
+  return {
+    lang,
+    situation_id: sit.key || sit.ruling_id || '',
+    npc: { id: sit.npc?.id || '', name: cut(tr(sit.npc?.name), 60), role: cut(tr(sit.npc?.role), 120) },
+    setup: cut(tr(sit.setup), 600),
+    dialogue: (sit.dialogue || []).slice(0, 8).map((d) => ({ speaker: d.speaker || 'narrator', text: cut(tr(d), 400) })),
+    choices: choices.map((c) => ({ id: c.id, label: cut(tr(c.label), 300) })),
+    history: history.slice(-6).map((x) => ({ who: x.who, text: cut(x.text, 300) })),
+    text: cut(text, TALK_TEXT_MAX)
+  };
+}
+
+function npcTalk(sit, choices, onChoice) {
+  if (npcUnavailable || !sit.npc || typeof fetch !== 'function') return null;
+  const lang = getLang();
+  const name = tr(sit.npc.name) || sit.npc.id || '';
+  const history = [];
+  let open = false, closed = false, busy = false, live = false, seq = 0, misses = 0;
+  const log = h('div', { class: 'npc-talk-log', role: 'log', 'aria-live': 'polite' });
+  const state = h('span', { class: 'npc-talk-state', role: 'status', 'aria-live': 'polite' });
+  const box = h('input', { type: 'text', class: 'npc-talk-input', maxlength: String(TALK_TEXT_MAX), placeholder: ts('placeholder', lang), 'aria-label': ts('placeholder', lang), dir: 'auto' });
+  const send = h('button', { type: 'button', class: 'npc-talk-send' }, ts('send', lang));
+  const voice = voiceInputSupported();
+  const toggle = h('button', { type: 'button', class: 'npc-talk-btn', 'aria-pressed': 'false', onclick: () => (open ? end() : start()) },
+    h('span', { class: 'npc-talk-dot', 'aria-hidden': 'true' }), h('span', { class: 'npc-talk-label' }, ts('talk', lang, name)));
+  const panel = h('div', { class: 'npc-talk-panel', hidden: true },
+    log,
+    h('div', { class: 'npc-talk-row' }, box, send),
+    h('p', { class: 'npc-talk-note' }, ts('note', lang)));
+  const el = h('div', { class: 'npc-talk', dir: 'auto' }, h('div', { class: 'npc-talk-bar' }, toggle, state), panel);
+
+  const setState = (k) => { state.textContent = k ? ts(k, lang, name) : ''; toggle.dataset.state = k || ''; };
+  const bubble = (who, text) => {
+    log.append(h('div', { class: `npc-talk-msg ${who}` }, h('span', { class: 'npc-talk-who' }, who === 'npc' ? name : ts('you', lang)), h('p', { dir: 'auto' }, text)));
+    try { log.lastElementChild.scrollIntoView({ block: 'nearest' }); } catch { /* */ }
+  };
+  function hide() { npcUnavailable = true; end(); el.remove(); }
+  function end() {
+    seq++; live = false; open = false;
+    stopListening(); stopSpeaking();
+    toggle.setAttribute('aria-pressed', 'false'); toggle.classList.remove('on');
+    toggle.querySelector('.npc-talk-label').textContent = ts('talk', lang, name);
+    setState(null);
+  }
+  function close() { closed = true; end(); }
+  function start() {
+    if (closed) return;
+    unlockAudio(); // inside the click: the spoken replies may play later without a gesture
+    open = true; live = voice; misses = 0;
+    panel.hidden = false;
+    toggle.setAttribute('aria-pressed', 'true'); toggle.classList.add('on');
+    toggle.querySelector('.npc-talk-label').textContent = ts('stop', lang);
+    if (live) liveListen(); else { try { box.focus({ preventScroll: true }); } catch { /* */ } }
+  }
+  function liveListen() {
+    if (!live || closed || busy) return;
+    const mine = ++seq;
+    setState('listening');
+    const session = listen({
+      lang,
+      onInterim: (t) => { if (mine === seq) box.value = t.slice(0, TALK_TEXT_MAX); },
+      onFinal: (t) => { if (mine === seq) { misses = 0; say(t); } },
+      onError: (msg, code) => { if (mine === seq && ['not-allowed', 'service-not-allowed', 'audio-capture', 'language-not-supported', 'start'].includes(code)) { live = false; setState(null); state.textContent = msg || ''; } },
+      onEnd: (t) => {
+        if (mine !== seq || !live || closed || t || busy) return;
+        if (++misses >= 2) { live = false; setState(null); return; } // two silent turns: stop listening, typing still works
+        liveListen();
+      }
+    });
+    if (!session && mine === seq) { live = false; setState(null); }
+  }
+  async function say(raw) {
+    const text = String(raw || '').trim().slice(0, TALK_TEXT_MAX);
+    if (!text || busy || closed) return;
+    const mine = ++seq;
+    stopListening();
+    box.value = '';
+    bubble('player', text);
+    busy = true; send.disabled = true;
+    setState('thinking');
+    let out = null;
+    try {
+      const res = await fetch(NPC_ENDPOINT, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(npcPayload(sit, choices, lang, history, text)) });
+      out = await res.json().catch(() => null);
+    } catch { out = null; }
+    busy = false; send.disabled = false;
+    if (closed || mine !== seq) return;
+    if (out?.unavailable) { hide(); return; }
+    history.push({ who: 'player', text });
+    const reply = typeof out?.reply === 'string' ? out.reply.trim() : '';
+    if (!reply && !out?.choice) { setState(null); state.textContent = ts('failed', lang); return; }
+    if (reply) { bubble('npc', reply); history.push({ who: 'npc', text: reply }); }
+    const picked = out?.choice ? choices.find((c) => c.id === out.choice) : null;
+    if (picked) {
+      // let the character finish its line, then tap that choice (consequence + ruling card follow)
+      live = false;
+      const go = () => { if (mine === seq && !closed) onChoice(picked); };
+      setState(reply ? 'speaking' : null);
+      if (!(reply && voiceOutputSupported() && speak(reply, lang, { onEnd: go, onStop: go }))) setTimeout(go, reply ? 1600 : 0);
+      return;
+    }
+    if (!reply) { liveListen(); return; }
+    setState('speaking');
+    const spoke = voiceOutputSupported() && speak(reply, lang, {
+      onEnd: () => { if (mine === seq && !closed) { setState(null); if (live) liveListen(); } },
+      onStop: () => { if (mine === seq) setState(null); }
+    });
+    if (!spoke) { setState(null); if (live) liveListen(); }
+  }
+  box.addEventListener('keydown', (e) => { e.stopPropagation(); if (e.key === 'Enter' && !e.isComposing) { e.preventDefault(); say(box.value); } });
+  box.addEventListener('keyup', (e) => e.stopPropagation());
+  send.addEventListener('click', () => say(box.value));
+  toggle.addEventListener('keydown', (e) => e.stopPropagation());
+  return { el, close };
+}
+
 /**
  * Run a situation. opts: { script, startAt: 'dialogue'|'choices'|'ruling', onPoints(total), onFaceNpc }
  * Resolves when the player closes the flow.
@@ -157,15 +299,20 @@ export async function runSituation(sit, opts = {}) {
       const choices = shuffle(sit.choices || []);
       if (choices.length) {
         const rec = sitRecord(key);
-        lastChoice = await wait((pick) => {
+        lastChoice = await wait((resolve) => {
+          let talk = null;
+          const pick = (c) => { talk?.close(); resolve(c); };
           const buttons = choices.map((c, i) => {
             const tried = rec?.tried?.includes(c.id);
             return tilt(h('button', { type: 'button', class: `choice${tried ? ' tried' : ''}`, style: { '--i': i }, onclick: () => pick(c), ...(i === 0 ? { 'data-autofocus': true } : {}) },
               h('span', { class: 'num', 'aria-hidden': 'true' }, String(i + 1)), h('span', {}, tr(c.label))), 3);
           });
           const wrap = h('div', { class: 'choices', role: 'group', 'aria-label': t('whatDoYouDo') }, buttons);
+          // the character's choice -> tap that button (same as the player tapping it)
+          talk = npcTalk(sit, choices, (c) => { const b = buttons[choices.indexOf(c)]; if (b && document.contains(b)) { b.focus(); b.click(); } else pick(c); });
           setContent(sheet, [
             h('div', { class: 'choices-head' }, h('div', { class: 'speaker' }, t('whatDoYouDo')), h('span', { class: 'hint' }, t('choiceHint'))),
+            talk?.el || null,
             wrap]);
           numberKeys(wrap, buttons);
         });
@@ -185,6 +332,7 @@ export async function runSituation(sit, opts = {}) {
       }
     }
   } finally {
+    stopListening();
     stopSpeaking();
     sheet.close();
   }

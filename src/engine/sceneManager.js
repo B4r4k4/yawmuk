@@ -1,6 +1,6 @@
 // Scene manager: builds a location scene through the scene contract, validates the result,
 // auto-adds markers/NPCs/missing hotspots, and disposes everything on unload.
-import * as THREE from 'three';
+import * as THREE from 'three/webgpu'; // node materials for scenes (shares one core with 'three')
 import { getSceneDef, placeholderScene } from './sceneRegistry.js';
 import { makeNPC, makeCharacter, makeLabel, makeMarker, createKit, animateFigure } from './kit.js';
 import { preloadCharacters } from './characters.js';
@@ -9,8 +9,15 @@ import { events } from './events.js';
 import { getLang, tr } from './i18n.js';
 import { ALL_LOCATIONS, LOCATION_TITLES, LIGHTING } from './config.js';
 import { normalizeDoors, normalizeFeatureSpots } from './hub.js';
+import { createTownContext } from './townContext.js';
+import { createSkyDome } from './goldenSky.js';
 
 const DEBUG = new URLSearchParams(location.search).get('debug') === '1';
+
+// Every THREE.Sprite (labels, smoke puffs…) shares ONE module-level quad geometry. Disposing it from one scene's
+// sprite destroys the GPU vertex buffer every later sprite still draws with (WebGPU: "[Buffer] used in submit while
+// destroyed" every frame; WebGL silently re-uploads), so flag it shared: the scene disposers must never free it.
+new THREE.Sprite().geometry.userData.shared = true;
 
 function hourOf(time) { const m = /^(\d{1,2})/.exec(time || ''); return m ? +m[1] : 12; }
 const lightsForTime = (time) => { const h = hourOf(time); return h >= 20 || h < 5 ? 'night' : h >= 17 ? 'evening' : 'day'; };
@@ -95,6 +102,9 @@ export function createSceneManager(world, mats, opts = {}) {
     for (const b of res.backdrop ? [res.backdrop].flat() : []) {
       if (b?.isObject3D) { b.traverse((o) => { o.userData.noCameraCollide = true; }); root.add(b); } else warn('backdrop entries must be THREE.Object3D');
     }
+    // one integrated environment: under the global golden-hour look every interior gets the town's sky dome (same
+    // shared uniforms), so the sky above the walls and through the windows is the same sky as outdoors
+    if (LIGHTING === 'golden' && !res.backdrop && res.lights !== 'night') root.add(createSkyDome({ quality: world.quality }));
     world.scene.add(root);
     root.updateMatrixWorld(true);
 
@@ -252,6 +262,17 @@ export function createSceneManager(world, mats, opts = {}) {
     bb.expandByPoint(new THREE.Vector3(...spawn.position));
     const bounds = bb.isEmpty() ? null : { minX: bb.min.x - 0.5, maxX: bb.max.x + 0.5, minZ: bb.min.z - 0.5, maxZ: bb.max.z + 0.5 };
 
+    // ---- town context: every interior sits inside «حيّ السلام» — the neighbourhood ring (houses, trees, lamps, the
+    // mosque on the skyline) outside its bounds + the town's golden sky, so windows/doors look onto the main map.
+    // Root-only (like res.backdrop): never in the player bounds or the camera occluders. Scenes opt out with townContext:false.
+    if (!res.backdrop && !res.doors && res.townContext !== false && bounds) {
+      const night = res.lights === 'night' || !LIGHTING;
+      const tc = createTownContext({ bounds: res.townBounds || bounds, front: exit ? [exit.position[0], exit.position[2]] : null, location, quality: world.quality, night });
+      tc.traverse((o) => { o.userData.noCameraCollide = true; });
+      root.add(tc);
+      root.updateMatrixWorld(true);
+    }
+
     // ---- camera occluders: large, opaque, static meshes (walls, big furniture); see player.js
     const occluders = [];
     const sphere = new THREE.Sphere();
@@ -350,7 +371,8 @@ export function createSceneManager(world, mats, opts = {}) {
       }
     };
     purge(); // free cached assets the previous location used but this one does not
-    try { world.renderer.compile(world.scene, world.camera); } catch { /* shader warm-up is optional */ }
+    // shader warm-up is optional; WebGPURenderer.compile is compileAsync (returns a promise)
+    try { Promise.resolve(world.renderer.compileAsync?.(world.scene, world.camera)).catch(() => {}); } catch { /* ignore */ }
     events.emit('load:done', { location, placeholder: usedPlaceholder });
     return active;
   }
@@ -359,7 +381,7 @@ export function createSceneManager(world, mats, opts = {}) {
     obj.traverse((o) => {
       if (o.userData?.character) o.userData.character.dispose();
       if (o.userData?.disposeLabel) { o.userData.disposeLabel(); return; }
-      if (o.geometry && !o.geometry.userData?.shared) o.geometry.dispose();
+      if (o.geometry && !o.isSprite && !o.geometry.userData?.shared) o.geometry.dispose(); // sprites: shared quad (see top)
       const ms = Array.isArray(o.material) ? o.material : o.material ? [o.material] : [];
       for (const m of ms) {
         if (m.userData?.shared) continue;
