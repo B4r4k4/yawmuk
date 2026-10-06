@@ -8,7 +8,7 @@ export default defineConfig({
     target: 'es2020',
     chunkSizeWarningLimit: 1200,
     rollupOptions: {
-      output: { manualChunks: { three: ['three'] } }
+      output: { manualChunks: { three: ['three'], post: ['postprocessing', 'n8ao'] } }
     }
   }
 });

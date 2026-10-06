@@ -2,7 +2,10 @@
 // auto-adds markers/NPCs/missing hotspots, and disposes everything on unload.
 import * as THREE from 'three';
 import { getSceneDef, placeholderScene } from './sceneRegistry.js';
-import { makeNPC, makeLabel, makeMarker, createKit, animateFigure } from './kit.js';
+import { makeNPC, makeCharacter, makeLabel, makeMarker, createKit, animateFigure } from './kit.js';
+import { preloadCharacters } from './characters.js';
+import { beginSession, trackStep, purge, loadCatalog, getCatalog } from './assets.js';
+import { events } from './events.js';
 import { getLang, tr } from './i18n.js';
 
 const DEBUG = new URLSearchParams(location.search).get('debug') === '1';
@@ -22,19 +25,36 @@ export function createSceneManager(world, mats) {
     const group = new THREE.Group();
     group.name = `scene:${location}`;
     const ctx = {
-      THREE, mats, makeNPC, makeLabel, group, colliders: [],
+      THREE, mats, makeNPC, makeCharacter, makeLabel, group, colliders: [],
       location, script, lang: getLang(), tr, debug: DEBUG,
-      isMobile: world.isMobile
+      isMobile: world.isMobile, quality: world.quality, catalog: getCatalog(), renderer: world.renderer,
+      _pending: [], extraOccluders: []
     };
     Object.assign(ctx, createKit(ctx));
     return ctx;
   }
 
-  function runBuild(def, location, script) {
+  /** build() may be sync or async; every ctx.place/loadModel/loadTexture/pbr started inside it is awaited too. */
+  async function runBuild(def, location, script, onWarn) {
     const ctx = makeCtx(location, script);
-    const res = def.build.call(def, ctx);
-    if (!res || typeof res !== 'object') throw new Error('build(ctx) must return an object');
+    ctx.warn = onWarn;
+    let res;
+    try {
+      res = await def.build.call(def, ctx);
+      if (!res || typeof res !== 'object') throw new Error('build(ctx) must return an object');
+    } catch (e) {
+      if (e && typeof e === 'object') e.__ctx = { ctx, res };
+      throw e;
+    }
+    // wait for assets started during build (and anything those start in turn)
+    for (let i = 0; i < 4 && ctx._pending.length; i++) { const list = ctx._pending.splice(0); await Promise.all(list.map((pr) => Promise.resolve(pr).catch(() => null))); }
     return { ctx, res };
+  }
+
+  function disposeBuilt(built) {
+    try { built.res?.dispose?.(); } catch { /* ignore */ }
+    if (built.ctx?.group) disposeTree(built.ctx.group);
+    if (built.res?.group?.isObject3D && built.res.group !== built.ctx.group) disposeTree(built.res.group);
   }
 
   /**
@@ -43,15 +63,19 @@ export function createSceneManager(world, mats) {
    */
   async function load(location, script, onWarn = () => {}) {
     unload();
-    const { def, isPlaceholder, error: importError } = await getSceneDef(location);
+    beginSession(location);
+    // shared libraries first (characters are needed synchronously by makeNPC inside build)
+    await Promise.all([trackStep(loadCatalog(), 'catalog'), trackStep(preloadCharacters(), 'characters')]);
+    const { def, isPlaceholder, error: importError } = await trackStep(getSceneDef(location), 'scene');
     if (importError) onWarn(`scene import failed: ${importError.message}`);
     let built, usedPlaceholder = isPlaceholder;
     try {
-      built = runBuild(def, location, script);
+      built = await trackStep(runBuild(def, location, script, onWarn), 'build');
     } catch (e) {
       console.error(`[scene] build() of "${location}" threw — using placeholder`, e);
       onWarn(`build() failed: ${e.message}`);
-      built = runBuild(placeholderScene, location, script);
+      if (e && e.__ctx) disposeBuilt(e.__ctx);
+      built = await runBuild(placeholderScene, location, script, onWarn);
       usedPlaceholder = true;
     }
     const { ctx, res } = built;
@@ -81,7 +105,11 @@ export function createSceneManager(world, mats) {
     (script?.situations || []).forEach((s) => { if (s.npc?.id) scriptNpcNames[s.npc.id] = s.npc.name; });
     for (const n of Array.isArray(res.npcs) ? res.npcs : []) {
       if (!n || !n.id) { warn('npc without id ignored'); continue; }
-      const fig = n.object?.isObject3D ? n.object : makeNPC(n.look || {});
+      const look = { ...(n.look || {}) };
+      if (n.pose === 'sit' || n.seated) look.seated = true;
+      if (n.sitArms) look.sitArms = n.sitArms;
+      // background extras built from a look use one merged mesh (1 draw call); script NPCs get full colour pieces
+      const fig = n.object?.isObject3D ? n.object : makeNPC(look, { single: String(n.id).startsWith('bg_') || undefined, name: n.id });
       const p = vec3(n.position);
       fig.position.set(p[0], p[1], p[2]);
       fig.rotation.y = Number(n.yaw) || 0;
@@ -90,12 +118,18 @@ export function createSceneManager(world, mats) {
       fig.userData.baseYaw = fig.rotation.y;
       fig.userData.phase = Math.random() * 6;
       fig.userData.animate = n.animate !== false;
+      const ch = fig.userData.character;
+      if (ch) {
+        if (n.pose === 'sit' || n.seated || look.seated) ch.play('sit');
+        if (typeof n.anim === 'string') ch.play(n.anim, { once: false });
+      }
       const name = n.name || scriptNpcNames[n.id];
       const isBg = String(n.id).startsWith('bg_'); // background, non-speaking extras
       fig.userData.background = isBg;
       if (name && n.showName !== false && !isBg) {
         const lbl = makeLabel(name, { size: 0.22, background: 'rgba(0,0,0,0.45)' });
-        lbl.position.set(0, fig.userData.isNPC ? 2.02 : 2.1, 0);
+        const lh = fig.userData.character ? (fig.userData.character.R.height + 0.22) / fig.scale.y : 2.02;
+        lbl.position.set(0, ch?.state === 'sit' ? lh - 0.45 / fig.scale.y : lh, 0);
         fig.add(lbl);
       }
       if (n.collide !== false) {
@@ -190,7 +224,7 @@ export function createSceneManager(world, mats) {
     }
 
     // explicit occluders from the scene (any mesh type, may be invisible proxies; not required to be in the group)
-    const extraOcc = res.cameraOccluders ? [res.cameraOccluders].flat() : [];
+    const extraOcc = [...(res.cameraOccluders ? [res.cameraOccluders].flat() : []), ...(ctx.extraOccluders || [])];
     for (const o of extraOcc) {
       if (o?.isObject3D) { if (!o.parent) o.updateMatrixWorld(true); occluders.push(o); }
       else warn('cameraOccluders entries must be THREE.Object3D');
@@ -198,7 +232,8 @@ export function createSceneManager(world, mats) {
 
     // ---- lights
     const lights = ['day', 'evening', 'night'].includes(res.lights) ? res.lights : lightsForTime(script?.time_of_day);
-    world.applyLights(lights);
+    // environment: { hdri: 'studio' | catalog id | path, intensity, background:false, blur } (optional)
+    await trackStep(world.applyLights(lights, res.environment && typeof res.environment === 'object' ? res.environment : null), 'lighting');
     // optional per-scene overrides of the preset sky colour / fog
     try {
       if (typeof res.sky === 'string') world.scene.background = new THREE.Color(res.sky);
@@ -242,6 +277,7 @@ export function createSceneManager(world, mats) {
           const { position: p, yaw } = st[target];
           fig.position.set(p[0], p[1], p[2]);
           fig.rotation.y = yaw; fig.userData.baseYaw = yaw;
+          if (fig.userData.character) fig.userData.character.targetYaw = null;
           const c = fig.userData.collider;
           if (c) { c.min[0] = p[0] - 0.28; c.min[2] = p[2] - 0.28; c.max[0] = p[0] + 0.28; c.max[2] = p[2] + 0.28; }
           if (fig.userData.station !== undefined) moved.push(id);
@@ -253,6 +289,7 @@ export function createSceneManager(world, mats) {
         for (const hs of hotspots) hs.marker?.tick(t, near === hs);
         exit.marker.tick(t, near === exit);
         for (const fig of Object.values(npcObjects)) {
+          if (fig.userData.character) continue; // skinned characters are updated by updateCharacters()
           if (fig.userData.animate) animateFigure(fig, t, 0, fig.userData.phase);
         }
         if (typeof res.update === 'function') {
@@ -260,11 +297,15 @@ export function createSceneManager(world, mats) {
         }
       }
     };
+    purge(); // free cached assets the previous location used but this one does not
+    try { world.renderer.compile(world.scene, world.camera); } catch { /* shader warm-up is optional */ }
+    events.emit('load:done', { location, placeholder: usedPlaceholder });
     return active;
   }
 
   function disposeTree(obj) {
     obj.traverse((o) => {
+      if (o.userData?.character) o.userData.character.dispose();
       if (o.userData?.disposeLabel) { o.userData.disposeLabel(); return; }
       if (o.geometry && !o.geometry.userData?.shared) o.geometry.dispose();
       const ms = Array.isArray(o.material) ? o.material : o.material ? [o.material] : [];

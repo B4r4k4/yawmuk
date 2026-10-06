@@ -201,6 +201,8 @@ function playerLookInPage() {
   const fig = window.yawmuk.player.figure;
   const hex = (m) => '#' + m.color.getHexString();
   const out = { torso: null, beard: false, kufi: false, jacket: null, onStage: !!fig.parent };
+  const ch = fig.userData.character; // skinned character (engine phase 4): read its resolved outfit
+  if (ch) { const ap = ch.appearance; return { ...out, torso: ap.shirt, beard: ap.beard, kufi: ap.kufi, jacket: ap.jacket }; }
   fig.traverse((o) => {
     if (!o.isMesh) return;
     const p = o.geometry.parameters || {}, t = o.geometry.type;

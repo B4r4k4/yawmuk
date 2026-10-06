@@ -1,10 +1,11 @@
 // Third-person player "Adam": movement, AABB collision, follow/orbit camera.
 import * as THREE from 'three';
 import { makeNPC, animateFigure } from './kit.js';
+import { charactersReady } from './characters.js';
 import { PLAYER } from './config.js';
 
 const RADIUS = 0.3;
-const WALK = 3.2, RUN = 5.6;
+const WALK = 2.3, RUN = 5.2; // m/s; the character's walk/run clips are time-scaled to match (no foot sliding)
 
 function lerpAngle(a, b, k) {
   let d = ((b - a + Math.PI) % (Math.PI * 2)) - Math.PI;
@@ -13,23 +14,25 @@ function lerpAngle(a, b, k) {
 }
 
 export function createPlayer(world, input) {
-  let figure = makeNPC(PLAYER.look); // edit PLAYER in config.js to change Adam's look
-  figure.name = 'Adam';
+  const make = (look) => { const f = makeNPC({ sex: 'male', hairStyle: 'short', ...look }, { name: 'Adam', idle: 'Idle', single: false, castShadow: true }); f.name = 'Adam'; return f; };
+  let figure = make(PLAYER.look); // edit PLAYER in config.js to change Adam's look
   world.scene.add(figure);
   let lookKey = JSON.stringify(PLAYER.look);
+  let isCharacter = !!figure.userData.character;
 
   /** Rebuild Adam with a look (PLAYER.look merged with a scene's optional playerLook). No-op if unchanged. */
   function setLook(look) {
     const full = { ...PLAYER.look, ...(look || {}) };
     const key = JSON.stringify(full);
-    if (key === lookKey) return;
+    if (key === lookKey && (isCharacter || !charactersReady())) return;
     lookKey = key;
-    const next = makeNPC(full); // NPC geometries/materials are shared+cached, nothing to dispose
-    next.name = 'Adam';
+    const next = make(full); // geometries/materials are shared+cached, nothing to dispose
     next.position.copy(figure.position); next.rotation.y = figure.rotation.y;
+    figure.userData.character?.dispose();
     world.scene.remove(figure);
     world.scene.add(next);
     figure = next;
+    isCharacter = !!figure.userData.character;
   }
 
   const pos = new THREE.Vector3();
@@ -128,13 +131,15 @@ export function createPlayer(world, input) {
     }
     figure.position.copy(pos);
     figure.rotation.y = yaw;
-    animateFigure(figure, t, Math.min(1, speedNow / WALK));
+    const ch = figure.userData.character;
+    if (ch) ch.setLocomotion(speedNow < 0.05 ? 0 : speedNow);
+    else animateFigure(figure, t, Math.min(1, speedNow / WALK));
     computeCamera();
     world.camera.position.lerp(desired, 1 - Math.exp(-dt * 12));
     world.camera.lookAt(camTarget);
   }
 
-  function faceTowards(p) { yaw = Math.atan2(-(p[0] - pos.x), -(p[2] - pos.z)); figure.rotation.y = yaw; }
+  function faceTowards(p) { yaw = Math.atan2(-(p[0] - pos.x), -(p[2] - pos.z)); figure.rotation.y = yaw; figure.userData.character?.setLocomotion(0); speedNow = 0; }
 
-  return { get figure() { return figure; }, setLook, pos, update, teleport, setColliders, setCameraOccluders, faceTowards, get yaw() { return yaw; } };
+  return { get figure() { return figure; }, get character() { return figure.userData.character || null; }, setLook, pos, update, teleport, setColliders, setCameraOccluders, faceTowards, get yaw() { return yaw; } };
 }

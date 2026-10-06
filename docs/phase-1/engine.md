@@ -103,3 +103,58 @@ The Chrome extension cannot reach this machine's localhost, so verification used
   - New `makeNPC` option `jacket`: an open coat with no tie.
   - NPCs can have `stations` (documented in the README).
 - **Labels:** `ui_strings.json` keys are mapped with fallbacks. `UI_MAP` in i18n.js accepts several candidate names for each key.
+
+## Update 2026-10-06 (phase 4): real 3D — characters, rendering pipeline, asset loading
+
+### Characters
+- **Source:** Quaternius *Ultimate Modular Men / Women* (CC0 1.0), six outfits fetched from poly.pizza (`tools/characters/sources.json`, `fetch.mjs`) and merged per sex by `tools/characters/build.mjs` (glTF-Transform, meshopt) into `public/assets/characters/male.glb` (1.8 MB) and `female.glb` (0.9 MB), about 1.4 MB gzipped together. Licence and credits: `public/assets/characters/LICENSES.md`.
+- **One rig per sex (62 joints) and one set of clips** (Idle ×2, Walk, Run, Wave, Interact). At load time every part is normalised into the rest pose of one primary skeleton, so any head/body/legs/feet combination merges into a few colour pieces on one cloned skeleton.
+- **`look` → character:** sex (explicit or inferred), hair style, outfit parts and role colours. Generated, fitted accessories in `accessories.js`:
+  - **hijab:** head and neck wrap with an oval face opening, an under-chin tuck and a shoulder/chest drape, fitted to an envelope of the real head, neck and shoulder vertices, plus a contrasting underscarf band
+  - kufi, beanie and Santa hat, fitted to the skull cross-sections
+  - beard and moustache shell
+  - glasses
+  - long A-line skirt, weighted hips → thighs → shins so it drapes when seated
+  - long sleeves and trousers, as shells lifted off bare skin
+- **Behaviour:**
+  - idle with random clip, offset and speed
+  - smooth turn to face Adam, and head look-at
+  - procedural talking gestures while the NPC's line is on screen (Adam too), wave on first approach
+  - seated pose (`pose:'sit'`)
+  - locomotion blend with foot speed matched to velocity (Adam walks at 2.3 m/s and runs at 5.2 m/s)
+  - updated only when on screen
+- **Compatibility:** `makeNPC(look)` returns the new character and its `userData.parts` still accepts the old poses and props, so the unmodified phase-3 scenes still render (seated Omar, Sarah and the typists, the beanie and the Santa hat). The box figure remains as a fallback (`makeBoxNPC`). Background `bg_` NPCs are one merged mesh.
+
+### Rendering
+- ACES tone mapping and sRGB output.
+- HDRI image-based lighting per preset, using the library HDRIs with a RoomEnvironment fallback: day → snowy park, evening → suburban dusk, night → city night. Scenes can override it with `environment`.
+- Retuned sun and hemisphere lights, and PCF soft shadows.
+- `postprocessing` with N8AO, mip-map bloom, SMAA, a mild hue/contrast grade and a vignette.
+- World labels are drawn in an overlay pass after tone mapping, depth-tested against the scene.
+- **Quality tiers:**
+  - `low`: mobile, no post-processing, shadow map 1024, pixel ratio ≤ 1.5
+  - `medium`: integrated GPUs, half-resolution AO
+  - `high`: full-resolution AO and vignette
+- Tiers are auto-detected from the GPU string, can be overridden with `?quality=` or `yawmuk.setQuality()` (persisted), and step down automatically after 4 s below 28 fps.
+
+### Assets and loading
+- `build(ctx)` may be async.
+- `ctx.place(id, {position, yaw, scale, collider: true|'auto', occluder: 'box'})`, `ctx.loadModel`, `ctx.pbr(name, {size})`, `ctx.loadTexture` and `ctx.catalog`, with a GLTFLoader that handles meshopt and lazily loaded Draco.
+- Assets are cached and shared. Assets the next location does not use are purged.
+- Everything started during `build` is awaited.
+- Loading progress goes to `window.yawmuk.events`: `load:progress {loaded, total, label}` and `load:done`, which the loader UI consumes.
+- On failure the placeholder fallback is used, and a single missing asset only produces a warning.
+
+### Numbers (Intel UHD 620, 1366×768, unchanged phase-3 scenes)
+- Scene triangles including characters: 34k–101k (before: 6k–16k).
+- Frame draw calls: 160–354.
+- Frame rate:
+  - `low`: 60 fps (vsync)
+  - `medium`: 38–45 fps
+  - `high`: 27–33 fps
+- Screenshots before and after: `docs/phase-4/screenshots/engine/`.
+
+### Tests
+- `npm test`: 223/223.
+- `npm run test:e2e`: 4/4 configurations pass, including 90 ruling cards and the mobile layouts.
+- The only e2e change: Adam's outfit check now reads `character.appearance`, with the old box-figure inspection kept as a fallback.

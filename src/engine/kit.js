@@ -1,6 +1,8 @@
 // Scene-author toolkit: everything that ends up in `ctx` (see src/engine/README.md for the contract).
 import * as THREE from 'three';
 import { getLang, onLangChange, tr } from './i18n.js';
+import { charactersReady, createCharacter } from './characters.js';
+import { loadModel, loadTexture, forwardYaw, catalogEntry } from './assets.js';
 
 // ---------------------------------------------------------------- labels
 const liveLabels = new Set();
@@ -52,6 +54,7 @@ export function makeLabel(text, opts = {}) {
   const mat = new THREE.SpriteMaterial({ transparent: true, depthTest: opts.depthTest ?? true, depthWrite: false });
   const sprite = new THREE.Sprite(mat);
   sprite.renderOrder = 10;
+  sprite.layers.set(1); // OVERLAY_LAYER (world.js): drawn after tone mapping so labels stay crisp
   sprite.userData.label = { text, opts };
   sprite.userData.isLabel = true;
   drawLabel(sprite);
@@ -72,13 +75,32 @@ function cmat(hex, o) {
 }
 
 /**
- * makeNPC(look) -> THREE.Group. Feet at y=0, faces -Z when rotation.y = 0 (same convention as yaw).
+ * makeNPC(look, opts?) -> THREE.Group: an animated, skinned character (see characters.js) once the character
+ * library is loaded (the scene manager loads it before build()), otherwise the simple box figure below.
+ * The group's userData.character is the Character (play('talk'|'wave'|'sit'|…)); userData.parts keeps the old
+ * pose groups working (props added to parts.head follow the head bone, parts.legL.rotation.x seats the legs…).
+ */
+export function makeNPC(look = {}, opts) {
+  if (charactersReady()) {
+    try { return createCharacter(look, opts).root; } catch (e) { console.warn('[npc] character failed, using box figure', e); }
+  }
+  return makeBoxNPC(look);
+}
+
+/** makeCharacter(look, opts?) -> Character | null ({ root, play, setLocomotion, turnTo, lookAt, … }). */
+export function makeCharacter(look = {}, opts) {
+  if (!charactersReady()) return null;
+  return createCharacter(look, opts);
+}
+
+/**
+ * makeBoxNPC(look) -> THREE.Group (legacy procedural figure, used as fallback). Feet at y=0, faces -Z when rotation.y = 0.
  * look: { skin, shirt, pants, shoes, hair, hijab: bool|color, hijabColor: color (default neutral slate), kufi: bool|color, beard: bool|color,
  *         suit: bool|color (jacket+tie), jacket: bool|color (open coat, no tie), tie: color|false, dress: bool|color (long skirt/abaya), glasses: bool,
  *         height: 1.75, build: 1 (width factor) }
  * The group exposes userData.parts = { legL, legR, armL, armR, head } (pivot groups) for animation.
  */
-export function makeNPC(look = {}) {
+export function makeBoxNPC(look = {}) {
   const L = {
     skin: '#c68642', shirt: '#3a6ea5', pants: '#2f3542', shoes: '#1e1e1e', hair: '#2b1d14',
     height: 1.75, build: 1, ...look
@@ -306,7 +328,90 @@ export function createKit(ctx) {
   /** yaw that makes something at `from` [x,z] face `to` [x,z] (yaw=0 faces -Z). */
   function yawTo(from, to) { return Math.atan2(-(to[0] - from[0]), -(to[1] - from[1])); }
 
-  return { box, cyl, sphere, ground, wall, room, addCollider, rand, yawTo };
+  // ---------------------------------------------------------------- loaded assets (async)
+  const pending = (ctx._pending ||= []);
+  /**
+   * place(id, { position:[x,y,z], yaw, scale, castShadow=true, receiveShadow=true, collider=false|true|'auto',
+   *             occluder=false|'box', parent, name, faceCorrect=true }) -> Group (filled when the model arrives)
+   * The returned group has .ready (Promise). The scene manager waits for every place() before the scene shows.
+   */
+  function place(id, o = {}) {
+    const holder = new THREE.Group();
+    holder.name = o.name || `place:${id}`;
+    const p = o.position || [0, 0, 0];
+    holder.position.set(p[0] || 0, p[1] || 0, p[2] || 0);
+    holder.rotation.y = o.yaw || 0;
+    if (o.scale != null) Array.isArray(o.scale) ? holder.scale.set(...o.scale) : holder.scale.setScalar(o.scale);
+    (o.parent || ctx.group).add(holder);
+    holder.ready = loadModel(id).then((model) => {
+      if (o.faceCorrect !== false) model.rotation.y += forwardYaw(id);
+      model.traverse((m) => { if (m.isMesh) { m.castShadow = o.castShadow ?? true; m.receiveShadow = o.receiveShadow ?? true; } });
+      holder.add(model);
+      if (o.collider) addModelColliders(holder, o.collider);
+      if (o.occluder === 'box') addOccluderBox(holder);
+      return holder;
+    }).catch((e) => {
+      console.warn(`[scene] place("${id}") failed:`, e?.message || e);
+      ctx.warn?.(`asset "${id}" failed to load`);
+      if (ctx.debug) holder.add(new THREE.Mesh(new THREE.BoxGeometry(0.4, 0.4, 0.4), new THREE.MeshStandardMaterial({ color: '#ff00ff' })));
+      return holder;
+    });
+    pending.push(holder.ready);
+    return holder;
+  }
+  /** loadModel(id) -> Promise<Object3D> (a clone; tracked so the scene waits for it). */
+  function loadModelTracked(id, opts) { const pr = loadModel(id, opts); pending.push(pr.catch(() => null)); return pr; }
+  /** loadTexture(name, { size:[w,d] metres | repeat }) -> Promise<{ map, normalMap, roughnessMap, … }> */
+  function loadTextureTracked(name, opts) { const pr = loadTexture(name, opts); pending.push(pr.catch(() => null)); return pr; }
+  /**
+   * pbr(name, { size:[w,d] | repeat, color, roughness, metalness, ...MeshStandardMaterial params }) -> MeshStandardMaterial
+   * Returned immediately (flat colour); its maps are filled in when the textures arrive. Owned by the scene.
+   */
+  function pbr(name, o = {}) {
+    const { size, repeat, tile, ...params } = o;
+    const m = new THREE.MeshStandardMaterial({ color: '#ffffff', roughness: 0.9, ...params });
+    m.name = `pbr:${name}`;
+    const pr = loadTexture(name, { size, repeat, tile }).then((maps) => {
+      Object.assign(m, maps);
+      if (maps.normalMap && params.normalScale == null) m.normalScale.set(1, 1);
+      m.needsUpdate = true;
+    }).catch((e) => { console.warn(`[scene] texture "${name}" failed:`, e?.message || e); if (!params.color) m.color.set('#9a9a9a'); });
+    pending.push(pr);
+    return m;
+  }
+
+  /** Collider(s) from a loaded model: true = one AABB; 'auto' = one AABB per mesh, overlapping boxes merged. */
+  function addModelColliders(obj, mode) {
+    obj.updateWorldMatrix(true, true);
+    if (mode !== 'auto') return addCollider(new THREE.Box3().setFromObject(obj));
+    const boxes = [];
+    obj.traverse((m) => {
+      if (!m.isMesh) return;
+      const b = new THREE.Box3().setFromObject(m);
+      const s = b.getSize(new THREE.Vector3());
+      if (Math.max(s.x, s.z) < 0.15 || b.min.y > 1.7) return;
+      boxes.push(b);
+    });
+    let merged = true;
+    while (merged) {
+      merged = false;
+      for (let i = 0; i < boxes.length && !merged; i++) for (let j = i + 1; j < boxes.length; j++) {
+        if (boxes[i].intersectsBox(boxes[j])) { boxes[i].union(boxes[j]); boxes.splice(j, 1); merged = true; break; }
+      }
+    }
+    return boxes.map((b) => addCollider(b));
+  }
+  /** Invisible box proxy (model bounds) used by the camera occlusion ray. */
+  function addOccluderBox(obj) {
+    obj.updateWorldMatrix(true, true);
+    const b = new THREE.Box3().setFromObject(obj), s = b.getSize(new THREE.Vector3()), c = b.getCenter(new THREE.Vector3());
+    const proxy = new THREE.Mesh(new THREE.BoxGeometry(s.x, s.y, s.z), new THREE.MeshBasicMaterial({ colorWrite: false, depthWrite: false }));
+    proxy.position.copy(c); proxy.visible = false; proxy.userData.cameraCollide = true;
+    (ctx.extraOccluders ||= []).push(proxy);
+    return proxy;
+  }
+
+  return { box, cyl, sphere, ground, wall, room, addCollider, rand, yawTo, place, loadModel: loadModelTracked, loadTexture: loadTextureTracked, pbr, addModelColliders, catalogEntry };
 }
 
 // ---------------------------------------------------------------- markers (engine-owned)

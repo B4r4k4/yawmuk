@@ -13,12 +13,17 @@ import { getScript, nextLocation, allSituations, contentIssues, usingFixtures } 
 import { loadProgress, progress, setLocation, isDone, totalScore, resetProgress, setLangPref, setFlag } from './progress.js';
 import { LOCATIONS, LOCATION_TITLES } from './config.js';
 import { setLang, getLang, tr, t } from './i18n.js';
+import { events } from './events.js';
+import { updateCharacters, preloadCharacters, liveCharacterCount, setCharacterDefaults } from './characters.js';
+import { loadCatalog } from './assets.js';
 
 const params = new URLSearchParams(location.search);
 const DEBUG = params.get('debug') === '1';
 const ALLOW_EARLY_EXIT = params.get('freeexit') === '1'; // testing aid: leave a location before finishing it
 
 export async function startGame() {
+  // the loading UI subscribes to window.yawmuk.events as early as possible
+  window.yawmuk = Object.assign(window.yawmuk || {}, { events });
   const canvas = document.getElementById('stage');
   const ui = document.getElementById('ui');
   const fadeEl = document.getElementById('fade');
@@ -26,7 +31,11 @@ export async function startGame() {
   loadProgress();
   setLang(params.get('lang') || progress().lang || 'ar');
 
+  // low tier: characters are one merged mesh and NPCs cast no shadows (applies to characters built afterwards)
+  events.on('quality:apply', (q) => setCharacterDefaults({ single: !!q.lightCharacters, shadows: !q.lightCharacters }));
   const world = createWorld(canvas);
+  setCharacterDefaults({ single: world.quality === 'low', shadows: world.quality !== 'low' });
+  loadCatalog(); preloadCharacters(); // start downloads right away (the scene manager awaits them)
   const mats = createMats();
   const input = createInput(canvas, ui);
   const player = createPlayer(world, input);
@@ -101,10 +110,13 @@ export async function startGame() {
     const npc = a.npcs[(pending || sits[0]).npc?.id];
     if (npc?.userData.stations?.[near.id] && npc.userData.station !== near.id) a.placeStationNpcs(() => false, { force: near.id });
     const restoreYaw = npc?.rotation.y;
+    const npcCh = npc?.userData.character;
     if (npc) {
-      npc.rotation.y = Math.atan2(-(player.pos.x - npc.position.x), -(player.pos.z - npc.position.z));
+      const face = Math.atan2(-(player.pos.x - npc.position.x), -(player.pos.z - npc.position.z));
+      if (npcCh) { if (npcCh.state !== 'sit') npcCh.turnTo(face); } else npc.rotation.y = face;
       player.faceTowards([npc.position.x, 0, npc.position.z]);
     }
+    const stopTalk = watchDialogue(a, npc);
     try {
       const onPoints = () => { refreshHud(); hud.bump(); };
       if (pending) {
@@ -119,7 +131,8 @@ export async function startGame() {
       console.error('[situation] flow error', e);
       toast(String(e.message || e), 5000, 'warn');
     } finally {
-      if (npc) npc.rotation.y = restoreYaw;
+      stopTalk();
+      if (npc) { if (npcCh) { if (npcCh.state !== 'sit') npcCh.turnTo(restoreYaw); } else npc.rotation.y = restoreYaw; }
       // NPCs with stations move (behind a short fade) to the next unfinished situation that names them
       const done = (hid) => { const ss = sitsAt(hid); return ss.length > 0 && ss.every((s) => isDone(s.key)); };
       if (a.placeStationNpcs(done, { dryRun: true }).length) { await fade(true); a.placeStationNpcs(done); await fade(false); }
@@ -128,6 +141,36 @@ export async function startGame() {
       setMode('play');
       if (!wasComplete && locationComplete(a.location)) toast(t('exitReady'), 3500);
     }
+  }
+
+  /**
+   * While the dialogue sheet is open, the character whose line is on screen plays 'talk' (Adam too), others listen.
+   * Reads the dialogue markup's data-speaker attribute; falls back to "the situation NPC talks" if it is absent.
+   */
+  function watchDialogue(a, npc) {
+    const started = performance.now();
+    let lastKey = '', lineAt = 0;
+    const chOf = (id) => (id === 'adam' ? player.character : a.npcs[id]?.userData.character) || null;
+    const talking = new Set();
+    const setTalk = (list) => {
+      for (const c of talking) if (!list.includes(c)) c.play('listen');
+      talking.clear();
+      for (const c of list) { if (c) { c.play('talk'); talking.add(c); } }
+    };
+    const timer = setInterval(() => {
+      const lines = ui.querySelectorAll('[data-speaker]');
+      const line = lines[lines.length - 1];
+      if (!line) { setTalk(performance.now() - started < 3500 && npc ? [npc.userData.character] : []); return; }
+      const sp = line.getAttribute('data-speaker');
+      const key = sp + '|' + (line.textContent || '').length;
+      const typing = !!line.querySelector('.typing') || line.classList.contains('typing');
+      if (key !== lastKey) { lastKey = key; if (typing || !lineAt) lineAt = performance.now(); }
+      const active = typing || performance.now() - lineAt < 1200;
+      setTalk(active ? [chOf(sp)].filter(Boolean) : []);
+    }, 120);
+    // the NPC keeps an eye on Adam during the conversation
+    npc?.userData.character?.lookAt(new THREE.Vector3(player.pos.x, 1.6, player.pos.z));
+    return () => { clearInterval(timer); setTalk([]); };
   }
 
   function locationComplete(loc) { return (getScript(loc)?.situations || []).every((x) => isDone(x.key)); }
@@ -223,11 +266,31 @@ export async function startGame() {
       world.camera.lookAt(a.spawn.position[0], 1.2, a.spawn.position[2]);
     }
     if (a) { a.update(dt, time, near); world.followShadow(mode === 'attract' ? new THREE.Vector3(...a.spawn.position) : player.pos); }
+    if (a && mode === 'play') ambientNpcs(a);
   });
+  // skinned characters (NPCs + Adam) advance after the scene's own update so its poses apply the same frame
+  world.onTick((dt) => updateCharacters(dt, world.camera));
+
+  // NPCs nearby turn their head to Adam; a speaking NPC waves once the first time Adam comes close
+  const headPos = new THREE.Vector3();
+  function ambientNpcs(a) {
+    headPos.set(player.pos.x, 1.6, player.pos.z);
+    a.waved ||= new Set();
+    for (const [id, fig] of Object.entries(a.npcs)) {
+      const ch = fig.userData.character; if (!ch) continue;
+      const d = Math.hypot(fig.position.x - player.pos.x, fig.position.z - player.pos.z);
+      ch.lookAt(d < 4 && !fig.userData.background ? headPos : null);
+      if (d < 3.2 && !fig.userData.background && !a.waved.has(id) && ch.state !== 'sit' && fig.userData.animate) { a.waved.add(id); ch.play('wave'); }
+    }
+  }
 
   // ------------------------------------------------------------ debug / test API
   const api = {
-    world, scenes, player, progress, THREE,
+    world, scenes, player, progress, THREE, events,
+    /** Render quality: yawmuk.setQuality('low'|'medium'|'high'); yawmuk.quality */
+    setQuality: (q) => world.setQuality(q),
+    get quality() { return world.quality; },
+    perf: () => ({ ...world.stats, quality: world.quality, calls: world.renderer.info.render.calls, tris: world.renderer.info.render.triangles, characters: liveCharacterCount(), textures: world.renderer.info.memory.textures, geometries: world.renderer.info.memory.geometries }),
     goto: (loc) => enterLocation(loc, { intro: false }),
     teleport: (hotspotId) => {
       const a = scenes.active; const hs = a?.hotspots.find((x) => x.id === hotspotId) || (hotspotId === 'exit' ? a?.exit : null);
@@ -243,7 +306,10 @@ export async function startGame() {
     stats: () => scenes.active && countStats(scenes.active.root),
     contentIssues, usingFixtures
   };
-  window.yawmuk = api;
+  window.yawmuk = Object.assign(window.yawmuk || {}, api);
+  Object.defineProperty(window.yawmuk, 'mode', { get: () => mode, configurable: true });
+  Object.defineProperty(window.yawmuk, 'near', { get: () => near?.id || (near ? 'exit' : null), configurable: true });
+  Object.defineProperty(window.yawmuk, 'quality', { get: () => world.quality, configurable: true });
 
   // ------------------------------------------------------------ boot sequence
   const jump = params.get('scene');
