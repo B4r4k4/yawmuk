@@ -1,5 +1,5 @@
 {
-  "date": "2026-10-05T21:47:45.450Z",
+  "date": "2026-10-06T13:27:56.719Z",
   "gl": "d3d11",
   "maxScore": 270,
   "total": 18,
@@ -8,7 +8,9 @@
       "config": "desktop-ar",
       "pass": true,
       "failures": [],
-      "warnings": [],
+      "warnings": [
+        "THREE.WebGLProgram: Program Info Log: (85,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(85,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+      ],
       "rulingsChecked": 36,
       "stations": [
         "work on entry: samir @ coffee_machine",
@@ -70,17 +72,17 @@
           "shadowLights": 0,
           "placeholder": false,
           "auto": [],
-          "meshes": 107,
+          "meshes": 79,
           "instanced": 0,
-          "trisDrawn": 16204,
+          "trisDrawn": 40580,
           "statsApi": {
-            "meshes": 107,
-            "tris": 16204
+            "meshes": 79,
+            "tris": 40580
           },
-          "drawCalls": 131,
-          "frameTris": 17152,
-          "geometries": 56,
-          "textures": 13,
+          "drawCalls": 157,
+          "frameTris": 94034,
+          "geometries": 88,
+          "textures": 25,
           "colliders": 34,
           "occluders": 10,
           "lights": "day",
@@ -92,21 +94,21 @@
           "shadowLights": 0,
           "placeholder": false,
           "auto": [],
-          "meshes": 132,
+          "meshes": 75,
           "instanced": 11,
-          "trisDrawn": 15082,
+          "trisDrawn": 49458,
           "statsApi": {
-            "meshes": 132,
-            "tris": 5772
+            "meshes": 75,
+            "tris": 40148
           },
-          "drawCalls": 121,
-          "frameTris": 14516,
-          "geometries": 32,
-          "textures": 11,
+          "drawCalls": 161,
+          "frameTris": 104037,
+          "geometries": 71,
+          "textures": 63,
           "colliders": 43,
           "occluders": 14,
           "lights": "day",
-          "frameMs": 16.7,
+          "frameMs": 32.2,
           "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 620 (0x00005917) Direct3D11 vs_5_0 ps_5_0, D3D11)"
         },
         "school": {
@@ -114,21 +116,21 @@
           "shadowLights": 0,
           "placeholder": false,
           "auto": [],
-          "meshes": 212,
+          "meshes": 161,
           "instanced": 25,
-          "trisDrawn": 18078,
+          "trisDrawn": 61576,
           "statsApi": {
-            "meshes": 212,
-            "tris": 8284
+            "meshes": 161,
+            "tris": 51782
           },
-          "drawCalls": 235,
-          "frameTris": 18898,
-          "geometries": 58,
-          "textures": 27,
+          "drawCalls": 300,
+          "frameTris": 135618,
+          "geometries": 107,
+          "textures": 53,
           "colliders": 63,
           "occluders": 32,
           "lights": "evening",
-          "frameMs": 16.7,
+          "frameMs": 16.6,
           "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 620 (0x00005917) Direct3D11 vs_5_0 ps_5_0, D3D11)"
         },
         "street": {
@@ -136,21 +138,21 @@
           "shadowLights": 0,
           "placeholder": false,
           "auto": [],
-          "meshes": 112,
+          "meshes": 57,
           "instanced": 7,
-          "trisDrawn": 11484,
+          "trisDrawn": 36226,
           "statsApi": {
-            "meshes": 112,
-            "tris": 9628
+            "meshes": 57,
+            "tris": 34370
           },
-          "drawCalls": 142,
-          "frameTris": 12466,
-          "geometries": 71,
-          "textures": 21,
+          "drawCalls": 107,
+          "frameTris": 56906,
+          "geometries": 120,
+          "textures": 51,
           "colliders": 45,
           "occluders": 43,
           "lights": "night",
-          "frameMs": 16.6,
+          "frameMs": 17.8,
           "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 620 (0x00005917) Direct3D11 vs_5_0 ps_5_0, D3D11)"
         },
         "public_events": {
@@ -158,17 +160,17 @@
           "shadowLights": 0,
           "placeholder": false,
           "auto": [],
-          "meshes": 120,
+          "meshes": 85,
           "instanced": 36,
-          "trisDrawn": 44842,
+          "trisDrawn": 130400,
           "statsApi": {
-            "meshes": 120,
-            "tris": 15184
+            "meshes": 85,
+            "tris": 100742
           },
-          "drawCalls": 136,
-          "frameTris": 44082,
-          "geometries": 97,
-          "textures": 14,
+          "drawCalls": 132,
+          "frameTris": 223958,
+          "geometries": 148,
+          "textures": 47,
           "colliders": 72,
           "occluders": 34,
           "lights": "evening",
@@ -180,17 +182,17 @@
           "shadowLights": 0,
           "placeholder": false,
           "auto": [],
-          "meshes": 236,
+          "meshes": 58,
           "instanced": 18,
-          "trisDrawn": 37440,
+          "trisDrawn": 116494,
           "statsApi": {
-            "meshes": 236,
-            "tris": 12200
+            "meshes": 58,
+            "tris": 91254
           },
-          "drawCalls": 207,
-          "frameTris": 35310,
-          "geometries": 58,
-          "textures": 11,
+          "drawCalls": 94,
+          "frameTris": 137228,
+          "geometries": 118,
+          "textures": 54,
           "colliders": 72,
           "occluders": 27,
           "lights": "day",
@@ -525,7 +527,7 @@
         }
       },
       "camera": {},
-      "seconds": 140
+      "seconds": 95
     },
     {
       "config": "desktop-en",
@@ -593,21 +595,21 @@
           "shadowLights": 0,
           "placeholder": false,
           "auto": [],
-          "meshes": 107,
+          "meshes": 79,
           "instanced": 0,
-          "trisDrawn": 16204,
+          "trisDrawn": 40580,
           "statsApi": {
-            "meshes": 107,
-            "tris": 16204
+            "meshes": 79,
+            "tris": 40580
           },
-          "drawCalls": 131,
-          "frameTris": 17152,
-          "geometries": 56,
-          "textures": 13,
+          "drawCalls": 201,
+          "frameTris": 94729,
+          "geometries": 89,
+          "textures": 61,
           "colliders": 34,
           "occluders": 10,
           "lights": "day",
-          "frameMs": 16.6,
+          "frameMs": 32.8,
           "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 620 (0x00005917) Direct3D11 vs_5_0 ps_5_0, D3D11)"
         },
         "work": {
@@ -615,21 +617,21 @@
           "shadowLights": 0,
           "placeholder": false,
           "auto": [],
-          "meshes": 132,
+          "meshes": 75,
           "instanced": 11,
-          "trisDrawn": 15082,
+          "trisDrawn": 49458,
           "statsApi": {
-            "meshes": 132,
-            "tris": 5772
+            "meshes": 75,
+            "tris": 40148
           },
-          "drawCalls": 121,
-          "frameTris": 14516,
-          "geometries": 32,
-          "textures": 11,
+          "drawCalls": 161,
+          "frameTris": 104037,
+          "geometries": 71,
+          "textures": 63,
           "colliders": 43,
           "occluders": 14,
           "lights": "day",
-          "frameMs": 16.7,
+          "frameMs": 26.6,
           "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 620 (0x00005917) Direct3D11 vs_5_0 ps_5_0, D3D11)"
         },
         "school": {
@@ -637,21 +639,21 @@
           "shadowLights": 0,
           "placeholder": false,
           "auto": [],
-          "meshes": 212,
+          "meshes": 161,
           "instanced": 25,
-          "trisDrawn": 18078,
+          "trisDrawn": 61576,
           "statsApi": {
-            "meshes": 212,
-            "tris": 8284
+            "meshes": 161,
+            "tris": 51782
           },
-          "drawCalls": 235,
-          "frameTris": 18898,
-          "geometries": 58,
-          "textures": 27,
+          "drawCalls": 355,
+          "frameTris": 136807,
+          "geometries": 104,
+          "textures": 87,
           "colliders": 63,
           "occluders": 32,
           "lights": "evening",
-          "frameMs": 16.7,
+          "frameMs": 56.6,
           "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 620 (0x00005917) Direct3D11 vs_5_0 ps_5_0, D3D11)"
         },
         "street": {
@@ -659,21 +661,21 @@
           "shadowLights": 0,
           "placeholder": false,
           "auto": [],
-          "meshes": 112,
+          "meshes": 57,
           "instanced": 7,
-          "trisDrawn": 11484,
+          "trisDrawn": 36226,
           "statsApi": {
-            "meshes": 112,
-            "tris": 9628
+            "meshes": 57,
+            "tris": 34370
           },
-          "drawCalls": 142,
-          "frameTris": 12466,
-          "geometries": 71,
-          "textures": 21,
+          "drawCalls": 107,
+          "frameTris": 56906,
+          "geometries": 120,
+          "textures": 51,
           "colliders": 45,
           "occluders": 43,
           "lights": "night",
-          "frameMs": 16.7,
+          "frameMs": 28.3,
           "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 620 (0x00005917) Direct3D11 vs_5_0 ps_5_0, D3D11)"
         },
         "public_events": {
@@ -681,21 +683,21 @@
           "shadowLights": 0,
           "placeholder": false,
           "auto": [],
-          "meshes": 120,
+          "meshes": 85,
           "instanced": 36,
-          "trisDrawn": 44842,
+          "trisDrawn": 130400,
           "statsApi": {
-            "meshes": 120,
-            "tris": 15184
+            "meshes": 85,
+            "tris": 100742
           },
-          "drawCalls": 136,
-          "frameTris": 44082,
-          "geometries": 97,
-          "textures": 14,
+          "drawCalls": 132,
+          "frameTris": 223958,
+          "geometries": 148,
+          "textures": 47,
           "colliders": 72,
           "occluders": 34,
           "lights": "evening",
-          "frameMs": 16.7,
+          "frameMs": 23.3,
           "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 620 (0x00005917) Direct3D11 vs_5_0 ps_5_0, D3D11)"
         },
         "private_events": {
@@ -703,21 +705,21 @@
           "shadowLights": 0,
           "placeholder": false,
           "auto": [],
-          "meshes": 236,
+          "meshes": 58,
           "instanced": 18,
-          "trisDrawn": 37440,
+          "trisDrawn": 116494,
           "statsApi": {
-            "meshes": 236,
-            "tris": 12200
+            "meshes": 58,
+            "tris": 91254
           },
-          "drawCalls": 207,
-          "frameTris": 35310,
-          "geometries": 58,
-          "textures": 11,
+          "drawCalls": 94,
+          "frameTris": 137228,
+          "geometries": 118,
+          "textures": 54,
           "colliders": 72,
           "occluders": 27,
           "lights": "day",
-          "frameMs": 16.7,
+          "frameMs": 25.5,
           "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 620 (0x00005917) Direct3D11 vs_5_0 ps_5_0, D3D11)"
         }
       },
@@ -1048,7 +1050,7 @@
         }
       },
       "camera": {},
-      "seconds": 112
+      "seconds": 79
     },
     {
       "config": "mobile-ar",
@@ -1116,21 +1118,21 @@
           "shadowLights": 0,
           "placeholder": false,
           "auto": [],
-          "meshes": 107,
+          "meshes": 52,
           "instanced": 0,
-          "trisDrawn": 16204,
+          "trisDrawn": 40580,
           "statsApi": {
-            "meshes": 107,
-            "tris": 16204
+            "meshes": 52,
+            "tris": 40580
           },
-          "drawCalls": 101,
-          "frameTris": 15776,
-          "geometries": 49,
-          "textures": 9,
+          "drawCalls": 84,
+          "frameTris": 58936,
+          "geometries": 71,
+          "textures": 20,
           "colliders": 34,
           "occluders": 10,
           "lights": "day",
-          "frameMs": 16.7,
+          "frameMs": 26.1,
           "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 620 (0x00005917) Direct3D11 vs_5_0 ps_5_0, D3D11)"
         },
         "work": {
@@ -1138,21 +1140,21 @@
           "shadowLights": 0,
           "placeholder": false,
           "auto": [],
-          "meshes": 132,
+          "meshes": 44,
           "instanced": 11,
-          "trisDrawn": 15082,
+          "trisDrawn": 49458,
           "statsApi": {
-            "meshes": 132,
-            "tris": 5772
+            "meshes": 44,
+            "tris": 40148
           },
-          "drawCalls": 33,
-          "frameTris": 10430,
-          "geometries": 25,
-          "textures": 4,
+          "drawCalls": 42,
+          "frameTris": 38176,
+          "geometries": 44,
+          "textures": 12,
           "colliders": 43,
           "occluders": 14,
           "lights": "day",
-          "frameMs": 16.7,
+          "frameMs": 16.6,
           "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 620 (0x00005917) Direct3D11 vs_5_0 ps_5_0, D3D11)"
         },
         "school": {
@@ -1160,21 +1162,21 @@
           "shadowLights": 0,
           "placeholder": false,
           "auto": [],
-          "meshes": 212,
+          "meshes": 112,
           "instanced": 25,
-          "trisDrawn": 18078,
+          "trisDrawn": 61576,
           "statsApi": {
-            "meshes": 212,
-            "tris": 8284
+            "meshes": 112,
+            "tris": 51782
           },
-          "drawCalls": 171,
-          "frameTris": 16064,
-          "geometries": 55,
-          "textures": 21,
+          "drawCalls": 168,
+          "frameTris": 72444,
+          "geometries": 75,
+          "textures": 39,
           "colliders": 63,
           "occluders": 32,
           "lights": "evening",
-          "frameMs": 16.6,
+          "frameMs": 17.8,
           "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 620 (0x00005917) Direct3D11 vs_5_0 ps_5_0, D3D11)"
         },
         "street": {
@@ -1182,21 +1184,21 @@
           "shadowLights": 0,
           "placeholder": false,
           "auto": [],
-          "meshes": 112,
+          "meshes": 57,
           "instanced": 7,
-          "trisDrawn": 11484,
+          "trisDrawn": 36226,
           "statsApi": {
-            "meshes": 112,
-            "tris": 9628
+            "meshes": 57,
+            "tris": 34370
           },
-          "drawCalls": 112,
-          "frameTris": 11574,
-          "geometries": 59,
-          "textures": 12,
+          "drawCalls": 90,
+          "frameTris": 49914,
+          "geometries": 90,
+          "textures": 37,
           "colliders": 45,
           "occluders": 43,
           "lights": "night",
-          "frameMs": 16.7,
+          "frameMs": 18.9,
           "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 620 (0x00005917) Direct3D11 vs_5_0 ps_5_0, D3D11)"
         },
         "public_events": {
@@ -1204,21 +1206,21 @@
           "shadowLights": 0,
           "placeholder": false,
           "auto": [],
-          "meshes": 120,
+          "meshes": 85,
           "instanced": 36,
-          "trisDrawn": 44842,
+          "trisDrawn": 130400,
           "statsApi": {
-            "meshes": 120,
-            "tris": 15184
+            "meshes": 85,
+            "tris": 100742
           },
-          "drawCalls": 58,
-          "frameTris": 31920,
-          "geometries": 74,
-          "textures": 7,
+          "drawCalls": 89,
+          "frameTris": 159410,
+          "geometries": 104,
+          "textures": 33,
           "colliders": 72,
           "occluders": 34,
           "lights": "evening",
-          "frameMs": 16.6,
+          "frameMs": 17.2,
           "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 620 (0x00005917) Direct3D11 vs_5_0 ps_5_0, D3D11)"
         },
         "private_events": {
@@ -1226,21 +1228,21 @@
           "shadowLights": 0,
           "placeholder": false,
           "auto": [],
-          "meshes": 236,
+          "meshes": 58,
           "instanced": 18,
-          "trisDrawn": 37440,
+          "trisDrawn": 116494,
           "statsApi": {
-            "meshes": 236,
-            "tris": 12200
+            "meshes": 58,
+            "tris": 91254
           },
-          "drawCalls": 202,
-          "frameTris": 34940,
-          "geometries": 56,
-          "textures": 10,
+          "drawCalls": 88,
+          "frameTris": 127026,
+          "geometries": 96,
+          "textures": 47,
           "colliders": 72,
           "occluders": 27,
           "lights": "day",
-          "frameMs": 16.7,
+          "frameMs": 17.8,
           "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 620 (0x00005917) Direct3D11 vs_5_0 ps_5_0, D3D11)"
         }
       },
@@ -1571,7 +1573,7 @@
         }
       },
       "camera": {},
-      "seconds": 133
+      "seconds": 122
     },
     {
       "config": "mobile-en",
@@ -1639,21 +1641,21 @@
           "shadowLights": 0,
           "placeholder": false,
           "auto": [],
-          "meshes": 107,
+          "meshes": 52,
           "instanced": 0,
-          "trisDrawn": 16204,
+          "trisDrawn": 40580,
           "statsApi": {
-            "meshes": 107,
-            "tris": 16204
+            "meshes": 52,
+            "tris": 40580
           },
-          "drawCalls": 101,
-          "frameTris": 15776,
-          "geometries": 49,
-          "textures": 9,
+          "drawCalls": 84,
+          "frameTris": 58936,
+          "geometries": 71,
+          "textures": 20,
           "colliders": 34,
           "occluders": 10,
           "lights": "day",
-          "frameMs": 16.7,
+          "frameMs": 16.6,
           "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 620 (0x00005917) Direct3D11 vs_5_0 ps_5_0, D3D11)"
         },
         "work": {
@@ -1661,17 +1663,17 @@
           "shadowLights": 0,
           "placeholder": false,
           "auto": [],
-          "meshes": 132,
+          "meshes": 44,
           "instanced": 11,
-          "trisDrawn": 15082,
+          "trisDrawn": 49458,
           "statsApi": {
-            "meshes": 132,
-            "tris": 5772
+            "meshes": 44,
+            "tris": 40148
           },
-          "drawCalls": 33,
-          "frameTris": 10430,
-          "geometries": 25,
-          "textures": 4,
+          "drawCalls": 42,
+          "frameTris": 38176,
+          "geometries": 44,
+          "textures": 12,
           "colliders": 43,
           "occluders": 14,
           "lights": "day",
@@ -1683,21 +1685,21 @@
           "shadowLights": 0,
           "placeholder": false,
           "auto": [],
-          "meshes": 212,
+          "meshes": 112,
           "instanced": 25,
-          "trisDrawn": 18078,
+          "trisDrawn": 61576,
           "statsApi": {
-            "meshes": 212,
-            "tris": 8284
+            "meshes": 112,
+            "tris": 51782
           },
-          "drawCalls": 171,
-          "frameTris": 16064,
-          "geometries": 55,
-          "textures": 21,
+          "drawCalls": 168,
+          "frameTris": 72444,
+          "geometries": 75,
+          "textures": 39,
           "colliders": 63,
           "occluders": 32,
           "lights": "evening",
-          "frameMs": 16.6,
+          "frameMs": 16.7,
           "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 620 (0x00005917) Direct3D11 vs_5_0 ps_5_0, D3D11)"
         },
         "street": {
@@ -1705,21 +1707,21 @@
           "shadowLights": 0,
           "placeholder": false,
           "auto": [],
-          "meshes": 112,
+          "meshes": 57,
           "instanced": 7,
-          "trisDrawn": 11484,
+          "trisDrawn": 36226,
           "statsApi": {
-            "meshes": 112,
-            "tris": 9628
+            "meshes": 57,
+            "tris": 34370
           },
-          "drawCalls": 112,
-          "frameTris": 11574,
-          "geometries": 59,
-          "textures": 12,
+          "drawCalls": 90,
+          "frameTris": 49914,
+          "geometries": 90,
+          "textures": 37,
           "colliders": 45,
           "occluders": 43,
           "lights": "night",
-          "frameMs": 16.7,
+          "frameMs": 16.6,
           "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 620 (0x00005917) Direct3D11 vs_5_0 ps_5_0, D3D11)"
         },
         "public_events": {
@@ -1727,21 +1729,21 @@
           "shadowLights": 0,
           "placeholder": false,
           "auto": [],
-          "meshes": 120,
+          "meshes": 85,
           "instanced": 36,
-          "trisDrawn": 44842,
+          "trisDrawn": 130400,
           "statsApi": {
-            "meshes": 120,
-            "tris": 15184
+            "meshes": 85,
+            "tris": 100742
           },
-          "drawCalls": 58,
-          "frameTris": 31920,
-          "geometries": 74,
-          "textures": 7,
+          "drawCalls": 89,
+          "frameTris": 159410,
+          "geometries": 104,
+          "textures": 33,
           "colliders": 72,
           "occluders": 34,
           "lights": "evening",
-          "frameMs": 16.6,
+          "frameMs": 16.7,
           "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 620 (0x00005917) Direct3D11 vs_5_0 ps_5_0, D3D11)"
         },
         "private_events": {
@@ -1749,17 +1751,17 @@
           "shadowLights": 0,
           "placeholder": false,
           "auto": [],
-          "meshes": 236,
+          "meshes": 58,
           "instanced": 18,
-          "trisDrawn": 37440,
+          "trisDrawn": 116494,
           "statsApi": {
-            "meshes": 236,
-            "tris": 12200
+            "meshes": 58,
+            "tris": 91254
           },
-          "drawCalls": 202,
-          "frameTris": 34940,
-          "geometries": 56,
-          "textures": 10,
+          "drawCalls": 88,
+          "frameTris": 127026,
+          "geometries": 96,
+          "textures": 47,
           "colliders": 72,
           "occluders": 27,
           "lights": "day",
@@ -2094,7 +2096,7 @@
         }
       },
       "camera": {},
-      "seconds": 133
+      "seconds": 70
     }
   ]
 }

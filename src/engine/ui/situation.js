@@ -7,6 +7,9 @@ import { recordChoice, recordCheck, markDone, sitRecord } from '../progress.js';
 import { openModal, setContent, btn, tilt, prefersReducedMotion } from './overlay.js';
 import { renderRulingCard, statusBadge } from './rulingCard.js';
 import './strings.js';
+import './aiStrings.js';
+import { speakButton, stopSpeaking } from '../tts.js';
+import { openAskPanel } from './askPanel.js';
 
 function speakerName(speaker, sit, script) {
   if (!speaker || speaker === 'narrator') return null;
@@ -81,10 +84,23 @@ const pointsEl = (n) => h('span', { class: `points ${n > 0 ? 'pos' : 'zero'}` },
 const QUALITY_ICON = { best: '✓', acceptable: '◐', wrong: '✕' };
 
 /** The always-visible review status + action buttons under the ruling card (a real footer, never over the content). */
-function rulingFooter(ruling, ...buttons) {
+function rulingFooter(ruling, rulingId, ...buttons) {
   return h('div', { class: 'row end sticky-actions' },
     h('div', { class: 'review-chip' }, statusBadge(ruling?.review_status || 'ai_draft', 'compact')),
+    rulingId ? btn(t('askBtn'), () => openAskPanel({ rulingId }), 'ghost ask-open') : null,
     buttons);
+}
+
+/** The ruling card plus a read-aloud button on its "In plain words" box (hooked from outside rulingCard.js). */
+function rulingCardWithTts(ruling, rulingId) {
+  const card = renderRulingCard(ruling, rulingId);
+  try {
+    const plain = card.querySelector('.rc-plain');
+    const head = plain?.querySelector('.rc-h');
+    const b = head && speakButton(() => plain.querySelector('.plain')?.textContent || '', 'tts-plain');
+    if (b) head.append(b);
+  } catch { /* never break the card */ }
+  return card;
 }
 
 /**
@@ -113,7 +129,7 @@ export async function runSituation(sit, opts = {}) {
           const skip = h('button', { type: 'button', class: 'skip-line', onclick: () => tw.finish(), 'aria-label': t('skipLine') }, `${t('skip')} »`);
           tw.el.addEventListener('typed', () => skip.classList.add('gone'));
           if (!tw.typing()) skip.classList.add('gone');
-          const nextBtn = btn(nextLabel(), next, 'primary', { 'data-autofocus': true });
+          const nextBtn = btn(nextLabel(), () => { stopSpeaking(); next(); }, 'primary', { 'data-autofocus': true });
           const isAdam = L.speaker === 'adam';
           const bubble = h('div', { class: 'bubble', onclick: () => tw.finish() }, tw.el);
           setContent(sheet, [
@@ -123,6 +139,7 @@ export async function runSituation(sit, opts = {}) {
                 h('div', { class: 'nameplate' },
                   h('div', { class: 'speaker' }, name || t('narratorLabel')),
                   role ? h('div', { class: 'role' }, role) : null),
+                speakButton(L.text, 'tts-line'),
                 skip),
               bubble),
             h('div', { class: 'row end' },
@@ -168,6 +185,7 @@ export async function runSituation(sit, opts = {}) {
       }
     }
   } finally {
+    stopSpeaking();
     sheet.close();
   }
 
@@ -177,7 +195,7 @@ export async function runSituation(sit, opts = {}) {
   let action = 'done';
   try {
     await wait((next) => {
-      setContent(modal, [renderRulingCard(ruling, sit.ruling_id), rulingFooter(ruling, btn(nextLabel(), next, 'primary', { 'data-autofocus': true }))]);
+      setContent(modal, [rulingCardWithTts(ruling, sit.ruling_id), rulingFooter(ruling, sit.ruling_id, btn(nextLabel(), () => { stopSpeaking(); next(); }, 'primary', { 'data-autofocus': true }))]);
       modal.box.scrollTop = 0;
     });
 
@@ -252,6 +270,6 @@ export function showRulingOnly(sit) {
   return new Promise((resolve) => {
     const m = openModal({ className: 'ruling-modal', label: t('ruling'), dismissible: true, onClose: () => resolve() });
     const r = getRuling(sit.ruling_id);
-    setContent(m, [renderRulingCard(r, sit.ruling_id), rulingFooter(r, btn(t('close'), () => m.close(), 'primary', { 'data-autofocus': true }))]);
+    setContent(m, [rulingCardWithTts(r, sit.ruling_id), rulingFooter(r, sit.ruling_id, btn(t('close'), () => { stopSpeaking(); m.close(); }, 'primary', { 'data-autofocus': true }))]);
   });
 }

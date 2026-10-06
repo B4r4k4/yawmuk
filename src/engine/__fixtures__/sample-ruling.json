@@ -98,15 +98,14 @@
       "ar": "[بيانات اختبار] شرح مبسط تجريبي لغير المسلم.",
       "en": "[FIXTURE] A placeholder plain-words explanation for a newcomer."
     },
-    "common_ground": {
-      "summary": {
-        "ar": "[بيانات اختبار] نقطة تلاقٍ تجريبية.",
-        "en": "[FIXTURE] A placeholder point of common ground."
-      },
-      "differences": {
-        "ar": "[بيانات اختبار] فرق تجريبي.",
-        "en": "[FIXTURE] A placeholder difference."
-      }
+    "content_level": "C",
+    "verdict_scope": {
+      "ar": "[بيانات اختبار] نطاق حكم تجريبي.",
+      "en": "[FIXTURE] A placeholder verdict scope."
+    },
+    "explanatory_notes": {
+      "ar": ["[بيانات اختبار] شرح توضيحي تجريبي."],
+      "en": ["[FIXTURE] A placeholder explanatory note."]
     }
   }
 ]

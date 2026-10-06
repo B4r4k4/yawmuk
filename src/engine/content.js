@@ -3,9 +3,14 @@
 import { LOCATIONS, LOCATION_TITLES, VERDICTS, QUALITY } from './config.js';
 import { applyUiStrings } from './i18n.js';
 import { fixtureScripts, fixtureRulings } from './__fixtures__/fixtures.js';
+import { isValidOrder } from './aiCore.js';
 
 const rawRulings = import.meta.glob('../../content/rulings/*.json', { eager: true, query: '?raw', import: 'default' });
 const rawScripts = import.meta.glob('../../content/script/*.json', { eager: true, query: '?raw', import: 'default' });
+// Optional data for the AI features (a missing file => empty list, never a build error).
+const rawSources = import.meta.glob('../../content/sources.json', { eager: true, query: '?raw', import: 'default' });
+const rawQuestions = import.meta.glob('../../content/script/questions.json', { eager: true, query: '?raw', import: 'default' });
+const NOT_A_SCRIPT = /\/(ui_strings|questions)\.json$/;
 
 export const contentIssues = []; // human-readable problems, shown in console (and ?debug=1 overlay)
 
@@ -69,7 +74,7 @@ function normalizeScript(s, loc, path) {
 const scripts = {};
 if (!forceFixtures) {
   for (const [path, raw] of Object.entries(rawScripts)) {
-    if (path.endsWith("/ui_strings.json")) continue;
+    if (NOT_A_SCRIPT.test(path)) continue;
     const data = parse(path, raw);
     if (!data) continue;
     const loc = data.location || path.split('/').pop().replace(/\.json$/, '');
@@ -95,8 +100,16 @@ export function getRuling(id) {
   return rulings[id] || (Object.keys(rulings).length === 0 || forceFixtures ? fixtureRulings[id] : null) || null;
 }
 
-/** Next location after `loc` (script.next_location, else catalog order). null = end of day. */
+// ---------- planned location order (journey planner; null = the scripts' own next_location chain)
+let locOrder = null;
+/** Set the day's location order (must be a permutation of LOCATIONS, else ignored). */
+export function setLocationOrder(order) { locOrder = isValidOrder(order) ? [...order] : null; return !!locOrder; }
+export function locationOrder() { return locOrder || LOCATIONS; }
+export function firstLocation() { return locationOrder()[0]; }
+
+/** Next location after `loc` (planned order, else script.next_location, else catalog order). null = end of day. */
 export function nextLocation(loc) {
+  if (locOrder) { const i = locOrder.indexOf(loc); return i >= 0 && i < locOrder.length - 1 ? locOrder[i + 1] : null; }
   const s = scripts[loc];
   if (s && s.next_location === null) return null;
   if (s && (s.next_location === 'end')) return null;
@@ -109,5 +122,23 @@ export function nextLocation(loc) {
 export function allSituations() {
   return LOCATIONS.flatMap((loc) => (scripts[loc]?.situations || []).map((s) => ({ ...s, location: loc })));
 }
+
+// ---------- reviewed library for the AI features
+let sourcesList = [];
+for (const [path, raw] of Object.entries(rawSources)) { const d = parse(path, raw); if (Array.isArray(d)) sourcesList = d; }
+let questionsList = [];
+for (const [path, raw] of Object.entries(rawQuestions)) {
+  if (!String(raw || '').trim()) continue;
+  let d = null;
+  try { d = JSON.parse(String(raw).replace(/^﻿/, '')); } catch (e) { console.info('[questions] ignored (invalid JSON):', e.message); }
+  const items = Array.isArray(d?.items) ? d.items : Array.isArray(d) ? d : [];
+  questionsList = items.filter((q) => q && typeof q.id === 'string' && q.question && q.answer);
+}
+/** content/sources.json records (may be empty). */
+export function getSources() { return sourcesList; }
+/** Pre-authored Q&A items from content/script/questions.json (may be empty). */
+export function getQuestions() { return questionsList; }
+/** All real rulings by id (fixtures excluded). */
+export function rulingsById() { return rulings; }
 
 if (usingFixtures.scripts.length) console.info('[content] using fixture scripts for:', usingFixtures.scripts.join(', '));

@@ -49,6 +49,10 @@ describe('rulings: contract', () => {
       for (const k of ['title', 'question', 'summary', 'refer_to_scholar_when']) assert.ok(bilingual(r[k]), `${k} must have non-empty ar and en`);
       assert.ok(VERDICTS.includes(r.verdict), `verdict "${r.verdict}" not in ${VERDICTS}`);
       assert.ok(CONFIDENCE.includes(r.confidence), `confidence "${r.confidence}"`);
+      assert.ok(['A', 'B', 'C', 'D'].includes(r.content_level), `content_level "${r.content_level}" (see tests/levels.test.mjs)`);
+      if (r.verdict_scope !== undefined) assert.ok(bilingual(r.verdict_scope), 'verdict_scope must have non-empty ar and en');
+      if (r.explanatory_notes !== undefined) assert.ok(Array.isArray(r.explanatory_notes.ar) && Array.isArray(r.explanatory_notes.en) && r.explanatory_notes.ar.length === r.explanatory_notes.en.length, 'explanatory_notes must be {ar:[], en:[]} of equal length');
+      if (r.consensus_sources !== undefined) assert.ok(Array.isArray(r.consensus_sources) && r.consensus_sources.every(nonEmptyStr), 'consensus_sources must be an array of strings');
       assert.ok(nonEmptyStr(r.review_status), 'review_status');
       assert.equal(typeof r.notes_for_reviewer, 'string', 'notes_for_reviewer must be a string');
       assert.ok(Array.isArray(r.quran), 'quran must be an array');
@@ -65,6 +69,7 @@ describe('rulings: contract', () => {
       for (const m of MADHAHIB) {
         const d = r.madhahib[m];
         for (const k of ['position_ar', 'position_en', 'reference']) assert.equal(typeof d[k], 'string', `${m}.${k} must be a string`);
+        if (d.reference_status !== undefined) assert.equal(d.reference_status, 'pending_verification', `${m}.reference_status`);
       }
       for (const [i, c] of r.contemporary.entries()) {
         assert.ok(nonEmptyStr(c.body), `contemporary[${i}].body`);

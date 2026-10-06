@@ -1,18 +1,24 @@
 // HUD: location, time of day, score, situations done X/N, menu button, interaction prompt.
 import { h } from '../dom.js';
 import { t, tr, onLangChange } from '../i18n.js';
+import './aiStrings.js';
 
-export function createHud(root, { onMenu }) {
+export function createHud(root, { onMenu, onAsk }) {
   const loc = h('span', { class: 'hud-loc' });
   const time = h('span', { class: 'hud-time' });
   const score = h('span', { class: 'hud-score' });
   const done = h('span', { class: 'hud-done' });
   const menuBtn = h('button', { type: 'button', class: 'hud-menu', onclick: onMenu, 'aria-label': t('menu') }, '☰');
+  // journey badge: "AI-arranged from a reviewed library" | "Default plan"; and the per-location "Ask" panel
+  const plan = h('span', { class: 'hud-plan', role: 'status' });
+  const askBtn = onAsk ? h('button', { type: 'button', class: 'hud-ask', onclick: onAsk }, h('span', { 'aria-hidden': 'true' }, '؟ '), h('span', { class: 'hud-ask-text' }, t('askHud'))) : null;
   const bar = h('div', { class: 'hud hidden' },
     menuBtn,
+    askBtn,
     h('div', { class: 'hud-chip' }, loc, h('span', { class: 'sep', 'aria-hidden': 'true' }, '·'), time),
     h('div', { class: 'hud-chip' }, h('span', { class: 'lbl' }, t('score')), score),
-    h('div', { class: 'hud-chip' }, h('span', { class: 'lbl' }, t('done')), done));
+    h('div', { class: 'hud-chip' }, h('span', { class: 'lbl' }, t('done')), done),
+    plan);
   const prompt = h('div', { class: 'prompt', 'aria-live': 'polite' });
   root.append(bar, prompt);
 
@@ -23,11 +29,14 @@ export function createHud(root, { onMenu }) {
     time.textContent = last.time || '';
     score.textContent = String(last.score ?? 0);
     done.textContent = `${last.done ?? 0}/${last.total ?? 0}`;
+    plan.textContent = last.plan === 'ai' ? t('planAi') : t('planDefault');
+    plan.classList.toggle('ai', last.plan === 'ai');
   }
   onLangChange(() => {
     bar.querySelectorAll('.lbl')[0].textContent = t('score');
     bar.querySelectorAll('.lbl')[1].textContent = t('done');
     menuBtn.setAttribute('aria-label', t('menu'));
+    if (askBtn) askBtn.querySelector('.hud-ask-text').textContent = t('askHud');
     set({});
   });
   function bump() { score.classList.remove('bump'); void score.offsetWidth; score.classList.add('bump'); }

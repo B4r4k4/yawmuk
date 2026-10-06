@@ -7,10 +7,13 @@ import { createPlayer } from './player.js';
 import { createSceneManager, countStats } from './sceneManager.js';
 import { createHud } from './ui/hud.js';
 import { setUiRoot, toast } from './ui/overlay.js';
-import { startScreen, introScreen, locationIntro, outroScreen, exitConfirm, menuScreen, summaryScreen } from './ui/screens.js';
+import { startScreen, introScreen, locationIntro, outroScreen, exitConfirm, menuScreen, summaryScreen, preCheckScreen } from './ui/screens.js';
+import { openAskPanel } from './ui/askPanel.js';
+import { planJourney, defaultPlan } from './planner.js';
+import { pickChecks } from './aiCore.js';
 import { runSituation, revisitMenu, showRulingOnly } from './ui/situation.js';
-import { getScript, nextLocation, allSituations, contentIssues, usingFixtures } from './content.js';
-import { loadProgress, progress, setLocation, isDone, totalScore, resetProgress, setLangPref, setFlag } from './progress.js';
+import { getScript, nextLocation, allSituations, contentIssues, usingFixtures, setLocationOrder, firstLocation } from './content.js';
+import { loadProgress, progress, setLocation, isDone, totalScore, resetProgress, setLangPref, setFlag, setPlan, getPlan, setPre } from './progress.js';
 import { LOCATIONS, LOCATION_TITLES } from './config.js';
 import { setLang, getLang, tr, t } from './i18n.js';
 import { events } from './events.js';
@@ -30,6 +33,8 @@ export async function startGame() {
   setUiRoot(ui);
   loadProgress();
   setLang(params.get('lang') || progress().lang || 'ar');
+  // restore the day's planned location order (journey planner); an old/invalid plan falls back to the default order
+  if (!setLocationOrder(getPlan()?.order)) setLocationOrder(null);
 
   // low tier: characters are one merged mesh and NPCs cast no shadows (applies to characters built afterwards)
   events.on('quality:apply', (q) => setCharacterDefaults({ single: !!q.lightCharacters, shadows: !q.lightCharacters }));
@@ -45,7 +50,24 @@ export async function startGame() {
   let near = null; // hotspot object or exit currently in range
   const TOTAL = allSituations().length;
 
-  const hud = createHud(ui, { onMenu: () => openMenu() });
+  const hud = createHud(ui, { onMenu: () => openMenu(), onAsk: () => openAsk() });
+
+  /** Per-location "Ask" panel (pre-authored questions + constrained AI answers from reviewed passages). */
+  async function openAsk() {
+    if (mode !== 'play' || !scenes.active) return;
+    setMode('ui');
+    try { await openAskPanel({ location: scenes.active.location }); } catch (e) { console.error('[ask]', e); }
+    if (mode === 'ui') setMode('play');
+  }
+
+  /** Store the plan and follow its location order. */
+  function applyPlan(plan) {
+    const p = plan && setLocationOrder(plan.order) ? plan : defaultPlan();
+    setLocationOrder(p.order);
+    setPlan(p);
+    refreshHud();
+    return p;
+  }
   input.state.onMenu = () => { if (mode === 'play') openMenu(); };
   input.state.onInteract = () => { if (mode === 'play') interact(); };
 
@@ -53,7 +75,7 @@ export async function startGame() {
   function refreshHud() {
     const loc = scenes.active?.location;
     const s = loc ? getScript(loc) : null;
-    hud.set({ title: s?.title || LOCATION_TITLES[loc], time: s?.time_of_day || '', score: totalScore(), done: doneCount(), total: TOTAL });
+    hud.set({ title: s?.title || LOCATION_TITLES[loc], time: s?.time_of_day || '', score: totalScore(), done: doneCount(), total: TOTAL, plan: getPlan()?.source || 'default' });
   }
 
   function setMode(m) {
@@ -211,7 +233,7 @@ export async function startGame() {
     // only a completed day counts as finished; the menu can open this screen mid-game as "progress so far"
     if (allSituations().every((s) => isDone(s.key))) setFlag('finished', true);
     const r = await summaryScreen();
-    if (r === 'again') { resetProgress(); await enterLocation(LOCATIONS[0]); }
+    if (r === 'again') { const plan = getPlan(); resetProgress(); applyPlan(plan); await enterLocation(firstLocation()); }
     else if (typeof r === 'string' && r.startsWith('goto:')) await enterLocation(r.slice(5));
     else setMode('play');
   }
@@ -224,7 +246,7 @@ export async function startGame() {
       onJump: (loc) => enterLocation(loc),
       onLang: () => { setLang(getLang() === 'ar' ? 'en' : 'ar'); setLangPref(getLang()); refreshHud(); near = null; },
       onSummary: () => showSummary(),
-      onRestart: () => { resetProgress(); enterLocation(LOCATIONS[0]); }
+      onRestart: () => { const plan = getPlan(); resetProgress(); applyPlan(plan); enterLocation(firstLocation()); }
     });
   }
 
@@ -320,7 +342,7 @@ export async function startGame() {
     return api;
   }
   // attract mode: show the current/first location behind the start screen
-  const bootLoc = progress().location && LOCATIONS.includes(progress().location) ? progress().location : LOCATIONS[0];
+  const bootLoc = progress().location && LOCATIONS.includes(progress().location) ? progress().location : firstLocation();
   const active = await scenes.load(bootLoc, getScript(bootLoc), () => {});
   player.setColliders(active.colliders, active.bounds);
   player.teleport(active.spawn.position, active.spawn.yaw);
@@ -331,9 +353,16 @@ export async function startGame() {
   if (choice.mode === 'new') {
     resetProgress();
     setLangPref(choice.lang);
+    // the planner runs while the player reads the intro (6 s timeout, deterministic fallback; never throws)
+    if (choice.context) toast(t('planning'), 2500);
+    const planning = planJourney(choice.context, choice.lang).catch(() => defaultPlan());
     await introScreen();
     setFlag('introSeen', true);
-    await enterLocation(LOCATIONS[0]);
+    const plan = applyPlan(await planning);
+    const bySit = Object.fromEntries(allSituations().map((s) => [s.ruling_id, s]));
+    const pre = await preCheckScreen(pickChecks(plan.journey.map((j) => j.id), bySit, 3)).catch(() => null);
+    setPre(pre);
+    await enterLocation(firstLocation());
   } else {
     if (!progress().introSeen) { await introScreen(); setFlag('introSeen', true); }
     await enterLocation(bootLoc);

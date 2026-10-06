@@ -72,4 +72,11 @@ export function totalScore() {
 }
 
 export function setLangPref(l) { state.lang = l; saveProgress(); }
+
+/** The day's journey plan { source:'ai'|'fallback'|'default', order:[loc], journey:[{id, why}], followup } (no personal data). */
+export function setPlan(plan) { state.plan = plan || null; saveProgress(); }
+export function getPlan() { return state.plan || null; }
+/** Pre-day understanding check: { ids:[situation id], answers:[bool] } (correctness only). */
+export function setPre(pre) { state.pre = pre || null; saveProgress(); }
+export function getPre() { return state.pre || null; }
 export function setFlag(name, val) { state[name] = val; saveProgress(); }

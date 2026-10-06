@@ -11,34 +11,38 @@
       "en": "May a Muslim wish coworkers \"Merry Christmas\", attend the end-of-year office party, join the gift exchange, and sit with a friend's family for Thanksgiving dinner?"
     },
     "verdict": "disputed",
+    "content_level": "C",
+    "consensus_sources": [
+      "ابن القيم، أحكام أهل الذمة (1/441) — حكايته الاتفاق على تحريم التهنئة بالشعائر المختصة بغير المسلمين وعلى منع حضور أعيادهم (قولٌ منسوب إلى ابن القيم، لا إجماعٌ نحكيه نحن)"
+    ],
     "summary": {
-      "ar": "المشاركة في الشعائر الدينية لأعياد غير المسلمين ممنوعة بلا خلاف معتبر، أما التهنئة اللفظية بالعيد الديني فمنعها ابن القيم وكثير من المتقدمين والمعاصرين، وأجازها بضوابط المجلسُ الأوروبي للإفتاء وآخرون من باب البر (الممتحنة 8). وعيد الشكر مختلَف فيه بين من يراه مناسبة وطنية عرفية يجوز حضور عشائها بلا طقوس، ومن يراه عيداً ذا أصل ديني لا يُحتفل به (فتاوى AMJA)، وقبول الهدية من الزميل جائز ما لم تكن شعاراً دينياً أو محرّمة.",
-      "en": "Joining the religious rituals of other faiths' holidays is impermissible by all considered views, while verbally greeting them on a religious holiday was prohibited by Ibn al-Qayyim and many classical and contemporary scholars and allowed with conditions by the European Council for Fatwa and others as an act of kindness (60:8). Thanksgiving is disputed: some treat it as a civic custom whose family dinner may be attended without rituals, others (AMJA fatwas) consider it religiously rooted and not to be celebrated; accepting a coworker's gift is permissible unless it is a religious symbol or something prohibited."
+      "ar": "المشاركة في الشعائر الدينية لأعياد غير المسلمين ممنوعة عند المذاهب الأربعة، أما التهنئة اللفظية بالعيد الديني فمنعها ابن القيم وكثير من المتقدمين والمعاصرين، وأجازها بضوابط المجلسُ الأوروبي للإفتاء وآخرون من باب البر (الممتحنة 8). وعيد الشكر مختلَف فيه بين من يراه مناسبة وطنية عرفية يجوز حضور عشائها بلا طقوس، ومن يراه عيداً ذا أصل ديني لا يُحتفل به (فتاوى AMJA)، وقبول الهدية من الزميل جائز ما لم تكن شعاراً دينياً أو محرّمة.",
+      "en": "The four schools hold that joining the religious rituals of other faiths' holidays is impermissible, while verbally greeting them on a religious holiday was prohibited by Ibn al-Qayyim and many classical and contemporary scholars and allowed with conditions by the European Council for Fatwa and others as an act of kindness (60:8). Thanksgiving is disputed: some treat it as a civic custom whose family dinner may be attended without rituals, others (AMJA fatwas) consider it religiously rooted and not to be celebrated; accepting a coworker's gift is permissible unless it is a religious symbol or something prohibited."
     },
     "quran": [
       {
         "surah": 60,
         "surah_name_ar": "الممتحنة",
         "ayah": "8",
-        "text_ar": "لَّا يَنْهَىٰكُمُ ٱللَّهُ عَنِ ٱلَّذِينَ لَمْ يُقَـٰتِلُوكُمْ فِى ٱلدِّينِ وَلَمْ يُخْرِجُوكُم مِّن دِيَـٰرِكُمْ أَن تَبَرُّوهُمْ وَتُقْسِطُوٓا۟ إِلَيْهِمْ ۚ إِنَّ ٱللَّهَ يُحِبُّ ٱلْمُقْسِطِينَ",
+        "text_ar": "لَّا يَنۡهَىٰكُمُ ٱللَّهُ عَنِ ٱلَّذِينَ لَمۡ يُقَٰتِلُوكُمۡ فِي ٱلدِّينِ وَلَمۡ يُخۡرِجُوكُم مِّن دِيَٰرِكُمۡ أَن تَبَرُّوهُمۡ وَتُقۡسِطُوٓاْ إِلَيۡهِمۡۚ إِنَّ ٱللَّهَ يُحِبُّ ٱلۡمُقۡسِطِينَ",
         "translation_en": "Allāh does not forbid you from those who do not fight you because of religion and do not expel you from your homes - from being righteous toward them and acting justly toward them. Indeed, Allāh loves those who act justly.",
-        "source_url": "https://quran.com/60/8"
+        "source_url": "https://quranenc.com/en/browse/english_saheeh/60#8"
       },
       {
         "surah": 25,
         "surah_name_ar": "الفرقان",
         "ayah": "72",
-        "text_ar": "وَٱلَّذِينَ لَا يَشْهَدُونَ ٱلزُّورَ وَإِذَا مَرُّوا۟ بِٱللَّغْوِ مَرُّوا۟ كِرَامًا",
+        "text_ar": "وَٱلَّذِينَ لَا يَشۡهَدُونَ ٱلزُّورَ وَإِذَا مَرُّواْ بِٱللَّغۡوِ مَرُّواْ كِرَامٗا",
         "translation_en": "And [they are] those who do not testify to falsehood, and when they pass near ill speech, they pass by with dignity.",
-        "source_url": "https://quran.com/25/72"
+        "source_url": "https://quranenc.com/en/browse/english_saheeh/25#72"
       },
       {
         "surah": 4,
         "surah_name_ar": "النساء",
         "ayah": "86",
-        "text_ar": "وَإِذَا حُيِّيتُم بِتَحِيَّةٍ فَحَيُّوا۟ بِأَحْسَنَ مِنْهَآ أَوْ رُدُّوهَآ ۗ إِنَّ ٱللَّهَ كَانَ عَلَىٰ كُلِّ شَىْءٍ حَسِيبًا",
+        "text_ar": "وَإِذَا حُيِّيتُم بِتَحِيَّةٖ فَحَيُّواْ بِأَحۡسَنَ مِنۡهَآ أَوۡ رُدُّوهَآۗ إِنَّ ٱللَّهَ كَانَ عَلَىٰ كُلِّ شَيۡءٍ حَسِيبًا",
         "translation_en": "And when you are greeted with a greeting, greet [in return] with one better than it or [at least] return it [in a like manner]. Indeed Allāh is ever, over all things, an Accountant.",
-        "source_url": "https://quran.com/4/86"
+        "source_url": "https://quranenc.com/en/browse/english_saheeh/4#86"
       }
     ],
     "hadith": [
@@ -50,7 +54,11 @@
         "narrator": "أسماء بنت أبي بكر رضي الله عنهما",
         "grade": "صحيح",
         "grader": "الإمام البخاري (أخرجه في صحيحه)",
-        "source_url": "https://sunnah.com/bukhari:5978"
+        "source_url": "https://dorar.net/h/0r5CM08Q",
+        "dorar_url": "https://dorar.net/h/0r5CM08Q",
+        "dorar_ref": "المحدث: البخاري | المصدر: صحيح البخاري | الرقم: 5978 | خلاصة حكم المحدث: [صحيح]",
+        "sunnah_url": "https://sunnah.com/bukhari:5978",
+        "translation_source": "sunnah.com (English translation of the same hadith)"
       },
       {
         "text_ar": "قَدِمَ رَسُولُ اللَّهِ صلى الله عليه وسلم الْمَدِينَةَ وَلَهُمْ يَوْمَانِ يَلْعَبُونَ فِيهِمَا فَقَالَ «مَا هَذَانِ الْيَوْمَانِ» . قَالُوا كُنَّا نَلْعَبُ فِيهِمَا فِي الْجَاهِلِيَّةِ . فَقَالَ رَسُولُ اللَّهِ صلى الله عليه وسلم «إِنَّ اللَّهَ قَدْ أَبْدَلَكُمْ بِهِمَا خَيْرًا مِنْهُمَا يَوْمَ الأَضْحَى وَيَوْمَ الْفِطْرِ» .",
@@ -59,8 +67,13 @@
         "number": "1134",
         "narrator": "أنس بن مالك رضي الله عنه",
         "grade": "صحيح",
-        "grader": "الألباني (صحيح سنن أبي داود)",
-        "source_url": "https://sunnah.com/abudawud:1134"
+        "grader": "الألباني — صحيح أبي داود 1134: «صحيح» (الدرر السنية)؛ HadeethEnc: «صحيح»",
+        "source_url": "https://hadeethenc.com/ar/browse/hadith/65485",
+        "dorar_url": "https://dorar.net/h/QxMsqi4E",
+        "dorar_ref": "المحدث: الألباني | المصدر: صحيح أبي داود | الرقم: 1134 | خلاصة حكم المحدث: صحيح",
+        "hadeethenc_url": "https://hadeethenc.com/ar/browse/hadith/65485",
+        "sunnah_url": "https://sunnah.com/abudawud:1134",
+        "translation_source": "sunnah.com (English translation of the same hadith)"
       },
       {
         "text_ar": "دَخَلَ أَبُو بَكْرٍ وَعِنْدِي جَارِيَتَانِ مِنْ جَوَارِي الأَنْصَارِ تُغَنِّيَانِ بِمَا تَقَاوَلَتِ الأَنْصَارُ يَوْمَ بُعَاثَ ـ قَالَتْ وَلَيْسَتَا بِمُغَنِّيَتَيْنِ ـ فَقَالَ أَبُو بَكْرٍ أَمَزَامِيرُ الشَّيْطَانِ فِي بَيْتِ رَسُولِ اللَّهِ صلى الله عليه وسلم وَذَلِكَ فِي يَوْمِ عِيدٍ. فَقَالَ رَسُولُ اللَّهِ صلى الله عليه وسلم «يَا أَبَا بَكْرٍ إِنَّ لِكُلِّ قَوْمٍ عِيدًا، وَهَذَا عِيدُنَا»",
@@ -70,17 +83,26 @@
         "narrator": "عائشة رضي الله عنها",
         "grade": "صحيح",
         "grader": "الإمام البخاري (أخرجه في صحيحه)",
-        "source_url": "https://sunnah.com/bukhari:952"
+        "source_url": "https://dorar.net/h/YPxrjOvv",
+        "dorar_url": "https://dorar.net/h/YPxrjOvv",
+        "dorar_ref": "المحدث: البخاري | المصدر: صحيح البخاري | الرقم: 952 | خلاصة حكم المحدث: [صحيح]",
+        "sunnah_url": "https://sunnah.com/bukhari:952",
+        "translation_source": "sunnah.com (English translation of the same hadith)"
       },
       {
         "text_ar": "قَالَ رَسُولُ اللَّهِ صلى الله عليه وسلم «مَنْ تَشَبَّهَ بِقَوْمٍ فَهُوَ مِنْهُمْ» .",
-        "translation_en": "The Prophet (ﷺ) said: He who copies any people is one of them.",
+        "translation_en": "Ibn ‘Umar (may Allah be pleased with him) reported: The Messenger of Allah (may Allah's peace and blessings be upon him) said: \"Whoever imitates a people is one of them.\"",
         "collection": "سنن أبي داود",
         "number": "4031",
         "narrator": "عبد الله بن عمر رضي الله عنهما",
-        "grade": "حسن صحيح عند الألباني؛ ومختلف فيه",
-        "grader": "الألباني: حسن صحيح؛ ابن حجر: سنده حسن (فتح الباري 10/271)؛ ابن تيمية: جيد؛ وضعّفه المنذري والزيلعي لحال عبد الرحمن بن ثابت بن ثوبان",
-        "source_url": "https://sunnah.com/abudawud:4031 ; https://dorar.net/hadith/search?q=%D9%85%D9%86%20%D8%AA%D8%B4%D8%A8%D9%87%20%D8%A8%D9%82%D9%88%D9%85"
+        "grade": "حسن صحيح",
+        "grader": "الألباني — صحيح أبي داود 4031: «حسن صحيح» (الدرر السنية)؛ HadeethEnc: «حسن»",
+        "source_url": "https://hadeethenc.com/ar/browse/hadith/5353",
+        "dorar_url": "https://dorar.net/h/F8Sv9OZi",
+        "dorar_ref": "المحدث: الألباني | المصدر: صحيح أبي داود | الرقم: 4031 | خلاصة حكم المحدث: حسن صحيح",
+        "hadeethenc_url": "https://hadeethenc.com/ar/browse/hadith/5353",
+        "sunnah_url": "https://sunnah.com/abudawud:4031 ; https://dorar.net/hadith/search?q=%D9%85%D9%86%20%D8%AA%D8%B4%D8%A8%D9%87%20%D8%A8%D9%82%D9%88%D9%85",
+        "translation_source": "HadeethEnc.com (https://hadeethenc.com/en/browse/hadith/5353)"
       }
     ],
     "madhahib": {
@@ -95,9 +117,10 @@
         "reference": "الموسوعة الفقهية الكويتية (12/7)"
       },
       "shafii": {
-        "position_ar": "المنع؛ ويُنقل عن الخطيب الشربيني: «ويُعزَّر من وافق الكفار في أعيادهم... ومن هنّأه بعيده». (نُقل النص عن مصدر ثانوي ولم نطالعه في الكتاب مباشرة).",
-        "position_en": "Prohibits; al-Khatib al-Sharbini is quoted as saying that whoever conforms with non-Muslims in their festivals, or congratulates a dhimmi on his festival, is subject to discretionary punishment (quoted via a secondary source; not checked in the book itself).",
-        "reference": "مغني المحتاج للخطيب الشربيني (5/526) — نقلاً عن مصدر ثانوي، يحتاج مطابقة"
+        "position_ar": "المنع؛ ويُنقل عن الخطيب الشربيني: «ويُعزَّر من وافق الكفار في أعيادهم... ومن هنّأه بعيده».",
+        "position_en": "Prohibits; al-Khatib al-Sharbini is quoted as saying that whoever conforms with non-Muslims in their festivals, or congratulates a dhimmi on his festival, is subject to discretionary punishment.",
+        "reference": "مغني المحتاج للخطيب الشربيني (5/526)",
+        "reference_status": "pending_verification"
       },
       "hanbali": {
         "position_ar": "المنع: قال ابن القيم: «وأما التهنئة بشعائر الكفر المختصة به فحرام بالاتفاق، مثل أن يهنئهم بأعيادهم وصومهم»، وقال: لا يجوز للمسلمين حضور أعياد المشركين باتفاق أهل العلم، وصرّح به فقهاء المذاهب الأربعة. وأجاز ابن تيمية قبول هديتهم يوم عيدهم مستدلاً بقبول علي رضي الله عنه هدية النيروز، ما لم تكن مما يُستعان به على شعائرهم.",
@@ -183,7 +206,7 @@
     },
     "confidence": "medium",
     "review_status": "ai_verified",
-    "notes_for_reviewer": "نصوص الآيات من api.quran.com (رسم عثماني) والترجمة Sahih International (resource 20). الأحاديث مأخوذة حرفياً من sunnah.com (حُذف الإسناد واحتُفظ بالمتن من الصحابي). (1) نسبة قول الشافعية إلى مغني المحتاج 5/526 منقولة عن مصدر ثانوي (منشور د. محمد التميمي) ولم نطابقها في المطبوع. (2) نصوص الحنفية والمالكية منقولة عبر الموسوعة الفقهية الكويتية 12/7 بواسطة islamqa، لم نفتح الموسوعة نفسها. (3) لم نتحقق من رقم دورة قرار المجلس الأوروبي؛ المصدر موقع إسلام أون لاين. (4) آية الفرقان 72: تفسير «الزور» بأعياد المشركين قول بعض السلف (مجاهد والضحاك وابن سيرين وغيرهم كما في التفاسير) — لم ننقل نص التفسير، فالمرجع يحتاج إضافة. (5) فتوى دار الإفتاء المصرية بجواز التهنئة موجودة (dar-alifta.org/ar/articles/details/5603) ولم نُدرجها لاختصار القائمة. (6) د. مزمل صديقي يُعرَّف في مقال 2012 بأنه نائب رئيس المجلس، وفي الفتوى الأخرى رئيسه — يُرجى توحيد الصفة.\n\n[تدقيق المرحلة 1 — 2026-10-05] صُحّح اسم المفتي في decision_ref إلى «د. مائن خالد القضاة». عرض الخلاف متوازن (ابن القيم/العثيمين مقابل المجلس الأوروبي/FCNA). نص الشربيني «ويعزر من وافق الكفار في أعيادهم... ومن هنأه بعيده» معروف في مغني المحتاج (باب الجزية) لكن لم يُطابق الجزء والصفحة. نجحت الفحوص الآلية.",
+    "notes_for_reviewer": "نصوص الآيات من api.quran.com (رسم عثماني) والترجمة Sahih International (resource 20). الأحاديث مأخوذة حرفياً من sunnah.com (حُذف الإسناد واحتُفظ بالمتن من الصحابي). (1) نسبة قول الشافعية إلى مغني المحتاج 5/526 منقولة عن مصدر ثانوي (منشور د. محمد التميمي) ولم نطابقها في المطبوع. (2) نصوص الحنفية والمالكية منقولة عبر الموسوعة الفقهية الكويتية 12/7 بواسطة islamqa، لم نفتح الموسوعة نفسها. (3) لم نتحقق من رقم دورة قرار المجلس الأوروبي؛ المصدر موقع إسلام أون لاين. (4) آية الفرقان 72: تفسير «الزور» بأعياد المشركين قول بعض السلف (مجاهد والضحاك وابن سيرين وغيرهم كما في التفاسير) — لم ننقل نص التفسير، فالمرجع يحتاج إضافة. (5) فتوى دار الإفتاء المصرية بجواز التهنئة موجودة (dar-alifta.org/ar/articles/details/5603) ولم نُدرجها لاختصار القائمة. (6) د. مزمل صديقي يُعرَّف في مقال 2012 بأنه نائب رئيس المجلس، وفي الفتوى الأخرى رئيسه — يُرجى توحيد الصفة.\n\n[تدقيق المرحلة 1 — 2026-10-05] صُحّح اسم المفتي في decision_ref إلى «د. مائن خالد القضاة». عرض الخلاف متوازن (ابن القيم/العثيمين مقابل المجلس الأوروبي/FCNA). نص الشربيني «ويعزر من وافق الكفار في أعيادهم... ومن هنأه بعيده» معروف في مغني المحتاج (باب الجزية) لكن لم يُطابق الجزء والصفحة. نجحت الفحوص الآلية.\n\n[مراجعة الأحاديث 2026-10-06 — حزمة المرجعية العلمية]\n- أُبقي سنن أبي داود 4031 «من تشبه بقوم فهو منهم» لأن مصدرين معتمدين في الحزمة يحكمان عليه: الألباني «حسن صحيح» (صحيح أبي داود 4031، https://dorar.net/h/F8Sv9OZi) وHadeethEnc «حسن» (https://hadeethenc.com/ar/browse/hadith/5353)؛ مع العلم أن المنذري والزيلعي ضعّفاه لحال عبد الرحمن بن ثابت بن ثوبان. للمراجع البشري حذفه إن رأى أنه مختلف فيه.",
     "newcomer_explainer": {
       "ar": "يأمر الإسلام بالبر والعدل مع الجيران من أهل الأديان الأخرى (الممتحنة 8) وبردّ التحية بأحسن منها (النساء 86)، لكنه لا يجيز المشاركة في الشعائر الدينية لأعياد الأديان الأخرى. ويختلف العلماء في التهنئة اللفظية بالعيد الديني: فمنعها ابن القيم وكثير من المتقدمين والمعاصرين، وأجازها المجلس الأوروبي للإفتاء وآخرون بضوابط من باب البر. وعيد الشكر مختلف فيه أيضاً: فمنهم من يراه مناسبة وطنية عائلية، ومنهم من يرى له أصلاً دينياً. والمسلمون يحبون المسيح عيسى ويجلّونه نبياً عظيماً، لكنهم لا يشاركون الاعتقاد بألوهيته الذي يحتفل به عيد الميلاد، ولذلك يبقي كثير منهم مشاركتهم اجتماعية لا دينية.",
       "en": "Islam asks Muslims to be kind and just to neighbours of other faiths (60:8) and to return greetings with something better (4:86), but not to take part in the religious rites of another faith's holidays. Scholars differ on verbally congratulating someone on a religious holiday: Ibn al-Qayyim and many classical and contemporary scholars did not allow it, while the European Council for Fatwa and others allow it with conditions as an act of kindness. Thanksgiving is debated too: some see it as a civic family occasion, others consider it to have a religious origin. Muslims love and honour Jesus as a great prophet but do not share the belief in his divinity that Christmas celebrates, which is why many keep their participation social rather than religious."
@@ -201,6 +224,11 @@
       "en": "What does Islam teach about sitting at a company-party table where wine and beer are being poured, and what acceptable alternative lets a Muslim keep good relations with the team?"
     },
     "verdict": "haram",
+    "content_level": "C",
+    "verdict_scope": {
+      "ar": "يخص هذا الحكم الجلوس على المائدة التي يُشرب عليها الخمر. أما حضور مناسبة العمل نفسها مع تجنّب تلك المائدة أو المغادرة عند بدء الشرب ففيه خلاف بين المعاصرين: أجازه بعضهم ومنعه آخرون.",
+      "en": "This ruling covers sitting at the table where wine is being drunk. Attending the work event itself while avoiding that table, or leaving when the drinking starts, is disputed among contemporary scholars: some allow it, others do not."
+    },
     "summary": {
       "ar": "لا يجوز الجلوس على مائدة يُشرب عليها الخمر لحديث «فلا يقعد على مائدة يُدار عليها بالخمر» (حسّنه الترمذي والألباني، مع كلام في إسناده) ولآية النساء 140، وعلى هذا نصوص المذاهب الأربعة في الوليمة التي فيها منكر. أما حضور مناسبة العمل نفسها مع اختيار طاولة خالية من الخمر أو المغادرة عند بدء الشرب فمخرج أجازه بعض المعاصرين، ومنع آخرون حضور المناسبة أصلاً.",
       "en": "Sitting at a table where alcohol is being drunk is not permitted, based on the hadith \"let him not sit at a table where wine is passed around\" (graded hasan by al-Tirmidhi and al-Albani, though its chain is discussed) and Quran 4:140; the four schools say the same about banquets with wrongdoing. Attending the work event itself while choosing an alcohol-free table, or leaving when the drinking starts, is a way out allowed by some contemporary scholars, while others forbid attending such events at all."
@@ -210,17 +238,17 @@
         "surah": 5,
         "surah_name_ar": "المائدة",
         "ayah": "90",
-        "text_ar": "يَـٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوٓا۟ إِنَّمَا ٱلْخَمْرُ وَٱلْمَيْسِرُ وَٱلْأَنصَابُ وَٱلْأَزْلَـٰمُ رِجْسٌ مِّنْ عَمَلِ ٱلشَّيْطَـٰنِ فَٱجْتَنِبُوهُ لَعَلَّكُمْ تُفْلِحُونَ",
+        "text_ar": "يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوٓاْ إِنَّمَا ٱلۡخَمۡرُ وَٱلۡمَيۡسِرُ وَٱلۡأَنصَابُ وَٱلۡأَزۡلَٰمُ رِجۡسٞ مِّنۡ عَمَلِ ٱلشَّيۡطَٰنِ فَٱجۡتَنِبُوهُ لَعَلَّكُمۡ تُفۡلِحُونَ",
         "translation_en": "O you who have believed, indeed, intoxicants, gambling, [sacrificing on] stone alters [to other than Allāh], and divining arrows are but defilement from the work of Satan, so avoid it that you may be successful.",
-        "source_url": "https://quran.com/5/90"
+        "source_url": "https://quranenc.com/en/browse/english_saheeh/5#90"
       },
       {
         "surah": 4,
         "surah_name_ar": "النساء",
         "ayah": "140",
-        "text_ar": "وَقَدْ نَزَّلَ عَلَيْكُمْ فِى ٱلْكِتَـٰبِ أَنْ إِذَا سَمِعْتُمْ ءَايَـٰتِ ٱللَّهِ يُكْفَرُ بِهَا وَيُسْتَهْزَأُ بِهَا فَلَا تَقْعُدُوا۟ مَعَهُمْ حَتَّىٰ يَخُوضُوا۟ فِى حَدِيثٍ غَيْرِهِۦٓ ۚ إِنَّكُمْ إِذًا مِّثْلُهُمْ ۗ إِنَّ ٱللَّهَ جَامِعُ ٱلْمُنَـٰفِقِينَ وَٱلْكَـٰفِرِينَ فِى جَهَنَّمَ جَمِيعًا",
+        "text_ar": "وَقَدۡ نَزَّلَ عَلَيۡكُمۡ فِي ٱلۡكِتَٰبِ أَنۡ إِذَا سَمِعۡتُمۡ ءَايَٰتِ ٱللَّهِ يُكۡفَرُ بِهَا وَيُسۡتَهۡزَأُ بِهَا فَلَا تَقۡعُدُواْ مَعَهُمۡ حَتَّىٰ يَخُوضُواْ فِي حَدِيثٍ غَيۡرِهِۦٓ إِنَّكُمۡ إِذٗا مِّثۡلُهُمۡۗ إِنَّ ٱللَّهَ جَامِعُ ٱلۡمُنَٰفِقِينَ وَٱلۡكَٰفِرِينَ فِي جَهَنَّمَ جَمِيعًا",
         "translation_en": "And it has already come down to you in the Book [i.e., the Qur’ān] that when you hear the verses of Allāh [recited], they are denied [by them] and ridiculed; so do not sit with them until they enter into another conversation. Indeed, you would then be like them. Indeed, Allāh will gather the hypocrites and disbelievers in Hell all together -",
-        "source_url": "https://quran.com/4/140"
+        "source_url": "https://quranenc.com/en/browse/english_saheeh/4#140"
       }
     ],
     "hadith": [
@@ -230,19 +258,13 @@
         "collection": "جامع الترمذي",
         "number": "2801",
         "narrator": "جابر بن عبد الله رضي الله عنهما",
-        "grade": "حسن (مع خلاف في إسناده)",
-        "grader": "الترمذي: حسن غريب؛ الألباني: حسن (صحيح الترمذي 2801)؛ ابن حجر: إسناده جيد (فتح الباري 9/159)؛ دار السلام: حسن. وفي إسناده ليث بن أبي سليم وقد تُكلّم فيه (نقله الترمذي عن البخاري وأحمد). وله شاهد عن ابن عمر صححه الألباني (إرواء الغليل 1949)",
-        "source_url": "https://sunnah.com/tirmidhi:2801 ; https://dorar.net/hadith/search?q=%D9%85%D8%A7%D8%A6%D8%AF%D8%A9%20%D9%8A%D8%AF%D8%A7%D8%B1%20%D8%B9%D9%84%D9%8A%D9%87%D8%A7%20%D8%A8%D8%A7%D9%84%D8%AE%D9%85%D8%B1"
-      },
-      {
-        "text_ar": "نَهَى رَسُولُ اللَّهِ صلى الله عليه وسلم عَنْ مَطْعَمَيْنِ عَنِ الْجُلُوسِ عَلَى مَائِدَةٍ يُشْرَبُ عَلَيْهَا الْخَمْرُ وَأَنْ يَأْكُلَ الرَّجُلُ وَهُوَ مُنْبَطِحٌ عَلَى بَطْنِهِ . قَالَ أَبُو دَاوُدَ هَذَا الْحَدِيثُ لَمْ يَسْمَعْهُ جَعْفَرٌ مِنَ الزُّهْرِيِّ وَهُوَ مُنْكَرٌ",
-        "translation_en": "The Messenger of Allah (ﷺ) forbade two kinds of food: to sit at cloth on which wine is drunk, and to eat by a man while lying on his stomach. Abu Dawud said : Ja'far did not hear this tradition from al-Zuhri. His tradition is rejected.",
-        "collection": "سنن أبي داود",
-        "number": "3774",
-        "narrator": "عبد الله بن عمر رضي الله عنهما",
-        "grade": "مختلف فيه",
-        "grader": "أبو داود: «هذا الحديث لم يسمعه جعفر من الزهري وهو منكر»؛ والألباني: صحيح (بشواهده)",
-        "source_url": "https://sunnah.com/abudawud:3774"
+        "grade": "حسن",
+        "grader": "الألباني — صحيح الترمذي 2801: «حسن» (الدرر السنية)",
+        "source_url": "https://dorar.net/h/dj7SxMcL",
+        "dorar_url": "https://dorar.net/h/dj7SxMcL",
+        "dorar_ref": "المحدث: الألباني | المصدر: صحيح الترمذي | الرقم: 2801 | خلاصة حكم المحدث: حسن",
+        "sunnah_url": "https://sunnah.com/tirmidhi:2801 ; https://dorar.net/hadith/search?q=%D9%85%D8%A7%D8%A6%D8%AF%D8%A9%20%D9%8A%D8%AF%D8%A7%D8%B1%20%D8%B9%D9%84%D9%8A%D9%87%D8%A7%20%D8%A8%D8%A7%D9%84%D8%AE%D9%85%D8%B1",
+        "translation_source": "sunnah.com (English translation of the same hadith)"
       }
     ],
     "madhahib": {
@@ -324,10 +346,10 @@
     },
     "confidence": "medium",
     "review_status": "ai_verified",
-    "notes_for_reviewer": "درجة حديث الترمذي 2801 مختلف فيها (ليث بن أبي سليم)، والحكم عند المذاهب مبني أيضاً على باب الوليمة التي فيها منكر لا على هذا الحديث وحده. أرقام الأجزاء والصفحات للمذاهب منقولة من الموسوعة الفقهية بالدرر السنية (dorar.net/feqhia/4398) ونص المحيط البرهاني من المكتبة الشاملة (shamela.ws/book/10875/2001) — ولم نطابق بقية المراجع في المطبوع. لم نجد فتوى منشورة لـ AMJA أو مجمع الفقه الدولي في هذه الجزئية بعينها. التفريق بين «حضور المناسبة» و«الجلوس على المائدة» اجتهاد معاصر يحتاج تأكيد المراجع. أثر عمر بن عبد العزيز في جلد من جالس الشاربة وإن كان صائماً مذكور في كتب التفسير عند النساء 140 — لم نُدرجه لعدم مطالعة النص.\n\n[تدقيق المرحلة 1 — 2026-10-05] الحكم منسجم مع نصوص المذاهب في الوليمة ذات المنكر، ودرجة حديث الترمذي 2801 معروضة بأمانة (الألباني: حسن؛ بشار عواد وزبير علي زئي: ضعيف — بحسب hadith-api). نجحت الفحوص الآلية.",
+    "notes_for_reviewer": "درجة حديث الترمذي 2801 مختلف فيها (ليث بن أبي سليم)، والحكم عند المذاهب مبني أيضاً على باب الوليمة التي فيها منكر لا على هذا الحديث وحده. أرقام الأجزاء والصفحات للمذاهب منقولة من الموسوعة الفقهية بالدرر السنية (dorar.net/feqhia/4398) ونص المحيط البرهاني من المكتبة الشاملة (shamela.ws/book/10875/2001) — ولم نطابق بقية المراجع في المطبوع. لم نجد فتوى منشورة لـ AMJA أو مجمع الفقه الدولي في هذه الجزئية بعينها. التفريق بين «حضور المناسبة» و«الجلوس على المائدة» اجتهاد معاصر يحتاج تأكيد المراجع. أثر عمر بن عبد العزيز في جلد من جالس الشاربة وإن كان صائماً مذكور في كتب التفسير عند النساء 140 — لم نُدرجه لعدم مطالعة النص.\n\n[تدقيق المرحلة 1 — 2026-10-05] الحكم منسجم مع نصوص المذاهب في الوليمة ذات المنكر، ودرجة حديث الترمذي 2801 معروضة بأمانة (الألباني: حسن؛ بشار عواد وزبير علي زئي: ضعيف — بحسب hadith-api). نجحت الفحوص الآلية.\n\n[مراجعة الأحاديث 2026-10-06 — حزمة المرجعية العلمية]\n- أُزيل من الأدلة المعروضة (مختلف فيه): سنن أبي داود 3774 «نهى عن مطعمين...» — قال أبو داود نفسه: «لم يسمعه جعفر من الزهري وهو منكر»؛ وللألباني فيه حكمان على الدرر: «منكر» (إرواء الغليل 1982، https://dorar.net/h/EFWNcs6P) و«صحيح» (صحيح أبي داود 3774، https://dorar.net/h/8Z1qYuJj). يكفي في الحكم حديث الترمذي 2801 (حسن).\n- جامع الترمذي 2801: الحكم المعروض «حسن» هو حكم الألباني (صحيح الترمذي 2801، https://dorar.net/h/dj7SxMcL)؛ وفي إسناده ليث بن أبي سليم (نقله الترمذي)، وقال ابن حجر: إسناده جيد (فتح الباري 9/159).",
     "newcomer_explainer": {
-      "ar": "يحرّم الإسلام الخمر، وقد نهى النبي ﷺ عن الجلوس على مائدة يُشرب عليها الخمر (الترمذي 2801 وحسّنه هو والألباني، مع كلام لبعض العلماء في إسناده؛ وله شاهد عند أبي داود 3774 مختلف فيه). والحكمة الابتعاد عمّا يضر، وألا يبدو المسلم مُقِرّاً له. ويجيز بعض المعاصرين حضور مناسبة العمل مع اختيار طاولة خالية من الخمر أو المغادرة عند بدء الشرب، بينما يرى آخرون عدم حضور مثل هذه المناسبات أصلاً. والزميل المسلم الذي ينتقل إلى طاولة أخرى يتبع دينه ولا يحكم على أحد.",
-      "en": "Islam forbids alcohol, and the Prophet ﷺ forbade sitting at a table where wine is being drunk (Tirmidhi 2801, graded hasan by al-Tirmidhi and al-Albani, though some scholars discuss its chain; a similar report in Abu Dawud 3774 is disputed). The wisdom is keeping a distance from what harms and not appearing to approve of it. Some contemporary scholars allow attending a work event while choosing an alcohol-free table or leaving when the drinking starts, while others advise not attending such events at all. A Muslim colleague who moves to another table is following his faith, not judging anyone."
+      "ar": "يحرّم الإسلام الخمر، وقد نهى النبي ﷺ عن الجلوس على مائدة يُشرب عليها الخمر (الترمذي 2801 وحسّنه هو والألباني، مع كلام لبعض العلماء في إسناده). والحكمة الابتعاد عمّا يضر، وألا يبدو المسلم مُقِرّاً له. ويجيز بعض المعاصرين حضور مناسبة العمل مع اختيار طاولة خالية من الخمر أو المغادرة عند بدء الشرب، بينما يرى آخرون عدم حضور مثل هذه المناسبات أصلاً. والزميل المسلم الذي ينتقل إلى طاولة أخرى يتبع دينه ولا يحكم على أحد.",
+      "en": "Islam forbids alcohol, and the Prophet ﷺ forbade sitting at a table where wine is being drunk (Tirmidhi 2801, graded hasan by al-Tirmidhi and al-Albani, though some scholars discuss its chain). The wisdom is keeping a distance from what harms and not appearing to approve of it. Some contemporary scholars allow attending a work event while choosing an alcohol-free table or leaving when the drinking starts, while others advise not attending such events at all. A Muslim colleague who moves to another table is following his faith, not judging anyone."
     }
   },
   {
@@ -342,6 +364,22 @@
       "en": "At the party a charity sells $5 raffle tickets for an iPad, with proceeds going to sick children. Meanwhile, the company gives every attendee a free number for a gift-card draw. What is the ruling in each case?"
     },
     "verdict": "haram",
+    "content_level": "B",
+    "verdict_scope": {
+      "ar": "يخص هذا الحكم شراء تذكرة سحب مدفوعة تموَّل منها الجوائز؛ أما الرقم المجاني الذي تموّل الشركة جائزته فجائز.",
+      "en": "This ruling covers buying a paid raffle ticket that funds the prizes; the free number whose prize the company funds is permissible."
+    },
+    "consensus_sources": [
+      "الموسوعة الفقهية (الدرر السنية)، حكم القمار: https://dorar.net/feqhia/11561 — نقل الإجماع على تحريم القمار عن الجصاص (أحكام القرآن 1/450) وابن عبد البر (التمهيد 13/180) والقرطبي (تفسيره 3/52) وابن تيمية (الفتاوى الكبرى 4/459) وابن حجر (فتح الباري 8/613)"
+    ],
+    "explanatory_notes": {
+      "ar": [
+        "إذا كانت التذكرة مدمجة في ثمن دخول الحفل وكان الثمن كله مقابل الطعام والحفل والسحب مجاني تبعاً، فقد يشبه ذلك الرقم المجاني الذي تمنحه الشركة فيكون الأمر أخف. هذا قياس منّا للتوضيح، وليس نصاً ولا قول جهة علمية، فراجع عالماً في التفاصيل."
+      ],
+      "en": [
+        "If a ticket is bundled into the event admission and the whole price is for the food and event while the draw is a free add-on, it may resemble the free company number and so be lighter. This is an analogy we drew to explain, not a source text or the view of a scholarly body; check the details with a scholar."
+      ]
+    },
     "summary": {
       "ar": "شراء تذكرة سحب تُدفع قيمتها وتدخل في تمويل الجوائز ميسر (قمار) محرّم ولو كان الريع لعمل خيري، وبهذا صدر قرار مجمع الفقه الإسلامي الدولي 127 (14/1). أما السحب المجاني الذي لا يدفع فيه المشارك شيئاً والجائزة من طرف ثالث كالشركة فجائز. والبديل: تبرع مباشر دون تذكرة.",
       "en": "Buying a paid raffle ticket whose price funds the prizes is maysir (gambling) and forbidden even when proceeds go to charity, as stated in International Islamic Fiqh Academy resolution 127 (14/1). A free draw where participants pay nothing and a third party such as the company funds the prize is permissible. The alternative is a direct donation without a ticket."
@@ -351,17 +389,17 @@
         "surah": 5,
         "surah_name_ar": "المائدة",
         "ayah": "90",
-        "text_ar": "يَـٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوٓا۟ إِنَّمَا ٱلْخَمْرُ وَٱلْمَيْسِرُ وَٱلْأَنصَابُ وَٱلْأَزْلَـٰمُ رِجْسٌ مِّنْ عَمَلِ ٱلشَّيْطَـٰنِ فَٱجْتَنِبُوهُ لَعَلَّكُمْ تُفْلِحُونَ",
+        "text_ar": "يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوٓاْ إِنَّمَا ٱلۡخَمۡرُ وَٱلۡمَيۡسِرُ وَٱلۡأَنصَابُ وَٱلۡأَزۡلَٰمُ رِجۡسٞ مِّنۡ عَمَلِ ٱلشَّيۡطَٰنِ فَٱجۡتَنِبُوهُ لَعَلَّكُمۡ تُفۡلِحُونَ",
         "translation_en": "O you who have believed, indeed, intoxicants, gambling, [sacrificing on] stone alters [to other than Allāh], and divining arrows are but defilement from the work of Satan, so avoid it that you may be successful.",
-        "source_url": "https://quran.com/5/90"
+        "source_url": "https://quranenc.com/en/browse/english_saheeh/5#90"
       },
       {
         "surah": 5,
         "surah_name_ar": "المائدة",
         "ayah": "91",
-        "text_ar": "إِنَّمَا يُرِيدُ ٱلشَّيْطَـٰنُ أَن يُوقِعَ بَيْنَكُمُ ٱلْعَدَٰوَةَ وَٱلْبَغْضَآءَ فِى ٱلْخَمْرِ وَٱلْمَيْسِرِ وَيَصُدَّكُمْ عَن ذِكْرِ ٱللَّهِ وَعَنِ ٱلصَّلَوٰةِ ۖ فَهَلْ أَنتُم مُّنتَهُونَ",
+        "text_ar": "إِنَّمَا يُرِيدُ ٱلشَّيۡطَٰنُ أَن يُوقِعَ بَيۡنَكُمُ ٱلۡعَدَٰوَةَ وَٱلۡبَغۡضَآءَ فِي ٱلۡخَمۡرِ وَٱلۡمَيۡسِرِ وَيَصُدَّكُمۡ عَن ذِكۡرِ ٱللَّهِ وَعَنِ ٱلصَّلَوٰةِۖ فَهَلۡ أَنتُم مُّنتَهُونَ",
         "translation_en": "Satan only wants to cause between you animosity and hatred through intoxicants and gambling and to avert you from the remembrance of Allāh and from prayer. So will you not desist?",
-        "source_url": "https://quran.com/5/91"
+        "source_url": "https://quranenc.com/en/browse/english_saheeh/5#91"
       }
     ],
     "hadith": [
@@ -373,7 +411,10 @@
         "narrator": "أبو هريرة رضي الله عنه",
         "grade": "صحيح",
         "grader": "الإمام البخاري؛ وأخرجه مسلم (1647)",
-        "source_url": "https://sunnah.com/bukhari:4860"
+        "source_url": "https://hadeethenc.com/ar/browse/hadith/6379",
+        "hadeethenc_url": "https://hadeethenc.com/ar/browse/hadith/6379",
+        "sunnah_url": "https://sunnah.com/bukhari:4860",
+        "translation_source": "sunnah.com (English translation of the same hadith)"
       },
       {
         "text_ar": "نَهَى رَسُولُ اللَّهِ صلى الله عليه وسلم عَنْ بَيْعِ الْحَصَاةِ وَعَنْ بَيْعِ الْغَرَرِ",
@@ -383,7 +424,10 @@
         "narrator": "أبو هريرة رضي الله عنه",
         "grade": "صحيح",
         "grader": "الإمام مسلم (أخرجه في صحيحه)",
-        "source_url": "https://sunnah.com/muslim:1513"
+        "source_url": "https://hadeethenc.com/ar/browse/hadith/66136",
+        "hadeethenc_url": "https://hadeethenc.com/ar/browse/hadith/66136",
+        "sunnah_url": "https://sunnah.com/muslim:1513",
+        "translation_source": "sunnah.com (English translation of the same hadith)"
       },
       {
         "text_ar": "أَنَّ نَبِيَّ اللَّهِ صلى الله عليه وسلم نَهَى عَنِ الْخَمْرِ وَالْمَيْسِرِ وَالْكُوبَةِ وَالْغُبَيْرَاءِ وَقَالَ «كُلُّ مُسْكِرٍ حَرَامٌ»",
@@ -392,8 +436,12 @@
         "number": "3685",
         "narrator": "عبد الله بن عمرو رضي الله عنهما",
         "grade": "صحيح",
-        "grader": "الألباني (صحيح سنن أبي داود)",
-        "source_url": "https://sunnah.com/abudawud:3685"
+        "grader": "الألباني — صحيح أبي داود 3685: «صحيح» (الدرر السنية)",
+        "source_url": "https://dorar.net/h/WgIeVlUd",
+        "dorar_url": "https://dorar.net/h/WgIeVlUd",
+        "dorar_ref": "المحدث: الألباني | المصدر: صحيح أبي داود | الرقم: 3685 | خلاصة حكم المحدث: صحيح",
+        "sunnah_url": "https://sunnah.com/abudawud:3685",
+        "translation_source": "sunnah.com (English translation of the same hadith)"
       }
     ],
     "madhahib": {
@@ -438,13 +486,13 @@
       "ar": [
         "اعتذر عن شراء التذكرة وتبرّع مباشرة: «I'd love to support the cause — can I just donate $10 directly without a ticket?» وهذا يُقدَّر عادة.",
         "الرقم المجاني من الشركة لكل الحاضرين جائز لأنك لم تدفع شيئاً والجائزة من الشركة؛ فإن فزت فلا حرج في أخذها.",
-        "إن كانت التذكرة مدمجة في ثمن دخول الحفل، فاسأل: هل يُرفع السعر لأجل السحب؟ إن كان الثمن مقابل الطعام والحفل والسحب مجاني تبعاً فالأمر أخف — راجع عالماً في التفاصيل.",
+        "إن كانت التذكرة مدمجة في ثمن دخول الحفل، فاسأل: هل يُرفع السعر لأجل السحب؟ وراجع عالماً في التفاصيل (انظر الشرح التوضيحي).",
         "إن أُهديت لك تذكرة مدفوعة من زميل فالأحوط ألا تدخل بها السحب أو أن تردها بلطف."
       ],
       "en": [
         "Decline the ticket and donate directly: \"I'd love to support the cause — can I just donate $10 directly without a ticket?\" This is usually appreciated.",
         "The free number the company gives every attendee is permissible: you paid nothing and the company funds the prize; if you win, you may keep it.",
-        "If a ticket is bundled into the event admission, ask whether the price is raised because of the draw. If the price is for the food and event and the draw is incidental and free, the matter is lighter — check details with a scholar.",
+        "If a ticket is bundled into the event admission, ask whether the price is raised because of the draw, and check the details with a scholar (see the explanatory note).",
         "If a coworker gifts you a paid ticket, the cautious course is not to enter it or to return it kindly."
       ]
     },

@@ -1,23 +1,9 @@
 [
   {
     "ruling": "private_events.gifts_birthday",
-    "citation": "مجمع الزوائد للهيثمي 4/155 — حديث بريدة: أهدى المقوقس القبطي...",
-    "text_fragment": "أَهْدَى الْمُقَوْقِسُ الْقِبْطِيُّ لِرَسولِ اللهِ",
-    "verified_how": "Full text_ar matched (letters) against a saved copy of dorar.net/h/7JrcAD3x (المحدث: الهيثمي، المصدر: مجمع الزوائد 4/155، خلاصة الحكم: رجاله رجال الصحيح). Number and grade confirmed.",
-    "checked_at": "2026-10-05"
-  },
-  {
-    "ruling": "private_events.gifts_birthday",
     "citation": "الأدب المفرد للبخاري 594 — تهادوا تحابوا",
     "text_fragment": "تَهَادُوا تَحَابُّوا",
-    "verified_how": "Text and number matched against a saved copy of sunnah.com/adab:594 (chapter: Accepting gifts). Grade is disputed (al-Albani: حسن in Sahih al-Adab al-Mufrad 462; Ibn Hajar: isnad hasan); no single automated grade source.",
-    "checked_at": "2026-10-05"
-  },
-  {
-    "ruling": "school.mixed_social",
-    "citation": "المعجم الكبير للطبراني 20/211-212 — حديث معقل بن يسار: لأن يطعن في رأس أحدكم بمخيط",
-    "text_fragment": "لأَنْ يُطْعَنَ فِي رَأْسِ أَحَدِكُمْ بِمِخْيَطٍ",
-    "verified_how": "Wording confirmed via the dorar.net mirror (surahquran.com/Hadith-119470: الألباني، صحيح الجامع 5045: صحيح؛ السلسلة الصحيحة 226: إسناده جيد). Letters identical; dorar vocalises «بِمَخْيَط». Al-Haythami's «رجاله رجال الصحيح» is standard (مجمع الزوائد 4/326). The al-Suyuti da'if symbol could not be confirmed automatically and is flagged for the human reviewer.",
-    "checked_at": "2026-10-05"
+    "verified_how": "Text and number matched against a saved copy of sunnah.com/adab:594 (chapter: Accepting gifts). Grade: al-Albani «حسن» (صحيح الأدب المفرد 462) as shown on dorar.net/h/SIeUjyw2, and HadeethEnc #66179 «حسن» (re-fetched by verify.mjs). Some (Ibn al-Arabi) weakened it; see notes_for_reviewer.",
+    "checked_at": "2026-10-06"
   }
 ]

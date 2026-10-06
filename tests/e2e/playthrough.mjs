@@ -595,12 +595,17 @@ async function runConfig(browser, baseUrl, cfg) {
     await shot('start-screen');
     await R.checkOverflow('start screen');
     check(await evalp(() => document.querySelectorAll('.start .stack .btn').length === 1), 'fresh profile shows a Continue button');
+    check(await evalp(() => !!document.querySelector('.start details.ctx-pick .ctx-chip') && !!document.querySelector('.start .ctx-ready')), 'start screen: optional context picker / ready-made day missing');
     await press(`${OPEN} .start .stack .btn.primary`);
     await waitSel(`${OPEN} .intro .row.end .btn.primary`);
     await shot('intro-disclaimers');
     await R.checkOverflow('intro');
     check(await evalp(() => document.querySelectorAll('.intro .notice li').length >= 4), 'intro shows fewer than 4 disclaimers');
     await press(`${OPEN} .intro .row.end .btn.primary`);
+    // pre-day understanding check (3 check questions of the planned journey); skipped here (no context => default plan, no network)
+    await waitSel(`${OPEN} .precheck .row.end .btn.ghost`, 20000);
+    check(await evalp(() => document.querySelectorAll('.overlay:not(.leaving) .precheck .m-item').length === 3), 'pre-check does not show 3 questions');
+    await press(`${OPEN} .precheck .row.end .btn.ghost`);
     check(await evalp(() => document.body.classList.contains('touch')) === cfg.mobile, `touch class = ${!cfg.mobile} (expected ${cfg.mobile})`);
 
     for (let li = 0; li < LOCATIONS.length; li++) {
@@ -706,6 +711,8 @@ async function runConfig(browser, baseUrl, cfg) {
     }
     check(end.aboutRulings, 'end: rulings/scholar note missing');
     check(end.inputs === 0, 'end: the end screen contains form inputs (it must not ask the player anything)');
+    check(await evalp(() => { const m = document.querySelector('.overlay:not(.leaving) .summary .measure'); return !!m && m.querySelectorAll('.m-scale-btn').length === 5 && m.querySelector('.m-toggle')?.getAttribute('aria-checked') === 'false'; }), 'end: clarity item / consent toggle (default OFF) missing');
+    check(await evalp(() => (document.querySelector('.hud-plan')?.textContent || '').trim().length > 0), 'HUD: journey plan badge missing');
     await R.checkOverflow('summary');
     const top = await evalp(() => { const s = document.querySelector('.overlay-screen:not(.leaving)'); s.scrollTop = 0; const r = document.querySelector('.summary h1').getBoundingClientRect(); return Math.round(r.top); });
     check(top >= 0, `summary title is cut off above the viewport (top=${top}px) and cannot be scrolled to`);
@@ -723,7 +730,7 @@ async function runConfig(browser, baseUrl, cfg) {
     check(JSON.stringify(Object.keys(store.local)) === JSON.stringify(['yawmuk.progress.v1']), `privacy: unexpected localStorage keys ${Object.keys(store.local)}`);
     check(!store.session.length && !store.cookie && !store.idb.length, `privacy: sessionStorage/cookies/IndexedDB used (${store.session} | ${store.cookie} | ${store.idb})`);
     const prog = JSON.parse(store.local['yawmuk.progress.v1']);
-    const allowedTop = ['v', 'lang', 'location', 'situations', 'visited', 'finished', 'introSeen'];
+    const allowedTop = ['v', 'lang', 'location', 'situations', 'visited', 'finished', 'introSeen', 'plan', 'pre']; // plan = journey order/source (no personal data), pre = pre-check correctness
     check(Object.keys(prog).every((k) => allowedTop.includes(k)), `privacy: unexpected progress fields ${Object.keys(prog).filter((k) => !allowedTop.includes(k))}`);
     check(Object.values(prog.situations).every((r) => Object.keys(r).every((k) => ['tried', 'best', 'done', 'check', 'last'].includes(k))), 'privacy: unexpected per-situation fields');
     check(Object.keys(prog.situations).every((k) => RULINGS[k]), 'privacy: progress keys are not situation ids');

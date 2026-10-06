@@ -11,6 +11,7 @@
       "en": "If a Muslim finds a wallet containing cash, cards and the owner's ID, what must he do, and may he keep it if the owner never appears?"
     },
     "verdict": "wajib",
+    "content_level": "B",
     "summary": {
       "ar": "من وجد محفظة وأمِن نفسه عليها وجب عليه حفظها وتعريفها وردّها إلى صاحبها، ويحرم أخذها بنية التملك أو استعمال شيء منها. فإن كان فيها ما يدل على صاحبها كالهوية والبطاقات فالواجب إيصالها إليه مباشرة أو عبر الشرطة دون انتظار حولٍ كامل. وما لا يُعرف صاحبه يُعرَّف سنة عند جمهور الفقهاء، ثم يجوز تملكه أو التصدق به مع ضمانه لصاحبه إن ظهر، على تفصيل بين المذاهب.",
       "en": "Whoever finds a wallet and trusts himself with it must safeguard it, announce it and return it to its owner; taking it with intent to keep it, or using anything in it, is prohibited. If it contains identifying items such as an ID or cards, the duty is to get it to the owner directly or through the police, without waiting a full year. If the owner is unknown, the majority require announcing it for a year, after which the finder may keep it or give it in charity while remaining liable to the owner if he appears, with differences among the schools."
@@ -20,17 +21,17 @@
         "surah": 4,
         "surah_name_ar": "النساء",
         "ayah": "58",
-        "text_ar": "۞ إِنَّ ٱللَّهَ يَأْمُرُكُمْ أَن تُؤَدُّوا۟ ٱلْأَمَـٰنَـٰتِ إِلَىٰٓ أَهْلِهَا وَإِذَا حَكَمْتُم بَيْنَ ٱلنَّاسِ أَن تَحْكُمُوا۟ بِٱلْعَدْلِ ۚ إِنَّ ٱللَّهَ نِعِمَّا يَعِظُكُم بِهِۦٓ ۗ إِنَّ ٱللَّهَ كَانَ سَمِيعًۢا بَصِيرًا",
+        "text_ar": "۞ إِنَّ ٱللَّهَ يَأۡمُرُكُمۡ أَن تُؤَدُّواْ ٱلۡأَمَٰنَٰتِ إِلَىٰٓ أَهۡلِهَا وَإِذَا حَكَمۡتُم بَيۡنَ ٱلنَّاسِ أَن تَحۡكُمُواْ بِٱلۡعَدۡلِۚ إِنَّ ٱللَّهَ نِعِمَّا يَعِظُكُم بِهِۦٓۗ إِنَّ ٱللَّهَ كَانَ سَمِيعَۢا بَصِيرٗا",
         "translation_en": "Indeed, Allāh commands you to render trusts to whom they are due and when you judge between people to judge with justice. Excellent is that which Allāh instructs you. Indeed, Allāh is ever Hearing and Seeing.",
-        "source_url": "https://quran.com/4/58"
+        "source_url": "https://quranenc.com/en/browse/english_saheeh/4#58"
       },
       {
         "surah": 5,
         "surah_name_ar": "المائدة",
         "ayah": "2",
-        "text_ar": "يَـٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوا۟ لَا تُحِلُّوا۟ شَعَـٰٓئِرَ ٱللَّهِ وَلَا ٱلشَّهْرَ ٱلْحَرَامَ وَلَا ٱلْهَدْىَ وَلَا ٱلْقَلَـٰٓئِدَ وَلَآ ءَآمِّينَ ٱلْبَيْتَ ٱلْحَرَامَ يَبْتَغُونَ فَضْلًا مِّن رَّبِّهِمْ وَرِضْوَٰنًا ۚ وَإِذَا حَلَلْتُمْ فَٱصْطَادُوا۟ ۚ وَلَا يَجْرِمَنَّكُمْ شَنَـَٔانُ قَوْمٍ أَن صَدُّوكُمْ عَنِ ٱلْمَسْجِدِ ٱلْحَرَامِ أَن تَعْتَدُوا۟ ۘ وَتَعَاوَنُوا۟ عَلَى ٱلْبِرِّ وَٱلتَّقْوَىٰ ۖ وَلَا تَعَاوَنُوا۟ عَلَى ٱلْإِثْمِ وَٱلْعُدْوَٰنِ ۚ وَٱتَّقُوا۟ ٱللَّهَ ۖ إِنَّ ٱللَّهَ شَدِيدُ ٱلْعِقَابِ",
+        "text_ar": "يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُواْ لَا تُحِلُّواْ شَعَٰٓئِرَ ٱللَّهِ وَلَا ٱلشَّهۡرَ ٱلۡحَرَامَ وَلَا ٱلۡهَدۡيَ وَلَا ٱلۡقَلَٰٓئِدَ وَلَآ ءَآمِّينَ ٱلۡبَيۡتَ ٱلۡحَرَامَ يَبۡتَغُونَ فَضۡلٗا مِّن رَّبِّهِمۡ وَرِضۡوَٰنٗاۚ وَإِذَا حَلَلۡتُمۡ فَٱصۡطَادُواْۚ وَلَا يَجۡرِمَنَّكُمۡ شَنَـَٔانُ قَوۡمٍ أَن صَدُّوكُمۡ عَنِ ٱلۡمَسۡجِدِ ٱلۡحَرَامِ أَن تَعۡتَدُواْۘ وَتَعَاوَنُواْ عَلَى ٱلۡبِرِّ وَٱلتَّقۡوَىٰۖ وَلَا تَعَاوَنُواْ عَلَى ٱلۡإِثۡمِ وَٱلۡعُدۡوَٰنِۚ وَٱتَّقُواْ ٱللَّهَۖ إِنَّ ٱللَّهَ شَدِيدُ ٱلۡعِقَابِ",
         "translation_en": "O you who have believed, do not violate the rites of Allāh or [the sanctity of] the sacred month or [neglect the marking of] the sacrificial animals and garlanding [them] or [violate the safety of] those coming to the Sacred House seeking bounty from their Lord and [His] approval. But when you come out of iḥrām, then [you may] hunt. And do not let the hatred of a people for having obstructed you from al-Masjid al-Ḥarām lead you to transgress. And cooperate in righteousness and piety, but do not cooperate in sin and aggression. And fear Allāh; indeed, Allāh is severe in penalty.",
-        "source_url": "https://quran.com/5/2"
+        "source_url": "https://quranenc.com/en/browse/english_saheeh/5#2"
       }
     ],
     "hadith": [
@@ -42,7 +43,11 @@
         "narrator": "زيد بن خالد الجهني",
         "grade": "صحيح",
         "grader": "الإمام البخاري (أخرجه في صحيحه)؛ وأخرجه مسلم (1722)",
-        "source_url": "https://sunnah.com/bukhari:2372"
+        "source_url": "https://dorar.net/h/7ekxa6sj",
+        "dorar_url": "https://dorar.net/h/7ekxa6sj",
+        "dorar_ref": "المحدث: البخاري | المصدر: صحيح البخاري | الرقم: 2372 | خلاصة حكم المحدث: [صحيح]",
+        "sunnah_url": "https://sunnah.com/bukhari:2372",
+        "translation_source": "sunnah.com (English translation of the same hadith)"
       },
       {
         "text_ar": "اعْرِفْ وِكَاءَهَا وَعِفَاصَهَا ثُمَّ عَرِّفْهَا سَنَةً فَإِنْ لَمْ تَعْرِفْ فَاسْتَنْفِقْهَا وَلْتَكُنْ وَدِيعَةً عِنْدَكَ فَإِنْ جَاءَ طَالِبُهَا يَوْمًا مِنَ الدَّهْرِ فَأَدِّهَا إِلَيْهِ",
@@ -52,7 +57,10 @@
         "narrator": "زيد بن خالد الجهني",
         "grade": "صحيح",
         "grader": "الإمام مسلم (أخرجه في صحيحه)",
-        "source_url": "https://sunnah.com/muslim:1722e"
+        "source_url": "https://hadeethenc.com/ar/browse/hadith/6048",
+        "hadeethenc_url": "https://hadeethenc.com/ar/browse/hadith/6048",
+        "sunnah_url": "https://sunnah.com/muslim:1722e",
+        "translation_source": "sunnah.com (English translation of the same hadith)"
       },
       {
         "text_ar": "وَلاَ تُلْتَقَطُ لُقَطَتُهَا إِلاَّ لِمُعَرِّفٍ",
@@ -62,7 +70,11 @@
         "narrator": "عبد الله بن عباس",
         "grade": "صحيح",
         "grader": "الإمام البخاري (أخرجه في صحيحه)",
-        "source_url": "https://sunnah.com/bukhari:1349"
+        "source_url": "https://dorar.net/h/KwEfs2oP",
+        "dorar_url": "https://dorar.net/h/KwEfs2oP",
+        "dorar_ref": "المحدث: البخاري | المصدر: صحيح البخاري | الرقم: 1349 | خلاصة حكم المحدث: [صحيح] [قوله: قال أبان بن صالح... معلق][قوله: قال مجاهد... معلق وصله في موضع آخر]",
+        "sunnah_url": "https://sunnah.com/bukhari:1349",
+        "translation_source": "sunnah.com (English translation of the same hadith)"
       }
     ],
     "madhahib": {
@@ -93,7 +105,7 @@
         "لا تفتح المحفظة إلا بقدر ما تعرف به صاحبها، وصوّر محتوياتها أو سجّلها بحضور شاهد إن أمكن، ولا تستعمل أي بطاقة أو نقود منها.",
         "إن وجدت هوية أو رخصة قيادة أو بطاقة فيها اسم: حاول الوصول إلى صاحبها (عنوان الرخصة، أو الاتصال بالبنك المُصدِر للبطاقة ليبلغه)، أو سلّمها لأقرب مركز شرطة (non-emergency line) واطلب إيصالاً برقم البلاغ.",
         "إن وجدتها داخل متجر أو جامعة أو حافلة فسلّمها لمكتب المفقودات (Lost & Found) في المكان، فهو مظنة سؤال صاحبها.",
-        "في ولاية أوهايو لا يوجد قانون عام شامل للّقطة بل تحكمها السوابق القضائية (common law) التي تحفظ حق المالك الحقيقي، والاحتفاظ بمال يمكن معرفة صاحبه قد يُعدّ سرقة في القانون الأمريكي — فالتسليم يوافق الشرع والقانون معاً.",
+        "في ولاية أوهايو لا يوجد قانون عام شامل للّقطة بل تحكمها السوابق القضائية (common law) التي تحفظ حق المالك الحقيقي، والاحتفاظ بمال يمكن معرفة صاحبه قد يُعدّ سرقة في القانون الأمريكي — فالتسليم يوافق الشرع والقانون معاً. (معلومة قانونية عامة، وليست استشارة قانونية.)",
         "إن لم يُعرف صاحبها وأعادت الشرطة المال إليك بعد المدة، فاعمل بأحكام اللقطة: أكمل التعريف، وإن تملكته أو تصدقت به فاحفظ وصفه، وردّه أو بدله إن ظهر صاحبه يوماً.",
         "إن عرض صاحبها مكافأة فلك قبولها، وإن لم يعرض فلا تطالبه بشيء."
       ],
@@ -101,7 +113,7 @@
         "Open the wallet only enough to identify the owner, photograph or list its contents with a witness if possible, and never use any card or cash in it.",
         "If there is an ID, driver's license or named card, try to reach the owner (address on the license, or call the issuing bank so it can notify the cardholder), or hand it to the nearest police station (non-emergency line) and ask for a receipt or report number.",
         "If found inside a store, campus or bus, give it to that place's Lost & Found, where the owner is most likely to ask.",
-        "Ohio has no comprehensive general statute on found property; it is governed by case law (common law) that protects the true owner, and keeping property whose owner can be identified may amount to theft under US law — so turning it in satisfies both Sharia and the law.",
+        "Ohio has no comprehensive general statute on found property; it is governed by case law (common law) that protects the true owner, and keeping property whose owner can be identified may amount to theft under US law — so turning it in satisfies both Sharia and the law. (General legal information, not legal advice.)",
         "If the owner is never found and the police return the money to you after their holding period, still follow the luqata rules: complete the announcement, and if you keep it or give it in charity, record its description and repay the owner if he ever appears.",
         "If the owner offers a reward you may accept it; if not, do not demand anything."
       ]
@@ -140,6 +152,18 @@
       "en": "What is the ruling on buying a lottery ticket or scratch card at a gas station, or betting on a game through a sports-betting app?"
     },
     "verdict": "haram",
+    "content_level": "B",
+    "consensus_sources": [
+      "الموسوعة الفقهية (الدرر السنية)، حكم القمار: https://dorar.net/feqhia/11561 — نقل الإجماع على تحريم القمار عن الجصاص (أحكام القرآن 1/450) وابن عبد البر (التمهيد 13/180) والقرطبي (تفسيره 3/52) وابن تيمية (الفتاوى الكبرى 4/459) وابن حجر (فتح الباري 8/613)"
+    ],
+    "explanatory_notes": {
+      "ar": [
+        "«الرهان المجاني» (free bet) في تطبيقات المراهنات ليس كالسحب المجاني الذي «لا يشترط شراءً» في نظرنا: فهو رهان على نتيجة مباراة يقوم بها غيرك، وقد نص قرار مجمع الفقه الإسلامي الدولي 127 على تحريم «المراهنة بين طرفين أو أكثر على نتيجة فعل يقوم به غيرهم»، وهو يقتضي فتح حساب في منصة قمار، وغالباً ما يُربط بإيداع أو بشرط مراهنة لاحقة. تطبيق القرار على هذه العروض استنتاج منّا للتوضيح، وليس نصاً في المسألة بعينها."
+      ],
+      "en": [
+        "In our view a promotional \"free bet\" in a betting app is not like a \"no purchase necessary\" sweepstakes: it is a wager on the outcome of a game played by others, and IIFA Resolution 127 prohibits \"betting between two or more parties on the result of an act performed by others\"; it also requires opening an account on a gambling platform and is often tied to a deposit or further wagering. Applying the resolution to these offers is our own explanatory inference, not a text on this specific case."
+      ]
+    },
     "summary": {
       "ar": "اليانصيب وبطاقات الكشط والمراهنات الرياضية من الميسر (القمار) المحرم بنص القرآن وباتفاق الفقهاء، لأن المشارك يدفع مالاً رجاء أن يربح أكثر منه أو يخسره. وما يُربح منها كسب خبيث يجب التخلص منه بإعطائه للفقراء لا بقصد الثواب. أما المسابقات المجانية التي لا يدفع فيها المشارك شيئاً فلا تدخل في القمار.",
       "en": "Lotteries, scratch cards and sports betting are maysir (gambling), prohibited by the text of the Quran and the agreement of the jurists, because the participant pays money hoping to win more or lose it. Winnings from them are impure earnings that must be disposed of by giving them to the poor without intending reward. Free sweepstakes in which the participant pays nothing are not gambling."
@@ -149,33 +173,33 @@
         "surah": 5,
         "surah_name_ar": "المائدة",
         "ayah": "90",
-        "text_ar": "يَـٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوٓا۟ إِنَّمَا ٱلْخَمْرُ وَٱلْمَيْسِرُ وَٱلْأَنصَابُ وَٱلْأَزْلَـٰمُ رِجْسٌ مِّنْ عَمَلِ ٱلشَّيْطَـٰنِ فَٱجْتَنِبُوهُ لَعَلَّكُمْ تُفْلِحُونَ",
+        "text_ar": "يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوٓاْ إِنَّمَا ٱلۡخَمۡرُ وَٱلۡمَيۡسِرُ وَٱلۡأَنصَابُ وَٱلۡأَزۡلَٰمُ رِجۡسٞ مِّنۡ عَمَلِ ٱلشَّيۡطَٰنِ فَٱجۡتَنِبُوهُ لَعَلَّكُمۡ تُفۡلِحُونَ",
         "translation_en": "O you who have believed, indeed, intoxicants, gambling, [sacrificing on] stone alters [to other than Allāh], and divining arrows are but defilement from the work of Satan, so avoid it that you may be successful.",
-        "source_url": "https://quran.com/5/90"
+        "source_url": "https://quranenc.com/en/browse/english_saheeh/5#90"
       },
       {
         "surah": 5,
         "surah_name_ar": "المائدة",
         "ayah": "91",
-        "text_ar": "إِنَّمَا يُرِيدُ ٱلشَّيْطَـٰنُ أَن يُوقِعَ بَيْنَكُمُ ٱلْعَدَٰوَةَ وَٱلْبَغْضَآءَ فِى ٱلْخَمْرِ وَٱلْمَيْسِرِ وَيَصُدَّكُمْ عَن ذِكْرِ ٱللَّهِ وَعَنِ ٱلصَّلَوٰةِ ۖ فَهَلْ أَنتُم مُّنتَهُونَ",
+        "text_ar": "إِنَّمَا يُرِيدُ ٱلشَّيۡطَٰنُ أَن يُوقِعَ بَيۡنَكُمُ ٱلۡعَدَٰوَةَ وَٱلۡبَغۡضَآءَ فِي ٱلۡخَمۡرِ وَٱلۡمَيۡسِرِ وَيَصُدَّكُمۡ عَن ذِكۡرِ ٱللَّهِ وَعَنِ ٱلصَّلَوٰةِۖ فَهَلۡ أَنتُم مُّنتَهُونَ",
         "translation_en": "Satan only wants to cause between you animosity and hatred through intoxicants and gambling and to avert you from the remembrance of Allāh and from prayer. So will you not desist?",
-        "source_url": "https://quran.com/5/91"
+        "source_url": "https://quranenc.com/en/browse/english_saheeh/5#91"
       },
       {
         "surah": 2,
         "surah_name_ar": "البقرة",
         "ayah": "219",
-        "text_ar": "۞ يَسْـَٔلُونَكَ عَنِ ٱلْخَمْرِ وَٱلْمَيْسِرِ ۖ قُلْ فِيهِمَآ إِثْمٌ كَبِيرٌ وَمَنَـٰفِعُ لِلنَّاسِ وَإِثْمُهُمَآ أَكْبَرُ مِن نَّفْعِهِمَا ۗ وَيَسْـَٔلُونَكَ مَاذَا يُنفِقُونَ قُلِ ٱلْعَفْوَ ۗ كَذَٰلِكَ يُبَيِّنُ ٱللَّهُ لَكُمُ ٱلْـَٔايَـٰتِ لَعَلَّكُمْ تَتَفَكَّرُونَ",
+        "text_ar": "۞ يَسۡـَٔلُونَكَ عَنِ ٱلۡخَمۡرِ وَٱلۡمَيۡسِرِۖ قُلۡ فِيهِمَآ إِثۡمٞ كَبِيرٞ وَمَنَٰفِعُ لِلنَّاسِ وَإِثۡمُهُمَآ أَكۡبَرُ مِن نَّفۡعِهِمَاۗ وَيَسۡـَٔلُونَكَ مَاذَا يُنفِقُونَۖ قُلِ ٱلۡعَفۡوَۗ كَذَٰلِكَ يُبَيِّنُ ٱللَّهُ لَكُمُ ٱلۡأٓيَٰتِ لَعَلَّكُمۡ تَتَفَكَّرُونَ",
         "translation_en": "They ask you about wine and gambling. Say, \"In them is great sin and [yet, some] benefit for people. But their sin is greater than their benefit.\" And they ask you what they should spend. Say, \"The excess [beyond needs].\" Thus Allāh makes clear to you the verses [of revelation] that you might give thought",
-        "source_url": "https://quran.com/2/219"
+        "source_url": "https://quranenc.com/en/browse/english_saheeh/2#219"
       },
       {
         "surah": 4,
         "surah_name_ar": "النساء",
         "ayah": "29",
-        "text_ar": "يَـٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوا۟ لَا تَأْكُلُوٓا۟ أَمْوَٰلَكُم بَيْنَكُم بِٱلْبَـٰطِلِ إِلَّآ أَن تَكُونَ تِجَـٰرَةً عَن تَرَاضٍ مِّنكُمْ ۚ وَلَا تَقْتُلُوٓا۟ أَنفُسَكُمْ ۚ إِنَّ ٱللَّهَ كَانَ بِكُمْ رَحِيمًا",
+        "text_ar": "يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُواْ لَا تَأۡكُلُوٓاْ أَمۡوَٰلَكُم بَيۡنَكُم بِٱلۡبَٰطِلِ إِلَّآ أَن تَكُونَ تِجَٰرَةً عَن تَرَاضٖ مِّنكُمۡۚ وَلَا تَقۡتُلُوٓاْ أَنفُسَكُمۡۚ إِنَّ ٱللَّهَ كَانَ بِكُمۡ رَحِيمٗا",
         "translation_en": "O you who have believed, do not consume one another's wealth unjustly but only [in lawful] business by mutual consent. And do not kill yourselves [or one another]. Indeed, Allāh is to you ever Merciful.",
-        "source_url": "https://quran.com/4/29"
+        "source_url": "https://quranenc.com/en/browse/english_saheeh/4#29"
       }
     ],
     "hadith": [
@@ -187,7 +211,10 @@
         "narrator": "أبو هريرة",
         "grade": "صحيح",
         "grader": "الإمام البخاري (أخرجه في صحيحه)؛ وأخرجه مسلم (1647) وفي بعض رواياته «فليتصدق بشيء»",
-        "source_url": "https://sunnah.com/bukhari:4860"
+        "source_url": "https://hadeethenc.com/ar/browse/hadith/6379",
+        "hadeethenc_url": "https://hadeethenc.com/ar/browse/hadith/6379",
+        "sunnah_url": "https://sunnah.com/bukhari:4860",
+        "translation_source": "sunnah.com (English translation of the same hadith)"
       }
     ],
     "madhahib": {
@@ -231,7 +258,7 @@
     "practical_guidance": {
       "ar": [
         "لا تشترِ تذاكر اليانصيب (Powerball, Mega Millions) ولا بطاقات الكشط، ولا تحمّل تطبيقات المراهنات الرياضية أو «الفانتازي» المدفوع، حتى لو كانت قانونية في الولاية — فالمراهنات الرياضية قانونية في أوهايو منذ 2023.",
-        "«الرهان المجاني» (free bet) في تطبيقات المراهنات ليس كالسحب المجاني الذي «لا يشترط شراءً»: فهو رهان على نتيجة مباراة يقوم بها غيرك، وقد نص قرار مجمع الفقه الإسلامي الدولي 127 على تحريم «المراهنة بين طرفين أو أكثر على نتيجة فعل يقوم به غيرهم»، وهو يقتضي فتح حساب في منصة قمار، وغالباً ما يُربط بإيداع أو بشرط مراهنة لاحقة، فهو باب إلى الميسر الذي أُمرنا باجتنابه ﴿فاجتنبوه﴾ (المائدة 90)، وقد أمر النبي ﷺ من قال لصاحبه «تعال أقامرك» أن يتصدق (البخاري 4860)، فكيف بالدخول فيه. فلا تسجّل في هذه التطبيقات لأجل العروض المجانية.",
+        "لا تسجّل في تطبيقات المراهنات لأجل عروض «الرهان المجاني» (free bet)، فالمسلم مأمور باجتناب الميسر ﴿فاجتنبوه﴾ (المائدة 90)، وقد أمر النبي ﷺ من قال لصاحبه «تعال أقامرك» أن يتصدق (البخاري 4860). (انظر الشرح التوضيحي.)",
         "إن أُهديت تذكرة يانصيب فلا تستعملها؛ وإن ربحت سابقاً فتخلّص من الربح بإعطائه للفقراء والمساكين دون نية الأجر، وتب إلى الله.",
         "أما استرداد ما دفعته ثمناً للتذكرة من الربح قبل التخلص من الباقي فمسألة خلافية؛ فاسأل عالماً قبل التصرف في مبلغ كبير.",
         "المسابقات المجانية (No purchase necessary sweepstakes) جائزة إذا لم تدفع شيئاً ولم يكن الدخول مشروطاً بشراء زائد عن حاجتك.",
@@ -239,7 +266,7 @@
       ],
       "en": [
         "Do not buy lottery tickets (Powerball, Mega Millions) or scratch cards, and do not install sports-betting or paid fantasy apps, even if legal in your state — sports betting has been legal in Ohio since 2023.",
-        "A promotional \"free bet\" in a betting app is not like a \"no purchase necessary\" sweepstakes: it is a wager on the outcome of a game played by others, and IIFA Resolution 127 prohibits \"betting between two or more parties on the result of an act performed by others\"; it also requires opening an account on a gambling platform and is often tied to a deposit or further wagering requirements, so it is a door to the maysir we are commanded to avoid (\"so avoid it\", 5:90). The Prophet ﷺ ordered whoever merely says \"come, let me gamble with you\" to give charity (Bukhari 4860), so taking part is graver. Do not sign up to these apps for their free offers.",
+        "Do not sign up to betting apps for their \"free bet\" offers: Muslims are commanded to avoid maysir (\"so avoid it\", 5:90), and the Prophet ﷺ ordered whoever merely says \"come, let me gamble with you\" to give charity (Bukhari 4860). (See the explanatory note.)",
         "If someone gifts you a lottery ticket, do not use it; if you won before, dispose of the winnings by giving them to the poor without intending reward, and repent.",
         "Whether you may first take back the amount you paid is a matter of scholarly difference; ask a scholar before handling a large sum.",
         "Free sweepstakes (\"no purchase necessary\") are permissible if you pay nothing and entry is not tied to buying something you do not need.",
@@ -266,8 +293,8 @@
     "review_status": "ai_verified",
     "notes_for_reviewer": "1) أقوال المذاهب عبر الموسوعة الفقهية الكويتية مادة «ميسر» ٣٩/٤٠٤-٤٠٨ (shamela.ws/book/11430/25825)؛ نص «المحرم العقد وأخذ المال» منسوب للرملي كما في الموسوعة. 2) قرار المجمع 127 منقول من النسخة الإنجليزية الرسمية على iifa-aifi.org، وصياغة العربية ترجمة بالمعنى مع نقل جملة «لا تجوز شرعاً» كما في مصادر ثانوية؛ يُرجى مطابقة النص العربي الرسمي. 3) حكم التخلص من مال القمار (للفقراء) من الموسوعة ٣٩/٤٠٧ نقلاً عن إحياء علوم الدين ٢/١٢٧؛ ومسألة استرداد رأس المال خلافية لم أحررها. 4) قانونية المراهنات الرياضية في أوهايو منذ 1 يناير 2023 من معرفتي العامة ولم أتحقق منها بمصدر في هذه الجلسة، وكذلك رقم 1-800-GAMBLER — يُرجى التحقق. 5) السحب الخيري (raffle) موقف مستقل public_events.raffle؛ أحلت إليه فقط.\n\n[تدقيق المرحلة 1 — 2026-10-05] قرار المجمع 127 صحيح (الموقع العربي يرقّمه (14/1) والإنجليزي (1/14)). تحقق: المراهنات الرياضية قانونية في أوهايو منذ 1/1/2023 (صحيح). تنبيه: الملخص يقول «المسابقات المجانية ليست قماراً»، والسيناريو يسم «الرهان المجاني» في تطبيق مراهنات بـ wrong ويحيل إلى البطاقة — يُستحسن إضافة جملة صريحة في الحكم عن «الرهانات المجانية الترويجية» في تطبيقات القمار (ذريعة إلى الإيداع، وتسجيل في منصة قمار). الخط الوطني الصحيح للمساعدة: 1-800-GAMBLER (أو 1-800-522-4700) وخط أوهايو 1-800-589-9966 — للمراجع. نجحت الفحوص الآلية.\n\n[تدقيق — إضافة «الرهان المجاني»، 2026-10-05] أُضيف بند في practical_guidance (عربي/إنجليزي) عن الرهانات المجانية الترويجية في تطبيقات المراهنة، مبني حصراً على أدلة موجودة في الملف: قرار المجمع 127 (تحريم المراهنة على نتيجة فعل الغير)، والمائدة 90 (الأمر بالاجتناب)، وحديث البخاري 4860. هو تخريج من المدقق لا فتوى منقولة؛ وعبارة «غالباً ما يُربط بإيداع أو بشرط مراهنة» وصف عام لممارسة السوق يحتاج تأكيد المراجع. يسند هذا وسم السيناريو wrong لخيار «الرهان المجاني».",
     "newcomer_explainer": {
-      "ar": "اليانصيب وبطاقات الكشط والمراهنات الرياضية من الميسر (القمار) الذي حرّمه القرآن (المائدة 90–91). والعلة التي ذكرها القرآن نفسه أنه يوقع العداوة والبغضاء ويصدّ عن ذكر الله وعن الصلاة، ويضيف العلماء أنه نقل للمال بلا عمل ولا مقابل عادل، فربح أحدهم خسارة غيره. ومن ربح منه شيئاً تخلّص منه بإعطائه للفقراء دون قصد الثواب. أما المسابقات المجانية التي لا يدفع فيها المشارك شيئاً فليست قماراً، بخلاف «الرهان المجاني» في تطبيقات المراهنات، فهو رهان على نتيجة مباراة داخل منصة قمار، ولذلك يتجنبه المسلمون.",
-      "en": "Lotteries, scratch cards and sports betting are forms of maysir (gambling), which the Quran forbids (5:90–91). The Quran itself gives the reasons — gambling stirs up enmity and hatred and turns people away from remembering God and from prayer — and scholars add that it moves wealth without work or fair exchange, so one person's gain is another's loss. Anyone who wins must give the winnings away to the poor without seeking reward. A free sweepstakes that requires no payment is not gambling, unlike a promotional \"free bet\" in a betting app, which is still a wager on a game inside a gambling platform, so Muslims avoid it."
+      "ar": "اليانصيب وبطاقات الكشط والمراهنات الرياضية من الميسر (القمار) الذي حرّمه القرآن (المائدة 90–91). والعلة التي ذكرها القرآن نفسه أنه يوقع العداوة والبغضاء ويصدّ عن ذكر الله وعن الصلاة، ويضيف العلماء أنه نقل للمال بلا عمل ولا مقابل عادل، فربح أحدهم خسارة غيره. ومن ربح منه شيئاً تخلّص منه بإعطائه للفقراء دون قصد الثواب. أما المسابقات المجانية التي لا يدفع فيها المشارك شيئاً فليست قماراً.",
+      "en": "Lotteries, scratch cards and sports betting are forms of maysir (gambling), which the Quran forbids (5:90–91). The Quran itself gives the reasons — gambling stirs up enmity and hatred and turns people away from remembering God and from prayer — and scholars add that it moves wealth without work or fair exchange, so one person's gain is another's loss. Anyone who wins must give the winnings away to the poor without seeking reward. A free sweepstakes that requires no payment is not gambling."
     }
   },
   {
@@ -282,6 +309,14 @@
       "en": "Must a Muslim selling a used item with a defect (such as a weak phone battery) disclose it? And what about overcharging, tipping, and writing a fake review for a friend's store in exchange for a discount?"
     },
     "verdict": "haram",
+    "content_level": "B",
+    "verdict_scope": {
+      "ar": "يخص هذا الحكم كتمان العيب والكذب في وصف السلعة أو سعرها والتقييمات الكاذبة. أما الإكرامية فمستحبة، والغبن الفاحش بلا تغرير مختلف في إثباته حق الفسخ.",
+      "en": "This ruling covers concealing defects, lying about an item or its price, and fake reviews. Tipping is recommended, and gross overcharging without deception is disputed as grounds for cancellation."
+    },
+    "consensus_sources": [
+      "الموسوعة الفقهية (الدرر السنية)، حكم كتمان العيب: https://dorar.net/feqhia/7472 — نقل الإجماع على تحريم كتمان العيب عن السبكي (تكملة المجموع 12/115) وابن جزي (القوانين الفقهية ص175)، وعلى تحريم الغش عن الفاكهاني والشوكاني (نيل الأوطار 5/251)"
+    ],
     "summary": {
       "ar": "يحرم كتمان العيب في السلعة باتفاق الفقهاء، ويثبت للمشتري به حق الرد (خيار العيب)، وكذلك يحرم الكذب في وصفها أو سعرها وكتابة التقييمات الكاذبة لأنها غش وقول زور. أما الغبن اليسير الذي يتغابن الناس بمثله فمعفو عنه، والفاحش مختلف في إثباته حق الفسخ ويحرم إن صاحبه تغرير. والإكرامية هدية مستحبة وإحسان، فإن أُضيفت إلى الفاتورة معلنةً صارت جزءاً من الثمن.",
       "en": "Concealing a defect in goods is prohibited by agreement of the jurists and gives the buyer a right to return (khiyar al-'ayb); lying about the item or its price and writing fake reviews are likewise prohibited as deception and false statement. Minor price disparity that people normally tolerate is excused, while gross overcharging is disputed as grounds for cancellation and is prohibited when accompanied by deception. A tip is a recommended gift and kindness, and if disclosed as a charge on the bill it becomes part of the price."
@@ -291,41 +326,41 @@
         "surah": 4,
         "surah_name_ar": "النساء",
         "ayah": "29",
-        "text_ar": "يَـٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوا۟ لَا تَأْكُلُوٓا۟ أَمْوَٰلَكُم بَيْنَكُم بِٱلْبَـٰطِلِ إِلَّآ أَن تَكُونَ تِجَـٰرَةً عَن تَرَاضٍ مِّنكُمْ ۚ وَلَا تَقْتُلُوٓا۟ أَنفُسَكُمْ ۚ إِنَّ ٱللَّهَ كَانَ بِكُمْ رَحِيمًا",
+        "text_ar": "يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُواْ لَا تَأۡكُلُوٓاْ أَمۡوَٰلَكُم بَيۡنَكُم بِٱلۡبَٰطِلِ إِلَّآ أَن تَكُونَ تِجَٰرَةً عَن تَرَاضٖ مِّنكُمۡۚ وَلَا تَقۡتُلُوٓاْ أَنفُسَكُمۡۚ إِنَّ ٱللَّهَ كَانَ بِكُمۡ رَحِيمٗا",
         "translation_en": "O you who have believed, do not consume one another's wealth unjustly but only [in lawful] business by mutual consent. And do not kill yourselves [or one another]. Indeed, Allāh is to you ever Merciful.",
-        "source_url": "https://quran.com/4/29"
+        "source_url": "https://quranenc.com/en/browse/english_saheeh/4#29"
       },
       {
         "surah": 83,
         "surah_name_ar": "المطففين",
         "ayah": "1",
-        "text_ar": "وَيْلٌ لِّلْمُطَفِّفِينَ",
+        "text_ar": "وَيۡلٞ لِّلۡمُطَفِّفِينَ",
         "translation_en": "Woe to those who give less [than due],",
-        "source_url": "https://quran.com/83/1"
+        "source_url": "https://quranenc.com/en/browse/english_saheeh/83#1"
       },
       {
         "surah": 83,
         "surah_name_ar": "المطففين",
         "ayah": "2",
-        "text_ar": "ٱلَّذِينَ إِذَا ٱكْتَالُوا۟ عَلَى ٱلنَّاسِ يَسْتَوْفُونَ",
+        "text_ar": "ٱلَّذِينَ إِذَا ٱكۡتَالُواْ عَلَى ٱلنَّاسِ يَسۡتَوۡفُونَ",
         "translation_en": "Who, when they take a measure from people, take in full.",
-        "source_url": "https://quran.com/83/2"
+        "source_url": "https://quranenc.com/en/browse/english_saheeh/83#2"
       },
       {
         "surah": 83,
         "surah_name_ar": "المطففين",
         "ayah": "3",
-        "text_ar": "وَإِذَا كَالُوهُمْ أَو وَّزَنُوهُمْ يُخْسِرُونَ",
+        "text_ar": "وَإِذَا كَالُوهُمۡ أَو وَّزَنُوهُمۡ يُخۡسِرُونَ",
         "translation_en": "But if they give by measure or by weight to them, they cause loss.",
-        "source_url": "https://quran.com/83/3"
+        "source_url": "https://quranenc.com/en/browse/english_saheeh/83#3"
       },
       {
         "surah": 22,
         "surah_name_ar": "الحج",
         "ayah": "30",
-        "text_ar": "ذَٰلِكَ وَمَن يُعَظِّمْ حُرُمَـٰتِ ٱللَّهِ فَهُوَ خَيْرٌ لَّهُۥ عِندَ رَبِّهِۦ ۗ وَأُحِلَّتْ لَكُمُ ٱلْأَنْعَـٰمُ إِلَّا مَا يُتْلَىٰ عَلَيْكُمْ ۖ فَٱجْتَنِبُوا۟ ٱلرِّجْسَ مِنَ ٱلْأَوْثَـٰنِ وَٱجْتَنِبُوا۟ قَوْلَ ٱلزُّورِ",
+        "text_ar": "ذَٰلِكَۖ وَمَن يُعَظِّمۡ حُرُمَٰتِ ٱللَّهِ فَهُوَ خَيۡرٞ لَّهُۥ عِندَ رَبِّهِۦۗ وَأُحِلَّتۡ لَكُمُ ٱلۡأَنۡعَٰمُ إِلَّا مَا يُتۡلَىٰ عَلَيۡكُمۡۖ فَٱجۡتَنِبُواْ ٱلرِّجۡسَ مِنَ ٱلۡأَوۡثَٰنِ وَٱجۡتَنِبُواْ قَوۡلَ ٱلزُّورِ",
         "translation_en": "That [has been commanded], and whoever honors the sacred ordinances of Allāh - it is best for him in the sight of his Lord. And permitted to you are the grazing livestock, except what is recited to you. So avoid the uncleanliness of idols and avoid false statement,",
-        "source_url": "https://quran.com/22/30"
+        "source_url": "https://quranenc.com/en/browse/english_saheeh/22#30"
       }
     ],
     "hadith": [
@@ -337,7 +372,10 @@
         "narrator": "حكيم بن حزام",
         "grade": "صحيح",
         "grader": "الإمام البخاري (أخرجه في صحيحه)؛ وأخرجه مسلم (1532)",
-        "source_url": "https://sunnah.com/bukhari:2079"
+        "source_url": "https://hadeethenc.com/ar/browse/hadith/66126",
+        "hadeethenc_url": "https://hadeethenc.com/ar/browse/hadith/66126",
+        "sunnah_url": "https://sunnah.com/bukhari:2079",
+        "translation_source": "sunnah.com (English translation of the same hadith)"
       },
       {
         "text_ar": "الْمُسْلِمُ أَخُو الْمُسْلِمِ وَلاَ يَحِلُّ لِمُسْلِمٍ بَاعَ مِنْ أَخِيهِ بَيْعًا فِيهِ عَيْبٌ إِلاَّ بَيَّنَهُ لَهُ",
@@ -346,8 +384,13 @@
         "number": "2246",
         "narrator": "عقبة بن عامر",
         "grade": "صحيح",
-        "grader": "الألباني (صحيح سنن ابن ماجه)",
-        "source_url": "https://sunnah.com/ibnmajah:2246"
+        "grader": "الألباني — صحيح ابن ماجه 1837: «صحيح» (الدرر السنية)؛ HadeethEnc: «حسن»",
+        "source_url": "https://hadeethenc.com/ar/browse/hadith/66144",
+        "dorar_url": "https://dorar.net/h/mpUbeq5I",
+        "dorar_ref": "المحدث: الألباني | المصدر: صحيح ابن ماجه | الرقم: 1837 | خلاصة حكم المحدث: صحيح",
+        "hadeethenc_url": "https://hadeethenc.com/ar/browse/hadith/66144",
+        "sunnah_url": "https://sunnah.com/ibnmajah:2246",
+        "translation_source": "sunnah.com (English translation of the same hadith)"
       },
       {
         "text_ar": "أَفَلاَ جَعَلْتَهُ فَوْقَ الطَّعَامِ كَىْ يَرَاهُ النَّاسُ مَنْ غَشَّ فَلَيْسَ مِنِّي",
@@ -357,7 +400,10 @@
         "narrator": "أبو هريرة",
         "grade": "صحيح",
         "grader": "الإمام مسلم (أخرجه في صحيحه)",
-        "source_url": "https://sunnah.com/muslim:102"
+        "source_url": "https://hadeethenc.com/ar/browse/hadith/66132",
+        "hadeethenc_url": "https://hadeethenc.com/ar/browse/hadith/66132",
+        "sunnah_url": "https://sunnah.com/muslim:102",
+        "translation_source": "sunnah.com (English translation of the same hadith)"
       },
       {
         "text_ar": "أَلاَ أُنَبِّئُكُمْ بِأَكْبَرِ الْكَبَائِرِ \". ثَلاَثًا. قَالُوا بَلَى يَا رَسُولَ اللَّهِ. قَالَ \" الإِشْرَاكُ بِاللَّهِ، وَعُقُوقُ الْوَالِدَيْنِ \". وَجَلَسَ وَكَانَ مُتَّكِئًا فَقَالَ \" أَلاَ وَقَوْلُ الزُّورِ \". قَالَ فَمَا زَالَ يُكَرِّرُهَا حَتَّى قُلْنَا لَيْتَهُ سَكَتَ",
@@ -367,7 +413,10 @@
         "narrator": "أبو بكرة نفيع بن الحارث",
         "grade": "صحيح",
         "grader": "الإمام البخاري (أخرجه في صحيحه)؛ وأخرجه مسلم (87)",
-        "source_url": "https://sunnah.com/bukhari:2654"
+        "source_url": "https://hadeethenc.com/ar/browse/hadith/2941",
+        "hadeethenc_url": "https://hadeethenc.com/ar/browse/hadith/2941",
+        "sunnah_url": "https://sunnah.com/bukhari:2654",
+        "translation_source": "sunnah.com (English translation of the same hadith)"
       },
       {
         "text_ar": "رَحِمَ اللَّهُ رَجُلاً سَمْحًا إِذَا بَاعَ، وَإِذَا اشْتَرَى، وَإِذَا اقْتَضَى",
@@ -377,7 +426,10 @@
         "narrator": "جابر بن عبد الله",
         "grade": "صحيح",
         "grader": "الإمام البخاري (أخرجه في صحيحه)",
-        "source_url": "https://sunnah.com/bukhari:2076"
+        "source_url": "https://hadeethenc.com/ar/browse/hadith/3716",
+        "hadeethenc_url": "https://hadeethenc.com/ar/browse/hadith/3716",
+        "sunnah_url": "https://sunnah.com/bukhari:2076",
+        "translation_source": "sunnah.com (English translation of the same hadith)"
       }
     ],
     "madhahib": {

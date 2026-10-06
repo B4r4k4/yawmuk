@@ -2,9 +2,38 @@
 // Any missing field is omitted or marked "not documented yet"; a missing ruling renders a "content pending" card.
 // Layout: header (verdict seal + review status) -> "in plain words" callout -> collapsible sections (accordion).
 import { h, link } from '../dom.js';
-import { t, tr, trField, getLang } from '../i18n.js';
+import { t, tr, trField, getLang, STRINGS } from '../i18n.js';
 import { VERDICTS, CATALOG } from '../config.js';
 import './strings.js';
+
+// Strings for the scientific-reference-package compliance badges (content levels A–D, explanatory notes,
+// pending references). Merged without overriding anything already defined (i18n.js / strings.js / ui_strings.json).
+const CARD_STRINGS = {
+  contentLevel: { ar: 'مستوى المحتوى', en: 'Content level' },
+  level_A: { ar: 'أ: معلومة أصلية مستقرة', en: 'A: stable core information' },
+  level_B: { ar: 'ب: شرح واستدلال', en: 'B: explanation & reasoning' },
+  level_C: { ar: 'ج: مسألة خلافية أو حساسة', en: 'C: disputed or sensitive' },
+  level_D: { ar: 'د: حالة شخصية — لا فتوى', en: 'D: personal case — no fatwa' },
+  level_A_tip: { ar: 'إجابة مباشرة موثقة بالمصدر في معلومة مستقرة.', en: 'A direct, sourced answer on stable, settled information.' },
+  level_B_tip: { ar: 'شرح من المادة المعتمدة مع إظهار المرجع، دون قطع فيما يحتمل الخلاف.', en: 'An explanation from approved material with its reference, without certainty where scholars may differ.' },
+  level_C_tip: { ar: 'مسألة فيها خلاف فقهي أو حساسية: نعرض الأقوال المعتمدة ونبيّن الخلاف، ونحيل إلى المختص.', en: 'A matter of scholarly difference or sensitivity: we show the recognised views, state the disagreement and refer you to a specialist.' },
+  level_D_tip: { ar: 'واقعة شخصية: لا نصدر حكماً، بل نعرض معلومات عامة ونحيلك إلى جهة مؤهلة.', en: 'A personal case: we give no ruling, only general information, and refer you to a qualified authority.' },
+  verdictScope: { ar: 'نطاق الحكم', en: 'Scope of this ruling' },
+  explanatory: { ar: 'شرح توضيحي — ليس نصاً شرعياً', en: 'Explanatory note — not a scriptural text' },
+  consensusSources: { ar: 'مصادر نقل الإجماع', en: 'Sources reporting consensus' },
+  refPending: { ar: 'المرجع قيد التحقق', en: 'Reference pending verification' },
+  aiPrepared: { ar: 'أعدّه الذكاء الاصطناعي — لم يراجعه عالم', en: 'AI-prepared, not scholar-reviewed' }
+};
+for (const [k, v] of Object.entries(CARD_STRINGS)) if (!(k in STRINGS)) STRINGS[k] = v;
+const LEVELS = ['A', 'B', 'C', 'D'];
+
+/** Content level badge (A–D) with an explanatory tooltip (title + accessible label). */
+export function levelBadge(level) {
+  if (!LEVELS.includes(level)) return null;
+  const tip = t(`level_${level}_tip`);
+  return h('span', { class: 'badge level', 'data-level': level, title: tip, tabindex: '0', 'aria-label': `${t('contentLevel')}: ${t(`level_${level}`)} — ${tip}` },
+    h('span', { class: 'lv-k' }, `${t('contentLevel')}: `), h('span', { class: 'lv-v' }, t(`level_${level}`)));
+}
 
 const list = (arr) => (Array.isArray(arr) && arr.length ? h('ul', { class: 'rc-list' }, arr.map((x) => h('li', {}, String(x)))) : null);
 // Content values (Arabic book titles, narrators, references with URLs) are often in the other script than the
@@ -22,7 +51,7 @@ function srcLink(url) {
 }
 
 // Sections collapsed by default on narrow screens (long, secondary lists). Everything else starts open.
-const COLLAPSED_ON_MOBILE = new Set(['contemporary', 'guidance', 'alternatives']);
+const COLLAPSED_ON_MOBILE = new Set(['contemporary', 'guidance', 'alternatives', 'consensusSources']);
 const isNarrow = () => typeof matchMedia === 'function' && matchMedia('(max-width: 720px)').matches;
 let secSeq = 0;
 
@@ -121,7 +150,8 @@ function madhahibBlock(m) {
     const panel = h('div', { role: 'tabpanel', id: `${uid}-p-${k}`, 'aria-labelledby': tab.id, class: `tabpanel${i === 0 ? ' active' : ''}`, tabindex: '0' },
       h('h4', { class: 'madhhab-name' }, t(k)),
       pos ? h('p', {}, pos) : h('p', { class: 'muted' }, t('notProvided')),
-      d.reference ? h('p', { class: 'ref' }, `${t('reference')}: `, iso(d.reference)) : null);
+      d.reference ? h('p', { class: 'ref' }, `${t('reference')}: `, iso(d.reference),
+        d.reference_status === 'pending_verification' ? h('span', { class: 'badge ref-pending' }, ' ', t('refPending')) : null) : null);
     tabs.push(tab); panels.push(panel);
   });
   const select = (i) => {
@@ -170,18 +200,27 @@ export function renderRulingCard(ruling, rulingId) {
   const r = ruling;
   const guidance = tr(r.practical_guidance);
   const alts = tr(r.halal_alternatives);
+  const { reviewed } = statusInfo(r.review_status);
+  // "High confidence" is only ever shown next to an explicit "AI-prepared, not scholar-reviewed" badge.
   const conf = r.confidence ? h('span', { class: 'badge conf' }, `${t('confidence')}: ${t(`conf_${r.confidence}`)}`) : null;
-  return h('article', { class: `ruling-card${r._fixture ? ' fixture' : ''}`, 'data-ruling': r.id },
+  const aiBadge = r.confidence === 'high' && !reviewed ? h('span', { class: 'badge ai-prepared' }, t('aiPrepared')) : null;
+  const scope = tr(r.verdict_scope);
+  const notes = tr(r.explanatory_notes);
+  const notesList = Array.isArray(notes) ? notes : notes ? [notes] : [];
+  return h('article', { class: `ruling-card${r._fixture ? ' fixture' : ''}`, 'data-ruling': r.id, 'data-level': LEVELS.includes(r.content_level) ? r.content_level : null },
     h('header', { class: 'rc-header' },
       h('p', { class: 'eyebrow' }, t('ruling')),
       h('h2', { class: 'rc-title' }, tr(r.title) || r.id),
       h('div', { class: 'rc-head-row' },
         verdictSeal(r.verdict),
-        h('div', { class: 'badges' }, statusBadge(r.review_status), conf,
-          r._fixture ? h('span', { class: 'badge fixture' }, t('fixtureBadge')) : null))),
+        h('div', { class: 'badges' }, statusBadge(r.review_status), levelBadge(r.content_level), conf, aiBadge,
+          r._fixture ? h('span', { class: 'badge fixture' }, t('fixtureBadge')) : null)),
+      nonEmpty(scope) ? h('p', { class: 'rc-scope' }, h('strong', {}, `${t('verdictScope')}: `), scope) : null),
     plainWordsBlock(r),
     nonEmpty(tr(r.question)) ? section('question', h('p', { class: 'question' }, tr(r.question))) : null,
     nonEmpty(tr(r.summary)) ? section('summary', h('p', { class: 'summary' }, tr(r.summary))) : null,
+    notesList.length ? collapsible('rc-section rc-explanatory', t('explanatory'), [list(notesList)]) : null,
+    section('consensusSources', list((r.consensus_sources || []).filter(Boolean))),
     section('quran', (r.quran || []).filter(Boolean).map(quranBlock)),
     section('hadith', (r.hadith || []).filter(Boolean).map(hadithBlock)),
     r.madhahib ? section('madhahib', madhahibBlock(r.madhahib)) : null,

@@ -309,7 +309,8 @@ export default {
 ## 11. The player character, ruling-card extras and end screen
 
 - **Adam's look** is `PLAYER` in `src/engine/config.js` (`look` takes any option of §4.1). A scene can return `playerLook: { jacket: '#1f2d4d' }`, merged over `PLAYER.look` while that scene is loaded. Adam uses the same character system: idle → walk → run blending with foot speed matched to his velocity (walk 2.3 m/s, run 5.2 m/s, no root motion).
-- The **ruling card** shows `newcomer_explainer` ("In plain words") and `common_ground` (`summary`/`differences` only, no scripture quotations or references) when present.
+- The **ruling card** shows `newcomer_explainer` ("In plain words") when present. (`common_ground` was removed on 2026-10-06 and is never rendered.)
+- Scientific-reference-package fields: `content_level` (A–D) renders as a badge with a tooltip; `verdict_scope` renders under the verdict seal; `explanatory_notes` render under «شرح توضيحي — ليس نصاً شرعياً» / "Explanatory note — not a scriptural text"; `consensus_sources` render as "Sources reporting consensus"; a madhhab entry with `reference_status: "pending_verification"` shows a "Reference pending verification" badge. `confidence: high` is only shown next to an "AI-prepared, not scholar-reviewed" badge (unless a scholar review is recorded).
 - The **end screen** shows what Adam learned, a suggested next topic (`THEMES` in `config.js`) and a referral to a local mosque or Islamic center. The game never asks about or stores the player's beliefs.
 - Label keys come from `content/script/ui_strings.json` (`i18n.js` `UI_MAP` lists them; each falls back to a built-in default).
 

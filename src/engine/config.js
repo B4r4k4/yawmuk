@@ -63,6 +63,22 @@ export const THEMES = {
   social: { nextTopic: 2, ar: 'العلاقات والمناسبات', en: 'Relationships & occasions', ids: ['school.mixed_social', 'public_events.holiday_greetings', 'private_events.wedding', 'private_events.neighbor_funeral', 'private_events.gifts_birthday'] }
 };
 
+// ---------------------------------------------------------------- context picker (start screen; optional, never asks belief)
+// Topics the player may pick. Each maps onto situation ids (built from THEMES above + a few cross-cutting picks).
+export const TOPICS = {
+  money: { ar: 'المال', en: 'Money', ids: THEMES.money.ids },
+  food: { ar: 'الطعام', en: 'Food', ids: THEMES.food.ids },
+  work: { ar: 'العمل والأمانة', en: 'Work & honesty', ids: [...THEMES.honesty.ids, 'work.alcohol_pork_job', 'work.retirement_401k'] },
+  social: { ar: 'العلاقات', en: 'Relationships', ids: THEMES.social.ids },
+  celebrations: { ar: 'المناسبات', en: 'Celebrations', ids: ['public_events.holiday_greetings', 'private_events.wedding', 'private_events.gifts_birthday', 'public_events.raffle', 'public_events.alcohol_table'] }
+};
+// Day types: the locations such a day naturally starts with (a light ordering hint only).
+export const DAY_TYPES = {
+  office: { ar: 'يوم عمل', en: 'Office day', locations: ['work', 'street'] },
+  student: { ar: 'يوم دراسة', en: 'Student day', locations: ['school', 'street'] },
+  weekend: { ar: 'عطلة نهاية الأسبوع', en: 'Weekend', locations: ['home', 'public_events', 'private_events'] }
+};
+
 // ---------------------------------------------------------------- the player character
 // Single place to change how Adam looks. Any makeNPC(look) option works (see src/engine/README.md):
 // skin, shirt, pants, shoes, hair (false = bald), beard, glasses, suit, tie, kufi, height, build…

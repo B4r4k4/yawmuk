@@ -1,9 +1,11 @@
 // Full-screen and modal screens: start, intro/disclaimer, location intro/outro, exit confirm, menu, summary.
 import { h, link } from '../dom.js';
 import { t, tr, getLang, setLang, STRINGS } from '../i18n.js';
-import { LOCATIONS, LOCATION_TITLES, CATALOG, CHECK_BONUS, THEMES } from '../config.js';
-import { getScript, getRuling, allSituations, uiStrings } from '../content.js';
-import { progress, isDone, totalScore, hasSave, sitRecord } from '../progress.js';
+import { LOCATIONS, LOCATION_TITLES, CATALOG, CHECK_BONUS, THEMES, TOPICS, DAY_TYPES } from '../config.js';
+import { getScript, getRuling, allSituations, uiStrings, locationOrder } from '../content.js';
+import { progress, isDone, totalScore, hasSave, sitRecord, getPlan, getPre } from '../progress.js';
+import { applyAiUi } from './aiStrings.js';
+import { sendMetrics } from '../metrics.js';
 import { openModal, setContent, btn, tilt } from './overlay.js';
 import { verdictBadge, statusBadge } from './rulingCard.js';
 import { applyExtraUi } from './strings.js';
@@ -11,15 +13,42 @@ import { hideLoader } from './loading.js';
 import { creditsScreen } from './credits.js';
 
 applyExtraUi(uiStrings);
+applyAiUi(uiStrings);
 
 const p = (text, cls) => (text ? h('p', { class: cls || '' }, text) : null);
 
-/** Start screen. Resolves { lang, mode: 'new'|'continue' }. */
+/**
+ * Optional context picker (no account, never asks about belief): day type (one) + topics (any). Kept outside
+ * the .stack of main buttons. "Ready-made day" skips it. state = { dayType, topics:Set, open }.
+ */
+function contextPicker(state, onReady) {
+  const chip = (label, pressed, onclick) => h('button', { type: 'button', class: `ctx-chip${pressed ? ' on' : ''}`, 'aria-pressed': pressed ? 'true' : 'false', onclick }, label);
+  const day = h('div', { class: 'ctx-chips', role: 'group', 'aria-label': t('ctxDayType') });
+  const top = h('div', { class: 'ctx-chips', role: 'group', 'aria-label': t('ctxTopics') });
+  const fill = () => {
+    day.replaceChildren(...Object.entries(DAY_TYPES).map(([k, d]) => chip(tr(d), state.dayType === k, () => { state.dayType = state.dayType === k ? null : k; fill(); })));
+    top.replaceChildren(...Object.entries(TOPICS).map(([k, d]) => chip(tr(d), state.topics.has(k), () => { if (state.topics.has(k)) state.topics.delete(k); else state.topics.add(k); fill(); })));
+  };
+  fill();
+  const det = h('details', { class: 'ctx-pick' },
+    h('summary', {}, t('ctxTitle')),
+    h('p', { class: 'muted ctx-note' }, t('ctxNote')),
+    h('p', { class: 'ctx-label' }, t('ctxDayType')), day,
+    h('p', { class: 'ctx-label' }, t('ctxTopics')), top,
+    h('div', { class: 'ctx-ready-row' }, btn(t('ctxReady'), onReady, 'ghost ctx-ready', { title: t('ctxReadyHint') })));
+  if (state.open) det.open = true;
+  det.addEventListener('toggle', () => { state.open = det.open; });
+  return det;
+}
+
+/** Start screen. Resolves { lang, mode: 'new'|'continue', context: { dayType, topics[] } | null }. */
 export function startScreen() {
   return new Promise((resolve) => {
     hideLoader();
     const m = openModal({ variant: 'screen', className: 'start', label: 'Yawmuk' });
     m.el.classList.add('overlay-start');
+    const ctx = { dayType: null, topics: new Set(), open: false };
+    const chosen = () => (ctx.dayType || ctx.topics.size ? { dayType: ctx.dayType, topics: [...ctx.topics] } : null);
     const render = () => {
       const lang = getLang();
       const langBtn = (l, label) => h('button', { type: 'button', class: `lang-btn${lang === l ? ' active' : ''}`, 'aria-pressed': lang === l ? 'true' : 'false', lang: l, onclick: () => { setLang(l); render(); } }, label);
@@ -33,7 +62,8 @@ export function startScreen() {
             h('div', { class: 'lang-pick', role: 'group', 'aria-label': t('chooseLang') }, langBtn('ar', 'العربية'), langBtn('en', 'English')),
             h('div', { class: 'stack' },
               hasSave() ? btn(t('continue'), () => { m.close(); resolve({ lang: getLang(), mode: 'continue' }); }, 'primary big', { 'data-autofocus': true }) : null,
-              btn(t('newGame'), () => { m.close(); resolve({ lang: getLang(), mode: 'new' }); }, hasSave() ? 'ghost big' : 'primary big', hasSave() ? {} : { 'data-autofocus': true }))), 2),
+              btn(t('newGame'), () => { m.close(); resolve({ lang: getLang(), mode: 'new', context: chosen() }); }, hasSave() ? 'ghost big' : 'primary big', hasSave() ? {} : { 'data-autofocus': true })),
+            contextPicker(ctx, () => { m.close(); resolve({ lang: getLang(), mode: 'new', context: null }); })), 2),
           h('p', { class: 'fine' }, statusBadge('ai_draft')),
           h('button', { type: 'button', class: 'credits-link', onclick: () => creditsScreen() }, t('creditsTitle')))
       ]);
@@ -55,7 +85,7 @@ export function introScreen() {
       p(t('introBody')),
       asList(t('howFlow')),
       h('div', { class: 'notice' }, h('h3', {}, t('disclaimerTitle')),
-        h('ul', { class: 'rc-list' }, ['disc_fiction', 'disc_ai', 'disc_general', 'disc_disagreement'].map((k) => (k in STRINGS ? h('li', {}, t(k)) : null)))),
+        h('ul', { class: 'rc-list' }, ['disc_fiction', 'disc_ai', 'disc_journey', 'disc_general', 'disc_disagreement'].map((k) => (k in STRINGS ? h('li', {}, t(k)) : null)))),
       h('div', { class: 'controls-help' }, h('h3', {}, t('controlsTitle')), asList(isTouch() ? t('ctrlMobile') : t('ctrlDesktop')) || p(t('controlsBody'))),
       h('div', { class: 'row end' }, btn(STRINGS.discAccept ? t('discAccept') : t('iUnderstand'), () => m.close(), 'primary', { 'data-autofocus': true }))
     ]);
@@ -67,15 +97,20 @@ export function locationIntro(loc) {
   return new Promise((resolve) => {
     const m = openModal({ className: 'loc-intro', label: tr(s?.title || LOCATION_TITLES[loc]), onClose: resolve, dismissible: true });
     const n = s?.situations?.length || 0;
-    const idx = LOCATIONS.indexOf(loc);
+    const order = locationOrder();
+    const idx = order.indexOf(loc);
+    const plan = getPlan();
+    const whys = plan && plan.source !== 'default' ? (plan.journey || []).filter((j) => j.id?.startsWith(`${loc}.`) && j.why) : [];
     setContent(m, [
       h('div', { class: 'stop-row' },
-        h('p', { class: 'eyebrow' }, `${t('stopOf')} ${idx + 1}/${LOCATIONS.length}`),
+        h('p', { class: 'eyebrow' }, `${t('stopOf')} ${idx + 1}/${order.length}`),
         s?.time_of_day ? h('span', { class: 'time-chip' }, h('span', { class: 'clock', 'aria-hidden': 'true' }), h('bdi', {}, s.time_of_day)) : null),
-      h('ol', { class: 'stops', 'aria-hidden': 'true' }, LOCATIONS.map((l, j) => h('li', { class: j < idx ? 'past' : j === idx ? 'now' : '' }))),
+      h('ol', { class: 'stops', 'aria-hidden': 'true' }, order.map((l, j) => h('li', { class: j < idx ? 'past' : j === idx ? 'now' : '' }))),
       h('h2', { class: 'loc-title' }, tr(s?.title || LOCATION_TITLES[loc])),
       s?._fixture ? h('span', { class: 'badge fixture' }, t('fixtureBadge')) : null,
       p(tr(s?.intro)),
+      whys.length ? h('div', { class: 'why-here' }, h('p', { class: 'eyebrow' }, t('whyHere'), ' ', h('span', { class: 'badge status draft' }, plan.source === 'ai' ? t('planAi') : t('planDefault'))),
+        h('ul', { class: 'rc-list' }, whys.map((j) => h('li', {}, h('strong', {}, titleOf({ ruling_id: j.id })), ' — ', tr(j.why))))) : null,
       n ? h('p', { class: 'muted' }, `${t('done')}: ${s.situations.filter((x) => isDone(x.key)).length}/${n}`) : p(t('noSituations'), 'muted'),
       h('div', { class: 'row end' }, btn(t('startExploring'), () => m.close(), 'primary', { 'data-autofocus': true }))
     ]);
@@ -114,7 +149,7 @@ export function exitConfirm(loc) {
 export function menuScreen(handlers) {
   const m = openModal({ className: 'menu', label: t('menu'), dismissible: true, onClose: handlers.onClose });
   const render = () => {
-    const rows = LOCATIONS.map((loc) => {
+    const rows = locationOrder().map((loc) => {
       const s = getScript(loc);
       const sits = s?.situations || [];
       const d = sits.filter((x) => isDone(x.key)).length;
@@ -198,6 +233,91 @@ function referralBlock() {
     h('div', { class: 'row' }, link(`https://www.google.com/maps/search/${q}`, t('referralButton'))));
 }
 
+const sitById = (id) => allSituations().find((s) => s.ruling_id === id) || null;
+
+/** One check question rendered as option buttons (no feedback unless reveal). onPick(correct:boolean). */
+function checkItem(sit, i, { reveal, onPick }) {
+  const cq = sit.check_question;
+  let picked = false;
+  const opts = cq.options.map((o, j) => h('button', {
+    type: 'button', class: 'choice m-opt', style: { '--i': j },
+    onclick: () => {
+      if (picked && reveal) return;
+      picked = true;
+      opts.forEach((b, k) => { b.classList.toggle('picked', k === j); b.setAttribute('aria-pressed', k === j ? 'true' : 'false'); });
+      if (reveal) { opts.forEach((b, k) => { b.disabled = true; if (cq.options[k].correct) b.classList.add('correct'); }); if (!o.correct) opts[j].classList.add('wrong'); }
+      onPick(!!o.correct);
+    }
+  }, h('span', { class: 'num', 'aria-hidden': 'true' }, String(j + 1)), h('span', {}, tr(o))));
+  return h('div', { class: 'm-item' }, h('p', { class: 'm-q' }, `${i + 1}. `, tr(cq.q)), h('div', { class: 'choices m-choices', role: 'group', 'aria-label': tr(cq.q) }, opts));
+}
+
+/**
+ * Pre-day understanding check: the check questions of the first planned situations. No answers are revealed.
+ * Resolves { ids, answers:[bool] } or null when skipped.
+ */
+export function preCheckScreen(ids) {
+  const sits = (ids || []).map(sitById).filter((s) => s?.check_question?.options?.length);
+  if (!sits.length) return Promise.resolve(null);
+  return new Promise((resolve) => {
+    const answers = sits.map(() => false);
+    const m = openModal({ className: 'precheck', label: t('preTitle'), onClose: (r) => resolve(r ?? null) });
+    setContent(m, [
+      h('p', { class: 'eyebrow' }, t('gameTitle')),
+      h('h2', {}, t('preTitle')),
+      p(t('preNote'), 'muted'),
+      ...sits.map((s, i) => checkItem(s, i, { reveal: false, onPick: (ok) => { answers[i] = ok; } })),
+      h('div', { class: 'row end wrap' },
+        btn(t('preSkip'), () => m.close(null), 'ghost'),
+        btn(t('preStart'), () => m.close({ ids: sits.map((s) => s.ruling_id), answers }), 'primary', { 'data-autofocus': true }))
+    ]);
+  });
+}
+
+/** End-of-day measurement: re-ask the pre-check, show the gain, "is your next step clear?" (1–5), consent (default OFF). */
+function measureBlock() {
+  const pre = getPre();
+  const plan = getPlan();
+  const sits = (pre?.ids || []).map(sitById).filter((s) => s?.check_question?.options?.length);
+  const post = sits.map(() => null);
+  let clarity = null, consent = false, sent = false;
+  const preN = pre && Array.isArray(pre.answers) ? pre.answers.filter(Boolean).length : null;
+  const result = h('div', { class: 'm-result', 'aria-live': 'polite' });
+  const status = h('p', { class: 'muted m-status', 'aria-live': 'polite' });
+  const allAnswered = () => post.every((x) => x !== null);
+  const maybeSend = async () => {
+    if (!consent || sent || clarity == null || !allAnswered()) return;
+    sent = true;
+    const ok = await sendMetrics({ arm: plan?.source === 'ai' ? 'ai' : 'fixed', completed: allSituations().every((s) => isDone(s.key)), pre: sits.length ? preN : null, post: sits.length ? post.filter(Boolean).length : null, clarity });
+    status.textContent = ok ? t('consentSent') : '';
+  };
+  const showGain = () => {
+    if (!allAnswered()) return;
+    const after = post.filter(Boolean).length, gain = after - (preN ?? 0);
+    result.replaceChildren(
+      h('div', { class: 'm-score' }, h('span', { class: 'muted' }, t('postScore')), h('bdi', { dir: 'ltr' }, `${preN ?? 0}/${sits.length}`)),
+      h('div', { class: 'm-score' }, h('span', { class: 'muted' }, t('postScoreAfter')), h('bdi', { dir: 'ltr' }, `${after}/${sits.length}`)),
+      h('div', { class: `m-score gain${gain > 0 ? ' pos' : ''}` }, h('span', { class: 'muted' }, t('postGain')), h('bdi', { dir: 'ltr' }, `${gain > 0 ? '+' : ''}${gain}`)));
+    maybeSend();
+  };
+  const scale = [1, 2, 3, 4, 5].map((n) => h('button', { type: 'button', class: 'm-scale-btn', role: 'radio', 'aria-checked': 'false', onclick: () => {
+    clarity = n; scale.forEach((b, k) => { b.setAttribute('aria-checked', k === n - 1 ? 'true' : 'false'); b.classList.toggle('on', k === n - 1); }); maybeSend();
+  } }, String(n)));
+  const toggle = h('button', { type: 'button', class: 'm-toggle', role: 'switch', 'aria-checked': 'false', onclick: () => {
+    consent = !consent; toggle.setAttribute('aria-checked', consent ? 'true' : 'false'); toggle.classList.toggle('on', consent); knob.textContent = consent ? t('consentOn') : t('consentOff'); maybeSend();
+  } }, h('span', { class: 'm-toggle-label' }, t('consent')));
+  const knob = h('span', { class: 'm-knob' }, t('consentOff'));
+  toggle.append(knob);
+  const follow = plan?.followup ? sitById(plan.followup) : null;
+  return h('div', { class: 'notice measure' },
+    h('h3', {}, t('measureTitle')),
+    sits.length ? [h('p', { class: 'muted' }, t('postTitle')), sits.map((s, i) => checkItem(s, i, { reveal: true, onPick: (ok) => { post[i] = ok; showGain(); } })), result] : null,
+    h('p', { class: 'm-q' }, t('clarityQ')),
+    h('div', { class: 'm-scale', role: 'radiogroup', 'aria-label': t('clarityQ') }, scale),
+    follow ? h('p', { class: 'm-follow' }, h('span', { class: 'muted' }, `${t('followupLabel')}: `), titleOf(follow)) : null,
+    h('div', { class: 'm-consent' }, toggle, h('p', { class: 'muted small' }, t('consentNote')), status));
+}
+
 /** Final summary. Resolves 'again' | 'back' | 'goto:<location>'. Stores/asks nothing about the player's beliefs.
  * Before all situations are done it is a "progress so far" view (no end-of-week title, no score verdict). */
 export function summaryScreen() {
@@ -222,7 +342,8 @@ export function summaryScreen() {
       learnedList(done),
       nextTopicBlock(sits, (loc) => m.close(`goto:${loc}`)),
       referralBlock(),
-      h('div', { class: 'notice scholar' }, h('h3', {}, t('aboutRulings')), p(t('scholarNote')), p(t('disc_ai'), 'muted')),
+      final ? measureBlock() : null,
+      h('div', { class: 'notice scholar' }, h('h3', {}, t('aboutRulings')), p(t('scholarNote')), p(t('disc_ai'), 'muted'), p(t('disc_journey'), 'muted')),
       h('div', { class: 'row center wrap' },
         btn(t('backToGame'), () => m.close('back'), 'ghost'),
         btn(t('playAgain'), () => m.close('again'), 'primary', { 'data-autofocus': true })))]);

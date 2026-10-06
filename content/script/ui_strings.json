@@ -139,7 +139,16 @@
     "madhhab": {"ar": "مذهب: مدرسة فقهية؛ أشهرها عند أهل السنة أربعة.", "en": "Madhhab: a school of Islamic law; the four best known among Sunni Muslims."},
     "imam": {"ar": "إمام: من يؤم الصلاة ويُرجع إليه في المسجد.", "en": "Imam: the person who leads prayer and serves as a guide at the mosque."},
     "mahr": {"ar": "مهر: هدية واجبة من العريس للعروس، وهي حقها وحدها.", "en": "Mahr: a required gift from the groom to the bride, which belongs to her alone."},
-    "eid": {"ar": "عيد: عيدا المسلمين هما الفطر والأضحى.", "en": "Eid: the two Muslim holidays, Eid al-Fitr and Eid al-Adha."}
+    "eid": {"ar": "عيد: عيدا المسلمين هما الفطر والأضحى.", "en": "Eid: the two Muslim holidays, Eid al-Fitr and Eid al-Adha."},
+    "tawhid": {"ar": "التوحيد (Tawhid): إفراد الله بالربوبية والألوهية (العبادة)، ووصفه بما جاء به الوحي من أسمائه الحسنى وصفاته؛ ولا يُختزل في مجرد الوحدانية العددية.", "en": "Tawhid (Oneness of God): singling out Allah in His lordship, in worship, and in His names and attributes as revealed; it is not reduced to mere numerical oneness."},
+    "sharia": {"ar": "الشريعة: ما شرعه الله لعباده من العقائد والعبادات والأخلاق والمعاملات؛ تُشرح بحسب السياق ولا تُختزل في العقوبات أو القانون الجنائي.", "en": "Sharia (Islamic law and guidance): what Allah has prescribed for people in belief, worship, character and dealings; explained by context and not reduced to penalties or criminal law."},
+    "hadith": {"ar": "الحديث: ما نُقل عن النبي عليه الصلاة والسلام من قول أو فعل أو تقرير ونحو ذلك، مع بيان درجة ثبوته (صحيح، حسن، ضعيف) عند الاستدلال به.", "en": "Hadith: what is reported from the Prophet (peace be upon him) of his words, actions or tacit approvals, cited together with its grade of authenticity (sahih, hasan, da'if)."},
+    "sunnah": {"ar": "السنة: هدي النبي عليه الصلاة والسلام وطريقته، ويُحدَّد المقصود بها بحسب السياق العلمي (قد تعني مصدر التشريع، أو المستحب في الفقه).", "en": "Sunnah: the guidance and way of the Prophet (peace be upon him); its exact meaning depends on the scholarly context (a source of law, or a recommended act in fiqh)."},
+    "fatwa": {"ar": "الفتوى: جواب شرعي يصدره عالم مؤهل في واقعة أو سؤال بعينه، ولا تُساوى بالمعلومة العامة؛ وما في هذه اللعبة معلومات عامة وليس فتوى.", "en": "Fatwa: a religious answer issued by a qualified scholar on a specific case or question; it is not the same as general information. What this game offers is general information, not a fatwa."},
+    "ibadah": {"ar": "العبادة: تشمل أعمال القلب والقول والعمل التي يتقرب بها العبد إلى الله، ولا تُحصر في الشعائر فقط.", "en": "'Ibadah (worship): every act of the heart, word and deed by which a person draws near to Allah; it is not limited to rituals."},
+    "ijtihad": {"ar": "الاجتهاد: بذل العالم المؤهل وسعه في استنباط الحكم الشرعي من أدلته فيما لا نص قاطع فيه؛ ونتيجته قد تختلف من عالم إلى آخر.", "en": "Ijtihad: a qualified scholar's utmost effort to derive a ruling from its evidence where there is no decisive text; its results may differ between scholars."},
+    "khilaf": {"ar": "الخلاف: اختلاف العلماء المعتبر في مسألة اجتهادية بحسب الأدلة؛ وهو اختلاف في الفهم والترجيح، لا تناقض في الدين.", "en": "Khilaf: recognised disagreement among scholars on a matter open to ijtihad; it is a difference in understanding and weighing evidence, not a contradiction in the religion."},
+    "qibla": {"ar": "القبلة: الكعبة المشرفة في مكة، وهي الجهة التي يستقبلها المسلمون في صلاتهم أينما كانوا.", "en": "Qibla: the Ka'bah in Makkah, the direction Muslims face in prayer wherever they are."}
   },
 
   "check": {
@@ -225,6 +234,10 @@
     "disagreement": {
       "ar": "حين يختلف علماء المسلمين نعرض الأقوال بإنصاف، فالمسلمون أنفسهم يتنوعون في التطبيق.",
       "en": "Where Muslim scholars differ, we present the views fairly — Muslims themselves vary in how they practice."
+    },
+    "ai_journey": {
+      "ar": "قد يرتّب الذكاء الاصطناعي محطات يومك ويشرح من مكتبة مواقف وأحكام مراجَعة فقط؛ لا يكتب نصوصاً شرعية ولا يُفتي، وما يعرضه ليس فتوى.",
+      "en": "AI may arrange the stops of your day and explain things only from a reviewed library of situations and rulings; it never writes religious texts, and nothing it shows is a fatwa."
     },
     "accept": {"ar": "فهمت", "en": "I understand"}
   },

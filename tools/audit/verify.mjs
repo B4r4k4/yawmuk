@@ -5,11 +5,15 @@
 // Usage:   node tools/audit/verify.mjs [--json] [--no-cache] [--quiet]
 // Exit:    0 = all checks passed, 1 = at least one FAIL, 2 = network/setup error
 //
-// Qur'an:  every quran[] entry is re-fetched from api.quran.com (uthmani + Sahih International, id 20)
-//          and from api.alquran.cloud (Tanzil quran-uthmani). PASS if text_ar equals quran.com after
-//          removing purely orthographic Qur'anic annotation marks (tatweel, U+06D6–U+06ED, e.g. small
-//          low meem / waqf signs) OR equals Tanzil exactly. Any difference in a letter or haraka = FAIL.
-//          translation_en is compared to Sahih International (punctuation/footnote-insensitive) = FAIL if different.
+// Qur'an:  every quran[] entry is re-fetched from quranenc.com (King Fahd Glorious Qur'an Printing Complex —
+//          the source required by the hackathon's scientific reference package):
+//          https://quranenc.com/api/v1/translation/aya/english_saheeh/{sura}/{aya} returns the Madinah-Mushaf
+//          Uthmani text (arabic_text) and the Complex-reviewed Saheeh International translation.
+//          text_ar must equal arabic_text EXACTLY (NFC; only surrounding whitespace trimmed) = FAIL otherwise.
+//          translation_en must equal the english_saheeh translation with footnote markers "[n]" removed
+//          (punctuation/diacritics-insensitive) = FAIL otherwise. source_url must be quranenc.com/…/english_saheeh/{sura}#{aya}.
+//          Cross-check: the letters (skeleton, no marks) are compared with Tanzil quran-uthmani (api.alquran.cloud);
+//          a mismatch there is a FAIL too (two independent copies of the Mushaf must agree on every letter).
 // Hadith:  six books are checked against fawazahmed0/hadith-api (jsDelivr; same Arabic text as sunnah.com).
 //          - the number must exist in the stated book (Muslim uses the Fuad Abd al-Baqi number)
 //          - text_ar (split on "…"/"...") must be found inside that hadith's text. Two levels:
@@ -17,7 +21,11 @@
 //            (the message tells which level failed).
 //          - if the grade/grader string cites al-Albani, his grade in hadith-api must appear in it (FAIL otherwise)
 //          - Bukhari/Muslim entries must be graded صحيح
-//          - sunnah.com source_url must point to the same book/number
+//          - sunnah.com link (sunnah_url, or source_url) must point to the same book/number
+//          - EVERY shown hadith (any book): grade must be صحيح/حسن (+ variants such as «حسن صحيح», «صحيح لغيره»),
+//            with no ضعيف/منكر/موضوع/مختلف/«رجاله…» wording, and a non-empty grader. Hadith outside the Sahihayn
+//            must carry dorar_url (https://dorar.net/h/…) + dorar_ref (the dorar record: المحدث/المصدر/الرقم/الحكم).
+//          - hadeethenc_url (if present) is re-fetched from the HadeethEnc API: its grade must be صحيح/حسن.
 //          Hadiths outside the six books cannot be checked automatically: they PASS only if listed in
 //          tools/audit/manual_verifications.json with how they were verified by hand; otherwise FAIL.
 import fs from 'node:fs';
@@ -109,6 +117,8 @@ for (const f of files) {
 const manual = fs.existsSync(MANUAL) ? JSON.parse(fs.readFileSync(MANUAL, 'utf8')) : [];
 
 // ---------- Qur'an ----------
+const QURANENC_URL = (s, a) => `https://quranenc.com/en/browse/english_saheeh/${s}#${a}`;
+const stripFootnotes = t => (t || '').replace(/\[\d+\]/g, '').replace(/\s+([,.;:])/g, '$1').replace(/\s{2,}/g, ' ').trim();
 async function checkQuran() {
   const keys = new Map();
   for (const { r } of rulings) for (const q of r.quran || []) {
@@ -117,33 +127,36 @@ async function checkQuran() {
     keys.get(k).push({ id: r.id, q });
   }
   for (const [k, uses] of keys) {
-    let qc, tz;
+    const [sura, aya] = k.split(':');
+    let qe, tz;
     try {
-      qc = await cachedJSON(`qc_${k}.json`, `https://api.quran.com/api/v4/verses/by_key/${k}?translations=20&fields=text_uthmani`);
+      qe = await cachedJSON(`qe_${sura}_${aya}.json`, `https://quranenc.com/api/v1/translation/aya/english_saheeh/${sura}/${aya}`);
       tz = await cachedJSON(`tz_${k}.json`, `https://api.alquran.cloud/v1/ayah/${k}/quran-uthmani`);
     } catch (e) { for (const u of uses) add('FAIL', 'quran-net', u.id, k, `could not fetch: ${e.message}`); continue; }
-    const qcText = qc.verse?.text_uthmani || '';
+    const qeText = nfc(qe.result?.arabic_text || '').trim();
+    const qeTr = stripFootnotes(qe.result?.translation);
     const tzText = tz.data?.text || '';
     const tzSurahName = tz.data?.surah?.name || '';
-    const sahih = qc.verse?.translations?.[0]?.text || '';
     for (const { id, q } of uses) {
-      const ours = nfc(q.text_ar);
+      const ours = nfc(q.text_ar).trim();
       if (!ours) { add('FAIL', 'quran-text', id, k, 'text_ar empty'); continue; }
-      const okQc = normQuranOrtho(ours) === normQuranOrtho(qcText);
-      const okTz = ours === nfc(tzText).trim() || normQuranOrtho(ours) === normQuranOrtho(tzText);
-      if (okQc || okTz) add('PASS', 'quran-text', id, k, okQc ? 'matches quran.com (orthographic marks normalised)' : 'matches Tanzil quran-uthmani');
+      if (ours === qeText) add('PASS', 'quran-text', id, k, 'matches quranenc.com (King Fahd Complex Madinah Mushaf text) exactly');
       else {
-        const d = firstDiff(normQuranOrtho(ours), normQuranOrtho(qcText));
-        add('FAIL', 'quran-text', id, k, `text differs from quran.com at char ${d.at}: ours «${d.ours}» vs «${d.theirs}»`);
+        const d = firstDiff(ours, qeText);
+        add('FAIL', 'quran-text', id, k, `text differs from quranenc.com at char ${d.at}: ours «${d.ours}» vs «${d.theirs}»`);
       }
-      if (q.source_url !== `https://quran.com/${q.surah}/${q.ayah}` && !String(q.source_url || '').startsWith(`https://quran.com/${q.surah}/${q.ayah}`))
-        add('FAIL', 'quran-url', id, k, `source_url ${q.source_url} does not point to ${k}`);
+      // Tanzil spells hamza+alif «ءا» where the Madinah Mushaf has «آ», and api.alquran.cloud prefixes the basmala to ayah 1.
+      const crossSk = t => normSkeleton(t).replace(/ءا/g, 'ا').replace(/^بسم الله الرحمن الرحيم /, '');
+      if (crossSk(ours) === crossSk(tzText)) add('PASS', 'quran-crosscheck', id, k, 'letters match Tanzil quran-uthmani');
+      else add('FAIL', 'quran-crosscheck', id, k, 'letters differ from Tanzil quran-uthmani');
+      if (q.source_url !== QURANENC_URL(q.surah, q.ayah))
+        add('FAIL', 'quran-url', id, k, `source_url ${q.source_url} must be ${QURANENC_URL(q.surah, q.ayah)}`);
       if (q.surah_name_ar && normSkeleton(tzSurahName).replace(/^سورة\s*/, '') !== normSkeleton(q.surah_name_ar).replace(/^سورة\s*/, ''))
         add('FAIL', 'quran-surah-name', id, k, `surah_name_ar «${q.surah_name_ar}» vs «${tzSurahName}»`);
       if (q.translation_en) {
-        if (normEn(q.translation_en) !== normEn(sahih))
-          add('FAIL', 'quran-translation', id, k, `translation_en differs from Sahih International:\n      ours:   ${q.translation_en}\n      sahih:  ${sahih.replace(/<sup[^>]*>.*?<\/sup>/g, '')}`);
-        else add('PASS', 'quran-translation', id, k, 'Sahih International');
+        if (normEn(q.translation_en) !== normEn(qeTr))
+          add('FAIL', 'quran-translation', id, k, `translation_en differs from quranenc english_saheeh:\n      ours:     ${q.translation_en}\n      quranenc: ${qeTr}`);
+        else add('PASS', 'quran-translation', id, k, 'Saheeh International as published by quranenc.com (King Fahd Complex)');
       } else add('WARN', 'quran-translation', id, k, 'translation_en empty');
     }
   }
@@ -160,9 +173,40 @@ async function edition(book) {
 }
 function parseNumber(n) { const m = String(n || '').match(/\d+/); return m ? Number(m[0]) : NaN; }
 
+// Grade whitelist (hackathon reference package: no hadith without an approved source and a صحيح/حسن grade).
+const GRADE_OK = /^(صحيح|حسن)( صحيح| لغيره| بشواهده| الإسناد| بطرقه)*$/;
+const GRADE_BAD = /ضعيف|منكر|موضوع|مختلف|رجاله|شاذ|معلول|مرسل|لا يصح|لم يصح/;
+const SAHIHAYN = c => /^صحيح (البخاري|مسلم)/.test((c || '').trim());
+async function checkHadithMeta(r, h, ref) {
+  const g = (h.grade || '').trim();
+  if (!GRADE_OK.test(g) || GRADE_BAD.test(g)) add('FAIL', 'hadith-grade-whitelist', r.id, ref, `grade «${g}» is not in the صحيح/حسن whitelist — move the hadith to notes_for_reviewer`);
+  else add('PASS', 'hadith-grade-whitelist', r.id, ref, `grade «${g}»`);
+  if (!(h.grader || '').trim()) add('FAIL', 'hadith-grader', r.id, ref, 'grader empty');
+  if (!SAHIHAYN(h.collection)) {
+    if (!/^https:\/\/dorar\.net\/h\/[A-Za-z0-9]+$/.test(h.dorar_url || '')) add('FAIL', 'hadith-dorar', r.id, ref, `outside the Sahihayn: dorar_url (https://dorar.net/h/…) required, got «${h.dorar_url || ''}»`);
+    else if (!/المحدث: .+ \| المصدر: .+ \| الرقم: .+ \| خلاصة حكم المحدث: .+/.test(h.dorar_ref || '')) add('FAIL', 'hadith-dorar', r.id, ref, 'dorar_ref must record المحدث | المصدر | الرقم | خلاصة حكم المحدث');
+    else if (!(h.grader || '').includes((h.dorar_ref.match(/المحدث: ([^|]+?) \|/) || [])[1])) add('FAIL', 'hadith-dorar', r.id, ref, 'grader does not name the muhaddith of the dorar record');
+    else add('PASS', 'hadith-dorar', r.id, ref, `dorar record: ${h.dorar_ref} (${h.dorar_url}) — dorar.net blocks automated clients, so the record is checked structurally; open the link to see it`);
+  }
+  if (h.hadeethenc_url) {
+    const id = (h.hadeethenc_url.match(/^https:\/\/hadeethenc\.com\/(ar|en)\/browse\/hadith\/(\d+)$/) || [])[2];
+    if (!id) { add('FAIL', 'hadith-hadeethenc', r.id, ref, `bad hadeethenc_url ${h.hadeethenc_url}`); return; }
+    try {
+      const he = await cachedJSON(`he_ar_${id}.json`, `https://hadeethenc.com/api/v1/hadeeths/one/?language=ar&id=${id}`);
+      const heSk = normSkeleton(he.hadeeth || '');
+      const words = normSkeleton(h.text_ar).split(' ').filter(w => w.length > 2);
+      const overlap = words.filter(w => heSk.includes(w)).length / Math.max(1, words.length);
+      if (!/^(صحيح|حسن)/.test(he.grade || '')) add('FAIL', 'hadith-hadeethenc', r.id, ref, `HadeethEnc #${id} grade «${he.grade}»`);
+      else if (overlap < 0.6) add('FAIL', 'hadith-hadeethenc', r.id, ref, `HadeethEnc #${id} text does not match (word overlap ${Math.round(overlap * 100)}%)`);
+      else add('PASS', 'hadith-hadeethenc', r.id, ref, `HadeethEnc #${id}: ${he.grade} — ${he.attribution} (word overlap ${Math.round(overlap * 100)}%)`);
+    } catch (e) { add('FAIL', 'hadith-hadeethenc', r.id, ref, `could not fetch HadeethEnc #${id}: ${e.message}`); }
+  }
+}
+
 async function checkHadith() {
   for (const { r } of rulings) for (const h of r.hadith || []) {
     const ref = `${h.collection} ${h.number}`;
+    await checkHadithMeta(r, h, ref);
     const book = BOOKS[(h.collection || '').trim()];
     const text = h.text_ar || '';
     if (!text.trim()) { add('WARN', 'hadith-text', r.id, ref, 'text_ar empty (allowed only if explained in notes_for_reviewer)'); continue; }
@@ -208,13 +252,43 @@ async function checkHadith() {
       add('PASS', 'hadith-grade-info', r.id, ref, 'api grades: ' + best.c.grades.map(g => `${g.name}=${g.grade}`).join('; '));
     }
     // url consistency
-    const urls = String(h.source_url || '').split(/\s*;\s*/).filter(Boolean);
+    const urls = String(h.sunnah_url || h.source_url || '').split(/\s*;\s*/).filter(Boolean);
     const sun = urls.find(u => u.includes('sunnah.com/'));
     if (sun) {
       const m = sun.match(/sunnah\.com\/([a-z]+):(\d+)/);
       if (!m || m[1] !== SUNNAH_SLUG[book] || Number(m[2]) !== num)
         add('FAIL', 'hadith-url', r.id, ref, `first sunnah.com url ${sun} does not match ${book}:${num}`);
     } else if (!urls.length) add('FAIL', 'hadith-url', r.id, ref, 'source_url empty');
+  }
+}
+
+// ---------- content/sources.json registry (also covers records cited only by the Q&A bank, used_in "qa.*") ----------
+// quran records: text.ar must equal quranenc arabic_text exactly, text.en the english_saheeh translation, url the quranenc page.
+// Sahihayn hadith records: text.ar (if given) must be found (letters) in that number of hadith-api's edition.
+async function checkRegistry() {
+  const SRC = path.join(ROOT, 'content', 'sources.json');
+  if (!fs.existsSync(SRC)) return;
+  for (const s of JSON.parse(fs.readFileSync(SRC, 'utf8'))) {
+    if (s.type === 'quran') {
+      const [, sura, aya] = s.id.split(':');
+      let qe;
+      try { qe = (await cachedJSON(`qe_${sura}_${aya}.json`, `https://quranenc.com/api/v1/translation/aya/english_saheeh/${sura}/${aya}`)).result; }
+      catch (e) { add('FAIL', 'registry-quran', 'sources.json', s.id, `could not fetch: ${e.message}`); continue; }
+      const bad = [];
+      if (nfc(s.text?.ar || '').trim() !== nfc(qe.arabic_text).trim()) bad.push('text.ar differs from quranenc');
+      if (s.text?.en && normEn(s.text.en) !== normEn(stripFootnotes(qe.translation))) bad.push('text.en differs from quranenc english_saheeh');
+      if (s.url !== QURANENC_URL(sura, aya)) bad.push(`url must be ${QURANENC_URL(sura, aya)}`);
+      add(bad.length ? 'FAIL' : 'PASS', 'registry-quran', 'sources.json', s.id, bad.join('; ') || 'matches quranenc.com (King Fahd Complex)');
+    } else if (s.type === 'hadith' && /^hadith:صحيح-(البخاري|مسلم):\d+$/.test(s.id) && s.text?.ar) {
+      const book = /البخاري/.test(s.id) ? 'bukhari' : 'muslim';
+      const num = Number(s.id.split(':')[2]);
+      let hs;
+      try { hs = await edition(book); } catch (e) { add('FAIL', 'registry-hadith', 'sources.json', s.id, e.message); continue; }
+      const cands = book === 'muslim' ? hs.filter(x => Math.floor(parseFloat(x.arabicnumber)) === num) : hs.filter(x => Number(x.hadithnumber) === num);
+      const ok = cands.some(c => segments(s.text.ar).every(seg => normSkeleton(c.text).includes(normSkeleton(seg))));
+      add(ok ? 'PASS' : 'FAIL', 'registry-hadith', 'sources.json', s.id, ok ? `text found in ${book} #${num}` : `text not found in ${book} #${num}`);
+      if (!/^(صحيح|حسن)/.test(s.grade || '') || !(s.grader || '').trim()) add('FAIL', 'registry-hadith', 'sources.json', s.id, 'grade/grader missing or not صحيح/حسن');
+    }
   }
 }
 
@@ -250,6 +324,7 @@ function checkQuotes() {
 try {
   await checkQuran();
   await checkHadith();
+  await checkRegistry();
   checkNoScripture();
   checkQuotes();
 } catch (e) { console.error('setup/network error:', e); process.exit(2); }
