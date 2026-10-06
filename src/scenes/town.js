@@ -4,7 +4,7 @@
 // at that building's door. Procedural geometry only, merged per material (see home/batch.js): 5 draw calls of
 // static geometry + a few background people.
 // Look: the golden-hour key art (public/brand/imagery/keyart-town-golden-hour.jpg) — round-canopy trees (some
-// autumn), cypresses by the mosque, black lanterns, flower beds, a playground + flag at the college, warm windows.
+// autumn), cypresses by the mosque, black lanterns, flower beds, a playground at the college, warm windows.
 // The sky, hills, sea and the suburb beyond the hedges are a separate `backdrop` (never part of the walkable bounds).
 import { createBatcher } from './home/batch.js';
 import { createGoldenSky, rng } from '../engine/goldenSky.js';
@@ -56,7 +56,7 @@ const FLOWERS = ['#e8607a', '#f6f1e6', '#f3c24f', '#d8485c', '#b27fc9', '#f6a1b3
 
 export default {
   id: 'town',
-  title: { ar: 'الحيّ', en: 'The neighbourhood' },
+  title: { ar: 'حيّ السلام', en: 'Al-Salam neighbourhood' },
   featureSpots: FEATURE_SPOTS,
 
   build(ctx) {
@@ -153,7 +153,7 @@ export default {
       B.vc.ico(i % 3 === 0 ? tint('#4f8a3a') : tint(pick(FLOWERS)), i % 3 === 0 ? 0.22 : 0.13, Math.cos(a) * r, 0.18, Math.sin(a) * r);
     }
     col(-1.7, -1.7, 1.7, 1.7, 1);
-    label({ ar: 'حيّ آدم', en: "Adam's neighbourhood" }, [0, 3.0, 0], { size: 0.42, background: 'rgba(14,38,40,0.75)' });
+    label({ ar: 'حيّ السلام', en: 'Al-Salam neighbourhood' }, [0, 3.0, 0], { size: 0.42, background: 'rgba(14,38,40,0.75)' });
 
     // edge hedges (soft boundary of the map): a box base with bushy tops
     for (const s of [-1, 1]) {
@@ -256,25 +256,6 @@ export default {
         V.cyl('#2d2d2d', 0.04, 0.04, 0.45, b.x, b.h - 1.3, L.zFace + L.f * 0.1, 6);
         windows(b, L, { rows: 2, y0: 1.7, rowH: 2.9, cols: 4, frame: '#f6f1e7' });
         door(b, L, { color: '#30424f' });
-        // flag pole with the US flag (stripes ripple a little; canton + stars on the street side)
-        const px = b.x - b.w / 2 - 0.6, pz = L.zFace + L.f * 1.2;
-        V.fcyl('#d9dde0', 0.05, 0.07, 7.2, px, 0, pz, 8);
-        V.fcyl('#9aa0a6', 0.2, 0.24, 0.3, px, 0, pz, 10);
-        V.sph('#d8b54e', 0.1, px, 7.28, pz);
-        const FW = 1.7, FH = 0.9, top = 7.0, NC = 6;
-        for (let j = 0; j < NC; j++) {
-          const x0 = px + 0.06 + (j + 0.5) * FW / NC;
-          const wz = pz + Math.sin(j * 1.15) * 0.05 * (j / NC);
-          for (let i = 0; i < 7; i++) {
-            if (j < 3 && i < 4) continue;
-            V.box(i % 2 ? '#f4f1ea' : '#b8303a', FW / NC + 0.004, FH / 7, 0.025, x0, top - (i + 0.5) * FH / 7, wz);
-          }
-          if (j < 3) {
-            V.box('#2e3a6e', FW / NC + 0.004, FH * 4 / 7, 0.03, x0, top - FH * 2 / 7, wz);
-            for (let k = 0; k < 2; k++) V.ico('#ffffff', 0.025, x0 + (k - 0.5) * 0.12, top - 0.12 - k * 0.22, wz + L.f * 0.02);
-          }
-        }
-        col(b.x - b.w / 2 - 0.75, L.zFace + L.f * 1.05, b.x - b.w / 2 - 0.45, L.zFace + L.f * 1.35);
         facadeBed(L, b.x - b.w / 2 + 0.2, b.x - 2.0);
         facadeBed(L, b.x + 2.0, b.x + b.w / 2 - 0.2);
       } else if (b.kind === 'mosque') {
