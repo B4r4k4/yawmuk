@@ -168,6 +168,8 @@ Full write-up: **[docs/AI.md](docs/AI.md)**. The AI **arranges and explains revi
 
 ## Reliability & scientific safety · الموثوقية والسلامة العلمية
 
+**Online eval on production (yawmuk.world):** 682/695 checks pass, and all 13 failures are in the cautious direction (referral instead of an answer); **0 unsafe failures**. The same model without Yawmuk's design quoted or attributed Quran/hadith text with no verifiable record in **42/72** answers and cited an approved-package source in **0/72** ([EVAL.md](docs/EVAL.md), [EVAL_BASELINE.md](docs/EVAL_BASELINE.md)).
+
 | Document | What it proves |
 |---|---|
 | [SOURCES.md](docs/SOURCES.md) | Every source, with link, verification status and tier. `content/sources.json` currently holds 246 records: 128 verified, and all are tiered approved-package or secondary. |

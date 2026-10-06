@@ -19,7 +19,7 @@ const EN = {
   fPlacesN: '8 places', fPlaces: 'in one neighbourhood you walk through',
   fQuoteAv: 'E', fQuoteWho: 'Event hall · ruling card', fQuote: 'Company Party: A Table Where Alcohol Is Served',
   fMosque: 'The mosque · recitation & translated meanings', fVoice: 'By voice or by text',
-  fSourcesLbl: 'verified references in the source base',
+  fSourcesLbl: 'cited references in the source base',
   sourcesTitle: 'Every religious text is quoted word for word from its source, with its citation',
   src1: 'Madinah Mushaf · King Fahd Complex', src2: 'Translated Quran Encyclopedia · QuranEnc', src3: 'Dorar.net',
   src4: 'Encyclopedia of Translated Hadiths · HadeethEnc', src5: 'International Islamic Fiqh Academy', src6: 'Assembly of Muslim Jurists of America · AMJA',
