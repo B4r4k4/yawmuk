@@ -1,39 +1,94 @@
-# «يومك» Yawmuk: demo video shot list (≤ 115 seconds) · سيناريو الفيديو
+<div dir="rtl">
 
-> **Hard limit: 2:00** (participant guide). We aim for **1:55 (115 s)** to leave a margin. Record from the **live Cloud Run deployment** at 1920×1080 in Chrome, with the Arabic UI by default and English subtitles. Use one Arabic voice-over. Cut every loading wait. Keep the cursor slow.
->
-> **Before recording:** use a fresh browser profile (no saved progress). Check that `ANTHROPIC_API_KEY` is live (the guide answers with "AI answer from reviewed material"). Allow microphone access for the site. Set graphics to "high". Log into `/experts` in a **second tab**, and never show the passcode on screen. Submit nothing personal.
->
-> **Honesty rules for the edit:** every screen is a real capture of the live build, with no mock-ups of our own product. Do not speed up AI answers without a visible "⏩" mark. Do not show numbers on `/results.html` unless they are real (it may say "insufficient data", which is fine to show). Keep the closing disclaimer.
+# «يومك»: سيناريو الفيديو التعريفي (1:55)
 
-| # | Time | Seconds | On screen (exact action) | Voice-over (AR) | Subtitle (EN) |
+> **الهدف:** فيديو تسويقي مقنع يشرح الفكرة للجنة التحكيم في أقل من دقيقتين: قصة، ثم مشكلة، ثم الفكرة، ثم المنتج، ثم سبب الثقة به، ثم الدعوة إلى التجربة.
+> **الحد الأقصى دقيقتان** (دليل المشارك). المدة المستهدفة **1:55**.
+> **الأسلوب:** تعليق صوتي عربي هادئ وواثق، ولقطات حقيقية من اللعبة على https://yawmuk.world (1920×1080، Chrome، الواجهة بالعربية)، وبطاقات نصية قصيرة بهوية اللعبة (كحلي ونحاسي، خط IBM Plex Sans Arabic)، وترجمة إنجليزية أسفل الشاشة.
+
+## لماذا هذا الترتيب؟ (ربط بمعايير التحكيم)
+
+| المقطع | المعيار الذي يخدمه |
+|---|---|
+| القصة والمشكلة (1–2) | وضوح العرض، والقيمة المضافة: لماذا نحتاج الحل أصلاً |
+| الفكرة والتجربة (3–5) | الابتكار، وتجربة المستفيد، ومعيار المسار 3: فهم المفهوم بالمعايشة |
+| ترتيب الرحلة بالذكاء الاصطناعي (6) | توظيف الذكاء الاصطناعي (25%)، ومعيار المسار 3: «ملاءمة المحتوى وتسلسله» مع الخصوصية |
+| المرشد يمتنع ويحيل (7–8) | الموثوقية والسلامة العلمية (15%): كشف حدود المعرفة، والمراجعة البشرية |
+| الإثبات (9) | قياس النفع (20%)، والإتاحة |
+| الرؤية والدعوة (10–11) | واقعية الاستمرار، والتفريق بين المنجَز والمخطَّط |
+
+## النص الكامل
+
+| # | الوقت | ث | على الشاشة | التعليق الصوتي | الترجمة الإنجليزية |
 |---|---|---|---|---|---|
-| 1 | 0:00–0:08 | 8 | Logo → `?scene=town&nointro=1`: Adam walks out of his house into the neighbourhood; doors labelled Mosque, Bank, School, Work. | «يومك»: يومٌ واحد في حيٍّ واحد، تخرج فيه من بيتك إلى عملك ومدرستك ومسجدك. | Yawmuk: one day, one neighbourhood: from your home to work, school and the mosque. |
-| 2 | 0:08–0:22 | 14 | Walk into the mosque. The HUD prayer widget counts down; press **E** at the prayer board → the day's five times → «استماع للأذان / Play the adhan». (If a real prayer time falls during recording, capture the automatic adhan banner instead.) | مواقيت الصلاة تُحسب على جهازك، ويُرفع الأذان في وقته. | Prayer times are computed on your device, and the adhan plays on time. |
-| 3 | 0:22–0:34 | 12 | Press **E** at the Quran stand → Al-Fatiha with translation of meanings; tap an ayah; recitation plays; zoom on the source line (KFGQPC / quranenc.com). | المصحف المرتّل مع ترجمة المعاني، والنص من مجمع الملك فهد، ولا يُكتب منه حرفٌ بالذكاء الاصطناعي. | Recited Quran with translation of meanings; the text is from the King Fahd Complex, and AI writes none of it. |
-| 4 | 0:34–0:44 | 10 | Walk to the bank → **E** at the advisor desk → murabaha card, then the zakat calculator with typed amounts. | وفي البنك: عقود التمويل الإسلامي، كل قول منسوب إلى جهته، وحاسبة للزكاة. | At the bank: Islamic finance contracts, each position attributed, and a zakat calculator. |
-| 5 | 0:44–0:58 | 14 | `?scene=home`: Omar declines an interest loan → Adam's choice → **ruling card**: plain words, verbatim Quran with link, hadith with number + grade, four madhhabs. | كل موقف ينتهي ببطاقة حكم: آيات وأحاديث بنصها الموثّق ورقمها ودرجتها، والمذاهب الأربعة جنباً إلى جنب. | Each situation ends with a ruling card: verified Quran and hadith with number and grade, and the four madhhabs side by side. |
-| 6 | 0:58–1:14 | 16 | Press **؟ Ask** → 🎤 and say aloud *"لماذا يتجنب المسلمون الفائدة؟"* → the transcript appears → the answer with its cited passages, read aloud by the browser. | اسأل بصوتك. يجيب المرشد من المصادر المراجَعة وحدها، ويُريك ما اعتمد عليه. | Ask by voice. The guide answers only from reviewed sources and shows what it relied on. |
-| 7 | 1:14–1:26 | 12 | Type *"My wife and I want to take a mortgage in Ohio, is it okay for us?"* → no AI answer → fixed referral → **«Ask a scholar»** → submit → ticket code. | أما سؤالك عن حالتك الخاصة فلا يُفتي فيه الذكاء الاصطناعي، بل يُحال إلى أهل العلم. | A question about your own case is never answered by AI. It goes to qualified scholars. |
-| 8 | 1:26–1:40 | 14 | Second tab `/experts`: the question arrives with level د and related cards → the scholar writes an answer with a source → Save → back in the game, the ticket shows the answer and the reviewer's name. | في لوحة المراجعة يجيب العالم بنفسه ومع المصدر، ويعود الجواب إلى السائل. | In the review dashboard a scholar answers, with sources, and the answer returns to the player. |
-| 9 | 1:40–1:48 | 8 | `/results.html` (real live aggregates or "insufficient data"), then a terminal flash of `npm test` passing. | ونقيس الأثر بتجربة اختيارية قبل اللعب وبعده، ونختبر كل حالة حرجة آلياً. | We measure the benefit with an opt-in pre/post study and test every critical case automatically. |
-| 10 | 1:48–1:55 | 7 | Closing card: logo · {{LIVE_URL}} · github.com/B4r4k4/yawmuk · *"AI-prepared drafts pending scholarly review. Not a fatwa."* | «يومك»: تعرَّف على الإسلام في يومك. | Yawmuk: discover Islam in your day. |
-| | **Total** | **115** | | | |
+| 1 | 0:00–0:10 | 10 | **القصة.** لقطات من اللعبة: آدم في حيّه في أوهايو، ثم مشهد البيت (عمر يرفض القرض الربوي)، ثم حفلة الشركة ومائدة الخمر. | آدم مهندسٌ جديد في أوهايو. جارُه عمر يرفض قرضاً بفائدة، وزميلُه يعتذر عن الخمر. | Adam is a new engineer in Ohio. His neighbour Omar turns down an interest-based loan, and a colleague declines the drinks. |
+| 2 | 0:10–0:21 | 11 | **المشكلة.** بطاقات نصية سريعة متراكمة (تصميم عام بلا شعار أي منتج حقيقي): «فتوى طويلة» · «مقطع بلا مصدر» · فقاعة محادثة فيها «حديث» عليه ختم أحمر: «لا أصل له». | فيسأل: لماذا؟ فيجد فتاوى طويلة، ومقاطع بلا مصدر، وروبوتَ محادثةٍ قد يخترع حديثاً لم يُقَل. | He asks why, and finds long fatwas, unsourced clips, and a chatbot that may invent a hadith. |
+| 3 | 0:21–0:31 | 10 | **الفكرة.** شاشة سوداء ← ظهور شعار «يومك» ← آدم يفتح باب بيته ويخرج إلى الحي (`?scene=town&nointro=1`). | ماذا لو تعلّم الإسلام بأن يعيش الموقف بنفسه؟ هذا هو «يومك». | What if he could learn about Islam by living it? This is Yawmuk. |
+| 4 | 0:31–0:43 | 12 | **التجربة.** قطعات سريعة: الأبواب (البيت، العمل، المدرسة، المسجد، البنك) ← حوار ← أزرار الاختيار ← لوحة مواقيت الصلاة ← «استماع للأذان». **آخر ثانيتين: الأذان وحده بلا تعليق.** | يومٌ كامل في حيٍّ ثلاثي الأبعاد: البيت والعمل والمسجد والبنك. يرى الموقف ويختار، ويسمع الأذان في وقته. | A whole day in a 3D neighbourhood: home, work, mosque and bank. He sees the situation, makes a choice, and hears the adhan on time. |
+| 5 | 0:43–0:55 | 12 | **الدليل.** بطاقة الحكم بعد موقف القرض: الخلاصة بكلمات بسيطة ← الآية بنصها ← الحديث برقمه ودرجته ← المذاهب الأربعة ← «متى تسأل عالماً». | وبعد كل موقف بطاقةُ حكم: الآيةُ والحديثُ بنصّهما الموثّق، والمذاهبُ الأربعة جنباً إلى جنب، ومتى يسأل عالماً. | After every situation, a ruling card: verified Quran and hadith text, the four madhhabs side by side, and when to ask a scholar. |
+| 6 | 0:55–1:05 | 10 | **الذكاء الاصطناعي يرتّب الرحلة.** شاشة البداية ← «خصّص يومك (اختياري)» ← «عطلة نهاية الأسبوع» + «المال» ← بطاقة «لماذا هذه المحطة الآن؟» بشارة «رتّبها الذكاء الاصطناعي من مكتبة مراجَعة». | والذكاء الاصطناعي يرتّب رحلته حسب اهتمامه، دون حسابٍ ودون سؤالٍ عن معتقده. | AI arranges his journey around his interests, with no account and no question about his beliefs. |
+| 7 | 1:05–1:21 | 16 | **المرشد.** زر «اسأل» ← 🎤 «لماذا يتجنب المسلمون الفائدة؟» ← الجواب مع المقاطع التي اعتمد عليها ← ثم سؤال مكتوب: «أنا وزوجتي نريد أخذ قرض عقاري في أوهايو، هل يجوز لنا؟» ← «يبدو أن سؤالك عن حالة شخصية…» ← «اسأل أهل العلم». | وحين يسأل بصوته، يجيبه المرشد من المصادر المراجَعة وحدها، ويُريه الدليل. فإن لم يجد امتنع، وإن سأل عن حالته الخاصة أحاله إلى أهل العلم. | When he asks by voice, the guide answers from reviewed sources only, and shows the evidence. If it finds nothing, it declines; if he asks about his own case, it refers him to scholars. |
+| 8 | 1:21–1:29 | 8 | **الشعار.** بطاقة كبيرة: «ذكاءٌ اصطناعي يعرف حدوده» ← لوحة `/experts`: السؤال بمستوى «د» ← الجواب يعود في التذكرة (ملصق صغير: «إجابة تجريبية للعرض»). | ذكاءٌ اصطناعي يعرف حدوده… ولوحةٌ يجيب منها أهل العلم. | AI that knows its limits… and a dashboard where scholars answer. |
+| 9 | 1:29–1:43 | 14 | **الإثبات.** المصحف مع سطر المصدر (مجمع الملك فهد) ← بطاقات: «كل آية وحديث مطابَق لمصدره حرفاً بحرف» · «قياس الفهم قبل اللعب وبعده» · «عربي · English · حاسوب وجوال · بلا تثبيت» ← لقطة حقيقية من الجوال. | لا يكتب الذكاء الاصطناعي حرفاً من القرآن أو الحديث؛ كل نصٍّ مطابَقٌ لمصدره. ونقيس الفهم قبل اللعب وبعده، على المتصفح والجوال، بالعربية والإنجليزية. | AI writes no letter of Quran or hadith: every text matches its source. We measure understanding before and after play, in the browser and on phones, in Arabic and English. |
+| 10 | 1:43–1:50 | 7 | **الرؤية.** شاشة نهاية اليوم في اللعبة مع «موضوع مقترح للتعرّف عليه بعد ذلك»، وبطاقة: «اليوم: 18 موقفاً · لاحقاً: رمضان، الصلاة، الزكاة». | اليوم ثمانية عشر موقفاً، وغداً: رمضان والصلاة والزكاة. | Today, eighteen situations. Next: Ramadan, prayer and zakat. |
+| 11 | 1:50–1:55 | 5 | **الدعوة.** بطاقة الختام: الشعار · «جرّبه الآن» · https://yawmuk.world · المسار 03 · فريق Lemonada · سطر صغير: «الأحكام مسودّات أعدّها الذكاء الاصطناعي بانتظار مراجعة أهل العلم · ليست فتوى». | «يومك»… تعرَّف على الإسلام في يومك. | Yawmuk: discover Islam in your day. |
+| | **المجموع** | **115** | | | |
 
-## Capture checklist
+## التعليق الصوتي وحده (للتسجيل)
 
-- [ ] Town walk-out from the house (AR UI)
-- [ ] Mosque: prayer widget + prayer board + adhan ("Play the adhan", or the automatic banner at a real prayer time) + Quran panel (ayah tap + recitation + source line)
-- [ ] Bank: advisor card + zakat calculator
-- [ ] Home: dialogue → choice → ruling card (Quran, hadith, madhhabs)
-- [ ] Voice question (microphone indicator visible), answer with cited passages
-- [ ] Personal question → referral → «Ask a scholar» submit → ticket
-- [ ] `/experts` (passcode **off-screen**): question with level د → answer with source → ticket shows answer
-- [ ] `/results.html` and `npm test` summary
-- [ ] Closing card with the disclaimer
+١. آدم مهندسٌ جديد في أوهايو. جارُه عمر يرفض قرضاً بفائدة، وزميلُه يعتذر عن الخمر.
 
-## Notes
+٢. فيسأل: لماذا؟ فيجد فتاوى طويلة، ومقاطع بلا مصدر، وروبوتَ محادثةٍ قد يخترع حديثاً لم يُقَل.
 
-- Do not show API keys, the Cloud Run console, the Secret Manager page, the dashboard passcode, browser bookmarks or anyone's personal data.
-- Music: none, or a CC0 instrumental credited in the README. Do not put music under the adhan or the Quran recitation.
-- If a live AI call is slow on the day, re-take it. Do not fake it. If the provider is down, the game's fallback (the reviewed passage shown verbatim) is an honest alternative take.
+٣. ماذا لو تعلّم الإسلام بأن يعيش الموقف بنفسه؟ هذا هو «يومك».
+
+٤. يومٌ كامل في حيٍّ ثلاثي الأبعاد: البيت والعمل والمسجد والبنك. يرى الموقف ويختار، ويسمع الأذان في وقته.
+
+٥. وبعد كل موقف بطاقةُ حكم: الآيةُ والحديثُ بنصّهما الموثّق، والمذاهبُ الأربعة جنباً إلى جنب، ومتى يسأل عالماً.
+
+٦. والذكاء الاصطناعي يرتّب رحلته حسب اهتمامه، دون حسابٍ ودون سؤالٍ عن معتقده.
+
+٧. وحين يسأل بصوته، يجيبه المرشد من المصادر المراجَعة وحدها، ويُريه الدليل. فإن لم يجد امتنع، وإن سأل عن حالته الخاصة أحاله إلى أهل العلم.
+
+٨. ذكاءٌ اصطناعي يعرف حدوده… ولوحةٌ يجيب منها أهل العلم.
+
+٩. لا يكتب الذكاء الاصطناعي حرفاً من القرآن أو الحديث؛ كل نصٍّ مطابَقٌ لمصدره. ونقيس الفهم قبل اللعب وبعده، على المتصفح والجوال، بالعربية والإنجليزية.
+
+١٠. اليوم ثمانية عشر موقفاً، وغداً: رمضان والصلاة والزكاة.
+
+١١. «يومك»… تعرَّف على الإسلام في يومك.
+
+(155 كلمة: نحو 85 إلى 95 ثانية من الكلام بإيقاع هادئ، ومعها ثانيتا الأذان وتوقّفان قصيران قبل «هذا هو يومك» وقبل «ذكاءٌ اصطناعي يعرف حدوده»، فيبقى المجموع تحت 1:50.)
+
+## الصوت
+
+- **لا موسيقى فوق الأذان ولا فوق التلاوة، ولا كلام فوقهما.** في المقطع 4 يُسمع الأذان وحده آخر ثانيتين.
+- يُفضَّل الاستغناء عن الموسيقى كلياً، والاكتفاء بأصوات اللعبة (الحي، الخطوات، الأبواب) ومؤثرات انتقال خفيفة. وإن استُخدمت خلفية صوتية فلتكن CC0 بلا آلات إيقاعية، ويُذكر مصدرها في README.
+
+## قواعد الصدق في المونتاج
+
+- كل لقطة من منتجنا لقطة حقيقية من النسخة المباشرة. البطاقات النصية مسموحة، أما الشاشات المصمَّمة التي تدّعي أنها من اللعبة فلا.
+- المقطع 2: تصميم عام لفقاعة المحادثة، بلا اسم أو شعار أي منتج حقيقي.
+- اترك شارة «أعدّه الذكاء الاصطناعي — لم يراجعه عالم» ظاهرة حيث تظهر على البطاقات.
+- المقطع 6: إن ظهرت شارة الترتيب الافتراضي بدل «رتّبها الذكاء الاصطناعي…» فأعد اللقطة. البطاقة تظهر عند دخول أول باب تقترحه الرحلة، لا فور البدء، وتُسجَّل من شاشة البداية بلا `nointro`.
+- المقطع 8: من يكتب الجواب في اللوحة عضو في الفريق، لذلك يبقى ملصق «إجابة تجريبية للعرض».
+- المقطع 9: «نقيس الفهم» تصف آلية موجودة (`?study=1` و`/results.html`). لا تعرض أي رقم نتائج إلا إن كان حقيقياً.
+- إن سُرّع جواب الذكاء الاصطناعي فضع علامة «⏩» ظاهرة.
+- لا تُظهر مفاتيح أو لوحة Cloud Run أو كلمة مرور اللوحة أو بيانات أي شخص.
+
+## قائمة اللقطات المطلوبة
+
+- [ ] آدم في الحي، ثم خروجه من باب البيت (`?scene=town&nointro=1`)
+- [ ] مشهد البيت: عمر والقرض ← الاختيار ← بطاقة الحكم كاملة (`?scene=home&nointro=1`)
+- [ ] حفلة الشركة ومائدة الخمر
+- [ ] الأبواب الخمسة، وحوار، وأزرار اختيار
+- [ ] المسجد: لوحة المواقيت ← الأذان، والمصحف مع سطر المصدر
+- [ ] «خصّص يومك» ← بطاقة «لماذا هذه المحطة الآن؟» بشارة الذكاء الاصطناعي (ملف تعريف جديد)
+- [ ] سؤال صوتي (مؤشر الميكروفون ظاهر) ← جواب مع المقاطع
+- [ ] سؤال شخصي ← الرسالة الثابتة ← «اسأل أهل العلم» ← رقم المتابعة
+- [ ] `/experts` (كلمة المرور خارج الكاميرا): السؤال بمستوى «د» ← الجواب في التذكرة
+- [ ] اللعبة على الجوال (تسجيل شاشة حقيقي)
+- [ ] شاشة نهاية اليوم مع الموضوع المقترح
+- [ ] البطاقات النصية: المشكلة، والشعار، والإثبات، والختام
+
+</div>

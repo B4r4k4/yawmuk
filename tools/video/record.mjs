@@ -37,6 +37,7 @@ const CHROME = process.env.CHROME_PATH || '/Applications/Google Chrome.app/Conte
 const FFMPEG = process.env.FFMPEG || '/opt/homebrew/bin/ffmpeg';
 const FFPROBE = FFMPEG.replace(/ffmpeg$/, 'ffprobe');
 const PASS = process.env.EXPERTS_PASSCODE || '';
+const TOWN_DOOR = args['town-door'] || 'bank'; // the door Adam walks toward in the opening shot
 const ONLY = args.only ? String(args.only).split(',') : null;
 const W = 1920, H = 1080, FPS = 30;
 const HARD_LIMIT = 120;
@@ -53,7 +54,8 @@ const browser = await puppeteer.launch({
   headless: args.headful ? false : 'new',
   defaultViewport: { width: W, height: H, deviceScaleFactor: 1 },
   args: ['--use-angle=metal', '--enable-gpu', '--ignore-gpu-blocklist', '--autoplay-policy=no-user-gesture-required',
-    '--no-first-run', `--window-size=${W},${H}`, '--hide-scrollbars', '--lang=ar']
+    '--no-first-run', `--window-size=${W},${H}`, '--hide-scrollbars', '--lang=ar',
+    '--disable-background-timer-throttling', '--disable-renderer-backgrounding', '--disable-backgrounding-occluded-windows']
 });
 const page = (await browser.pages())[0] || await browser.newPage();
 await page.setViewport({ width: W, height: H, deviceScaleFactor: 1 });
@@ -109,18 +111,19 @@ const FONT_CSS = `@import url('https://fonts.googleapis.com/css2?family=Noto+Nas
 const capPage = await browser.newPage();
 await capPage.setViewport({ width: W, height: H, deviceScaleFactor: 1 });
 async function renderHtml(html, file, transparent) {
-  await capPage.setContent(html, { waitUntil: 'networkidle0', timeout: 30000 }).catch(() => {});
-  await capPage.evaluate(() => document.fonts?.ready);
+  await capPage.setContent(html, { waitUntil: 'load', timeout: 15000 }).catch(() => {});
+  await capPage.evaluate(() => Promise.race([document.fonts?.ready, new Promise((r) => setTimeout(r, 4000))]));
+  await sleep(150);
   await capPage.screenshot({ path: file, omitBackground: !!transparent });
 }
-async function captionPng(text, en, file) {
+async function captionPng(text, en, file, top = false) {
   await renderHtml(`<!doctype html><html dir="rtl"><head><meta charset="utf-8"><style>${FONT_CSS}
     html,body{margin:0;width:${W}px;height:${H}px;background:transparent;overflow:hidden}
-    .cap{position:absolute;left:50%;bottom:54px;transform:translateX(-50%);max-width:1500px;box-sizing:border-box;
+    .cap{position:absolute;left:50%;${top ? 'top:96px' : 'bottom:40px'};transform:translateX(-50%);max-width:1500px;box-sizing:border-box;
       background:rgba(10,22,30,.82);color:#fff;border-radius:22px;padding:18px 40px 20px;text-align:center;
       box-shadow:0 8px 30px rgba(0,0,0,.35);border:2px solid rgba(232,190,92,.55)}
-    .ar{font:700 46px/1.5 'Noto Naskh Arabic','Geeza Pro',serif}
-    .en{font:500 26px/1.35 -apple-system,'Helvetica Neue',Arial,sans-serif;color:#e8d9a8;direction:ltr;margin-top:4px}
+    .ar{font:700 40px/1.5 'Noto Naskh Arabic','Geeza Pro',serif}
+    .en{font:500 24px/1.35 -apple-system,'Helvetica Neue',Arial,sans-serif;color:#e8d9a8;direction:ltr;margin-top:4px}
     </style></head><body><div class="cap"><div class="ar">${text}</div>${en ? `<div class="en">${en}</div>` : ''}</div></body></html>`, file, true);
 }
 const CARD_CSS = `${FONT_CSS}
@@ -170,13 +173,13 @@ async function openFeature(name, extra = {}) {
 }
 async function closeAll() { for (let i = 0; i < 3; i++) { await page.keyboard.press('Escape'); await sleep(250); } }
 /** Smooth-move the mouse to the centre of the first visible element matching sel (+ optional text) and click it. */
-async function clickEl(sel, text = null, { scope = 'document' } = {}) {
-  const r = await page.evaluate((s, t) => {
+async function clickEl(sel, text = null, { last = false } = {}) {
+  const r = await page.evaluate((s, t, l) => {
     const els = [...document.querySelectorAll(s)].filter((e) => e.offsetParent !== null && !e.disabled && (!t || e.textContent.includes(t)));
-    const e = els[0]; if (!e) return null;
+    const e = l ? els.at(-1) : els[0]; if (!e) return null;
     e.scrollIntoView({ block: 'center', inline: 'nearest' });
     const b = e.getBoundingClientRect(); return { x: b.left + b.width / 2, y: b.top + b.height / 2 };
-  }, sel, text);
+  }, sel, text, last);
   if (!r) throw new Error(`no element ${sel}${text ? ` "${text}"` : ''}`);
   await page.mouse.move(r.x, r.y, { steps: 12 });
   await sleep(150);
@@ -198,13 +201,18 @@ async function scrollIn(sel, px, steps = 10, delay = 60) {
 // ------------------------------------------------------------------ the shot list (docs/VIDEO_SCRIPT.md)
 const SHOTS = [
   { id: 'town', cap: 'يومٌ واحد في حيٍّ واحد: من بيتك إلى عملك ومدرستك ومسجدك', en: 'One day, one neighbourhood: home, work, school and the mosque',
-    prep: () => gotoGame('scene=town'),
+    prep: async () => {
+      await gotoGame('scene=town');
+      await page.evaluate((want) => {
+        const y = window.yawmuk, a = y.scenes.active, p = y.player.pos;
+        const d = a.doors.find((x) => x.location === want) || a.doors[0];
+        y.player.teleport([p.x, 0, p.z], Math.atan2(-(d.position[0] - p.x), -(d.position[2] - p.z)));
+      }, TOWN_DOOR);
+      await sleep(1200);
+    },
     run: async () => {
-      await holdKeys(['KeyW'], 2600);
-      await holdKeys(['KeyW', 'KeyA'], 900);
-      await holdKeys(['KeyW'], 2600);
-      await holdKeys(['KeyW', 'KeyD'], 700);
-      await holdKeys(['KeyW'], 1500);
+      await sleep(500);
+      await holdKeys(['KeyW'], 7000);
     }, hold: 600 },
   { id: 'prayer', cap: 'مواقيت الصلاة تُحسب على جهازك، ويُرفع الأذان في وقته', en: 'Prayer times computed on your device; the adhan plays on time',
     prep: async () => { await gotoGame('scene=mosque'); },
@@ -245,7 +253,7 @@ const SHOTS = [
         .map((e, i) => ({ i, label: (document.querySelector(`label[for="${e.id}"]`)?.textContent || e.placeholder || e.getAttribute('aria-label') || '').trim() })));
       log('   zakat inputs:', JSON.stringify(inputs));
       for (const inp of inputs) {
-        const v = /ذهب/.test(inp.label) ? '95' : /فض/.test(inp.label) ? '1.1' : inp.i === 0 ? '25000' : null;
+        const v = /سعر.*ذهب/.test(inp.label) ? '95' : /سعر.*فض/.test(inp.label) ? '1.1' : inp.i === 0 ? '25000' : null;
         if (!v) continue;
         const h = (await page.$$('[class*="yk-bank"] input:not([type=checkbox])')).filter(Boolean);
         const vis = []; for (const e of h) if (await e.evaluate((n) => n.offsetParent !== null)) vis.push(e);
@@ -257,14 +265,16 @@ const SHOTS = [
       await sleep(600);
       await page.evaluate(() => document.querySelector('.yk-bank-due')?.scrollIntoView({ block: 'center', behavior: 'smooth' }));
     }, hold: 2200 },
-  { id: 'ruling', cap: 'كل موقف ينتهي ببطاقة حكم: آيات وأحاديث بنصّها ورقمها ودرجتها، والمذاهب الأربعة', en: 'Each situation ends with a ruling card: verified Quran and hadith, and the four madhhabs',
+  { id: 'ruling', top: true, cap: 'كل موقف ينتهي ببطاقة حكم: آيات وأحاديث بنصّها ورقمها ودرجتها، والمذاهب الأربعة', en: 'Each situation ends with a ruling card: verified Quran and hadith, and the four madhhabs',
     prep: async () => {
       await closeAll(); await gotoGame('scene=home');
       // walk-teleport to the first situation (not recorded) and start its dialogue
       const id = await page.evaluate(() => { const a = window.yawmuk.scenes.active; const h = a.hotspots[0]; window.yawmuk.teleport(h.id); return h.id; });
-      await sleep(600);
-      await page.evaluate(() => window.yawmuk.interact());
-      await page.waitForSelector('.overlay:not(.leaving) .dialogue', { visible: true, timeout: 15000 });
+      await waitFor((h) => window.yawmuk.near === h, 8000, id).catch(() => log('   (near not reached)'));
+      await page.evaluate(() => document.activeElement?.blur?.());
+      await page.keyboard.press('KeyE');
+      await page.waitForSelector('.overlay:not(.leaving) .dialogue', { visible: true, timeout: 8000 })
+        .catch(async () => { await page.evaluate(() => window.yawmuk.interact()); await page.waitForSelector('.overlay:not(.leaving) .dialogue', { visible: true, timeout: 8000 }); });
       log('   home hotspot', id);
     },
     run: async () => {
@@ -272,20 +282,20 @@ const SHOTS = [
       for (let g = 0; g < 20; g++) {
         const st = await page.evaluate(() => (document.querySelector('.overlay:not(.leaving) .dialogue .choices') ? 'choices' : document.querySelector('.overlay:not(.leaving) .dialogue .line') ? 'line' : 'wait'));
         if (st === 'choices') break;
-        if (st === 'line') { await sleep(1100); await clickEl(`${OPEN} .dialogue .row.end .btn.primary`); }
+        if (st === 'line') { await sleep(650); await clickEl(`${OPEN} .dialogue .row.end .btn.primary`); }
         await sleep(250);
       }
-      await sleep(1200);
+      await sleep(900);
       await clickEl(`${OPEN} .dialogue .choices .choice`);
       await page.waitForSelector(`${OPEN} .dialogue .consequence`, { visible: true, timeout: 10000 });
-      await sleep(1600);
+      await sleep(1100);
       await clickEl(`${OPEN} .dialogue .row.end .btn.primary`);
       await page.waitForSelector(`${OPEN} .ruling-modal .ruling-card`, { visible: true, timeout: 10000 });
-      await sleep(2200);
-      await scrollIn(`${OPEN} .ruling-modal`, 900, 18, 110);
-      await sleep(900);
+      await sleep(1800);
+      await scrollIn(`${OPEN} .ruling-modal`, 800, 12, 100);
+      await sleep(500);
       await page.evaluate(() => document.querySelector('.overlay:not(.leaving) .ruling-card .rc-madhahib')?.scrollIntoView({ block: 'start', behavior: 'smooth' }));
-    }, hold: 2400, max: 30000 },
+    }, hold: 2000, max: 30000 },
   { id: 'guide', cap: 'اسأل المرشد: يجيب من المصادر المراجَعة وحدها، ويُريك ما اعتمد عليه', en: 'Ask the guide: it answers only from reviewed sources and shows what it relied on',
     prep: async () => { await closeAll(); await gotoGame('scene=town'); },
     run: async () => {
@@ -308,10 +318,11 @@ const SHOTS = [
       await page.click('.yk-guide-input');
       await page.type('.yk-guide-input', 'أنا وزوجتي نريد أخذ قرض عقاري لبيتنا في أوهايو، هل يجوز لنا؟', { delay: 45 });
       await sleep(300);
+      const nBefore = await page.evaluate(() => document.querySelectorAll('.yk-guide-scholars').length);
       await clickEl('.yk-guide-send');
-      await page.waitForSelector('.yk-guide-scholars', { visible: true, timeout: 20000 });
+      await waitFor((n) => document.querySelectorAll('.yk-guide-scholars').length > n, 20000, nBefore);
       await sleep(2600);
-      await clickEl('.yk-guide-scholars');
+      await clickEl('.yk-guide-scholars', null, { last: true });
       await page.waitForSelector('#yk-experts-q', { visible: true, timeout: 10000 });
       await sleep(2000);
       await clickEl('.yk-experts-primary');
@@ -330,14 +341,20 @@ const SHOTS = [
       await sleep(800);
     },
     run: async () => {
+      await sleep(1800);
+      const r = await page.evaluate(() => {
+        const all = [...document.querySelectorAll('main *')].filter((e) => e.offsetParent !== null && e.textContent.includes('أوهايو'));
+        const leaf = all.filter((e) => ![...e.children].some((c) => c.textContent.includes('أوهايو'))).pop();
+        const t = leaf?.closest('button, li, [role=button], article, a') || leaf; if (!t) return null;
+        const b = t.getBoundingClientRect(); return { x: b.left + b.width / 2, y: b.top + b.height / 2 };
+      });
+      if (r) { await page.mouse.move(r.x, r.y, { steps: 15 }); await page.mouse.click(r.x, r.y); } else log('   (question not found in queue)');
       await sleep(2500);
-      await scrollIn('html, body, main', 500, 10, 120).catch(() => {});
-      await page.evaluate(() => window.scrollBy({ top: 450, behavior: 'smooth' }));
-      await sleep(1500);
+      await page.evaluate(() => window.scrollBy({ top: 300, behavior: 'smooth' }));
     }, hold: 2500 },
   { id: 'results', cap: 'ونقيس الأثر بتجربة اختيارية قبل اللعب وبعده', en: 'We measure the benefit with an opt-in pre/post study',
     prep: async () => { await page.goto(`${BASE}/results`, { waitUntil: 'networkidle2', timeout: 60000 }); await sleep(1200); },
-    run: async () => { await sleep(2500); await page.evaluate(() => window.scrollBy({ top: 400, behavior: 'smooth' })); await sleep(1200); }, hold: 1800 }
+    run: async () => { await sleep(2500); await page.evaluate(() => window.scrollBy({ top: 260, behavior: 'smooth' })); await sleep(1200); }, hold: 1800 }
 ];
 
 // ------------------------------------------------------------------ run
@@ -352,18 +369,21 @@ const still = (png, sec, name) => {
 
 const titlePng = path.join(WORK, 'title.png'); await titleCard(titlePng);
 const endPng = path.join(WORK, 'end.png'); await endCard(endPng);
+for (const s of SHOTS) await captionPng(s.cap, s.en, path.join(WORK, `${s.id}-cap.png`), !!s.top);
+await capPage.close();
+await page.bringToFront();
 if (!ONLY || ONLY.includes('title')) segs.push(still(titlePng, 2.5, 'title'));
 
 for (const s of SHOTS) {
   if (ONLY && !ONLY.includes(s.id)) continue;
   log(`shot ${s.id}`);
-  try { await s.prep(); } catch (e) { log(`  ! prep ${s.id}: ${e.message}`); }
+  try { await s.prep(); } catch (e) { log(`  ! prep ${s.id}: ${e.message}`); failures.push(`prep ${s.id}: ${e.message}`); }
+  await page.bringToFront();
   const rec = await record(s.id, s.run, { hold: s.hold, max: s.max || 25000 });
   if (rec.failed) failures.push(`${s.id}: ${rec.failed}`);
   const cap = path.join(WORK, `${s.id}-cap.png`);
-  await captionPng(s.cap, s.en, cap);
   const out = path.join(WORK, `${s.id}.mp4`);
-  ff(['-f', 'concat', '-safe', '0', '-i', rec.list, '-i', cap,
+  ff(['-f', 'concat', '-safe', '0', '-i', rec.list, '-i', cap, '-t', rec.seconds.toFixed(3),
     '-filter_complex', `[0:v]scale=${W}:${H}:force_original_aspect_ratio=decrease,pad=${W}:${H}:(ow-iw)/2:(oh-ih)/2,fps=${FPS},format=yuv420p[v];[v][1:v]overlay=0:0:format=auto,format=yuv420p,fade=t=in:st=0:d=0.25[o]`,
     '-map', '[o]', '-c:v', 'libx264', '-preset', 'medium', '-crf', '20', '-r', String(FPS), out]);
   segs.push({ name: s.id, file: out, seconds: rec.seconds });

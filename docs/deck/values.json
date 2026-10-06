@@ -1,10 +1,10 @@
 {
   "_help": "Fill before export. Empty = shown as «قيد القياس» (text) or «—» (KPI). Never type a number you did not measure. --auto fills TESTS_* / SOURCES_* / RESULTS_DATE.",
   "tokens": {
-    "LIVE_URL": "",
+    "LIVE_URL": "https://yawmuk.world",
     "VIDEO_URL": "",
-    "EVAL_PASS": "",
-    "EVAL_COMPARISON": "",
+    "EVAL_PASS": "98%",
+    "EVAL_COMPARISON": "النموذج نفسه بلا تصميم «يومك»: 42/72 إجابة تنسب نصاً شرعياً بلا سجل قابل للتحقق، و0/72 تستشهد بمصدر معتمد؛ «يومك»: 0 اختلاق و0 فتوى شخصية",
     "STUDY_N": "",
     "STUDY_GAIN": "",
     "STUDY_RESULTS": "",
@@ -17,9 +17,9 @@
   },
   "tokens_override": {},
   "screenshots": {
-    "SCREENSHOT_TOWN": "",
-    "SCREENSHOT_QURAN": "",
-    "SCREENSHOT_DASHBOARD": "",
-    "SCREENSHOT_PRAYER": ""
+    "SCREENSHOT_TOWN": "docs/deck/img/live-town.png",
+    "SCREENSHOT_QURAN": "docs/deck/img/live-quran.png",
+    "SCREENSHOT_DASHBOARD": "docs/deck/img/live-dashboard.png",
+    "SCREENSHOT_PRAYER": "docs/deck/img/live-prayer.png"
   }
 }
